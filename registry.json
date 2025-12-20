@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Duncan UI Library",
+  "homepage": "https://github.com/Pritam-2002/Duncan_ui_libary",
+  "items": [
+    {
+      "name": "hero1",
+      "type": "registry:block",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "files": [
+        {
+          "path": "src/components/blocks/sfHerodemo/Hero1.tsx",
+          "target": "components/watermelon/blocks/hero1/hero1.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/components/blocks/sfHerodemo/ui/Header.tsx",
+          "target": "components/watermelon/blocks/hero1/ui/Header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/blocks/sfHerodemo/ui/Hero.tsx",
+          "target": "components/watermelon/blocks/hero1/ui/Hero.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "target": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
