@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion'
 import {images_asset_base_url} from "@/static-assets/Static-Assets"
 

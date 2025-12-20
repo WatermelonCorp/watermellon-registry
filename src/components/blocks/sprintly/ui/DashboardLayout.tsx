@@ -1,16 +1,6 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import {images_asset_base_url} from "@/static-assets/Static-Assets";
-const StatCard = ({ title, value, change }:any) => (
-  <div className="border rounded-lg p-4 flex flex-col justify-between">
-    <div className="flex justify-between items-center">
-      <h3 className="text-sm font-medium">{title}</h3>
-      <span>↗</span>
-    </div>
-    <p className="text-3xl font-bold mt-2">{value}</p>
-    <p className="text-xs mt-1">{change}</p>
-  </div>
-);
 
 const DashboardLayout = () => {
   const containerVariants = {
@@ -25,11 +15,6 @@ const DashboardLayout = () => {
         staggerChildren: 0.1
       }
     }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
   };
 
   return (
