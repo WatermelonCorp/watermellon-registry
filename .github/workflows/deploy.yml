@@ -52,12 +52,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    environment: Production
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Debug token injection
+        run: |
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "❌ Token is empty"
+            exit 1
+          else
+            echo "✅ Token is present"
+          fi
 
       - run: npm ci
 
