@@ -1,6 +1,4 @@
-
 import { useState } from 'react';
-import React from 'react';
 import {images_asset_base_url} from "@/static-assets/Static-Assets"
 
 function Hero() {

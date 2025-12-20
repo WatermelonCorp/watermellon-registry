@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HamburgerIcon = () => (
@@ -42,12 +42,10 @@ const Header = () => {
     hidden: {
       x: "100%",
       opacity: 0,
-      transition: { type: "tween", duration: 0.3, ease: "easeIn" },
     },
     visible: {
       x: 0,
       opacity: 1,
-      transition: { type: "tween", duration: 0.3, ease: "easeOut" },
     },
   };
 
