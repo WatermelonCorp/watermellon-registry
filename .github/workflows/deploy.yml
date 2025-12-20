@@ -1,3 +1,46 @@
+# name: Deploy to Vercel
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# env:
+#   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+#   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+    
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+      
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: '20'
+#           cache: 'npm'
+      
+#       - name: Install dependencies
+#         run: npm ci
+      
+#       - name: Build project
+#         run: npm run build
+      
+#       - name: Install Vercel CLI
+#         run: npm install --global vercel@latest
+      
+#       - name: Pull Vercel environment information
+#         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      
+#       - name: Build project artifacts for Vercel
+#         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      
+#       - name: Deploy to Vercel Production
+#         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
 name: Deploy to Vercel
 
 on:
@@ -5,38 +48,29 @@ on:
     branches:
       - main
 
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build project
-        run: npm run build
-      
+
+      - run: npm ci
+
+      - run: npm run build
+
       - name: Install Vercel CLI
-        run: npm install --global vercel@latest
-      
-      - name: Pull Vercel environment information
+        run: npm install -g vercel
+
+      - name: Pull Vercel config
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-      
-      - name: Build project artifacts for Vercel
+
+      - name: Build for Vercel
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-      
-      - name: Deploy to Vercel Production
+
+      - name: Deploy to Production
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
