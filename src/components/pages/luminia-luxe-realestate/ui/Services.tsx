@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { SERVICES, SERVICE_GRID } from '../constants';
+import { SERVICES, SERVICE_GRID } from '../Constants';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const Services: React.FC = () => {

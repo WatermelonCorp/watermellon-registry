@@ -1,17 +1,17 @@
 
-import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import FeaturedProperties from './components/FeaturedProperties';
-import About from './components/About';
-import Agents from './components/Agents';
-import Testimonials from './components/Testimonials';
-import FAQSection from './components/FAQ';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { useState, useEffect } from 'react';
+import Navbar from './ui/Navbar';
+import Hero from './ui/Hero';
+import Services from './ui/Services';
+import FeaturedProperties from './ui/FeaturedProperties';
+import About from './ui/About';
+import Agents from './ui/Agents';
+import Testimonials from './ui/Testimonials';
+import FAQSection from './ui/FAQ';
+import Contact from './ui/Contact';
+import Footer from './ui/Footer';
 
-const App: React.FC = () => {
+const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -65,4 +65,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Index;

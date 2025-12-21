@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS } from '../Constants';
 import { Compass, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {

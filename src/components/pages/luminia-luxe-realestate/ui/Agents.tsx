@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { AGENTS } from '../constants';
+import { AGENTS } from '../Constants';
 import { Linkedin, Twitter, ArrowRight } from 'lucide-react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

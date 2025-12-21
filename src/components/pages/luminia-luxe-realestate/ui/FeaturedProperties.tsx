@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PROPERTIES } from '../constants';
+import { PROPERTIES } from '../Constants';
 import { MapPin, BedDouble, Bath, Square, ArrowUpRight } from 'lucide-react';
 
 const FeaturedProperties: React.FC = () => {

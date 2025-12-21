@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TESTIMONIALS } from '../constants';
+import { TESTIMONIALS } from '../Constants';
 import { Star } from 'lucide-react';
 
 const AVATAR_URLS = [
