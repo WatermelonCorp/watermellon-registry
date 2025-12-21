@@ -1,4 +1,4 @@
-import Hero from './components/blocks/chainwise/Hero'
+import Hero from './components/pages/watermelonCreativeStudio/index'
 import './App.css'
 
 function App() {
