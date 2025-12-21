@@ -1,4 +1,4 @@
-import Hero from './components/pages/watermelonCreativeStudio/index'
+import Hero from './components/pages/luminia-luxe-realestate/index'
 import './App.css'
 
 function App() {
