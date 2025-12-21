@@ -45,7 +45,7 @@
         {
           "path": "src/components/pages/luminia-luxe-realestate/Index.tsx",
           "target": "components/watermelon/landing/luminia-luxe-realestate/index.tsx",
-          "type": "registry:page"
+          "type": "registry:block"
         },
         {
           "path": "src/components/pages/luminia-luxe-realestate/types.ts",
