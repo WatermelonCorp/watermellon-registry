@@ -1,5 +1,4 @@
 
-import React from 'react';
 import type { Property, Agent, Testimonial, FAQ } from './types';
 import { 
   Building2, 
