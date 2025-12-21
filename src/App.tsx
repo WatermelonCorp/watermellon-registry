@@ -1,4 +1,4 @@
-import Hero from './components/pages/luminia-luxe-realestate/index'
+import Hero from './components/pages/apexflow-growth-agency/index'
 import './App.css'
 
 function App() {
