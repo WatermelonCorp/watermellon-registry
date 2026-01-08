@@ -1,0 +1,19 @@
+ body {
+        font-family: 'Inter', sans-serif;
+        background-color: #011616;
+        color: #ffffff;
+      }
+      .grid-bg {
+        background-image: radial-gradient(circle at 1px 1px, #10b98115 1px, transparent 0);
+        background-size: 40px 40px;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #4ade80 0%, #2dd4bf 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }

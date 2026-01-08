@@ -1,0 +1,47 @@
+:root {
+    --watermelon-red: #ff3b3b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f9f9f9;
+}
+
+.text-huge {
+    font-size: clamp(3.5rem, 15vw, 11rem);
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+    animation: marquee 30s linear infinite reverse;
+}
+
+/* Fix for iOS momentum scrolling */
+.overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile safe area padding */
+.pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+}

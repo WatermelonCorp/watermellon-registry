@@ -1,0 +1,56 @@
+/* Custom Slick Carousel Styles for Agents Component */
+
+/* Arrow Styles */
+.slick-prev,
+.slick-next {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: white !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+  z-index: 10 !important;
+  transition: all 0.3s ease !important;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: black !important;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: white !important;
+}
+
+.slick-prev {
+  left: -24px !important;
+}
+
+.slick-next {
+  right: -24px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px !important;
+  color: black !important;
+  opacity: 1 !important;
+}
+
+
+
+
+/* Container spacing */
+.slick-slider {
+  margin-bottom: 40px;
+}
+
+/* Track spacing */
+.slick-track {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.slick-slide > div {
+  height: 100%;
+}

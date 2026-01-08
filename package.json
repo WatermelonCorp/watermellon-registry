@@ -19,7 +19,9 @@
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-slick": "^0.31.0",
     "shadcn": "^2.9.3-canary.0",
+    "slick-carousel": "^1.8.1",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
@@ -27,6 +29,7 @@
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
+    "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.36.0",

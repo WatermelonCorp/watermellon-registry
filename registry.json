@@ -36,6 +36,83 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "luminia-luxe-realestate",
+      "type": "registry:page",
+      "dependencies": ["lucide-react", "react-slick", "slick-carousel"],
+      "files": [
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/Index.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/index.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/types.ts",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/types.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/Constants.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/constants.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Navbar.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Navbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Hero.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Hero.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Services.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Services.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/FeaturedProperties.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/FeaturedProperties.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/About.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/About.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Agents.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Agents.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Testimonials.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Testimonials.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/FAQ.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/FAQ.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Contact.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Contact.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Footer.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/agents-carousel.css",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/agents-carousel.css",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
