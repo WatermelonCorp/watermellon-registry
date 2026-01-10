@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-03",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/avatar-03.tsx",
+      "content": "import {\n  Avatar,\n  AvatarImage,\n  AvatarFallback,\n} from \"@/components/ui/avatar\";\n\nexport default function Avatar03() {\n  const members = [\n    { src: \"/ali.jpg\", fallback: \"AI\" },\n    { src: \"/ali.jpg\", fallback: \"AI\" },\n    { src: \"/ali.jpg\", fallback: \"AI\" },\n  ];\n\n  return (\n    <div className=\"flex gap-6 items-center flex-wrap\"> \n      <div className=\"flex -space-x-2\">\n        {members.map((member, i) => (\n          <Avatar key={i} className=\"border-2 border-background\">\n            <AvatarImage src={member.src} alt={member.fallback} />\n            <AvatarFallback>{member.fallback}</AvatarFallback>\n          </Avatar>\n        ))}\n      </div>\n      <div className=\"flex -space-x-2\">\n        {members.map((member, i) => (\n          <Avatar key={i} className=\"border-2 size-12 rounded-md border-background\">\n            <AvatarImage src={member.src} alt={member.fallback} />\n            <AvatarFallback>{member.fallback}</AvatarFallback>\n          </Avatar>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-03.tsx"
+    }
+  ]
+}

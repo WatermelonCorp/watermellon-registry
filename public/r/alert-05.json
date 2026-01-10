@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-05",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/alert-05.tsx",
+      "content": "import { CircleX } from \"@aliimam/icons\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Alert,\n  AlertDescription,\n  AlertTitle,\n} from \"@/components/ui/alert\";\n\nexport default function Alert05() {\n  return (\n    <Alert variant=\"destructive\">\n      <CircleX size={16} />\n      <div className=\"flex flex-col gap-2\">\n        <AlertTitle>Something went wrong!</AlertTitle>\n        <AlertDescription>\n          The server could not process your request. Please try again later.\n        </AlertDescription>\n        <Button variant=\"destructive\" size=\"sm\" className=\"w-fit\">\n          Retry\n        </Button>\n      </div>\n    </Alert>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-05.tsx"
+    }
+  ]
+}

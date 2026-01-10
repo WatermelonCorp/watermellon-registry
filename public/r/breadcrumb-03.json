@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-03",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/breadcrumb-03.tsx",
+      "content": "import { House, Folder, File } from \"@aliimam/icons\";\nimport {\n  Breadcrumb,\n  BreadcrumbList,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbSeparator,\n  BreadcrumbPage,\n} from \"@/components/ui/breadcrumb\";\n\nexport default function Breadcrumb03() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/\" className=\"flex items-center gap-1\">\n            <House className=\"size-3.5\" /> Home\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/projects\" className=\"flex items-center gap-1\">\n            <Folder className=\"size-3.5\" /> Projects\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage className=\"flex items-center gap-1\">\n            <File className=\"size-3.5\" /> Report.pdf\n          </BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb-03.tsx"
+    }
+  ]
+}

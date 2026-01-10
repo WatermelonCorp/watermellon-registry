@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "color-watch-selector",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/color-watch-selector.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as RadioGroupPrimitive from \"@radix-ui/react-radio-group\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction ColorSwatchSelectorRoot({ className, ...props }: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      data-slot=\"color-swatch-selector-root\"\n      className={cn(\n        \"flex items-center justify-between gap-4 py-3 bg-muted dark:bg-muted/60 p-3 pl-5 rounded-full\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\ninterface ColorSwatchSelectorLabelProps extends React.HTMLAttributes<HTMLDivElement> {\n  value: string\n}\n\nfunction ColorSwatchSelectorLabel({ className, value, ...props }: ColorSwatchSelectorLabelProps) {\n  return (\n    <div\n      data-slot=\"color-swatch-selector-label\"\n      className={cn(\"text-base font-normal leading-none\", className)}\n      {...props}\n    >\n      {value}\n    </div>\n  )\n}\n\nfunction ColorSwatchSelectorContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {\n  return (\n    <div data-slot=\"color-swatch-selector-content\" className={cn(\"flex items-center gap-2\", className)} {...props} />\n  )\n}\n\ninterface ColorSwatchSelectorItemProps extends React.ComponentProps<typeof RadioGroupPrimitive.Item> {\n  value: string\n}\n\nfunction ColorSwatchSelectorItem({ className, value, ...props }: ColorSwatchSelectorItemProps) {\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"color-swatch-selector-item\"\n      value={value}\n      className={cn(\n        \"group relative h-8 w-8 shrink-0 cursor-pointer rounded-full outline-none transition-all\",\n        \"focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\",\n        \"disabled:cursor-not-allowed disabled:opacity-50\",\n        className,\n      )}\n      style={{ backgroundColor: value, boxShadow: `1px 3px 4px 0px rgba(0, 0, 0, 0.25) inset` }}\n      {...props}\n    >\n      {/* Selected indicator - white ring in the center */}\n      <div\n        className={cn(\n          \"absolute inset-0 flex items-center justify-center\",\n          \"transition-all duration-200\",\n          \"opacity-0 scale-0\",\n          \"group-data-[state=checked]:opacity-100 group-data-[state=checked]:scale-100\",\n        )}\n      >\n        <div className=\"h-4 w-4 rounded-full border-[3px] bg-background\" />\n      </div>\n    </RadioGroupPrimitive.Item>\n  )\n}\n\nexport const ColorSwatchSelector = {\n  Root: ColorSwatchSelectorRoot,\n  Label: ColorSwatchSelectorLabel,\n  Content: ColorSwatchSelectorContent,\n  Item: ColorSwatchSelectorItem,\n}",
+      "type": "registry:ui",
+      "target": "components/ui/color-watch-selector.tsx"
+    }
+  ]
+}

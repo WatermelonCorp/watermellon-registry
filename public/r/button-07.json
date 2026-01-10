@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-07",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/button-07.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Moon } from \"@aliimam/icons\";\nimport { cn } from \"@/lib/utils\";\n\nexport default function ButtonDemo() {\n  return (\n    <div className=\"flex gap-3\">\n      \n      <Button size={\"icon-lg\"} className=\"relative p-0.5 overflow-hidden\">\n        <span\n          className={cn(\n            \"absolute inset-[-300%] animate-[spin_3s_linear_infinite]\",\n            \"bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary)_0%,#fff_50%,var(--primary)_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary)_0%,#000_50%,var(--primary)_100%)]\"\n          )}\n        />\n        <span\n          className={cn(\n            \"inline-flex size-full items-center text-primary-foreground justify-center rounded-sm backdrop-blur-3xl\"\n          )}\n        >\n          <Moon />\n        </span>\n      </Button>\n \n      <Button\n        size={\"lg\"}\n        className=\"relative  p-0.5 inline-flex overflow-hidden\"\n      >\n        <span\n          className={cn(\n            \"absolute inset-[-300%] animate-[spin_3s_linear_infinite]\",\n            \"bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary)_0%,#fff_50%,var(--primary)_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary)_0%,#000_50%,var(--primary)_100%)]\"\n          )}\n        />\n        <span\n          className={cn(\n            \"inline-flex size-full items-center text-primary-foreground justify-centerrounded-sm px-6 backdrop-blur-3xl\"\n          )}\n        >\n          Rotate Background\n        </span>\n      </Button>\n\n      <Button size={\"icon-lg\"} className=\"relative p-0.5 overflow-hidden\">\n        <span\n          className={cn(\n            \"absolute inset-[-300%] animate-[spin_3s_linear_infinite]\",\n            \"bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary)_0%,#fff_50%,var(--primary)_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary)_0%,#000_50%,var(--primary)_100%)]\"\n          )}\n        />\n        <span\n          className={cn(\n            \"inline-flex size-full items-center justify-center text-foreground rounded-sm bg-background backdrop-blur-3xl\"\n          )}\n        >\n          <Moon />\n        </span>\n      </Button>\n\n      <Button\n        size={\"lg\"}\n        className=\"relative p-0.5 inline-flex overflow-hidden\"\n      >\n        <span\n          className={cn(\n            \"absolute inset-[-300%] animate-[spin_3s_linear_infinite]\",\n            \"bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary)_0%,#fff_50%,var(--primary)_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary)_0%,#000_50%,var(--primary)_100%)]\"\n          )}\n        />\n        <span\n          className={cn(\n            \"inline-flex size-full text-foreground items-center justify-center rounded-sm bg-background px-6 backdrop-blur-3xl\"\n          )}\n        >\n          Rotate Border\n        </span>\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-07.tsx"
+    }
+  ]
+}

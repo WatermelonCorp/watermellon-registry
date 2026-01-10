@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "type": "registry:ui",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/spinner.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst spinnerVariants = cva(\"animate-spin\", {\n  variants: {\n    size: {\n      sm: \"size-4\",\n      default: \"size-6\",\n      lg: \"size-8\",\n      xl: \"size-12\",\n    },\n    speed: {\n      slow: \"[animation-duration:1200ms]\",\n      default: \"[animation-duration:900ms]\",\n      fast: \"[animation-duration:600ms]\",\n    },\n  },\n  defaultVariants: {\n    size: \"default\",\n    speed: \"default\",\n  },\n})\n\nexport interface SpinnerProps\n  extends Omit<React.ComponentProps<\"svg\">, \"size\" | \"speed\">,\n  VariantProps<typeof spinnerVariants> {\n  /**\n   * Stroke width of the spinner arc\n   * @default 3\n   */\n  strokeWidth?: number\n  /**\n   * CSS class for the background circle\n   * @default \"stroke-muted-foreground/20\"\n   */\n  bgClassName?: string\n}\n\nconst Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(\n  ({ className, size, speed, strokeWidth = 3, bgClassName = \"stroke-muted-foreground/20\", ...props }, ref) => {\n    return (\n      <svg\n        ref={ref}\n        className={cn(spinnerVariants({ size, speed }), \"text-foreground\", className)}\n        viewBox=\"0 0 42 42\"\n        {...props}\n      >\n        <g fill=\"none\" transform=\"translate(3 3)\" strokeWidth={strokeWidth}>\n          <circle className={bgClassName} cx=\"18\" cy=\"18\" r=\"18\" />\n          <path\n            className=\"stroke-current\"\n            stroke=\"currentColor\"\n            d=\"M36 18c0-9.94-8.06-18-18-18\"\n            strokeLinecap=\"round\"\n            strokeLinejoin=\"round\"\n          />\n        </g>\n      </svg>\n    )\n  },\n)\n\nSpinner.displayName = \"Spinner\"\n\nexport { Spinner, spinnerVariants }",
+      "type": "registry:ui",
+      "target": "components/ui/spinner.tsx"
+    }
+  ]
+}
