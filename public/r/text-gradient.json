@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-gradient",
+  "type": "registry:ui",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/text-gradient.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"@/lib/utils\"\n\ntype CSSVariableStyle = React.CSSProperties & {\n  \"--spread\"?: string\n}\n\ninterface TextGradientProps extends React.HTMLAttributes<HTMLSpanElement> {\n  children: React.ReactNode\n  /**\n   * The spread distance for the gradient effect in pixels\n   * @default 22\n   */\n  spread?: number\n  /**\n   * The background color for the gradient highlight\n   * Can be a CSS variable or any valid CSS color\n   * @default \"hsl(var(--background))\"\n   */\n  highlightColor?: string\n  /**\n   * The base text color (shows through the gradient)\n   * Can be a CSS variable or any valid CSS color\n   * @default \"hsl(var(--muted-foreground))\"\n   */\n  baseColor?: string\n  /**\n   * Animation duration in seconds\n   * @default 3\n   */\n  duration?: number\n}\n\nconst TextGradient = React.forwardRef<HTMLSpanElement, TextGradientProps>(\n  (\n    {\n      children,\n      className,\n      spread = 22,\n      highlightColor = \"var(--background)\",\n      baseColor = \"var(--muted-foreground)\",\n      duration = 2,\n      style,\n      ...props\n    },\n    ref,\n  ) => {\n    const inlineStyle: CSSVariableStyle = {\n      \"--spread\": `${spread}px`,\n      ...style,\n      backgroundImage: `linear-gradient(90deg, transparent calc(50% - var(--spread)), ${highlightColor} 50%, transparent calc(50% + var(--spread))), linear-gradient(${baseColor}, ${baseColor})`,\n      backgroundSize: \"250% 100%, 100% 100%\",\n      animation: `text-gradient-shift ${duration}s linear infinite`,\n    }\n\n    return (\n      <span\n        ref={ref}\n        className={cn(\n          \"relative inline-block bg-clip-text text-transparent\",\n          \"[background-repeat:no-repeat,padding-box]\",\n          className,\n        )}\n        style={inlineStyle}\n        {...props}\n      >\n        <style>\n          {`\n            @keyframes text-gradient-shift {\n              from { background-position: 100% center; }\n              to { background-position: 0% center; }\n            }\n          `}\n        </style>\n        {children}\n      </span>\n    )\n  },\n)\n\nTextGradient.displayName = \"TextGradient\"\n\nexport { TextGradient }\nexport default TextGradient",
+      "type": "registry:ui",
+      "target": "components/ui/text-gradient.tsx"
+    }
+  ]
+}

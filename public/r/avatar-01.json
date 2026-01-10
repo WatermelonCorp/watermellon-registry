@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-01",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/avatar-01.tsx",
+      "content": "import {\n  Avatar,\n  AvatarImage,\n  AvatarFallback,\n} from \"@/components/ui/avatar\";\nimport { UserRound } from \"@aliimam/icons\";\n\nexport default function Avatar01() {\n  return (\n    <div className=\"flex gap-6\">\n      <Avatar>\n        <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n        <AvatarFallback>AI</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"rounded-lg\">\n        <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n        <AvatarFallback>AI</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"rounded-lg\">\n        <AvatarFallback>\n          <UserRound />\n        </AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>AI</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-01.tsx"
+    }
+  ]
+}

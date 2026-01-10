@@ -26,18 +26,6 @@
       ]
     },
     {
-      "name": "button",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/button.tsx",
-          "target": "components/ui/button.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "luminia-luxe-realestate",
       "type": "registry:page",
       "dependencies": ["lucide-react", "react-slick", "slick-carousel"],
@@ -111,6 +99,898 @@
           "path": "src/components/pages/luminia-luxe-realestate/ui/agents-carousel.css",
           "target": "components/watermelon/landing/luminia-luxe-realestate/ui/agents-carousel.css",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "target": "components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion-03",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "registryDependencies": ["accordion", "primary-button"],
+      "files": [
+        {
+          "path": "src/components/ui/accordion-03.tsx",
+          "target": "components/ui/accordion-03.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion-04",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/ui/accordion-04.tsx",
+          "target": "components/ui/accordion-04.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion-05",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/ui/accordion-05.tsx",
+          "target": "components/ui/accordion-05.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion-multiselect",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/ui/accordion-multiselect.tsx",
+          "target": "components/ui/accordion-multiselect.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/alert.tsx",
+          "target": "components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-01",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-01.tsx",
+          "target": "components/ui/alert-01.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-02",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-02.tsx",
+          "target": "components/ui/alert-02.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-03",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-03.tsx",
+          "target": "components/ui/alert-03.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-04",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-04.tsx",
+          "target": "components/ui/alert-04.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-05",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-05.tsx",
+          "target": "components/ui/alert-05.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-06",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-06.tsx",
+          "target": "components/ui/alert-06.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog.tsx",
+          "target": "components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog-01",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "registryDependencies": ["alert-dialog", "button"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog-01.tsx",
+          "target": "components/ui/alert-dialog-01.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog-02",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "registryDependencies": ["alert-dialog", "button"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog-02.tsx",
+          "target": "components/ui/alert-dialog-02.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog-03",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "registryDependencies": ["alert-dialog", "button"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog-03.tsx",
+          "target": "components/ui/alert-dialog-03.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alphine-booking-form",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["input", "label", "button"],
+      "files": [
+        {
+          "path": "src/components/ui/alphine-booking-form.tsx",
+          "target": "components/ui/alphine-booking-form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alphine-login-form",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["input", "label", "button"],
+      "files": [
+        {
+          "path": "src/components/ui/alphine-login-form.tsx",
+          "target": "components/ui/alphine-login-form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "availability",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "files": [
+        {
+          "path": "src/components/ui/availability.tsx",
+          "target": "components/ui/availability.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "target": "components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-01",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar-01.tsx",
+          "target": "components/ui/avatar-01.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-02",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar-02.tsx",
+          "target": "components/ui/avatar-02.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-03",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar-03.tsx",
+          "target": "components/ui/avatar-03.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-04",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar-04.tsx",
+          "target": "components/ui/avatar-04.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-05",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar-05.tsx",
+          "target": "components/ui/avatar-05.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-06",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar-06.tsx",
+          "target": "components/ui/avatar-06.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "award",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "files": [
+        {
+          "path": "src/components/ui/award.tsx",
+          "target": "components/ui/award.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "target": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge-01",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["badge"],
+      "files": [
+        {
+          "path": "src/components/ui/badge-01.tsx",
+          "target": "components/ui/badge-01.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge-02",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["badge"],
+      "files": [
+        {
+          "path": "src/components/ui/badge-02.tsx",
+          "target": "components/ui/badge-02.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge-03",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["badge"],
+      "files": [
+        {
+          "path": "src/components/ui/badge-03.tsx",
+          "target": "components/ui/badge-03.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge-04",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["badge"],
+      "files": [
+        {
+          "path": "src/components/ui/badge-04.tsx",
+          "target": "components/ui/badge-04.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge-05",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["badge"],
+      "files": [
+        {
+          "path": "src/components/ui/badge-05.tsx",
+          "target": "components/ui/badge-05.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "book",
+      "type": "registry:ui",
+      "dependencies": ["framer-motion"],
+      "files": [
+        {
+          "path": "src/components/ui/book.tsx",
+          "target": "components/ui/book.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb.tsx",
+          "target": "components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-01",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["breadcrumb"],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb-01.tsx",
+          "target": "components/ui/breadcrumb-01.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-02",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["breadcrumb"],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb-02.tsx",
+          "target": "components/ui/breadcrumb-02.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-03",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["breadcrumb"],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb-03.tsx",
+          "target": "components/ui/breadcrumb-03.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-04",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["breadcrumb"],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb-04.tsx",
+          "target": "components/ui/breadcrumb-04.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "browser",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "files": [
+        {
+          "path": "src/components/ui/browser.tsx",
+          "target": "components/ui/browser.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "target": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-01",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/button-01.tsx",
+          "target": "components/ui/button-01.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-02",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/button-02.tsx",
+          "target": "components/ui/button-02.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-03",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/button-03.tsx",
+          "target": "components/ui/button-03.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-04",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/button-04.tsx",
+          "target": "components/ui/button-04.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-05",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/button-05.tsx",
+          "target": "components/ui/button-05.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-06",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/button-06.tsx",
+          "target": "components/ui/button-06.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-07",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/button-07.tsx",
+          "target": "components/ui/button-07.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-08",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/button-08.tsx",
+          "target": "components/ui/button-08.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "react-day-picker"],
+      "registryDependencies": ["primary-button"],
+      "files": [
+        {
+          "path": "src/components/ui/calendar.tsx",
+          "target": "components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/card.tsx",
+          "target": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "dependencies": ["recharts"],
+      "files": [
+        {
+          "path": "src/components/ui/chart.tsx",
+          "target": "components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "color-watch-selector",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/color-watch-selector.tsx",
+          "target": "components/ui/color-watch-selector.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "device",
+      "type": "registry:ui",
+      "dependencies": ["framer-motion"],
+      "files": [
+        {
+          "path": "src/components/ui/device.tsx",
+          "target": "components/ui/device.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "dependencies": ["iconsax-react", "sonner"],
+      "files": [
+        {
+          "path": "src/components/ui/file-upload.tsx",
+          "target": "components/ui/file-upload.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flip-clock",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/flip-clock.tsx",
+          "target": "components/ui/flip-clock.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "gauge",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/gauge.tsx",
+          "target": "components/ui/gauge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "target": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-label", "class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/label.tsx",
+          "target": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label-selector",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/label-selector.tsx",
+          "target": "components/ui/label-selector.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/marquee.tsx",
+          "target": "components/ui/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-popover"],
+      "files": [
+        {
+          "path": "src/components/ui/popover.tsx",
+          "target": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "primary-button",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primary-button.tsx",
+          "target": "components/ui/primary-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-fade",
+      "type": "registry:ui",
+      "dependencies": ["framer-motion"],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-fade.tsx",
+          "target": "components/ui/scroll-fade.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/select.tsx",
+          "target": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-separator"],
+      "files": [
+        {
+          "path": "src/components/ui/separator.tsx",
+          "target": "components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "target": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/spinner.tsx",
+          "target": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-indicator",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/status-indicator.tsx",
+          "target": "components/ui/status-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-gradient",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/text-gradient.tsx",
+          "target": "components/ui/text-gradient.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "framer-motion"],
+      "files": [
+        {
+          "path": "src/components/ui/timeline.tsx",
+          "target": "components/ui/timeline.tsx",
+          "type": "registry:ui"
         }
       ]
     }

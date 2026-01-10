@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-02",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/badge-02.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { CircleCheck, CircleAlert, Check } from \"@aliimam/icons\";\n\nexport default function Badge02() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Badge variant=\"default\">\n        <CircleCheck /> Active\n      </Badge>\n      <Badge variant=\"destructive\">\n        <CircleAlert /> Error\n      </Badge>\n      <Badge className=\"rounded\">Rounded</Badge>\n      <Badge variant={\"secondary\"}>5</Badge>\n      <Badge variant={\"outline\"}>\n        Likes\n        <span className=\"text-[0.625rem] font-medium text-primary-foreground/60\">\n          56\n        </span>\n      </Badge>\n      <Badge\n        variant={\"outline\"}\n        className=\"bg-green-500 text-primary-foreground\"\n      >\n        <Check />\n        Check\n      </Badge>\n      <Badge variant={\"outline\"}>\n        <span\n          className=\"size-1.5 rounded-full bg-emerald-500\"\n          aria-hidden=\"true\"\n        ></span>\n        Online\n      </Badge>\n      <Badge variant={\"outline\"}>\n        <span\n          className=\"size-1.5 rounded-full bg-red-500\"\n          aria-hidden=\"true\"\n        ></span>\n        Offline\n      </Badge>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/badge-02.tsx"
+    }
+  ]
+}

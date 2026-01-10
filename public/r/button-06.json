@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-06",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/button-06.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Moon } from \"@aliimam/icons\";\n\nexport default function ButtonDemo() {\n  return (\n    <div className=\"flex gap-3\">\n      <Button \n        size={\"icon\"} \n        className=\"h-16 text-xl w-16 from-primary to-primary/85 text-primary-foreground border-2 border-foreground/10 bg-gradient-to-t shadow-xl shadow-primary/70 ring-4 ring-offset ring-background/30 transition-[filter] duration-200 hover:brightness-120 active:brightness-100\"\n      >\n        <Moon strokeWidth={1.5} className=\"size-6\" />\n      </Button>\n      <Button \n        className=\"h-16 text-xl px-12 from-primary to-primary/85 text-primary-foreground border-2 border-foreground/10 bg-gradient-to-t shadow-xl shadow-primary/70 ring-4 ring-offset ring-background/30 transition-[filter] duration-200 hover:brightness-120 active:brightness-100\"\n      >\n       Soft Glow\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-06.tsx"
+    }
+  ]
+}

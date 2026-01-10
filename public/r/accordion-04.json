@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-04",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-accordion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/accordion-04.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Plus, X } from \"lucide-react\";\n\n\nconst items = [\n  {\n    id: \"01\",\n    title: \"Who am I?\",\n    content:\n      \"I’m Ali Imam — a designer and creative developer focused on building digital experiences that are minimal, meaningful, and timeless.\",\n  },\n  {\n    id: \"02\",\n    title: \"What do I design?\",\n    content:\n      \"I create clean, functional interfaces, brand systems, and digital products. My work blends simplicity with clarity and usability.\",\n  },\n  {\n    id: \"03\",\n    title: \"My design approach\",\n    content:\n      \"For me, design isn’t just visuals — it’s how something feels and works. I focus on clarity, detail, and storytelling in every project.\",\n  },\n  {\n    id: \"04\",\n    title: \"Beyond design\",\n    content:\n      \"I bridge design and development, turning ideas into interactive experiences with modern tools and technology.\",\n  },\n  {\n    id: \"05\",\n    title: \"What inspires me\",\n    content:\n      \"Minimalism, architecture, and everyday details. I believe great design is found in the small things we often overlook.\",\n  },\n];\n\nexport default function Accordion02() {\n  return (\n    <div className=\"w-full mx-auto max-w-xl\">\n      <Accordion type=\"single\" defaultValue=\"02\" collapsible className=\"w-full space-y-2\">\n        {items.map((item) => (\n          <AccordionItem value={item.id} key={item.id} className=\"border last:border-b rounded-xl \">\n            <AccordionTrigger className=\"text-left m-1 data-[state=open]:rounded-b-none bg-primary/10 data-[state=open]:[&_svg]:rotate-180 data-[state=open]:[&_svg]:[#plus]:opacity-0 [&_svg]:[#plus]:[data-state=open]:opacity-0 duration-500 hover:no-underline cursor-pointer [data-slot=accordion-trigger] [&>svg]:hidden\">\n              <div className=\"flex flex-1 px-6 justify-between items-center gap-4\">\n                <h3 className=\"text-2xl font-semibold\">{item.title}</h3>\n                <div className=\"relative\">\n                  <Plus\n                    id=\"plus\"\n                    strokeWidth={2}\n                    className={cn(\n                      \"h-6 w-6 shrink-0 transition-all duration-500\",\n                      \"data-[state=open]:opacity-0 data-[state=closed]:opacity-100\",\n                      \"data-[state=open]:rotate-180\"\n                    )}\n                  />\n                  <X\n                    strokeWidth={2}\n                    id=\"minus\"\n                    className={cn(\n                      \"absolute inset-0 opacity-100 transition-all duration-500\",\n                      \"hover:opacity-100 [data-state=close]:opacity-100\",\n                      \"data-[state=open]:rotate-180\"\n                    )}\n                  />\n                </div>\n\n              </div>\n            </AccordionTrigger>\n\n            <AccordionContent className=\"p-6\">{item.content}</AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-04.tsx"
+    }
+  ]
+}
