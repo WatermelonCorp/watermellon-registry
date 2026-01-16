@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "type": "registry:ui",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/progress.tsx",
+      "content": "import * as React from 'react';\n\nimport {\n  Progress as ProgressPrimitive,\n  ProgressIndicator as ProgressIndicatorPrimitive,\n  type ProgressProps as ProgressPrimitiveProps,\n} from '@/components/animate-ui/primitives/radix/progress';\nimport { cn } from '@/lib/utils';\n\ntype ProgressProps = ProgressPrimitiveProps;\n\nfunction Progress({ className, ...props }: ProgressProps) {\n  return (\n    <ProgressPrimitive\n      className={cn(\n        'bg-primary/20 relative h-2 w-full overflow-hidden rounded-full',\n        className,\n      )}\n      {...props}\n    >\n      <ProgressIndicatorPrimitive className=\"bg-primary rounded-full h-full w-full flex-1\" />\n    </ProgressPrimitive>\n  );\n}\n\nexport { Progress, type ProgressProps };\n",
+      "type": "registry:ui",
+      "target": "components/ui/progress.tsx"
+    }
+  ]
+}
