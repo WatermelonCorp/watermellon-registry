@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "github-stars",
-  "type": "registry:ui",
   "dependencies": [
     "class-variance-authority",
     "lucide-react"
@@ -13,5 +12,6 @@
       "type": "registry:ui",
       "target": "components/ui/github-stars.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

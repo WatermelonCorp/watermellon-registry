@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alphine-login-form",
-  "type": "registry:ui",
   "dependencies": [
     "lucide-react"
   ],
@@ -17,5 +16,6 @@
       "type": "registry:ui",
       "target": "components/ui/alphine-login-form.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "breadcrumb",
-  "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-slot",
     "lucide-react"
@@ -13,5 +12,6 @@
       "type": "registry:ui",
       "target": "components/ui/breadcrumb.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

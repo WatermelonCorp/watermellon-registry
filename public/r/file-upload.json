@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "file-upload",
-  "type": "registry:ui",
   "dependencies": [
     "iconsax-react",
     "sonner"
@@ -13,5 +12,6 @@
       "type": "registry:ui",
       "target": "components/ui/file-upload.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

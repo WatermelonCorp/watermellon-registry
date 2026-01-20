@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "code",
-  "type": "registry:ui",
   "dependencies": [
     "next-themes"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:ui",
       "target": "components/ui/code.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hero1",
-  "type": "registry:block",
   "dependencies": [
     "lucide-react",
     "framer-motion"
@@ -25,5 +24,6 @@
       "type": "registry:component",
       "target": "components/watermelon/blocks/hero1/ui/Hero.tsx"
     }
-  ]
+  ],
+  "type": "registry:block"
 }

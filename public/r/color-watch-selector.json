@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "color-watch-selector",
-  "type": "registry:ui",
   "dependencies": [
     "lucide-react"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:ui",
       "target": "components/ui/color-watch-selector.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

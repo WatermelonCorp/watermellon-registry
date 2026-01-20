@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-07",
-  "type": "registry:ui",
   "dependencies": [
     "lucide-react",
     "framer-motion"
@@ -16,5 +15,6 @@
       "type": "registry:ui",
       "target": "components/ui/button-07.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

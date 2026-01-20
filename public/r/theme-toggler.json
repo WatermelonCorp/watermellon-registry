@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "theme-toggler",
-  "type": "registry:ui",
   "dependencies": [
     "next-themes",
     "lucide-react",
@@ -14,5 +13,6 @@
       "type": "registry:ui",
       "target": "components/ui/theme-toggler.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

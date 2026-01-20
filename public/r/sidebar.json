@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sidebar",
-  "type": "registry:ui",
   "dependencies": [
     "radix-ui",
     "class-variance-authority",
@@ -21,5 +20,6 @@
       "type": "registry:ui",
       "target": "components/ui/sidebar.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

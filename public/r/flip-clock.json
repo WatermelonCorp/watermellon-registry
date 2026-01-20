@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "flip-clock",
-  "type": "registry:ui",
   "dependencies": [
     "class-variance-authority"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:ui",
       "target": "components/ui/flip-clock.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

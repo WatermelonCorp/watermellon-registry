@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "book",
-  "type": "registry:ui",
   "dependencies": [
     "framer-motion"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:ui",
       "target": "components/ui/book.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar",
-  "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-avatar"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:ui",
       "target": "components/ui/avatar.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

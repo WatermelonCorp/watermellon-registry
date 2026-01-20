@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-03",
-  "type": "registry:ui",
   "dependencies": [
     "lucide-react"
   ],
@@ -15,5 +14,6 @@
       "type": "registry:ui",
       "target": "components/ui/alert-03.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

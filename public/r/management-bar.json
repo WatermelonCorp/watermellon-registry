@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "management-bar",
-  "type": "registry:ui",
   "dependencies": [
     "lucide-react",
     "framer-motion"
@@ -13,5 +12,6 @@
       "type": "registry:ui",
       "target": "components/ui/management-bar.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }
