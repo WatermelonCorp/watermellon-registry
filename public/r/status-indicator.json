@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "status-indicator",
-  "type": "registry:ui",
   "dependencies": [
     "class-variance-authority"
   ],
@@ -12,5 +11,6 @@
       "type": "registry:ui",
       "target": "components/ui/status-indicator.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

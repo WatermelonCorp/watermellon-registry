@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog",
-  "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-alert-dialog"
   ],
@@ -15,5 +14,6 @@
       "type": "registry:ui",
       "target": "components/ui/alert-dialog.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

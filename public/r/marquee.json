@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "marquee",
-  "type": "registry:ui",
   "dependencies": [],
   "files": [
     {
@@ -10,5 +9,6 @@
       "type": "registry:ui",
       "target": "components/ui/marquee.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

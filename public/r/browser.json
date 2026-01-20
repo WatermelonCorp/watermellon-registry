@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "browser",
-  "type": "registry:ui",
   "dependencies": [
     "lucide-react",
     "framer-motion"
@@ -13,5 +12,6 @@
       "type": "registry:ui",
       "target": "components/ui/browser.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

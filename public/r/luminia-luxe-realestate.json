@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "luminia-luxe-realestate",
-  "type": "registry:page",
   "dependencies": [
     "lucide-react",
     "react-slick",
@@ -92,5 +91,6 @@
       "type": "registry:component",
       "target": "components/watermelon/landing/luminia-luxe-realestate/ui/agents-carousel.css"
     }
-  ]
+  ],
+  "type": "registry:page"
 }

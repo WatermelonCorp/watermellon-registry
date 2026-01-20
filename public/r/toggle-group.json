@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-group",
-  "type": "registry:ui",
   "dependencies": [
     "class-variance-authority"
   ],
@@ -15,5 +14,6 @@
       "type": "registry:ui",
       "target": "components/ui/toggle-group.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

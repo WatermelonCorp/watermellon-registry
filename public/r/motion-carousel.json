@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "motion-carousel",
-  "type": "registry:ui",
   "dependencies": [
     "framer-motion",
     "embla-carousel-react",
@@ -14,5 +13,6 @@
       "type": "registry:ui",
       "target": "components/ui/motion-carousel.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

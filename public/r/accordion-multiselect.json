@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "accordion-multiselect",
-  "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-accordion",
     "lucide-react"
@@ -16,5 +15,6 @@
       "type": "registry:ui",
       "target": "components/ui/accordion-multiselect.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }
