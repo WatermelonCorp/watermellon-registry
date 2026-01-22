@@ -1,26 +1,9 @@
-import * as React from 'react';
+'use client';
 
-import {
-  Sheet as SheetPrimitive,
-  SheetTrigger as SheetTriggerPrimitive,
-  SheetOverlay as SheetOverlayPrimitive,
-  SheetClose as SheetClosePrimitive,
-  SheetPortal as SheetPortalPrimitive,
-  SheetContent as SheetContentPrimitive,
-  SheetHeader as SheetHeaderPrimitive,
-  SheetFooter as SheetFooterPrimitive,
-  SheetTitle as SheetTitlePrimitive,
-  SheetDescription as SheetDescriptionPrimitive,
-  type SheetProps as SheetPrimitiveProps,
-  type SheetTriggerProps as SheetTriggerPrimitiveProps,
-  type SheetOverlayProps as SheetOverlayPrimitiveProps,
-  type SheetCloseProps as SheetClosePrimitiveProps,
-  type SheetContentProps as SheetContentPrimitiveProps,
-  type SheetHeaderProps as SheetHeaderPrimitiveProps,
-  type SheetFooterProps as SheetFooterPrimitiveProps,
-  type SheetTitleProps as SheetTitlePrimitiveProps,
-  type SheetDescriptionProps as SheetDescriptionPrimitiveProps,
-} from '@/components/animate-ui/primitives/radix/sheet';
+import * as React from 'react';
+import { Dialog as SheetPrime } from 'radix-ui';
+import { AnimatePresence, motion, type HTMLMotionProps } from 'motion/react';
+
 import { cn } from '@/lib/utils';
 import { XIcon } from 'lucide-react';
 
@@ -153,3 +136,232 @@ export {
   type SheetTitleProps,
   type SheetDescriptionProps,
 };
+
+
+
+type SheetContextType = {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+};
+
+const [SheetProvider, useSheet] =
+  getStrictContext<SheetContextType>('SheetContext');
+
+type SheetPrimitiveProps = React.ComponentProps<typeof SheetPrime.Root>;
+
+function SheetPrimitive(props: SheetPrimitiveProps) {
+  const [isOpen, setIsOpen] = useControlledState({
+    value: props.open,
+    defaultValue: props.defaultOpen,
+    onChange: props.onOpenChange,
+  });
+
+  return (
+    <SheetProvider value={{ isOpen, setIsOpen }}>
+      <SheetPrime.Root
+        data-slot="sheet"
+        {...props}
+        onOpenChange={setIsOpen}
+      />
+    </SheetProvider>
+  );
+}
+
+type SheetTriggerPrimitiveProps = React.ComponentProps<typeof SheetPrime.Trigger>;
+
+function SheetTriggerPrimitive(props: SheetTriggerPrimitiveProps) {
+  return <SheetPrime.Trigger data-slot="sheet-trigger" {...props} />;
+}
+
+type SheetClosePrimitiveProps = React.ComponentProps<typeof SheetPrime.Close>;
+
+function SheetClosePrimitive(props: SheetClosePrimitiveProps) {
+  return <SheetPrime.Close data-slot="sheet-close" {...props} />;
+}
+
+type SheetPortalPrimitiveProps = React.ComponentProps<typeof SheetPrime.Portal>;
+
+function SheetPortalPrimitive(props: SheetPortalPrimitiveProps) {
+  const { isOpen } = useSheet();
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <SheetPrime.Portal forceMount data-slot="sheet-portal" {...props} />
+      )}
+    </AnimatePresence>
+  );
+}
+
+type SheetOverlayPrimitiveProps = Omit<
+  React.ComponentProps<typeof SheetPrime.Overlay>,
+  'asChild' | 'forceMount'
+> &
+  HTMLMotionProps<'div'>;
+
+function SheetOverlayPrimitive({
+  transition = { duration: 0.2, ease: 'easeInOut' },
+  ...props
+}: SheetOverlayPrimitiveProps) {
+  return (
+    <SheetPrime.Overlay asChild forceMount>
+      <motion.div
+        key="sheet-overlay"
+        data-slot="sheet-overlay"
+        initial={{ opacity: 0, filter: 'blur(4px)' }}
+        animate={{ opacity: 1, filter: 'blur(0px)' }}
+        exit={{ opacity: 0, filter: 'blur(4px)' }}
+        transition={transition}
+        {...props}
+      />
+    </SheetPrime.Overlay>
+  );
+}
+
+type Side = 'top' | 'bottom' | 'left' | 'right';
+
+type SheetContentPrimitiveProps = React.ComponentProps<typeof SheetPrime.Content> &
+  HTMLMotionProps<'div'> & {
+    side?: Side;
+  };
+
+function SheetContentPrimitive({
+  side = 'right',
+  transition = { type: 'spring', stiffness: 150, damping: 22 },
+  style,
+  children,
+  ...props
+}: SheetContentPrimitiveProps) {
+  const axis = side === 'left' || side === 'right' ? 'x' : 'y';
+
+  const offscreen: Record<Side, { x?: string; y?: string; opacity: number }> = {
+    right: { x: '100%', opacity: 0 },
+    left: { x: '-100%', opacity: 0 },
+    top: { y: '-100%', opacity: 0 },
+    bottom: { y: '100%', opacity: 0 },
+  };
+
+  const positionStyle: Record<Side, React.CSSProperties> = {
+    right: { insetBlock: 0, right: 0 },
+    left: { insetBlock: 0, left: 0 },
+    top: { insetInline: 0, top: 0 },
+    bottom: { insetInline: 0, bottom: 0 },
+  };
+
+  return (
+    <SheetPrime.Content asChild forceMount {...props}>
+      <motion.div
+        key="sheet-content"
+        data-slot="sheet-content"
+        data-side={side}
+        initial={offscreen[side]}
+        animate={{ [axis]: 0, opacity: 1 }}
+        exit={offscreen[side]}
+        style={{
+          position: 'fixed',
+          ...positionStyle[side],
+          ...style,
+        }}
+        transition={transition}
+      >
+        {children}
+      </motion.div>
+    </SheetPrime.Content>
+  );
+}
+
+type SheetHeaderPrimitiveProps = React.ComponentProps<'div'>;
+
+function SheetHeaderPrimitive(props: SheetHeaderPrimitiveProps) {
+  return <div data-slot="sheet-header" {...props} />;
+}
+
+type SheetFooterPrimitiveProps = React.ComponentProps<'div'>;
+
+function SheetFooterPrimitive(props: SheetFooterPrimitiveProps) {
+  return <div data-slot="sheet-footer" {...props} />;
+}
+
+type SheetTitlePrimitiveProps = React.ComponentProps<typeof SheetPrime.Title>;
+
+function SheetTitlePrimitive(props: SheetTitlePrimitiveProps) {
+  return <SheetPrime.Title data-slot="sheet-title" {...props} />;
+}
+
+type SheetDescriptionPrimitiveProps = React.ComponentProps<
+  typeof SheetPrime.Description
+>;
+
+function SheetDescriptionPrimitive(props: SheetDescriptionPrimitiveProps) {
+  return (
+    <SheetPrime.Description data-slot="sheet-description" {...props} />
+  );
+}
+
+
+function getStrictContext<T>(
+  name?: string,
+): readonly [
+  ({
+    value,
+    children,
+  }: {
+    value: T;
+    children?: React.ReactNode;
+  }) => React.JSX.Element,
+  () => T,
+] {
+  const Context = React.createContext<T | undefined>(undefined);
+
+  const Provider = ({
+    value,
+    children,
+  }: {
+    value: T;
+    children?: React.ReactNode;
+  }) => <Context.Provider value={value}>{children}</Context.Provider>;
+
+  const useSafeContext = () => {
+    const ctx = React.useContext(Context);
+    if (ctx === undefined) {
+      throw new Error(`useContext must be used within ${name ?? 'a Provider'}`);
+    }
+    return ctx;
+  };
+
+  return [Provider, useSafeContext] as const;
+}
+
+export { getStrictContext };
+
+interface CommonControlledStateProps<T> {
+  value?: T;
+  defaultValue?: T;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function useControlledState<T, Rest extends any[] = []>(
+  props: CommonControlledStateProps<T> & {
+    onChange?: (value: T, ...args: Rest) => void;
+  },
+): readonly [T, (next: T, ...args: Rest) => void] {
+  const { value, defaultValue, onChange } = props;
+
+  const [state, setInternalState] = React.useState<T>(
+    value !== undefined ? value : (defaultValue as T),
+  );
+
+  React.useEffect(() => {
+    if (value !== undefined) setInternalState(value);
+  }, [value]);
+
+  const setState = React.useCallback(
+    (next: T, ...args: Rest) => {
+      setInternalState(next);
+      onChange?.(next, ...args);
+    },
+    [onChange],
+  );
+
+  return [state, setState] as const;
+}
