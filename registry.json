@@ -1541,6 +1541,23 @@
       ]
     },
     {
+      "name": "animate-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/animate-button.tsx",
+          "target": "components/ui/animate-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "x-post",
       "type": "registry:ui",
       "dependencies": ["@radix-ui/react-slot", "@radix-ui/react-tooltip", "class-variance-authority", "lucide-react", "zod"],
@@ -1549,6 +1566,185 @@
           "path": "src/components/ui/x-post.tsx",
           "target": "components/ui/x-post.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sales-admin-panel",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/sales-admin-panel/app-sidebar.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/billing.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/billing.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/companies-table.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/companies-table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/company-filters.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/company-filters.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/deal-card.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/deal-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/index.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/index.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/main.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-main.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-pipelines.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-pipelines.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-reporting.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-reporting.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-secondary.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-teams.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-teams.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/site-header.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/site-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/team-switcher.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/team-switcher.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/types.ts",
+          "target": "components/watermelon/dashboards/sales-admin-panel/types.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/demo.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/avatar.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/badge.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/breadcrumb.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/breadcrumb.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/button.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/card.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/checkbox.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/checkbox.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/collapsible.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/collapsible.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/dialog.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/dropdown-menu.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/dropdown-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/input.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/select.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/select.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/separator.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/sheet.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/sidebar.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/skeleton.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/table.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/tabs.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/tabs.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/ui/tooltip.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/ui/tooltip.tsx",
+          "type": "registry:component"
         }
       ]
     }
