@@ -1747,6 +1747,263 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "business-management",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/business-management/app-sidebar.tsx",
+          "target": "components/watermelon/dashboards/business-management/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/dashboardLayout.tsx",
+          "target": "components/watermelon/dashboards/business-management/dashboardLayout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/timelineView.tsx",
+          "target": "components/watermelon/dashboards/business-management/timelineView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/demo.tsx",
+          "target": "components/watermelon/dashboards/business-management/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/avatar.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/button.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/card.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/chart.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/input.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/select.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/select.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/separator.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/sheet.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/sidebar.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/skeleton.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/switch.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/switch.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/table.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/tooltip.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/tooltip.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "e-commerce",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "@tabler/icons-react",
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/e-commerce/app-sidebar.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/dashboardLayout.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/dashboardLayout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/dashboardView.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/dashboardView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/demo.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/nav-main.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/nav-secondary.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/nav-user.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/nav-user.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/site-header.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/site-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/avatar.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/badge.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/breadcrumb.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/breadcrumb.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/button.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/card.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/chart.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/checkbox.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/checkbox.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/drawer.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/drawer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/dropdown-menu.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/dropdown-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/input.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/label.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/label.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/select.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/select.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/separator.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/sheet.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/sidebar.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/skeleton.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/sonner.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/sonner.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/table.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/tabs.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/tabs.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/toggle-group.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/toggle-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/toggle.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/toggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/e-commerce/ui/tooltip.tsx",
+          "target": "components/watermelon/dashboards/e-commerce/ui/tooltip.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
+
   ]
 }
