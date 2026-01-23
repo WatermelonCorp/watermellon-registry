@@ -2,14 +2,13 @@
 
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { AnimatePresence, type HTMLMotionProps, isMotionComponent, motion } from 'motion/react';
-import { CheckIcon, CopyIcon } from 'lucide-react';
+import { isMotionComponent, motion, type HTMLMotionProps } from 'motion/react';
 
 
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  "flex items-center justify-center rounded-md transition-[box-shadow,_color,_background-color,_border-color,_outline-color,_text-decoration-color,_fill,_stroke] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[box-shadow,_color,_background-color,_border-color,_outline-color,_text-decoration-color,_fill,_stroke] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -27,10 +26,12 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        default: 'size-9',
-        xs: "size-7 [&_svg:not([class*='size-'])]:size-3.5 rounded-md",
-        sm: 'size-8 rounded-md',
-        lg: 'size-10 rounded-md',
+        default: 'h-9 px-4 py-2 has-[>svg]:px-3',
+        sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
+        lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
+        icon: 'size-9',
+        'icon-sm': 'size-8 rounded-md',
+        'icon-lg': 'size-10 rounded-md',
       },
     },
     defaultVariants: {
@@ -40,80 +41,18 @@ const buttonVariants = cva(
   },
 );
 
-type CopyButtonProps = Omit<ButtonPrimitiveProps, 'children'> &
-  VariantProps<typeof buttonVariants> & {
-    content: string;
-    copied?: boolean;
-    onCopiedChange?: (copied: boolean, content?: string) => void;
-    delay?: number;
-  };
+type ButtonProps = ButtonPrimitiveProps & VariantProps<typeof buttonVariants>;
 
-function CopyButton({
-  className,
-  content,
-  copied,
-  onCopiedChange,
-  onClick,
-  variant,
-  size,
-  delay = 3000,
-  ...props
-}: CopyButtonProps) {
-  const [isCopied, setIsCopied] = useControlledState({
-    value: copied,
-    onChange: onCopiedChange,
-  });
-
-  const handleCopy = React.useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      onClick?.(e);
-      if (copied) return;
-      if (content) {
-        navigator.clipboard
-          .writeText(content)
-          .then(() => {
-            setIsCopied(true);
-            onCopiedChange?.(true, content);
-            setTimeout(() => {
-              setIsCopied(false);
-              onCopiedChange?.(false);
-            }, delay);
-          })
-          .catch((error) => {
-            console.error('Error copying command', error);
-          });
-      }
-    },
-    [onClick, copied, content, setIsCopied, onCopiedChange, delay],
-  );
-
-  const Icon = isCopied ? CheckIcon : CopyIcon;
-
+function Button({ className, variant, size, ...props }: ButtonProps) {
   return (
     <ButtonPrimitive
-      data-slot="copy-button"
       className={cn(buttonVariants({ variant, size, className }))}
-      onClick={handleCopy}
       {...props}
-    >
-      <AnimatePresence mode="popLayout">
-        <motion.span
-          key={isCopied ? 'check' : 'copy'}
-          data-slot="copy-button-icon"
-          initial={{ scale: 0, opacity: 0.4, filter: 'blur(4px)' }}
-          animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
-          exit={{ scale: 0, opacity: 0.4, filter: 'blur(4px)' }}
-          transition={{ duration: 0.25 }}
-        >
-          <Icon />
-        </motion.span>
-      </AnimatePresence>
-    </ButtonPrimitive>
+    />
   );
 }
 
-export { CopyButton, buttonVariants, type CopyButtonProps };
-
+export { Button, buttonVariants, type ButtonProps };
 
 
 type ButtonPrimitiveProps = WithAsChild<
@@ -231,35 +170,3 @@ export {
   type DOMMotionProps,
   type AnyProps,
 };
-
-interface CommonControlledStateProps<T> {
-  value?: T;
-  defaultValue?: T;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function useControlledState<T, Rest extends any[] = []>(
-  props: CommonControlledStateProps<T> & {
-    onChange?: (value: T, ...args: Rest) => void;
-  },
-): readonly [T, (next: T, ...args: Rest) => void] {
-  const { value, defaultValue, onChange } = props;
-
-  const [state, setInternalState] = React.useState<T>(
-    value !== undefined ? value : (defaultValue as T),
-  );
-
-  React.useEffect(() => {
-    if (value !== undefined) setInternalState(value);
-  }, [value]);
-
-  const setState = React.useCallback(
-    (next: T, ...args: Rest) => {
-      setInternalState(next);
-      onChange?.(next, ...args);
-    },
-    [onChange],
-  );
-
-  return [state, setState] as const;
-}
