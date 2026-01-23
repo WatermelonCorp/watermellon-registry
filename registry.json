@@ -1747,6 +1747,101 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "business-management",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/business-management/app-sidebar.tsx",
+          "target": "components/watermelon/dashboards/business-management/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/dashboardLayout.tsx",
+          "target": "components/watermelon/dashboards/business-management/dashboardLayout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/timelineView.tsx",
+          "target": "components/watermelon/dashboards/business-management/timelineView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/demo.tsx",
+          "target": "components/watermelon/dashboards/business-management/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/avatar.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/button.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/card.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/chart.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/input.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/select.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/select.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/separator.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/sheet.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/sidebar.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/skeleton.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/switch.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/switch.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/table.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/ui/tooltip.tsx",
+          "target": "components/watermelon/dashboards/business-management/ui/tooltip.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
