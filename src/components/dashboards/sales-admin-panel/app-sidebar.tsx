@@ -24,7 +24,7 @@ Sidebar,
   SidebarHeader,
   SidebarMenuButton,
   SidebarRail,
-} from "./ui/sidebar";
+} from "@/components/ui/sidebar";
 import { NavReporting } from "./nav-reporting";
 import { NavSecondary } from "./nav-secondary";
 import { NavTeams } from "./nav-teams";

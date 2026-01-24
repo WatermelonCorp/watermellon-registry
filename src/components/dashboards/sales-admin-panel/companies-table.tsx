@@ -7,11 +7,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./ui/table";
-import { Badge } from "./ui/badge";
-import { Checkbox } from "./ui/checkbox";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Separator } from "./ui/separator";
+} from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 import { Calendar, Plus } from "lucide-react";
 
 const companiesData = [
@@ -226,17 +226,17 @@ const companiesData = [
 ];
 
 const segmentColors: Record<string, string> = {
-  Enterprise: "border-blue-400/40 bg-blue-400/20 text-blue-200",
-  Upsell: "border-purple-400/40 bg-purple-400/20 text-purple-200",
-  "New Logo": "border-emerald-400/40 bg-emerald-400/20 text-emerald-200",
-  Renewal: "border-emerald-400/40 bg-emerald-400/20 text-emerald-200",
-  Expansion: "border-emerald-400/40 bg-emerald-400/20 text-emerald-200",
-  Pilot: "border-orange-400/40 bg-orange-400/20 text-orange-200",
-  Strategic: "border-red-400/40 bg-red-400/20 text-red-200",
-  SMB: "border-yellow-400/40 bg-yellow-400/20 text-yellow-200",
-  "Mid-Market": "border-emerald-400/40 bg-emerald-400/20 text-emerald-200",
-  "Land & Expand": "border-emerald-400/40 bg-emerald-400/20 text-emerald-200",
-  "Co-Sell": "border-emerald-400/40 bg-emerald-400/20 text-emerald-200",
+  Enterprise: "border-blue-400/40 bg-blue-400/20 text-blue-500 dark:text-blue-200",
+  Upsell: "border-purple-400/40 bg-purple-400/20 text-purple-500 dark:text-purple-200",
+  "New Logo": "border-emerald-400/40 bg-emerald-400/20 text-emerald-500 dark:text-emerald-200",
+  Renewal: "border-emerald-400/40 bg-emerald-400/20 text-emerald-500 dark:text-emerald-200",
+  Expansion: "border-emerald-400/40 bg-emerald-400/20 text-emerald-500 dark:text-emerald-200",
+  Pilot: "border-orange-400/40 bg-orange-400/20 text-orange-500 dark:text-orange-200",
+  Strategic: "border-red-400/40 bg-red-400/20 text-red-500 dark:text-red-200",
+  SMB: "border-yellow-400/40 bg-yellow-400/20 text-yellow-500 dark:text-yellow-200",
+  "Mid-Market": "border-emerald-400/40 bg-emerald-400/20 text-emerald-500 dark:text-emerald-200",
+  "Land & Expand": "border-emerald-400/40 bg-emerald-400/20 text-emerald-500 dark:text-emerald-200",
+  "Co-Sell": "border-emerald-400/40 bg-emerald-400/20 text-emerald-500 dark:text-emerald-200",
 };
 
 function WinProbabilityBar({ value }: { value: number }) {
@@ -260,7 +260,7 @@ function WinProbabilityBar({ value }: { value: number }) {
           return <div key={i} className={`w-0.5 h-full ${barColor}`} />;
         })}
       </div>
-      <span className="text-sm text-neutral-300">{value}%</span>
+      <span className="text-sm text-muted-foreground">{value}%</span>
     </div>
   );
 }
@@ -312,12 +312,12 @@ export function CompaniesTable() {
           {companiesData.map((company) => (
             <TableRow
               key={company.id}
-              className="border-b border-neutral-800 hover:bg-neutral-900/50"
+              className="border-b hover:bg-primary/10"
             >
               <TableCell>
                 <Checkbox />
               </TableCell>
-              <TableCell className="font-medium text-white">
+              <TableCell className="font-medium">
                 {company.name}
               </TableCell>
               <TableCell className="flex items-center gap-2">
@@ -339,15 +339,15 @@ export function CompaniesTable() {
                       {company.accountOwner.name.charAt(0)}
                     </AvatarFallback>
                   </Avatar>
-                  <span className="text-sm text-neutral-300">
+                  <span className="text-sm text-muted-foreground">
                     {company.accountOwner.name}
                   </span>
                 </div>
               </TableCell>
-              <TableCell className="text-neutral-300">
+              <TableCell className="text-muted-foreground">
                 {company.openDeals}
               </TableCell>
-              <TableCell className="text-neutral-300">
+              <TableCell className="text-muted-foreground">
                 ${company.pipelineValue.toLocaleString()}
               </TableCell>
               <TableCell>
@@ -356,7 +356,7 @@ export function CompaniesTable() {
               <TableCell>
                 <ActivityTrend />
               </TableCell>
-              <TableCell className="text-neutral-400">
+              <TableCell className="text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Calendar className="size-4 text-neutral-500" />
                   <span className="text-sm">
@@ -375,7 +375,7 @@ export function CompaniesTable() {
           ))}
         </TableBody>
       </Table>
-      <div className="border-t border-neutral-800 bg-neutral-900/50 w-full flex text-sm text-neutral-600 px-4">
+      <div className="border-t bg-neutral-50 dark:bg-neutral-900/50 w-full flex text-sm text-neutral-600 px-4">
         <div className="flex-1 flex items-center gap-2 border-r py-2.5">
           <span className="font-medium">{totalCompanies}</span>
           <span> Companies in view</span>
@@ -383,14 +383,14 @@ export function CompaniesTable() {
         <div className="flex-1 flex items-center gap-2 border-r pl-3 py-2.5">
           <Plus className="size-3.5" />
           <span>Sum of pipeline</span>
-          {/* <span className="text-neutral-300">
+          {/* <span className="text-muted-foreground">
             ${(sumPipeline / 1000000).toFixed(2)}M
           </span> */}
         </div>
         <div className="flex-1 flex items-center gap-2 border-r pl-3 py-2.5">
           <Plus className="size-3.5" />
           <span>Avg win probability</span>
-          {/* <span className="text-neutral-300">{avgWinProbability}%</span> */}
+          {/* <span className="text-muted-foreground">{avgWinProbability}%</span> */}
         </div>
         <div className="flex-1 flex items-center justify-start gap-2 pl-3 hover:text-neutral-200">
           <Plus className="size-3.5" /> 

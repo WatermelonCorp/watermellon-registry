@@ -14,7 +14,9 @@ import {
   ReceiptText,
 } from "lucide-react";
 
-import { SearchForm } from "@/components/search-form";
+import { cn } from "@/lib/utils";
+
+import { SearchForm } from "./search-form";
 import {
   Sidebar,
   SidebarContent,
@@ -103,8 +105,8 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
   return (
-    <Sidebar {...props} className="px-2">
-      <SidebarHeader className="border-b px-0 border-neutral-200">
+    <Sidebar {...props} className={cn("px-2", props.className)}>
+      <SidebarHeader className="border-b px-0">
         <SidebarMenuButton
           className="
             flex items-center justify-center gap-2 px-8 py-3 font-sans text-base font-medium text-white/90 hover:text-white tracking-tight rounded-xl h-12 bg-gradient-to-b from-[#279596] to-[#318A8B] shadow-[inset_0_4px_6px_rgba(255,255,255,0.4),inset_0_-4px_6px_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.1)]
@@ -118,7 +120,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SearchForm />
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title} className="px-0 border-b-[1.5px]">
-            <SidebarGroupLabel className="text-[15px] -ml-1.5 text-neutral-500 tracking-tight">{item.title}</SidebarGroupLabel>
+            <SidebarGroupLabel className="text-[15px] -ml-1.5 text-muted-foreground tracking-tight">{item.title}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {item.items.map((item) => (

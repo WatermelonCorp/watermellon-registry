@@ -2,7 +2,7 @@
 
 import { Home, Users } from "lucide-react";
 import { IconRail, SecondarySidebar } from "./app-sidebar";
-import { TooltipProvider } from "./ui/tooltip";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";

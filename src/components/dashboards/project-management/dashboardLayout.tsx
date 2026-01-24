@@ -1,5 +1,5 @@
 import { AppSidebar } from "./app-sidebar";
-import { SidebarInset, SidebarProvider } from "./ui/sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 
 export const DashboardLayout = ({

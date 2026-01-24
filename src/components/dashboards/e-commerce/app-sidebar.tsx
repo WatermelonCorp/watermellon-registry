@@ -24,7 +24,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "./ui/sidebar";
+} from "@/components/ui/sidebar";
 import { ChevronsUpDown } from "lucide-react";
 
 const data = {
@@ -64,19 +64,19 @@ const data = {
   navSecondary: [
     {
       name: "Processing",
-      url: "/orders/processing",
+      url: "#",
       icon: IconUserCheck,
       badge: 12,
     },
     {
       name: "New Customers",
-      url: "/orders/new",
+      url: "#",
       icon: IconArrowRight,
       badge: 3,
     },
     {
       name: "Refunds",
-      url: "/orders/refunds",
+      url: "#",
       icon: IconKey,
     },
   ],
@@ -99,7 +99,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuButton>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent bg-white shadow data-[state=open]:text-sidebar-accent-foreground h-15 px-3"
+              className="data-[state=open]:bg-sidebar-accent bg-white dark:bg-black shadow data-[state=open]:text-sidebar-accent-foreground h-15 px-3"
             >
               <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-md">
                 <IconBrandAppgallery stroke={2} />
@@ -112,7 +112,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   30 PRODUCTS
                 </span>
               </div>
-              <ChevronsUpDown className="ml-auto text-neutral-500" />
+              <ChevronsUpDown className="ml-auto text-muted-foreground" />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

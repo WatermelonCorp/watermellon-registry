@@ -8,8 +8,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "./ui/sidebar";
-import { Button } from "./ui/button";
+} from "@/components/ui/sidebar";
+import { Button } from "@/components/ui/button";
 
 export function Billing() {
   return (

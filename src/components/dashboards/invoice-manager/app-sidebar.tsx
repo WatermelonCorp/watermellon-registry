@@ -21,7 +21,9 @@ import {
   Settings,
 } from "lucide-react"
 
-import { TeamSwitcher } from "@/components/team-switcher"
+import { cn } from "@/lib/utils"
+
+import { TeamSwitcher } from "./team-switcher"
 import {
   Sidebar,
   SidebarContent,
@@ -174,7 +176,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props} className="bg-background">
+    <Sidebar {...props} className={cn("bg-background", props.className)}>
       <SidebarHeader className="border-b">
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
