@@ -1,21 +1,21 @@
 "use client";
 
-import { Button } from "./ui/button";
+import { Button } from "@/component@/components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from "@/component@/components/ui/select";
 import { Download, Plus } from "lucide-react";
 
 export function CompanyFilters() {
   return (
     <div className="flex items-center gap-3 p-4">
       <Select defaultValue="pipeline-value">
-        <SelectTrigger size="sm" className="w-fit text-xs  rounded-full border-y border-neutral-600 bg-neutral-800">
-          <span className="text-neutral-400 text-xs">Sort by</span>
+        <SelectTrigger size="sm" className="w-fit text-xs  rounded-full border-y border-neutral-600 bg-neutral-100 dark:bg-neutral-800">
+          <span className="text-muted-foreground text-xs">Sort by</span>
           <SelectValue placeholder="Sort by" />
         </SelectTrigger>
         <SelectContent className="bg-neutral-900 border-neutral-700">
@@ -26,8 +26,8 @@ export function CompanyFilters() {
       </Select>
 
       <Select defaultValue="all-owners">
-        <SelectTrigger size="sm" className="w-fit text-xs  rounded-full border-y border-neutral-600 bg-neutral-800">
-          <span className="text-neutral-400 text-xs">Filter</span>
+        <SelectTrigger size="sm" className="w-fit text-xs  rounded-full border-y border-neutral-600 bg-neutral-100 dark:bg-neutral-800">
+          <span className="text-muted-foreground text-xs">Filter</span>
           <SelectValue placeholder="Filter" />
         </SelectTrigger>
         <SelectContent className="bg-neutral-900 border-neutral-700">
@@ -38,8 +38,8 @@ export function CompanyFilters() {
       </Select>
 
       <Select defaultValue="any">
-        <SelectTrigger size="sm" className="w-fit text-xs  rounded-full border-y border-neutral-600 bg-neutral-800">
-            <span className="text-neutral-400 text-xs">Stage</span>
+        <SelectTrigger size="sm" className="w-fit text-xs  rounded-full border-y border-neutral-600 bg-neutral-100 dark:bg-neutral-800">
+            <span className="text-muted-foreground text-xs">Stage</span>
           <SelectValue placeholder="Stage" />
         </SelectTrigger>
         <SelectContent className="bg-neutral-900 border-neutral-700">
@@ -52,8 +52,8 @@ export function CompanyFilters() {
       </Select>
 
       <Select defaultValue="7-days">
-        <SelectTrigger size="sm" className="w-fit text-xs  rounded-full border-y border-neutral-600 bg-neutral-800">
-            <span className="text-neutral-400 text-xs">Last Activity</span>
+        <SelectTrigger size="sm" className="w-fit text-xs  rounded-full border-y border-neutral-600 bg-neutral-100 dark:bg-neutral-800">
+            <span className="text-muted-foreground text-xs">Last Activity</span>
           <SelectValue placeholder="Last Activity" />
         </SelectTrigger>
         <SelectContent className="bg-neutral-900 border-neutral-700">
@@ -67,7 +67,7 @@ export function CompanyFilters() {
       <div className="flex-1" />
 
       <button
-        className="rounded-full border-x- border-y border-neutral-600 text-neutral-300 bg-neutral-800  text-xs flex items-center gap-2 px-3 py-2"
+        className="rounded-full border-x- border-y border-neutral-600 text-muted-foreground bg-neutral-100 dark:bg-neutral-800  text-xs flex items-center gap-2 px-3 py-2"
       >
         <Download className="size-3.5" />
         Export

@@ -26,27 +26,27 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/component@/components/ui/input";
+import { Label } from "@/component@/components/ui/label";
+import { Textarea } from "@/component@/components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+} from "@/component@/components/ui/select";
+import { Avatar, AvatarFallback } from "@/component@/components/ui/avatar";
+import { Button } from "@/component@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Checkbox } from "@/components/ui/checkbox";
+} from "@/component@/components/ui/dialog";
+import { Checkbox } from "@/component@/components/ui/checkbox";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/component@/components/ui/tabs";
 
 // Integration types and data
 type Integration = {

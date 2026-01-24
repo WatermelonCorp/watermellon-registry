@@ -148,9 +148,9 @@ export const DashboardView = () => {
             return (
               <Card
                 key={metric.id}
-                className="shadow-none bg-neutral-200/60 p-1 gap-0 border border-neutral-300"
+                className="shadow-none bg-neutral-200/60 dark:bg-neutral-800 dark:bg-neutral-800 p-1 gap-0 border"
               >
-                <div className="bg-white w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-neutral-300">
+                <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border">
                   <CardHeader className="p-0 gap-1.5">
                     <CardDescription>{metric.label}</CardDescription>
                     <CardTitle className="text-3xl font-bold tabular-nums">
@@ -177,7 +177,7 @@ export const DashboardView = () => {
                 <CardFooter className="py-1.5 px-2">
                   <a
                     href="#"
-                    className="font-medium hover:underline flex items-center justify-between w-full text-neutral-700 text-sm"
+                    className="font-medium hover:underline flex items-center justify-between w-full text-muted-foreground text-sm"
                   >
                     <span>View Report</span>
                     <IconArrowNarrowRight className="size-4" />
@@ -189,8 +189,8 @@ export const DashboardView = () => {
         </div>
 
         {/* Revenue Chart */}
-        <Card className="w-2xl shadow-none bg-neutral-200/60 p-1 gap-0 border border-neutral-300">
-          <div className="bg-white w-full h-full flex flex-col rounded-lg p-5 gap-8 border border-neutral-300">
+        <Card className="w-2xl shadow-none bg-neutral-200/60 dark:bg-neutral-800 p-1 gap-0 border">
+          <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-5 gap-8 border">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <div>
                 <CardTitle>Revenue</CardTitle>
@@ -203,7 +203,7 @@ export const DashboardView = () => {
                 </div>
               </div>
               <Select defaultValue="month">
-                <SelectTrigger className="w-24 shadow-none border border-neutral-300">
+                <SelectTrigger className="w-24 shadow-none border">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -299,8 +299,8 @@ export const DashboardView = () => {
       </div>
 
       <div className="flex gap-4">
-        <Card className="flex-1 shadow-none bg-neutral-200/60 p-1 gap-0 border border-neutral-300">
-          <div className="bg-white w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-neutral-300">
+        <Card className="flex-1 shadow-none bg-neutral-200/60 dark:bg-neutral-800 p-1 gap-0 border">
+          <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <CardTitle className="text-xl font-semibold tracking-tight">
                 Recent Transaction
@@ -360,12 +360,12 @@ export const DashboardView = () => {
           </div>
         </Card>
 
-        <Card className="w-xl shadow-none bg-neutral-200/60 p-1 gap-0 border border-neutral-300">
-          <div className="bg-white w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-neutral-300">
+        <Card className="w-xl shadow-none bg-neutral-200/60 dark:bg-neutral-800 p-1 gap-0 border">
+          <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <CardTitle>Traffic Channel</CardTitle>
               <Select defaultValue="all">
-                <SelectTrigger className="w-24 shadow-none border border-neutral-300">
+                <SelectTrigger className="w-24 shadow-none border">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

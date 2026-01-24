@@ -3,10 +3,10 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-} from "./ui/breadcrumb";
-// import { Separator } from "./ui/separator";
-// import { SidebarTrigger } from "./ui/sidebar";
-import { Badge } from "./ui/badge";
+} from "@/components/ui/breadcrumb";
+// import { Separator } from "@/components/ui/separator";
+// import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Badge } from "@/components/ui/badge";
 import { Bell, Search } from "lucide-react";
 
 export const SiteHeader = () => {

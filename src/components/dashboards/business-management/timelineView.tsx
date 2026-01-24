@@ -6,7 +6,7 @@ import {
     CardContent,
     CardHeader,
     CardTitle,
-} from "./ui/card";
+} from "@/component@/components/ui/card";
 import {
     Table,
     TableBody,
@@ -14,22 +14,22 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "./ui/table";
+} from "@/component@/components/ui/table";
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./ui/select";
-import { Switch } from "./ui/switch";
-import { Button } from "./ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+} from "@/component@/components/ui/select";
+import { Switch } from "@/component@/components/ui/switch";
+import { Button } from "@/component@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/component@/components/ui/avatar";
 import {
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
-} from "./ui/chart";
+} from "@/component@/components/ui/chart";
 import {
     ComposedChart,
     Bar,
@@ -72,8 +72,8 @@ import {
     Zap,
     ChartColumnBig,
 } from "lucide-react";
-import { Input } from "./ui/input";
-import { Separator } from "./ui/separator";
+import { Input } from "@/component@/components/ui/input";
+import { Separator } from "@/component@/components/ui/separator";
 
 // Sample data for the metrics cards
 const metricsData: {

@@ -3,13 +3,13 @@ import { SiteHeader } from "./site-header"
 import {
     SidebarInset,
     SidebarProvider,
-} from "./ui/sidebar"
+} from "@/components/ui/sidebar"
 
 
 export const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <SidebarProvider>
-            <AppSidebar />
+        <SidebarProvider className="w-full relative h-full">
+            <AppSidebar className="absolute h-full" />
             <SidebarInset>
                 <SiteHeader />
                 <main className="flex-1">

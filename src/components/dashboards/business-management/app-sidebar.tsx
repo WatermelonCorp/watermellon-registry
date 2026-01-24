@@ -37,8 +37,8 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarTrigger,
-} from "./ui/sidebar"
-import { Button } from "./ui/button"
+} from "@/component@/components/ui/sidebar"
+import { Button } from "@/component@/components/ui/button"
 // import { usePathname } from "next/navigation"
 
 const data = {

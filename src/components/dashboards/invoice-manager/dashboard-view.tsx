@@ -46,7 +46,7 @@ const StatusBadge = ({ status }: { status: string }) => {
 
     return (
         <span
-            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${statusStyles[status] || "bg-neutral-500/20 text-neutral-400 border-neutral-500/30"
+            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${statusStyles[status] || "bg-neutral-500/20 text-muted-foreground border-neutral-500/30"
                 }`}
         >
             {status}
@@ -102,7 +102,7 @@ export const InvoiceManagerView = () => {
 
     return (
         <div className="w-full h-full flex flex-col">
-            <div className="flex items-center justify-between px-2 py-2.5 bg-neutral-900 border-b border-white/10">
+            <div className="flex items-center justify-between px-2 py-2.5 bg-neutral-100 dark:bg-neutral-900 border-b ">
                 <div className="flex items-center gap-2">
                     <button className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
                         <ChevronLeft className="size-4" />
@@ -112,44 +112,44 @@ export const InvoiceManagerView = () => {
                 <div className="flex items-center gap-2">
                     <Button
                         size="sm"
-                        className="text-xs bg-neutral-800/60 text-neutral-400 rounded hover:bg-neutral-800/70"
+                        className="text-xs"
                     >
                         Import & Export
                     </Button>
                     <Button
                         size="sm"
-                        className="text-xs bg-neutral-800/60 text-neutral-400 rounded hover:bg-neutral-800/70"
+                        className="text-xs"
                     >
                         <Plus className="size-3.5" />
                         Add New
                     </Button>
                     <Button
                         size="sm"
-                        className="text-xs bg-neutral-800/60 text-neutral-400 rounded hover:bg-neutral-800/70"
+                        className="text-xs"
                     >
                         Share
                     </Button>
                 </div>
             </div>
 
-            <div className="flex items-center justify-between px-2 py-2.5 border-b border-white/10">
+            <div className="flex items-center justify-between px-2 py-2.5 border-b">
                 <div className="flex items-center gap-3">
                     <Button
                         size="sm"
-                        className="text-xs bg-neutral-800/60 text-neutral-400 rounded hover:bg-neutral-700 gap-1.5"
+                        className="text-xs gap-1.5"
                     >
                         <RefreshCw className="size-3.5" />
                         Update
                     </Button>
                     {selectedCount > 0 && (
-                        <span className="text-xs bg-neutral-800/60 text-neutral-400 px-2.5 py-2 rounded font-medium">
+                        <span className="text-xs bg-accent px-2.5 py-2 rounded font-medium">
                             {selectedCount} Selected
                         </span>
                     )}
                     <Button
                         size="sm"
                         variant="ghost"
-                        className="text-xs text-neutral-400 bg-neutral-800/60 rounded hover:text-neutral-200 gap-1.5"
+                        className="text-xs"
                     >
                         <Filter className="size-3.5" />
                         Filter
@@ -157,12 +157,12 @@ export const InvoiceManagerView = () => {
                     <Button
                         size="sm"
                         variant="ghost"
-                        className="text-xs text-neutral-400 bg-neutral-800/60 rounded hover:text-neutral-200 gap-1.5"
+                        className="text-xs"
                     >
                         <ArrowUpDown className="size-3.5" />
                         Sort
                     </Button>
-                    <span className="text-xs text-neutral-400 font-medium">80 Results</span>
+                    <span className="text-xs text-muted-foreground font-medium">80 Results</span>
                 </div>
                 <div className="flex items-center gap-2">
                     <div className="relative">
@@ -170,7 +170,7 @@ export const InvoiceManagerView = () => {
                         <input
                             type="text"
                             placeholder="Search for the client"
-                            className="h-8 pl-9 pr-3 text-xs bg-neutral-800/60 border border-white/10 text-neutral-300 placeholder:text-neutral-500 focus:outline-none focus:ring-1 focus:ring-neutral-700 w-56 rounded"
+                            className="h-8 pl-9 pr-3 text-xs bg-input border  text-muted-foreground focus:outline-none focus:ring-1 focus:ring-neutral-200 dark:focus:ring-neutral-800  w-56 rounded"
                         />
                     </div>
                 </div>
@@ -179,8 +179,8 @@ export const InvoiceManagerView = () => {
             <div className="flex-1 overflow-auto">
                 <Table>
                     <TableHeader>
-                        <TableRow className="border-white/10 bg-neutral-950">
-                            <TableHead className="text-xs text-neutral-400 font-medium border-r border-white/10">
+                        <TableRow className="bg-white dark:bg-neutral-900">
+                            <TableHead className="text-xs text-muted-foreground font-medium border-r ">
                                 <div className="flex items-center gap-3">
                                     <GripVertical className="size-4 text-neutral-600" />
                                     <Checkbox
@@ -191,23 +191,23 @@ export const InvoiceManagerView = () => {
                                     <span>Company</span>
                                 </div>
                             </TableHead>
-                            <TableHead className="text-xs text-neutral-400 font-medium border-r border-white/10">Client Name</TableHead>
-                            <TableHead className="text-xs text-neutral-400 font-medium border-r border-white/10">Deal Value</TableHead>
-                            <TableHead className="text-xs text-neutral-400 font-medium border-r border-white/10">Business Report</TableHead>
-                            <TableHead className="text-xs text-neutral-400 font-medium border-r border-white/10">Invoice Date</TableHead>
-                            <TableHead className="text-xs text-neutral-400 font-medium border-r border-white/10">Status</TableHead>
-                            <TableHead className="text-xs text-neutral-400 font-medium">Category</TableHead>
+                            <TableHead className="text-xs text-muted-foreground font-medium border-r ">Client Name</TableHead>
+                            <TableHead className="text-xs text-muted-foreground font-medium border-r ">Deal Value</TableHead>
+                            <TableHead className="text-xs text-muted-foreground font-medium border-r ">Business Report</TableHead>
+                            <TableHead className="text-xs text-muted-foreground font-medium border-r ">Invoice Date</TableHead>
+                            <TableHead className="text-xs text-muted-foreground font-medium border-r ">Status</TableHead>
+                            <TableHead className="text-xs text-muted-foreground font-medium">Category</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody className="[&_tr:last-child]:border-b">
                         {invoiceData.map((row) => (
                             <TableRow
                                 key={row.id}
-                                className={`border-white/10 hover:bg-neutral-800/60 border-b ${selectedRows.includes(row.id) ? "bg-neutral-900/30" : ""
+                                className={` hover:bg-accent dark:hover:bg-neutral-800/60  border-b ${selectedRows.includes(row.id) ? "bg-neutral-900/30" : ""
                                     }`}
                                 data-state={selectedRows.includes(row.id) ? "selected" : undefined}
                             >
-                                <TableCell className="border-r border-white/10">
+                                <TableCell className="border-r ">
                                     <div className="flex items-center gap-3">
                                         <GripVertical className="size-4 text-neutral-600 cursor-grab" />
                                         <Checkbox
@@ -215,10 +215,10 @@ export const InvoiceManagerView = () => {
                                             onCheckedChange={() => toggleSelectRow(row.id)}
                                             className="border-neutral-600"
                                         />
-                                        <span className="text-xs text-neutral-300 font-medium">{row.company}</span>
+                                        <span className="text-xs text-muted-foreground font-medium">{row.company}</span>
                                     </div>
                                 </TableCell>
-                                <TableCell className="border-r border-white/10">
+                                <TableCell className="border-r ">
                                     <div className="flex items-center gap-2">
                                         <Image
                                             src={`https://avatar.vercel.sh/${row.clientName}`}
@@ -227,22 +227,22 @@ export const InvoiceManagerView = () => {
                                             height={22.5}
                                             className=" rounded-full"
                                         />
-                                        <span className="text-xs text-neutral-300">{row.clientName}</span>
+                                        <span className="text-xs text-muted-foreground">{row.clientName}</span>
                                     </div>
                                 </TableCell>
-                                <TableCell className="text-xs text-neutral-300 border-r border-white/10">
+                                <TableCell className="text-xs text-muted-foreground border-r ">
                                     {row.dealValue}
                                 </TableCell>
-                                <TableCell className="text-xs text-neutral-400 max-w-xs truncate border-r border-white/10">
+                                <TableCell className="text-xs text-muted-foreground max-w-xs truncate border-r ">
                                     {row.businessReport}
                                 </TableCell>
-                                <TableCell className="text-xs text-neutral-400 border-r border-white/10">
+                                <TableCell className="text-xs text-muted-foreground border-r ">
                                     {row.invoiceDate}
                                 </TableCell>
-                                <TableCell className="border-r border-white/10">
+                                <TableCell className="border-r ">
                                     <StatusBadge status={row.status} />
                                 </TableCell>
-                                <TableCell className="text-xs text-neutral-400">
+                                <TableCell className="text-xs text-muted-foreground">
                                     {row.category}
                                 </TableCell>
                             </TableRow>
@@ -251,14 +251,14 @@ export const InvoiceManagerView = () => {
                 </Table>
             </div>
 
-            <div className="flex items-center justify-between px-2 py-2 border-white/10">
-                <span className="text-xs text-neutral-400 min-w-fit font-medium">1-20 of 300</span>
+            <div className="flex items-center justify-between px-2 py-2 ">
+                <span className="text-xs text-muted-foreground min-w-fit font-medium">1-20 of 300</span>
 
                 <Pagination>
                     <PaginationContent className="gap-1">
                         <PaginationItem>
                             <button
-                                className="size-7 flex items-center justify-center rounded text-neutral-400 hover:bg-neutral-800 disabled:opacity-50"
+                                className="size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-neutral-800 disabled:opacity-50"
                                 disabled={currentPage === 1}
                                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                             >
@@ -276,7 +276,7 @@ export const InvoiceManagerView = () => {
                                     isActive={currentPage === page}
                                     className={`size-7 text-xs rounded ${currentPage === page
                                         ? "bg-neutral-800 text-neutral-200"
-                                        : "text-neutral-500 hover:bg-neutral-800/50 hover:text-neutral-300"
+                                        : "text-neutral-500 hover:bg-neutral-800/50 hover:text-muted-foreground"
                                         }`}
                                 >
                                     {page}
@@ -285,7 +285,7 @@ export const InvoiceManagerView = () => {
                         ))}
                         <PaginationItem>
                             <button
-                                className="size-7 flex items-center justify-center rounded text-neutral-400 hover:bg-neutral-800"
+                                className="size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-neutral-800"
                                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                             >
                                 <ChevronRight className="size-4" />
@@ -295,15 +295,15 @@ export const InvoiceManagerView = () => {
                 </Pagination>
 
                 <div className="flex items-center gap-2">
-                    <span className="text-xs text-neutral-400 font-medium">Row/Page:</span>
+                    <span className="text-xs text-muted-foreground font-medium">Row/Page:</span>
                     <Select value={String(rowsPerPage)} onValueChange={(v) => setRowsPerPage(Number(v))}>
-                        <SelectTrigger size="sm" className="h-5 w-fit text-xs px-2.5 bg-neutral-800/60 border-none text-neutral-300">
+                        <SelectTrigger size="sm" className="h-5 w-fit text-xs px-2.5 bg-neutral-800/60 border-none text-muted-foreground">
                             <SelectValue />
                         </SelectTrigger>
-                        <SelectContent className="bg-neutral-900 border-white/10">
-                            <SelectItem value="7" className="text-xs text-neutral-300">7 of 12</SelectItem>
-                            <SelectItem value="10" className="text-xs text-neutral-300">10 of 12</SelectItem>
-                            <SelectItem value="20" className="text-xs text-neutral-300">20 of 12</SelectItem>
+                        <SelectContent className="bg-neutral-900 ">
+                            <SelectItem value="7" className="text-xs text-muted-foreground">7 of 12</SelectItem>
+                            <SelectItem value="10" className="text-xs text-muted-foreground">10 of 12</SelectItem>
+                            <SelectItem value="20" className="text-xs text-muted-foreground">20 of 12</SelectItem>
                         </SelectContent>
                     </Select>
                 </div>

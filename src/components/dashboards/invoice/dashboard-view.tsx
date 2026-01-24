@@ -84,11 +84,11 @@ export const InvoiceView = () => {
     <div className="flex flex-col h-full w-full px-2 py-4">
       <div className="flex gap-6 h-full w-full overflow-y-auto">
         {/* Left Side - Form */}
-        <div className="flex-1 p-4 border-[1.5px] rounded-lg">
-          <div className="space-y-6">
+        <div className="flex-1 p-4 border-[1.5px] rounded-lg overflow-y-auto">
+          <div className="space-y-6 ">
             {/* Header Section */}
             <div>
-              <h3 className="font-semibold mb-3 text-neutral-600 tracking-tight">
+              <h3 className="font-semibold mb-3 text-muted-foreground tracking-tight">
                 Invoice Number
               </h3>
               <Input
@@ -103,12 +103,12 @@ export const InvoiceView = () => {
 
             {/* Company Details */}
             <div>
-              <h3 className="font-semibold mb-3 text-neutral-600 tracking-tight">
+              <h3 className="font-semibold mb-3 text-muted-foreground tracking-tight">
                 Company Details
               </h3>
               <div className="space-y-3 p-3 rounded-lg border">
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Company Name
                   </label>
                   <Input
@@ -121,7 +121,7 @@ export const InvoiceView = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Company Email
                   </label>
                   <Input
@@ -138,12 +138,12 @@ export const InvoiceView = () => {
 
             {/* Client Details */}
             <div>
-              <h3 className="font-semibold mb-3 text-neutral-600 tracking-tight">
+              <h3 className="font-semibold mb-3 text-muted-foreground tracking-tight">
                 Billed By
               </h3>
               <div className="space-y-3  p-3 rounded-lg border">
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Name
                   </label>
                   <Input
@@ -156,7 +156,7 @@ export const InvoiceView = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Email
                   </label>
                   <Input
@@ -169,7 +169,7 @@ export const InvoiceView = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Address
                   </label>
                   <Input
@@ -186,12 +186,12 @@ export const InvoiceView = () => {
 
             {/* Billed To */}
             <div>
-              <h3 className="font-semibold mb-3 text-neutral-600 tracking-tight">
+              <h3 className="font-semibold mb-3 text-muted-foreground tracking-tight">
                 Billed To
               </h3>
               <div className="space-y-3  p-3 rounded-lg border">
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Company
                   </label>
                   <Input
@@ -204,7 +204,7 @@ export const InvoiceView = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Email
                   </label>
                   <Input
@@ -217,7 +217,7 @@ export const InvoiceView = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Address
                   </label>
                   <Input
@@ -234,12 +234,12 @@ export const InvoiceView = () => {
 
             {/* Dates */}
             <div>
-              <h3 className="font-semibold mb-3 text-neutral-600 tracking-tight">
+              <h3 className="font-semibold mb-3 text-muted-foreground tracking-tight">
                 Dates
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Date Issued
                   </label>
                   <Input
@@ -252,7 +252,7 @@ export const InvoiceView = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-neutral-600 mb-1 block">
+                  <label className="text-xs text-muted-foreground mb-1 block">
                     Due Date
                   </label>
                   <Input
@@ -269,7 +269,7 @@ export const InvoiceView = () => {
 
             {/* Items */}
             <div>
-              <h3 className="font-semibold mb-3 text-neutral-600 tracking-tight">
+              <h3 className="font-semibold mb-3 text-muted-foreground tracking-tight">
                 Invoice Items
               </h3>
               <div className="space-y-3">
@@ -285,7 +285,7 @@ export const InvoiceView = () => {
                     />
                     <div className="grid grid-cols-3 gap-2">
                       <div>
-                        <label className="text-xs text-neutral-600 mb-1 block">
+                        <label className="text-xs text-muted-foreground mb-1 block">
                           Qty
                         </label>
                         <Input
@@ -298,7 +298,7 @@ export const InvoiceView = () => {
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-neutral-600 mb-1 block">
+                        <label className="text-xs text-muted-foreground mb-1 block">
                           Cost
                         </label>
                         <Input
@@ -311,7 +311,7 @@ export const InvoiceView = () => {
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-neutral-600 mb-1 block">
+                        <label className="text-xs text-muted-foreground mb-1 block">
                           Total
                         </label>
                         <Input
@@ -366,7 +366,7 @@ export const InvoiceView = () => {
 
               <div className="grid grid-cols-2 gap-8 mb-8">
                 <div>
-                  <h3 className="text-sm  font-semibold text-neutral-600 mb-3">
+                  <h3 className="text-sm  font-semibold text-muted-foreground mb-3">
                     Billed by:
                   </h3>
                   <div className="text-sm">
@@ -380,15 +380,15 @@ export const InvoiceView = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-neutral-600 mb-3">
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-3">
                     Billed to:
                   </h3>
                   <div className="text-sm">
                     <p className="font-semibold text-neutral-900">
                       {invoice.billedToCompany}
                     </p>
-                    <p className="text-neutral-600">{invoice.billedToEmail}</p>
-                    <p className="text-neutral-600">
+                    <p className="text-muted-foreground">{invoice.billedToEmail}</p>
+                    <p className="text-muted-foreground">
                       {invoice.billedToAddress}
                     </p>
                   </div>
@@ -397,7 +397,7 @@ export const InvoiceView = () => {
 
               <div className="grid grid-cols-2 gap-8 mb-8">
                 <div>
-                  <h3 className="text-sm font-semibold text-neutral-600 mb-2">
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-2">
                     Date Issued:
                   </h3>
                   <p className="text-neutral-900 font-medium text-sm">
@@ -405,7 +405,7 @@ export const InvoiceView = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-neutral-600 mb-2">
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-2">
                     Due Date:
                   </h3>
                   <p className="text-neutral-900 font-medium text-sm">
@@ -419,16 +419,16 @@ export const InvoiceView = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-neutral-200">
-                      <th className="text-left text-sm font-semibold text-neutral-600 pb-2">
+                      <th className="text-left text-sm font-semibold text-muted-foreground pb-2">
                         Item
                       </th>
-                      <th className="text-center text-sm font-semibold text-neutral-600 pb-2">
+                      <th className="text-center text-sm font-semibold text-muted-foreground pb-2">
                         QTY
                       </th>
-                      <th className="text-right text-sm font-semibold text-neutral-600 pb-2">
+                      <th className="text-right text-sm font-semibold text-muted-foreground pb-2">
                         Cost
                       </th>
-                      <th className="text-right text-sm font-semibold text-neutral-600 pb-2">
+                      <th className="text-right text-sm font-semibold text-muted-foreground pb-2">
                         Total
                       </th>
                     </tr>
@@ -459,7 +459,7 @@ export const InvoiceView = () => {
             <div className="flex justify-end ">
               <div className="w-64">
                 <div className="flex justify-between py-2 border-b-2 border-neutral-200">
-                  <span className="text-sm text-neutral-600">Subtotal</span>
+                  <span className="text-sm text-muted-foreground">Subtotal</span>
                   <span className="text-sm text-neutral-900 font-medium">
                     ${subtotal.toFixed(2)}
                   </span>
