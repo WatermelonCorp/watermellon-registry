@@ -9,11 +9,9 @@ import {
   FileText,
   Frame,
   Home,
-  LifeBuoy,
   ListTodo,
   Map,
   PieChart,
-  Send,
   Settings,
   Rocket,
   Trello,
@@ -22,8 +20,8 @@ import {
   Zap,
 } from "lucide-react";
 
-import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
+import { NavMain } from "./nav-main";
+import { NavProjects } from "./nav-projects";
 import {
   Sidebar,
   SidebarContent,
@@ -32,7 +30,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/component@/components/ui/sidebar";
+} from "@/components/ui/sidebar";
 import { SearchForm } from "./search-form";
 import { NavSupport } from "./nav-support";
 import { NavApps } from "./nav-apps";

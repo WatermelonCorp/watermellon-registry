@@ -306,11 +306,6 @@ function FolderIconPrimitive({
   );
 }
 
-type FolderLabelPrimitiveProps = React.ComponentProps<'span'>;
-
-function FolderLabelPrimitive(props: FolderLabelPrimitiveProps) {
-  return <span data-slot="folder-label" {...props} />;
-}
 
 type FileHighlightPrimitiveProps = HighlightItemProps;
 

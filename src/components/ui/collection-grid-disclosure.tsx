@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, ReactNode, FC } from "react";
-import { motion, AnimatePresence, LayoutGroup, Transition } from "framer-motion";
+import { useState, useEffect, type ReactNode, type FC } from "react";
+import { motion, AnimatePresence, LayoutGroup, type Transition } from "framer-motion";
 import { ChevronRight, X, Coffee, Sun, Moon } from "lucide-react";
 import { FaCarrot, FaGraduationCap, FaPills, FaPlug } from "react-icons/fa";
 import { TbHomeFilled, TbPlayerPlayFilled } from "react-icons/tb";

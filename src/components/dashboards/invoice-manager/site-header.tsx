@@ -30,7 +30,7 @@ export const SiteHeader = () => {
     const segments = pathname.split("/").filter(Boolean)
 
     // Build breadcrumb items with cumulative paths
-    const breadcrumbItems = segments.map((segment, index) => {
+    const breadcrumbItems = segments.map((segment:any, index:any) => {
         const href = "/" + segments.slice(0, index + 1).join("/")
         const label = formatBreadcrumb(segment)
         const isLast = index === segments.length - 1
@@ -53,7 +53,7 @@ export const SiteHeader = () => {
 
                 <Breadcrumb>
                     <BreadcrumbList>
-                        {breadcrumbItems.map((item, index) => (
+                        {breadcrumbItems.map((item:any, index:any) => (
                             <React.Fragment key={item.href}>
                                 {index > 0 && (
                                     <BreadcrumbSeparator>

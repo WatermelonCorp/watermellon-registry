@@ -37,9 +37,9 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarTrigger,
-} from "@/component@/components/ui/sidebar"
-import { Button } from "@/component@/components/ui/button"
-// import { usePathname } from "next/navigation"
+} from "@/components/ui/sidebar"
+import { Button } from "@/components/ui/button"
+// import { usePathname } from "@/lib/next-compat"
 
 const data = {
   quickActions: [

@@ -395,22 +395,22 @@ export function parseWithSchema<T>(
 export const XPostAuthorSchema = z.object({
   name: z.string(),
   handle: z.string(),
-  avatarUrl: z.url(),
+  avatarUrl: z.string().url(),
   verified: z.boolean().optional(),
 });
 
 export const XPostMediaSchema = z.object({
   type: z.enum(["image", "video"]),
-  url: z.url(),
+  url: z.string().url(),
   alt: z.string(),
   aspectRatio: z.enum(["1:1", "4:3", "16:9", "9:16"]).optional(),
 });
 
 export const XPostLinkPreviewSchema = z.object({
-  url: z.url(),
+  url: z.string().url(),
   title: z.string().optional(),
   description: z.string().optional(),
-  imageUrl: z.url().optional(),
+  imageUrl: z.string().url().optional(),
   domain: z.string().optional(),
 });
 

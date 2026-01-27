@@ -4,108 +4,17 @@
   "homepage": "https://github.com/Pritam-2002/Duncan_ui_libary",
   "items": [
     {
-      "name": "hero1",
-      "type": "registry:block",
+      "name": "aave-swap-component",
+      "type": "registry:ui",
       "dependencies": [
-        "lucide-react",
-        "framer-motion"
+        "framer-motion",
+        "lucide-react"
       ],
       "files": [
         {
-          "path": "src/components/blocks/sfHerodemo/Hero1.tsx",
-          "target": "components/watermelon/blocks/hero1/hero1.tsx",
-          "type": "registry:block"
-        },
-        {
-          "path": "src/components/blocks/sfHerodemo/ui/Header.tsx",
-          "target": "components/watermelon/blocks/hero1/ui/Header.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/blocks/sfHerodemo/ui/Hero.tsx",
-          "target": "components/watermelon/blocks/hero1/ui/Hero.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "luminia-luxe-realestate",
-      "type": "registry:page",
-      "dependencies": [
-        "lucide-react",
-        "react-slick",
-        "slick-carousel"
-      ],
-      "files": [
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/Index.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/index.tsx",
-          "type": "registry:block"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/types.ts",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/types.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/Constants.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/constants.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/Navbar.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Navbar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/Hero.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Hero.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/Services.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Services.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/FeaturedProperties.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/FeaturedProperties.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/About.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/About.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/Agents.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Agents.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/Testimonials.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Testimonials.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/FAQ.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/FAQ.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/Contact.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Contact.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/Footer.tsx",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Footer.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/pages/luminia-luxe-realestate/ui/agents-carousel.css",
-          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/agents-carousel.css",
-          "type": "registry:component"
+          "path": "src/components/ui/aave-swap-component.tsx",
+          "target": "components/ui/aave-swap-component.tsx",
+          "type": "registry:ui"
         }
       ]
     },
@@ -193,6 +102,126 @@
         {
           "path": "src/components/ui/accordion-multiselect.tsx",
           "target": "components/ui/accordion-multiselect.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "activities-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/activities-card.tsx",
+          "target": "components/ui/activities-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "adaptive-slider",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/adaptive-slider.tsx",
+          "target": "components/ui/adaptive-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "add-cash-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/add-cash-disclosure.tsx",
+          "target": "components/ui/add-cash-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ai-input",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/ai-input.tsx",
+          "target": "components/ui/ai-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ai-input002",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/ai-input002.tsx",
+          "target": "components/ui/ai-input002.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ai-input003",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/ai-input003.tsx",
+          "target": "components/ui/ai-input003.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ai-input004",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/ai-input004.tsx",
+          "target": "components/ui/ai-input004.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ai-input005",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/ai-input005.tsx",
+          "target": "components/ui/ai-input005.tsx",
           "type": "registry:ui"
         }
       ]
@@ -423,6 +452,53 @@
       ]
     },
     {
+      "name": "animate-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/animate-button.tsx",
+          "target": "components/ui/animate-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-accordion",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-accordion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/animated-accordion.tsx",
+          "target": "components/ui/animated-accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "animated-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/animated-button.tsx",
+          "target": "components/ui/animated-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "availability",
       "type": "registry:ui",
       "dependencies": [
@@ -549,6 +625,20 @@
         {
           "path": "src/components/ui/avatar-06.tsx",
           "target": "components/ui/avatar-06.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/avatar-group.tsx",
+          "target": "components/ui/avatar-group.tsx",
           "type": "registry:ui"
         }
       ]
@@ -771,6 +861,36 @@
       ]
     },
     {
+      "name": "business-management",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/business-management/app-sidebar.tsx",
+          "target": "components/watermelon/dashboards/business-management/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/dashboardLayout.tsx",
+          "target": "components/watermelon/dashboards/business-management/dashboardLayout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/timelineView.tsx",
+          "target": "components/watermelon/dashboards/business-management/timelineView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/business-management/demo.tsx",
+          "target": "components/watermelon/dashboards/business-management/demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "dependencies": [
@@ -940,6 +1060,21 @@
       ]
     },
     {
+      "name": "calendar-widget",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/calendar-widget.tsx",
+          "target": "components/ui/calendar-widget.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "dependencies": [],
@@ -947,6 +1082,66 @@
         {
           "path": "src/components/ui/card.tsx",
           "target": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card-splitting-accordion",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/card-splitting-accordion.tsx",
+          "target": "components/ui/card-splitting-accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card-swap",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/card-swap.tsx",
+          "target": "components/ui/card-swap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel-navigator",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/carousel-navigator.tsx",
+          "target": "components/ui/carousel-navigator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel-slider",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/carousel-slider.tsx",
+          "target": "components/ui/carousel-slider.tsx",
           "type": "registry:ui"
         }
       ]
@@ -966,263 +1161,15 @@
       ]
     },
     {
-      "name": "color-watch-selector",
+      "name": "chart-2",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "recharts"
       ],
       "files": [
         {
-          "path": "src/components/ui/color-watch-selector.tsx",
-          "target": "components/ui/color-watch-selector.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "device",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/device.tsx",
-          "target": "components/ui/device.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "file-upload",
-      "type": "registry:ui",
-      "dependencies": [
-        "iconsax-react",
-        "sonner"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/file-upload.tsx",
-          "target": "components/ui/file-upload.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "flip-clock",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/flip-clock.tsx",
-          "target": "components/ui/flip-clock.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "gauge",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/gauge.tsx",
-          "target": "components/ui/gauge.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "input",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/input.tsx",
-          "target": "components/ui/input.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "label",
-      "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-label",
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/label.tsx",
-          "target": "components/ui/label.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "label-selector",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/label-selector.tsx",
-          "target": "components/ui/label-selector.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "marquee",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/marquee.tsx",
-          "target": "components/ui/marquee.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "popover",
-      "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-popover"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/popover.tsx",
-          "target": "components/ui/popover.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "primary-button",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/primary-button.tsx",
-          "target": "components/ui/primary-button.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "scroll-fade",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/scroll-fade.tsx",
-          "target": "components/ui/scroll-fade.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "select",
-      "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-select",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/select.tsx",
-          "target": "components/ui/select.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "separator",
-      "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-separator"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/separator.tsx",
-          "target": "components/ui/separator.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "skeleton",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/skeleton.tsx",
-          "target": "components/ui/skeleton.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "spinner",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/spinner.tsx",
-          "target": "components/ui/spinner.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "status-indicator",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/status-indicator.tsx",
-          "target": "components/ui/status-indicator.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "text-gradient",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/text-gradient.tsx",
-          "target": "components/ui/text-gradient.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "timeline",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/timeline.tsx",
-          "target": "components/ui/timeline.tsx",
+          "path": "src/components/ui/chart-2.tsx",
+          "target": "components/ui/chart-2.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1256,6 +1203,26 @@
       ]
     },
     {
+      "name": "code-block",
+      "type": "registry:ui",
+      "dependencies": [
+        "shiki",
+        "lucide-react",
+        "@radix-ui/react-collapsible",
+        "zod"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/code-block.tsx",
+          "target": "components/ui/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "code-tabs",
       "type": "registry:ui",
       "dependencies": [
@@ -1266,6 +1233,109 @@
         {
           "path": "src/components/ui/code-tabs.tsx",
           "target": "components/ui/code-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/collapsible.tsx",
+          "target": "components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collection-grid-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/collection-grid-disclosure.tsx",
+          "target": "components/ui/collection-grid-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "color-watch-selector",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/color-watch-selector.tsx",
+          "target": "components/ui/color-watch-selector.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command-search",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/command-search.tsx",
+          "target": "components/ui/command-search.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "contextual-ai-bar",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/contextual-ai-bar.tsx",
+          "target": "components/ui/contextual-ai-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "continuous-pagination",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/continuous-pagination.tsx",
+          "target": "components/ui/continuous-pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "continuous-tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/continuous-tabs.tsx",
+          "target": "components/ui/continuous-tabs.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1287,6 +1357,21 @@
       ]
     },
     {
+      "name": "create-new-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/create-new-disclosure.tsx",
+          "target": "components/ui/create-new-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "cursor",
       "type": "registry:ui",
       "dependencies": [],
@@ -1294,462 +1379,6 @@
         {
           "path": "src/components/ui/cursor.tsx",
           "target": "components/ui/cursor.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "dialog",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/dialog.tsx",
-          "target": "components/ui/dialog.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "dropdown-menu",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/dropdown-menu.tsx",
-          "target": "components/ui/dropdown-menu.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "files",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/files.tsx",
-          "target": "components/ui/files.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "flip-card",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/flip-card.tsx",
-          "target": "components/ui/flip-card.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "flip",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/flip.tsx",
-          "target": "components/ui/flip.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "github-stars",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/github-stars.tsx",
-          "target": "components/ui/github-stars.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "github-stars-wheel",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/github-stars-wheel.tsx",
-          "target": "components/ui/github-stars-wheel.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "hover-card",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/hover-card.tsx",
-          "target": "components/ui/hover-card.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "icon",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/icon.tsx",
-          "target": "components/ui/icon.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "liquid",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/liquid.tsx",
-          "target": "components/ui/liquid.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "management-bar",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/management-bar.tsx",
-          "target": "components/ui/management-bar.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "motion-carousel",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion",
-        "embla-carousel-react",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/motion-carousel.tsx",
-          "target": "components/ui/motion-carousel.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "notification-list",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/notification-list.tsx",
-          "target": "components/ui/notification-list.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "pin-list",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/pin-list.tsx",
-          "target": "components/ui/pin-list.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "preview-link-card",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/preview-link-card.tsx",
-          "target": "components/ui/preview-link-card.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "progress",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/progress.tsx",
-          "target": "components/ui/progress.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "radio-group",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/radio-group.tsx",
-          "target": "components/ui/radio-group.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "ripple",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/ripple.tsx",
-          "target": "components/ui/ripple.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "sheet",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/sheet.tsx",
-          "target": "components/ui/sheet.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "sidebar",
-      "type": "registry:ui",
-      "dependencies": [
-        "radix-ui",
-        "class-variance-authority",
-        "lucide-react",
-        "framer-motion"
-      ],
-      "registryDependencies": [
-        "button",
-        "input",
-        "separator",
-        "skeleton"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/sidebar.tsx",
-          "target": "components/ui/sidebar.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "switch",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/switch.tsx",
-          "target": "components/ui/switch.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "tabs",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/tabs.tsx",
-          "target": "components/ui/tabs.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "toggle",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/toggle.tsx",
-          "target": "components/ui/toggle.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "toggle-group",
-      "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "registryDependencies": [
-        "toggle"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/toggle-group.tsx",
-          "target": "components/ui/toggle-group.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "tooltip",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/tooltip.tsx",
-          "target": "components/ui/tooltip.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "theme-toggler",
-      "type": "registry:ui",
-      "dependencies": [
-        "next-themes",
-        "lucide-react",
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/theme-toggler.tsx",
-          "target": "components/ui/theme-toggler.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "avatar-group",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/avatar-group.tsx",
-          "target": "components/ui/avatar-group.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "animated-accordion",
-      "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-accordion",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/animated-accordion.tsx",
-          "target": "components/ui/animated-accordion.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "animated-button",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion",
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/animated-button.tsx",
-          "target": "components/ui/animated-button.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "chart-2",
-      "type": "registry:ui",
-      "dependencies": [
-        "recharts"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/chart-2.tsx",
-          "target": "components/ui/chart-2.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "code-block",
-      "type": "registry:ui",
-      "dependencies": [
-        "shiki",
-        "lucide-react",
-        "@radix-ui/react-collapsible",
-        "zod"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/code-block.tsx",
-          "target": "components/ui/code-block.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1774,291 +1403,147 @@
       ]
     },
     {
-      "name": "option-list",
-      "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "lucide-react",
-        "zod"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/option-list.tsx",
-          "target": "components/ui/option-list.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "playful-todolist",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion",
-        "@radix-ui/react-checkbox"
-      ],
-      "registryDependencies": [
-        "label"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/playful-todolist.tsx",
-          "target": "components/ui/playful-todolist.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "radial-intro",
-      "type": "registry:ui",
-      "dependencies": [],
-      "files": [
-        {
-          "path": "src/components/ui/radial-intro.tsx",
-          "target": "components/ui/radial-intro.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "radial-nav",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion",
-        "lucide-react"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/radial-nav.tsx",
-          "target": "components/ui/radial-nav.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "share-button",
-      "type": "registry:ui",
-      "dependencies": [
-        "framer-motion",
-        "lucide-react",
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/share-button.tsx",
-          "target": "components/ui/share-button.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "terminal",
-      "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-collapsible",
-        "ansi-to-react",
-        "lucide-react",
-        "zod"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/terminal.tsx",
-          "target": "components/ui/terminal.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "tooltip-radix",
-      "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/tooltip-radix.tsx",
-          "target": "components/ui/tooltip-radix.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "user-presence-avatar",
+      "name": "debug-pannel",
       "type": "registry:ui",
       "dependencies": [
         "framer-motion"
       ],
       "files": [
         {
-          "path": "src/components/ui/user-presence-avatar.tsx",
-          "target": "components/ui/user-presence-avatar.tsx",
+          "path": "src/components/ui/debug-pannel.tsx",
+          "target": "components/ui/debug-pannel.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "animate-button",
+      "name": "device",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "class-variance-authority",
-        "clsx",
-        "tailwind-merge"
+        "framer-motion"
       ],
       "files": [
         {
-          "path": "src/components/ui/animate-button.tsx",
-          "target": "components/ui/animate-button.tsx",
+          "path": "src/components/ui/device.tsx",
+          "target": "components/ui/device.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "x-post",
+      "name": "dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tooltip",
-        "class-variance-authority",
-        "lucide-react",
-        "zod"
-      ],
-      "files": [
-        {
-          "path": "src/components/ui/x-post.tsx",
-          "target": "components/ui/x-post.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "sales-admin-panel",
-      "type": "registry:block",
       "dependencies": [
         "lucide-react"
       ],
       "files": [
         {
-          "path": "src/components/dashboards/sales-admin-panel/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/app-sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/billing.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/billing.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/companies-table.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/companies-table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/company-filters.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/company-filters.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/deal-card.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/deal-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/index.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/index.tsx",
-          "type": "registry:block"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/main.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/main.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/nav-main.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/nav-main.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/nav-pipelines.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/nav-pipelines.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/nav-reporting.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/nav-reporting.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/nav-secondary.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/nav-secondary.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/nav-teams.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/nav-teams.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/site-header.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/site-header.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/team-switcher.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/team-switcher.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/types.ts",
-          "target": "components/watermelon/dashboards/sales-admin-panel/types.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/sales-admin-panel/demo.tsx",
-          "target": "components/watermelon/dashboards/sales-admin-panel/demo.tsx",
-          "type": "registry:component"
+          "path": "src/components/ui/dialog.tsx",
+          "target": "components/ui/dialog.tsx",
+          "type": "registry:ui"
         }
-      ],
-      "registryDependencies": [
-        "badge",
-        "breadcrumb",
-        "button",
-        "dropdown-menu",
-        "separator",
-        "sidebar"
       ]
     },
     {
-      "name": "business-management",
-      "type": "registry:block",
+      "name": "dialog-stack",
+      "type": "registry:ui",
       "dependencies": [
-        "lucide-react",
-        "recharts"
+        "framer-motion",
+        "lucide-react"
       ],
       "files": [
         {
-          "path": "src/components/dashboards/business-management/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-management/app-sidebar.tsx",
-          "type": "registry:component"
-        },
+          "path": "src/components/ui/dialog-stack.tsx",
+          "target": "components/ui/dialog-stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "discrete-tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
         {
-          "path": "src/components/dashboards/business-management/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/business-management/dashboardLayout.tsx",
-          "type": "registry:component"
-        },
+          "path": "src/components/ui/discrete-tabs.tsx",
+          "target": "components/ui/discrete-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dock",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
         {
-          "path": "src/components/dashboards/business-management/timelineView.tsx",
-          "target": "components/watermelon/dashboards/business-management/timelineView.tsx",
-          "type": "registry:component"
-        },
+          "path": "src/components/ui/dock.tsx",
+          "target": "components/ui/dock.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "draggable-toolbar",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
         {
-          "path": "src/components/dashboards/business-management/demo.tsx",
-          "target": "components/watermelon/dashboards/business-management/demo.tsx",
-          "type": "registry:component"
+          "path": "src/components/ui/draggable-toolbar.tsx",
+          "target": "components/ui/draggable-toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "draw-signature",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/draw-signature.tsx",
+          "target": "components/ui/draw-signature.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-disclosure.tsx",
+          "target": "components/ui/dropdown-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "target": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
         }
       ]
     },
@@ -2120,6 +1605,414 @@
       ]
     },
     {
+      "name": "edit-badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/edit-badge.tsx",
+          "target": "components/ui/edit-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "editable-chip",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/editable-chip.tsx",
+          "target": "components/ui/editable-chip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "emoji-spree-chips",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/emoji-spree-chips.tsx",
+          "target": "components/ui/emoji-spree-chips.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "event-reminders",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/event-reminders.tsx",
+          "target": "components/ui/event-reminders.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "extended-toolbar",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/extended-toolbar.tsx",
+          "target": "components/ui/extended-toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "family-receive-component",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/family-receive-component.tsx",
+          "target": "components/ui/family-receive-component.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "family-wallet",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/family-wallet.tsx",
+          "target": "components/ui/family-wallet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "feature-tour",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/feature-tour.tsx",
+          "target": "components/ui/feature-tour.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "feedback-action",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/feedback-action.tsx",
+          "target": "components/ui/feedback-action.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "feedback-component",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/feedback-component.tsx",
+          "target": "components/ui/feedback-component.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "dependencies": [
+        "iconsax-react",
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/file-upload.tsx",
+          "target": "components/ui/file-upload.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "files",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/files.tsx",
+          "target": "components/ui/files.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "filter-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/filter-disclosure.tsx",
+          "target": "components/ui/filter-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flip",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/flip.tsx",
+          "target": "components/ui/flip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flip-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/flip-card.tsx",
+          "target": "components/ui/flip-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flip-clock",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/flip-clock.tsx",
+          "target": "components/ui/flip-clock.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "floating-button-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/floating-button-disclosure.tsx",
+          "target": "components/ui/floating-button-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fluid-tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/fluid-tabs.tsx",
+          "target": "components/ui/fluid-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fractional-picker",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/fractional-picker.tsx",
+          "target": "components/ui/fractional-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "frequency-selector",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/frequency-selector.tsx",
+          "target": "components/ui/frequency-selector.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fund-widget",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/fund-widget.tsx",
+          "target": "components/ui/fund-widget.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "gauge",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/gauge.tsx",
+          "target": "components/ui/gauge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "github-stars",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/github-stars.tsx",
+          "target": "components/ui/github-stars.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "github-stars-wheel",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/github-stars-wheel.tsx",
+          "target": "components/ui/github-stars-wheel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "gooey-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/gooey-menu.tsx",
+          "target": "components/ui/gooey-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero1",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/blocks/sfHerodemo/Hero1.tsx",
+          "target": "components/watermelon/blocks/hero1/hero1.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/components/blocks/sfHerodemo/ui/Header.tsx",
+          "target": "components/watermelon/blocks/hero1/ui/Header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/blocks/sfHerodemo/ui/Hero.tsx",
+          "target": "components/watermelon/blocks/hero1/ui/Hero.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/hover-card.tsx",
+          "target": "components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hrm",
       "type": "registry:block",
       "dependencies": [
@@ -2165,6 +2058,121 @@
       ],
       "registryDependencies": [
         "tooltip"
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/icon.tsx",
+          "target": "components/ui/icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-disclosure-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/inline-disclosure-menu.tsx",
+          "target": "components/ui/inline-disclosure-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-edit",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/inline-edit.tsx",
+          "target": "components/ui/inline-edit.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-overflow",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/inline-overflow.tsx",
+          "target": "components/ui/inline-overflow.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-table-control",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/inline-table-control.tsx",
+          "target": "components/ui/inline-table-control.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-toast",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/inline-toast.tsx",
+          "target": "components/ui/inline-toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "target": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "invite-disclosure ",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/invite-disclosure .tsx",
+          "target": "components/ui/invite-disclosure .tsx",
+          "type": "registry:ui"
+        }
       ]
     },
     {
@@ -2282,6 +2290,513 @@
       ]
     },
     {
+      "name": "journal-navigation",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/journal-navigation.tsx",
+          "target": "components/ui/journal-navigation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "knob-slider",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/knob-slider.tsx",
+          "target": "components/ui/knob-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-label",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/label.tsx",
+          "target": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label-selector",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/label-selector.tsx",
+          "target": "components/ui/label-selector.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "labeled-progress-indicator",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/labeled-progress-indicator.tsx",
+          "target": "components/ui/labeled-progress-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "liquid",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/liquid.tsx",
+          "target": "components/ui/liquid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "list-stack",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/list-stack.tsx",
+          "target": "components/ui/list-stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "loop-hook",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/loop-hook.tsx",
+          "target": "components/ui/loop-hook.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "luminia-luxe-realestate",
+      "type": "registry:page",
+      "dependencies": [
+        "lucide-react",
+        "react-slick",
+        "slick-carousel"
+      ],
+      "files": [
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/Index.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/index.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/types.ts",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/types.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/Constants.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/constants.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Navbar.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Navbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Hero.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Hero.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Services.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Services.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/FeaturedProperties.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/FeaturedProperties.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/About.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/About.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Agents.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Agents.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Testimonials.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Testimonials.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/FAQ.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/FAQ.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Contact.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Contact.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/Footer.tsx",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/Footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/pages/luminia-luxe-realestate/ui/agents-carousel.css",
+          "target": "components/watermelon/landing/luminia-luxe-realestate/ui/agents-carousel.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "management-bar",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/management-bar.tsx",
+          "target": "components/ui/management-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/marquee.tsx",
+          "target": "components/ui/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "minimal-carousel",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/minimal-carousel.tsx",
+          "target": "components/ui/minimal-carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mobile-video-player",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/mobile-video-player.tsx",
+          "target": "components/ui/mobile-video-player.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "morphing-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/morphing-button.tsx",
+          "target": "components/ui/morphing-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "morphing-discovery-bar",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/morphing-discovery-bar.tsx",
+          "target": "components/ui/morphing-discovery-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "motion-carousel",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "embla-carousel-react",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/motion-carousel.tsx",
+          "target": "components/ui/motion-carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "notification-list",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/notification-list.tsx",
+          "target": "components/ui/notification-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "option-list",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-separator",
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "lucide-react",
+        "zod"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/option-list.tsx",
+          "target": "components/ui/option-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "option-picker",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/option-picker.tsx",
+          "target": "components/ui/option-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pagination-animated.tsx",
+          "target": "components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pin-item",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pin-item.tsx",
+          "target": "components/ui/pin-item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pin-list",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pin-list.tsx",
+          "target": "components/ui/pin-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "playful-todolist",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "@radix-ui/react-checkbox"
+      ],
+      "registryDependencies": [
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/playful-todolist.tsx",
+          "target": "components/ui/playful-todolist.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/popover.tsx",
+          "target": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "predictive-text",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/predictive-text.tsx",
+          "target": "components/ui/predictive-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "preview-link-card",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/preview-link-card.tsx",
+          "target": "components/ui/preview-link-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pricing-widget",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pricing-widget.tsx",
+          "target": "components/ui/pricing-widget.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "primary-button",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primary-button.tsx",
+          "target": "components/ui/primary-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/progress.tsx",
+          "target": "components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progressive-input-stack",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/progressive-input-stack.tsx",
+          "target": "components/ui/progressive-input-stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "project-management",
       "type": "registry:block",
       "dependencies": [
@@ -2341,6 +2856,1172 @@
       ],
       "registryDependencies": [
         "sidebar"
+      ]
+    },
+    {
+      "name": "quick-feedback",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/quick-feedback.tsx",
+          "target": "components/ui/quick-feedback.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "quick-paste",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/quick-paste.tsx",
+          "target": "components/ui/quick-paste.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "quick-switcher",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/quick-switcher.tsx",
+          "target": "components/ui/quick-switcher.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radial-carousel",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radial-carousel.tsx",
+          "target": "components/ui/radial-carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radial-intro",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radial-intro.tsx",
+          "target": "components/ui/radial-intro.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radial-nav",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radial-nav.tsx",
+          "target": "components/ui/radial-nav.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radio-group.tsx",
+          "target": "components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "range-selection-slider",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/range-selection-slider.tsx",
+          "target": "components/ui/range-selection-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "returns-calculator",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/returns-calculator.tsx",
+          "target": "components/ui/returns-calculator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reveal-copy",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/reveal-copy.tsx",
+          "target": "components/ui/reveal-copy.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ripple",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/ripple.tsx",
+          "target": "components/ui/ripple.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "run-action-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/run-action-button.tsx",
+          "target": "components/ui/run-action-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "run-widget",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/run-widget.tsx",
+          "target": "components/ui/run-widget.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sales-admin-panel",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/sales-admin-panel/app-sidebar.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/billing.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/billing.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/companies-table.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/companies-table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/company-filters.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/company-filters.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/deal-card.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/deal-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/index.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/index.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/main.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-main.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-pipelines.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-pipelines.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-reporting.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-reporting.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-secondary.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/nav-teams.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/nav-teams.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/site-header.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/site-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/team-switcher.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/team-switcher.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/types.ts",
+          "target": "components/watermelon/dashboards/sales-admin-panel/types.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/sales-admin-panel/demo.tsx",
+          "target": "components/watermelon/dashboards/sales-admin-panel/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "badge",
+        "breadcrumb",
+        "button",
+        "dropdown-menu",
+        "separator",
+        "sidebar"
+      ]
+    },
+    {
+      "name": "save-toggle",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/save-toggle.tsx",
+          "target": "components/ui/save-toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "schedule-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/schedule-button.tsx",
+          "target": "components/ui/schedule-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-fade",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-fade.tsx",
+          "target": "components/ui/scroll-fade.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-island",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-island.tsx",
+          "target": "components/ui/scroll-island.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scrub-slider",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/scrub-slider.tsx",
+          "target": "components/ui/scrub-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-select",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/select.tsx",
+          "target": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select-aiagent",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/select-aiagent.tsx",
+          "target": "components/ui/select-aiagent.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "send-money",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/send-money.tsx",
+          "target": "components/ui/send-money.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/separator.tsx",
+          "target": "components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "share-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/share-button.tsx",
+          "target": "components/ui/share-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "share-sheet",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/share-sheet.tsx",
+          "target": "components/ui/share-sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sheet.tsx",
+          "target": "components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "show-qr",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/show-qr.tsx",
+          "target": "components/ui/show-qr.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shuffle-pinned-list",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/shuffle-pinned-list.tsx",
+          "target": "components/ui/shuffle-pinned-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority",
+        "lucide-react",
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "separator",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "target": "components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "target": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slot-picker",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/slot-picker.tsx",
+          "target": "components/ui/slot-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/spinner.tsx",
+          "target": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split-to-edit",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/split-to-edit.tsx",
+          "target": "components/ui/split-to-edit.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-indicator",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/status-indicator.tsx",
+          "target": "components/ui/status-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-picker",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/status-picker.tsx",
+          "target": "components/ui/status-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "step-indicator",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/step-indicator.tsx",
+          "target": "components/ui/step-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "step-pager",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/step-pager.tsx",
+          "target": "components/ui/step-pager.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/stepper.tsx",
+          "target": "components/ui/stepper.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "swap-currency",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/swap-currency.tsx",
+          "target": "components/ui/swap-currency.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "swap-form",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/swap-form.tsx",
+          "target": "components/ui/swap-form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/switch.tsx",
+          "target": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/switch-disclosure.tsx",
+          "target": "components/ui/switch-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch-mode",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/switch-mode.tsx",
+          "target": "components/ui/switch-mode.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/table.tsx",
+          "target": "components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "target": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tags",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tags.tsx",
+          "target": "components/ui/tags.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "task-widget",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/task-widget.tsx",
+          "target": "components/ui/task-widget.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-collapsible",
+        "ansi-to-react",
+        "lucide-react",
+        "zod"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/terminal.tsx",
+          "target": "components/ui/terminal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-gradient",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/text-gradient.tsx",
+          "target": "components/ui/text-gradient.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "target": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggler",
+      "type": "registry:ui",
+      "dependencies": [
+        "next-themes",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/theme-toggler.tsx",
+          "target": "components/ui/theme-toggler.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "timed-undo-action",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/timed-undo-action.tsx",
+          "target": "components/ui/timed-undo-action.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/timeline.tsx",
+          "target": "components/ui/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "target": "components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group.tsx",
+          "target": "components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip-animated.tsx",
+          "target": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-navbar",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip-navbar.tsx",
+          "target": "components/ui/tooltip-navbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-radix",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip-radix.tsx",
+          "target": "components/ui/tooltip-radix.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "transaction-list",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/transaction-list.tsx",
+          "target": "components/ui/transaction-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "transcribe-voice-message",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/transcribe-voice-message.tsx",
+          "target": "components/ui/transcribe-voice-message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tree-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tree-menu.tsx",
+          "target": "components/ui/tree-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "uni-swap-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "clsx",
+        "framer-motion",
+        "lucide-react",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/uni-swap-dialog.tsx",
+          "target": "components/ui/uni-swap-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "user-presence-avatar",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/user-presence-avatar.tsx",
+          "target": "components/ui/user-presence-avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "vertical-tooltip-navbar",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/vertical-tooltip-navbar.tsx",
+          "target": "components/ui/vertical-tooltip-navbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "video-player01",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/video-player01.tsx",
+          "target": "components/ui/video-player01.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "video-player03",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/video-player03.tsx",
+          "target": "components/ui/video-player03.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "view-on-map",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/view-on-map.tsx",
+          "target": "components/ui/view-on-map.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-chat-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/voice-chat-disclosure.tsx",
+          "target": "components/ui/voice-chat-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-note",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/voice-note.tsx",
+          "target": "components/ui/voice-note.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "waveform-scrub",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/waveform-scrub.tsx",
+          "target": "components/ui/waveform-scrub.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "weight-widget",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/weight-widget.tsx",
+          "target": "components/ui/weight-widget.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wiggling-cards",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/wiggling-cards.tsx",
+          "target": "components/ui/wiggling-cards.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "x-post",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "@radix-ui/react-tooltip",
+        "class-variance-authority",
+        "lucide-react",
+        "zod"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/x-post.tsx",
+          "target": "components/ui/x-post.tsx",
+          "type": "registry:ui"
+        }
       ]
     }
   ]

@@ -6,8 +6,8 @@ import {
   AnimatePresence,
   useMotionValue,
   useTransform,
-  PanInfo,
-  Variants,
+  type PanInfo,
+  type Variants,
 } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 import { HugeiconsIcon } from "@hugeicons/react";

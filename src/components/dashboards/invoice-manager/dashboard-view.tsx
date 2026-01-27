@@ -269,7 +269,7 @@ export const InvoiceManagerView = () => {
                             <PaginationItem key={page}>
                                 <PaginationLink
                                     href="#"
-                                    onClick={(e) => {
+                                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                                         e.preventDefault()
                                         setCurrentPage(page)
                                     }}

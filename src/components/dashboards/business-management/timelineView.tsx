@@ -6,7 +6,7 @@ import {
     CardContent,
     CardHeader,
     CardTitle,
-} from "@/component@/components/ui/card";
+} from "@/components/ui/card";
 import {
     Table,
     TableBody,
@@ -14,38 +14,34 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/component@/components/ui/table";
+} from "@/components/ui/table";
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/component@/components/ui/select";
-import { Switch } from "@/component@/components/ui/switch";
-import { Button } from "@/component@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/component@/components/ui/avatar";
+} from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
-} from "@/component@/components/ui/chart";
+} from "@/components/ui/chart";
 import {
     ComposedChart,
     Bar,
-    Line,
     Area,
     XAxis,
     YAxis,
     CartesianGrid,
-    ResponsiveContainer,
-    Legend,
 } from "recharts";
 import {
     Search,
     Calendar,
     Download,
-    MessageSquare,
     MoreVertical,
     TrendingUp,
     TrendingDown,
@@ -60,7 +56,6 @@ import {
     Bell,
     Flag,
     MoveRight,
-    Locate,
     Layers2,
     MessageSquareText,
     UserX,
@@ -72,8 +67,8 @@ import {
     Zap,
     ChartColumnBig,
 } from "lucide-react";
-import { Input } from "@/component@/components/ui/input";
-import { Separator } from "@/component@/components/ui/separator";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 
 // Sample data for the metrics cards
 const metricsData: {

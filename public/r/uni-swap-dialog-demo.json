@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "uni-swap-dialog-demo",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/uni-swap-dialog-demo.tsx",
+      "content": "import React, { useState } from \"react\";\nimport { UniSwapDialog } from \"@/components\";\n\n\nconst Countries = [\n  { name: \"Afghanistan\", code: \"AF\" },\n  { name: \"Åland Islands\", code: \"AX\" },\n  { name: \"Albania\", code: \"AL\" },\n  { name: \"Algeria\", code: \"DZ\" },\n  { name: \"American Samoa\", code: \"AS\" },\n  { name: \"Andorra\", code: \"AD\" },\n  { name: \"Angola\", code: \"AO\" },\n  { name: \"Australia\", code: \"AU\" },\n  { name: \"Austria\", code: \"AT\" },\n  { name: \"Belarus\", code: \"BY\" },\n  { name: \"Cyprus\", code: \"CY\" },\n  { name: \"India\", code: \"IN\" },\n  { name: \"Mauritius\", code: \"MU\" },\n  { name: \"Russia\", code: \"RU\" },\n  { name: \"United States\", code: \"US\" },\n];\n\nexport default function UniswapDialogDemo() {\n  const [selectedCountry, setSelectedCountry] = useState(\n    Countries.find((c) => c.code === \"US\")!\n  );\n\n  return (\n    <div className=\"flex min-h-screen items-center justify-center bg-black\">\n      <UniSwapDialog\n        value={selectedCountry}\n        onChange={setSelectedCountry}\n        countries={Countries} \n      />\n    </div>\n  );\n}",
+      "type": "registry:ui",
+      "target": "components/ui/uni-swap-dialog-demo.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

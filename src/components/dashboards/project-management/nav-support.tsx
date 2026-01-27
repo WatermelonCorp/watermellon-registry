@@ -13,12 +13,12 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/component@/components/ui/sidebar"
+} from "@/components/ui/sidebar"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/component@/components/ui/collapsible"
+} from "@/components/ui/collapsible"
 import { usePathname } from "next/navigation"
 
 export function NavSupport({
@@ -50,7 +50,7 @@ export function NavSupport({
         </SidebarGroupLabel>
         <CollapsibleContent className="">
           <SidebarMenu>
-            {support.map((item, index) => (
+            {support.map((item) => (
                 <SidebarMenuItem key={item.name}>
                   <SidebarMenuButton asChild tooltip={item.name} isActive={pathname === item.url} className="text-neutral-500 text-xs h-8 font-medium data-[active=true]:border data-[active=true]:border-neutral-300 data-[active=true]:text-neutral-600 hover:border hover:border-neutral-300 hover:text-neutral-600">
                     <a href={item.url}>

@@ -10,7 +10,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 // import Link from "next/link";
-// import { usePathname } from "next/navigation";
+// import { usePathname } from "@/lib/next-compat";
 
 export function NavPipelines({
   pipelines,

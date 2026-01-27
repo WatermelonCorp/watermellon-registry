@@ -60,7 +60,7 @@ export function Awards({
 
     // Create curved text path
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const createTextPath = (radius: number, id: string) => {
+    const createTextPath = (radius: number, _id: string) => {
       const centerX = 96
       const centerY = 96
       return `M ${centerX - radius} ${centerY} A ${radius} ${radius} 0 0 1 ${centerX + radius} ${centerY}`

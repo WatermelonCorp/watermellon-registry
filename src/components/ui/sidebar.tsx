@@ -22,7 +22,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
+} from '@/components/ui/tooltip-animated';
 
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';

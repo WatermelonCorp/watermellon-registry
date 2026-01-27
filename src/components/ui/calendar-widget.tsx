@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, FC } from "react";
+import { useState, useRef, useEffect, type FC } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 

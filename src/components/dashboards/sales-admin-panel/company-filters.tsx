@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@/component@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/component@/components/ui/select";
+} from "@/components/ui/select";
 import { Download, Plus } from "lucide-react";
 
 export function CompanyFilters() {

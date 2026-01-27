@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import {
-  Search,
   LayoutDashboard,
   Users,
   FolderKanban,

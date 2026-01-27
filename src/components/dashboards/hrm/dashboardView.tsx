@@ -253,7 +253,7 @@ export const DashboardView = () => {
               <ChartTooltip
                 content={
                   <ChartTooltipContent
-                    formatter={(value, name) => {
+                    formatter={(_value, name) => {
                       if (name === "attendance") {
                         return (
                           <div className="flex flex-col gap-1">
