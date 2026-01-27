@@ -766,7 +766,7 @@ function DayColumn({
         />
       )}
 
-      {events.map((event, i) => {
+      {events.map((event, _i) => {
         // Calculate neighbors considering BOTH events and disabled regions for resizing constraints
         // sortedConstraints contains both. We just need to find neighbors relative to THIS event in that list.
 

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Sun, Moon } from "lucide-react";
-import React, { useEffect, useState, FC } from "react";
+import { useEffect, useState, type FC } from "react";
 
 /* ---------- Types ---------- */
 

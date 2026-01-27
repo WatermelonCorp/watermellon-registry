@@ -3,18 +3,11 @@
 import * as React from 'react';
 import { motion, LayoutGroup } from 'motion/react';
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@/components/ui/avatar';
-import {
-  TooltipProvider,
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/animate-ui/components/animate/tooltip';
+
+
 import { cn } from '@/lib/utils';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/avatar-group';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const USERS = [
   {

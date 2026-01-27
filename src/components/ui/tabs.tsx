@@ -371,7 +371,7 @@ function TabsContentsPrimitive({
 type TabsContentPrimitiveProps = WithAsChild<
   {
     value: string;
-    children: React.ReactNode;
+    children?: React.ReactNode;
   } & HTMLMotionProps<'div'>
 >;
 

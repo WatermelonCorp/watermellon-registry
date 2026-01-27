@@ -13,12 +13,12 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/component@/components/ui/sidebar"
+} from "@/components/ui/sidebar"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/component@/components/ui/collapsible"
+} from "@/components/ui/collapsible"
 
 export function NavManagement({
   management,

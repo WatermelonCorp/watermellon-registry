@@ -38,7 +38,6 @@ const getSizeClasses = (size: StatusIndicatorProps["size"]) => {
 
 export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
   state = "idle",
-  color,
   label,
   className,
   size = "md",

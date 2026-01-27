@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, FC, ReactNode } from "react";
+import { useState, useEffect, type FC, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUpIcon, Sun, Moon } from "lucide-react";
 

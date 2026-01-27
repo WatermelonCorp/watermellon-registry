@@ -1022,7 +1022,7 @@ export function useActionButtons(
 
   useEffect(() => {
     if (!confirmingActionId) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: globalThis.KeyboardEvent) => {
       if (e.key === "Escape") {
         setConfirmingActionId(null);
       }

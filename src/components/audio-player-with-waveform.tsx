@@ -37,7 +37,6 @@ interface ControlsProps {
 const Controls: React.FC<ControlsProps> = ({
   isPlaying,
   onPlayPause,
-  onStop,
   onSkipBackward,
   onSkipForward,
   disabled = false,

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, FC } from "react";
-import { motion, AnimatePresence, Spring } from "framer-motion";
+import { useState, useEffect, type FC } from "react";
+import { motion, AnimatePresence, type Transition } from "framer-motion";
 import { ChevronDown, Sun, Moon, Send } from "lucide-react";
 import { HiCursorArrowRipple } from "react-icons/hi2";
 import { Layers } from "lucide-react";
@@ -27,7 +27,7 @@ interface AccordionProps {
 }
 
 /* --- Constants --- */
-const springTransition: Spring = {
+const springTransition: Transition = {
   type: "spring",
   stiffness: 260,
   damping: 20,

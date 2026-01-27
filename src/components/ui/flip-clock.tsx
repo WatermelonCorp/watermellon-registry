@@ -298,7 +298,7 @@ export function FlipClock({
       ))}
 
       {/* Injected Keyframes (The Shadcn "Cheat Code") */}
-      <style jsx global>{`
+      <style>{`
         /* Use the same duration for both to keep them in sync */
         .animate-flip-top {
           animation: flip-top-anim 0.6s ease-in forwards;

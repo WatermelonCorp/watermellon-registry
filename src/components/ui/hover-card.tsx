@@ -227,13 +227,7 @@ function HoverCardContentPrimitive({
   );
 }
 
-type HoverCardArrowProps = React.ComponentProps<
-  typeof HoverCardPrime.Arrow
->;
 
-function HoverCardArrowPrimitive(props: HoverCardArrowProps) {
-  return <HoverCardPrime.Arrow data-slot="hover-card-arrow" {...props} />;
-}
 
 
 function getStrictContext<T>(

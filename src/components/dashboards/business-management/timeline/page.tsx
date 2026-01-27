@@ -1,4 +1,4 @@
-import { TimelineView } from "@/app/views/timelineView"
+import { TimelineView } from "@/components/dashboards/business-management/timelineView"
 
 const Timeline = () => {
   return (

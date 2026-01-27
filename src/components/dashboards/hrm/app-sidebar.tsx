@@ -46,7 +46,7 @@ import {
 //   SidebarMenuItem,
 //   SidebarSeparator,
 //   useSidebar,
-// } from "@/component@/components/ui/sidebar";
+// } from "@/components/ui/sidebar";
 import {
   Tooltip,
   TooltipContent,

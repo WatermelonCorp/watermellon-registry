@@ -1,71 +1,33 @@
-import * as React from 'react';
+import * as React from "react"
+import * as SwitchPrimitive from "@radix-ui/react-switch"
 
-import {
-  Switch as SwitchPrimitive,
-  SwitchThumb as SwitchThumbPrimitive,
-  SwitchIcon as SwitchIconPrimitive,
-  type SwitchProps as SwitchPrimitiveProps,
-} from '@/components/animate-ui/primitives/radix/switch';
-import { cn } from '@/lib/utils';
-
-type SwitchProps = SwitchPrimitiveProps & {
-  pressedWidth?: number;
-  startIcon?: React.ReactElement;
-  endIcon?: React.ReactElement;
-  thumbIcon?: React.ReactElement;
-};
+import { cn } from "@/lib/utils"
 
 function Switch({
   className,
-  pressedWidth = 19,
-  startIcon,
-  endIcon,
-  thumbIcon,
+  size = "default",
   ...props
-}: SwitchProps) {
+}: React.ComponentProps<typeof SwitchPrimitive.Root> & {
+  size?: "sm" | "default"
+}) {
   return (
-    <SwitchPrimitive
+    <SwitchPrimitive.Root
+      data-slot="switch"
+      data-size={size}
       className={cn(
-        'relative peer focus-visible:border-ring focus-visible:ring-ring/50 flex h-5 w-8 px-px shrink-0 items-center justify-start rounded-full border border-transparent shadow-xs outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50',
-        'data-[state=checked]:bg-primary data-[state=unchecked]:bg-input dark:data-[state=unchecked]:bg-input/80 data-[state=checked]:justify-end',
-        className,
+        "peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 group/switch inline-flex shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-[1.15rem] data-[size=default]:w-8 data-[size=sm]:h-3.5 data-[size=sm]:w-6",
+        className
       )}
       {...props}
     >
-      <SwitchThumbPrimitive
+      <SwitchPrimitive.Thumb
+        data-slot="switch-thumb"
         className={cn(
-          'relative z-10 bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0',
+          "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block rounded-full ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"
         )}
-        pressedAnimation={{ width: pressedWidth }}
-      >
-        {thumbIcon && (
-          <SwitchIconPrimitive
-            position="thumb"
-            className="absolute [&_svg]:size-[9px] left-1/2 top-1/2 -translate-1/2 dark:text-neutral-500 text-neutral-400"
-          >
-            {thumbIcon}
-          </SwitchIconPrimitive>
-        )}
-      </SwitchThumbPrimitive>
-
-      {startIcon && (
-        <SwitchIconPrimitive
-          position="left"
-          className="absolute [&_svg]:size-[9px] left-0.5 top-1/2 -translate-y-1/2 dark:text-neutral-500 text-neutral-400"
-        >
-          {startIcon}
-        </SwitchIconPrimitive>
-      )}
-      {endIcon && (
-        <SwitchIconPrimitive
-          position="right"
-          className="absolute [&_svg]:size-[9px] right-0.5 top-1/2 -translate-y-1/2 dark:text-neutral-400 text-neutral-500"
-        >
-          {endIcon}
-        </SwitchIconPrimitive>
-      )}
-    </SwitchPrimitive>
-  );
+      />
+    </SwitchPrimitive.Root>
+  )
 }
 
-export { Switch, type SwitchProps };
+export { Switch }
