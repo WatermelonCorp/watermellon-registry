@@ -18,5 +18,8 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {}
+  "registries": {
+    "@animate-ui": "https://animate-ui.com/r/{name}.json",
+    "@austin-ui": "https://austin-ui.netlify.app/r/{name}.json"
+  }
 }

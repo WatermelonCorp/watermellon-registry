@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-01",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/alert-01.tsx",
+      "content": "import { Info } from \"@aliimam/icons\";\nimport { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\n\nexport default function Alert01() {\n  return (\n    <Alert className=\"border-blue-500/30 bg-blue-50 text-blue-800 dark:bg-blue-950 dark:text-blue-200\">\n      <Info size={18} />\n      <AlertTitle>Heads up!</AlertTitle>\n      <AlertDescription>\n        You can use this alert to give users neutral or informational messages.\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-01.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

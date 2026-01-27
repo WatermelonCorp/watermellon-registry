@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-05",
+  "dependencies": [
+    "@radix-ui/react-accordion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/accordion-05.tsx",
+      "content": "import { Oswald } from \"next/font/google\";\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\"; \n\nconst myFont = Oswald({\n  weight: [\"400\", \"700\"],\n  subsets: [\"latin\"],\n});\n\nconst items = [\n  {\n    id: \"1\",\n    title: \"Who am I?\",\n    content:\n      \"I’m Ali Imam — a designer and creative developer focused on building digital experiences that are minimal, meaningful, and timeless.\",\n  },\n  {\n    id: \"2\",\n    title: \"What do I design?\",\n    content:\n      \"I create clean, functional interfaces, brand systems, and digital products. My work blends simplicity with clarity and usability.\",\n  },\n  {\n    id: \"3\",\n    title: \"My design approach\",\n    content:\n      \"For me, design isn’t just visuals — it’s how something feels and works. I focus on clarity, detail, and storytelling in every project.\",\n  },\n  {\n    id: \"4\",\n    title: \"Beyond design\",\n    content:\n      \"I bridge design and development, turning ideas into interactive experiences with modern tools and technology.\",\n  },\n  {\n    id: \"5\",\n    title: \"What inspires me\",\n    content:\n      \"Minimalism, architecture, and everyday details. I believe great design is found in the small things we often overlook.\",\n  },\n  {\n    id: \"6\",\n    title: \"Who I work with\",\n    content:\n      \"I collaborate with startups, brands, and individuals who value thoughtful design and want to create lasting impact.\",\n  },\n  {\n    id: \"7\",\n    title: \"My toolkit\",\n    content:\n      \"Figma, Next.js, and modern frameworks are part of my process — but for me, tools always serve the idea, not the other way around.\",\n  },\n  {\n    id: \"8\",\n    title: \"Let’s connect\",\n    content:\n      \"You can reach me through contact@aliimam.in or on social platforms. I’m always open to new projects, collaborations, and conversations.\",\n  },\n];\n\nexport default function PricingAccordion() {\n  return (\n    <div className=\"w-full max-w-3xl mx-auto\">\n      <Accordion type=\"single\" defaultValue=\"5\" collapsible className=\"w-full\">\n        {items.map((item) => (\n          <AccordionItem value={item.id} key={item.id} className=\"last:border-b\">\n            <AccordionTrigger className=\"text-left pl-6 md:pl-14 overflow-hidden text-foreground/20 duration-200 hover:no-underline cursor-pointer -space-y-6 data-[state=open]:space-y-0 data-[state=open]:text-primary [&>svg]:hidden\">\n              <div className=\"flex flex-1 items-start gap-4\">\n                <p className=\"text-xs\">{item.id}</p>\n                <h1\n                  className={`${myFont.className} uppercase relative text-center text-3xl md:text-5xl`}\n                >\n                  {item.title}\n                </h1>\n              </div>\n            </AccordionTrigger>\n\n            <AccordionContent className=\"text-muted-foreground pb-6 pl-6 md:px-20\">\n              {item.content}\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-05.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

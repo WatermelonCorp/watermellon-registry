@@ -6,6 +6,23 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Dashboards
+
+This registry includes pre-built dashboards that you can add to your project.
+
+### Sales Admin Panel
+
+A comprehensive sales dashboard with sidebar navigation, data tables, charts (using CSS/Divs), and filtering.
+
+To add this dashboard to your project:
+
+```bash
+npx shadcn@latest add sales-admin-panel
+```
+
+**Note:** Ensure you have the necessary registry dependencies installed (sidebar, button, badge, etc.). The command above should handle it if your registry is correctly configured.
 
 ## React Compiler
 

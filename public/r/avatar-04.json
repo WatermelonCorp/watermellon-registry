@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-04",
+  "dependencies": [
+    "@radix-ui/react-avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/avatar-04.tsx",
+      "content": "import { Avatar, AvatarImage, AvatarFallback } from \"@/components/ui/avatar\";\n\nexport default function Avatar04() {\n  const sizes = [\"size-6\", \"size-8\", \"size-10\", \"size-12\"];\n\n  return (\n    <div className=\"flex items-center gap-4\">\n      {sizes.map((size, i) => (\n        <Avatar key={i} className={size}>\n          <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n          <AvatarFallback>AI</AvatarFallback>\n        </Avatar>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-04.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

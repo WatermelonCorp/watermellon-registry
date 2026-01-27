@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-06",
+  "dependencies": [
+    "@radix-ui/react-avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/avatar-06.tsx",
+      "content": "import {\n  Avatar,\n  AvatarImage,\n  AvatarFallback,\n} from \"@/components/ui/avatar\";\n\nexport default function Avatar06() {\n  const members = [\n    { src: \"/ali.jpg\", fallback: \"AI\" },\n    { src: \"/ali.jpg\", fallback: \"AI\" },\n    { src: \"/ali.jpg\", fallback: \"AI\" },\n  ];\n\n  return (\n    <div className=\"flex items-center rounded-full -space-x-2 border bg-background p-1\">\n      {members.map((member, i) => (\n        <Avatar key={i} className=\"border-2 border-background\">\n          <AvatarImage src={member.src} alt={member.fallback} />\n          <AvatarFallback>{member.fallback}</AvatarFallback>\n        </Avatar>\n      ))}\n      <p className=\"px-4 text-xs text-muted-foreground\">\n        Designed by <span className=\"font-bold text-foreground\">20K+</span>{\" \"}\n        designers.\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-06.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

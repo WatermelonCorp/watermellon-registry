@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-02",
+  "dependencies": [
+    "@radix-ui/react-alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/alert-dialog-02.tsx",
+      "content": "\"use client\";\n\nimport {\n  AlertDialog,\n  AlertDialogTrigger,\n  AlertDialogContent,\n  AlertDialogHeader,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogDescription,\n  AlertDialogCancel,\n  AlertDialogAction,\n} from \"@/components/ui/alert-dialog\";\nimport { Button } from \"@/components/ui/button\";\nimport { Trash2 } from \"@aliimam/icons\";\n\nexport default function AlertDialog02() {\n  return (\n    <div className=\"flex gap-2\">\n      <AlertDialog>\n        <AlertDialogTrigger asChild>\n          <Button size={\"icon\"} variant=\"destructive\">\n            <Trash2 />\n          </Button>\n        </AlertDialogTrigger>\n        <AlertDialogContent>\n          <AlertDialogHeader>\n            <AlertDialogTitle>Delete file permanently?</AlertDialogTitle>\n            <AlertDialogDescription>\n              This action cannot be undone. Are you sure you want to permanently\n              delete\n              <span className=\"font-medium\"> design-final.pdf</span>?\n            </AlertDialogDescription>\n          </AlertDialogHeader>\n          <AlertDialogFooter>\n            <AlertDialogCancel>Cancel</AlertDialogCancel>\n            <AlertDialogAction className=\"bg-destructive text-destructive-foreground hover:bg-destructive/90\">\n              Delete\n            </AlertDialogAction>\n          </AlertDialogFooter>\n        </AlertDialogContent>\n        <AlertDialogTrigger asChild>\n          <Button variant=\"destructive\">\n            <Trash2 />\n            Delete File\n          </Button>\n        </AlertDialogTrigger>\n        <AlertDialogContent>\n          <AlertDialogHeader>\n            <AlertDialogTitle>Delete file permanently?</AlertDialogTitle>\n            <AlertDialogDescription>\n              This action cannot be undone. Are you sure you want to permanently\n              delete\n              <span className=\"font-medium\"> design-final.pdf</span>?\n            </AlertDialogDescription>\n          </AlertDialogHeader>\n          <AlertDialogFooter>\n            <AlertDialogCancel>Cancel</AlertDialogCancel>\n            <AlertDialogAction className=\"bg-destructive text-destructive-foreground hover:bg-destructive/90\">\n              Delete\n            </AlertDialogAction>\n          </AlertDialogFooter>\n        </AlertDialogContent>\n      </AlertDialog>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-dialog-02.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

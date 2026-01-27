@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-01",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/button-01.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Moon, Sun } from \"@aliimam/icons\";\n\nexport default function ButtonDemo() {\n  return (\n    <div className=\"flex flex-col gap-6\">\n      <div className=\"flex gap-3\">\n        <Button>Default</Button>\n        <Button variant={\"destructive\"}>Destructive</Button>\n        <Button variant={\"outline\"}>Outline</Button>\n        <Button variant={\"secondary\"}>Secondary</Button>\n        <Button variant={\"ghost\"}>Ghost</Button>\n        <Button variant={\"link\"}>Link</Button>\n      </div>\n      <div className=\"flex gap-3 items-center\">\n        <Button>default</Button>\n        <Button variant={\"outline\"} size={\"sm\"}>\n          sm\n        </Button>\n        <Button className=\"rounded-full\" size={\"lg\"}>\n          lg\n        </Button>\n        <Button variant={\"ghost\"} size={\"icon\"}>\n          <Moon />\n        </Button>\n        <Button variant={\"secondary\"} size={\"icon-lg\"}>\n          <Sun className=\"w-6 size-full\" />\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-01.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

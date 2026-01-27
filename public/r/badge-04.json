@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-04",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/badge-04.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\n\nexport default function Badge04() {\n  const tags = [\"Design\", \"Next.js\", \"Branding\", \"UI/UX\"];\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {tags.map((tag) => (\n        <Badge key={tag} variant=\"secondary\">\n          {tag}\n        </Badge>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/badge-04.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

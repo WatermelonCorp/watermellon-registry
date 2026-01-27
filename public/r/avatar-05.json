@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-05",
+  "dependencies": [
+    "@radix-ui/react-avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/avatar-05.tsx",
+      "content": "import {\n  Avatar,\n  AvatarImage,\n  AvatarFallback,\n} from \"@/components/ui/avatar\";\nimport { VerifiedBadge } from \"@aliimam/logos\";\nimport { Badge } from \"@/components/ui/badge\";\n\nexport default function Avatar05() {\n  return (\n    <div className=\"flex gap-6\">\n      <div className=\"relative inline-block\">\n        <Avatar className=\"size-10\">\n          <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n          <AvatarFallback>AI</AvatarFallback>\n        </Avatar>\n        <span className=\"absolute top-0 right-0 block size-3 rounded-full border-2 border-background bg-green-500\" />\n      </div>\n\n      <div className=\"relative inline-block\">\n        <Avatar className=\"size-10\">\n          <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n          <AvatarFallback>AI</AvatarFallback>\n        </Avatar>\n        <span className=\"absolute top-0 right-0 block size-3 rounded-full border-2 border-background bg-red-500\" />\n      </div>\n\n      <div className=\"relative inline-block\">\n        <Avatar className=\"size-10\">\n          <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n          <AvatarFallback>AI</AvatarFallback>\n        </Avatar>\n        <VerifiedBadge\n          size={18}\n          className=\"absolute -top-1 bg-background rounded-full -right-1 block\"\n        />\n      </div>\n\n      <div className=\"relative inline-block\">\n        <Avatar className=\"size-10\">\n          <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n          <AvatarFallback>AI</AvatarFallback>\n        </Avatar>\n        <Badge className=\"absolute -top-1.5 left-full min-w-5.5 -translate-x-3.5 border-background px-1\">\n          3\n        </Badge> \n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-05.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

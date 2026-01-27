@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-03",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/badge-03.tsx",
+      "content": "import Link from \"next/link\";\nimport { Badge } from \"@/components/ui/badge\";\n\nexport default function Badge03() {\n  return (\n    <Badge asChild variant=\"outline\">\n      <Link href=\"https://aliimam.in\" target=\"_blank\">\n        aliimam.in\n      </Link>\n    </Badge>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/badge-03.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

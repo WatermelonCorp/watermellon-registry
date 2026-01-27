@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-03",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/alert-03.tsx",
+      "content": "import { CircleCheck } from \"@aliimam/icons\";\nimport { Button } from \"@/components/ui/button\"; // or your existing Button\nimport { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\n\nexport default function Alert03() {\n  return (\n    <Alert className=\"border-green-500/30 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200\">\n      <CircleCheck size={18} />\n      <div className=\"flex flex-col gap-2\">\n        <AlertTitle>Operation completed!</AlertTitle>\n        <AlertDescription>\n          Your account settings have been updated successfully.\n        </AlertDescription>\n        <Button variant=\"outline\" size=\"sm\" className=\"mt-1 w-fit\">\n          View details\n        </Button>\n      </div>\n    </Alert>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-03.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

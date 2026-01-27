@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-08",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/button-08.tsx",
+      "content": "\"use client\";\nimport { Button } from \"@/components/ui/button\";\nimport { Moon } from \"@aliimam/icons\";\nimport { cn } from \"@/lib/utils\";\nimport { motion } from \"motion/react\";\n\nexport default function ButtonDemo() {\n  return (\n    <div className=\"flex gap-3\">\n      <Button size={\"icon-lg\"} variant={\"outline\"} className=\"relative\">\n        <div\n          className={cn(\n            \"-inset-px pointer-events-none absolute rounded-[inherit] border-2 border-transparent border-inset [mask-clip:padding-box,border-box]\",\n            \"[mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)]\"\n          )}\n        >\n          <motion.div\n            className={cn(\n              \"absolute aspect-square bg-gradient-to-r from-transparent via-primary to-primary\"\n            )}\n            animate={{\n              offsetDistance: [\"0%\", \"100%\"],\n            }}\n            style={{\n              width: 20,\n              offsetPath: `rect(0 auto auto 0 round ${20}px)`,\n            }}\n            transition={{\n              repeat: Number.POSITIVE_INFINITY,\n              duration: 5,\n              ease: \"linear\",\n            }}\n          />\n        </div>\n        <Moon />\n      </Button>\n\n      <Button size={\"lg\"} variant={\"outline\"} className=\"relative\">\n        <div\n          className={cn(\n            \"-inset-px pointer-events-none absolute rounded-[inherit] border-2 border-transparent border-inset [mask-clip:padding-box,border-box]\",\n            \"[mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)]\"\n          )}\n        >\n          <motion.div\n            className={cn(\n              \"absolute aspect-square bg-gradient-to-r from-transparent via-primary to-primary\"\n            )}\n            animate={{\n              offsetDistance: [\"0%\", \"100%\"],\n            }}\n            style={{\n              width: 20,\n              offsetPath: `rect(0 auto auto 0 round ${20}px)`,\n            }}\n            transition={{\n              repeat: Number.POSITIVE_INFINITY,\n              duration: 5,\n              ease: \"linear\",\n            }}\n          />\n        </div>\n        Animated Border\n      </Button>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-08.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

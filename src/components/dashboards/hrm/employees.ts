@@ -1,0 +1,133 @@
+export interface Employee {
+  id: string;
+  name: string;
+  email: string;
+  department: string;
+  position: string;
+  joinDate: string;
+  status: "Active" | "On Leave" | "Absent";
+  avatar: string;
+}
+
+export const employees: Employee[] = [
+  {
+    id: "#001",
+    name: "John Doe",
+    email: "john@example.com",
+    department: "Engineering",
+    position: "Senior Developer",
+    joinDate: "02 Jan, 2026",
+    status: "Active",
+    avatar: "JD",
+  },
+  {
+    id: "#002",
+    name: "Mike Johnson",
+    email: "mike@example.com",
+    department: "Marketing",
+    position: "Marketing Manager",
+    joinDate: "04 Jan, 2026",
+    status: "Active",
+    avatar: "MJ",
+  },
+  {
+    id: "#003",
+    name: "David Kim",
+    email: "david@example.com",
+    department: "Finance",
+    position: "Accountant",
+    joinDate: "02 Feb, 2026",
+    status: "On Leave",
+    avatar: "DK",
+  },
+  {
+    id: "#004",
+    name: "Alex Turner",
+    email: "alexr@example.com",
+    department: "HR",
+    position: "HR Specialist",
+    joinDate: "08 Feb, 2026",
+    status: "Active",
+    avatar: "AT",
+  },
+  {
+    id: "#005",
+    name: "Ryan Pate",
+    email: "ryan@example.com",
+    department: "Engineering",
+    position: "Frontend Developer",
+    joinDate: "10 Feb, 2026",
+    status: "Absent",
+    avatar: "RP",
+  },
+  {
+    id: "#006",
+    name: "Mason Reed",
+    email: "mason@example.com",
+    department: "Sales",
+    position: "Sales Representative",
+    joinDate: "31 Dec, 2025",
+    status: "Active",
+    avatar: "MR",
+  },
+  {
+    id: "#007",
+    name: "James Smith",
+    email: "james@example.com",
+    department: "Sales",
+    position: "Sales Representative",
+    joinDate: "31 Dec, 2025",
+    status: "On Leave",
+    avatar: "JS",
+  },
+  {
+    id: "#008",
+    name: "Emily Johnson",
+    email: "emily@example.com",
+    department: "Operations",
+    position: "Sales Representative",
+    joinDate: "25 Nov, 2025",
+    status: "Active",
+    avatar: "EJ",
+  },
+  {
+    id: "#009",
+    name: "Michael Williams",
+    email: "michael@example.com",
+    department: "Engineering",
+    position: "Data Analyst",
+    joinDate: "24 Nov, 2025",
+    status: "On Leave",
+    avatar: "MW",
+  },
+  {
+    id: "#010",
+    name: "Sarah Brown",
+    email: "sarah@example.com",
+    department: "Operations",
+    position: "SaaS Product Designer",
+    joinDate: "20 Nov, 2025",
+    status: "Active",
+    avatar: "SB",
+  },
+  {
+    id: "#011",
+    name: "David Jones",
+    email: "jones@example.com",
+    department: "Product",
+    position: "Software Developer",
+    joinDate: "02 Nov, 2025",
+    status: "On Leave",
+    avatar: "DJ",
+  },
+  {
+    id: "#012",
+    name: "Jessica Garcia",
+    email: "garcia@example.com",
+    department: "Product",
+    position: "UI/UX Designer",
+    joinDate: "12 Oct, 2025",
+    status: "Active",
+    avatar: "JG",
+  },
+];

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-04",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/alert-04.tsx",
+      "content": "import { Info } from \"@aliimam/icons\";\nimport { Alert, AlertDescription } from \"@/components/ui/alert\";\nexport default function Alert04() {\n  return (\n    <Alert className=\"border-transparent bg-muted/40 text-muted-foreground flex items-center gap-2\">\n      <Info size={16}/>\n      <AlertDescription>\n        Changes you make here will only affect this session.\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-04.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

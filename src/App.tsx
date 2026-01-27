@@ -1,10 +1,11 @@
-import Hero from './components/pages/apexflow-growth-agency/index'
+
 import './App.css'
+import ECommerceDashboardDemo from './components/dashboards/e-commerce/demo'
 
 function App() {
   return (
     <>
-     <Hero/>
+     <ECommerceDashboardDemo/>
     </>
   )
 }

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-03",
+  "dependencies": [
+    "@radix-ui/react-accordion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion",
+    "primary-button"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/accordion-03.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\nimport { Button } from \"@/components/ui/primary-button\";\n\nconst items = [\n  {\n    id: \"01\",\n    title: \"Who am I?\",\n    img: \"/templates/dalim-www.jpg\",\n    content:\n      \"I’m Ali Imam — a multidisciplinary designer and creative developer crafting thoughtful digital experiences with purpose and precision.\",\n  },\n  {\n    id: \"02\",\n    title: \"What do I design?\",\n    img: \"/templates/dalim-ui.jpg\",\n    content:\n      \"I design intuitive interfaces, visual identities, and digital products that connect clarity with emotion — always guided by simplicity and usability.\",\n  },\n  {\n    id: \"03\",\n    title: \"My design approach\",\n    img: \"/templates/dalim-icons.jpg\",\n    content:\n      \"Every project begins with understanding. I combine logic, emotion, and craft to create experiences that feel effortless and meaningful.\",\n  },\n  {\n    id: \"04\",\n    title: \"Philosophy & values\",\n    img: \"/templates/dalim-agency.jpg\",\n    content:\n      \"Design should be timeless — not trendy. I value honesty in visuals, restraint in detail, and intention in every decision I make.\",\n  },\n  {\n    id: \"05\",\n    title: \"Beyond design\",\n    img: \"/templates/dalim-fonts.jpg\",\n    content:\n      \"Outside of work, I explore photography, motion, and creative coding — all ways to see and shape the world differently.\",\n  },\n];\n\n\nexport default function Accordion03() {\n  return (\n    <div className=\"w-full border mx-auto max-w-3xl\">\n      <Accordion type=\"single\" defaultValue=\"02\" collapsible className=\"w-full\">\n        {items.map((item) => (\n          <AccordionItem className=\"relative\" value={item.id} key={item.id}>\n            <AccordionTrigger className=\"pl-6 hover:no-underline [&>svg]:hidden\">\n              <h1 className=\"text-lg md:text-xl font-semibold\">{item.title}</h1>\n            </AccordionTrigger>\n            <AccordionContent className=\"space-y-6 text-muted-foreground w-full h-full md:h-full grid md:grid-cols-2\">\n              <div className=\"px-6 space-y-6\">\n                <p> {item.content}</p>\n                <Button>View More</Button>\n              </div>\n              <img\n                className=\"h-full md:border-l border-t md:border-t-0 md:absolute md:w-1/2 object-cover right-0 top-0\"\n                src={item.img}\n                alt={item.img}\n                aria-hidden=\"true\"\n              />\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-03.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
