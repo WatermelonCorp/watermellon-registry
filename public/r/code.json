@@ -5,7 +5,8 @@
     "class-variance-authority",
     "lucide-react",
     "motion",
-    "next-themes"
+    "next-themes",
+    "shiki"
   ],
   "registryDependencies": [
     "button"

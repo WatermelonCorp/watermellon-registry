@@ -1310,7 +1310,8 @@
         "class-variance-authority",
         "lucide-react",
         "motion",
-        "next-themes"
+        "next-themes",
+        "shiki"
       ],
       "files": [
         {
@@ -2120,7 +2121,8 @@
       "dependencies": [
         "class-variance-authority",
         "lucide-react",
-        "motion"
+        "motion",
+        "react-use-measure"
       ],
       "files": [
         {
@@ -2361,7 +2363,7 @@
       ]
     },
     {
-      "name": "invite-disclosure ",
+      "name": "invite-disclosure",
       "type": "registry:ui",
       "dependencies": [
         "motion",
@@ -2369,8 +2371,8 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/invite-disclosure .tsx",
-          "target": "components/ui/invite-disclosure .tsx",
+          "path": "src/components/ui/invite-disclosure.tsx",
+          "target": "components/ui/invite-disclosure.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3679,6 +3681,18 @@
       ]
     },
     {
+      "name": "shimmer-button",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/shimmer-button.tsx",
+          "target": "components/ui/shimmer-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "spinner",
       "type": "registry:ui",
       "dependencies": [
@@ -4257,7 +4271,7 @@
       ],
       "registryDependencies": [
         "avatar",
-        "avatar-group"
+        "tooltip"
       ]
     },
     {
