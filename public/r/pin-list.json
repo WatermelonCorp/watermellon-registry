@@ -3,7 +3,7 @@
   "name": "pin-list",
   "dependencies": [
     "lucide-react",
-    "framer-motion"
+    "motion"
   ],
   "files": [
     {

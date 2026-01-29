@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Plus, Leaf, Lightbulb, ChevronDown, Mic, Send } from "lucide-react";
 
 const Hero: React.FC = () => {

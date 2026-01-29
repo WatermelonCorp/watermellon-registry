@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import {images_asset_base_url} from "@/static-assets/Static-Assets"
 
 const Hero = () => {

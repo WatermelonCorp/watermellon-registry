@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "motion/react";
 import { Pin } from "lucide-react";
 import { IoFastFood } from "react-icons/io5";
 import {

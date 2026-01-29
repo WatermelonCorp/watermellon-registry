@@ -1,7 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "switch",
-  "dependencies": [],
+  "dependencies": [
+    "@radix-ui/react-switch"
+  ],
   "files": [
     {
       "path": "src/components/ui/switch.tsx",

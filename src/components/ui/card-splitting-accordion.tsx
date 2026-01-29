@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FC } from "react";
-import { motion, AnimatePresence, type Transition } from "framer-motion";
+import { motion, AnimatePresence, type Transition } from "motion/react";
 import { ChevronDown, Sun, Moon, Send } from "lucide-react";
 import { HiCursorArrowRipple } from "react-icons/hi2";
 import { Layers } from "lucide-react";

@@ -7,7 +7,7 @@
       "name": "aave-swap-component",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -93,6 +93,7 @@
       "type": "registry:ui",
       "dependencies": [
         "@radix-ui/react-accordion",
+        "@radix-ui/react-checkbox",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -110,7 +111,7 @@
       "name": "activities-card",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -125,7 +126,7 @@
       "name": "adaptive-slider",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -140,8 +141,9 @@
       "name": "add-cash-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -155,8 +157,9 @@
       "name": "ai-input",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -170,7 +173,7 @@
       "name": "ai-input002",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -185,7 +188,7 @@
       "name": "ai-input003",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -200,7 +203,7 @@
       "name": "ai-input004",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -215,8 +218,9 @@
       "name": "ai-input005",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -281,7 +285,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "alert"
+        "alert",
+        "button"
       ],
       "files": [
         {
@@ -315,7 +320,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "alert"
+        "alert",
+        "button"
       ],
       "files": [
         {
@@ -346,7 +352,9 @@
       "name": "alert-dialog",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-alert-dialog"
+        "@radix-ui/react-alert-dialog",
+        "motion",
+        "radix-ui"
       ],
       "registryDependencies": [
         "button"
@@ -417,12 +425,15 @@
       "name": "alphine-booking-form",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "date-fns",
+        "lucide-react",
+        "react-day-picker"
       ],
       "registryDependencies": [
+        "button",
+        "calendar",
         "input",
-        "label",
-        "button"
+        "label"
       ],
       "files": [
         {
@@ -473,7 +484,9 @@
       "type": "registry:ui",
       "dependencies": [
         "@radix-ui/react-accordion",
-        "lucide-react"
+        "lucide-react",
+        "motion",
+        "radix-ui"
       ],
       "files": [
         {
@@ -487,8 +500,9 @@
       "name": "animated-button",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "class-variance-authority"
+        "class-variance-authority",
+        "motion",
+        "motion"
       ],
       "files": [
         {
@@ -502,8 +516,8 @@
       "name": "availability",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react",
-        "framer-motion"
+        "motion",
+        "lucide-react"
       ],
       "files": [
         {
@@ -511,6 +525,9 @@
           "target": "components/ui/availability.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "button"
       ]
     },
     {
@@ -602,7 +619,8 @@
         "@radix-ui/react-avatar"
       ],
       "registryDependencies": [
-        "avatar"
+        "avatar",
+        "badge"
       ],
       "files": [
         {
@@ -633,7 +651,8 @@
       "name": "avatar-group",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion",
+        "motion"
       ],
       "files": [
         {
@@ -648,7 +667,7 @@
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -752,7 +771,7 @@
       "name": "book",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -849,8 +868,8 @@
       "name": "browser",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react",
-        "framer-motion"
+        "motion",
+        "lucide-react"
       ],
       "files": [
         {
@@ -858,6 +877,13 @@
           "target": "components/ui/browser.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "input",
+        "separator"
       ]
     },
     {
@@ -924,10 +950,11 @@
       "name": "button-02",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react",
-        "framer-motion"
+        "motion",
+        "lucide-react"
       ],
       "registryDependencies": [
+        "badge",
         "button"
       ],
       "files": [
@@ -943,7 +970,7 @@
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
-        "framer-motion"
+        "motion"
       ],
       "registryDependencies": [
         "button"
@@ -961,7 +988,7 @@
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
-        "framer-motion"
+        "motion"
       ],
       "registryDependencies": [
         "button"
@@ -1011,7 +1038,7 @@
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
-        "framer-motion"
+        "motion"
       ],
       "registryDependencies": [
         "button"
@@ -1028,7 +1055,8 @@
       "name": "button-08",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "motion"
       ],
       "registryDependencies": [
         "button"
@@ -1049,6 +1077,7 @@
         "react-day-picker"
       ],
       "registryDependencies": [
+        "button",
         "primary-button"
       ],
       "files": [
@@ -1063,7 +1092,7 @@
       "name": "calendar-widget",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1090,8 +1119,9 @@
       "name": "card-splitting-accordion",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1105,7 +1135,7 @@
       "name": "card-swap",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1120,7 +1150,7 @@
       "name": "carousel-navigator",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1135,7 +1165,7 @@
       "name": "carousel-slider",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1178,7 +1208,9 @@
       "name": "checkbox",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "@radix-ui/react-checkbox",
+        "class-variance-authority",
+        "lucide-react"
       ],
       "files": [
         {
@@ -1192,6 +1224,8 @@
       "name": "code",
       "type": "registry:ui",
       "dependencies": [
+        "lucide-react",
+        "motion",
         "next-themes"
       ],
       "files": [
@@ -1206,9 +1240,10 @@
       "name": "code-block",
       "type": "registry:ui",
       "dependencies": [
-        "shiki",
-        "lucide-react",
         "@radix-ui/react-collapsible",
+        "@radix-ui/react-slot",
+        "lucide-react",
+        "shiki",
         "zod"
       ],
       "registryDependencies": [
@@ -1226,6 +1261,8 @@
       "name": "code-tabs",
       "type": "registry:ui",
       "dependencies": [
+        "lucide-react",
+        "motion",
         "next-themes",
         "shiki"
       ],
@@ -1255,8 +1292,9 @@
       "name": "collection-grid-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1270,6 +1308,7 @@
       "name": "color-watch-selector",
       "type": "registry:ui",
       "dependencies": [
+        "@radix-ui/react-radio-group",
         "lucide-react"
       ],
       "files": [
@@ -1284,8 +1323,9 @@
       "name": "command-search",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1299,7 +1339,7 @@
       "name": "contextual-ai-bar",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1314,7 +1354,7 @@
       "name": "continuous-pagination",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1329,7 +1369,7 @@
       "name": "continuous-tabs",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1345,8 +1385,9 @@
       "type": "registry:ui",
       "dependencies": [
         "class-variance-authority",
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -1360,7 +1401,7 @@
       "name": "create-new-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1406,7 +1447,7 @@
       "name": "debug-pannel",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -1420,7 +1461,7 @@
       "name": "device",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -1434,7 +1475,9 @@
       "name": "dialog",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "motion",
+        "radix-ui"
       ],
       "files": [
         {
@@ -1448,7 +1491,7 @@
       "name": "dialog-stack",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1463,7 +1506,7 @@
       "name": "discrete-tabs",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -1477,7 +1520,7 @@
       "name": "dock",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1492,7 +1535,7 @@
       "name": "draggable-toolbar",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1507,8 +1550,9 @@
       "name": "draw-signature",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1522,8 +1566,9 @@
       "name": "dropdown-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1537,7 +1582,9 @@
       "name": "dropdown-menu",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "motion",
+        "radix-ui"
       ],
       "files": [
         {
@@ -1608,8 +1655,9 @@
       "name": "edit-badge",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1623,8 +1671,9 @@
       "name": "editable-chip",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1638,7 +1687,7 @@
       "name": "emoji-spree-chips",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1653,8 +1702,9 @@
       "name": "event-reminders",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1668,8 +1718,9 @@
       "name": "extended-toolbar",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1683,7 +1734,7 @@
       "name": "family-receive-component",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1698,8 +1749,9 @@
       "name": "family-wallet",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1713,7 +1765,7 @@
       "name": "feature-tour",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1728,8 +1780,9 @@
       "name": "feedback-action",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1743,8 +1796,9 @@
       "name": "feedback-component",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1773,7 +1827,9 @@
       "name": "files",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "motion",
+        "radix-ui"
       ],
       "files": [
         {
@@ -1787,8 +1843,9 @@
       "name": "filter-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1802,7 +1859,8 @@
       "name": "flip",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "motion"
       ],
       "files": [
         {
@@ -1816,8 +1874,9 @@
       "name": "flip-card",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "motion"
       ],
       "registryDependencies": [
         "button"
@@ -1848,8 +1907,9 @@
       "name": "floating-button-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1863,8 +1923,9 @@
       "name": "fluid-tabs",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -1878,7 +1939,7 @@
       "name": "fractional-picker",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1893,7 +1954,7 @@
       "name": "frequency-selector",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -1908,7 +1969,8 @@
       "name": "fund-widget",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion",
+        "react-icons"
       ],
       "files": [
         {
@@ -1922,7 +1984,8 @@
       "name": "gauge",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "motion"
       ],
       "files": [
         {
@@ -1951,7 +2014,8 @@
       "name": "github-stars-wheel",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -1965,7 +2029,7 @@
       "name": "gooey-menu",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -1980,7 +2044,7 @@
       "type": "registry:block",
       "dependencies": [
         "lucide-react",
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -2003,7 +2067,9 @@
     {
       "name": "hover-card",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "radix-ui"
+      ],
       "files": [
         {
           "path": "src/components/ui/hover-card.tsx",
@@ -2064,7 +2130,8 @@
       "name": "icon",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "motion"
       ],
       "files": [
         {
@@ -2078,7 +2145,7 @@
       "name": "inline-disclosure-menu",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2093,7 +2160,7 @@
       "name": "inline-edit",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2108,8 +2175,9 @@
       "name": "inline-overflow",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2123,8 +2191,9 @@
       "name": "inline-table-control",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2138,8 +2207,9 @@
       "name": "inline-toast",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2165,7 +2235,8 @@
       "name": "invite-disclosure ",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion",
+        "react-icons"
       ],
       "files": [
         {
@@ -2293,7 +2364,7 @@
       "name": "journal-navigation",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2308,7 +2379,7 @@
       "name": "knob-slider",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2338,6 +2409,7 @@
       "name": "label-selector",
       "type": "registry:ui",
       "dependencies": [
+        "@radix-ui/react-radio-group",
         "lucide-react"
       ],
       "files": [
@@ -2352,7 +2424,7 @@
       "name": "labeled-progress-indicator",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2367,7 +2439,8 @@
       "name": "liquid",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "motion"
       ],
       "files": [
         {
@@ -2381,8 +2454,9 @@
       "name": "list-stack",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2396,7 +2470,7 @@
       "name": "loop-hook",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -2491,8 +2565,9 @@
       "name": "management-bar",
       "type": "registry:ui",
       "dependencies": [
+        "motion",
         "lucide-react",
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -2518,8 +2593,9 @@
       "name": "minimal-carousel",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2533,7 +2609,7 @@
       "name": "mobile-video-player",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2548,8 +2624,9 @@
       "name": "morphing-button",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2563,8 +2640,9 @@
       "name": "morphing-discovery-bar",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2578,9 +2656,10 @@
       "name": "motion-carousel",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
         "embla-carousel-react",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -2588,14 +2667,18 @@
           "target": "components/ui/motion-carousel.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "button"
       ]
     },
     {
       "name": "notification-list",
       "type": "registry:ui",
       "dependencies": [
+        "motion",
         "lucide-react",
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -2627,8 +2710,9 @@
       "name": "option-picker",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2642,13 +2726,32 @@
       "name": "pagination",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pagination.tsx",
+          "target": "components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "name": "pagination-animated",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "react-icons",
         "lucide-react"
       ],
       "files": [
         {
           "path": "src/components/ui/pagination-animated.tsx",
-          "target": "components/ui/pagination.tsx",
+          "target": "components/ui/pagination-animated.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2657,8 +2760,9 @@
       "name": "pin-item",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2673,7 +2777,7 @@
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -2687,8 +2791,9 @@
       "name": "playful-todolist",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "@radix-ui/react-checkbox"
+        "@radix-ui/react-checkbox",
+        "motion",
+        "motion"
       ],
       "registryDependencies": [
         "label"
@@ -2705,7 +2810,9 @@
       "name": "popover",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-popover"
+        "@radix-ui/react-popover",
+        "motion",
+        "radix-ui"
       ],
       "files": [
         {
@@ -2719,7 +2826,7 @@
       "name": "predictive-text",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2733,7 +2840,9 @@
     {
       "name": "preview-link-card",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "radix-ui"
+      ],
       "files": [
         {
           "path": "src/components/ui/preview-link-card.tsx",
@@ -2746,7 +2855,7 @@
       "name": "pricing-widget",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2772,7 +2881,10 @@
     {
       "name": "progress",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "motion",
+        "radix-ui"
+      ],
       "files": [
         {
           "path": "src/components/ui/progress.tsx",
@@ -2785,8 +2897,9 @@
       "name": "progressive-input-stack",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2862,8 +2975,9 @@
       "name": "quick-feedback",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -2877,7 +2991,7 @@
       "name": "quick-paste",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2892,7 +3006,7 @@
       "name": "quick-switcher",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2907,7 +3021,7 @@
       "name": "radial-carousel",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2934,8 +3048,9 @@
       "name": "radial-nav",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -2949,7 +3064,9 @@
       "name": "radio-group",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "motion",
+        "radix-ui"
       ],
       "files": [
         {
@@ -2963,7 +3080,7 @@
       "name": "range-selection-slider",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2978,7 +3095,7 @@
       "name": "returns-calculator",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -2993,8 +3110,9 @@
       "name": "reveal-copy",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3008,7 +3126,8 @@
       "name": "ripple",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "motion"
       ],
       "files": [
         {
@@ -3022,8 +3141,9 @@
       "name": "run-action-button",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3037,8 +3157,9 @@
       "name": "run-widget",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3149,8 +3270,9 @@
       "name": "save-toggle",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3164,8 +3286,9 @@
       "name": "schedule-button",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3179,7 +3302,7 @@
       "name": "scroll-fade",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion"
       ],
       "files": [
         {
@@ -3193,7 +3316,7 @@
       "name": "scroll-island",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3208,7 +3331,7 @@
       "name": "scrub-slider",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3238,7 +3361,7 @@
       "name": "select-aiagent",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3253,8 +3376,9 @@
       "name": "send-money",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3282,9 +3406,10 @@
       "name": "share-button",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "class-variance-authority",
+        "motion",
         "lucide-react",
-        "class-variance-authority"
+        "motion"
       ],
       "files": [
         {
@@ -3298,7 +3423,8 @@
       "name": "share-sheet",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion",
+        "react-icons"
       ],
       "files": [
         {
@@ -3312,7 +3438,9 @@
       "name": "sheet",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "motion",
+        "radix-ui"
       ],
       "files": [
         {
@@ -3326,8 +3454,9 @@
       "name": "show-qr",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3341,8 +3470,9 @@
       "name": "shuffle-pinned-list",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3356,10 +3486,11 @@
       "name": "sidebar",
       "type": "registry:ui",
       "dependencies": [
-        "radix-ui",
         "class-variance-authority",
+        "motion",
         "lucide-react",
-        "framer-motion"
+        "motion",
+        "radix-ui"
       ],
       "registryDependencies": [
         "button",
@@ -3391,7 +3522,7 @@
       "name": "slot-picker",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3420,8 +3551,9 @@
       "name": "split-to-edit",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3449,8 +3581,9 @@
       "name": "status-picker",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3464,7 +3597,7 @@
       "name": "step-indicator",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3479,8 +3612,9 @@
       "name": "step-pager",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3494,8 +3628,9 @@
       "name": "stepper",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3509,7 +3644,7 @@
       "name": "swap-currency",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3524,8 +3659,9 @@
       "name": "swap-form",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3538,7 +3674,9 @@
     {
       "name": "switch",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
       "files": [
         {
           "path": "src/components/ui/switch.tsx",
@@ -3551,8 +3689,9 @@
       "name": "switch-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3566,7 +3705,8 @@
       "name": "switch-mode",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion",
+        "react-icons"
       ],
       "files": [
         {
@@ -3591,7 +3731,9 @@
     {
       "name": "tabs",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "src/components/ui/tabs.tsx",
@@ -3604,7 +3746,7 @@
       "name": "tags",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3619,8 +3761,9 @@
       "name": "task-widget",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3680,9 +3823,11 @@
       "name": "theme-toggler",
       "type": "registry:ui",
       "dependencies": [
-        "next-themes",
+        "class-variance-authority",
         "lucide-react",
-        "class-variance-authority"
+        "motion",
+        "next-themes",
+        "radix-ui"
       ],
       "files": [
         {
@@ -3696,8 +3841,9 @@
       "name": "timed-undo-action",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3711,8 +3857,9 @@
       "name": "timeline",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react",
-        "framer-motion"
+        "@radix-ui/react-slot",
+        "motion",
+        "lucide-react"
       ],
       "files": [
         {
@@ -3726,6 +3873,7 @@
       "name": "toggle",
       "type": "registry:ui",
       "dependencies": [
+        "@radix-ui/react-toggle",
         "class-variance-authority"
       ],
       "files": [
@@ -3740,7 +3888,9 @@
       "name": "toggle-group",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "motion",
+        "radix-ui"
       ],
       "registryDependencies": [
         "toggle"
@@ -3757,12 +3907,24 @@
       "name": "tooltip",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "@radix-ui/react-tooltip",
+        "motion"
       ],
       "files": [
         {
-          "path": "src/components/ui/tooltip-animated.tsx",
+          "path": "src/components/ui/tooltip.tsx",
           "target": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-animated",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/tooltip-animated.tsx",
+          "target": "components/ui/tooltip-animated.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3771,8 +3933,9 @@
       "name": "tooltip-navbar",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3786,7 +3949,8 @@
       "name": "tooltip-radix",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-tooltip"
+        "@radix-ui/react-tooltip",
+        "radix-ui"
       ],
       "files": [
         {
@@ -3800,7 +3964,7 @@
       "name": "transaction-list",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3815,7 +3979,8 @@
       "name": "transcribe-voice-message",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion",
+        "react-icons"
       ],
       "files": [
         {
@@ -3829,8 +3994,9 @@
       "name": "tree-menu",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3845,7 +4011,7 @@
       "type": "registry:ui",
       "dependencies": [
         "clsx",
-        "framer-motion",
+        "motion",
         "lucide-react",
         "tailwind-merge"
       ],
@@ -3861,7 +4027,8 @@
       "name": "user-presence-avatar",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion"
+        "motion",
+        "motion"
       ],
       "files": [
         {
@@ -3869,14 +4036,19 @@
           "target": "components/ui/user-presence-avatar.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "avatar-group"
       ]
     },
     {
       "name": "vertical-tooltip-navbar",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3890,7 +4062,7 @@
       "name": "video-player01",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3905,7 +4077,7 @@
       "name": "video-player03",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3920,8 +4092,9 @@
       "name": "view-on-map",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3935,8 +4108,9 @@
       "name": "voice-chat-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3950,8 +4124,9 @@
       "name": "voice-note",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3965,8 +4140,9 @@
       "name": "waveform-scrub",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {
@@ -3980,7 +4156,7 @@
       "name": "weight-widget",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
+        "motion",
         "lucide-react"
       ],
       "files": [
@@ -3995,8 +4171,9 @@
       "name": "wiggling-cards",
       "type": "registry:ui",
       "dependencies": [
-        "framer-motion",
-        "lucide-react"
+        "motion",
+        "lucide-react",
+        "react-icons"
       ],
       "files": [
         {

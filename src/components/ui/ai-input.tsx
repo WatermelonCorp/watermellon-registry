@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import {
     Plus, Globe, ChevronDown, Send, Image as ImageIcon,
     FileText, Layers, Sparkles, Cpu, Zap

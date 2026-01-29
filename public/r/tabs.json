@@ -1,7 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs",
-  "dependencies": [],
+  "dependencies": [
+    "motion"
+  ],
   "files": [
     {
       "path": "src/components/ui/tabs.tsx",

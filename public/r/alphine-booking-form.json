@@ -2,12 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alphine-booking-form",
   "dependencies": [
-    "lucide-react"
+    "date-fns",
+    "lucide-react",
+    "react-day-picker"
   ],
   "registryDependencies": [
+    "button",
+    "calendar",
     "input",
-    "label",
-    "button"
+    "label"
   ],
   "files": [
     {

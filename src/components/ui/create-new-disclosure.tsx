@@ -12,7 +12,7 @@ import {
   Flag02Icon,
   Calendar04Icon,
 } from "@hugeicons/core-free-icons";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Sun, Moon } from "lucide-react";
 
 /* --- Types --- */

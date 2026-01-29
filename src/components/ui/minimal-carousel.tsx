@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { MoreHorizontal, Copy, Anchor } from "lucide-react";
 import { VscSparkleFilled } from "react-icons/vsc";
 import { BsBookmarkStarFill } from "react-icons/bs";

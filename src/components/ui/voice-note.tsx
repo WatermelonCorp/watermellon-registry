@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Mic, X, Play, Square, Sun, Moon } from 'lucide-react';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { FaCheck } from 'react-icons/fa6';

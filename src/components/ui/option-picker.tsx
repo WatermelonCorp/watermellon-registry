@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, type FC } from "react";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "motion/react";
 import { ChevronDown, Globe, Sun, Moon } from "lucide-react";
 import { TbLockFilled } from "react-icons/tb";
 import { type IconType } from "react-icons";

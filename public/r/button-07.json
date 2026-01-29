@@ -3,7 +3,7 @@
   "name": "button-07",
   "dependencies": [
     "lucide-react",
-    "framer-motion"
+    "motion"
   ],
   "registryDependencies": [
     "button"

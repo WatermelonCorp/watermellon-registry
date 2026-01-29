@@ -3,6 +3,7 @@
   "name": "accordion-multiselect",
   "dependencies": [
     "@radix-ui/react-accordion",
+    "@radix-ui/react-checkbox",
     "lucide-react"
   ],
   "registryDependencies": [

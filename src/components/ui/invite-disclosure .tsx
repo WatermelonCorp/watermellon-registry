@@ -1,5 +1,5 @@
 import React, { useState, type ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { MdOutlineClose } from 'react-icons/md';
 import { FaFolderClosed } from 'react-icons/fa6';
 import { LuDraftingCompass } from 'react-icons/lu';

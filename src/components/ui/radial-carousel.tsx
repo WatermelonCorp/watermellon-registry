@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { motion, AnimatePresence, type Variants, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, type Variants, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { X, Sun, Moon } from 'lucide-react';
 
 export interface GalleryItem {

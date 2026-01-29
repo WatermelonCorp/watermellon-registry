@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useMotionValue, useTransform, useMotionValueEvent } from 'framer-motion';
+import { motion, useMotionValue, useTransform, useMotionValueEvent } from 'motion/react';
 import { TbPlayerPauseFilled, TbPlayerPlayFilled } from 'react-icons/tb';
 import { Sun, Moon } from 'lucide-react'; 
 

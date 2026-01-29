@@ -5,7 +5,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "alert"
+    "alert",
+    "button"
   ],
   "files": [
     {

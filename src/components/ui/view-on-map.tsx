@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { X, Loader2, Sun, Moon } from 'lucide-react'; // Added Sun/Moon
 import { FaMap } from 'react-icons/fa6';
 

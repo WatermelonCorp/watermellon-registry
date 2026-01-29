@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, type ReactNode, type FC } from "react";
-import { motion, AnimatePresence, type Transition } from "framer-motion";
+import { motion, AnimatePresence, type Transition } from "motion/react";
 import { ChevronDown, X, ArrowUpRight, Check, Sun, Moon } from "lucide-react";
 import { FaMeta } from "react-icons/fa6";
 import { HugeiconsIcon } from "@hugeicons/react";

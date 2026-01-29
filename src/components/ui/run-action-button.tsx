@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Zap } from 'lucide-react';
 import { HiBadgeCheck } from 'react-icons/hi';
 import { IoCloseSharp } from 'react-icons/io5';

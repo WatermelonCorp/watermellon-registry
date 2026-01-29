@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Sun, Moon } from 'lucide-react';
 import { BsMusicNoteList } from 'react-icons/bs';
 import { HiOutlineAdjustments } from 'react-icons/hi';

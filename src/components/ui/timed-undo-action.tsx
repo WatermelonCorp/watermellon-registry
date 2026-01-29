@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState, type FC, type ReactNode } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { HiMiniArrowUturnLeft } from "react-icons/hi2";
-import { Sun, Moon } from "lucide-react";
 
 /* ---------- TYPES ---------- */
 
@@ -12,7 +11,6 @@ export interface TimedUndoActionProps {
   deleteLabel?: string;
   undoLabel?: string;
   icon?: ReactNode;
-  showThemeToggle?: boolean;
 }
 
 /* ---------- MAIN COMPONENT ---------- */
@@ -22,20 +20,10 @@ export const TimedUndoAction: FC<TimedUndoActionProps> = ({
   deleteLabel = "Delete Account",
   undoLabel = "Cancel Deletion",
   icon = <HiMiniArrowUturnLeft size={18} strokeWidth={0.5} />,
-  showThemeToggle = true,
 }) => {
   const [undo, setUndo] = useState(false);
   const [count, setCount] = useState(initialSeconds - 1);
-  const [isDark, setIsDark] = useState(false);
 
-  // Theme Sync
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDark]);
 
   // Countdown logic
   useEffect(() => {
@@ -65,20 +53,7 @@ export const TimedUndoAction: FC<TimedUndoActionProps> = ({
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-white dark:bg-zinc-950 transition-colors duration-500 gap-12">
-      {/* THEME TOGGLE */}
-      {showThemeToggle && (
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="p-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all active:scale-90"
-        >
-          {isDark ? (
-            <Sun className="text-yellow-400" size={20} />
-          ) : (
-            <Moon className="text-zinc-500" size={20} />
-          )}
-        </button>
-      )}
+    <div className="flex flex-col w-full justify-center items-center h-screen bg-white dark:bg-zinc-950 transition-colors duration-500 gap-12">
 
       <motion.div
         layout="position"

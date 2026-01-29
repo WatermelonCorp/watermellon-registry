@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle-group",
   "dependencies": [
-    "class-variance-authority"
+    "class-variance-authority",
+    "motion",
+    "radix-ui"
   ],
   "registryDependencies": [
     "toggle"

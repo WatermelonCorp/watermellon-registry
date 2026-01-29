@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FC } from "react";
-import { motion, LayoutGroup } from "framer-motion";
+import { motion, LayoutGroup } from "motion/react";
 import { Sun, Moon } from "lucide-react";
 
 /* ---------- Types ---------- */

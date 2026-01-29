@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "user-presence-avatar",
   "dependencies": [
-    "framer-motion"
+    "motion",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "avatar-group"
   ],
   "files": [
     {

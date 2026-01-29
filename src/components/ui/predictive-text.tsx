@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUp, ImageIcon, Mic, Sun, Moon } from 'lucide-react';
 
 interface PredictiveInputProps {

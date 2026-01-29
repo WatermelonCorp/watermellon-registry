@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { LuCircleDotDashed } from 'react-icons/lu';
 import { FaArrowRotateRight } from 'react-icons/fa6';
 import { TbAlertOctagonFilled } from 'react-icons/tb';

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback, type ChangeEvent, type MouseEvent } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Play, Pause } from 'lucide-react';
 
 interface ModernVideoPlayerProps {

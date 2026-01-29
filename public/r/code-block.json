@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "code-block",
   "dependencies": [
-    "shiki",
-    "lucide-react",
     "@radix-ui/react-collapsible",
+    "@radix-ui/react-slot",
+    "lucide-react",
+    "shiki",
     "zod"
   ],
   "registryDependencies": [
