@@ -3,7 +3,8 @@
   "name": "accordion-05",
   "dependencies": [
     "@radix-ui/react-accordion",
-    "lucide-react"
+    "lucide-react",
+    "next"
   ],
   "registryDependencies": [
     "accordion"

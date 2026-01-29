@@ -1,6 +1,11 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tooltip-animated",
+  "dependencies": [
+    "@floating-ui/react",
+    "motion"
+  ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/tooltip-animated.tsx",

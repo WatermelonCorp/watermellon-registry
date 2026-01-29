@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-02",
   "dependencies": [
-    "motion",
-    "lucide-react"
+    "@aliimam/icons",
+    "lucide-react",
+    "motion"
   ],
   "registryDependencies": [
     "badge",

@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "browser",
   "dependencies": [
+    "lucide-react",
     "motion",
-    "lucide-react"
+    "next"
   ],
   "registryDependencies": [
     "badge",

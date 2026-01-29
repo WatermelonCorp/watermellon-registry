@@ -75,7 +75,8 @@
       "type": "registry:ui",
       "dependencies": [
         "@radix-ui/react-accordion",
-        "lucide-react"
+        "lucide-react",
+        "next"
       ],
       "registryDependencies": [
         "accordion"
@@ -248,6 +249,7 @@
       "name": "alert-01",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -265,6 +267,7 @@
       "name": "alert-02",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -282,6 +285,7 @@
       "name": "alert-03",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -300,6 +304,7 @@
       "name": "alert-04",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -317,6 +322,7 @@
       "name": "alert-05",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -335,6 +341,7 @@
       "name": "alert-06",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -353,6 +360,7 @@
       "type": "registry:ui",
       "dependencies": [
         "@radix-ui/react-alert-dialog",
+        "class-variance-authority",
         "motion",
         "radix-ui"
       ],
@@ -371,6 +379,7 @@
       "name": "alert-dialog-01",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "@radix-ui/react-alert-dialog"
       ],
       "registryDependencies": [
@@ -389,6 +398,7 @@
       "name": "alert-dialog-02",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "@radix-ui/react-alert-dialog"
       ],
       "registryDependencies": [
@@ -407,6 +417,7 @@
       "name": "alert-dialog-03",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "@radix-ui/react-alert-dialog"
       ],
       "registryDependencies": [
@@ -517,7 +528,10 @@
       "type": "registry:ui",
       "dependencies": [
         "motion",
-        "lucide-react"
+        "lucide-react",
+        "@dnd-kit/core",
+        "tunnel-rat",
+        "nanoid"
       ],
       "files": [
         {
@@ -548,6 +562,7 @@
       "name": "avatar-01",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "@radix-ui/react-avatar"
       ],
       "registryDependencies": [
@@ -616,6 +631,7 @@
       "name": "avatar-05",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/logos",
         "@radix-ui/react-avatar"
       ],
       "registryDependencies": [
@@ -651,7 +667,7 @@
       "name": "avatar-group",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
+        "@floating-ui/react",
         "motion"
       ],
       "files": [
@@ -660,7 +676,8 @@
           "target": "components/ui/avatar-group.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "award",
@@ -710,7 +727,9 @@
     {
       "name": "badge-02",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "@aliimam/icons"
+      ],
       "registryDependencies": [
         "badge"
       ],
@@ -725,7 +744,9 @@
     {
       "name": "badge-03",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "next"
+      ],
       "registryDependencies": [
         "badge"
       ],
@@ -755,7 +776,9 @@
     {
       "name": "badge-05",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "@aliimam/icons"
+      ],
       "registryDependencies": [
         "badge"
       ],
@@ -834,6 +857,7 @@
       "name": "breadcrumb-03",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -868,8 +892,9 @@
       "name": "browser",
       "type": "registry:ui",
       "dependencies": [
+        "lucide-react",
         "motion",
-        "lucide-react"
+        "next"
       ],
       "files": [
         {
@@ -934,7 +959,9 @@
     {
       "name": "button-01",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "@aliimam/icons"
+      ],
       "registryDependencies": [
         "button"
       ],
@@ -950,8 +977,9 @@
       "name": "button-02",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@aliimam/icons",
+        "lucide-react",
+        "motion"
       ],
       "registryDependencies": [
         "badge",
@@ -987,6 +1015,8 @@
       "name": "button-04",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
+        "@aliimam/logos",
         "lucide-react",
         "motion"
       ],
@@ -1005,6 +1035,7 @@
       "name": "button-05",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -1021,7 +1052,9 @@
     {
       "name": "button-06",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "@aliimam/icons"
+      ],
       "registryDependencies": [
         "button"
       ],
@@ -1037,6 +1070,7 @@
       "name": "button-07",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react",
         "motion"
       ],
@@ -1055,6 +1089,7 @@
       "name": "button-08",
       "type": "registry:ui",
       "dependencies": [
+        "@aliimam/icons",
         "lucide-react",
         "motion"
       ],
@@ -1135,8 +1170,10 @@
       "name": "card-swap",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -1144,7 +1181,8 @@
           "target": "components/ui/card-swap.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "carousel-navigator",
@@ -1165,8 +1203,10 @@
       "name": "carousel-slider",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -1174,13 +1214,15 @@
           "target": "components/ui/carousel-slider.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "chart",
       "type": "registry:ui",
       "dependencies": [
-        "recharts"
+        "recharts",
+        "zod"
       ],
       "files": [
         {
@@ -1188,13 +1230,15 @@
           "target": "components/ui/chart.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "chart-2",
       "type": "registry:ui",
       "dependencies": [
-        "recharts"
+        "recharts",
+        "zod"
       ],
       "files": [
         {
@@ -1202,7 +1246,8 @@
           "target": "components/ui/chart-2.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "checkbox",
@@ -1224,6 +1269,7 @@
       "name": "code",
       "type": "registry:ui",
       "dependencies": [
+        "class-variance-authority",
         "lucide-react",
         "motion",
         "next-themes"
@@ -1234,6 +1280,9 @@
           "target": "components/ui/code.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "button"
       ]
     },
     {
@@ -1242,6 +1291,7 @@
       "dependencies": [
         "@radix-ui/react-collapsible",
         "@radix-ui/react-slot",
+        "class-variance-authority",
         "lucide-react",
         "shiki",
         "zod"
@@ -1261,6 +1311,7 @@
       "name": "code-tabs",
       "type": "registry:ui",
       "dependencies": [
+        "class-variance-authority",
         "lucide-react",
         "motion",
         "next-themes",
@@ -1272,7 +1323,8 @@
           "target": "components/ui/code-tabs.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "collapsible",
@@ -1401,8 +1453,10 @@
       "name": "create-new-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -1410,19 +1464,23 @@
           "target": "components/ui/create-new-disclosure.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "cursor",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "src/components/ui/cursor.tsx",
           "target": "components/ui/cursor.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "data-table",
@@ -1491,8 +1549,9 @@
       "name": "dialog-stack",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -1500,7 +1559,8 @@
           "target": "components/ui/dialog-stack.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "discrete-tabs",
@@ -1520,8 +1580,10 @@
       "name": "dock",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -1529,7 +1591,8 @@
           "target": "components/ui/dock.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "draggable-toolbar",
@@ -1566,8 +1629,10 @@
       "name": "dropdown-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
         "lucide-react",
+        "motion",
         "react-icons"
       ],
       "files": [
@@ -1576,7 +1641,8 @@
           "target": "components/ui/dropdown-disclosure.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "dropdown-menu",
@@ -1796,8 +1862,10 @@
       "name": "feedback-component",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
         "lucide-react",
+        "motion",
         "react-icons"
       ],
       "files": [
@@ -1806,7 +1874,8 @@
           "target": "components/ui/feedback-component.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "file-upload",
@@ -2000,7 +2069,8 @@
       "type": "registry:ui",
       "dependencies": [
         "class-variance-authority",
-        "lucide-react"
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -2008,7 +2078,8 @@
           "target": "components/ui/github-stars.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "github-stars-wheel",
@@ -2068,6 +2139,7 @@
       "name": "hover-card",
       "type": "registry:ui",
       "dependencies": [
+        "motion",
         "radix-ui"
       ],
       "files": [
@@ -2076,7 +2148,8 @@
           "target": "components/ui/hover-card.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "hrm",
@@ -2145,8 +2218,10 @@
       "name": "inline-disclosure-menu",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -2154,14 +2229,17 @@
           "target": "components/ui/inline-disclosure-menu.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "inline-edit",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -2169,7 +2247,8 @@
           "target": "components/ui/inline-edit.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "inline-overflow",
@@ -2410,6 +2489,7 @@
       "type": "registry:ui",
       "dependencies": [
         "@radix-ui/react-radio-group",
+        "class-variance-authority",
         "lucide-react"
       ],
       "files": [
@@ -2418,7 +2498,8 @@
           "target": "components/ui/label-selector.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "labeled-progress-indicator",
@@ -2656,8 +2737,8 @@
       "name": "motion-carousel",
       "type": "registry:ui",
       "dependencies": [
+        "embla-carousel",
         "embla-carousel-react",
-        "motion",
         "lucide-react",
         "motion"
       ],
@@ -2841,6 +2922,7 @@
       "name": "preview-link-card",
       "type": "registry:ui",
       "dependencies": [
+        "motion",
         "radix-ui"
       ],
       "files": [
@@ -2849,7 +2931,8 @@
           "target": "components/ui/preview-link-card.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "pricing-widget",
@@ -3035,20 +3118,23 @@
     {
       "name": "radial-intro",
       "type": "registry:ui",
-      "dependencies": [],
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "src/components/ui/radial-intro.tsx",
           "target": "components/ui/radial-intro.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "radial-nav",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
+        "@base-ui/react",
         "lucide-react",
         "motion"
       ],
@@ -3058,7 +3144,8 @@
           "target": "components/ui/radial-nav.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "radio-group",
@@ -3286,8 +3373,10 @@
       "name": "schedule-button",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
         "lucide-react",
+        "motion",
         "react-icons"
       ],
       "files": [
@@ -3296,7 +3385,8 @@
           "target": "components/ui/schedule-button.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "scroll-fade",
@@ -3361,8 +3451,10 @@
       "name": "select-aiagent",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
-        "lucide-react"
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
       ],
       "files": [
         {
@@ -3370,7 +3462,8 @@
           "target": "components/ui/select-aiagent.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "send-money",
@@ -3454,8 +3547,9 @@
       "name": "show-qr",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
         "lucide-react",
+        "motion",
+        "qrcode.react",
         "react-icons"
       ],
       "files": [
@@ -3464,7 +3558,8 @@
           "target": "components/ui/show-qr.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "shuffle-pinned-list",
@@ -3761,8 +3856,10 @@
       "name": "task-widget",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
         "lucide-react",
+        "motion",
         "react-icons"
       ],
       "files": [
@@ -3771,7 +3868,8 @@
           "target": "components/ui/task-widget.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "terminal",
@@ -3857,9 +3955,11 @@
       "name": "timeline",
       "type": "registry:ui",
       "dependencies": [
+        "@dnd-kit/core",
         "@radix-ui/react-slot",
+        "lucide-react",
         "motion",
-        "lucide-react"
+        "tunnel-rat"
       ],
       "files": [
         {
@@ -3867,7 +3967,8 @@
           "target": "components/ui/timeline.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "toggle",
@@ -3927,7 +4028,12 @@
           "target": "components/ui/tooltip-animated.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "dependencies": [
+        "@floating-ui/react",
+        "motion"
+      ],
+      "registryDependencies": []
     },
     {
       "name": "tooltip-navbar",
@@ -3950,6 +4056,7 @@
       "type": "registry:ui",
       "dependencies": [
         "@radix-ui/react-tooltip",
+        "motion",
         "radix-ui"
       ],
       "files": [
@@ -3958,7 +4065,8 @@
           "target": "components/ui/tooltip-radix.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "transaction-list",
@@ -4108,8 +4216,10 @@
       "name": "voice-chat-disclosure",
       "type": "registry:ui",
       "dependencies": [
-        "motion",
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
         "lucide-react",
+        "motion",
         "react-icons"
       ],
       "files": [
@@ -4118,7 +4228,8 @@
           "target": "components/ui/voice-chat-disclosure.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "voice-note",

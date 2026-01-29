@@ -2,10 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "timeline",
   "dependencies": [
+    "@dnd-kit/core",
     "@radix-ui/react-slot",
+    "lucide-react",
     "motion",
-    "lucide-react"
+    "tunnel-rat"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/timeline.tsx",
