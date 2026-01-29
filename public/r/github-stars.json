@@ -4,7 +4,8 @@
   "dependencies": [
     "class-variance-authority",
     "lucide-react",
-    "motion"
+    "motion",
+    "react-use-measure"
   ],
   "registryDependencies": [],
   "files": [
