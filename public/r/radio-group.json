@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "motion",
+    "radix-ui"
   ],
   "files": [
     {

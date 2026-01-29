@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect,type FC } from "react";
-import { motion, LayoutGroup,type  Transition } from "framer-motion";
+import { motion, LayoutGroup,type  Transition } from "motion/react";
 import { ChevronDown, Sun, Moon } from "lucide-react";
 import { FaFireFlameCurved, FaSailboat } from "react-icons/fa6";
 import { LuTent } from "react-icons/lu";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import type { CSSProperties, SVGProps } from "react"
-import { useMotionValue, useSpring } from "framer-motion"
+import { useMotionValue, useSpring } from "motion/react"
 
 import { cn } from "@/lib/utils"
 

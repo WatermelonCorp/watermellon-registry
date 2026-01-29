@@ -2,9 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "theme-toggler",
   "dependencies": [
-    "next-themes",
+    "class-variance-authority",
     "lucide-react",
-    "class-variance-authority"
+    "motion",
+    "next-themes",
+    "radix-ui"
   ],
   "files": [
     {

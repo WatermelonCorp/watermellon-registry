@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Plus, X, Wallet, Check, Sun, Moon } from 'lucide-react';
 import { MdOutlineAddCard } from 'react-icons/md';
 

@@ -8,7 +8,7 @@ import {
   useTransform,
   type PanInfo,
   type Variants,
-} from "framer-motion";
+} from "motion/react";
 import { Sun, Moon } from "lucide-react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { FavouriteIcon } from "@hugeicons/core-free-icons";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FC } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "motion/react";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { Sun, Moon } from "lucide-react";

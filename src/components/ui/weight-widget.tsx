@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, type PanInfo, MotionValue } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, type PanInfo, MotionValue } from 'motion/react';
 import { Sun, Moon } from 'lucide-react';
 
 interface WeightWidgetProps {

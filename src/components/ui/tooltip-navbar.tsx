@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence, LayoutGroup, type Transition } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup, type Transition } from "motion/react";
 import { Eye, Share2, Upload, Menu } from "lucide-react";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { FiInbox } from "react-icons/fi";

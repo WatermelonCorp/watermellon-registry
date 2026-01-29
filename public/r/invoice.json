@@ -16,7 +16,7 @@
     },
     {
       "path": "src/components/dashboards/invoice/dashboard-layout.tsx",
-      "content": "\"use client\"\n\nimport { SidebarInset, SidebarProvider } from \"@/components/ui/sidebar\"\nimport { AppSidebar } from \"./app-sidebar\"\nimport { SiteHeader } from \"./site-header\"\n\nexport const DashboardLayout = ({children}: {children: React.ReactNode}) => {\n    return (\n    <SidebarProvider className=\"w-full relative h-full\">\n          <AppSidebar className=\"absolute h-full\" />\n      <SidebarInset>\n        <SiteHeader />\n        <div className=\"flex-1 overflow-y-auto\">{children}</div>\n      </SidebarInset>\n    </SidebarProvider>\n    )\n}\n",
+      "content": "\"use client\"\n\nimport { SidebarInset, SidebarProvider } from \"@/components/ui/sidebar\"\nimport { AppSidebar } from \"@/components/dashboards/invoice/app-sidebar\"\nimport { SiteHeader } from \"@/components/dashboards/invoice/site-header\"\n\nexport const DashboardLayout = ({children}: {children: React.ReactNode}) => {\n    return (\n    <SidebarProvider className=\"w-full relative h-full\">\n          <AppSidebar className=\"absolute h-full\" />\n      <SidebarInset>\n        <SiteHeader />\n        <div className=\"flex-1 overflow-y-auto\">{children}</div>\n      </SidebarInset>\n    </SidebarProvider>\n    )\n}\n",
       "type": "registry:component",
       "target": "components/watermelon/dashboards/invoice/dashboard-layout.tsx"
     },

@@ -3,7 +3,9 @@
   "name": "animated-accordion",
   "dependencies": [
     "@radix-ui/react-accordion",
-    "lucide-react"
+    "lucide-react",
+    "motion",
+    "radix-ui"
   ],
   "files": [
     {

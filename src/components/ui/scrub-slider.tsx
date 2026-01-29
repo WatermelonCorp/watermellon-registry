@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, type FC } from "react";
-import { motion, useMotionValue, useSpring, type Spring } from "framer-motion";
+import { motion, useMotionValue, useSpring, type Spring } from "motion/react";
 import { Sun, Moon } from "lucide-react";
 
 /* --- Types & Props --- */

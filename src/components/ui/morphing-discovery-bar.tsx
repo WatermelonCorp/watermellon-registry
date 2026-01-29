@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
 import { Search, X, Sun, Moon } from 'lucide-react';
 import { FaFire } from 'react-icons/fa6';
 import { MdFavorite } from 'react-icons/md';

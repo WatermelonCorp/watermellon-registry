@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { TbMessageFilled, TbPlayerPauseFilled, TbPlayerPlayFilled } from 'react-icons/tb';
 import { LuSun, LuMoon } from 'react-icons/lu';
 

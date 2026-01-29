@@ -3,7 +3,7 @@
   "name": "award",
   "dependencies": [
     "lucide-react",
-    "framer-motion"
+    "motion"
   ],
   "files": [
     {

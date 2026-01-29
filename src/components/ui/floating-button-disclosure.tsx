@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FC } from "react";
-import { motion, AnimatePresence, type Transition } from "framer-motion";
+import { motion, AnimatePresence, type Transition } from "motion/react";
 import { Plus, X, Sun, Moon } from "lucide-react";
 import { BsFileTextFill } from "react-icons/bs";
 import { FaBell } from "react-icons/fa6";

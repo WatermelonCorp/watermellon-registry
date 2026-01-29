@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, type FC, type ChangeEvent } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown, Check, Sun, Moon } from "lucide-react";
 
 /* --- Types --- */

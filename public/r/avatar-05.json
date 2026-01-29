@@ -5,7 +5,8 @@
     "@radix-ui/react-avatar"
   ],
   "registryDependencies": [
-    "avatar"
+    "avatar",
+    "badge"
   ],
   "files": [
     {

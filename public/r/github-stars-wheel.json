@@ -2,7 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "github-stars-wheel",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "motion"
   ],
   "files": [
     {

@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "notification-list",
   "dependencies": [
+    "motion",
     "lucide-react",
-    "framer-motion"
+    "motion"
   ],
   "files": [
     {

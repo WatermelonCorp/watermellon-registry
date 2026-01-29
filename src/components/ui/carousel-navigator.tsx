@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight, Sun, Moon } from "lucide-react";
 import { useEffect, useState, type FC } from "react";
 

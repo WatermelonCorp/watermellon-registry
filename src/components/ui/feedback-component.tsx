@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
 import { X, Sun, Moon } from 'lucide-react'; 
 import { Navigation03Icon } from '@hugeicons/core-free-icons';
 import { FiThumbsDown, FiThumbsUp } from 'react-icons/fi';

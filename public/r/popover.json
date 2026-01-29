@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "popover",
   "dependencies": [
-    "@radix-ui/react-popover"
+    "@radix-ui/react-popover",
+    "motion",
+    "radix-ui"
   ],
   "files": [
     {

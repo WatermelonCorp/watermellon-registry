@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef, type ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Search, User, Bell, HelpCircle, MessageSquare } from 'lucide-react';
 import { GoArrowRight } from "react-icons/go";
 

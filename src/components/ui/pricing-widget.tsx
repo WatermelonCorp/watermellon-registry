@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, type FC } from "react";
-import { motion, AnimatePresence, type Transition } from "framer-motion";
-import { Check, Sun, Moon } from "lucide-react";
+import { useState, type FC } from "react";
+import { motion, AnimatePresence, type Transition } from "motion/react";
+import { Check } from "lucide-react";
 
 /* --- Types & Props --- */
 export type BillingCycle = "monthly" | "yearly";
@@ -22,7 +22,6 @@ interface PricingWidgetProps {
 
 interface AnimatedNumberProps {
   value: string;
-  isDark: boolean;
 }
 
 /* --- Constants --- */
@@ -46,7 +45,7 @@ const DEFAULT_DATA: Record<BillingCycle, PricingPlan[]> = {
 };
 
 /* --- Animated Number Sub-component --- */
-const AnimatedNumber: FC<AnimatedNumberProps> = ({ value, isDark }) => {
+const AnimatedNumber: FC<AnimatedNumberProps> = ({ value }) => {
   const digits = value.split("");
   return (
     <span className="inline-flex overflow-hidden">
@@ -58,9 +57,7 @@ const AnimatedNumber: FC<AnimatedNumberProps> = ({ value, isDark }) => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -6, opacity: 0 }}
             transition={SPRING}
-            className={`relative inline-block tabular-nums text-base font-bold ${
-              isDark ? "text-zinc-100" : "text-[#040404]"
-            }`}
+            className={`relative inline-block tabular-nums text-base font-bold dark:text-zinc-100 text-[#040404]`}
           >
             {digit}
           </motion.span>
@@ -78,23 +75,11 @@ export const PricingWidget: FC<PricingWidgetProps> = ({
 }) => {
   const [billing, setBilling] = useState<BillingCycle>(initialBilling);
   const [active, setActive] = useState<string>(initialActivePlanId);
-  const [isDark, setIsDark] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (isDark) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [isDark]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500">
+    <div className="min-h-screen flex flex-col items-center w-full justify-center bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500">
       
-      {/* THEME TOGGLE BUTTON */}
-      <button
-        onClick={() => setIsDark(!isDark)}
-        className="mb-8 p-3 rounded-full bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 shadow-sm transition-all hover:scale-110"
-      >
-        {isDark ? <Sun className="text-yellow-400" size={20} /> : <Moon className="text-zinc-600" size={20} />}
-      </button>
 
       {/* CARD CONTAINER */}
       <div className="w-[380px] rounded-[32px] shadow-xl border-[1.6px] border-[#E5E5E9] dark:border-zinc-800 p-[16px] bg-[#FEFEFE] dark:bg-zinc-900 transition-colors">
@@ -150,7 +135,7 @@ export const PricingWidget: FC<PricingWidgetProps> = ({
                     )}
                   </div>
                   <p className="text-sm text-[#040404] dark:text-zinc-400 font-bold transition-colors">
-                    $<AnimatedNumber value={item.price} isDark={isDark} />
+                    $<AnimatedNumber value={item.price} />
                     <span className="text-[#858489] font-semibold"> / month</span>
                   </p>
                 </div>

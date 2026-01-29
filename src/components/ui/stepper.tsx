@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FC } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { HiMinus, HiPlus } from "react-icons/hi";
 import { Sun, Moon } from "lucide-react";
 

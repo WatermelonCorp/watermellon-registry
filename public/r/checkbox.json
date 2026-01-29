@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "checkbox",
   "dependencies": [
-    "class-variance-authority"
+    "@radix-ui/react-checkbox",
+    "class-variance-authority",
+    "lucide-react"
   ],
   "files": [
     {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence, type PanInfo } from 'framer-motion';
-import { FaArrowUp, FaMoon, FaSun } from 'react-icons/fa6';
+import { motion, AnimatePresence, type PanInfo } from 'motion/react';
+import { FaArrowUp } from 'react-icons/fa6';
 
 export interface FundItem {
     id: string;
@@ -13,7 +13,6 @@ export interface FundItem {
 interface FundWidgetProps {
     data?: FundItem[];
     initialIndex?: number;
-    initialTheme?: 'light' | 'dark';
 }
 
 /* Default Data  */
@@ -26,10 +25,8 @@ const DEFAULT_DATA: FundItem[] = [
 export const FundWidget: React.FC<FundWidgetProps> = ({
     data = DEFAULT_DATA,
     initialIndex = 1,
-    initialTheme = 'light',
 }) => {
     const [index, setIndex] = useState(initialIndex);
-    const [isDark, setIsDark] = useState(initialTheme === 'dark');
 
     const updateIndex = (newIndex: number) => {
         if (newIndex >= 0 && newIndex < data.length) {
@@ -53,17 +50,8 @@ export const FundWidget: React.FC<FundWidgetProps> = ({
     const activeItem = data[index];
 
     return (
-        <div className={isDark ? 'invert hue-rotate-180' : ''}>
+        <div className='dark:invert dark:hue-rotate-180'>
             <div className="relative flex items-center justify-center min-h-screen bg-[#F9F5EF]">
-
-                {/* Theme Toggle (same position & style) */}
-                <button
-                    onClick={() => setIsDark(!isDark)}
-                    className="absolute top-6 right-6 w-11 h-11 rounded-full flex items-center justify-center border bg-white shadow-sm"
-                    title="Toggle theme"
-                >
-                    {isDark ? <FaSun /> : <FaMoon />}
-                </button>
 
                 <div className="flex items-center justify-center min-h-screen bg-[#F9F5EF]">
                     <div className="relative overflow-visible">

@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "management-bar",
   "dependencies": [
+    "motion",
     "lucide-react",
-    "framer-motion"
+    "motion"
   ],
   "files": [
     {

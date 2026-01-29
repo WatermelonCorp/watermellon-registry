@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "share-button",
   "dependencies": [
-    "framer-motion",
+    "class-variance-authority",
+    "motion",
     "lucide-react",
-    "class-variance-authority"
+    "motion"
   ],
   "files": [
     {

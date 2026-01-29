@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "book",
   "dependencies": [
-    "framer-motion"
+    "motion"
   ],
   "files": [
     {

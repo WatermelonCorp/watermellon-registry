@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ChevronUp, ChevronDown } from "lucide-react";
 
 export type QuickSwitcherMode = "ask" | "generate";
