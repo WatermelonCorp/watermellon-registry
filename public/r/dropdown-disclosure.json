@@ -2,10 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dropdown-disclosure",
   "dependencies": [
-    "motion",
+    "@hugeicons/core-free-icons",
+    "@hugeicons/react",
     "lucide-react",
+    "motion",
     "react-icons"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/dropdown-disclosure.tsx",

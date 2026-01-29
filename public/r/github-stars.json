@@ -3,8 +3,10 @@
   "name": "github-stars",
   "dependencies": [
     "class-variance-authority",
-    "lucide-react"
+    "lucide-react",
+    "motion"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/github-stars.tsx",

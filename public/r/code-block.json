@@ -4,6 +4,7 @@
   "dependencies": [
     "@radix-ui/react-collapsible",
     "@radix-ui/react-slot",
+    "class-variance-authority",
     "lucide-react",
     "shiki",
     "zod"

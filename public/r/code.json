@@ -2,9 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "code",
   "dependencies": [
+    "class-variance-authority",
     "lucide-react",
     "motion",
     "next-themes"
+  ],
+  "registryDependencies": [
+    "button"
   ],
   "files": [
     {

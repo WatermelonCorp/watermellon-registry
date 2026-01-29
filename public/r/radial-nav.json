@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radial-nav",
   "dependencies": [
-    "motion",
+    "@base-ui/react",
     "lucide-react",
     "motion"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/radial-nav.tsx",

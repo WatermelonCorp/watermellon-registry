@@ -2,9 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-stack",
   "dependencies": [
-    "motion",
-    "lucide-react"
+    "@hugeicons/react",
+    "lucide-react",
+    "motion"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/dialog-stack.tsx",

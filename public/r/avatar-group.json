@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-group",
   "dependencies": [
-    "motion",
+    "@floating-ui/react",
     "motion"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/avatar-group.tsx",

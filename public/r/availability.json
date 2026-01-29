@@ -3,7 +3,10 @@
   "name": "availability",
   "dependencies": [
     "motion",
-    "lucide-react"
+    "lucide-react",
+    "@dnd-kit/core",
+    "tunnel-rat",
+    "nanoid"
   ],
   "registryDependencies": [
     "button"

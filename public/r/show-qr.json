@@ -2,10 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "show-qr",
   "dependencies": [
-    "motion",
     "lucide-react",
+    "motion",
+    "qrcode.react",
     "react-icons"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/show-qr.tsx",
