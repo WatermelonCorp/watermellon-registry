@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, type ReactNode } from "react";
-import { motion, AnimatePresence, type PanInfo, type Variants } from "framer-motion";
+import { motion, AnimatePresence, type PanInfo, type Variants } from "motion/react";
 import { Sun, Moon } from "lucide-react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {

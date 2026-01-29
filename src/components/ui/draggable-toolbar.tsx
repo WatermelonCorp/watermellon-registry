@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, AnimatePresence } from 'framer-motion';
+import { motion, useMotionValue, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
 interface DraggableToolbarProps {

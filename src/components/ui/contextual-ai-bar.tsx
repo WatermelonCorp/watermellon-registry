@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
 export interface ContextualAIBarProps {
@@ -29,14 +29,14 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
   } as const;
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#fcfcfc]">
+    <div className="flex items-center justify-center min-h-screen bg-[#fcfcfc] dark:bg-zinc-950 w-full">
       <motion.div
         layout
         transition={spring}
         className="
           flex items-center
-          bg-[#f4f4f5]/60
-          border border-[#e8e8e9]/30
+          bg-[#f4f4f5]/60 dark:bg-zinc-900/60
+          border border-[#e8e8e9]/30 dark:border-[#e8e8e9]/30
           p-1 rounded-full
           shadow-sm
           overflow-hidden
@@ -46,7 +46,7 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
         <motion.div
           layout
           transition={spring}
-          className="relative flex items-center bg-white shadow-md rounded-full p-1"
+          className="relative flex items-center bg-white dark:bg-zinc-900 shadow-md rounded-full p-1"
         >
           {/* Music */}
           <motion.button
@@ -59,7 +59,7 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
               <motion.div
                 layoutId="active-pill"
                 transition={spring}
-                className="absolute inset-0 rounded-full bg-[#F6F6F6] shadow-sm"
+                className="absolute inset-0 rounded-full bg-[#F6F6F6] dark:bg-zinc-800 shadow-sm"
               />
             )}
 
@@ -83,7 +83,7 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
               <motion.div
                 layoutId="active-pill"
                 transition={spring}
-                className="absolute inset-0 rounded-full bg-[#F6F6F6] shadow-sm"
+                className="absolute inset-0 rounded-full bg-[#F6F6F6] dark:bg-zinc-800 shadow-sm"
               />
             )}
 
@@ -131,6 +131,8 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
                   outline-none
                   text-xl
                   text-gray-800
+                  dark:text-gray-200
+                  dark:placeholder-gray-600
                   placeholder-gray-400
                   w-[180px]
                 "
@@ -144,9 +146,13 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
                   p-3
                   bg-[#fcfcfc] shadow-md
                   border border-gray-100
+                  dark:border-gray-800
                   rounded-full
                   hover:bg-gray-50
+                  dark:hover:bg-gray-800
                   text-black
+                  dark:text-white
+                  dark:text-gray-200
                 "
               >
                 <ArrowRight size={22} strokeWidth={2.5} />

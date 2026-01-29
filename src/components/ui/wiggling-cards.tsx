@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence, type PanInfo, type Variants } from 'framer-motion';
+import { motion, AnimatePresence, type PanInfo, type Variants } from 'motion/react';
 import { ArrowUpRight, ShoppingCart, Users, CreditCard, BarChart3 } from 'lucide-react';
 import { FaArrowUpLong, FaMoon, FaSun } from 'react-icons/fa6';
 

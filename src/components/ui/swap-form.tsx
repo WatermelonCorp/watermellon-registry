@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "motion/react";
 import { Sun, Moon } from "lucide-react";
 import { FaGoogle, FaApple } from "react-icons/fa";
 

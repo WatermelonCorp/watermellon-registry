@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "flip-card",
   "dependencies": [
-    "framer-motion",
-    "lucide-react"
+    "motion",
+    "lucide-react",
+    "motion"
   ],
   "registryDependencies": [
     "button"

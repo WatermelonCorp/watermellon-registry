@@ -2,9 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "motion-carousel",
   "dependencies": [
-    "framer-motion",
     "embla-carousel-react",
-    "lucide-react"
+    "motion",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
   ],
   "files": [
     {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FC } from "react";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "motion/react";
 import { TbArrowBackUp } from "react-icons/tb";
 import { Sun, Moon } from "lucide-react";
 

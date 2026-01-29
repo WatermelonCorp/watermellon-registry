@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Check } from 'lucide-react';
 import { RiBubbleChartFill } from 'react-icons/ri';
 

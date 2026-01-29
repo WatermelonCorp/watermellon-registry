@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { BsCheckCircleFill } from 'react-icons/bs';
 import { Sun, Moon } from 'lucide-react';
 

@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sidebar",
   "dependencies": [
-    "radix-ui",
     "class-variance-authority",
+    "motion",
     "lucide-react",
-    "framer-motion"
+    "motion",
+    "radix-ui"
   ],
   "registryDependencies": [
     "button",

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
 import { FiShare, FiSun, FiMoon } from 'react-icons/fi';
 
 interface User {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FC, type ReactNode } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
  interface TabItem {
   id: string;

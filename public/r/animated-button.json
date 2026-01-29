@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-button",
   "dependencies": [
-    "framer-motion",
-    "class-variance-authority"
+    "class-variance-authority",
+    "motion",
+    "motion"
   ],
   "files": [
     {

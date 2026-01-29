@@ -5,7 +5,7 @@ import {
   ArrowUp,
   Square,
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { IoBookOutline } from 'react-icons/io5';
 
 export interface MessageInput {

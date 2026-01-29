@@ -1,6 +1,6 @@
 
 import {images_asset_base_url} from "@/static-assets/Static-Assets"
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState } from 'react';
 
 function App() {

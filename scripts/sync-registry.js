@@ -11,7 +11,7 @@ const UI_DIR = path.resolve(__dirname, '../src/components/ui');
 // Dependencies to check for
 const KNOWN_DEPENDENCIES = [
   'lucide-react',
-  'framer-motion',
+  'motion/react',
   'motion/react',
   'clsx',
   'tailwind-merge',
@@ -36,13 +36,13 @@ function getDependencies(content) {
   // Check for known dependencies
   KNOWN_DEPENDENCIES.forEach(dep => {
     if (content.includes(`rom "${dep}"`) || content.includes(`rom '${dep}'`)) {
-      // Map motion/react to framer-motion if mostly used that way, or keep as is? 
-      // The registry seems to use "framer-motion" mostly. 
-      // If code uses "motion/react", we might need to list that or mapped to framer-motion depending on project convention.
-      // Looking at previous files, "framer-motion" is common. 
-      // If import is from "motion/react", let's list "framer-motion" as dependency if that's the library name installed.
+      // Map motion/react to motion/react if mostly used that way, or keep as is? 
+      // The registry seems to use "motion/react" mostly. 
+      // If code uses "motion/react", we might need to list that or mapped to motion/react depending on project convention.
+      // Looking at previous files, "motion/react" is common. 
+      // If import is from "motion/react", let's list "motion/react" as dependency if that's the library name installed.
       if (dep === 'motion/react') {
-        dependencies.add('framer-motion');
+        dependencies.add('motion/react');
       } else {
         dependencies.add(dep);
       }

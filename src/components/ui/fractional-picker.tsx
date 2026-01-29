@@ -6,7 +6,7 @@ import {
   useMotionValue,
   useTransform,
   animate,
-} from "framer-motion";
+} from "motion/react";
 import { Sun, MoonIcon } from "lucide-react";
 
 /*  Types  */

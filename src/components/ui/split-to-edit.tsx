@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, type  FC } from "react";
-import { motion, AnimatePresence, type Transition } from "framer-motion";
+import { motion, AnimatePresence, type Transition } from "motion/react";
 import { Check, Sun, Moon } from "lucide-react";
 import { BiSolidPencil } from "react-icons/bi";
 

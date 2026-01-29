@@ -1,7 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "preview-link-card",
-  "dependencies": [],
+  "dependencies": [
+    "radix-ui"
+  ],
   "files": [
     {
       "path": "src/components/ui/preview-link-card.tsx",

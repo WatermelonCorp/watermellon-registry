@@ -1,8 +1,8 @@
 "use client"
 
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
-import { AppSidebar } from "./app-sidebar"
-import { SiteHeader } from "./site-header"
+import { AppSidebar } from "@/components/dashboards/invoice/app-sidebar"
+import { SiteHeader } from "@/components/dashboards/invoice/site-header"
 
 export const DashboardLayout = ({children}: {children: React.ReactNode}) => {
     return (

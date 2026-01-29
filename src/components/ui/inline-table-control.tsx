@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
 import { Pencil, X, Check, Sun, Moon } from 'lucide-react';
 import { GoStack } from 'react-icons/go';
 import { BsArrowUpRightSquare } from 'react-icons/bs';

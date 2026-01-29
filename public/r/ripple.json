@@ -2,7 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "ripple",
   "dependencies": [
-    "class-variance-authority"
+    "class-variance-authority",
+    "motion"
   ],
   "files": [
     {

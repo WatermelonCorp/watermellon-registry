@@ -2,8 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "availability",
   "dependencies": [
-    "lucide-react",
-    "framer-motion"
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
   ],
   "files": [
     {

@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "playful-todolist",
   "dependencies": [
-    "framer-motion",
-    "@radix-ui/react-checkbox"
+    "@radix-ui/react-checkbox",
+    "motion",
+    "motion"
   ],
   "registryDependencies": [
     "label"

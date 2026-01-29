@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, type FC } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 /* --- Types --- */
 
@@ -45,18 +44,11 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
   const [selectedDate, setSelectedDate] = useState<string>(
     initialSelectedDate
   );
-  const [isDark, setIsDark] = useState<boolean>(false);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const isDragging = useRef<boolean>(false);
   const startX = useRef<number>(0);
   const scrollLeftStart = useRef<number>(0);
-
-  // Theme Sync
-  useEffect(() => {
-    if (isDark) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [isDark]);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -116,17 +108,6 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-white dark:bg-zinc-950 transition-colors duration-500 w-full gap-6">
-      {/* Theme Toggle Button */}
-      <button
-        onClick={() => setIsDark(!isDark)}
-        className="p-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all active:scale-90 shadow-sm"
-      >
-        {isDark ? (
-          <Sun className="text-yellow-400" size={20} />
-        ) : (
-          <Moon className="text-zinc-500" size={20} />
-        )}
-      </button>
 
       <div className="w-[340px] rounded-[30px] bg-[#F6F5FA] dark:bg-zinc-900 shadow-lg flex flex-col gap-2 select-none border border-black/10 dark:border-white/5 transition-colors duration-500">
         <div className="p-4">

@@ -3,8 +3,9 @@
   "name": "copy",
   "dependencies": [
     "class-variance-authority",
-    "framer-motion",
-    "lucide-react"
+    "motion",
+    "lucide-react",
+    "motion"
   ],
   "files": [
     {

@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useMemo, useEffect, type FC, type ChangeEvent } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon } from "lucide-react";
+import { useState, useMemo, type FC, type ChangeEvent } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 /* ---------- Types ---------- */
 interface AdaptiveSliderProps {
@@ -65,7 +64,6 @@ export const AdaptiveSlider: FC<AdaptiveSliderProps> = ({
   onChange,
 }) => {
   const [internalValue, setInternalValue] = useState<number>(defaultValue);
-  const [isDark, setIsDark] = useState<boolean>(false);
 
   const calories = value ?? internalValue;
 
@@ -74,11 +72,6 @@ export const AdaptiveSlider: FC<AdaptiveSliderProps> = ({
     [calories, min, max]
   );
 
-  /* Theme Logic (unchanged) */
-  useEffect(() => {
-    if (isDark) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [isDark]);
 
   const percentage = ((calories - min) / (max - min)) * 100;
 
@@ -102,18 +95,6 @@ export const AdaptiveSlider: FC<AdaptiveSliderProps> = ({
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#f3f4f6] dark:bg-zinc-950 p-4 transition-colors duration-500">
-      {/* Theme Toggle Button */}
-      <button
-        onClick={() => setIsDark(!isDark)}
-        aria-label="Toggle Theme"
-        className="mb-8 p-3 rounded-full bg-white dark:bg-zinc-900 shadow-sm border border-zinc-200 dark:border-zinc-800 transition-all active:scale-95"
-      >
-        {isDark ? (
-          <Sun className="text-yellow-400" size={20} />
-        ) : (
-          <Moon className="text-gray-500" size={20} />
-        )}
-      </button>
 
       {/* Container Card */}
       <motion.div

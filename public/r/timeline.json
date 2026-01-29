@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "timeline",
   "dependencies": [
-    "lucide-react",
-    "framer-motion"
+    "@radix-ui/react-slot",
+    "motion",
+    "lucide-react"
   ],
   "files": [
     {
