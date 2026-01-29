@@ -524,6 +524,34 @@
       ]
     },
     {
+      "name": "audio-player",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/audio-player.tsx",
+          "target": "components/ui/audio-player.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "audio-player-with-waveform",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/audio-player-with-waveform.tsx",
+          "target": "components/ui/audio-player-with-waveform.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "availability",
       "type": "registry:ui",
       "dependencies": [
