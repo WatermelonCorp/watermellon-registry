@@ -2,9 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "inline-disclosure-menu",
   "dependencies": [
-    "motion",
-    "lucide-react"
+    "@hugeicons/core-free-icons",
+    "@hugeicons/react",
+    "lucide-react",
+    "motion"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/inline-disclosure-menu.tsx",

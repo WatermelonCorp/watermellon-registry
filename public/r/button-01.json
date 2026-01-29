@@ -1,7 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-01",
-  "dependencies": [],
+  "dependencies": [
+    "@aliimam/icons"
+  ],
   "registryDependencies": [
     "button"
   ],

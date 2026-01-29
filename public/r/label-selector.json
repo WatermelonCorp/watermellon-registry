@@ -3,8 +3,10 @@
   "name": "label-selector",
   "dependencies": [
     "@radix-ui/react-radio-group",
+    "class-variance-authority",
     "lucide-react"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/label-selector.tsx",

@@ -2,10 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "voice-chat-disclosure",
   "dependencies": [
-    "motion",
+    "@hugeicons/core-free-icons",
+    "@hugeicons/react",
     "lucide-react",
+    "motion",
     "react-icons"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/voice-chat-disclosure.tsx",

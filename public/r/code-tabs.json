@@ -2,11 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "code-tabs",
   "dependencies": [
+    "class-variance-authority",
     "lucide-react",
     "motion",
     "next-themes",
     "shiki"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/code-tabs.tsx",
