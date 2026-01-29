@@ -534,6 +534,11 @@
           "path": "src/components/ui/audio-player.tsx",
           "target": "components/ui/audio-player.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/use-audio-playback.ts",
+          "target": "hooks/use-audio-playback.ts",
+          "type": "registry:hook"
         }
       ]
     },
@@ -548,6 +553,11 @@
           "path": "src/components/ui/audio-player-with-waveform.tsx",
           "target": "components/ui/audio-player-with-waveform.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/use-audio-waveform.ts",
+          "target": "hooks/use-audio-waveform.ts",
+          "type": "registry:hook"
         }
       ]
     },
@@ -2088,6 +2098,18 @@
         {
           "path": "src/components/ui/gauge.tsx",
           "target": "components/ui/gauge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "get-strict-context",
+      "type": "registry:lib",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/lib/get-strict-context.tsx",
+          "target": "lib/get-strict-context.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4160,6 +4182,66 @@
       ]
     },
     {
+      "name": "use-auto-height",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/hooks/use-auto-height.tsx",
+          "target": "hooks/use-auto-height.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-controlled-state",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/hooks/use-controlled-state.tsx",
+          "target": "hooks/use-controlled-state.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-data-state",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/hooks/use-data-state.tsx",
+          "target": "hooks/use-data-state.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-is-in-view",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/hooks/use-is-in-view.tsx",
+          "target": "hooks/use-is-in-view.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/hooks/use-mobile.ts",
+          "target": "hooks/use-mobile.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "user-presence-avatar",
       "type": "registry:ui",
       "dependencies": [
@@ -4176,6 +4258,21 @@
       "registryDependencies": [
         "avatar",
         "avatar-group"
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "target": "lib/utils.ts",
+          "type": "registry:ui"
+        }
       ]
     },
     {
