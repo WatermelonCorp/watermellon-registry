@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shimmer-button",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "src/components/ui/shimmer-button.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\n\ninterface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  children: React.ReactNode;\n}\n\nexport function ShimmerButton({\n  children,\n  className,\n  ...props\n}: ShimmerButtonProps) {\n  return (\n    <button\n      className={cn(\n        \"relative inline-flex items-center justify-center px-6 py-3 rounded-lg\",\n        \"bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900\",\n        \"font-medium text-sm overflow-hidden\",\n        \"hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors\",\n        \"focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500\",\n        className,\n      )}\n      {...props}\n    >\n      <span\n        className=\"absolute inset-0 w-full h-full\"\n        style={{\n          background:\n            \"linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)\",\n          animation: \"shimmer 2s infinite\",\n        }}\n      />\n      <span className=\"relative z-10\">{children}</span>\n      <style>{`\n        @keyframes shimmer {\n          0% { transform: translateX(-100%); }\n          100% { transform: translateX(100%); }\n        }\n      `}</style>\n    </button>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/shimmer-button.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
