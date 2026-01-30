@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "frequency-selector",
   "dependencies": [
-    "motion",
-    "lucide-react"
+    "lucide-react",
+    "motion"
   ],
   "files": [
     {

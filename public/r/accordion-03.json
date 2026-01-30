@@ -1,10 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "accordion-03",
-  "dependencies": [
-    "@radix-ui/react-accordion",
-    "lucide-react"
-  ],
+  "dependencies": [],
   "registryDependencies": [
     "accordion",
     "primary-button"

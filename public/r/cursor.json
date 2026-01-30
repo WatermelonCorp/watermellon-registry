@@ -4,7 +4,6 @@
   "dependencies": [
     "motion"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/cursor.tsx",

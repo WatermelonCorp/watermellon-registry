@@ -2,9 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "morphing-discovery-bar",
   "dependencies": [
-    "motion",
     "lucide-react",
-    "react-icons"
+    "motion"
   ],
   "files": [
     {

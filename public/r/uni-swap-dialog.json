@@ -3,8 +3,8 @@
   "name": "uni-swap-dialog",
   "dependencies": [
     "clsx",
-    "motion",
     "lucide-react",
+    "motion",
     "tailwind-merge"
   ],
   "files": [

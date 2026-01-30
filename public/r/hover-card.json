@@ -5,7 +5,6 @@
     "motion",
     "radix-ui"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/hover-card.tsx",

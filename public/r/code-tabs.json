@@ -5,10 +5,8 @@
     "class-variance-authority",
     "lucide-react",
     "motion",
-    "next-themes",
-    "shiki"
+    "next-themes"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/code-tabs.tsx",

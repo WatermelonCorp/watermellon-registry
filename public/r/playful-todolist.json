@@ -3,7 +3,6 @@
   "name": "playful-todolist",
   "dependencies": [
     "@radix-ui/react-checkbox",
-    "motion",
     "motion"
   ],
   "registryDependencies": [

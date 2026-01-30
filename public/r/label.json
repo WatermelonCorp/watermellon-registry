@@ -2,8 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "label",
   "dependencies": [
-    "@radix-ui/react-label",
-    "class-variance-authority"
+    "@radix-ui/react-label"
   ],
   "files": [
     {

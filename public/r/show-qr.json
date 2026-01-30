@@ -4,10 +4,8 @@
   "dependencies": [
     "lucide-react",
     "motion",
-    "qrcode.react",
-    "react-icons"
+    "qrcode.react"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/show-qr.tsx",

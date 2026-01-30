@@ -2,11 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tooltip-radix",
   "dependencies": [
-    "@radix-ui/react-tooltip",
     "motion",
     "radix-ui"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/tooltip-radix.tsx",

@@ -3,8 +3,8 @@
   "name": "data-table",
   "dependencies": [
     "@radix-ui/react-accordion",
-    "@radix-ui/react-tooltip",
     "@radix-ui/react-slot",
+    "@radix-ui/react-tooltip",
     "class-variance-authority",
     "lucide-react",
     "zod"
