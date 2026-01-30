@@ -2,9 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-splitting-accordion",
   "dependencies": [
-    "motion",
     "lucide-react",
-    "react-icons"
+    "motion"
   ],
   "files": [
     {

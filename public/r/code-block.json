@@ -9,9 +9,6 @@
     "shiki",
     "zod"
   ],
-  "registryDependencies": [
-    "button"
-  ],
   "files": [
     {
       "path": "src/components/ui/code-block.tsx",

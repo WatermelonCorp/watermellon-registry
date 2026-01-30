@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "filter-disclosure",
   "dependencies": [
-    "motion",
     "lucide-react",
+    "motion",
     "react-icons"
   ],
   "files": [

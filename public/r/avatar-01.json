@@ -2,8 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-01",
   "dependencies": [
-    "@aliimam/icons",
-    "@radix-ui/react-avatar"
+    "@aliimam/icons"
   ],
   "registryDependencies": [
     "avatar"

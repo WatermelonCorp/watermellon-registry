@@ -1,13 +1,12 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alphine-login-form",
-  "dependencies": [
-    "lucide-react"
-  ],
+  "dependencies": [],
   "registryDependencies": [
+    "button",
+    "card",
     "input",
-    "label",
-    "button"
+    "label"
   ],
   "files": [
     {

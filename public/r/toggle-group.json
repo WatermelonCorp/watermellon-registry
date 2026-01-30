@@ -6,9 +6,6 @@
     "motion",
     "radix-ui"
   ],
-  "registryDependencies": [
-    "toggle"
-  ],
   "files": [
     {
       "path": "src/components/ui/toggle-group.tsx",

@@ -7,7 +7,6 @@
     "motion",
     "react-use-measure"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/github-stars.tsx",

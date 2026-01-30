@@ -4,6 +4,9 @@
   "dependencies": [
     "lucide-react"
   ],
+  "registryDependencies": [
+    "select"
+  ],
   "files": [
     {
       "path": "src/components/ui/audio-player-with-waveform.tsx",

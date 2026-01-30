@@ -3,7 +3,6 @@
   "name": "checkbox",
   "dependencies": [
     "@radix-ui/react-checkbox",
-    "class-variance-authority",
     "lucide-react"
   ],
   "files": [

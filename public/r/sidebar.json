@@ -3,7 +3,6 @@
   "name": "sidebar",
   "dependencies": [
     "class-variance-authority",
-    "motion",
     "lucide-react",
     "motion",
     "radix-ui"
@@ -12,7 +11,9 @@
     "button",
     "input",
     "separator",
-    "skeleton"
+    "sheet",
+    "skeleton",
+    "tooltip-animated"
   ],
   "files": [
     {

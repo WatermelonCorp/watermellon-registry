@@ -1,9 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "text-gradient",
-  "dependencies": [
-    "class-variance-authority"
-  ],
+  "dependencies": [],
   "files": [
     {
       "path": "src/components/ui/text-gradient.tsx",

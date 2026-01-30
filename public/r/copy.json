@@ -3,7 +3,6 @@
   "name": "copy",
   "dependencies": [
     "class-variance-authority",
-    "motion",
     "lucide-react",
     "motion"
   ],

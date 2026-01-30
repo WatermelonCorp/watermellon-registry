@@ -5,10 +5,8 @@
     "@hugeicons/core-free-icons",
     "@hugeicons/react",
     "lucide-react",
-    "motion",
-    "react-icons"
+    "motion"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/dropdown-disclosure.tsx",

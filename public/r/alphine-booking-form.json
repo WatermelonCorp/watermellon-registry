@@ -10,7 +10,8 @@
     "button",
     "calendar",
     "input",
-    "label"
+    "label",
+    "popover"
   ],
   "files": [
     {

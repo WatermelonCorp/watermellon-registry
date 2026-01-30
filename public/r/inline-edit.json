@@ -2,12 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "inline-edit",
   "dependencies": [
-    "@hugeicons/core-free-icons",
+    "@hugeicons/core-free-icons/index",
     "@hugeicons/react",
     "lucide-react",
     "motion"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/inline-edit.tsx",

@@ -6,7 +6,6 @@
     "lucide-react",
     "motion"
   ],
-  "registryDependencies": [],
   "files": [
     {
       "path": "src/components/ui/dialog-stack.tsx",

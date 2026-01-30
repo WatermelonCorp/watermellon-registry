@@ -2,10 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animate-button",
   "dependencies": [
-    "motion",
     "class-variance-authority",
-    "clsx",
-    "tailwind-merge"
+    "motion"
   ],
   "files": [
     {

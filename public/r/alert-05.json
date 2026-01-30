@@ -2,8 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-05",
   "dependencies": [
-    "@aliimam/icons",
-    "lucide-react"
+    "@aliimam/icons"
   ],
   "registryDependencies": [
     "alert",
