@@ -3,7 +3,6 @@
   "name": "button-08",
   "dependencies": [
     "@aliimam/icons",
-    "lucide-react",
     "motion"
   ],
   "registryDependencies": [

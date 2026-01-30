@@ -2,8 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "color-watch-selector",
   "dependencies": [
-    "@radix-ui/react-radio-group",
-    "lucide-react"
+    "@radix-ui/react-radio-group"
   ],
   "files": [
     {

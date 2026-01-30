@@ -2,8 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog-01",
   "dependencies": [
-    "@aliimam/icons",
-    "@radix-ui/react-alert-dialog"
+    "@aliimam/icons"
   ],
   "registryDependencies": [
     "alert-dialog",

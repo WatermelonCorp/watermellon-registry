@@ -1,9 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "device",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": [],
   "files": [
     {
       "path": "src/components/ui/device.tsx",

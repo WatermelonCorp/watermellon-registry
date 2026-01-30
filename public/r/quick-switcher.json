@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "quick-switcher",
   "dependencies": [
-    "motion",
-    "lucide-react"
+    "lucide-react",
+    "motion"
   ],
   "files": [
     {

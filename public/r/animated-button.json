@@ -3,7 +3,6 @@
   "name": "animated-button",
   "dependencies": [
     "class-variance-authority",
-    "motion",
     "motion"
   ],
   "files": [

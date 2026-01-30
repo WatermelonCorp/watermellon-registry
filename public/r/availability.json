@@ -2,11 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "availability",
   "dependencies": [
-    "motion",
-    "lucide-react",
     "@dnd-kit/core",
-    "tunnel-rat",
-    "nanoid"
+    "lucide-react",
+    "nanoid",
+    "tunnel-rat"
   ],
   "registryDependencies": [
     "button"

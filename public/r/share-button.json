@@ -3,7 +3,6 @@
   "name": "share-button",
   "dependencies": [
     "class-variance-authority",
-    "motion",
     "lucide-react",
     "motion"
   ],

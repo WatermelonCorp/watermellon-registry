@@ -3,9 +3,7 @@
   "name": "theme-toggler",
   "dependencies": [
     "class-variance-authority",
-    "lucide-react",
     "motion",
-    "next-themes",
     "radix-ui"
   ],
   "files": [

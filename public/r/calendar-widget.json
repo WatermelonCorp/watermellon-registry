@@ -2,8 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar-widget",
   "dependencies": [
-    "motion",
-    "lucide-react"
+    "motion"
   ],
   "files": [
     {

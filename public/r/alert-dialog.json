@@ -2,13 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog",
   "dependencies": [
-    "@radix-ui/react-alert-dialog",
     "class-variance-authority",
     "motion",
     "radix-ui"
-  ],
-  "registryDependencies": [
-    "button"
   ],
   "files": [
     {

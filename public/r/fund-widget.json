@@ -2,8 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "fund-widget",
   "dependencies": [
-    "motion",
-    "react-icons"
+    "motion"
   ],
   "files": [
     {

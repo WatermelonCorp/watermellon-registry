@@ -2,7 +2,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-accordion",
   "dependencies": [
-    "@radix-ui/react-accordion",
     "lucide-react",
     "motion",
     "radix-ui"
