@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, type FC } from "react";
-import { motion, AnimatePresence, type Transition } from "motion/react";
-import { ChevronRight, ChevronLeft, Sun, Moon } from "lucide-react";
+import { type FC, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 import {
   BsChatLeftFill,
   BsFillArchiveFill,
@@ -13,31 +13,30 @@ import {
 import { IoImage } from "react-icons/io5";
 import { PiShareFatFill } from "react-icons/pi";
 import { AiFillTag } from "react-icons/ai";
-import { type IconType } from "react-icons";
+import type { IconType } from "react-icons";
 
-/* --- Types --- */
-interface ToolbarItem {
+/* ---------- Types ---------- */
+export interface ToolbarItem {
   icon: IconType;
   label: string;
   size: number;
   onClick?: () => void;
 }
 
-interface ToolbarIconProps extends ToolbarItem {}
-
-interface ExtendedToolbarProps {
+export interface ExtendedToolbarProps {
   primaryItems?: ToolbarItem[];
   secondaryItems?: ToolbarItem[];
   defaultExpanded?: boolean;
   showThemeToggle?: boolean;
 }
 
-const springTransition: Transition = {
+/* ---------- Motion ---------- */
+const springTransition = {
   stiffness: 300,
   damping: 30,
-};
+} as const;
 
-/* --- Default Items  --- */
+/* ---------- Defaults ---------- */
 const DEFAULT_PRIMARY: ToolbarItem[] = [
   { icon: BsFillInboxFill, size: 28, label: "Inbox" },
   { icon: BsChatLeftFill, size: 22, label: "Chat" },
@@ -52,78 +51,70 @@ const DEFAULT_SECONDARY: ToolbarItem[] = [
   { icon: BsTrash3Fill, size: 28, label: "Delete" },
 ];
 
-/* --- Main Component --- */
+/* ---------- Component ---------- */
 export const ExtendedToolbar: FC<ExtendedToolbarProps> = ({
   primaryItems = DEFAULT_PRIMARY,
   secondaryItems = DEFAULT_SECONDARY,
   defaultExpanded = false,
-  showThemeToggle = true,
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
-  const [isDark, setIsDark] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (isDark) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [isDark]);
 
   return (
-    <div className="relative flex flex-col justify-center items-center h-screen w-full bg-white dark:bg-zinc-950 transition-colors duration-500">
-      
-      {showThemeToggle && (
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="mb-12 p-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all active:scale-90"
-        >
-          {isDark ? (
-            <Sun className="text-yellow-400" size={20} />
-          ) : (
-            <Moon className="text-zinc-500" size={20} />
-          )}
-        </button>
-      )}
-
+   <div className="relative flex w-full items-center justify-center bg-transparent transition-colors duration-500 px-4">
+      {/* Toolbar */}
       <motion.div
         layout
         transition={springTransition}
-        className="flex items-center gap-2 px-2 py-2 bg-[#F4F4F9] dark:bg-zinc-900/90 border border-[#f4f4f9e2] dark:border-zinc-800 backdrop-blur-md rounded-full shadow-xs shadow-slate-200/50 dark:shadow-none w-fit"
-        style={{ borderRadius: 32, minWidth: "220px", height: "64px" }}
+        className="
+          flex items-center gap-2 px-2 py-2
+          bg-[#F4F4F9] dark:bg-zinc-900/90
+          border border-[#f4f4f9e2] dark:border-zinc-800
+          backdrop-blur-md rounded-full
+          shadow-sm shadow-slate-200/50 dark:shadow-none
+          w-fit min-w-55 h-16
+        "
       >
         {/* Toggle */}
         <motion.button
           layout
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={() => setIsExpanded((v) => !v)}
           transition={springTransition}
-          className="relative flex items-center justify-center w-12 h-12 bg-[#FEFEFE] dark:bg-zinc-800 rounded-full shadow-xs z-10 focus:outline-none border border-transparent dark:border-zinc-700"
           style={{ order: isExpanded ? 0 : 2 }}
+          className="
+            relative z-10 flex h-12 w-12
+            items-center justify-center
+            rounded-full bg-[#FEFEFE] dark:bg-zinc-800
+            border border-transparent dark:border-zinc-700
+            shadow-sm focus:outline-none
+          "
         >
           <AnimatePresence mode="popLayout" initial={false}>
             {isExpanded ? (
               <motion.div
-                key="back"
+                key="left"
                 initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
                 animate={{ opacity: 1, rotate: 0, scale: 1 }}
                 exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
                 transition={{ duration: 0.2 }}
               >
-                <ChevronLeft color="#858489" size={38} strokeWidth={2} className="dark:text-zinc-400" />
+                <ChevronLeft size={36} strokeWidth={2} className="text-[#858489] dark:text-zinc-400" />
               </motion.div>
             ) : (
               <motion.div
-                key="forward"
+                key="right"
                 initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
                 animate={{ opacity: 1, rotate: 0, scale: 1 }}
                 exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
                 transition={{ duration: 0.2 }}
               >
-                <ChevronRight color="#858489" size={38} strokeWidth={2} className="dark:text-zinc-400" />
+                <ChevronRight size={36} strokeWidth={2} className="text-[#858489] dark:text-zinc-400" />
               </motion.div>
             )}
           </AnimatePresence>
         </motion.button>
 
         {/* Icons */}
-        <div className="flex-1 flex items-center justify-center overflow-hidden">
+        <div className="flex flex-1 items-center justify-center overflow-hidden">
           <AnimatePresence mode="popLayout" initial={false}>
             {!isExpanded ? (
               <motion.div
@@ -159,15 +150,17 @@ export const ExtendedToolbar: FC<ExtendedToolbarProps> = ({
   );
 };
 
-/* --- Toolbar Icon --- */
-const ToolbarIcon: FC<ToolbarIconProps> = ({ icon: Icon, label, size, onClick }) => {
-  return (
-    <button
-      aria-label={label}
-      onClick={onClick}
-      className="p-2 text-[#66666F] dark:text-zinc-500 hover:dark:text-zinc-300 transition-colors focus:outline-none"
-    >
-      <Icon size={size} />
-    </button>
-  );
-};
+/* ---------- Icon ---------- */
+const ToolbarIcon: FC<ToolbarItem> = ({ icon: Icon, label, size, onClick }) => (
+  <button
+    aria-label={label}
+    onClick={onClick}
+    className="
+      p-2 text-[#66666F] dark:text-zinc-500
+      hover:text-[#2d2d34] hover:dark:text-zinc-300
+      transition-colors focus:outline-none
+    "
+  >
+    <Icon size={size} />
+  </button>
+);

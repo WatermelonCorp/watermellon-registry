@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect, type FC, type ChangeEvent } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, Check, Sun, Moon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, Check } from "lucide-react";
 
 /* --- Types --- */
 export interface Currency {
@@ -36,13 +36,13 @@ interface FlagIconProps {
 }
 
 const FlagIcon: FC<FlagIconProps> = ({ countryCode, emoji }) => {
-  const [imgError, setImgError] = useState<boolean>(false);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     setImgError(false);
   }, [countryCode]);
 
-  if (!countryCode) return <span className="text-xl">{emoji}</span>;
+  if (!countryCode) return <span className="text-lg sm:text-xl">{emoji}</span>;
 
   const src =
     countryCode === "eu"
@@ -50,7 +50,7 @@ const FlagIcon: FC<FlagIconProps> = ({ countryCode, emoji }) => {
       : `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
 
   return (
-    <div className="w-6 h-5 flex items-center justify-center rounded-xs overflow-hidden bg-transparent shrink-0 border border-gray-200 dark:border-zinc-700">
+    <div className="w-5 h-4 sm:w-6 sm:h-5 flex items-center justify-center rounded-xs overflow-hidden bg-transparent shrink-0 border border-gray-200 dark:border-zinc-700">
       {!imgError ? (
         <img
           src={src}
@@ -60,7 +60,7 @@ const FlagIcon: FC<FlagIconProps> = ({ countryCode, emoji }) => {
           onError={() => setImgError(true)}
         />
       ) : (
-        <span className="text-sm leading-none flex items-center justify-center h-full w-full">
+        <span className="text-xs sm:text-sm leading-none flex items-center justify-center h-full w-full">
           {emoji}
         </span>
       )}
@@ -76,7 +76,7 @@ interface DropdownProps {
 }
 
 const Dropdown: FC<DropdownProps> = ({ selected, onSelect, currencies }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -93,14 +93,14 @@ const Dropdown: FC<DropdownProps> = ({ selected, onSelect, currencies }) => {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setIsOpen((v) => !v)}
-        className="flex items-center gap-2 px-3 py-2 rounded-full border border-[#E5E5E9] dark:border-zinc-700 transition-all active:scale-95 bg-[#fefefe] dark:bg-zinc-800"
+        className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-full border border-[#E5E5E9] dark:border-zinc-700 transition-all active:scale-95 bg-[#fefefe] dark:bg-zinc-800"
       >
         <FlagIcon countryCode={selected.countryCode} emoji={selected.flag} />
-        <span className="text-sm font-semibold text-gray-700 dark:text-zinc-200">
+        <span className="text-xs sm:text-sm font-semibold text-gray-700 dark:text-zinc-200">
           {selected.code}
         </span>
         <ChevronDown
-          className={`w-5 h-5 text-gray-400 transition-transform ${
+          className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -113,7 +113,7 @@ const Dropdown: FC<DropdownProps> = ({ selected, onSelect, currencies }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.96 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-2 w-48 bg-white dark:bg-zinc-800 rounded-2xl shadow-lg border-[1.6px] border-[#E5E5E9] dark:border-zinc-700 z-50 py-1"
+            className="absolute right-0 mt-2 w-40 sm:w-48 bg-white dark:bg-zinc-800 rounded-xl sm:rounded-2xl shadow-lg border-[1.6px] border-[#E5E5E9] dark:border-zinc-700 z-50 py-1"
           >
             {currencies.map((currency) => (
               <button
@@ -122,20 +122,20 @@ const Dropdown: FC<DropdownProps> = ({ selected, onSelect, currencies }) => {
                   onSelect(currency);
                   setIsOpen(false);
                 }}
-                className="w-full flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-zinc-700/50 transition-colors"
+                className="w-full flex items-center justify-between px-3 py-2 sm:px-4 sm:py-2.5 hover:bg-gray-50 dark:hover:bg-zinc-700/50 transition-colors"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
                   <FlagIcon
                     countryCode={currency.countryCode}
                     emoji={currency.flag}
                   />
-                  <span className="text-sm font-medium text-gray-700 dark:text-zinc-200">
+                  <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-zinc-200">
                     {currency.code}
                   </span>
                 </div>
 
                 {currency.code === selected.code && (
-                  <Check className="w-4 h-4 text-gray-400 dark:text-zinc-500" />
+                  <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400 dark:text-zinc-500" />
                 )}
               </button>
             ))}
@@ -155,7 +155,7 @@ const AnimatedNumber: FC<AnimatedNumberProps> = ({ value }) => {
   const chars = String(value || "0").split("");
 
   return (
-    <div className="flex items-center text-2xl font-semibold text-[#2F2F33] dark:text-zinc-100">
+    <div className="flex items-center text-xl sm:text-2xl font-semibold text-[#2F2F33] dark:text-zinc-100">
       {chars.map((char, i) => (
         <DigitColumn key={i} digit={char} />
       ))}
@@ -168,7 +168,18 @@ interface DigitColumnProps {
 }
 
 const DigitColumn: FC<DigitColumnProps> = ({ digit }) => {
-  const digitHeight = 28;
+  // Adjusted heights for mobile/desktop
+  const [digitHeight, setDigitHeight] = useState(28);
+  
+  useEffect(() => {
+    const updateHeight = () => {
+      setDigitHeight(window.innerWidth < 640 ? 24 : 28);
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   const num = Number(digit);
 
   if (Number.isNaN(num)) {
@@ -216,15 +227,14 @@ export const SwapCurrencyCard: FC<SwapCurrencyCardProps> = ({
   const toDefault =
     currencies.find((c) => c.code === defaultToCode) || currencies[1];
 
-  const [fromCurrency, setFromCurrency] = useState<Currency>(fromDefault);
-  const [toCurrency, setToCurrency] = useState<Currency>(toDefault);
-  const [fromAmount, setFromAmount] = useState<string>(defaultAmount);
-  const [toAmount, setToAmount] = useState<string>("9.58");
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const [fromCurrency, setFromCurrency] = useState(fromDefault);
+  const [toCurrency, setToCurrency] = useState(toDefault);
+  const [fromAmount, setFromAmount] = useState(defaultAmount);
+  const [toAmount, setToAmount] = useState("");
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-  }, [isDark]);
+    setToAmount(convert(fromAmount, fromCurrency, toCurrency));
+  }, []);
 
   const convert = (amount: string, from: Currency, to: Currency): string => {
     const val = parseFloat(amount);
@@ -252,36 +262,27 @@ export const SwapCurrencyCard: FC<SwapCurrencyCardProps> = ({
   const rate = (toCurrency.rate / fromCurrency.rate).toFixed(2);
 
   return (
-    <div className="h-screen w-full flex flex-col justify-center items-center bg-white dark:bg-zinc-950 transition-colors duration-500">
-      <button
-        onClick={() => setIsDark(!isDark)}
-        className="mb-8 p-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all active:scale-90"
-      >
-        {isDark ? (
-          <Sun className="text-yellow-400" size={20} />
-        ) : (
-          <Moon className="text-zinc-600" size={20} />
-        )}
-      </button>
-
+    <div className="relative flex w-full items-center justify-center bg-transparent transition-colors duration-500 px-4 py-6">
       <motion.div
-        initial={{ opacity: 0, scale: 0.92 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
-        className="w-full max-w-[420px] border-[1.6px] border-[#E5E5E9] dark:border-zinc-800 bg-[#FEFEFE] dark:bg-zinc-900 rounded-[40px] p-[32px] shadow-[0_32px_47px_-16px_rgba(0,0,0,0.1)] dark:shadow-[0_32px_60px_-16px_rgba(0,0,0,0.5)] flex flex-col gap-[24px]"
+        className="w-full max-w-sm border-[1.6px] border-[#E5E5E9] dark:border-zinc-800 bg-[#FEFEFE] dark:bg-zinc-900 rounded-4xl sm:rounded-[40px] p-6 sm:p-8 shadow-[0_32px_47px_-16px_rgba(0,0,0,0.1)] dark:shadow-[0_32px_60px_-16px_rgba(0,0,0,0.5)] flex flex-col gap-5 sm:gap-6"
       >
-        <h2 className="text-[#898990] dark:text-zinc-500 font-semibold text-[20px]">
+        <h2 className="text-[#898990] dark:text-zinc-500 font-semibold text-lg sm:text-[20px]">
           Swap Currency
         </h2>
 
-        <div className="flex flex-col gap-[8px]">
-          <div className="flex items-center justify-between p-[16px] bg-[#F6F5FA] dark:bg-zinc-800/50 rounded-t-[24px] rounded-b-[16px]">
-            <div className="relative w-1/2">
+        <div className="flex flex-col gap-1.5 sm:gap-2">
+          {/* Input */}
+          <div className="flex items-center justify-between p-3.5 sm:p-4 bg-[#F6F5FA] dark:bg-zinc-800/50 rounded-t-4xl sm:rounded-t-3xl rounded-b-2xl sm:rounded-b-3xl">
+            <div className="relative flex-1 mr-2">
               <AnimatedNumber value={fromAmount} />
-              <input title="from"
+              <input
+                title="from"
                 value={fromAmount}
                 onChange={handleFromChange}
-                className="absolute inset-0 bg-transparent outline-none text-transparent caret-[#2F2F33] dark:caret-zinc-100 text-[24px] font-semibold"
+                className="absolute inset-0 bg-transparent outline-none text-transparent caret-[#2F2F33] dark:caret-zinc-100 text-xl sm:text-[24px] font-semibold w-full"
               />
             </div>
 
@@ -295,13 +296,15 @@ export const SwapCurrencyCard: FC<SwapCurrencyCardProps> = ({
             />
           </div>
 
-          <div className="flex items-center justify-between p-[16px] bg-[#F6F5FA] dark:bg-zinc-800/50 rounded-b-[24px] rounded-t-[16px]">
-            <div className="relative w-1/2">
+          {/* Input Block 2 */}
+          <div className="flex items-center justify-between p-3.5 sm:p-4 bg-[#F6F5FA] dark:bg-zinc-800/50 rounded-b-4xl sm:rounded-b-3xl rounded-t-2xl sm:rounded-t-3xl">
+            <div className="relative flex-1 mr-2">
               <AnimatedNumber value={toAmount} />
-              <input title="to"
+              <input
+                title="to"
                 value={toAmount}
                 onChange={handleToChange}
-                className="absolute inset-0 bg-transparent outline-none text-transparent caret-[#2F2F33] dark:caret-zinc-100 text-[24px] font-semibold"
+                className="absolute inset-0 bg-transparent outline-none text-transparent caret-[#2F2F33] dark:caret-zinc-100 text-xl sm:text-[24px] font-semibold w-full"
               />
             </div>
 
@@ -316,15 +319,14 @@ export const SwapCurrencyCard: FC<SwapCurrencyCardProps> = ({
           </div>
         </div>
 
-        <button className="w-full bg-[#262629] dark:bg-zinc-100 text-white dark:text-zinc-950 font-semibold py-[16px] rounded-[22px] text-[18px] hover:bg-black dark:hover:bg-white transition active:scale-[0.98] shadow-lg">
+        <button className="w-full bg-[#262629] dark:bg-zinc-100 text-white dark:text-zinc-950 font-semibold py-3.5 sm:py-4 rounded-2xl sm:rounded-[22px] text-base sm:text-[18px] hover:bg-black dark:hover:bg-white transition active:scale-[0.98] shadow-lg">
           Proceed
         </button>
 
-        <div className="text-center text-[16px] text-[#9F9EA1] dark:text-zinc-500 font-medium">
+        <div className="text-center text-sm sm:text-base text-[#9F9EA1] dark:text-zinc-500 font-medium">
           1 {fromCurrency.code} ≈ {rate} {toCurrency.code}
         </div>
       </motion.div>
     </div>
   );
 };
-

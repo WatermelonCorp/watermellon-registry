@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useEffect, type FC } from "react";
-import { motion, AnimatePresence, type Transition } from "motion/react";
-import { Undo2, Sun, Moon } from "lucide-react";
+import { type FC, useState } from "react";
+import { motion, AnimatePresence, type Transition } from "framer-motion";
+import { Undo2 } from "lucide-react";
 import { FaThumbsDown, FaThumbsUp } from "react-icons/fa6";
 
-/* --- Types --- */
-type FeedbackStatus = "idle" | "up" | "down";
+/* ---------- Types ---------- */
+export type FeedbackStatus = "idle" | "up" | "down";
 
-interface QuickFeedbackProps {
+export interface QuickFeedbackProps {
   defaultStatus?: FeedbackStatus;
   showThemeToggle?: boolean;
   feedbackText?: string;
@@ -16,12 +16,13 @@ interface QuickFeedbackProps {
   onUndo?: () => void;
 }
 
-const containerTransition: Transition = {
+/* ---------- Motion ---------- */
+const containerTransition = {
   type: "spring",
   stiffness: 500,
   damping: 30,
   mass: 1,
-};
+} as const;
 
 const contentTransition: Transition = {
   type: "tween",
@@ -29,20 +30,14 @@ const contentTransition: Transition = {
   ease: "easeOut",
 };
 
+/* ---------- Component ---------- */
 export const QuickFeedback: FC<QuickFeedbackProps> = ({
   defaultStatus = "idle",
-  showThemeToggle = true,
   feedbackText = "Feedback Received!",
   onFeedback,
   onUndo,
 }) => {
   const [status, setStatus] = useState<FeedbackStatus>(defaultStatus);
-  const [isDark, setIsDark] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (isDark) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [isDark]);
 
   const handleFeedback = (value: "up" | "down") => {
     setStatus(value);
@@ -55,89 +50,75 @@ export const QuickFeedback: FC<QuickFeedbackProps> = ({
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen w-full bg-[#FEFEFE] dark:bg-zinc-950 transition-colors duration-500">
-      
-      {/* Theme Toggle */}
-      {showThemeToggle && (
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="mb-12 p-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all active:scale-90"
-        >
-          {isDark ? (
-            <Sun className="text-yellow-400" size={20} />
-          ) : (
-            <Moon className="text-zinc-500" size={20} />
-          )}
-        </button>
-      )}
-
+    <div className="relative flex w-full items-center justify-center bg-transparent transition-colors duration-500 px-4">
       <AnimatePresence mode="wait">
         {status === "idle" ? (
-          <motion.div key="idle-container" layout className="flex gap-[16px]">
-            
+          <motion.div
+            key="idle"
+            layout
+            className="flex gap-3 sm:gap-4 w-full justify-center max-w-68"
+          >
             {/* Thumbs Up */}
             <motion.button
               layoutId="container-up"
-              onClick={() => handleFeedback("up")}
               transition={containerTransition}
+              onClick={() => handleFeedback("up")}
               className="
-                group relative flex h-[68px] w-[128px]
-                items-center justify-center
-                rounded-full bg-[#F3EFE9] dark:bg-zinc-900
+                flex h-16 sm:h-17 flex-1 sm:w-32
+                items-center justify-center rounded-full
+                bg-[#F3EFE9] dark:bg-zinc-900
                 hover:bg-[#ebe7e1] dark:hover:bg-zinc-800
-                border border-transparent dark:border-zinc-800
-                transition-colors
+                border border-red-100 dark:border-zinc-800
                 active:scale-95
               "
             >
-              <FaThumbsUp className="h-[32px] w-[32px] text-[#020200de] dark:text-zinc-100 transition-transform duration-200" />
+              <FaThumbsUp className="h-7 w-7 sm:h-8 sm:w-8 text-[#020200de] dark:text-zinc-100" />
             </motion.button>
 
             {/* Thumbs Down */}
             <motion.button
               layoutId="container-down"
-              onClick={() => handleFeedback("down")}
               transition={containerTransition}
+              onClick={() => handleFeedback("down")}
               className="
-                group relative flex h-[68px] w-[128px]
-                items-center justify-center
-                rounded-full bg-[#F3EFE9] dark:bg-zinc-900
+                flex h-16 sm:h-17 flex-1 sm:w-32
+                items-center justify-center rounded-full
+                bg-[#F3EFE9] dark:bg-zinc-900
                 hover:bg-[#ebe7e1] dark:hover:bg-zinc-800
                 border border-transparent dark:border-zinc-800
-                transition-colors
                 active:scale-95
               "
             >
-              <FaThumbsUp className="h-[32px] w-[32px] text-[#020200de] dark:text-zinc-100 rotate-180 transition-transform duration-200" />
+              <FaThumbsDown className="h-7 w-7 sm:h-8 sm:w-8 text-[#020200de] dark:text-zinc-100 scale-x-[-1]" />
             </motion.button>
           </motion.div>
         ) : (
           <motion.div
-            key="feedback-container"
+            key="feedback"
             layoutId={status === "up" ? "container-up" : "container-down"}
             transition={containerTransition}
             className="
-              flex h-[68px] min-w-[340px]
-              items-center justify-between
-              rounded-full bg-[#F3EFE9] dark:bg-zinc-900
+              flex h-16 sm:h-17 w-full max-w-112.5
+              items-center justify-between rounded-full
+              bg-[#F3EFE9] dark:bg-zinc-900
               border border-transparent dark:border-zinc-800
-              pl-[24px] pr-[16px] overflow-hidden
+              pl-4 sm:pl-6 pr-2 sm:pr-4 overflow-hidden
             "
           >
             {/* Left */}
             <motion.div
-              className="flex items-center gap-[10px]"
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1, ...contentTransition }}
+              className="flex items-center gap-2 min-w-0"
             >
               {status === "up" ? (
-                <FaThumbsUp className="h-[28px] w-[28px] text-[#020200] dark:text-zinc-100" />
+                <FaThumbsUp className="h-6 w-6 sm:h-7 sm:w-7 shrink-0 text-[#020200] dark:text-zinc-100" />
               ) : (
-                <FaThumbsDown className="h-[28px] w-[28px] text-[#020200] dark:text-zinc-100" />
+                <FaThumbsDown className="h-6 w-6 sm:h-7 sm:w-7 shrink-0 text-[#020200] dark:text-zinc-100" />
               )}
 
-              <span className="text-[18px] ml-[8px] font-bold tracking-wide text-[#020200] dark:text-zinc-100 whitespace-nowrap">
+              <span className="ml-1 sm:ml-2 truncate font-bold tracking-wide text-[#020200] dark:text-zinc-100 text-sm sm:text-lg">
                 {feedbackText}
               </span>
             </motion.div>
@@ -147,18 +128,17 @@ export const QuickFeedback: FC<QuickFeedbackProps> = ({
               onClick={handleUndo}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ ...contentTransition }}
+              transition={contentTransition}
               className="
-                ml-[16px] flex items-center gap-[8px]
+                ml-2 flex items-center gap-1 sm:gap-2
                 rounded-full bg-[#E0DCD4] dark:bg-zinc-800
-                px-[16px] py-[10px]
-                font-bold text-[#020200] dark:text-zinc-200
+                px-3 sm:px-4 py-2 sm:py-2.5 font-bold
+                text-[#020200] dark:text-zinc-200
                 hover:bg-[#d6d2ca] dark:hover:bg-zinc-700
-                active:scale-95
-                transition-all
+                active:scale-95 transition text-xs sm:text-base
               "
             >
-              <Undo2 className="h-[20px] w-[20px] text-[#020200] dark:text-zinc-200" strokeWidth={2.5} />
+              <Undo2 size={16} className="sm:w-5 sm:h-5" strokeWidth={2.5} />
               Undo
             </motion.button>
           </motion.div>

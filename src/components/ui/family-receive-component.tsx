@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, Fingerprint } from "lucide-react";
 
-interface FamilyReceiveComponentProps {
+/* ---------- Types ---------- */
+export interface FamilyReceiveComponentProps {
   triggerLabel?: string;
   title?: string;
   description?: string;
@@ -26,14 +27,14 @@ export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex h-screen  w-full items-end pb-44 justify-center bg-[#1a1a1a] font-sans">
+    <div className="flex h-96 w-full items-end pb-44 justify-center bg-transparent font-sans px-4">
       {/* Trigger Button */}
       <AnimatePresence>
         {!isOpen && (
           <motion.button
             layoutId="action-button"
             onClick={() => setIsOpen(true)}
-            className="h-14 w-96 rounded-full bg-[#00A6F4] text-xl font-normal text-white shadow-lg"
+            className="h-14 w-96 max-w-full rounded-full bg-[#00A6F4] text-xl font-normal text-white shadow-lg"
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
           >
             {triggerLabel}
@@ -41,18 +42,19 @@ export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
         )}
       </AnimatePresence>
 
-      {/* Bottom Sheet */}
+      {/* Bottom Sheet Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-50 flex items-end pb-40 justify-center w-full">
+          <div className="fixed inset-0 z-999 flex items-end pb-40 justify-center w-full px-4 bg-black/20 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              className="relative w-[520px] overflow-hidden rounded-[32px] bg-[#080808] p-6 text-white border border-white/5"
+              className="relative w-130 max-w-full overflow-hidden rounded-[32px] bg-[#080808] p-6 text-white border border-white/5 shadow-2xl"
             >
-              {/* Close */}
+              {/* Close Button */}
               <button
+                type="button"
                 title="close"
                 onClick={() => setIsOpen(false)}
                 className="absolute right-5 top-5 text-gray-400 hover:text-white transition-colors"
@@ -62,7 +64,7 @@ export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
 
               {/* Header */}
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00aeef]/10 text-[#00aeef]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#00aeef]/10 text-[#00aeef]">
                   {icon ?? <Fingerprint size={28} />}
                 </div>
                 <h2 className="text-2xl font-semibold text-[#EDEDED]">
@@ -78,19 +80,21 @@ export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
               {/* Actions */}
               <div className="flex gap-3">
                 <button
+                  type="button"
                   onClick={() => setIsOpen(false)}
-                  className="flex-1 h-[52px] rounded-full bg-[#121212] text-lg font-medium text-gray-300"
+                  className="flex-1 h-13 rounded-full bg-[#121212] text-lg font-medium text-gray-300 hover:bg-zinc-800 transition-colors"
                 >
                   {cancelLabel}
                 </button>
 
                 <motion.button
                   layoutId="action-button"
+                  type="button"
                   onClick={() => {
                     onConfirm?.();
                     setIsOpen(false);
                   }}
-                  className="flex-1 h-[52px] rounded-full bg-[#00A6F4] text-lg font-medium text-white"
+                  className="flex-1 h-13 rounded-full bg-[#00A6F4] text-lg font-medium text-white hover:bg-[#0095db] transition-colors"
                   transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 >
                   {confirmLabel}

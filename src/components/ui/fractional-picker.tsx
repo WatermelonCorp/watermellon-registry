@@ -1,199 +1,158 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import * as React from "react";
 import {
   motion,
   useMotionValue,
   useTransform,
   animate,
-} from "motion/react";
-import { Sun, MoonIcon } from "lucide-react";
+  MotionValue,
+} from "framer-motion";
+import { cn } from "@/lib/utils";
 
-/*  Types  */
+/* ---------------- Types ---------------- */
 
-interface FractionalPickerProps {
+export interface FractionalPickerProps {
   min?: number;
   max?: number;
-  initialValue?: number;
-  onChange?: (val: number) => void;
-  containerWidth?: number;
+  value?: number;
+  defaultValue?: number;
+  onChange?: (value: number) => void;
+  width?: number;
   itemWidth?: number;
+  className?: string;
 }
 
-/*  Constants  */
+/* ---------------- Constants ---------------- */
 
-const TICK_COUNT_PER_INTERVAL = 10;
+const TICK_COUNT = 10;
 
-/*  Ruler Item  */
+/* ---------------- Ruler Item ---------------- */
 
-const RulerItem: React.FC<{
-  num: number;
-  x: any;
+interface RulerItemProps {
+  value: number;
+  x: MotionValue<number>;
   itemWidth: number;
-  centerOffset: number;
-}> = ({ num, x, itemWidth, centerOffset }) => {
-  const distance = useTransform(x, (latestX: number) => {
-    const itemPos = num * itemWidth + latestX + centerOffset;
-    return Math.abs(itemPos - centerOffset);
+  center: number;
+}
+
+function RulerItem({ value, x, itemWidth, center }: RulerItemProps) {
+  const distance = useTransform(x, (latest) => {
+    const pos = value * itemWidth + latest + center;
+    return Math.abs(pos - center);
   });
 
   const scale = useTransform(distance, [0, itemWidth * 1.5], [1.1, 0.85]);
-  const opacity = useTransform(distance, [0, itemWidth * 2], [1, 0.8]);
-
-  /* light / dark aware text color */
-  const color = useTransform(distance, [0, itemWidth], [
-    "rgb(148,163,184)" ,   
-    "rgb(148,163,184)", 
-  ]);
-
-  const fontWeight = useTransform(distance, [0, itemWidth / 2], [600, 400]);
+  const opacity = useTransform(distance, [0, itemWidth * 2], [1, 0.75]);
 
   return (
-    <div
-      className="flex flex-col items-center flex-shrink-0"
-      style={{ width: itemWidth }}
-    >
+    <div className="flex flex-col items-center shrink-0" style={{ width: itemWidth }}>
       <motion.span
-        className="text-[26px] select-none pointer-events-none mb-6 tabular-nums
-                   dark:text-red-100"
-        style={{ scale, opacity, color, fontWeight: fontWeight as any }}
+        className="mb-5 text-[26px] tabular-nums text-foreground select-none"
+        style={{ scale, opacity }}
       >
-        {num}
+        {value}
       </motion.span>
 
-      {/* Ticks */}
-      <div className="flex w-full justify-between items-end px-[1px]">
-        {Array.from({ length: TICK_COUNT_PER_INTERVAL }).map((_, i) => (
+      <div className="flex relative w-full justify-between px-px">
+        {Array.from({ length: TICK_COUNT }).map((_, i) => (
           <div
-            key={i}
-            className={`w-[1.5px] rounded-full transition-colors
-              ${i === 0
-                ? "h-6 bg-gray-300 dark:bg-zinc-600"
-                : "h-3 bg-gray-200 dark:bg-zinc-700"
-              }`}
+            key={`${value}-tick-${i}`}
+            className={cn(
+              "w-[1.5px] rounded-full bg-muted",
+              i === 0 ? "h-6 ml-1" : "mt-2.5  h-3"
+            )}
           />
         ))}
       </div>
     </div>
   );
-};
+}
 
-/*  Main Component  */
+/* ---------------- Component ---------------- */
 
-export const FractionalPicker: React.FC<FractionalPickerProps> = ({
+export function FractionalPicker({
   min = 0,
   max = 100,
-  initialValue = 13,
+  value,
+  defaultValue = min,
   onChange,
-  containerWidth = 500,
+  width = 420,
   itemWidth = 70,
-}) => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  className,
+}: FractionalPickerProps) {
+  const isControlled = value !== undefined;
+  const [internal, setInternal] = React.useState(defaultValue);
 
-  const numbers = Array.from({ length: max - min + 1 }, (_, i) => i + min);
-  const centerOffset = containerWidth / 2;
+  const currentValue = isControlled ? value : internal;
 
-  const x = useMotionValue(-(initialValue * itemWidth));
-  const [currentValue, setCurrentValue] = useState(initialValue);
+  const center = width / 2;
+  const x = useMotionValue(-currentValue * itemWidth);
 
-  /* ---- theme sync  ---- */
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }, [theme]);
+  React.useEffect(() => {
+    animate(x, -currentValue * itemWidth, {
+      type: "spring",
+      stiffness: 260,
+      damping: 28,
+    });
+  }, [currentValue, itemWidth, x]);
 
-  /* ---- value sync ---- */
-  useEffect(() => {
-    const unsubscribe = x.on("change", (latest) => {
-      const val = Math.round(Math.abs(latest / itemWidth));
-      if (val !== currentValue && val >= min && val <= max) {
-        setCurrentValue(val);
-        onChange?.(val);
+  React.useEffect(() => {
+    return x.on("change", (latest) => {
+      const next = Math.round(-latest / itemWidth);
+      if (next >= min && next <= max && next !== currentValue) {
+        if (!isControlled) setInternal(next);
+        onChange?.(next);
       }
     });
-    return () => unsubscribe();
-  }, [x, itemWidth, currentValue, onChange, min, max]);
+  }, [x, itemWidth, min, max, currentValue, isControlled, onChange]);
 
   const snap = () => {
-    const current = x.get();
-    const snapped = Math.round(current / itemWidth) * itemWidth;
-    const clamped = Math.max(
-      Math.min(snapped, -min * itemWidth),
-      -max * itemWidth
-    );
-
-    animate(x, clamped, {
-      type: "spring",
-      stiffness: 250,
-      damping: 30,
-      mass: 0.8,
-    });
+    const snapped = Math.round(x.get() / itemWidth) * itemWidth;
+    animate(x, snapped, { type: "spring", stiffness: 260, damping: 30 });
   };
 
   return (
-    <div className="relative group flex justify-center items-center w-full h-screen
-                    bg-gray-50 dark:bg-zinc-950 text-white transition-colors duration-500">
-
-      {/* Theme Toggle  */}
-      <button
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="absolute top-10 p-3 rounded-full bg-white dark:bg-zinc-900
-                   border border-gray-200 dark:border-zinc-800 shadow-sm
-                   hover:scale-110 transition-all z-50"
-      >
-        {theme === "light" ? <MoonIcon className="text-black "/> : <Sun className="text-white"/>}
-      </button>
-
-      <div
-        className="relative h-[130px] bg-white dark:bg-zinc-900
-                   rounded-[32px] border-[1.6px]
-                   border-[#e5e5e5] dark:border-zinc-800
-                   shadow-[0_8px_30px_rgb(0,0,0,0.04)]
-                   dark:shadow-[0_8px_30px_rgb(0,0,0,0.6)]
-                   overflow-hidden"
-        style={{ width: containerWidth }}
-      >
-        {/* Pointer */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex flex-col items-center">
-          <div className="w-10 h-5 bg-[#DEDEE5] dark:bg-zinc-700 rounded-b-[10px] shadow-sm" />
-          <div className="w-2 h-2 bg-[#DEDEE5] dark:bg-zinc-700 rounded-full mt-2" />
-        </div>
-
-        {/* Side Fade */}
-        <div className="absolute inset-y-0 left-0 w-14 bg-gradient-to-r from-white dark:from-zinc-900 to-transparent z-20 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white dark:from-zinc-900 to-transparent z-20 pointer-events-none" />
-
-        {/* Ruler */}
-        <motion.div
-          drag="x"
-          dragConstraints={{
-            left: -(max * itemWidth),
-            right: -(min * itemWidth),
-          }}
-          dragElastic={0.1}
-          onDragEnd={snap}
-          style={{ x }}
-          className="h-full flex items-end cursor-grab active:cursor-grabbing"
-        >
-          <div style={{ minWidth: centerOffset - itemWidth / 2 }} />
-
-          {numbers.map((num) => (
-            <RulerItem
-              key={num}
-              num={num}
-              x={x}
-              itemWidth={itemWidth}
-              centerOffset={centerOffset}
-            />
-          ))}
-
-          <div style={{ minWidth: centerOffset - itemWidth / 2 }} />
-        </motion.div>
+    <div
+      className={cn(
+        "relative overflow-hidden rounded-2xl border bg-background shadow-sm",
+        className
+      )}
+      style={{ width, height: 130 }}
+    >
+      {/* Pointer */}
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 z-10">
+        <div className="h-5 w-10 rounded-b-xl bg-gray-200 mx-auto" />
+        <div className="mt-2 h-2 w-2 rounded-full bg-gray-200 mx-auto" />
       </div>
 
-      {/* Reflection */}
-      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2
-                      w-[80%] h-4 bg-black/5 dark:bg-black/40
-                      blur-xl rounded-full opacity-50" />
+      {/* Fade edges */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-14 bg-linear-to-r from-background to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-linear-to-l from-background to-transparent z-10" />
+
+      {/* Ruler */}
+      <motion.div
+        drag="x"
+        dragConstraints={{ left: -max * itemWidth, right: -min * itemWidth }}
+        dragElastic={0.08}
+        onDragEnd={snap}
+        style={{ x }}
+        className="flex h-full items-end cursor-grab active:cursor-grabbing"
+      >
+        <div style={{ minWidth: center - itemWidth / 2 }} />
+
+        {Array.from({ length: max - min + 1 }, (_, i) => (
+          <RulerItem
+            key={i}
+            value={i + min}
+            x={x}
+            itemWidth={itemWidth}
+            center={center}
+          />
+        ))}
+
+        <div style={{ minWidth: center - itemWidth / 2 }} />
+      </motion.div>
     </div>
   );
-};
+}

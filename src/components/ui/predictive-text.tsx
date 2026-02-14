@@ -1,11 +1,14 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ArrowUp, ImageIcon, Mic, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUp, ImageIcon, Mic } from 'lucide-react';
 
 interface PredictiveInputProps {
   dictionary?: string[];
   placeholder?: string;
   onSend?: (text: string) => void;
+  className?: string;
 }
 
 const DEFAULT_WORDS = [
@@ -16,11 +19,11 @@ const DEFAULT_WORDS = [
 export const PredictiveText: React.FC<PredictiveInputProps> = ({
   dictionary = DEFAULT_WORDS,
   placeholder = "Write a message",
-  onSend
+  onSend,
+  className = ""
 }) => {
   const [text, setText] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [isDark, setIsDark] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -46,19 +49,12 @@ export const PredictiveText: React.FC<PredictiveInputProps> = ({
   };
 
   return (
-    <div className={`h-screen w-full flex flex-col items-center justify-center transition-colors duration-500 p-6 ${isDark ? 'bg-[#0A0A0A]' : 'bg-[#fefefe]/40'}`}>
-
-      {/* Theme Toggle Button */}
-      <button
-        onClick={() => setIsDark(!isDark)}
-        className={`mb-12 p-3 rounded-full border transition-all active:scale-90 ${isDark ? 'bg-[#1A1A1A] border-white/10 text-yellow-400' : 'bg-white border-black/5 text-gray-400 shadow-sm'}`}
-      >
-        {isDark ? <Sun size={20} /> : <Moon size={20} />}
-      </button>
-
-      <div className="relative w-full max-w-md flex flex-col items-center antialiased mb-32">
-        {/* Suggestions Bar */}
-        <div className="h-12 w-full flex justify-start items-center mb-4">
+    <div className={`w-full flex flex-col items-center justify-center p-4 sm:p-6 antialiased select-none ${className}`}>
+      
+      <div className="relative w-full max-w-[95%] sm:max-w-md flex flex-col items-start mb-10 sm:mb-20">
+        
+        {/* Suggestions Bar - Responsive & Theme Aware */}
+        <div className="h-10 sm:h-12 w-full flex justify-start items-center mb-3">
           <AnimatePresence>
             {suggestions.length > 0 && (
               <motion.div
@@ -66,15 +62,17 @@ export const PredictiveText: React.FC<PredictiveInputProps> = ({
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                className={`flex items-center gap-1 border-2 px-1 py-1 rounded-full shadow-sm transition-colors ${isDark ? 'bg-[#1A1A1A] border-white/5' : 'bg-[#FEFEFE] border-[#F4F4F8]'}`}
+                className="flex items-center gap-0.5 border-2 px-1 py-1 rounded-full shadow-sm transition-colors bg-white border-[#F4F4F8] dark:bg-zinc-900 dark:border-white/5"
               >
                 {suggestions.map((word, i) => (
                   <button
                     key={word}
                     onClick={() => applySuggestion(word)}
-                    className={`px-4 py-1 text-[16px] font-bold transition-colors
-                      ${i === suggestions.length - 1 ? 'text-blue-500' : (isDark ? 'text-gray-500 hover:text-gray-300' : 'text-[#9F9EA3] hover:text-gray-600')}
-                      ${i !== 0 ? `border-l-2 pl-4 ${isDark ? 'border-white/5' : 'border-[#F4F4F8]'}` : ''}
+                    className={`px-3 sm:px-4 py-1 text-xs sm:text-sm font-bold transition-colors whitespace-nowrap
+                      ${i === suggestions.length - 1 
+                        ? 'text-blue-500' 
+                        : 'text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300'}
+                      ${i !== 0 ? 'border-l-2 pl-3 sm:pl-4 border-[#F4F4F8] dark:border-white/5' : ''}
                     `}
                   >
                     {word}
@@ -85,24 +83,21 @@ export const PredictiveText: React.FC<PredictiveInputProps> = ({
           </AnimatePresence>
         </div>
 
-        {/* Input Field */}
-        <div className="relative w-full group ">
+        {/* Input Field Area */}
+        <div className="relative w-full group">
           <input
             ref={inputRef}
             type="text"
             value={text}
-            onChange={(e) => {
-              const val = e.target.value;
-              setText(val);
-            }}
+            onChange={(e) => setText(e.target.value)}
             placeholder={placeholder}
-            className={`w-full border-none rounded-[18px] shadow-sm py-4 px-6 pr-24 text-[18px] outline-none transition-all font-bold tracking-wide ${isDark
-                ? 'bg-[#1A1A1A] text-white focus:ring-1 focus:ring-white/10 placeholder:text-gray-600'
-                : 'bg-[#F4F4F9] text-black focus:ring-1 focus:ring-[#ebebf1] placeholder:text-[#AFAEB3]'
-              }`}
+            className="w-full border-none rounded-4xl sm:rounded-[22px] shadow-sm py-3.5 sm:py-4 px-5 sm:px-6 pr-20 sm:pr-24 text-sm sm:text-base outline-none transition-all font-bold tracking-wide 
+              bg-zinc-100 text-black placeholder:text-zinc-400 focus:ring-1 focus:ring-zinc-200
+              dark:bg-zinc-900 dark:text-white dark:placeholder:text-zinc-600 dark:focus:ring-white/10"
           />
 
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-3">
+          {/* Action Icons / Send Button */}
+          <div className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 flex items-center gap-2 sm:gap-3">
             <AnimatePresence mode="wait">
               {text.length > 0 ? (
                 <motion.button
@@ -110,11 +105,13 @@ export const PredictiveText: React.FC<PredictiveInputProps> = ({
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
-                  title='send'
-                  onClick={() => onSend?.(text)}
-                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isDark ? 'bg-white text-black' : 'bg-[#262628] text-[#FEFEFE]'}`}
+                  onClick={() => {
+                    onSend?.(text);
+                    setText("");
+                  }}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all active:scale-90 bg-zinc-900 text-white dark:bg-white dark:text-black shadow-md"
                 >
-                  <ArrowUp size={20} strokeWidth={3} />
+                  <ArrowUp size={18} strokeWidth={3} />
                 </motion.button>
               ) : (
                 <motion.div
@@ -122,10 +119,10 @@ export const PredictiveText: React.FC<PredictiveInputProps> = ({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className={`flex items-center gap-4 pr-2 transition-colors ${isDark ? 'text-gray-600' : 'text-[#86858E]'}`}
+                  className="flex items-center gap-3 sm:gap-4 pr-1 sm:pr-2 text-zinc-400 dark:text-zinc-600"
                 >
-                  <ImageIcon size={24} strokeWidth={2} className="cursor-pointer hover:opacity-70" />
-                  <Mic size={24} strokeWidth={2} className="cursor-pointer hover:opacity-70" />
+                  <ImageIcon size={20} className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors" />
+                  <Mic size={20} className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors" />
                 </motion.div>
               )}
             </AnimatePresence>
