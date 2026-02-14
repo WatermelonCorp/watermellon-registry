@@ -1,132 +1,103 @@
-import * as React from "react"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ChevronLeftIcon, ChevronRightIcon, MoreHorizontalIcon } from "lucide-react"
+import * as React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi2";
 
-function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
+export interface PaginationProps {
+  totalPages?: number;
+  value?: number;
+  defaultValue?: number;
+  onChange?: (page: number) => void;
+}
+
+export function Pagination({
+  totalPages = 15,
+  value,
+  defaultValue = 1,
+  onChange,
+}: PaginationProps) {
+  const isControlled = value !== undefined;
+  const [page, setPage] = React.useState(defaultValue);
+  const [direction, setDirection] = React.useState(0);
+
+  const currentPage = isControlled ? value! : page;
+
+  const paginate = (dir: number) => {
+    const next = Math.min(totalPages, Math.max(1, currentPage + dir));
+    if (next === currentPage) return;
+
+    setDirection(dir);
+    if (!isControlled) setPage(next);
+    onChange?.(next);
+  };
+
   return (
-    <nav
-      role="navigation"
-      aria-label="pagination"
-      data-slot="pagination"
-      className={cn(
-        "mx-auto flex w-full justify-center",
-        className
-      )}
-      {...props}
-    />
-  )
-}
+    <div className="flex justify-center w-full">
+      <div
+        className="flex items-center gap-2 sm:gap-3
+        px-1 py-1 rounded-full
+        bg-[#F0EFF6] dark:bg-zinc-900
+        border border-[#f0eff6dd] dark:border-zinc-800"
+      >
+        {/* Left */}
+        <motion.button
+          whileHover={{ backgroundColor: "#000", color: "#fff" }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 20 }}
+          onClick={() => paginate(-1)}
+          disabled={currentPage === 1}
+          className={`w-11 h-11 sm:w-14 sm:h-14
+            rounded-full bg-white dark:bg-zinc-800
+            text-[#030303] dark:text-white shadow
+            flex items-center justify-center
+            ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+        >
+          <HiOutlineArrowLeft className="w-5 h-5 sm:w-7 sm:h-7" />
+        </motion.button>
 
-function PaginationContent({
-  className,
-  ...props
-}: React.ComponentProps<"ul">) {
-  return (
-    <ul
-      data-slot="pagination-content"
-      className={cn("gap-0.5 flex items-center", className)}
-      {...props}
-    />
-  )
-}
+        {/* Counter */}
+        <div
+          className="flex items-center pr-1 mr-1
+          text-base sm:text-xl font-bold select-none
+          text-[#59585F] dark:text-zinc-400"
+        >
+          <div className="relative w-7 h-7 sm:w-8 sm:h-8 overflow-hidden">
+            <AnimatePresence mode="popLayout" initial={false}>
+              <motion.span
+                key={currentPage}
+                initial={{ y: direction > 0 ? 12 : -12, opacity: 0, filter: "blur(4px)" }}
+                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                exit={{ y: direction > 0 ? -12 : 12, opacity: 0, filter: "blur(4px)" }}
+                transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.45 }}
+                className="absolute inset-0 flex items-center justify-center text-[#030303] dark:text-white"
+              >
+                {currentPage}
+              </motion.span>
+            </AnimatePresence>
+          </div>
 
-function PaginationItem({ ...props }: React.ComponentProps<"li">) {
-  return <li data-slot="pagination-item" {...props} />
-}
+          <span className="ml-1 h-7 sm:h-8 flex items-center">
+            of {totalPages}
+          </span>
+        </div>
 
-type PaginationLinkProps = {
-  isActive?: boolean
-} & Pick<React.ComponentProps<typeof Button>, "size"> &
-  React.ComponentProps<"a">
-
-function PaginationLink({
-  className,
-  isActive,
-  size = "icon",
-  ...props
-}: PaginationLinkProps) {
-  return (
-    <Button
-      asChild
-      variant={isActive ? "outline" : "ghost"}
-      size={size}
-      className={cn(className)}
-    >
-      <a
-        aria-current={isActive ? "page" : undefined}
-        data-slot="pagination-link"
-        data-active={isActive}
-        {...props}
-      />
-    </Button>
-  )
-}
-
-function PaginationPrevious({
-  className,
-  ...props
-}: React.ComponentProps<typeof PaginationLink>) {
-  return (
-    <PaginationLink
-      aria-label="Go to previous page"
-      size="default"
-      className={cn("pl-1.5!", className)}
-      {...props}
-    >
-      <ChevronLeftIcon data-icon="inline-start" />
-      <span className="hidden sm:block">
-        Previous
-      </span>
-    </PaginationLink>
-  )
-}
-
-function PaginationNext({
-  className,
-  ...props
-}: React.ComponentProps<typeof PaginationLink>) {
-  return (
-    <PaginationLink
-      aria-label="Go to next page"
-      size="default"
-      className={cn("pr-1.5!", className)}
-      {...props}
-    >
-      <span className="hidden sm:block">Next</span>
-      <ChevronRightIcon data-icon="inline-end" />
-    </PaginationLink>
-  )
-}
-
-function PaginationEllipsis({
-  className,
-  ...props
-}: React.ComponentProps<"span">) {
-  return (
-    <span
-      aria-hidden
-      data-slot="pagination-ellipsis"
-      className={cn(
-        "size-8 items-center justify-center [&_svg:not([class*='size-'])]:size-4 flex items-center justify-center",
-        className
-      )}
-      {...props}
-    >
-      <MoreHorizontalIcon
-      />
-      <span className="sr-only">More pages</span>
-    </span>
-  )
-}
-
-export {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
+        {/* Right */}
+        <motion.button
+          whileHover={{ backgroundColor: "#000", color: "#fff" }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 20 }}
+          onClick={() => paginate(1)}
+          disabled={currentPage === totalPages}
+          className={`w-11 h-11 sm:w-14 sm:h-14
+            rounded-full bg-white dark:bg-zinc-800
+            text-[#030303] dark:text-white shadow
+            flex items-center justify-center
+            ${currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+        >
+          <HiOutlineArrowRight className="w-5 h-5 sm:w-7 sm:h-7" />
+        </motion.button>
+      </div>
+    </div>
+  );
 }

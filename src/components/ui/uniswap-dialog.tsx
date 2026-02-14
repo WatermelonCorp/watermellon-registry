@@ -1,28 +1,28 @@
 import { useMemo, useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, Check, ChevronDown } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-/*  utils  */
+/* utils */
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-/*  types  */
+/* types */
 export type Country = {
   name: string;
   code: string;
 };
 
-type UniSwapDialogProps = {
+export type UniSwapDialogProps = {
   value: Country;
   onChange: (country: Country) => void;
   countries?: Country[];
   title?: string;
 };
 
-/*  default countries  */
+/* default countries */
 export const DefaultCountries: Country[] = [
   { name: "Afghanistan", code: "AF" },
   { name: "Åland Islands", code: "AX" },
@@ -41,17 +41,17 @@ export const DefaultCountries: Country[] = [
   { name: "United States", code: "US" },
 ];
 
-/*  flag  */
+/* flag */
 const Flag = ({ code }: { code: string }) => (
   <img
     src={`https://flagcdn.com/w160/${code.toLowerCase()}.png`}
     alt={code}
-    className="h-8 w-8 rounded-full object-cover"
+    className="h-8 w-8 rounded-full object-cover shrink-0"
     loading="lazy"
   />
 );
 
-/*  component  */
+/* component */
 export function UniSwapDialog({
   value,
   onChange,
@@ -77,11 +77,11 @@ export function UniSwapDialog({
       >
         <motion.div
           layoutId={`flag-${value.code}`}
-          className="h-8 w-8 overflow-hidden rounded-full"
+          className="h-8 w-8 overflow-hidden rounded-full shrink-0"
         >
           <Flag code={value.code} />
         </motion.div>
-        <ChevronDown size={24} className="text-white" />
+        <ChevronDown size={20} className="text-white" />
       </motion.button>
 
       <AnimatePresence>
@@ -93,45 +93,47 @@ export function UniSwapDialog({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-40 bg-[#0F0F0F] backdrop-blur-[2px]"
+              className="fixed inset-0 z-60 bg-black/20 backdrop-blur-[2px]"
             />
 
             {/* Dialog */}
             <motion.div
               layoutId="dialog-container"
-              initial={{ opacity: 0, scale: 0.9, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              initial={{ opacity: 0, scale: 0.9, y: 10, x: "-50%" }}
+              animate={{ opacity: 1, scale: 1, y: 0, x: "-50%" }}
+              exit={{ opacity: 0, scale: 0.95, y: 10, x: "-50%" }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               className="
                 fixed
-                top-[8%] sm:top-[10%] md:top-[12%]
-                left-[10%] sm:left-[40%] -translate-x-1/2
-                w-[90%] max-w-[420px]
-                rounded-[20px]
+                top-[10%] sm:top-[12%]
+                left-1/2 -translate-x-1/2
+                w-[92vw] sm:w-105
+                max-h-[80vh]
+                rounded-4xl
                 border border-[#282828]
                 bg-[#181818]
                 shadow-2xl
-                z-50
+                z-70
                 overflow-hidden
+                flex flex-col
               "
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-4 pb-2">
-                <h2 className="px-2 text-[16px] font-medium text-white">
+              <div className="flex items-center justify-between p-5 pb-2">
+                <h2 className="px-1 text-[16px] font-medium text-white">
                   {title}
                 </h2>
                 <button
                   title="close"
                   onClick={() => setIsOpen(false)}
-                  className="p-2 text-white/80 transition-colors hover:text-white"
+                  className="p-1 text-white/80 transition-colors hover:text-white"
                 >
                   <X size={20} />
                 </button>
               </div>
 
               {/* Search */}
-              <div className="px-4 pb-4">
+              <div className="px-5 pb-4">
                 <div className="relative flex items-center">
                   <Search size={18} className="absolute left-4 text-[#8d8c8d]" />
                   <input
@@ -139,13 +141,13 @@ export function UniSwapDialog({
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search by country or region"
-                    className="w-full rounded-lg border border-[#8d8c8d]/70 bg-[#282828] py-3 pl-11 pr-4 text-white placeholder-[#8d8c8d] outline-none transition-colors focus:border-[#282828]"
+                    className="w-full rounded-xl border border-[#8d8c8d]/30 bg-[#282828] py-3 pl-11 pr-4 text-white placeholder-[#8d8c8d] outline-none transition-colors focus:border-[#444]"
                   />
                 </div>
               </div>
 
               {/* List */}
-              <div className="custom-scrollbar max-h-[500px] overflow-y-auto pb-2">
+              <div className="custom-scrollbar overflow-y-auto pb-4 flex-1">
                 {filteredCountries.map((country) => (
                   <button
                     key={country.code}
@@ -155,20 +157,20 @@ export function UniSwapDialog({
                       setSearch("");
                     }}
                     className={cn(
-                      "group flex w-full items-center justify-between px-4 py-3 transition-all",
+                      "group flex w-full items-center justify-between px-5 py-3.5 transition-all",
                       value.code === country.code
                         ? "bg-[#3A3A3A]/50"
-                        : "hover:bg-[#3A3A3A]"
+                        : "hover:bg-[#3A3A3A]/30"
                     )}
                   >
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-4">
                       <motion.div
                         layoutId={
                           value.code === country.code
                             ? `flag-${country.code}`
                             : undefined
                         }
-                        className="h-8 w-8 overflow-hidden rounded-full"
+                        className="h-8 w-8 overflow-hidden rounded-full shrink-0"
                       >
                         <Flag code={country.code} />
                       </motion.div>

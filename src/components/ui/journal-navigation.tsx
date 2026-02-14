@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export interface JournalEntry {
     id: string | number;
@@ -23,7 +23,6 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
 }) => {
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
     const [direction, setDirection] = useState(0);
-    const [isDark, setIsDark] = useState(false);
 
     const handleNext = () => {
         if (currentIndex < entries.length - 1) {
@@ -65,31 +64,17 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
     const ITEM_HEIGHT = 24;
 
     return (
-        <div className={`min-h-screen w-full flex flex-col items-center justify-center p-6 transition-colors duration-500 ${isDark ? 'bg-[#0A0A0A]' : 'bg-[#fefefe]'}`}>
+        <div className="min-h-full w-full flex flex-col items-center justify-center p-6 transition-colors duration-500 bg-transparent">
             
-            {/* Theme Toggle */}
-            <button 
-                onClick={() => setIsDark(!isDark)}
-                className={`mb-8 p-3 rounded-full border transition-all active:scale-90 ${isDark ? 'bg-[#1C1C1E] border-white/10 text-yellow-400' : 'bg-white border-black/5 text-gray-400 shadow-sm'}`}
-            >
-                {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-
-            <div className={`relative w-full max-w-[360px] h-[340px] rounded-[32px] shadow-sm flex overflow-hidden select-none border transition-colors duration-300 ${
-                isDark ? 'bg-[#1A1A1C] border-white/5' : 'bg-[#F3EFE9] border-[#e5e4de]/50'
-            }`}>
+            <div className="relative w-full max-w-90 h-85 rounded-4xl shadow-sm flex overflow-hidden select-none border transition-colors duration-300 bg-[#F3EFE9] border-[#e5e4de]/50 dark:bg-[#1A1A1C] dark:border-white/5">
 
                 {/* vertical left area */}
-                <div className={`w-[54px] m-1 flex flex-col items-center justify-center relative z-10 rounded-full border transition-colors duration-300 overflow-hidden ${
-                    isDark ? 'bg-[#242426] border-white/5' : 'bg-[#FEFEFE] border-[#e5e4de]/50'
-                }`}>
+                <div className="w-13.5 m-1 flex flex-col items-center justify-center relative z-10 rounded-full border transition-colors duration-300 overflow-hidden bg-[#FEFEFE] border-[#e5e4de]/50 dark:bg-[#242426] dark:border-white/5">
 
                     {/* Top Blur Overlay */}
-                    <div className={`absolute top-0 left-0 w-full h-20 z-20 pointer-events-none backdrop-blur-[0.5px] ${
-                        isDark ? 'bg-gradient-to-b from-[#242426] via-[#242426]/80 to-transparent' : 'bg-gradient-to-b from-[#FEFEFE] via-[#FEFEFE]/80 to-transparent'
-                    }`} />
+                    <div className="absolute top-0 left-0 w-full h-20 z-20 pointer-events-none backdrop-blur-[0.5px] bg-linear-to-b from-[#FEFEFE] via-[#FEFEFE]/80 to-transparent dark:from-[#242426] dark:via-[#242426]/80 dark:to-transparent" />
 
-                    {/* Vertical Track Wrapper */}
+                    {/* Vertical Track */}
                     <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-10">
                         <motion.div
                             animate={{ y: -(currentIndex * ITEM_HEIGHT) }}
@@ -103,11 +88,11 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                                         key={entry.id}
                                         onClick={() => setCurrentIndex(index)}
                                         animate={{ scale: isActive ? 1.2 : 1 }}
-                                        className={`h-[37px] w-[37px] flex items-center justify-center rounded-full text-[16px] font-bold transition-colors cursor-pointer shrink-0 ${
-                                            isActive 
-                                            ? (isDark ? 'text-white bg-white/10' : 'text-[#1C1C1E] bg-[#F0ECE6]') 
-                                            : (isDark ? 'text-gray-600 hover:text-gray-400' : 'text-[#B0AFB8] hover:bg-[#F0ECE6]')
-                                        }`}
+                                        className={`h-9.25 w-9.25 flex items-center justify-center rounded-full text-[16px] font-bold transition-colors cursor-pointer shrink-0 
+                                            ${isActive 
+                                                ? 'text-[#1C1C1E] bg-[#F0ECE6] dark:text-white dark:bg-white/10' 
+                                                : 'text-[#B0AFB8] hover:bg-[#F0ECE6] dark:text-gray-600 dark:hover:text-gray-400'
+                                            }`}
                                     >
                                         {entry.day.toString().padStart(2, '0')}
                                     </motion.button>
@@ -117,9 +102,7 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                     </div>
 
                     {/* Bottom Blur Overlay */}
-                    <div className={`absolute bottom-0 left-0 w-full h-20 z-20 pointer-events-none backdrop-blur-[0.5px] ${
-                        isDark ? 'bg-gradient-to-t from-[#242426] via-[#242426]/80 to-transparent' : 'bg-gradient-to-t from-[#FEFEFE] via-[#FEFEFE]/80 to-transparent'
-                    }`} />
+                    <div className="absolute bottom-0 left-0 w-full h-20 z-20 pointer-events-none backdrop-blur-[0.5px] bg-linear-to-t from-[#FEFEFE] via-[#FEFEFE]/80 to-transparent dark:from-[#242426] dark:via-[#242426]/80 dark:to-transparent" />
                 </div>
 
                 {/* Main Content Area */}
@@ -136,7 +119,7 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                                     animate="center"
                                     exit="exit"
                                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                                    className={`text-lg font-medium tracking-tight ${isDark ? 'text-gray-500' : 'text-[#918D87]'}`}
+                                    className="text-lg font-medium tracking-tight text-[#918D87] dark:text-gray-500"
                                 >
                                     {currentEntry.month} {currentEntry.day}
                                 </motion.h2>
@@ -151,11 +134,7 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                                 <button key={btn.title} title={btn.title}
                                     onClick={btn.action}
                                     disabled={btn.disabled}
-                                    className={`w-8 h-8 flex items-center justify-center rounded-full transition-colors ${
-                                        isDark 
-                                        ? 'bg-white/5 text-gray-500 hover:bg-white/10 disabled:opacity-20' 
-                                        : 'bg-[#Fefefe] text-[#B8B8B5] hover:bg-[#Fefefe]/70 disabled:hover:bg-[#f2f1eb]'
-                                    }`}
+                                    className="w-8 h-8 flex items-center justify-center rounded-full transition-colors bg-[#Fefefe] text-[#B8B8B5] hover:bg-[#Fefefe]/70 disabled:hover:bg-[#f2f1eb] dark:bg-white/5 dark:text-gray-500 dark:hover:bg-white/10 dark:disabled:opacity-20"
                                 >
                                     {btn.icon}
                                 </button>
@@ -164,23 +143,23 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                     </div>
 
                     {/* Content Body */}
-                    <div className="flex-1 overflow-hidden">
-                        <AnimatePresence mode="wait" custom={direction}>
-                            <motion.div
-                                key={currentEntry.id}
-                                custom={direction}
-                                variants={contentVariants}
-                                initial="enter"
-                                animate="center"
-                                exit="exit"
-                                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                                className={`text-[18px] -tracking-wide leading-relaxed font-bold transition-colors ${
-                                    isDark ? 'text-gray-200' : 'text-[#292422]'
-                                }`}
-                            >
-                                {currentEntry.content}
-                            </motion.div>
-                        </AnimatePresence>
+                    <div className="flex-1 flex flex-col overflow-hidden">
+                        <div className="flex-1">
+                            <AnimatePresence mode="wait" custom={direction}>
+                                <motion.div
+                                    key={currentEntry.id}
+                                    custom={direction}
+                                    variants={contentVariants}
+                                    initial="enter"
+                                    animate="center"
+                                    exit="exit"
+                                    transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                                    className="text-[18px] -tracking-wide leading-relaxed font-bold transition-colors text-[#292422] dark:text-gray-200"
+                                >
+                                    {currentEntry.content}
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
                     </div>
                 </div>
             </div>
