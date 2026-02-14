@@ -1601,13 +1601,13 @@
       ]
     },
     {
-      "name": "floating-button-disclosure",
+      "name": "floating-disclosure",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/floating-button-disclosure.tsx",
-          "target": "components/ui/floating-button-disclosure.tsx",
+          "path": "src/components/ui/floating-disclosure.tsx",
+          "target": "components/ui/floating-disclosure.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2714,13 +2714,13 @@
       ]
     },
     {
-      "name": "returns-calculator",
+      "name": "returns-calculator-snippet",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/returns-calculator.tsx",
-          "target": "components/ui/returns-calculator.tsx",
+          "path": "src/components/ui/returns-calculator-snippet.tsx",
+          "target": "components/ui/returns-calculator-snippet.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2946,7 +2946,7 @@
       ]
     },
     {
-      "name": "select-aiagent",
+      "name": "select-ai-agent",
       "type": "registry:ui",
       "dependencies": [
         "@hugeicons/core-free-icons",
@@ -2956,8 +2956,8 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/select-aiagent.tsx",
-          "target": "components/ui/select-aiagent.tsx",
+          "path": "src/components/ui/select-ai-agent.tsx",
+          "target": "components/ui/select-ai-agent.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3204,13 +3204,13 @@
       ]
     },
     {
-      "name": "swap-currency",
+      "name": "swap-currency-card",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/swap-currency.tsx",
-          "target": "components/ui/swap-currency.tsx",
+          "path": "src/components/ui/swap-currency-card.tsx",
+          "target": "components/ui/swap-currency-card.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3515,13 +3515,13 @@
       ]
     },
     {
-      "name": "uni-swap-dialog",
+      "name": "uniswap-dialog",
       "type": "registry:ui",
       "dependencies": ["clsx", "lucide-react", "motion", "tailwind-merge"],
       "files": [
         {
-          "path": "src/components/ui/uni-swap-dialog.tsx",
-          "target": "components/ui/uni-swap-dialog.tsx",
+          "path": "src/components/ui/uniswap-dialog.tsx",
+          "target": "components/ui/uniswap-dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3672,6 +3672,18 @@
         {
           "path": "src/components/ui/voice-chat-disclosure.tsx",
           "target": "components/ui/voice-chat-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-transcribe",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/ui/voice-transcribe.tsx",
+          "target": "components/ui/voice-transcribe.tsx",
           "type": "registry:ui"
         }
       ]
