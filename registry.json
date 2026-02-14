@@ -6,10 +6,7 @@
     {
       "name": "aave-swap-component",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/aave-swap-component.tsx",
@@ -21,10 +18,7 @@
     {
       "name": "accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-accordion",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
       "files": [
         {
           "path": "src/components/ui/accordion.tsx",
@@ -37,10 +31,7 @@
       "name": "accordion-03",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "accordion",
-        "primary-button"
-      ],
+      "registryDependencies": ["accordion", "primary-button"],
       "files": [
         {
           "path": "src/components/ui/accordion-03.tsx",
@@ -52,9 +43,7 @@
     {
       "name": "accordion-04",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/ui/accordion-04.tsx",
@@ -62,9 +51,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-05",
@@ -77,9 +64,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-multiselect",
@@ -100,10 +85,7 @@
     {
       "name": "activities-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/activities-card.tsx",
@@ -115,9 +97,7 @@
     {
       "name": "adaptive-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/adaptive-slider.tsx",
@@ -129,10 +109,7 @@
     {
       "name": "add-cash-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/add-cash-disclosure.tsx",
@@ -144,10 +121,7 @@
     {
       "name": "ai-input",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/ai-input.tsx",
@@ -159,10 +133,7 @@
     {
       "name": "ai-input002",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/ai-input002.tsx",
@@ -174,10 +145,7 @@
     {
       "name": "ai-input003",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/ai-input003.tsx",
@@ -189,10 +157,7 @@
     {
       "name": "ai-input004",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/ai-input004.tsx",
@@ -204,10 +169,7 @@
     {
       "name": "ai-input005",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/ai-input005.tsx",
@@ -219,9 +181,7 @@
     {
       "name": "alert",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
           "path": "src/components/ui/alert.tsx",
@@ -233,12 +193,8 @@
     {
       "name": "alert-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "src/components/ui/alert-01.tsx",
@@ -250,12 +206,8 @@
     {
       "name": "alert-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "src/components/ui/alert-02.tsx",
@@ -267,13 +219,8 @@
     {
       "name": "alert-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert", "button"],
       "files": [
         {
           "path": "src/components/ui/alert-03.tsx",
@@ -285,12 +232,8 @@
     {
       "name": "alert-04",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "src/components/ui/alert-04.tsx",
@@ -302,13 +245,8 @@
     {
       "name": "alert-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert", "button"],
       "files": [
         {
           "path": "src/components/ui/alert-05.tsx",
@@ -320,12 +258,8 @@
     {
       "name": "alert-06",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "src/components/ui/alert-06.tsx",
@@ -337,11 +271,7 @@
     {
       "name": "alert-dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/alert-dialog.tsx",
@@ -353,13 +283,8 @@
     {
       "name": "alert-dialog-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
           "path": "src/components/ui/alert-dialog-01.tsx",
@@ -371,13 +296,8 @@
     {
       "name": "alert-dialog-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
           "path": "src/components/ui/alert-dialog-02.tsx",
@@ -389,13 +309,8 @@
     {
       "name": "alert-dialog-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
           "path": "src/components/ui/alert-dialog-03.tsx",
@@ -407,11 +322,7 @@
     {
       "name": "alphine-booking-form",
       "type": "registry:ui",
-      "dependencies": [
-        "date-fns",
-        "lucide-react",
-        "react-day-picker"
-      ],
+      "dependencies": ["date-fns", "lucide-react", "react-day-picker"],
       "registryDependencies": [
         "button",
         "calendar",
@@ -431,12 +342,7 @@
       "name": "alphine-login-form",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "button",
-        "card",
-        "input",
-        "label"
-      ],
+      "registryDependencies": ["button", "card", "input", "label"],
       "files": [
         {
           "path": "src/components/ui/alphine-login-form.tsx",
@@ -448,10 +354,7 @@
     {
       "name": "animate-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/ui/animate-button.tsx",
@@ -463,11 +366,7 @@
     {
       "name": "animated-accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/animated-accordion.tsx",
@@ -479,10 +378,7 @@
     {
       "name": "animated-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/ui/animated-button.tsx",
@@ -494,9 +390,7 @@
     {
       "name": "audio-player",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/ui/audio-player.tsx",
@@ -513,9 +407,7 @@
     {
       "name": "audio-player-with-waveform",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/ui/audio-player-with-waveform.tsx",
@@ -528,19 +420,12 @@
           "type": "registry:hook"
         }
       ],
-      "registryDependencies": [
-        "select"
-      ]
+      "registryDependencies": ["select"]
     },
     {
       "name": "availability",
       "type": "registry:ui",
-      "dependencies": [
-        "@dnd-kit/core",
-        "lucide-react",
-        "nanoid",
-        "tunnel-rat"
-      ],
+      "dependencies": ["@dnd-kit/core", "lucide-react", "nanoid", "tunnel-rat"],
       "files": [
         {
           "path": "src/components/ui/availability.tsx",
@@ -548,16 +433,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "avatar",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-avatar"
-      ],
+      "dependencies": ["@radix-ui/react-avatar"],
       "files": [
         {
           "path": "src/components/ui/avatar.tsx",
@@ -569,9 +450,7 @@
     {
       "name": "avatar-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
+      "dependencies": ["@aliimam/icons"],
       "files": [
         {
           "path": "src/components/ui/avatar-01.tsx",
@@ -579,17 +458,13 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-02",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "files": [
         {
           "path": "src/components/ui/avatar-02.tsx",
@@ -609,17 +484,13 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-04",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "files": [
         {
           "path": "src/components/ui/avatar-04.tsx",
@@ -632,10 +503,7 @@
       "name": "avatar-05",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar",
-        "badge"
-      ],
+      "registryDependencies": ["avatar", "badge"],
       "files": [
         {
           "path": "src/components/ui/avatar-05.tsx",
@@ -655,17 +523,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-group",
       "type": "registry:ui",
-      "dependencies": [
-        "@floating-ui/react",
-        "motion"
-      ],
+      "dependencies": ["@floating-ui/react", "motion"],
       "files": [
         {
           "path": "src/components/ui/avatar-group.tsx",
@@ -677,9 +540,7 @@
     {
       "name": "award",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/ui/award.tsx",
@@ -691,10 +552,7 @@
     {
       "name": "badge",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "src/components/ui/badge.tsx",
@@ -707,9 +565,7 @@
       "name": "badge-01",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/ui/badge-01.tsx",
@@ -721,12 +577,8 @@
     {
       "name": "badge-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "badge"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/ui/badge-02.tsx",
@@ -739,9 +591,7 @@
       "name": "badge-03",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/ui/badge-03.tsx",
@@ -754,9 +604,7 @@
       "name": "badge-04",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/ui/badge-04.tsx",
@@ -768,12 +616,8 @@
     {
       "name": "badge-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "badge"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/ui/badge-05.tsx",
@@ -797,10 +641,7 @@
     {
       "name": "breadcrumb",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "lucide-react"],
       "files": [
         {
           "path": "src/components/ui/breadcrumb.tsx",
@@ -820,9 +661,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-02",
@@ -835,16 +674,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
+      "dependencies": ["@aliimam/icons"],
       "files": [
         {
           "path": "src/components/ui/breadcrumb-03.tsx",
@@ -852,9 +687,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-04",
@@ -867,16 +700,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "browser",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/ui/browser.tsx",
@@ -884,21 +713,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "input",
-        "separator"
-      ]
+      "registryDependencies": ["badge", "button", "card", "input", "separator"]
     },
     {
       "name": "business-management",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react",
-        "recharts"
-      ],
+      "dependencies": ["lucide-react", "recharts"],
       "files": [
         {
           "path": "src/components/dashboards/business-management/app-sidebar.tsx",
@@ -925,10 +745,7 @@
     {
       "name": "button",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "src/components/ui/button.tsx",
@@ -940,12 +757,8 @@
     {
       "name": "button-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/button-01.tsx",
@@ -957,14 +770,8 @@
     {
       "name": "button-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons", "lucide-react"],
+      "registryDependencies": ["badge", "button"],
       "files": [
         {
           "path": "src/components/ui/button-02.tsx",
@@ -976,12 +783,8 @@
     {
       "name": "button-03",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/button-03.tsx",
@@ -993,12 +796,8 @@
     {
       "name": "button-04",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/button-04.tsx",
@@ -1010,12 +809,8 @@
     {
       "name": "button-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/button-05.tsx",
@@ -1027,12 +822,8 @@
     {
       "name": "button-06",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/button-06.tsx",
@@ -1044,12 +835,8 @@
     {
       "name": "button-07",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/button-07.tsx",
@@ -1061,13 +848,8 @@
     {
       "name": "button-08",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons",
-        "motion"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons", "motion"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/button-08.tsx",
@@ -1079,13 +861,8 @@
     {
       "name": "calendar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "react-day-picker"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react", "react-day-picker"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/calendar.tsx",
@@ -1097,9 +874,7 @@
     {
       "name": "calendar-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/calendar-widget.tsx",
@@ -1123,10 +898,7 @@
     {
       "name": "card-splitting-accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/card-splitting-accordion.tsx",
@@ -1155,10 +927,7 @@
     {
       "name": "carousel-navigator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/carousel-navigator.tsx",
@@ -1187,9 +956,7 @@
     {
       "name": "chart",
       "type": "registry:ui",
-      "dependencies": [
-        "recharts"
-      ],
+      "dependencies": ["recharts"],
       "files": [
         {
           "path": "src/components/ui/chart.tsx",
@@ -1201,10 +968,7 @@
     {
       "name": "chart-2",
       "type": "registry:ui",
-      "dependencies": [
-        "recharts",
-        "zod"
-      ],
+      "dependencies": ["recharts", "zod"],
       "files": [
         {
           "path": "src/components/ui/chart-2.tsx",
@@ -1217,10 +981,7 @@
     {
       "name": "checkbox",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "lucide-react"],
       "files": [
         {
           "path": "src/components/ui/checkbox.tsx",
@@ -1245,9 +1006,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "code-block",
@@ -1288,9 +1047,7 @@
     {
       "name": "collapsible",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-collapsible"
-      ],
+      "dependencies": ["@radix-ui/react-collapsible"],
       "files": [
         {
           "path": "src/components/ui/collapsible.tsx",
@@ -1302,10 +1059,7 @@
     {
       "name": "collection-grid-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/collection-grid-disclosure.tsx",
@@ -1317,9 +1071,7 @@
     {
       "name": "color-watch-selector",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-radio-group"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group"],
       "files": [
         {
           "path": "src/components/ui/color-watch-selector.tsx",
@@ -1331,10 +1083,7 @@
     {
       "name": "command-search",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/command-search.tsx",
@@ -1346,10 +1095,7 @@
     {
       "name": "compose-email-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/compose-email-card.tsx",
@@ -1361,10 +1107,7 @@
     {
       "name": "contextual-ai-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/contextual-ai-bar.tsx",
@@ -1376,10 +1119,7 @@
     {
       "name": "continuous-pagination",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/continuous-pagination.tsx",
@@ -1391,10 +1131,7 @@
     {
       "name": "continuous-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/continuous-tabs.tsx",
@@ -1406,11 +1143,7 @@
     {
       "name": "copy",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/copy.tsx",
@@ -1439,10 +1172,7 @@
     {
       "name": "credit-usage-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/credit-usage-card.tsx",
@@ -1454,9 +1184,7 @@
     {
       "name": "cursor",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/cursor.tsx",
@@ -1487,9 +1215,7 @@
     {
       "name": "debug-pannel",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/debug-pannel.tsx",
@@ -1501,10 +1227,7 @@
     {
       "name": "deployment-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/deployment-card.tsx",
@@ -1528,11 +1251,7 @@
     {
       "name": "dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/dialog.tsx",
@@ -1544,11 +1263,7 @@
     {
       "name": "dialog-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "@hugeicons/react",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["@hugeicons/react", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/dialog-stack.tsx",
@@ -1560,9 +1275,7 @@
     {
       "name": "discrete-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/discrete-tabs.tsx",
@@ -1591,10 +1304,7 @@
     {
       "name": "draggable-toolbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/draggable-toolbar.tsx",
@@ -1606,10 +1316,7 @@
     {
       "name": "draw-signature",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/draw-signature.tsx",
@@ -1638,11 +1345,7 @@
     {
       "name": "dropdown-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/dropdown-menu.tsx",
@@ -1654,11 +1357,7 @@
     {
       "name": "e-commerce",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react",
-        "@tabler/icons-react",
-        "recharts"
-      ],
+      "dependencies": ["lucide-react", "@tabler/icons-react", "recharts"],
       "files": [
         {
           "path": "src/components/dashboards/e-commerce/app-sidebar.tsx",
@@ -1701,20 +1400,12 @@
           "type": "registry:component"
         }
       ],
-      "registryDependencies": [
-        "badge",
-        "card",
-        "select",
-        "sidebar"
-      ]
+      "registryDependencies": ["badge", "card", "select", "sidebar"]
     },
     {
       "name": "edit-badge",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/edit-badge.tsx",
@@ -1726,10 +1417,7 @@
     {
       "name": "editable-chip",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/editable-chip.tsx",
@@ -1741,10 +1429,7 @@
     {
       "name": "emoji-spree-chips",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/emoji-spree-chips.tsx",
@@ -1756,10 +1441,7 @@
     {
       "name": "event-reminders",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/event-reminders.tsx",
@@ -1771,11 +1453,7 @@
     {
       "name": "extended-toolbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/ui/extended-toolbar.tsx",
@@ -1787,10 +1465,7 @@
     {
       "name": "family-receive-component",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/family-receive-component.tsx",
@@ -1802,10 +1477,7 @@
     {
       "name": "family-wallet",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/family-wallet.tsx",
@@ -1817,10 +1489,7 @@
     {
       "name": "feature-tour",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/feature-tour.tsx",
@@ -1832,10 +1501,7 @@
     {
       "name": "feedback-action",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/feedback-action.tsx",
@@ -1864,9 +1530,7 @@
     {
       "name": "file-upload",
       "type": "registry:ui",
-      "dependencies": [
-        "sonner"
-      ],
+      "dependencies": ["sonner"],
       "files": [
         {
           "path": "src/components/ui/file-upload.tsx",
@@ -1878,11 +1542,7 @@
     {
       "name": "files",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/files.tsx",
@@ -1894,11 +1554,7 @@
     {
       "name": "filter-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/ui/filter-disclosure.tsx",
@@ -1910,10 +1566,7 @@
     {
       "name": "flip",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/ui/flip.tsx",
@@ -1925,13 +1578,8 @@
     {
       "name": "flip-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/flip-card.tsx",
@@ -1943,9 +1591,7 @@
     {
       "name": "flip-clock",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
           "path": "src/components/ui/flip-clock.tsx",
@@ -1957,10 +1603,7 @@
     {
       "name": "floating-button-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/floating-button-disclosure.tsx",
@@ -1972,10 +1615,7 @@
     {
       "name": "fluid-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/fluid-tabs.tsx",
@@ -1987,10 +1627,7 @@
     {
       "name": "fractional-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/fractional-picker.tsx",
@@ -2002,10 +1639,7 @@
     {
       "name": "frequency-selector",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/frequency-selector.tsx",
@@ -2017,9 +1651,7 @@
     {
       "name": "fund-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/fund-widget.tsx",
@@ -2031,9 +1663,7 @@
     {
       "name": "gauge",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/gauge.tsx",
@@ -2074,10 +1704,7 @@
     {
       "name": "github-stars-wheel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/github-stars-wheel.tsx",
@@ -2089,9 +1716,7 @@
     {
       "name": "gooey-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/gooey-menu.tsx",
@@ -2103,10 +1728,7 @@
     {
       "name": "hero1",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/blocks/sfHerodemo/Hero1.tsx",
@@ -2128,10 +1750,7 @@
     {
       "name": "hover-card",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/hover-card.tsx",
@@ -2143,10 +1762,7 @@
     {
       "name": "hrm",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react",
-        "recharts"
-      ],
+      "dependencies": ["lucide-react", "recharts"],
       "files": [
         {
           "path": "src/components/dashboards/hrm/app-sidebar.tsx",
@@ -2184,17 +1800,12 @@
           "type": "registry:component"
         }
       ],
-      "registryDependencies": [
-        "tooltip"
-      ]
+      "registryDependencies": ["tooltip"]
     },
     {
       "name": "icon",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/ui/icon.tsx",
@@ -2240,10 +1851,7 @@
     {
       "name": "inline-overflow",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/inline-overflow.tsx",
@@ -2255,10 +1863,7 @@
     {
       "name": "inline-table-control",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/inline-table-control.tsx",
@@ -2270,10 +1875,7 @@
     {
       "name": "inline-toast",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/inline-toast.tsx",
@@ -2295,12 +1897,21 @@
       ]
     },
     {
+      "name": "floating-input",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/floating-input.tsx",
+          "target": "components/ui/floating-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "integration-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/integration-card.tsx",
@@ -2312,9 +1923,7 @@
     {
       "name": "invite-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/invite-disclosure.tsx",
@@ -2326,9 +1935,7 @@
     {
       "name": "invoice",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/dashboards/invoice/app-sidebar.tsx",
@@ -2366,16 +1973,12 @@
           "type": "registry:component"
         }
       ],
-      "registryDependencies": [
-        "sidebar"
-      ]
+      "registryDependencies": ["sidebar"]
     },
     {
       "name": "invoice-manager",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/dashboards/invoice-manager/app-sidebar.tsx",
@@ -2433,17 +2036,12 @@
           "type": "registry:component"
         }
       ],
-      "registryDependencies": [
-        "sidebar"
-      ]
+      "registryDependencies": ["sidebar"]
     },
     {
       "name": "journal-navigation",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/journal-navigation.tsx",
@@ -2455,10 +2053,7 @@
     {
       "name": "knob-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/knob-slider.tsx",
@@ -2470,9 +2065,7 @@
     {
       "name": "label",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-label"
-      ],
+      "dependencies": ["@radix-ui/react-label"],
       "files": [
         {
           "path": "src/components/ui/label.tsx",
@@ -2499,10 +2092,7 @@
     {
       "name": "labeled-progress-indicator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/labeled-progress-indicator.tsx",
@@ -2514,10 +2104,7 @@
     {
       "name": "liquid",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/ui/liquid.tsx",
@@ -2529,11 +2116,7 @@
     {
       "name": "list-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/ui/list-stack.tsx",
@@ -2545,9 +2128,7 @@
     {
       "name": "loop-hook",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/loop-hook.tsx",
@@ -2559,11 +2140,7 @@
     {
       "name": "luminia-luxe-realestate",
       "type": "registry:page",
-      "dependencies": [
-        "lucide-react",
-        "react-slick",
-        "slick-carousel"
-      ],
+      "dependencies": ["lucide-react", "react-slick", "slick-carousel"],
       "files": [
         {
           "path": "src/components/pages/luminia-luxe-realestate/Index.tsx",
@@ -2640,11 +2217,7 @@
     {
       "name": "management-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-use-measure"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-use-measure"],
       "files": [
         {
           "path": "src/components/ui/management-bar.tsx",
@@ -2668,10 +2241,7 @@
     {
       "name": "meeting-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/meeting-card.tsx",
@@ -2683,10 +2253,7 @@
     {
       "name": "minimal-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/minimal-carousel.tsx",
@@ -2698,10 +2265,7 @@
     {
       "name": "mobile-video-player",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/mobile-video-player.tsx",
@@ -2713,10 +2277,7 @@
     {
       "name": "morphing-button",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/morphing-button.tsx",
@@ -2728,10 +2289,7 @@
     {
       "name": "morphing-discovery-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/morphing-discovery-bar.tsx",
@@ -2743,11 +2301,7 @@
     {
       "name": "motion-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "embla-carousel-react",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["embla-carousel-react", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/motion-carousel.tsx",
@@ -2755,17 +2309,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "notification-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/notification-list.tsx",
@@ -2777,10 +2326,7 @@
     {
       "name": "onboarding-checklist",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/onboarding-checklist.tsx",
@@ -2792,10 +2338,7 @@
     {
       "name": "onboarding-screen",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/onboarding-screen.tsx",
@@ -2807,10 +2350,7 @@
     {
       "name": "onboarding-setup",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/onboarding-setup.tsx",
@@ -2840,11 +2380,7 @@
     {
       "name": "option-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/ui/option-picker.tsx",
@@ -2856,9 +2392,7 @@
     {
       "name": "pagination",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/ui/pagination.tsx",
@@ -2866,17 +2400,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "pagination-animated",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/pagination-animated.tsx",
@@ -2888,10 +2417,7 @@
     {
       "name": "pin-item",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/pin-item.tsx",
@@ -2903,10 +2429,7 @@
     {
       "name": "pin-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/pin-list.tsx",
@@ -2918,13 +2441,8 @@
     {
       "name": "playful-todolist",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "motion"
-      ],
-      "registryDependencies": [
-        "label"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "motion"],
+      "registryDependencies": ["label"],
       "files": [
         {
           "path": "src/components/ui/playful-todolist.tsx",
@@ -2936,10 +2454,7 @@
     {
       "name": "popover",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/popover.tsx",
@@ -2951,11 +2466,7 @@
     {
       "name": "portfolio-dashboard",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "recharts"
-      ],
+      "dependencies": ["lucide-react", "motion", "recharts"],
       "files": [
         {
           "path": "src/components/ui/portfolio-dashboard.tsx",
@@ -2967,10 +2478,7 @@
     {
       "name": "predictive-text",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/predictive-text.tsx",
@@ -2982,10 +2490,7 @@
     {
       "name": "preview-link-card",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/preview-link-card.tsx",
@@ -2997,10 +2502,7 @@
     {
       "name": "pricing-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/pricing-widget.tsx",
@@ -3024,10 +2526,7 @@
     {
       "name": "profile-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/profile-card.tsx",
@@ -3039,10 +2538,7 @@
     {
       "name": "progress",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/progress.tsx",
@@ -3054,10 +2550,7 @@
     {
       "name": "progressive-input-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/progressive-input-stack.tsx",
@@ -3069,9 +2562,7 @@
     {
       "name": "project-management",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/dashboards/project-management/app-sidebar.tsx",
@@ -3124,17 +2615,12 @@
           "type": "registry:component"
         }
       ],
-      "registryDependencies": [
-        "sidebar"
-      ]
+      "registryDependencies": ["sidebar"]
     },
     {
       "name": "quick-feedback",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/quick-feedback.tsx",
@@ -3146,10 +2632,7 @@
     {
       "name": "quick-paste",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/quick-paste.tsx",
@@ -3161,10 +2644,7 @@
     {
       "name": "quick-switcher",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/quick-switcher.tsx",
@@ -3176,10 +2656,7 @@
     {
       "name": "radial-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/radial-carousel.tsx",
@@ -3191,9 +2668,7 @@
     {
       "name": "radial-intro",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/radial-intro.tsx",
@@ -3205,10 +2680,7 @@
     {
       "name": "radial-nav",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/radial-nav.tsx",
@@ -3220,11 +2692,7 @@
     {
       "name": "radio-group",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/radio-group.tsx",
@@ -3236,10 +2704,7 @@
     {
       "name": "range-selection-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/range-selection-slider.tsx",
@@ -3251,10 +2716,7 @@
     {
       "name": "returns-calculator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/returns-calculator.tsx",
@@ -3266,10 +2728,7 @@
     {
       "name": "reveal-copy",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/reveal-copy.tsx",
@@ -3281,10 +2740,7 @@
     {
       "name": "ripple",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/ui/ripple.tsx",
@@ -3296,10 +2752,7 @@
     {
       "name": "run-action-button",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/run-action-button.tsx",
@@ -3311,9 +2764,7 @@
     {
       "name": "run-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/run-widget.tsx",
@@ -3325,9 +2776,7 @@
     {
       "name": "sales-admin-panel",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/dashboards/sales-admin-panel/app-sidebar.tsx",
@@ -3422,10 +2871,7 @@
     {
       "name": "save-toggle",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/save-toggle.tsx",
@@ -3466,10 +2912,7 @@
     {
       "name": "scroll-island",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/scroll-island.tsx",
@@ -3481,10 +2924,7 @@
     {
       "name": "scrub-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/scrub-slider.tsx",
@@ -3496,10 +2936,7 @@
     {
       "name": "select",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-select",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
       "files": [
         {
           "path": "src/components/ui/select.tsx",
@@ -3528,10 +2965,7 @@
     {
       "name": "send-money",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/send-money.tsx",
@@ -3543,9 +2977,7 @@
     {
       "name": "separator",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-separator"
-      ],
+      "dependencies": ["@radix-ui/react-separator"],
       "files": [
         {
           "path": "src/components/ui/separator.tsx",
@@ -3557,11 +2989,7 @@
     {
       "name": "share-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/share-button.tsx",
@@ -3573,9 +3001,7 @@
     {
       "name": "share-sheet",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/share-sheet.tsx",
@@ -3587,11 +3013,7 @@
     {
       "name": "sheet",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/sheet.tsx",
@@ -3615,11 +3037,7 @@
     {
       "name": "show-qr",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "qrcode.react"
-      ],
+      "dependencies": ["lucide-react", "motion", "qrcode.react"],
       "files": [
         {
           "path": "src/components/ui/show-qr.tsx",
@@ -3631,10 +3049,7 @@
     {
       "name": "shuffle-pinned-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/shuffle-pinned-list.tsx",
@@ -3683,10 +3098,7 @@
     {
       "name": "slot-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/slot-picker.tsx",
@@ -3698,9 +3110,7 @@
     {
       "name": "spinner",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
           "path": "src/components/ui/spinner.tsx",
@@ -3712,10 +3122,7 @@
     {
       "name": "split-to-edit",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/split-to-edit.tsx",
@@ -3739,10 +3146,7 @@
     {
       "name": "status-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/status-picker.tsx",
@@ -3754,10 +3158,7 @@
     {
       "name": "step-indicator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/step-indicator.tsx",
@@ -3769,10 +3170,7 @@
     {
       "name": "step-pager",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/step-pager.tsx",
@@ -3784,10 +3182,7 @@
     {
       "name": "stepper",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/stepper.tsx",
@@ -3799,10 +3194,7 @@
     {
       "name": "subscription-calendar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/subscription-calendar.tsx",
@@ -3814,10 +3206,7 @@
     {
       "name": "swap-currency",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/swap-currency.tsx",
@@ -3829,10 +3218,7 @@
     {
       "name": "swap-form",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/swap-form.tsx",
@@ -3844,9 +3230,7 @@
     {
       "name": "switch",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-switch"
-      ],
+      "dependencies": ["@radix-ui/react-switch"],
       "files": [
         {
           "path": "src/components/ui/switch.tsx",
@@ -3858,10 +3242,7 @@
     {
       "name": "switch-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/switch-disclosure.tsx",
@@ -3873,9 +3254,7 @@
     {
       "name": "switch-mode",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/switch-mode.tsx",
@@ -3899,9 +3278,7 @@
     {
       "name": "tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/tabs.tsx",
@@ -3913,10 +3290,7 @@
     {
       "name": "tags",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/tags.tsx",
@@ -3951,9 +3325,7 @@
         "lucide-react",
         "zod"
       ],
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/ui/terminal.tsx",
@@ -3989,11 +3361,7 @@
     {
       "name": "theme-toggler",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/theme-toggler.tsx",
@@ -4005,9 +3373,7 @@
     {
       "name": "timed-undo-action",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/timed-undo-action.tsx",
@@ -4019,11 +3385,7 @@
     {
       "name": "timeline",
       "type": "registry:ui",
-      "dependencies": [
-        "@dnd-kit/core",
-        "@radix-ui/react-slot",
-        "tunnel-rat"
-      ],
+      "dependencies": ["@dnd-kit/core", "@radix-ui/react-slot", "tunnel-rat"],
       "files": [
         {
           "path": "src/components/ui/timeline.tsx",
@@ -4035,10 +3397,7 @@
     {
       "name": "toggle",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-toggle",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
       "files": [
         {
           "path": "src/components/ui/toggle.tsx",
@@ -4050,11 +3409,7 @@
     {
       "name": "toggle-group",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/toggle-group.tsx",
@@ -4066,9 +3421,7 @@
     {
       "name": "tooltip",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
+      "dependencies": ["@radix-ui/react-tooltip"],
       "files": [
         {
           "path": "src/components/ui/tooltip.tsx",
@@ -4087,18 +3440,12 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@floating-ui/react",
-        "motion"
-      ]
+      "dependencies": ["@floating-ui/react", "motion"]
     },
     {
       "name": "tooltip-navbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/tooltip-navbar.tsx",
@@ -4110,10 +3457,7 @@
     {
       "name": "tooltip-radix",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/ui/tooltip-radix.tsx",
@@ -4125,10 +3469,7 @@
     {
       "name": "trade-summary",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/trade-summary.tsx",
@@ -4140,10 +3481,7 @@
     {
       "name": "transaction-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/transaction-list.tsx",
@@ -4155,9 +3493,7 @@
     {
       "name": "transcribe-voice-message",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/transcribe-voice-message.tsx",
@@ -4169,10 +3505,7 @@
     {
       "name": "tree-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/tree-menu.tsx",
@@ -4184,12 +3517,7 @@
     {
       "name": "uni-swap-dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "motion",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "motion", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/ui/uni-swap-dialog.tsx",
@@ -4261,9 +3589,7 @@
     {
       "name": "user-presence-avatar",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/ui/user-presence-avatar.tsx",
@@ -4271,18 +3597,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar",
-        "tooltip"
-      ]
+      "registryDependencies": ["avatar", "tooltip"]
     },
     {
       "name": "utils",
       "type": "registry:lib",
-      "dependencies": [
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
           "path": "src/lib/utils.ts",
@@ -4294,10 +3614,7 @@
     {
       "name": "vertical-tooltip-navbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/vertical-tooltip-navbar.tsx",
@@ -4309,10 +3626,7 @@
     {
       "name": "video-player01",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/video-player01.tsx",
@@ -4324,10 +3638,7 @@
     {
       "name": "video-player03",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/video-player03.tsx",
@@ -4339,10 +3650,7 @@
     {
       "name": "view-on-map",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/view-on-map.tsx",
@@ -4371,10 +3679,7 @@
     {
       "name": "voice-note",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/voice-note.tsx",
@@ -4386,10 +3691,7 @@
     {
       "name": "waveform-scrub",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/waveform-scrub.tsx",
@@ -4401,10 +3703,7 @@
     {
       "name": "weight-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/weight-widget.tsx",
@@ -4416,10 +3715,7 @@
     {
       "name": "wiggling-cards",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/ui/wiggling-cards.tsx",
