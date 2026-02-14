@@ -1,9 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, type ReactNode } from "react";
-import { motion, AnimatePresence, type PanInfo, type Variants } from "motion/react";
-import { Sun, Moon } from "lucide-react";
+import { useState, type ReactNode, useEffect } from "react";
+import {
+  motion,
+  AnimatePresence,
+  type PanInfo,
+  type Variants,
+} from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { useTheme } from "next-themes";
 import {
   Book02Icon,
   Brain02Icon,
@@ -23,7 +28,6 @@ export interface CardItem {
 
 interface CardSwipeProps {
   items?: CardItem[];
-  defaultTheme?: "light" | "dark";
 }
 
 /*  DEFAULT CARDS  */
@@ -36,7 +40,7 @@ const DEFAULT_CARDS: CardItem[] = [
     icon: (theme) => (
       <HugeiconsIcon
         icon={Book02Icon}
-        size={44}
+        size={52}
         color={theme === "light" ? "#000000" : "#ffffff"}
         strokeWidth={1.5}
       />
@@ -49,7 +53,7 @@ const DEFAULT_CARDS: CardItem[] = [
     icon: (theme) => (
       <HugeiconsIcon
         icon={DropletFreeIcons}
-        size={44}
+        size={52}
         color={theme === "light" ? "#000000" : "#ffffff"}
         strokeWidth={1.5}
       />
@@ -62,7 +66,7 @@ const DEFAULT_CARDS: CardItem[] = [
     icon: (theme) => (
       <HugeiconsIcon
         icon={RunningShoesIcon}
-        size={44}
+        size={52}
         color={theme === "light" ? "#000000" : "#ffffff"}
         strokeWidth={1.5}
       />
@@ -75,7 +79,7 @@ const DEFAULT_CARDS: CardItem[] = [
     icon: (theme) => (
       <HugeiconsIcon
         icon={SwimmingIcon}
-        size={44}
+        size={52}
         color={theme === "light" ? "#000000" : "#ffffff"}
         strokeWidth={1.5}
       />
@@ -88,7 +92,7 @@ const DEFAULT_CARDS: CardItem[] = [
     icon: (theme) => (
       <HugeiconsIcon
         icon={Brain02Icon}
-        size={44}
+        size={52}
         color={theme === "light" ? "#000000" : "#ffffff"}
         strokeWidth={1.5}
       />
@@ -100,16 +104,21 @@ const DEFAULT_CARDS: CardItem[] = [
 
 export const CardSwipe: React.FC<CardSwipeProps> = ({
   items = DEFAULT_CARDS,
-  defaultTheme = "light",
 }) => {
   const [index, setIndex] = useState<number>(0);
   const [direction, setDirection] = useState<number>(0);
-  const [theme, setTheme] = useState<"light" | "dark">(defaultTheme);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    if (theme === "dark") document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [theme]);
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  const currentTheme = resolvedTheme === "dark" ? "dark" : "light";
 
   const variants: Variants = {
     enter: (direction: number) => ({
@@ -145,21 +154,9 @@ export const CardSwipe: React.FC<CardSwipeProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#FEFEFE] dark:bg-zinc-950 p-4 font-sans transition-colors duration-500">
-      {/* Theme Toggle */}
-      <button
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="mb-8 p-3 rounded-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 shadow-sm hover:scale-110 transition-all"
-      >
-        {theme === "light" ? (
-          <Moon size={20} className="text-gray-600" />
-        ) : (
-          <Sun size={20} className="text-yellow-400" />
-        )}
-      </button>
-
+    <div className="flex flex-col items-center justify-center">
       {/* Card */}
-      <div className="relative w-full max-w-[360px] h-[420px] flex items-center justify-center">
+      <div className="relative w-xs sm:w-sm h-[420px] flex items-center justify-center">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div
             key={index}
@@ -181,24 +178,24 @@ export const CardSwipe: React.FC<CardSwipeProps> = ({
               if (swipe < -swipeConfidenceThreshold) paginate(1);
               else if (swipe > swipeConfidenceThreshold) paginate(-1);
             }}
-            className="absolute w-full bg-[#FEFEFE] dark:bg-zinc-900 border-[1.6px] border-[#ECECEC] dark:border-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-[40px] p-10 flex flex-col items-start transition-colors"
+            className="absolute w-full bg-[#FEFEFE] dark:bg-zinc-900 border-[1.6px] border-[#ECECEC] dark:border-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-[40px] p-8 sm:p-10 flex flex-col items-start transition-colors"
           >
-            <div className="w-20 h-20 bg-[#FEFEFE] dark:bg-zinc-900 border-[1.6px] border-[#ECECEC] dark:border-zinc-800 shadow-[0_6px_20px_rgba(0,0,0,0.08)] rounded-[22px] flex items-center justify-center mb-10 transition-colors">
-              {items[index].icon(theme)}
+            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-[#FEFEFE] dark:bg-zinc-900 border-[1.6px] border-[#ECECEC] dark:border-zinc-800 shadow-[0_6px_20px_rgba(0,0,0,0.08)] rounded-[20px] sm:rounded-[24px] flex items-center justify-center mb-6 sm:mb-10 transition-colors">
+              {items[index].icon(currentTheme)}
             </div>
 
-            <h2 className="text-[32px] font-bold text-[#010101] dark:text-zinc-100 mb-2">
+            <h2 className="text-2xl sm:text-[32px] font-bold text-[#010101] dark:text-zinc-100 mb-2">
               {items[index].title}
             </h2>
 
-            <p className="text-[#77767B] dark:text-zinc-400 text-[22px] mb-10">
+            <p className="text-[#77767B] dark:text-zinc-400 text-lg sm:text-[22px] mb-5">
               {items[index].description}
             </p>
 
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-7 py-3 bg-[#262626] dark:bg-zinc-100 dark:text-zinc-900 text-[#F2F2F2] rounded-full shadow-sm"
+              className="px-6 sm:px-7 py-2.5 sm:py-3 bg-[#262626] dark:bg-zinc-100 dark:text-zinc-900 text-[#F2F2F2] rounded-full shadow-sm text-sm sm:text-base"
             >
               Get Started
             </motion.button>
@@ -207,7 +204,7 @@ export const CardSwipe: React.FC<CardSwipeProps> = ({
       </div>
 
       {/* Dots */}
-      <div className="flex gap-3 mt-6">
+      <div className="flex gap-3 mt-4 sm:mt-6">
         {items.map((_, i) => (
           <motion.div
             key={i}
@@ -215,12 +212,12 @@ export const CardSwipe: React.FC<CardSwipeProps> = ({
               width: 10,
               backgroundColor:
                 i === index
-                  ? theme === "light"
+                  ? currentTheme === "light"
                     ? "#ADACB9"
                     : "#ffffff"
-                  : theme === "light"
-                  ? "#E5E4F0"
-                  : "#3f3f46",
+                  : currentTheme === "light"
+                    ? "#E5E4F0"
+                    : "rgba(255, 255, 255, 0.15)",
             }}
             transition={{ duration: 0.3 }}
             className="h-2.5 rounded-full cursor-pointer"

@@ -18,7 +18,7 @@
     "@floating-ui/react": "^0.27.17",
     "@headlessui/react": "^2.2.9",
     "@hugeicons/core-free-icons": "^3.1.1",
-    "@hugeicons/react": "^1.1.4",
+    "@hugeicons/react": "^1.1.5",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-avatar": "^1.1.11",

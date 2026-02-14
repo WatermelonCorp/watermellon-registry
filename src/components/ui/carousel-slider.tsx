@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -9,7 +9,6 @@ import {
   type PanInfo,
   type Variants,
 } from "motion/react";
-import { Sun, Moon } from "lucide-react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { FavouriteIcon } from "@hugeicons/core-free-icons";
 
@@ -24,10 +23,6 @@ type IconRenderer = (props?: any) => React.ReactNode;
 
 interface CarouselSliderProps {
   slides?: Slide[];
-  themeToggleIcon?: {
-    light?: IconRenderer;
-    dark?: IconRenderer;
-  };
   favouriteIcon?: IconRenderer;
 }
 
@@ -86,10 +81,6 @@ const variants: Variants = {
 
 export const CarouselSlider: React.FC<CarouselSliderProps> = ({
   slides = DEFAULT_SLIDES,
-  themeToggleIcon = {
-    light: () => <Moon size={18} className="text-zinc-600" />,
-    dark: () => <Sun size={18} className="text-yellow-400" />,
-  },
   favouriteIcon = (props) => (
     <HugeiconsIcon
       icon={FavouriteIcon}
@@ -101,20 +92,13 @@ export const CarouselSlider: React.FC<CarouselSliderProps> = ({
 }) => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const dragX = useMotionValue(0);
   const rotate = useTransform(dragX, [-200, 200], [-12, 12]);
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }, [theme]);
-
   const paginate = (newDirection: number) => {
     setDirection(newDirection);
-    setIndex(
-      (prev) => (prev + newDirection + slides.length) % slides.length
-    );
+    setIndex((prev) => (prev + newDirection + slides.length) % slides.length);
   };
 
   const handleDragEnd = (_: any, info: PanInfo) => {
@@ -123,21 +107,9 @@ export const CarouselSlider: React.FC<CarouselSliderProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden bg-[#FDFDFD] dark:bg-zinc-950 p-4 transition-colors duration-500">
-      {/* Theme Toggle */}
-      <button
-        onClick={() =>
-          setTheme(theme === "light" ? "dark" : "light")
-        }
-        className="mb-16 p-3 rounded-full bg-white dark:bg-zinc-900 border border-[#ECECEC] dark:border-zinc-800 shadow-sm"
-      >
-        {theme === "light"
-          ? themeToggleIcon.light?.()
-          : themeToggleIcon.dark?.()}
-      </button>
-
+    <div className="flex flex-col items-center justify-center">
       {/* Slider */}
-      <div className="relative w-full max-w-[320px] aspect-square flex items-center justify-center -rotate-[6deg]">
+      <div className="relative w-48 sm:w-3xs aspect-square flex items-center justify-center -rotate-[6deg]">
         <AnimatePresence custom={direction} mode="wait">
           <motion.div
             key={index}
@@ -161,7 +133,7 @@ export const CarouselSlider: React.FC<CarouselSliderProps> = ({
               <img
                 src={slides[index].img}
                 alt=""
-                className="w-full h-full object-cover pointer-events-none"
+                className="object-cover w-full h-full pointer-events-none"
               />
 
               {/* Favourite Button */}
@@ -171,10 +143,7 @@ export const CarouselSlider: React.FC<CarouselSliderProps> = ({
                 className="absolute top-4 right-4 w-10 h-10 bg-[#EDEDED] dark:bg-zinc-900/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-md border border-white/20"
               >
                 {favouriteIcon({
-                  color:
-                    theme === "light" ? "#2b2b2b" : "#e4e4e7",
-                  className:
-                    "text-[#2b2b2b] dark:text-white/90",
+                  className: "text-[#2b2b2b] dark:text-white/90",
                 })}
               </button>
             </div>

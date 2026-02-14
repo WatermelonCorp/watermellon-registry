@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
-import { ChevronLeft, ChevronRight, Sun, Moon } from "lucide-react";
-import { useEffect, useState, type FC } from "react";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { type FC } from "react";
 
 /* ---------- Types ---------- */
 
@@ -17,6 +17,8 @@ interface CarouselNavigatorProps {
   totalSlides?: number;
   autoDelay?: number;
   themes?: ThemeConfig[];
+  currentIndex: number;
+  onIndexChange: (index: number) => void;
 }
 
 /* ---------- Defaults ---------- */
@@ -57,83 +59,51 @@ export const CarouselNavigator: FC<CarouselNavigatorProps> = ({
   totalSlides = DEFAULT_TOTAL_SLIDES,
   autoDelay = DEFAULT_AUTO_DELAY,
   themes = DEFAULT_THEMES,
+  currentIndex,
+  onIndexChange,
 }) => {
-  const [index, setIndex] = useState(0);
-  const [themeMode, setThemeMode] = useState<"light" | "dark">("light");
-
-  const theme = themes[index];
-
-  /* Dark / Light mode */
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", themeMode === "dark");
-  }, [themeMode]);
-
-  /* Auto slide */
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % totalSlides);
-    }, autoDelay);
-
-    return () => clearInterval(timer);
-  }, [index, totalSlides, autoDelay]);
+  const theme = themes[currentIndex];
 
   const goPrev = () =>
-    setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+    onIndexChange((currentIndex - 1 + totalSlides) % totalSlides);
 
   const goNext = () =>
-    setIndex((prev) => (prev + 1) % totalSlides);
+    onIndexChange((currentIndex + 1) % totalSlides);
 
   return (
-    <div className="h-screen w-full flex flex-col justify-center items-center bg-gray-50 dark:bg-zinc-950 transition-colors duration-500">
-      {/* Theme Toggle */}
-      <button
-        onClick={() =>
-          setThemeMode(themeMode === "light" ? "dark" : "light")
-        }
-        className="mb-10 p-3 rounded-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 shadow-sm hover:scale-110 transition-all"
+    <motion.div
+      animate={{
+        backgroundColor: theme.bg.replace("bg-[", "").replace("]", ""),
+      }}
+      className="flex items-center justify-center gap-1 px-4 py-3 transition-colors duration-500 rounded-full"
+    >
+      {/* LEFT */}
+      <ArrowButton
+        onClick={goPrev}
+        themeColor={theme.button}
+        disabled={currentIndex === 0}
       >
-        {themeMode === "light" ? (
-          <Moon size={20} className="text-gray-600" />
-        ) : (
-          <Sun size={20} className="text-yellow-400" />
-        )}
-      </button>
+        <ChevronLeft size={24} strokeWidth={3} />
+      </ArrowButton>
 
-      {/* Navigator */}
-      <motion.div
-        animate={{
-          backgroundColor: theme.bg.replace("bg-[", "").replace("]", ""),
-        }}
-        className="flex items-center justify-center gap-1 px-4 py-3 rounded-full transition-colors duration-500"
-      >
-        {/* LEFT */}
-        <ArrowButton
-          onClick={goPrev}
-          themeColor={theme.button}
-          disabled={index === 0}
-        >
-          <ChevronLeft size={24} strokeWidth={3} />
-        </ArrowButton>
+      {/* DOTS */}
+      <div className="flex items-center gap-2 px-2">
+        {Array.from({ length: totalSlides }).map((_, i) => (
+          <Indicator
+            key={i}
+            isActive={i === currentIndex}
+            theme={theme}
+            autoDelay={autoDelay}
+            onClick={() => onIndexChange(i)}
+          />
+        ))}
+      </div>
 
-        {/* DOTS */}
-        <div className="flex items-center gap-2 px-2">
-          {Array.from({ length: totalSlides }).map((_, i) => (
-            <Indicator
-              key={i}
-              isActive={i === index}
-              theme={theme}
-              autoDelay={autoDelay}
-              onClick={() => setIndex(i)}  
-            />
-          ))}
-        </div>
-
-        {/* RIGHT */}
-        <ArrowButton onClick={goNext} themeColor={theme.button}>
-          <ChevronRight size={24} strokeWidth={3} />
-        </ArrowButton>
-      </motion.div>
-    </div>
+      {/* RIGHT */}
+      <ArrowButton onClick={goNext} themeColor={theme.button}>
+        <ChevronRight size={24} strokeWidth={3} />
+      </ArrowButton>
+    </motion.div>
   );
 };
 
