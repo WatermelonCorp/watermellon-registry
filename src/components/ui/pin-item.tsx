@@ -77,16 +77,18 @@ type PinItemComponentProps = {
   items?: PlaceItem[];
 };
 
-export const PinItemComponent = ({ items = INITIAL_PLACES }: PinItemComponentProps) => {
+export const PinItemComponent = ({
+  items = INITIAL_PLACES,
+}: PinItemComponentProps) => {
   const [places, setPlaces] = useState<PlaceItem[]>(
-    items.map((p) => ({ ...p, pinned: p.pinned ?? false }))
+    items.map((p) => ({ ...p, pinned: p.pinned ?? false })),
   );
 
   const togglePin = (id: number) => {
     setPlaces((prev) =>
       prev.map((place) =>
-        place.id === id ? { ...place, pinned: !place.pinned } : place
-      )
+        place.id === id ? { ...place, pinned: !place.pinned } : place,
+      ),
     );
   };
 
@@ -94,51 +96,45 @@ export const PinItemComponent = ({ items = INITIAL_PLACES }: PinItemComponentPro
   const unpinnedPlaces = places.filter((p) => !p.pinned);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#fcfcfc] py-8 px-4 select-none">
-      <div className="w-full max-w-[350px] space-y-6">
-        <LayoutGroup>
-          {/* Pinned Section */}
-          <AnimatePresence>
-            {pinnedPlaces.length > 0 && (
-              <motion.div
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="space-y-3"
-              >
-                <h3 className="text-[#ADACB8] text-[14px] font-semibold ml-1 tracking-wider">
-                  Pinned Places
-                </h3>
-                <div className="space-y-2">
-                  {pinnedPlaces.map((place) => (
-                    <PlaceCard
-                      key={place.id}
-                      place={place}
-                      onToggle={togglePin}
-                    />
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+    <div className="w-full max-w-[355px] space-y-6">
+      <LayoutGroup>
+        {/* Pinned Section */}
+        <AnimatePresence>
+          {pinnedPlaces.length > 0 && (
+            <motion.div
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="space-y-3"
+            >
+              <h3 className="text-[#ADACB8] dark:text-zinc-500 text-[14px] font-semibold ml-1 tracking-wider">
+                Pinned Places
+              </h3>
+              <div className="space-y-2">
+                {pinnedPlaces.map((place) => (
+                  <PlaceCard
+                    key={place.id}
+                    place={place}
+                    onToggle={togglePin}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-          {/* All Places */}
-          <motion.div layout className="space-y-3">
-            <h3 className="text-[#ADACB8] text-[14px] font-semibold ml-1 tracking-wider">
-              All Places
-            </h3>
-            <div className="space-y-3">
-              {unpinnedPlaces.map((place) => (
-                <PlaceCard
-                  key={place.id}
-                  place={place}
-                  onToggle={togglePin}
-                />
-              ))}
-            </div>
-          </motion.div>
-        </LayoutGroup>
-      </div>
+        {/* All Places */}
+        <motion.div layout className="space-y-3">
+          <h3 className="text-[#ADACB8] dark:text-zinc-500 text-[14px] font-semibold ml-1 tracking-wider">
+            All Places
+          </h3>
+          <div className="space-y-3">
+            {unpinnedPlaces.map((place) => (
+              <PlaceCard key={place.id} place={place} onToggle={togglePin} />
+            ))}
+          </div>
+        </motion.div>
+      </LayoutGroup>
     </div>
   );
 };
@@ -158,21 +154,21 @@ const PlaceCard = ({
     <motion.div
       layoutId={`card-${place.id}`}
       transition={springConfig}
-      className="group relative flex items-center justify-between bg-[#F6F5FA] p-3 rounded-2xl border border-gray-100 shadow-xs hover:shadow-sm transition-shadow cursor-default"
+      className="group relative flex items-center justify-between bg-[#F6F5FA] dark:bg-zinc-900 p-2.5 sm:p-3 rounded-2xl border border-gray-100 dark:border-zinc-800 shadow-xs hover:shadow-sm transition-shadow cursor-default gap-2.5"
     >
       <div className="flex items-center gap-3">
         <motion.div
           layout
-          className="w-10 h-10 flex items-center justify-center bg-[#FEFEFE] rounded-xl text-[#AEADB9]"
+          className="w-10 h-10 flex items-center justify-center bg-[#FEFEFE] dark:bg-zinc-800 rounded-xl text-[#AEADB9] dark:text-zinc-400"
         >
           <Icon size={22} />
         </motion.div>
 
         <motion.div layout>
-          <h4 className="font-bold text-[#27272B] text-base leading-tight">
+          <h4 className="font-bold text-[#27272B] dark:text-zinc-100 text-base leading-tight">
             {place.name}
           </h4>
-          <p className="text-[#87868D] font-semibold text-[14px] mt-0.5">
+          <p className="text-[#87868D] dark:text-zinc-400 font-semibold text-[14px] mt-0.5 truncate max-w-[180px] sm:max-w-none">
             {place.type} • {place.status}
           </p>
         </motion.div>
@@ -184,7 +180,7 @@ const PlaceCard = ({
         className={`relative z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
           place.pinned
             ? "bg-yellow-400 text-white opacity-100"
-            : "bg-[#CDCCD5] text-[#fefefe] opacity-0 group-hover:opacity-100"
+            : "bg-[#CDCCD5] dark:bg-zinc-700 text-[#fefefe] dark:text-zinc-400 opacity-0 group-hover:opacity-100"
         }`}
       >
         <Pin size={16} className="fill-white" />
