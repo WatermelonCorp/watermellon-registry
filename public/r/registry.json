@@ -908,7 +908,7 @@
       ]
     },
     {
-      "name": "card-swap",
+      "name": "card-swipe",
       "type": "registry:ui",
       "dependencies": [
         "@hugeicons/core-free-icons",
@@ -918,8 +918,8 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/card-swap.tsx",
-          "target": "components/ui/card-swap.tsx",
+          "path": "src/components/ui/card-swipe.tsx",
+          "target": "components/ui/card-swipe.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1427,13 +1427,13 @@
       ]
     },
     {
-      "name": "emoji-spree-chips",
+      "name": "emoji-spree-choice-chips",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/emoji-spree-chips.tsx",
-          "target": "components/ui/emoji-spree-chips.tsx",
+          "path": "src/components/ui/emoji-spree-choice-chips.tsx",
+          "target": "components/ui/emoji-spree-choice-chips.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1511,7 +1511,7 @@
       ]
     },
     {
-      "name": "feedback-component",
+      "name": "feedback",
       "type": "registry:ui",
       "dependencies": [
         "@hugeicons/core-free-icons",
@@ -1521,8 +1521,8 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/feedback-component.tsx",
-          "target": "components/ui/feedback-component.tsx",
+          "path": "src/components/ui/feedback.tsx",
+          "target": "components/ui/feedback.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3047,13 +3047,13 @@
       ]
     },
     {
-      "name": "shuffle-pinned-list",
+      "name": "shuffle-pinned-item",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/shuffle-pinned-list.tsx",
-          "target": "components/ui/shuffle-pinned-list.tsx",
+          "path": "src/components/ui/shuffle-pinned-item.tsx",
+          "target": "components/ui/shuffle-pinned-item.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3300,7 +3300,7 @@
       ]
     },
     {
-      "name": "task-widget",
+      "name": "task-widget-disclosure",
       "type": "registry:ui",
       "dependencies": [
         "@hugeicons/core-free-icons",
@@ -3310,8 +3310,8 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/task-widget.tsx",
-          "target": "components/ui/task-widget.tsx",
+          "path": "src/components/ui/task-widget-disclosure.tsx",
+          "target": "components/ui/task-widget-disclosure.tsx",
           "type": "registry:ui"
         }
       ]
