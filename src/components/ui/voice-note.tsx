@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Mic, X, Play, Square, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mic, X, Play, Square } from 'lucide-react';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { FaCheck } from 'react-icons/fa6';
 
-enum RecorderState {
-    IDLE = 'IDLE',
-    RECORDING = 'RECORDING',
-    REVIEWING = 'REVIEWING',
-    PLAYING = 'PLAYING',
-}
+export const RecorderState = {
+  IDLE: 'IDLE',
+  RECORDING: 'RECORDING',
+  REVIEWING: 'REVIEWING',
+  PLAYING: 'PLAYING',
+} as const;
+
+export type RecorderState =
+  (typeof RecorderState)[keyof typeof RecorderState];
+
 
 interface VoiceNoteRecorderProps {
     onSend?: (data: { duration: number; blob: Blob | null }) => void;
@@ -25,9 +29,7 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
     const [state, setState] = useState<RecorderState>(RecorderState.IDLE);
     const [duration, setDuration] = useState(0);
     const [playbackTime, setPlaybackTime] = useState(0);
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-    const isDark = theme === 'dark';
     const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const playbackTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -95,32 +97,11 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
         };
     }, []);
 
-   
-    const colors = {
-        bg: isDark ? 'bg-[#0f0f12]' : 'bg-white',
-        widgetBg: isDark ? 'bg-[#1a1a1e]' : 'bg-[#fefefe]',
-        border: isDark ? 'border-[#2d2d33]' : 'border-[#E8E7EF]',
-        text: isDark ? 'text-[#fefefe]' : 'text-slate-700',
-        micIcon: isDark ? 'text-[#fefefe]' : 'text-slate-800',
-        timeText: isDark ? 'text-[#fefefe]' : 'text-[#282828]',
-        sendIcon: isDark ? '#fefefe' : '#272727',
-        toggleBtn: isDark ? 'bg-[#1a1a1e] text-yellow-400 border-[#2d2d33]' : 'bg-white text-slate-600 border-[#E8E7EF]'
-    };
-
-    const actionBtnClass = `w-16 h-16 rounded-full border-[1.6px] shadow-sm flex items-center justify-center shrink-0 transition-colors duration-300 ${colors.widgetBg} ${colors.border}`;
+    const actionBtnClass = `w-16 h-16 rounded-full border-[1.6px] shadow-sm flex items-center justify-center shrink-0 transition-colors duration-300 bg-[#fefefe] dark:bg-[#1a1a1e] border-[#E8E7EF] dark:border-[#2d2d33]`;
 
     return (
-    <div className={`min-h-screen flex flex-col items-center justify-center p-8 space-y-12 transition-colors duration-500 ${colors.bg}`}>
+    <div className="min-h-full w-full flex flex-col items-center justify-center p-8 space-y-12 transition-colors duration-500 bg-transparent">
         
-        {/* Theme Toggle Button */}
-        <motion.button 
-            onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            whileTap={{ scale: 0.9 }}
-            className={`p-3 rounded-full border shadow-sm transition-all ${colors.toggleBtn}`}
-        >
-            {isDark ? <Sun size={20} /> : <Moon size={20} />}
-        </motion.button>
-
         <div className="flex items-center gap-3">
             <AnimatePresence mode='popLayout'>
                 {state !== RecorderState.IDLE && (
@@ -133,7 +114,7 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
                         onClick={cancelRecording}
                         className={actionBtnClass}
                     >
-                        <X size={28} className={colors.text} />
+                        <X size={28} className="text-slate-700 dark:text-[#fefefe]" />
                     </motion.button>
                 )}
             </AnimatePresence>
@@ -145,8 +126,11 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
                 className={`
                     relative flex items-center justify-center overflow-hidden shadow-sm transition-colors duration-300
                     ${state === RecorderState.IDLE ? 'w-16 h-16' : 'h-16 px-6'} 
-                    rounded-full border-[1.6px] ${colors.border}
-                    ${state === RecorderState.RECORDING ? (isDark ? 'bg-[#441010] border-none' : 'bg-[#FEE5E4] border-none') : colors.widgetBg}
+                    rounded-full border-[1.6px]
+                    ${state === RecorderState.RECORDING 
+                        ? 'bg-[#FEE5E4] dark:bg-[#441010] border-none' 
+                        : 'bg-[#fefefe] dark:bg-[#1a1a1e] border-[#E8E7EF] dark:border-[#2d2d33]'
+                    }
                 `}
             >
                 {/* Progress Border for Recording */}
@@ -189,7 +173,7 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
                             onClick={startRecording}
                             className="flex items-center justify-center"
                         >
-                            <Mic size={28} className={colors.micIcon} />
+                            <Mic size={28} className="text-slate-800 dark:text-[#fefefe]" />
                         </motion.button>
                     )}
 
@@ -230,7 +214,10 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
                             <button
                                 onClick={state === RecorderState.PLAYING ? stopPlayback : startPlayback}
                                 className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors
-                                    ${state === RecorderState.PLAYING ? (isDark ? 'bg-red-900/40 text-red-400' : 'bg-red-100 text-red-500') : colors.micIcon}
+                                    ${state === RecorderState.PLAYING 
+                                        ? 'bg-red-100 text-red-500 dark:bg-red-900/40 dark:text-red-400' 
+                                        : 'text-slate-800 dark:text-[#fefefe]'
+                                    }
                                 `}
                             >
                                 {state === RecorderState.PLAYING ? (
@@ -239,7 +226,7 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
                                     <Play size={22} fill="currentColor" />
                                 )}
                             </button>
-                            <span className={`text-[20px] font-bold tabular-nums transition-colors ${colors.timeText}`}>
+                            <span className="text-[20px] font-bold tabular-nums transition-colors text-[#282828] dark:text-[#fefefe]">
                                 {formatTime(state === RecorderState.PLAYING ? playbackTime : duration)}
                             </span>
                         </motion.div>
@@ -259,7 +246,7 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
                         onClick={stopRecording}
                         className={actionBtnClass}
                     >
-                        <FaCheck size={26} className={colors.text} />
+                        <FaCheck size={26} className="text-slate-700 dark:text-[#fefefe]" />
                     </motion.button>
                 )}
 
@@ -273,7 +260,7 @@ export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
                         onClick={handleSend}
                         className={actionBtnClass}
                     >
-                        <RiSendPlaneFill size={26} color={colors.sendIcon} />
+                        <RiSendPlaneFill size={26} className="text-[#272727] dark:text-[#fefefe]" />
                     </motion.button>
                 )}
             </AnimatePresence>
