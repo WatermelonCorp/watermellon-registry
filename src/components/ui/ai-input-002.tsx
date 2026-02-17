@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Plus, ArrowLeft } from "lucide-react";
 
 /* TYPES */
@@ -13,7 +13,12 @@ export interface MessageReply {
 }
 
 /* DEFAULT AI SERVICE */
-const defaultReplies = ["Lock in vro 🫡", "Got it 👍", "Interesting 👀", "Tell me more"];
+const defaultReplies = [
+  "Lock in vro 🫡",
+  "Got it 👍",
+  "Interesting 👀",
+  "Tell me more",
+];
 
 const defaultAiResponse = async (): Promise<string> => {
   await new Promise((res) => setTimeout(res, 700));
@@ -21,7 +26,10 @@ const defaultAiResponse = async (): Promise<string> => {
 };
 
 /* CHAT BUBBLE */
-const ChatBubble: React.FC<{ role: Role; content: string }> = ({ role, content }) => {
+const ChatBubble: React.FC<{ role: Role; content: string }> = ({
+  role,
+  content,
+}) => {
   const isUser = role === "user";
 
   return (
@@ -32,11 +40,11 @@ const ChatBubble: React.FC<{ role: Role; content: string }> = ({ role, content }
       className={`flex w-full mb-3 ${isUser ? "justify-end" : "justify-start"}`}
     >
       <div
-        className={`max-w-[80%] px-5 py-2.5 text-[15px] font-semibold shadow-[0_2px_10px_rgba(0,0,0,0.05)]
+        className={`max-w-[90%] sm:max-w-[80%] px-4 sm:px-5 py-2 sm:py-2.5 text-[14px] sm:text-[15px] font-semibold shadow-sm transition-colors duration-200
         ${
           isUser
-            ? "bg-white text-gray-800 border border-gray-100 rounded-[16px] rounded-br-[4px]"
-            : "bg-[#1DA1F2] text-white rounded-[16px] rounded-bl-[4px]"
+            ? "bg-white dark:bg-zinc-800 text-gray-800 dark:text-zinc-100 border border-gray-100 dark:border-zinc-700 rounded-[16px] rounded-br-[4px]"
+            : "bg-[#1DA1F2] dark:bg-sky-600 text-white rounded-[16px] rounded-bl-[4px] border border-sky-400/20 shadow-sky-500/10"
         }`}
       >
         {content}
@@ -68,16 +76,17 @@ const AiInputBar: React.FC<AiInputBarProps> = ({
   };
 
   return (
-    <div className="w-[700px] max-w-full px-4 pb-12">
+    <div className="w-full max-w-[700px] px-3 sm:px-4 pb-4 sm:pb-24">
       <motion.div
         layout
-        className="relative flex items-center bg-white rounded-[28px] p-2 shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-gray-100/50"
+        className="relative flex items-center bg-white dark:bg-zinc-900 rounded-2xl sm:rounded-[28px] p-1.5 sm:p-2 shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-gray-100/50 dark:border-zinc-800 transition-colors duration-200"
       >
-        <button title="add files"
+        <button
+          title="add files"
           type="button"
-          className="flex items-center justify-center w-12 h-12 ml-1 text-gray-400 bg-[#F2F2F2] rounded-lg hover:bg-gray-200 transition-colors"
+          className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 ml-1 text-gray-500 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl sm:rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
         >
-          <Plus size={22} strokeWidth={2.5} />
+          <Plus size={20} className="sm:size-[22px]" strokeWidth={2.5} />
         </button>
 
         <input
@@ -87,20 +96,25 @@ const AiInputBar: React.FC<AiInputBarProps> = ({
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
           placeholder={placeholderText}
-          className="flex-1 py-3 px-4 outline-none text-gray-700 bg-transparent text-[17px] placeholder:text-gray-400"
+          className="flex-1 py-2 sm:py-3 px-3 sm:px-4 outline-none text-gray-700 dark:text-zinc-200 bg-transparent text-[15px] sm:text-[17px] placeholder:text-gray-400 dark:placeholder:text-zinc-500 transition-colors"
           disabled={isLoading}
         />
 
         <div className="mr-1">
-          <button title="send"
+          <button
+            title="send"
             onClick={handleSubmit}
-            className="flex items-center justify-center w-12 h-12 text-black/70 bg-[#F2F2F2] rounded-lg hover:bg-gray-200 transition-colors overflow-hidden"
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 text-black/70 dark:text-zinc-300 bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl sm:rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors overflow-hidden"
           >
             <motion.div
               animate={{ rotate: inputValue.length > 0 ? 90 : 0 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
-              <ArrowLeft size={22} strokeWidth={2.5} />
+              <ArrowLeft
+                size={20}
+                className="sm:size-[22px]"
+                strokeWidth={2.5}
+              />
             </motion.div>
           </button>
         </div>
@@ -109,7 +123,7 @@ const AiInputBar: React.FC<AiInputBarProps> = ({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="absolute inset-0 bg-white/60 rounded-[28px] flex items-center justify-center"
+            className="absolute inset-0 bg-white/60 dark:bg-zinc-900/60 rounded-[28px] flex items-center justify-center backdrop-blur-[1px]"
           >
             <div className="flex space-x-1.5">
               {[0, 0.2, 0.4].map((d) => (
@@ -117,7 +131,7 @@ const AiInputBar: React.FC<AiInputBarProps> = ({
                   key={d}
                   animate={{ y: [0, -4, 0] }}
                   transition={{ repeat: Infinity, duration: 0.6, delay: d }}
-                  className="w-1.5 h-1.5 bg-gray-400 rounded-full"
+                  className="w-1.5 h-1.5 bg-gray-400 dark:bg-zinc-500 rounded-full"
                 />
               ))}
             </div>
@@ -154,7 +168,12 @@ export const AiInput002: React.FC<AiInput002Props> = ({
   const handleSend = async (content: string) => {
     setMessages((p) => [
       ...p,
-      { id: Date.now().toString(), role: "user", content, timestamp: new Date() },
+      {
+        id: Date.now().toString(),
+        role: "user",
+        content,
+        timestamp: new Date(),
+      },
     ]);
 
     setIsLoading(true);
@@ -173,8 +192,11 @@ export const AiInput002: React.FC<AiInput002Props> = ({
   };
 
   return (
-    <div className="flex flex-col h-screen bg-[#F8F9FA]">
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 flex flex-col">
+    <div className="flex flex-col h-screen bg-[#F8F9FA] dark:bg-zinc-950 transition-colors duration-300">
+      <div
+        ref={scrollRef}
+        className="flex-1 overflow-y-auto px-3 sm:px-4 flex flex-col"
+      >
         <div className="flex-grow" />
         <div className="max-w-2xl mx-auto w-full pb-4">
           <AnimatePresence>
@@ -185,7 +207,7 @@ export const AiInput002: React.FC<AiInput002Props> = ({
         </div>
       </div>
 
-      <div className="flex justify-center items-center mb-6">
+      <div className="flex justify-center items-center mb-0 sm:mb-6">
         <AiInputBar
           onSend={handleSend}
           isLoading={isLoading}
