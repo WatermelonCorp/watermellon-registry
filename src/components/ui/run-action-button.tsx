@@ -1,15 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Zap } from 'lucide-react';
-import { HiBadgeCheck } from 'react-icons/hi';
-import { IoCloseSharp } from 'react-icons/io5';
-import { FaInbox, FaMoon, FaSun } from 'react-icons/fa6';
-import { RiBubbleChartFill } from 'react-icons/ri';
-import { BsFileTextFill, BsSendFill, BsTagFill } from 'react-icons/bs';
-import { TbClockHour12Filled } from 'react-icons/tb';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, type Transition } from "framer-motion";
+import { Zap } from "lucide-react";
+import { HiBadgeCheck } from "react-icons/hi";
+import { IoCloseSharp } from "react-icons/io5";
+import { FaInbox } from "react-icons/fa6";
+import { RiBubbleChartFill } from "react-icons/ri";
+import { BsFileTextFill, BsSendFill, BsTagFill } from "react-icons/bs";
+import { TbClockHour12Filled } from "react-icons/tb";
 
-/*  DEFAULT DATA  */
+function AnimatedText({
+  text,
+  className,
+  delayStep = 0.014,
+}: {
+  text: string;
+  className?: string;
+  delayStep?: number;
+}) {
+  const chars = text.split("");
 
+  return (
+    <span className={className} style={{ display: "inline-flex" }}>
+      <AnimatePresence mode="popLayout">
+        <motion.span
+          key={text}
+          style={{ display: "inline-flex", willChange: "transform" }}
+        >
+          {chars.map((char, i) => (
+            <motion.span
+              key={i}
+              initial={{
+                y: 10,
+                opacity: 0,
+                scale: 0.5,
+                filter: "blur(2px)",
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                filter: "blur(0px)",
+              }}
+              exit={{
+                y: -10,
+                opacity: 0,
+                scale: 0.5,
+                filter: "blur(2px)",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 240,
+                damping: 16,
+                mass: 1.2,
+                delay: i * delayStep,
+              }}
+              style={{
+                display: "inline-block",
+                whiteSpace: char === " " ? "pre" : undefined,
+              }}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
+
+const spring: Transition = {
+  type: "spring",
+  stiffness: 260,
+  damping: 22,
+  mass: 0.8,
+};
 const DEFAULT_STEPS = [
   { id: 1, label: "Importing Survey Data", icon: FaInbox },
   { id: 2, label: "Refining Responses", icon: RiBubbleChartFill },
@@ -18,8 +82,6 @@ const DEFAULT_STEPS = [
   { id: 5, label: "Creating Reports", icon: BsFileTextFill },
   { id: 6, label: "Sharing Survey Report", icon: BsSendFill },
 ];
-
-/*  TYPES  */
 
 type StepItem = {
   id: number;
@@ -31,176 +93,135 @@ type RunActionButtonProps = {
   steps?: StepItem[];
 };
 
-/*  COMPONENT  */
-
-export  function RunActionButton({
-  steps = DEFAULT_STEPS, 
+export function RunActionButton({
+  steps = DEFAULT_STEPS,
 }: RunActionButtonProps) {
-  const [status, setStatus] = useState<'idle' | 'running' | 'done'>('idle');
+  const [status, setStatus] = useState<"idle" | "running" | "done">("idle");
   const [currentStep, setCurrentStep] = useState(0);
-  const [isDark, setIsDark] = useState(false);
 
   const startAction = () => {
-    setStatus('running');
+    setStatus("running");
     setCurrentStep(0);
   };
 
   const reset = () => {
-    setStatus('idle');
+    setStatus("idle");
     setCurrentStep(0);
   };
 
   useEffect(() => {
-    let interval: ReturnType<typeof setInterval>;
+    if (status !== "running") return;
 
-    if (status === 'running') {
-      interval = setInterval(() => {
-        setCurrentStep((prev) => {
-          if (prev < steps.length - 1) return prev + 1;
-          setStatus('done');
-          return prev;
-        });
-      }, 1200);
-    }
+    const interval = setInterval(() => {
+      setCurrentStep((prev) => {
+        if (prev < steps.length - 1) return prev + 1;
+        setStatus("done");
+        return prev;
+      });
+    }, 1200);
 
     return () => clearInterval(interval);
   }, [status, steps.length]);
 
+  const widths = {
+    idle: 180,
+    running: 360,
+    done: 200,
+  };
+
   return (
-    <div className={isDark ? 'invert hue-rotate-180' : ''}>
-      <div className="relative flex items-center justify-center min-h-screen bg-white">
+    <div className="flex items-center justify-center">
+      <motion.div
+        animate={{ width: widths[status] }}
+        transition={spring}
+        className={`relative flex h-[64px] items-center justify-between overflow-hidden rounded-full ${
+          status === "running"
+            ? "border-2 border-dashed border-[#D6D6DD] dark:border-white/20"
+            : "border-2 border-transparent"
+        } `}
+      >
+        <AnimatePresence mode="popLayout">
+          {status === "idle" && (
+            <motion.button
+              key="idle"
+              onClick={startAction}
+              initial={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+              transition={spring}
+              className="flex flex-1 items-center gap-2 rounded-full bg-[#F4F4F9] px-5 py-3 whitespace-nowrap dark:bg-zinc-800"
+            >
+              <Zap className="h-6 w-6 text-[#26262B] dark:text-zinc-100" />
 
-        {/*  Theme Toggle */}
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="absolute top-6 right-6 w-11 h-11 rounded-full flex items-center justify-center border bg-white shadow-sm z-20"
-          title="Toggle theme"
-        >
-          {isDark ? <FaSun /> : <FaMoon />}
-        </button>
+              <AnimatedText
+                text="Run Action"
+                className="text-[18px] font-medium text-[#26262B] dark:text-zinc-100"
+              />
+            </motion.button>
+          )}
 
-        <motion.div layout className="relative flex items-center justify-center">
-          <AnimatePresence mode="wait">
-
-            {status === 'idle' && (
-              <motion.button
-                key="idle"
-                layoutId="button-container"
-                onClick={startAction}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="flex items-center gap-2 px-6 py-4 bg-[#F4F4F9] hover:bg-[#eaeaef] rounded-full transition-colors"
-              >
-                <Zap className="w-7 h-7 fill-current text-[#26262B]" />
-                <span className="font-bold text-[18px] text-[#26262B]">
-                  Run Action
-                </span>
-              </motion.button>
-            )}
-
-            {status === 'running' && (
-              <motion.div
-                key="running"
-                layoutId="button-container"
-                initial={{ width: 160 }}
-                animate={{ width: 340 }}
-                className="relative flex items-center h-[64px] px-2 bg-white rounded-full overflow-hidden"
-              >
-                {/* Dashed Border */}
-                <svg
-                  className="absolute inset-0 w-full h-full pointer-events-none"
-                  viewBox="0 0 340 64"
-                  preserveAspectRatio="none"
-                >
-                  <rect
-                    x="1.5"
-                    y="1.5"
-                    width="337"
-                    height="61"
-                    rx="32"
-                    ry="32"
-                    fill="none"
-                    stroke="#D6D6DD"
-                    strokeWidth="3"
-                    strokeDasharray="8 8"
+          {status === "running" && (
+            <motion.div
+              key="running"
+              initial={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+              transition={spring}
+              className="flex flex-1 items-center justify-between gap-3 px-4 whitespace-nowrap"
+            >
+              <div className="flex items-center gap-2">
+                <AnimatePresence mode="popLayout">
+                  <motion.div
+                    key={currentStep}
+                    initial={{ opacity: 0, scale: 0, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, scale: 0, filter: "blur(4px)" }}
+                    transition={spring}
                   >
-                    <animate
-                      attributeName="stroke-dashoffset"
-                      from="0"
-                      to="-32"
-                      dur="1.2s"
-                      repeatCount="indefinite"
-                    />
-                  </rect>
-                </svg>
+                    {React.createElement(steps[currentStep].icon, {
+                      className: "w-6 h-6 text-[#28272A]  dark:text-zinc-100",
+                    })}
+                  </motion.div>
+                </AnimatePresence>
+                <AnimatedText
+                  text={steps[currentStep].label}
+                  className="text-[18px] font-bold text-[#28272A]  dark:text-zinc-100"
+                />
+              </div>
 
-                {/* Icon */}
-                <div className="absolute left-4 flex items-center justify-center w-12 h-12 rounded-xl z-10">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentStep}
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -10, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {React.createElement(steps[currentStep].icon, {
-                        className: "w-7 h-7 text-[#28272A]",
-                      })}
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-
-                {/* Text */}
-                <div className="flex-1 ml-4 pl-12 pr-10 z-10">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={currentStep}
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -10, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="block font-bold text-[18px] text-[#28272A] whitespace-nowrap"
-                    >
-                      {steps[currentStep].label}
-                    </motion.span>
-                  </AnimatePresence>
-                </div>
-
-                {/* Cancel */}
-                <button
-                  title="close"
-                  onClick={reset}
-                  className="absolute right-4 p-1.5 bg-[#D6D5E2] hover:bg-[#c3c2cd] rounded-full transition-colors z-10"
-                >
-                  <IoCloseSharp
-                    className="w-[20px] h-[20px] text-[#fefefe]"
-                    strokeWidth={4}
-                  />
-                </button>
-              </motion.div>
-            )}
-
-            {status === 'done' && (
               <motion.button
-                key="done"
-                layoutId="button-container"
                 onClick={reset}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex items-center gap-2 px-6 py-4 bg-[#EAF9EA] rounded-full"
+                initial={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+                transition={{ ...spring, delay: 0.15 }}
+                className="ml-1 rounded-full bg-[#D6D5E2] dark:bg-white p-1.5"
               >
-                <HiBadgeCheck className="w-7 h-7 text-[#22c55e]" />
-                <span className="font-bold text-[18px] text-[#22c55e]">
-                  Action Done
-                </span>
+                <IoCloseSharp className="h-4 w-4 text-white dark:text-black" />
               </motion.button>
-            )}
+            </motion.div>
+          )}
 
-          </AnimatePresence>
-        </motion.div>
-      </div>
+          {status === "done" && (
+            <motion.button
+              key="done"
+              onClick={reset}
+              initial={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+              transition={spring}
+              className="flex flex-1 items-center gap-2 rounded-full bg-[#EAF9EA] dark:bg-green-200 px-5 py-3 whitespace-nowrap"
+            >
+              <HiBadgeCheck className="h-6 w-6 text-[#22c55e]" />
+
+              <AnimatedText
+                text="Action Done"
+                className="text-[18px] font-bold text-[#22c55e]"
+              />
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }
