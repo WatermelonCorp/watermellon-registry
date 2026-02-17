@@ -1,205 +1,219 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight, Sun, Moon } from 'lucide-react';
+import {
+  AnimatePresence,
+  motion,
+  MotionConfig,
+  type Transition,
+} from "motion/react";
 
-const transition = {
-  type: "spring",
-  stiffness: 400,
-  damping: 30,
-  mass: 1
-} as const;
+import { useState } from "react";
+import { ArrowRight, X } from "lucide-react";
+import useMeasure from "react-use-measure";
 
 export interface Transaction {
   id: string;
+  icon: React.ReactNode;
   name: string;
   category: string;
   amount: string;
-  icon: React.ReactNode;
   date: string;
   time: string;
   transactionId: string;
   paymentMethod: string;
   cardNumber: string;
-  cardType: 'VISA' | 'MASTERCARD';
+  cardType: string;
 }
 
-interface TransactionListProps {
+const springConfig: Transition = {
+  type: "spring",
+  bounce: 0,
+  duration: 0.6,
+};
+
+const opacityConfig: Transition = {
+  duration: 0.4,
+  ease: [0.19, 1, 0.22, 1],
+};
+
+export function TransactionList({
+  transactions,
+}: {
   transactions: Transaction[];
-}
+}) {
+  const [open, setOpen] = useState<string | null>(null);
+  const isOpen = open === null;
+  const [ref, bounds] = useMeasure();
 
-export const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [isDark, setIsDark] = useState(false);
-  const selectedTransaction = transactions.find((t) => t.id === selectedId);
+  const selected = transactions.find((t) => t.id === open) ?? null;
 
   return (
-    <div className={`flex flex-col items-center justify-center min-h-screen p-4 antialiased transition-colors duration-500 ${isDark ? 'bg-[#0A0A0A]' : 'bg-[#F0ECE6]'}`}>
-      
-      {/* Theme Toggle */}
-      <button 
-        onClick={() => setIsDark(!isDark)}
-        className={`mb-6 p-3 rounded-full transition-all active:scale-90 border ${isDark ? 'bg-[#1C1C1C] border-white/10 text-yellow-400' : 'bg-white border-black/5 text-gray-400 shadow-sm'}`}
+    <MotionConfig transition={springConfig}>
+      <motion.div
+        className="flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-200 dark:bg-zinc-900 dark:border-white/10 shadow-sm"
+        animate={{ height: bounds.height > 0 ? bounds.height : "auto" }}
       >
-        {isDark ? <Sun size={20} /> : <Moon size={20} />}
-      </button>
-
-      <div className="relative w-full max-w-[400px]">
-        
-        {/* Main List View */}
-        <motion.div
-          layout
-          animate={{ 
-            opacity: selectedId ? 0 : 1,
-            scale: selectedId ? 0.9 : 1,
-            filter: selectedId ? "blur(8px)" : "blur(0px)" 
-          }}
-          transition={transition}
-          className={`rounded-[40px] p-6 shadow-sm overflow-hidden transition-colors duration-300 ${isDark ? 'bg-[#1C1C1C]' : 'bg-[#FEFEFE]'}`}
-          style={{ borderRadius: 40, pointerEvents: selectedId ? 'none' : 'auto' }}
-        >
-          <motion.h2 layout="position" className={`font-medium text-[19px] mb-5 px-2 transition-colors ${isDark ? 'text-gray-400' : 'text-[#8F8D8B]'}`}>
-            Transactions
-          </motion.h2>
-
-          <div className="space-y-1">
-            {transactions.map((item) => (
+        <div className="p-3" ref={ref}>
+          <AnimatePresence mode="popLayout">
+            {isOpen ? (
               <motion.div
-                key={item.id}
-                layoutId={`container-${item.id}`} 
-                onClick={() => setSelectedId(item.id)}
-                className={`flex items-center justify-between p-3 -mx-2 cursor-pointer transition-colors ${isDark ? 'hover:bg-white/5 ' : 'hover:bg-gray-50'}`}
-                transition={transition}
+                key="collapsed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={opacityConfig}
+                className="flex w-64 flex-col gap-2"
               >
-                <div className="flex items-center gap-4">
-                  <motion.div 
-                    layoutId={`icon-box-${item.id}`}
-                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${isDark ? 'bg-[#2F2F2F] text-white' : 'bg-[#282825] text-[#F5F3EF]'}`}
-                    transition={transition}
-                  >
-                    {item.icon}
-                  </motion.div>
-                  <div className="flex flex-col">
-                    <motion.span 
-                      layoutId={`name-${item.id}`} 
-                      className={`font-bold text-[17px] origin-left transition-colors ${isDark ? 'text-gray-100' : 'text-[#2F2F2F]'}`}
-                      transition={transition}
-                    >
-                      {item.name}
-                    </motion.span>
-                    <motion.span 
-                      layoutId={`category-${item.id}`} 
-                      className={`text-[15px] origin-left transition-colors ${isDark ? 'text-gray-500' : 'text-[#A4A4A4]'}`}
-                      transition={transition}
-                    >
-                      {item.category}
-                    </motion.span>
-                  </div>
-                </div>
-                <motion.span 
-                  layoutId={`amount-${item.id}`} 
-                  className={`font-medium text-[17px] transition-colors ${isDark ? 'text-gray-400' : 'text-[#8E8F8A]'}`}
-                  transition={transition}
-                >
-                  {item.amount}
-                </motion.span>
+                <span className="font-medium text-zinc-500 dark:text-zinc-100">
+                  Transaction
+                </span>
+
+                {transactions.map((item) => (
+                  <TransactionItem
+                    key={item.id}
+                    data={item}
+                    onClick={() => setOpen(item.id)}
+                  />
+                ))}
+
+                <button className="flex items-center justify-center gap-1 rounded-sm text-zinc-700 dark:text-zinc-200  py-1">
+                  <p className="text-sm ">All transactions</p>
+                  <ArrowRight size={14} />
+                </button>
               </motion.div>
-            ))}
-          </div>
-
-          <motion.button
-            layout="position"
-            className={`w-full mt-6 py-3 rounded-2xl flex items-center justify-center gap-2 font-bold text-[17px] transition-all duration-300 ${
-              isDark ? 'bg-white/5 text-gray-200 hover:bg-white/10' : 'bg-[#F5F1EB] text-[#1C1C1E] hover:bg-gray-200'
-            }`}
-          >
-            All Transactions <ArrowRight size={20} />
-          </motion.button>
-        </motion.div>
-
-        {/* Expanded Detail View */}
-        <AnimatePresence>
-          {selectedId && selectedTransaction && (
-            <div className="absolute inset-0 z-50">
-              <motion.div
-                layoutId={`container-${selectedId}`}
-                className={`w-full rounded-[40px] p-8 shadow-md overflow-hidden transition-colors duration-300 ${isDark ? 'bg-[#1C1C1C]' : 'bg-[#FEFEFE]'}`}
-                style={{ borderRadius: 40 }}
-                transition={transition}
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex flex-col gap-4">
-                    <motion.div 
-                      layoutId={`icon-box-${selectedId}`}
-                      className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors ${isDark ? 'bg-[#2F2F2F] text-white' : 'bg-[#282825] text-white'}`}
-                      transition={transition}
-                    >
-                      <motion.div initial={false} animate={{ scale: 1.2 }}>
-                        {selectedTransaction.icon}
-                      </motion.div>
-                    </motion.div>
-                    <div>
-                      <motion.h3 
-                        layoutId={`name-${selectedId}`} 
-                        className={`font-bold text-[22px] origin-left transition-colors ${isDark ? 'text-white' : 'text-[#282825]'}`}
-                        transition={transition}
-                      >
-                        {selectedTransaction.name}
-                      </motion.h3>
-                      <motion.p 
-                        layoutId={`category-${selectedId}`} 
-                        className={`text-[17px] origin-left transition-colors ${isDark ? 'text-gray-500' : 'text-[#949494]'}`}
-                        transition={transition}
-                      >
-                        {selectedTransaction.category}
-                      </motion.p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-end gap-6">
-                    <button title='close'
-                      onClick={() => setSelectedId(null)}
-                      className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
-                        isDark ? 'bg-white/10 text-gray-400 hover:text-white' : 'bg-[#D1CEC3] text-[#FEFEFE] hover:text-[#b5b2a9]'
-                      }`}
-                    >
-                      <X size={20} strokeWidth={3} />
-                    </button>
-                    <motion.span 
-                      layoutId={`amount-${selectedId}`} 
-                      className={`font-bold text-[22px] transition-colors ${isDark ? 'text-white' : 'text-[#1C1C1E]'}`}
-                      transition={transition}
-                    >
-                      {selectedTransaction.amount}
-                    </motion.span>
-                  </div>
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ delay: 0.15 }}
-                  className={`space-y-4 pt-3.5 border-t-2 border-dashed transition-colors ${isDark ? 'border-white/10' : 'border-[#E9E8ED]'}`}
-                >
-                  <div className="flex justify-between text-[16px]">
-                    <span className={isDark ? 'text-gray-500' : 'text-[#949494]'}>#{selectedTransaction.transactionId}</span>
-                  </div>
-                  <div className="flex flex-col text-[17px]">
-                    <span className={`font-medium transition-colors ${isDark ? 'text-gray-400' : 'text-[#949494]'}`}>{selectedTransaction.date}</span>
-                    <span className={isDark ? 'text-gray-500' : 'text-[#949494]'}>{selectedTransaction.time}</span>
-                  </div>
-                  <div className={`pt-4 border-t-2 border-dashed transition-colors ${isDark ? 'border-white/10' : 'border-[#E9E8ED]'}`}>
-                    <p className={`text-[16px] mb-0.5 transition-colors ${isDark ? 'text-gray-500' : 'text-[#949494]'}`}>Paid Via {selectedTransaction.paymentMethod}</p>
-                    <div className="flex items-center gap-2">
-                      <span className={`font-medium text-[17px] transition-colors ${isDark ? 'text-gray-300' : 'text-[#9B9999]'}`}>XXXX {selectedTransaction.cardNumber}</span>
-                      <span className={`font-bold font-sans italic text-[16px] transition-colors ${isDark ? 'text-gray-400' : 'text-[#595957]/80'}`}>{selectedTransaction.cardType}</span>
-                    </div>
-                  </div>
+            ) : (
+              selected && (
+                <motion.div exit={{ opacity: 0 }}>
+                  <TransactionItemExpanded
+                    data={selected}
+                    onClose={() => setOpen(null)}
+                  />
                 </motion.div>
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
+              )
+            )}
+          </AnimatePresence>
+        </div>
+      </motion.div>
+    </MotionConfig>
+  );
+}
+
+function TransactionItem({
+  data,
+  onClick,
+}: {
+  data: Transaction;
+  onClick: () => void;
+}) {
+  return (
+    <div className="flex w-64 cursor-pointer gap-2" onClick={onClick}>
+      <motion.div
+        className="rounded-full bg-zinc-800 p-1"
+        layoutId={`icon-${data.id}`}
+      >
+        {data.icon}
+      </motion.div>
+
+      <div className="flex flex-1 flex-col text-xs">
+        <motion.p
+          className="font-semibold text-zinc-700dark:text-zinc-100"
+          layoutId={`name-${data.id}`}
+        >
+          {data.name}
+        </motion.p>
+
+        <motion.p
+          className="text-zinc-500 dark:text-zinc-400"
+          layoutId={`category-${data.id}`}
+        >
+          {data.category}
+        </motion.p>
       </div>
+
+      <motion.p
+        className="text-xs text-zinc-500 dark:text-zinc-400"
+        layoutId={`amount-${data.id}`}
+      >
+        {data.amount}
+      </motion.p>
     </div>
   );
-};
+}
+
+function TransactionItemExpanded({
+  data,
+  onClose,
+}: {
+  data: Transaction;
+  onClose: () => void;
+}) {
+  return (
+    <div className="flex w-64 flex-col gap-2 ">
+      <div className="flex justify-between">
+        <motion.div
+          className="rounded-md bg-zinc-800 p-2"
+          layoutId={`icon-${data.id}`}
+        >
+          {data.icon}
+        </motion.div>
+
+        <div
+          className="cursor-pointer rounded-full bg-zinc-300 dark:bg-zinc-700 p-2 flex items-center justify-center self-start"
+          onClick={onClose}
+        >
+          <X className="size-4" />
+        </div>
+      </div>
+
+      <div className="flex justify-between">
+        <div>
+          <motion.p
+            className="font-semibold text-zinc-700 dark:text-zinc-100"
+            layoutId={`name-${data.id}`}
+          >
+            {data.name}
+          </motion.p>
+
+          <motion.p
+            className="text-sm text-zinc-500 dark:text-zinc-400"
+            layoutId={`category-${data.id}`}
+          >
+            {data.category}
+          </motion.p>
+        </div>
+
+        <motion.p layoutId={`amount-${data.id}`}>{data.amount}</motion.p>
+      </div>
+
+      <motion.div
+        className="flex flex-col gap-2 text-xs"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{
+          ...opacityConfig,
+          delay: 0.1,
+        }}
+      >
+        <div className="border border-dashed border-zinc-200 dark:border-white/20" />
+
+        <p className="text-zinc-500 dark:text-zinc-400">
+          #{data.transactionId}
+        </p>
+
+        <p className="text-zinc-500 dark:text-zinc-400">{data.date}</p>
+
+        <p className="text-zinc-500 dark:text-zinc-400">{data.time}</p>
+
+        <div className="border border-dashed border-zinc-200 dark:border-white/20" />
+
+        <p className="text-zinc-500">Paid Via {data.paymentMethod}</p>
+
+        <p className="text-zinc-500 dark:text-zinc-400">
+          XXXX {data.cardNumber}{" "}
+          <span className="font-bold text-black dark:text-zinc-100 uppercase italic">
+            {data.cardType}
+          </span>
+        </p>
+      </motion.div>
+    </div>
+  );
+}

@@ -1,10 +1,14 @@
 "use client";
 
 import { useRef, useState, useEffect, type FC } from "react";
-import { motion, useMotionValue, useSpring, type Spring } from "motion/react";
-import { Sun, Moon } from "lucide-react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  animate,
+  type Transition,
+} from "framer-motion";
 
-/* --- Types & Props --- */
 interface ScrubSliderProps {
   initialValue?: number;
   tickCount?: number;
@@ -14,42 +18,76 @@ interface AnimatedNumberProps {
   value: number;
 }
 
-const SPRING: Spring = {
-  stiffness: 420,
-  damping: 28,
+const SPRING: Transition = {
+  stiffness: 200,
+  damping: 25,
 };
 
-/* --- Sub-Component --- */
 const AnimatedNumber: FC<AnimatedNumberProps> = ({ value }) => {
-  return <>{value}</>;
+  const [display, setDisplay] = useState(value);
+
+  useEffect(() => {
+    const controls = animate(display, value, {
+      duration: 0.2,
+      onUpdate(latest) {
+        setDisplay(Math.round(latest));
+      },
+    });
+
+    return controls.stop;
+  }, [value]);
+
+  return <>{display}</>;
 };
 
-/* --- Main Component --- */
-export const ScrubSlider: FC<ScrubSliderProps> = ({ initialValue = 0, tickCount = 32 }) => {
+export const ScrubSlider: FC<ScrubSliderProps> = ({
+  initialValue = 0,
+  tickCount = 32,
+}) => {
   const sliderRef = useRef<HTMLDivElement>(null);
+
   const x = useMotionValue(0);
   const smoothX = useSpring(x, SPRING);
 
-  const [isDark, setIsDark] = useState<boolean>(false);
-  const [value, setValue] = useState<number>(initialValue);
-  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [value, setValue] = useState(initialValue);
+  const [isDragging, setIsDragging] = useState(false);
+  const [step, setStep] = useState(0);
+  const [sliderLeft, setSliderLeft] = useState(0);
+  const [sliderWidth, setSliderWidth] = useState(0);
+
+  const padding = 16;
 
   useEffect(() => {
-    if (isDark) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [isDark]);
-
-  const updateValue = (clientX: number) => {
     if (!sliderRef.current) return;
 
-    const rect = sliderRef.current.getBoundingClientRect();
-    const padding = 16;
-    const width = rect.width - padding * 2;
+    const measure = () => {
+      const rect = sliderRef.current!.getBoundingClientRect();
 
-    let posX = clientX - rect.left - padding;
-    posX = Math.max(0, Math.min(posX, width));
+      const width = rect.width - padding * 2;
+      const newStep = width / (tickCount - 1);
 
-    const step = width / (tickCount - 1);
+      setSliderLeft(rect.left);
+      setSliderWidth(width);
+      setStep(newStep);
+
+      x.set(initialValue * newStep + padding);
+    };
+
+    measure();
+
+    const resizeObserver = new ResizeObserver(measure);
+    resizeObserver.observe(sliderRef.current);
+
+    return () => resizeObserver.disconnect();
+  }, [tickCount, initialValue, x]);
+
+  const updateValue = (clientX: number) => {
+    if (!step) return;
+
+    let posX = clientX - sliderLeft - padding;
+
+    posX = Math.max(0, Math.min(posX, sliderWidth));
+
     const snappedIndex = Math.round(posX / step);
     const snappedX = snappedIndex * step;
 
@@ -57,22 +95,46 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({ initialValue = 0, tickCount 
     x.set(snappedX + padding);
   };
 
-  return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-zinc-950 transition-colors duration-500">
-      
-      {/* Theme Toggle Button */}
-      <button
-        onClick={() => setIsDark(!isDark)}
-        className="mb-12 p-3 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm active:scale-90 transition-all"
-      >
-        {isDark ? <Sun className="text-yellow-400" size={20} /> : <Moon className="text-zinc-500" size={20} />}
-      </button>
+  useEffect(() => {
+    const move = (e: MouseEvent) => {
+      if (!isDragging) return;
+      updateValue(e.clientX);
+    };
 
+    const up = () => setIsDragging(false);
+
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", up);
+
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", up);
+    };
+  }, [isDragging, step, sliderLeft, sliderWidth]);
+
+  useEffect(() => {
+    const move = (e: TouchEvent) => {
+      if (!isDragging) return;
+      updateValue(e.touches[0].clientX);
+    };
+
+    const end = () => setIsDragging(false);
+
+    window.addEventListener("touchmove", move);
+    window.addEventListener("touchend", end);
+
+    return () => {
+      window.removeEventListener("touchmove", move);
+      window.removeEventListener("touchend", end);
+    };
+  }, [isDragging, step, sliderLeft, sliderWidth]);
+
+  return (
+    <div className="flex w-full flex-col items-center justify-center dark:bg-zinc-950">
       <div className="relative w-full max-w-md select-none">
-        {/* VALUE BUBBLE */}
         <motion.div
           style={{ left: smoothX }}
-          className="absolute -top-12 z-30 -translate-x-1/2 pointer-events-none"
+          className="pointer-events-none absolute -top-12 z-30 -translate-x-1/2"
         >
           <motion.div
             animate={{
@@ -80,47 +142,47 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({ initialValue = 0, tickCount 
               scale: isDragging ? 1.05 : 1,
             }}
             transition={SPRING}
-            className="px-3 py-1.5 rounded-xl bg-gray-900 dark:bg-zinc-100 text-gray-50 dark:text-zinc-950 text-2xl font-semibold shadow-sm"
+            className="rounded-xl bg-gray-900 px-3 py-1.5 text-2xl font-semibold text-white shadow-sm dark:bg-zinc-100 dark:text-zinc-900"
           >
-            <AnimatedNumber value={value} />°C
+            <AnimatedNumber value={value} />
+            °C
           </motion.div>
         </motion.div>
 
-        {/* SLIDER */}
         <div
           ref={sliderRef}
           onMouseDown={(e) => {
             setIsDragging(true);
             updateValue(e.clientX);
           }}
-          onMouseMove={(e) => isDragging && updateValue(e.clientX)}
-          onMouseUp={() => setIsDragging(false)}
-          onMouseLeave={() => setIsDragging(false)}
           onTouchStart={(e) => {
             setIsDragging(true);
             updateValue(e.touches[0].clientX);
           }}
-          onTouchMove={(e) => updateValue(e.touches[0].clientX)}
-          onTouchEnd={() => setIsDragging(false)}
-          className="relative h-24 rounded-3xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-md cursor-pointer overflow-hidden touch-none"
+          className="relative h-24 cursor-pointer touch-none overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-md dark:border-zinc-800 dark:bg-zinc-900"
         >
-          {/* TICKS */}
-          <div className="absolute inset-4 flex">
+          <div className="absolute inset-4">
             {Array.from({ length: tickCount }).map((_, i) => (
-              <div key={i} className="flex-1 flex justify-center">
-                <div className="w-0.5 h-full bg-gray-300 dark:bg-zinc-700 rounded-full" />
-              </div>
+              <div
+                key={i}
+                className="absolute top-0 bottom-0 w-1 -translate-x-1/2 rounded-full bg-gray-300 dark:bg-zinc-700"
+                style={{
+                  left: i * step,
+                }}
+              />
             ))}
           </div>
 
-          {/* ACTIVE LINE */}
           <motion.div
             style={{ left: smoothX }}
-            className="absolute top-4 bottom-4 w-1 bg-black dark:bg-zinc-100 rounded-full"
+            animate={{
+              scaleY: isDragging ? 1.15 : 1,
+            }}
+            transition={SPRING}
+            className="absolute top-4 bottom-4 w-1 -translate-x-1/2 rounded-full bg-black dark:bg-white"
           />
         </div>
       </div>
     </div>
   );
 };
-
