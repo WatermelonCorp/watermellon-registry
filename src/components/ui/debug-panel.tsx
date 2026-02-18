@@ -16,7 +16,7 @@ interface InteractiveDebugPanelProps {
 
 /*  MAIN COMPONENT  */
 
-export const DebugPannel = ({
+export const DebugPanel = ({
   title = "Debug Panel",
   enableClickCount = true,
   enableMouseTracking = true,
@@ -53,11 +53,11 @@ export const DebugPannel = ({
         setCount((prev) => prev + 1);
       }}
       className={cn(
-        "flex size-full flex-col items-center justify-center bg-[#121212] h-screen",
-        className
+        "flex size-full flex-col items-center justify-center h-[400px]",
+        className,
       )}
     >
-      <div className="-mt-36 mb-36 grid content-start justify-items-center gap-6 text-center">
+      <div className="mb-28 grid content-start justify-items-center gap-6 text-center">
         <span className="after:to-foreground relative max-w-[14ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-transparent after:content-['']">
           {title}
         </span>
@@ -83,7 +83,7 @@ export const InteractiveDebugPanel = ({
     <div
       className={cn(
         "z-99 left-4 top-4 font-mono text-sm text-red-500",
-        className
+        className,
       )}
     >
       {"{"}
@@ -95,7 +95,11 @@ export const InteractiveDebugPanel = ({
             {value && typeof value === "object" && "get" in value ? (
               <motion.span>{value}</motion.span>
             ) : typeof value === "boolean" ? (
-              value ? "true" : "false"
+              value ? (
+                "true"
+              ) : (
+                "false"
+              )
             ) : (
               String(value)
             )}
