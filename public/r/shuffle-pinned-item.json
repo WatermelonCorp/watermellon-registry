@@ -1,7 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "shuffle-pinned-item",
-  "dependencies": ["lucide-react", "motion"],
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
   "files": [
     {
       "path": "src/components/ui/shuffle-pinned-item.tsx",

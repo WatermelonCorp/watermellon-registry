@@ -119,61 +119,61 @@
       ]
     },
     {
-      "name": "ai-input",
+      "name": "ai-input-001",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input.tsx",
-          "target": "components/ui/ai-input.tsx",
+          "path": "src/components/ui/ai-input-001.tsx",
+          "target": "components/ui/ai-input-001.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "ai-input002",
+      "name": "ai-input-002",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input002.tsx",
-          "target": "components/ui/ai-input002.tsx",
+          "path": "src/components/ui/ai-input-002.tsx",
+          "target": "components/ui/ai-input-002.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "ai-input003",
+      "name": "ai-input-003",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input003.tsx",
-          "target": "components/ui/ai-input003.tsx",
+          "path": "src/components/ui/ai-input-003.tsx",
+          "target": "components/ui/ai-input-003.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "ai-input004",
+      "name": "ai-input-004",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input004.tsx",
-          "target": "components/ui/ai-input004.tsx",
+          "path": "src/components/ui/ai-input-004.tsx",
+          "target": "components/ui/ai-input-004.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "ai-input005",
+      "name": "ai-input-005",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input005.tsx",
-          "target": "components/ui/ai-input005.tsx",
+          "path": "src/components/ui/ai-input-005.tsx",
+          "target": "components/ui/ai-input-005.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1213,13 +1213,13 @@
       ]
     },
     {
-      "name": "debug-pannel",
+      "name": "debug-panel",
       "type": "registry:ui",
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/debug-pannel.tsx",
-          "target": "components/ui/debug-pannel.tsx",
+          "path": "src/components/ui/debug-panel.tsx",
+          "target": "components/ui/debug-panel.tsx",
           "type": "registry:ui"
         }
       ]
