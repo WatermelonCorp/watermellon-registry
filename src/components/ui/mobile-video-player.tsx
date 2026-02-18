@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState, useRef, useEffect, useCallback, type ChangeEvent, type MouseEvent } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause } from 'lucide-react';
 
 interface ModernVideoPlayerProps {
@@ -93,17 +95,18 @@ export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
   };
 
   return (
-    <div className={`min-h-screen bg-[#050505] text-white flex flex-col items-center justify-center p-6 select-none font-sans ${className}`}>
+    <div className={`min-h-screen w-full flex flex-col items-center justify-center p-6 select-none font-sans transition-colors duration-300 bg-transparent text-[#1a1a1a]  dark:text-white ${className}`}>
 
-      {/* Mobile Mockup with Bezels */}
-      <div className="relative">
-        <div className="relative w-[300px] h-[600px] bg-[#1a1a1a] rounded-[55px] p-[12px] shadow-2xl border-[1px] border-white/10">
+      <div className="relative scale-[0.85] sm:scale-100 transition-transform duration-500">
+        <div className="relative w-70 h-145 sm:w-75 sm:h-150 bg-gray-100 dark:bg-[#1a1a1a] rounded-[55px] p-3 shadow-xl border border-black/5 dark:border-white/10 transition-colors">
 
+          {/* Screen */}
           <div
             className="relative w-full h-full bg-black rounded-[43px] overflow-hidden cursor-pointer"
             onClick={togglePlay}
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[30px] bg-[#1a1a1a] z-50 rounded-b-[20px]" />
+            {/* Notch */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-27.5 sm:w-30 h-6.25 sm:h-7.5 bg-[#1a1a1a] dark:bg-[#0a0a0a] z-50 rounded-b-4xl" />
 
             <video
               ref={videoRef}
@@ -117,7 +120,8 @@ export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
               playsInline
             />
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%-15px)] pointer-events-none z-50">
+            {/* Play/Pause Overlay */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50">
               <AnimatePresence mode="wait">
                 {!isPlaying ? (
                   <motion.div
@@ -125,28 +129,28 @@ export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 1.2, opacity: 0 }}
-                    className="flex items-center justify-center backdrop-blur-xl p-6 rounded-full border border-white/20"
+                    className="flex items-center justify-center backdrop-blur-xl p-6 rounded-full border border-white/20 bg-white/10"
                   >
-                    <Play size={40} className="fill-white text-white" />
+                    <Play size={36} className="fill-white text-white " />
                   </motion.div>
                 ) : (
                   <motion.div
                     key="pause"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
-                    className="flex items-center justify-center backdrop-blur-xl p-6 rounded-full opacity-0 transition-opacity duration-300 border border-white/20"
+                    className="flex items-center justify-center backdrop-blur-xl p-6 rounded-full opacity-0 transition-opacity duration-300 border border-white/20 bg-white/10"
                   >
-                    <Pause size={40} className="fill-white text-white" />
+                    <Pause size={36} className="fill-white text-white" />
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
-
           </div>
         </div>
       </div>
 
-      <div className="w-full max-w-[450px] mt-12 space-y-6">
+      {/* External Controls Area */}
+      <div className="w-full max-w-100 sm:max-w-112.5 mt-8 sm:mt-12 space-y-6">
         <div
           className="relative px-1"
           onMouseMove={handleMouseMove}
@@ -156,6 +160,7 @@ export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
             setHoverProgress(null);
           }}
         >
+          {/* Seek Preview Tooltip */}
           <AnimatePresence>
             {isHovered && hoverProgress !== null && (
               <motion.div
@@ -165,21 +170,22 @@ export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
                 className="absolute z-30 pointer-events-none"
                 style={{ left: hoverX }}
               >
-                <div className="absolute bottom-12 -translate-x-1/2 bg-white text-black px-2 py-1 rounded text-xs font-bold font-mono">
+                <div className="absolute bottom-12 -translate-x-1/2 bg-[#1a1a1a] dark:bg-white text-white dark:text-black px-2 py-1 rounded text-[10px] font-bold font-mono shadow-xl transition-colors">
                   {formatHoverTime(hoverProgress)}
                 </div>
-                <div className="absolute bottom-[-8px] -translate-x-1/2 w-[2px] h-[48px] bg-[#ff6b00]" />
+                <div className="absolute -bottom-2] -translate-x-1/2 w-0.5 h-12 bg-[#ff6b00]" />
               </motion.div>
             )}
           </AnimatePresence>
 
+          {/* Progress Bar Container */}
           <motion.div
             ref={seekBarRef}
-            animate={{ height: isHovered ? 32 : 6 }}
-            className="relative w-full bg-white/10 rounded-lg overflow-hidden flex items-center"
+            animate={{ height: isHovered ? 24 : 6 }}
+            className="relative w-full bg-black/10 dark:bg-white/10 rounded-lg overflow-hidden flex items-center transition-colors"
           >
             <motion.div
-              className="absolute h-full bg-[#C1C1C1]"
+              className="absolute h-full bg-[#1a1a1a] dark:bg-[#C1C1C1]"
               style={{ width: `${progress}%` }}
             />
             <input
@@ -194,7 +200,8 @@ export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
             />
           </motion.div>
 
-          <div className="flex justify-between mt-4 text-xs font-mono text-white/90 tracking-widest">
+          {/* Time Displays */}
+          <div className="flex justify-between mt-4 text-[10px] sm:text-xs font-mono tracking-widest text-[#1a1a1a]/60 dark:text-white/60">
             <span>{formatTime(videoRef.current?.currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
