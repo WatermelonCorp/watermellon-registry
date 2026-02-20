@@ -6,6 +6,15 @@
     "recharts"
   ],
   "registryDependencies": [
+    "avatar",
+    "badge",
+    "button",
+    "chart",
+    "collapsible",
+    "select",
+    "sidebar",
+    "table",
+    "tabs",
     "tooltip"
   ],
   "files": [
