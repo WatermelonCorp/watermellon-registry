@@ -5,7 +5,16 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "sidebar"
+    "avatar",
+    "button",
+    "checkbox",
+    "collapsible",
+    "dialog",
+    "input",
+    "label",
+    "select",
+    "sidebar",
+    "tabs"
   ],
   "files": [
     {
