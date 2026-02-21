@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { type FC } from "react";
-
-/* ---------- Types ---------- */
 
 type ThemeConfig = {
   bg: string;
@@ -21,39 +19,35 @@ interface CarouselNavigatorProps {
   onIndexChange: (index: number) => void;
 }
 
-/* ---------- Defaults ---------- */
-
 const DEFAULT_TOTAL_SLIDES = 4;
 const DEFAULT_AUTO_DELAY = 5000;
 
 const DEFAULT_THEMES: ThemeConfig[] = [
   {
-    bg: "bg-[#F4F4F9]",
-    button: "bg-[#262629]",
-    dot: "bg-[#D5D4E0]",
-    progress: "bg-[#D5D4E0]",
+    bg: "bg-zinc-100",
+    button: "bg-zinc-900",
+    dot: "bg-zinc-300",
+    progress: "bg-zinc-300",
   },
   {
-    bg: "bg-[#E7F1FD]",
-    button: "bg-[#016FFE]",
-    dot: "bg-[#89BCF9]",
-    progress: "bg-[#89BCF9]",
+    bg: "bg-blue-100",
+    button: "bg-blue-600",
+    dot: "bg-blue-300",
+    progress: "bg-blue-300",
   },
   {
-    bg: "bg-[#E0FAE7]",
-    button: "bg-[#2EBE50]",
-    dot: "bg-[#38E363]",
-    progress: "bg-[#38E363]",
+    bg: "bg-green-100",
+    button: "bg-green-600",
+    dot: "bg-green-400",
+    progress: "bg-green-400",
   },
   {
-    bg: "bg-[#FCF5DB]",
-    button: "bg-[#FEC400]",
-    dot: "bg-[#FAD34C]",
-    progress: "bg-[#FAD34C]",
+    bg: "bg-yellow-100",
+    button: "bg-yellow-400",
+    dot: "bg-yellow-300",
+    progress: "bg-yellow-300",
   },
 ];
-
-/* ---------- Component ---------- */
 
 export const CarouselNavigator: FC<CarouselNavigatorProps> = ({
   totalSlides = DEFAULT_TOTAL_SLIDES,
@@ -67,17 +61,15 @@ export const CarouselNavigator: FC<CarouselNavigatorProps> = ({
   const goPrev = () =>
     onIndexChange((currentIndex - 1 + totalSlides) % totalSlides);
 
-  const goNext = () =>
-    onIndexChange((currentIndex + 1) % totalSlides);
+  const goNext = () => onIndexChange((currentIndex + 1) % totalSlides);
 
   return (
     <motion.div
       animate={{
         backgroundColor: theme.bg.replace("bg-[", "").replace("]", ""),
       }}
-      className="flex items-center justify-center gap-1 px-4 py-3 transition-colors duration-500 rounded-full"
+      className="flex items-center justify-center gap-1 rounded-full px-4 py-3 transition-colors duration-300"
     >
-      {/* LEFT */}
       <ArrowButton
         onClick={goPrev}
         themeColor={theme.button}
@@ -86,7 +78,6 @@ export const CarouselNavigator: FC<CarouselNavigatorProps> = ({
         <ChevronLeft size={24} strokeWidth={3} />
       </ArrowButton>
 
-      {/* DOTS */}
       <div className="flex items-center gap-2 px-2">
         {Array.from({ length: totalSlides }).map((_, i) => (
           <Indicator
@@ -99,7 +90,6 @@ export const CarouselNavigator: FC<CarouselNavigatorProps> = ({
         ))}
       </div>
 
-      {/* RIGHT */}
       <ArrowButton onClick={goNext} themeColor={theme.button}>
         <ChevronRight size={24} strokeWidth={3} />
       </ArrowButton>
@@ -107,20 +97,14 @@ export const CarouselNavigator: FC<CarouselNavigatorProps> = ({
   );
 };
 
-/* ---------- Sub Components ---------- */
-
-const ArrowButton = ({
-  children,
-  onClick,
-  themeColor,
-  disabled,
-}: any) => {
+const ArrowButton = ({ children, onClick, themeColor, disabled }: any) => {
   return (
     <motion.button
       onClick={onClick}
       whileTap={{ scale: 0.9 }}
-      className={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-sm transition-colors duration-500
-        ${disabled ? "bg-gray-300 opacity-50 " : themeColor}`}
+      className={`flex h-12 w-12 items-center justify-center rounded-full text-white shadow-sm transition-colors cursor-pointer duration-300 ${
+        disabled ? "bg-gray-300 opacity-50" : themeColor
+      }`}
     >
       {children}
     </motion.button>
@@ -144,16 +128,17 @@ const Indicator = ({
       onClick={onClick}
       layout
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className={`relative h-3 rounded-full cursor-pointer focus:outline-none
-        ${isActive ? `w-12 ${theme.progress}` : `w-3 ${theme.dot}`}
-        transition-colors duration-500`}
+      style={{ borderRadius: 24 }}
+      className={`relative h-3 cursor-pointer  focus:outline-none ${
+        isActive ? `w-12 ${theme.progress}` : `w-3 ${theme.dot}`
+      } transition-colors duration-300`}
     >
       {isActive && (
         <motion.div
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: autoDelay / 1000, ease: "linear" }}
-          className="absolute inset-0 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+          className="absolute inset-0 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]"
         />
       )}
     </motion.button>
