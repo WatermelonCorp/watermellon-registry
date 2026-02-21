@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { FaCheck } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
@@ -65,7 +65,7 @@ export const ProgressiveInputStack: React.FC<ProgressiveInputStackProps> = ({
       <div className="w-full max-w-[350px]">
         <div className="relative flex w-full flex-col gap-8">
           <div className="relative h-[60px] w-full">
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="popLayout" initial={false}>
               {steps.map((step, index) => {
                 if (index > currentStep) return null;
 
@@ -160,7 +160,7 @@ export const ProgressiveInputStack: React.FC<ProgressiveInputStackProps> = ({
               onClick={handleNext}
               className="ml-auto flex h-12 items-center gap-2 overflow-hidden rounded-full bg-black px-5 font-semibold text-white transition hover:opacity-90 dark:bg-zinc-200 dark:text-black"
             >
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence mode="popLayout" initial={false}>
                 {currentStep === steps.length - 1 ? (
                   <motion.div
                     key="done"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, type Transition } from "framer-motion";
+import { motion, AnimatePresence, type Transition } from "motion/react";
 import { Zap } from "lucide-react";
 import { HiBadgeCheck } from "react-icons/hi";
 import { IoCloseSharp } from "react-icons/io5";
@@ -21,7 +21,7 @@ function AnimatedText({
 
   return (
     <span className={className} style={{ display: "inline-flex" }}>
-      <AnimatePresence mode="popLayout">
+      <AnimatePresence mode="popLayout" initial={false}>
         <motion.span
           key={text}
           style={{ display: "inline-flex", willChange: "transform" }}
@@ -132,6 +132,7 @@ export function RunActionButton({
   return (
     <div className="flex items-center justify-center">
       <motion.div
+        initial={{ width: 180 }}
         animate={{ width: widths[status] }}
         transition={spring}
         className={`relative flex h-[64px] items-center justify-between overflow-hidden rounded-full ${
@@ -140,7 +141,7 @@ export function RunActionButton({
             : "border-2 border-transparent"
         } `}
       >
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout" initial={false}>
           {status === "idle" && (
             <motion.button
               key="idle"
