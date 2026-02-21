@@ -5,6 +5,11 @@
     "lucide-react"
   ],
   "registryDependencies": [
+    "breadcrumb",
+    "button",
+    "dropdown-menu",
+    "input",
+    "label",
     "sidebar"
   ],
   "files": [

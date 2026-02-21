@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, type SVGProps } from "react";
+import { useState, useEffect, type SVGProps } from "react";
 import useMeasure from "react-use-measure";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -19,8 +19,6 @@ import {
   Fingerprint,
   Github,
   Chrome,
-  Wallet,
-  Wallet2,
   Twitter,
 } from "lucide-react";
 
@@ -182,7 +180,7 @@ export default function FamilyWallet() {
   const [authType, setAuthType] = useState("email");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [hasWallet, setHasWallet] = useState(false);
+
 
   const [ref, bounds] = useMeasure();
 
@@ -239,11 +237,10 @@ export default function FamilyWallet() {
               )}
 
               <span
-                className={`relative z-10 ${
-                  tab.id === authType
-                    ? "text-zinc-900 dark:text-zinc-100"
-                    : "text-zinc-500 dark:text-zinc-400"
-                }`}
+                className={`relative z-10 ${tab.id === authType
+                  ? "text-zinc-900 dark:text-zinc-100"
+                  : "text-zinc-500 dark:text-zinc-400"
+                  }`}
               >
                 {tab.label}
               </span>

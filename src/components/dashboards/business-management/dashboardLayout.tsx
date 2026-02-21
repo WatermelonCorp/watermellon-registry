@@ -1,15 +1,15 @@
-import { AppSidebar } from "./app-sidebar"
+import { AppSidebar } from "./components/app-sidebar"
 import {
     SidebarInset,
     SidebarProvider,
-} from "@/components/ui/sidebar"
+} from "./components/ui/sidebar"
 
-export const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+export const DashboardLayout = ({ children, onNavigate, currentView }: { children: React.ReactNode; onNavigate?: (view: string) => void; currentView?: string }) => {
     return (
         <SidebarProvider>
-            <AppSidebar />
-            <SidebarInset>
-                <main className="flex-1">
+            <AppSidebar onNavigate={onNavigate} currentView={currentView} />
+            <SidebarInset className="h-svh overflow-hidden">
+                <main className="flex flex-col min-h-0 overflow-hidden flex-1">
                     {children}
                 </main>
             </SidebarInset>
