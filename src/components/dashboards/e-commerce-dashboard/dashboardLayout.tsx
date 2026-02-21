@@ -21,9 +21,9 @@ export const DashboardLayout = ({
       }
     >
       <AppSidebar variant="inset" onNavigate={onNavigate} currentView={currentView} />
-      <SidebarInset>
+      <SidebarInset className="min-w-0">
         <SiteHeader />
-        <div className="flex flex-1 flex-col">{children}</div>
+        <div className="flex flex-1 flex-col min-w-0">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );

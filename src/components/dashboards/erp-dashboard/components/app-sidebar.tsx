@@ -25,8 +25,6 @@ import {
 import { sidebarData } from "../data"
 import { Button } from "./ui/button"
 
-
-
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   onNavigate?: (view: string) => void;
   currentView?: string;

@@ -1,6 +1,5 @@
 "use client"
 
-
 import { salesData, emailData, salesConfig, emailConfig, employees, stats } from "../data"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
@@ -39,8 +38,6 @@ import {
 import { Button } from './ui/button'
 import { Checkbox } from "./ui/checkbox"
 
-
-
 const OverviewTabContent = () => {
     const cardBorderStyles = "relative before:absolute before:inset-0 before:rounded-[inherit] dark:before:border dark:before:border-neutral-800/70 dark:before:[mask-image:linear-gradient(to_bottom,black_20%,transparent_60%)] before:pointer-events-none"
 
@@ -51,17 +48,17 @@ const OverviewTabContent = () => {
                 {stats.map((stat, index) => (
                     <Card
                         key={index}
-                        className={`bg-white dark:bg-neutral-800/40 border border-neutral-200 dark:border-none hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-none rounded-lg pt-4 pb-3 px-4 ${cardBorderStyles}`}
+                        className={`bg-white dark:bg-neutral-800/40 border border-neutral-200 dark:border-none hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-none rounded-lg pt-4 pb-3 px-4 min-w-0 ${cardBorderStyles}`}
                     >
-                        <CardContent className="p-5 flex flex-col gap-3.5 py-0 px-0">
-                            <div className="text-neutral-500 text-[13px] font-medium leading-none tracking-tight">
+                        <CardContent className="p-5 flex flex-col gap-3.5 py-0 px-0 min-w-0">
+                            <div className="text-neutral-500 text-[13px] font-medium leading-none tracking-tight wrap-break-word whitespace-normal">
                                 {stat.title}
                             </div>
-                            <div className="flex items-center justify-between">
-                                <div className="text-neutral-900 dark:text-neutral-100 text-2xl font-semibold tracking-tight">
+                            <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                                <div className="text-neutral-900 dark:text-neutral-100 text-2xl font-semibold tracking-tight break-all whitespace-normal">
                                     {stat.value}
                                 </div>
-                                <div className="flex items-center gap-1.5">
+                                <div className="flex items-center gap-1.5 shrink-0">
                                     <Badge
                                         className={`
                                             rounded border-none px-1 py-0.5 text-[11px] font-medium flex items-center gap-0.5
@@ -88,13 +85,13 @@ const OverviewTabContent = () => {
             </div>
 
             {/* Charts Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-w-0">
                 {/* Sales Performance */}
-                <Card className={`bg-neutral-50/50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-none py-4 px-6 shadow-none rounded-xl ${cardBorderStyles}`}>
-                    <CardHeader className="p-0  flex flex-row items-center justify-between space-y-0">
-                        <CardTitle className="text-neutral-900 dark:text-neutral-100 text-base font-semibold">Sales Performance</CardTitle>
+                <Card className={`bg-neutral-50/50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-none py-4 px-6 shadow-none rounded-xl min-w-0 ${cardBorderStyles}`}>
+                    <CardHeader className="p-0 flex flex-row flex-wrap items-center justify-between gap-4 space-y-0">
+                        <CardTitle className="text-neutral-900 dark:text-neutral-100 text-base font-semibold whitespace-nowrap">Sales Performance</CardTitle>
                         <Select defaultValue="2w">
-                            <SelectTrigger className="h-7! w-fit bg-neutral-100 dark:bg-neutral-800/20! border-[1.5px] border-neutral-200 dark:border-neutral-800 text-neutral-500 font-medium text-xs pl-3 pr-2 gap-1.5 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors focus:ring-0">
+                            <SelectTrigger className="h-7! w-fit shrink-0 bg-neutral-100 dark:bg-neutral-800/20! border-[1.5px] border-neutral-200 dark:border-neutral-800 text-neutral-500 font-medium text-xs pl-3 pr-2 gap-1.5 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors focus:ring-0">
                                 <SelectValue placeholder="Period" />
                             </SelectTrigger>
                             <SelectContent className="bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-neutral-100">
@@ -104,18 +101,18 @@ const OverviewTabContent = () => {
                             </SelectContent>
                         </Select>
                     </CardHeader>
-                    <CardContent className="p-0">
-                        <div className="flex items-center justify-between mb-7">
+                    <CardContent className="p-0 min-w-0 pt-4 sm:pt-6">
+                        <div className="flex overflow-x-auto items-center justify-between gap-6 mb-7 pb-2 -mx-1 px-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                             {[1, 2, 3].map((i) => (
-                                <div key={i} className="flex flex-col gap-1">
-                                    <div className="flex items-center gap-1">
+                                <div key={i} className="flex flex-col gap-1 shrink-0">
+                                    <div className="flex items-center gap-1 shrink-0">
                                         <span className="text-neutral-900 dark:text-neutral-100 text-lg font-medium tracking-tight">$1.843</span>
-                                        <Badge className="bg-transparent text-emerald-500 border-none px-1 py-0 h-4 text-[12px] font-medium flex items-center gap-0.5">
+                                        <Badge className="bg-transparent text-emerald-500 border-none px-1 py-0 h-4 text-[12px] font-medium flex items-center gap-0.5 shrink-0">
                                             <ArrowUp className="size-2.5" strokeWidth={3} />
                                             29%
                                         </Badge>
                                     </div>
-                                    <span className="text-neutral-500 text-[12px] font-medium tracking-tight">Weekly Revenue</span>
+                                    <span className="text-neutral-500 text-[12px] font-medium tracking-tight whitespace-nowrap">Weekly Revenue</span>
                                 </div>
                             ))}
                         </div>
