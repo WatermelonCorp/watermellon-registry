@@ -3,7 +3,6 @@
 import {
   IconArrowNarrowDownDashed,
   IconArrowNarrowRight,
-  IconArrowNarrowUp,
   IconArrowNarrowUpDashed,
   IconTrendingUp,
 } from "@tabler/icons-react";
@@ -36,110 +35,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./components/ui/select";
-
-const dashboardMetrics = [
-  {
-    id: "total-orders",
-    label: "Total orders",
-    value: "12,832",
-    trend: "up",
-    trendValue: "+28.1%",
-    helperText: "+2,123 today",
-  },
-  {
-    id: "total-sales",
-    label: "Total Sales",
-    value: "$12,832.80",
-    trend: "up",
-    trendValue: "+18.8%",
-    helperText: "+$1,895 today",
-  },
-  {
-    id: "visits",
-    label: "Visits",
-    value: "1,062",
-    trend: "down",
-    trendValue: "-10%",
-    helperText: "-426 today",
-  },
-  {
-    id: "conversion-rate",
-    label: "Conversion rate",
-    value: "90%",
-    trend: "up",
-    trendValue: "+12%",
-    helperText: "+42 today",
-  },
-];
-
-const revenueData = [
-  { month: "JAN", profit: 9500, loss: 4200 },
-  { month: "FEB", profit: 13200, loss: 5100 },
-  { month: "MAR", profit: 11800, loss: 4800 },
-  { month: "APR", profit: 15600, loss: 5800 },
-  { month: "MAY", profit: 8900, loss: 4100 },
-  { month: "JUNE", profit: 11200, loss: 4900 },
-];
-
-const transactions = [
-  {
-    id: "#2020912",
-    date: "Apr 29, 2022, 11:37",
-    amount: -299.89,
-    status: "Pending",
-    statusColor: "bg-yellow-100 text-yellow-800 dark:bg-yellow-500/15 dark:text-yellow-400 border-transparent dark:border-yellow-500/20",
-    icon: IconArrowNarrowUp,
-    iconBg: "bg-yellow-100 dark:bg-yellow-500/10",
-  },
-  {
-    id: "#2020911",
-    date: "Apr 29, 2022, 11:37",
-    amount: -130.15,
-    status: "Completed",
-    statusColor: "bg-green-100 text-green-800 dark:bg-green-500/15 dark:text-green-400 border-transparent dark:border-green-500/20",
-    icon: IconArrowNarrowUp,
-    iconBg: "bg-green-100 dark:bg-green-500/10",
-  },
-  {
-    id: "#2020910",
-    date: "Apr 29, 2022, 11:36",
-    amount: -458.13,
-    status: "Scheduled",
-    statusColor: "bg-cyan-100 text-cyan-800 dark:bg-cyan-500/15 dark:text-cyan-400 border-transparent dark:border-cyan-500/20",
-    icon: IconArrowNarrowUp,
-    iconBg: "bg-cyan-100 dark:bg-cyan-500/10",
-  },
-  {
-    id: "#2020909",
-    date: "Apr 29, 2022, 11:36",
-    amount: -210.99,
-    status: "Completed",
-    statusColor: "bg-green-100 text-green-800 dark:bg-green-500/15 dark:text-green-400 border-transparent dark:border-green-500/20",
-    icon: IconArrowNarrowUp,
-    iconBg: "bg-green-100 dark:bg-green-500/10",
-  },
-  {
-    id: "#2070910",
-    date: "Apr 29, 2022, 11:36",
-    amount: -458.13,
-    status: "Scheduled",
-    statusColor: "bg-cyan-100 text-cyan-800 dark:bg-cyan-500/15 dark:text-cyan-400 border-transparent dark:border-cyan-500/20",
-    icon: IconArrowNarrowUp,
-    iconBg: "bg-cyan-100 dark:bg-cyan-500/10",
-  }
-];
-
-const trafficChannelData = [
-  { name: "Direct", value: 55, color: "#3b82f6" },
-  { name: "Organic", value: 20, color: "#93c5fd" },
-  { name: "Referral", value: 25, color: "#dbeafe" },
-];
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./components/ui/table";
+import { dashboardMetrics, revenueData, transactions, trafficChannelData } from "./data";
 
 export const DashboardView = () => {
   return (
-    <div className="w-full h-full flex flex-col gap-4 p-4 lg:p-6">
-      <div className="flex flex-col lg:flex-row gap-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+    <div className="w-full h-full flex flex-col gap-4 p-4 lg:p-6 min-w-0">
+      <div className="flex flex-col xl:flex-row gap-4 min-w-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1 min-w-0">
           {dashboardMetrics.map((metric) => {
             const TrendIcon =
               metric.trend === "up"
@@ -151,16 +61,18 @@ export const DashboardView = () => {
                 className="shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800"
               >
                 <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-neutral-300 dark:border-neutral-800">
-                  <CardHeader className="p-0 gap-1.5">
-                    <CardDescription>{metric.label}</CardDescription>
-                    <CardTitle className="text-3xl font-bold tabular-nums">
+                  <CardHeader className="p-0 gap-1.5 w-full text-left">
+                    <CardDescription className="wrap-break-word whitespace-normal">
+                      {metric.label}
+                    </CardDescription>
+                    <CardTitle className="text-xl sm:text-2xl font-bold tabular-nums break-all whitespace-normal">
                       {metric.value}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex gap-3 items-center p-0">
-                    <div className="flex items-center gap-1">
+                  <CardContent className="flex flex-wrap gap-x-3 gap-y-1.5 items-center p-0 w-full">
+                    <div className="flex items-center gap-1 shrink-0 font-medium whitespace-nowrap">
                       <TrendIcon
-                        className={`size-5 ${metric.trend === "up"
+                        className={`size-5 shrink-0 ${metric.trend === "up"
                           ? "text-green-600"
                           : "text-red-600"
                           }`}
@@ -168,7 +80,7 @@ export const DashboardView = () => {
                       />
                       {metric.trendValue}
                     </div>
-                    <div className="text-muted-foreground">
+                    <div className="text-muted-foreground text-sm leading-tight whitespace-nowrap">
                       {metric.helperText}
                     </div>
                   </CardContent>
@@ -188,7 +100,7 @@ export const DashboardView = () => {
         </div>
 
         {/* Revenue Chart */}
-        <Card className="w-full lg:w-2xl shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800">
+        <Card className="w-full xl:w-2xl min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800">
           <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-5 gap-8 border border-neutral-300 dark:border-neutral-800">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <div>
@@ -311,8 +223,8 @@ export const DashboardView = () => {
         </Card>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-4">
-        <Card className="flex-1 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800">
+      <div className="flex flex-col lg:flex-row gap-4 min-w-0">
+        <Card className="flex-1 min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800">
           <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-neutral-300 dark:border-neutral-800">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <CardTitle className="text-xl font-semibold tracking-tight">
@@ -320,65 +232,63 @@ export const DashboardView = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b dark:border-neutral-800">
-                      <th className="text-left font-medium text-muted-foreground py-3">
-                        Transaction ID
-                      </th>
-                      <th className="text-left font-medium text-muted-foreground py-3">
-                        Date
-                      </th>
-                      <th className="text-center font-medium text-muted-foreground py-3">
-                        Status
-                      </th>
-                      <th className="text-right font-medium text-muted-foreground py-3">
-                        Amount
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {transactions.map((transaction) => (
-                      <tr key={transaction.id} className="">
-                        <td className="py-4">
-                          <div className="flex items-center gap-3">
-                            <div
-                              className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-semibold dark:bg-neutral-800 ${transaction.iconBg}`}
-                            >
-                              <transaction.icon className="size-4 text-neutral-500" />
-                            </div>
-                            <span className="font-medium">
-                              {transaction.id}
-                            </span>
+              <Table>
+                <TableHeader>
+                  <TableRow className="border-b dark:border-neutral-800 hover:bg-transparent">
+                    <TableHead className="font-medium text-muted-foreground w-[220px]">
+                      Transaction ID
+                    </TableHead>
+                    <TableHead className="font-medium text-muted-foreground">
+                      Date
+                    </TableHead>
+                    <TableHead className="text-center font-medium text-muted-foreground">
+                      Status
+                    </TableHead>
+                    <TableHead className="text-right font-medium text-muted-foreground">
+                      Amount
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {transactions.map((transaction) => (
+                    <TableRow key={transaction.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50">
+                      <TableCell className="py-2 lg:py-4">
+                        <div className="flex flex-col xl:flex-row xl:items-center gap-2 xl:gap-3">
+                          <div
+                            className={`w-8 h-8 shrink-0 rounded-lg flex items-center justify-center text-sm font-semibold dark:bg-neutral-800 ${transaction.iconBg}`}
+                          >
+                            <transaction.icon className="size-4 text-neutral-500" />
                           </div>
-                        </td>
-                        <td className="py-4 text-muted-foreground">
-                          {transaction.date}
-                        </td>
-                        <td className="py-4 text-center">
-                          <Badge className={transaction.statusColor}>
-                            {transaction.status}
-                          </Badge>
-                        </td>
-                        <td className="py-4 font-medium text-right">
-                          {transaction.amount}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                          <span className="font-medium whitespace-nowrap">
+                            {transaction.id}
+                          </span>
+                        </div>
+                      </TableCell>
+                      <TableCell className="py-2 lg:py-4 text-muted-foreground whitespace-nowrap">
+                        {transaction.date}
+                      </TableCell>
+                      <TableCell className="py-2 lg:py-4 text-center">
+                        <Badge className={`${transaction.statusColor} shrink-0`}>
+                          {transaction.status}
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="py-2 lg:py-4 font-medium text-right whitespace-nowrap">
+                        {transaction.amount}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </CardContent>
           </div>
         </Card>
 
-        <Card className="w-full lg:w-xl shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800">
+        <Card className="w-full lg:w-xl min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800">
           <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-border">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <CardTitle>Traffic Channel</CardTitle>
               <Select defaultValue="all">
-                <SelectTrigger className="w-24 shadow-none border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-950">
+                <SelectTrigger className="w-24 shrink-0 shadow-none border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-950">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -416,14 +326,14 @@ export const DashboardView = () => {
                   >
                     <div className="flex items-center gap-2">
                       <div
-                        className="w-3 h-3 rounded-full"
+                        className="w-3 h-3 rounded-full shrink-0"
                         style={{ backgroundColor: channel.color }}
                       ></div>
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-sm text-muted-foreground truncate">
                         {channel.name}
                       </span>
                     </div>
-                    <span className="text-sm font-semibold">
+                    <span className="text-sm font-semibold shrink-0">
                       {channel.value}%
                     </span>
                   </div>
