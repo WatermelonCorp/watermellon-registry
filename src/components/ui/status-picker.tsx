@@ -1,144 +1,286 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X, MoreHorizontal, Sun, Moon } from 'lucide-react';
-import { LuCircleDotDashed } from 'react-icons/lu';
+import { CircleDashed, EllipsisIcon, X } from "lucide-react";
+import React from "react";
+import { AnimatePresence, motion } from "motion/react";
 
-export interface StatusOption {
-  id: string;
+export interface StatusPickerItem {
+  id: number;
   emoji: string;
-  label: string;
+  name: string;
 }
 
-interface SetStatusProps {
-  options: StatusOption[];
+interface StatusPickerProps {
+  items: StatusPickerItem[];
+  value?: number;
+  defaultValue?: number;
+  onChange?: (id: number) => void;
 }
 
-export const StatusPicker: React.FC<SetStatusProps> = ({ options }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedStatus, setSelectedStatus] = useState<StatusOption | null>(null);
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const [isDark, setIsDark] = useState(false);
+export const StatusPicker: React.FC<StatusPickerProps> = ({
+  items,
+  value,
+  defaultValue = 0,
+  onChange,
+}) => {
+  const [open, setOpen] = React.useState(false);
+  const [hoveredIdx, setHoveredIdx] = React.useState(0);
+  const [internalStatus, setInternalStatus] = React.useState(defaultValue);
 
-  const handleSelect = (status: StatusOption) => {
-    setSelectedStatus(status);
-    setIsOpen(false);
+  const isControlled = value !== undefined;
+  const status = isControlled ? value : internalStatus;
+
+  const setStatus = (id: number) => {
+    if (!isControlled) setInternalStatus(id);
+    onChange?.(id);
   };
 
-  const handleClear = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setSelectedStatus(null);
-  };
+  const activeItem = items.find((item) => item.id === status);
 
   return (
-    <div className={isDark ? 'dark' : ''}>
-      <div className="min-h-screen bg-[#FEFEFE] dark:bg-[#0F0F12] flex items-center justify-center relative">
-
-        {/*  Theme Toggle */}
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="absolute top-6 right-6 w-11 h-11 rounded-full bg-[#F4F4F9] dark:bg-[#1C1C22] flex items-center justify-center shadow-sm"
-          title="Toggle theme"
+    <div className="flex w-full items-center justify-center">
+      <div className="flex items-center justify-center">
+        <motion.div
+          layout
+          className="relative flex cursor-pointer items-center justify-center gap-1 rounded-full bg-[#F4F4F9] px-4 py-2 dark:bg-zinc-800"
+          onClick={() => {
+            setOpen(!open);
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 18,
+          }}
         >
-          {isDark ? <Sun size={18} className='text-[#F4F4F5]' /> : <Moon size={18} />}
-        </button>
-
-        <div className="relative flex flex-col items-center justify-center">
-
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 15 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 15 }}
-                transition={{ type: "spring", stiffness: 400, damping: 28 }}
-                className="absolute bottom-full mb-4 z-50 p-2.5 py-2.5 rounded-[40px] border-2 border-[#F3F3F3] dark:border-[#2A2A33] bg-white dark:bg-[#14141A] shadow-xs flex items-center gap-2"
-              >
-                {options.map((option) => (
-                  <div key={option.id} className="relative group">
-                    <AnimatePresence>
-                      {hoveredId === option.id && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
-                          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                          exit={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
-                          className="absolute bottom-[70px] left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none whitespace-nowrap"
-                        >
-                          <div className="bg-[#F4F4F9] dark:bg-[#1C1C22] text-[#5D5C61] dark:text-[#E5E7EB] px-[18px] py-3 rounded-full text-[18px] font-bold">
-                            {option.label}
-                          </div>
-                          <div className="flex flex-col items-center -mt-0.75">
-                            <div className="w-3 h-3 bg-[#F4F4F9] dark:bg-[#1C1C22] rounded-full mb-1 ml-[-48px]" />
-                            <div className="w-2 h-2 bg-[#F4F4F9] dark:bg-[#1C1C22] rounded-full ml-[-68px]" />
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    <button
-                      onMouseEnter={() => setHoveredId(option.id)}
-                      onMouseLeave={() => setHoveredId(null)}
-                      onClick={() => handleSelect(option)}
-                      className="w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#F4F4F9] dark:bg-[#1C1C22] hover:bg-[#E8E8F0] dark:hover:bg-[#2A2A33] transition-colors text-2xl"
+          <AnimatePresence mode="popLayout" initial={false}>
+            <motion.div className="relative flex min-w-14 cursor-pointer items-center justify-start gap-1 overflow-hidden">
+              <div className="flex items-center justify-center gap-[4px]">
+                <AnimatePresence mode="popLayout" initial={false}>
+                  {status === 0 ? (
+                    <motion.div
+                      key="default"
+                      className="relative"
+                      initial={{ scale: 0.5, filter: "blur(4px)", opacity: 0 }}
+                      animate={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
+                      exit={{ scale: 0.5, filter: "blur(4px)", opacity: 0 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {option.emoji}
-                    </button>
-                  </div>
-                ))}
+                      <CircleDashed className="size-4 text-sm text-neutral-300" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="size-2 rounded-full border border-neutral-300" />
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key={`${status}-${activeItem?.emoji}`}
+                      className="flex size-6 items-center justify-center"
+                      initial={{ scale: 0.5, filter: "blur(2px)", opacity: 0 }}
+                      animate={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
+                      exit={{ scale: 0.5, filter: "blur(2px)", opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <span>{activeItem?.emoji}</span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-                <button
-                  title="more"
-                  className="w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#F4F4F9] dark:bg-[#1C1C22] hover:bg-[#E8E8F0] dark:hover:bg-[#2A2A33] transition-colors text-[#AFAEB7]"
-                >
-                  <MoreHorizontal size={30} />
-                </button>
+                <span className="flex items-center justify-center text-sm font-medium text-neutral-700 dark:text-zinc-100">
+                  <AnimatePresence mode="popLayout" initial={false}>
+                    {(status !== 0
+                      ? activeItem?.name.split("") ?? []
+                      : "Status".split("")
+                    ).map((item, index) => {
+                      if (item === " ") {
+                        return (
+                          <motion.span
+                            key={`${index}-${status}-space`}
+                            className="inline-block w-[0.3em]"
+                          >
+                            &nbsp;
+                          </motion.span>
+                        );
+                      }
+
+                      return (
+                        <motion.span
+                          key={`${index}-${status}-${item}`}
+                          initial={{
+                            opacity: 0,
+                            y: 5,
+                            filter: "blur(2px)",
+                            scale: 0.8,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            filter: "blur(0px)",
+                            transition: {
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 25,
+                              delay: index * 0.04,
+                            },
+                          }}
+                          exit={{
+                            y: -8,
+                            opacity: 0,
+                            scale: 0.8,
+                            filter: "blur(2px)",
+                            transition: {
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 25,
+                              delay: index * 0.03,
+                            },
+                          }}
+                          className="inline-block tracking-normal"
+                        >
+                          {item}
+                        </motion.span>
+                      );
+                    })}
+                  </AnimatePresence>
+
+                  <AnimatePresence mode="popLayout">
+                    {status !== 0 && (
+                      <motion.span
+                        className="mt-[2px] ml-1 flex items-center justify-center rounded-full bg-gray-300 p-[4px] text-sm font-medium text-neutral-400"
+                        key={`${status}-space`}
+                        initial={{
+                          opacity: 0,
+                          filter: "blur(2px)",
+                          scale: 0.8,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          scale: 1,
+                          filter: "blur(0px)",
+                          transition: {
+                            duration: 0.2,
+                          },
+                        }}
+                        exit={{
+                          opacity: 0,
+                          scale: 0.8,
+                          filter: "blur(4px)",
+                          transition: {
+                            duration: 0.1,
+                          },
+                        }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setStatus(0);
+                        }}
+                      >
+                        <X className="size-2 text-sm text-white" />
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </span>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          <AnimatePresence mode="popLayout">
+            {open && (
+              <motion.div
+                className="absolute -translate-y-[100%] rounded-3xl border border-gray-100 bg-white p-1 dark:border-white/10 dark:bg-zinc-900"
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  filter: "blur(2px)",
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  filter: "blur(0px)",
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  filter: "blur(4px)",
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 18,
+                }}
+              >
+                <div className="flex items-center justify-center gap-1">
+                  {items.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      onMouseEnter={() => {
+                        setHoveredIdx(item.id);
+                      }}
+                      onMouseLeave={() => {
+                        setHoveredIdx(0);
+                      }}
+                      className="group relative flex cursor-pointer items-center justify-center gap-1 rounded-full bg-[#F4F4F9] p-2 dark:border-white/10 dark:bg-white/5"
+                      whileHover={{ y: -2 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 18,
+                      }}
+                    >
+                      <AnimatePresence mode="popLayout">
+                        {hoveredIdx === item.id && (
+                          <motion.div
+                            className="absolute -top-[40px] left-2 -translate-y-2 rounded-full border border-gray-100 bg-[#F4F4F9] dark:border-white/10 dark:bg-white/5"
+                            initial={{
+                              opacity: 0,
+                              scale: 0.5,
+                              filter: "blur(4px)",
+                            }}
+                            animate={{
+                              opacity: 1,
+                              scale: 1,
+                              filter: "blur(0px)",
+                            }}
+                            exit={{
+                              opacity: 0,
+                              scale: 0.5,
+                              filter: "blur(4px)",
+                            }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 23,
+                            }}
+                          >
+                            <div className="relative flex w-full flex-col items-center px-2 py-1">
+                              <div className="text-sm font-medium whitespace-nowrap text-neutral-700 dark:text-zinc-100">
+                                {item.name}
+                              </div>
+
+                              <div className="absolute -bottom-[12px] left-4">
+                                <div className="h-[6px] w-[13px] rounded-b-full border bg-[#F4F4F9] dark:bg-zinc-800" />
+                                <div className="size-1.5 -translate-x-[2px] translate-y-[1px] rounded-full border bg-[#F4F4F9] dark:bg-zinc-800" />
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+
+                      <div
+                        className="flex size-6 items-center justify-center transition-all duration-200 ease-in-out group-hover:scale-110"
+                        onClick={() => {
+                          setStatus(item.id);
+                        }}
+                      >
+                        <div>{item.emoji}</div>
+                      </div>
+                    </motion.div>
+                  ))}
+
+                  <div className="flex items-center justify-center gap-1 rounded-full bg-[#F4F4F9] dark:bg-zinc-800 p-2">
+                    <EllipsisIcon className="size-6 text-sm text-neutral-400" />
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
-
-          {/* Main Button */}
-          <motion.button
-            layout
-            onClick={() => !selectedStatus && setIsOpen(!isOpen)}
-            className="group relative flex items-center gap-2.5 px-6 py-4 bg-[#F4F4F9] dark:bg-[#1C1C22] border-2 border-[#F5F5FA] dark:border-[#2A2A33] rounded-full shadow-sm transition-all duration-300 min-w-[160px] justify-center active:scale-95"
-          >
-            <AnimatePresence mode="popLayout">
-              {!selectedStatus ? (
-                <motion.div
-                  key="default"
-                  initial={{ opacity: 0, filter: 'blur(6px)', scale: 0.9 }}
-                  animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
-                  exit={{ opacity: 0, filter: 'blur(6px)', scale: 0.9 }}
-                  className="flex items-center gap-2.5"
-                >
-                  <LuCircleDotDashed size={28} strokeWidth={2.5} className="text-[#B5B4BC] group-hover:rotate-45 transition-transform duration-500" />
-                  <span className="font-bold tracking-normal text-xl text-[#232328] dark:text-[#F4F4F5]">
-                    Set Status
-                  </span>
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="active"
-                  initial={{ opacity: 0, filter: 'blur(6px)', scale: 0.9 }}
-                  animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
-                  exit={{ opacity: 0, filter: 'blur(6px)', scale: 0.9 }}
-                  className="flex items-center gap-2.5"
-                >
-                  <span className="text-2xl">{selectedStatus.emoji}</span>
-                  <span className="font-bold tracking-normal text-xl text-[#232328] dark:text-[#F4F4F5]">
-                    {selectedStatus.label}
-                  </span>
-                  <button
-                    title="close"
-                    onClick={handleClear}
-                    className="ml-1 p-1 bg-[#D6D5E1] dark:bg-[#2A2A33] rounded-full transition-colors"
-                  >
-                    <X size={16} strokeWidth={4} className="text-[#f4f2f2]" />
-                  </button>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

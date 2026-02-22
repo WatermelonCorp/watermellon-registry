@@ -1,10 +1,15 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+import { Undo2 } from "lucide-react";
 import { useEffect, useState, type FC, type ReactNode } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { HiMiniArrowUturnLeft } from "react-icons/hi2";
-
-/* ---------- TYPES ---------- */
+import {
+  AnimatePresence,
+  motion,
+  MotionConfig,
+  type Variants,
+} from "framer-motion";
+import useMeasure from "react-use-measure";
 
 export interface TimedUndoActionProps {
   initialSeconds?: number;
@@ -13,110 +18,240 @@ export interface TimedUndoActionProps {
   icon?: ReactNode;
 }
 
-/* ---------- MAIN COMPONENT ---------- */
-
 export const TimedUndoAction: FC<TimedUndoActionProps> = ({
   initialSeconds = 10,
   deleteLabel = "Delete Account",
-  undoLabel = "Cancel Deletion",
-  icon = <HiMiniArrowUturnLeft size={18} strokeWidth={0.5} />,
+  undoLabel = "Cancel Delete",
+  icon,
 }) => {
-  const [undo, setUndo] = useState(false);
-  const [count, setCount] = useState(initialSeconds - 1);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [countDown, setCountDown] = useState(initialSeconds);
+  const [ref, bounds] = useMeasure({ offsetSize: true });
 
+  const handleDelete = () => {
+    setIsDeleting((prev) => {
+      const next = !prev;
 
-  // Countdown logic
+      if (next) {
+        setCountDown(initialSeconds);
+      }
+
+      return next;
+    });
+  };
+
   useEffect(() => {
-    if (!undo) return;
+    if (!isDeleting) return;
 
-    if (count === 0) {
-      setUndo(false);
-      setCount(initialSeconds);
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      setCount((c) => c - 1);
+    const interval = setInterval(() => {
+      setCountDown((prev) => {
+        if (prev <= 1) {
+          setIsDeleting(false);
+          return initialSeconds;
+        }
+        return prev - 1;
+      });
     }, 1000);
 
-    return () => clearTimeout(timer);
-  }, [undo, count, initialSeconds]);
-
-  const startUndo = () => {
-    setUndo(true);
-    setCount(initialSeconds);
-  };
-
-  const cancelUndo = () => {
-    setUndo(false);
-    setCount(initialSeconds);
-  };
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isDeleting, initialSeconds]);
 
   return (
-    <div className="flex flex-col w-full justify-center items-center h-screen bg-white dark:bg-zinc-950 transition-colors duration-500 gap-12">
-
-      <motion.div
-        layout="position"
-        transition={{ type: "spring", stiffness: 220, damping: 26 }}
-        className="relative"
-      >
-        <AnimatePresence mode="wait">
-          {!undo ? (
-            /* DELETE BUTTON */
-            <motion.button
-              key="delete"
-              onClick={startUndo}
-              initial={{ opacity: 0, y: 4, filter: "blur(6px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -4, filter: "blur(6px)" }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              whileHover={{ scale: 1.04, y: -1 }}
-              whileTap={{ scale: 0.96 }}
-              className="h-14 px-10 rounded-full bg-[#FE3429] dark:bg-red-600
-                         text-white text-lg font-semibold shadow-lg shadow-red-500/20 dark:shadow-red-900/30 cursor-pointer"
+    <div className="font-sans flex  w-full items-center justify-center">
+      <div className="flex  flex-col items-center justify-center will-change-transform">
+        <MotionConfig
+          transition={{
+            type: "spring",
+            stiffness: 250,
+            damping: 22,
+          }}
+        >
+          <motion.div
+            className={cn(
+              "flex cursor-pointer items-center justify-start overflow-hidden rounded-full transition-colors duration-700 ease-out"
+            )}
+            animate={{
+              width: bounds.width,
+              backgroundColor: isDeleting ? "#FDEFF1" : "#FD2420",
+            }}
+            onClick={handleDelete}
+          >
+            <div
+              className="flex items-center justify-center gap-2 px-3 py-1"
+              ref={ref}
             >
-              {deleteLabel}
-            </motion.button>
-          ) : (
-            /* UNDO BUTTON */
-            <motion.button
-              key="undo"
-              onClick={cancelUndo}
-              initial={{ opacity: 0, y: 4, filter: "blur(6px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -4, filter: "blur(6px)" }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              whileHover={{ scale: 1.03, y: -1 }}
-              whileTap={{ scale: 0.96 }}
-              className="flex items-center gap-3.5 h-14 pl-3 pr-3 rounded-full
-                         bg-[#FEF0F1] dark:bg-red-950/30 text-[#FE3429] dark:text-red-400
-                         border border-red-100 dark:border-red-900/30 font-semibold shadow-sm cursor-pointer"
-            >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FE3429] dark:bg-red-500 text-white shadow-sm">
-                {icon}
-              </span>
-
-              <span className="text-lg font-bold">{undoLabel}</span>
-
-              {/* COUNTDOWN */}
-              <div className="relative ml-2 h-8 w-10 overflow-hidden rounded-full bg-[#FE3429] dark:bg-red-500 text-white shadow-inner">
-                <AnimatePresence mode="popLayout">
-                  <motion.span
-                    key={count}
-                    initial={{ y: -20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 20, opacity: 0 }}
-                    transition={{ type: "spring", stiffness: 320, damping: 20 }}
-                    className="absolute inset-0 flex items-center justify-center text-base font-mono"
+              {/* ICON */}
+              <AnimatePresence mode="popLayout">
+                {isDeleting && (
+                  <motion.div
+                    className="rounded-full bg-red-500 p-2"
+                    initial={{
+                      opacity: 0,
+                      filter: "blur(2px)",
+                    }}
+                    animate={{
+                      opacity: 1,
+                      filter: "blur(0px)",
+                    }}
+                    exit={{
+                      opacity: 0,
+                      filter: "blur(2px)",
+                    }}
                   >
-                    {count}
-                  </motion.span>
-                </AnimatePresence>
+                    {icon ?? <Undo2 className="size-3 text-white" />}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <div className="flex items-center justify-center gap-2">
+                <TextAnimated
+                  isDeleting={isDeleting}
+                  deleteLabel={deleteLabel}
+                  undoLabel={undoLabel}
+                />
               </div>
-            </motion.button>
-          )}
-        </AnimatePresence>
-      </motion.div>
+
+              <AnimatePresence mode="popLayout">
+                {isDeleting && (
+                  <motion.div
+                    className="flex h-6 w-8 items-center justify-center rounded-xl bg-red-500 text-zinc-50"
+                    initial={{
+                      opacity: 0,
+                      filter: "blur(2px)",
+                    }}
+                    animate={{
+                      opacity: 1,
+                      filter: "blur(0px)",
+                    }}
+                    exit={{
+                      opacity: 0,
+                      filter: "blur(2px)",
+                    }}
+                  >
+                    <AnimatePresence mode="popLayout">
+                      <motion.span
+                        key={countDown}
+                        className="text-[12px]"
+                        initial={{
+                          opacity: 0,
+                          y: -10,
+                          filter: "blur(2px)",
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          filter: "blur(0px)",
+                        }}
+                        exit={{
+                          opacity: 0,
+                          y: 10,
+                          filter: "blur(2px)",
+                        }}
+                      >
+                        {countDown}
+                      </motion.span>
+                    </AnimatePresence>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        </MotionConfig>
+      </div>
     </div>
   );
 };
+
+interface TextAnimatedProps {
+  isDeleting: boolean;
+  deleteLabel: string;
+  undoLabel: string;
+}
+
+export const TextAnimated: FC<TextAnimatedProps> = ({
+  isDeleting,
+  deleteLabel,
+  undoLabel,
+}) => {
+  const word = isDeleting ? undoLabel : deleteLabel;
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.02,
+      },
+    },
+    exit: {
+      transition: {
+        staggerChildren: 0.02,
+        staggerDirection: 1,
+      },
+    },
+  };
+
+  const letterVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 10,
+      scale: 0.8,
+      filter: "blur(2px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        mass: 0.1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -10,
+      scale: 0.8,
+      filter: "blur(2px)",
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        mass: 0.1,
+      },
+    },
+  };
+
+  return (
+    <div className="relative flex h-10 items-center justify-center overflow-hidden will-change-transform">
+      <AnimatePresence mode="popLayout">
+        <motion.div
+          key={word}
+          variants={containerVariants}
+          initial={false}
+          animate="visible"
+          exit="exit"
+          className="flex"
+        >
+          {word.split("").map((char, i) => (
+            <motion.span
+              key={i}
+              variants={letterVariants}
+              className={cn(
+                "text-lg font-medium",
+                isDeleting ? "text-red-400" : "text-zinc-50"
+              )}
+            >
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export default TimedUndoAction;

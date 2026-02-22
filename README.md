@@ -1,90 +1,88 @@
-# React + TypeScript + Vite
+# Watermelon UI Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collection of re-usable UI components for your React applications.
 
-Currently, two official plugins are available:
+[ui.watermelon.sh](https://ui.watermelon.sh)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Dashboards
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing (Adding Components)](#contributing-adding-components)
+- [Registry Structure](#registry-structure)
 
-This registry includes pre-built dashboards that you can add to your project.
+## Introduction
 
-### Sales Admin Panel
+This registry provides a set of copy-pasteable components that you can easily integrate into your projects. It is built to work seamlessly with modern React stacks, typically leveraging Tailwind CSS and sometimes Framer Motion or other libraries.
 
-A comprehensive sales dashboard with sidebar navigation, data tables, charts (using CSS/Divs), and filtering.
+## Installation
 
-To add this dashboard to your project:
+You can add components to your project using the `shadcn` CLI (or compatible tools) by pointing to this registry.
 
 ```bash
-npx shadcn@latest add sales-admin-panel
+npx shadcn@latest add  https://registry.watermelon.sh/<component-name>.json
 ```
 
-**Note:** Ensure you have the necessary registry dependencies installed (sidebar, button, badge, etc.). The command above should handle it if your registry is correctly configured.
+Alternatively, for local development or manual usage, you can simply copy the component files from `src/components/ui` into your project.
 
-## React Compiler
+## Usage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Once a component is added to your project, you can import and use it like any other React component.
 
-## Expanding the ESLint configuration
+```tsx
+import { Button } from "@/components/ui/button";
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+export default function App() {
+  return <Button>Click me</Button>;
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Contributing (Adding Components)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To add a new component to this registry, follow these steps:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Create the Component
+
+Create your component file in the `src/components/ui/` directory.
+
+- **Path**: `src/components/ui/<component-name>.tsx`
+- **Naming Convention**: Use `kebab-case` for filenames (e.g., `my-new-component.tsx`).
+
+Example `src/components/ui/my-new-component.tsx`:
+
+```tsx
+import * as React from "react";
+
+export function MyNewComponent() {
+  return <div>Hello World</div>;
+}
 ```
+
+### 2. Sync the Registry
+
+Run the registry synchronization script to automatically add your new component to `registry.json`. This script scans the `src/components/ui` directory, detects dependencies, and updates the registry configuration.
+
+```bash
+node scripts/sync-registry.js
+```
+
+You should see output indicating that your component has been added:
+
+```
+Reading registry.json...
+Listing UI components...
+Found missing component: my-new-component.tsx
+Adding 1 new components to registry...
+Done!
+```
+
+### 3. Verify
+
+Check `registry.json` to ensure your component has been added correctly with the appropriate dependencies.
+
+## Registry Structure
+
+- **`registry.json`**: The main configuration file that lists all available components, their dependencies, and file paths.
+- **`src/components/ui/`**: The directory containing the source code for all UI components.
+- **`scripts/sync-registry.js`**: The automation script that updates `registry.json` based on the files in `src/components/ui/`.

@@ -1,14 +1,8 @@
 "use client";
 
-import React, {
-  type FC,
-  useState,
-  useRef,
-  useCallback,
-} from "react";
-import { motion } from "framer-motion";
+import React, { type FC, useState, useRef, useCallback } from "react";
+import { motion, useMotionValue, useTransform } from "motion/react";
 
-/* ---------- Types ---------- */
 interface DigitColumnProps {
   digit: number;
   height: number;
@@ -40,13 +34,10 @@ export interface PriceRangeCardProps {
 
 type DragType = "min" | "max" | null;
 
-/* ---------- Utils ---------- */
 function cn(...classes: Array<string | false | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
-/* ---------- Rolling Digits ---------- */
-// We use a height that aligns with responsive text sizes
 const DigitColumn: FC<DigitColumnProps> = ({ digit, height }) => {
   return (
     <div
@@ -61,13 +52,13 @@ const DigitColumn: FC<DigitColumnProps> = ({ digit, height }) => {
           damping: 22,
           mass: 0.6,
         }}
-        className="absolute left-0 top-0 flex flex-col items-center w-full"
+        className="absolute top-0 left-0 flex w-full flex-col items-center"
       >
         {Array.from({ length: 10 }).map((_, i) => (
           <span
             key={i}
             style={{ height: height }}
-            className="flex items-center justify-center w-full"
+            className="flex w-full items-center justify-center"
           >
             {i}
           </span>
@@ -82,16 +73,19 @@ export const RollingNumber: FC<RollingNumberProps> = ({
   prefix = "",
 }) => {
   const formatted = prefix + value.toLocaleString();
-  const hClass = "h-[24px] sm:h-[32px]";
+  const height =
+    typeof window !== "undefined" && window.innerWidth < 640 ? 24 : 32;
 
   return (
-    <div className={cn(
-      "flex items-center font-bold leading-none tabular-nums text-[#010103] dark:text-zinc-100",
-      hClass
-    )}>
+    <div
+      className={cn(
+        "flex items-center leading-none font-bold text-[#010103] tabular-nums dark:text-neutral-100",
+        "h-[24px] sm:h-[32px]"
+      )}
+    >
       {formatted.split("").map((char, index) => {
         const isNumber = !isNaN(parseInt(char, 10));
-        
+
         if (!isNumber) {
           return (
             <span key={index} className="px-px">
@@ -100,19 +94,12 @@ export const RollingNumber: FC<RollingNumberProps> = ({
           );
         }
 
-        return (
-          <DigitColumn 
-            key={index} 
-            digit={Number(char)} 
-            height={typeof window !== 'undefined' && window.innerWidth < 640 ? 24 : 32} 
-          />
-        );
+        return <DigitColumn key={index} digit={Number(char)} height={height} />;
       })}
     </div>
   );
 };
 
-/* ---------- Range Slider ---------- */
 const RangeSlider: FC<RangeSliderProps> = ({
   min,
   max,
@@ -120,10 +107,10 @@ const RangeSlider: FC<RangeSliderProps> = ({
   value,
   onChange,
 }) => {
-  const [dragging, setDragging] = useState<DragType>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const dragging = useRef<DragType>(null);
 
-  const getPercent = useCallback(
+  const percentFromValue = useCallback(
     (v: number) => ((v - min) / (max - min)) * 100,
     [min, max]
   );
@@ -139,65 +126,89 @@ const RangeSlider: FC<RangeSliderProps> = ({
     [min, max, step]
   );
 
-  const handleMove = (e: React.PointerEvent) => {
-    if (!dragging) return;
-    const v = valueFromX(e.clientX);
+  const minPercent = useMotionValue(0);
+  const maxPercent = useMotionValue(0);
 
-    if (dragging === "min") {
-      onChange([Math.min(v, value[1] - step), value[1]]);
+  const minP = percentFromValue(value[0]);
+  const maxP = percentFromValue(value[1]);
+
+  if (minPercent.get() !== minP) {
+    minPercent.set(minP);
+  }
+
+  if (maxPercent.get() !== maxP) {
+    maxPercent.set(maxP);
+  }
+
+  const rangeLeft = useTransform(minPercent, (v) => `${v}%`);
+  const rangeWidth = useTransform([minPercent, maxPercent], (latest) => {
+    const minV = Number(latest[0]);
+    const maxV = Number(latest[1]);
+    return `${maxV - minV}%`;
+  });
+
+  const thumbMinLeft = useTransform(minPercent, (v) => `calc(${v}% - 16px)`);
+  const thumbMaxLeft = useTransform(maxPercent, (v) => `calc(${v}% - 16px)`);
+
+  const handleMove = (e: React.PointerEvent) => {
+    if (!dragging.current) return;
+
+    const newValue = valueFromX(e.clientX);
+
+    if (dragging.current === "min") {
+      const clamped = Math.min(newValue, value[1] - step);
+      onChange([clamped, value[1]]);
     } else {
-      onChange([value[0], Math.max(v, value[0] + step)]);
+      const clamped = Math.max(newValue, value[0] + step);
+      onChange([value[0], clamped]);
     }
   };
 
-  const stop = () => setDragging(null);
-
-  const minP = getPercent(value[0]);
-  const maxP = getPercent(value[1]);
+  const stop = () => {
+    dragging.current = null;
+  };
 
   return (
     <div
-      className="relative flex h-14 w-full items-center touch-none select-none"
+      className="relative flex h-14 w-full touch-none items-center select-none"
       onPointerMove={handleMove}
       onPointerUp={stop}
       onPointerLeave={stop}
     >
       <div
         ref={trackRef}
-        className="absolute h-2 w-full rounded-full bg-gray-200 dark:bg-zinc-800"
+        className="absolute h-2 w-full rounded-full bg-gray-200 dark:bg-neutral-800"
       >
         <motion.div
-          className="absolute h-full rounded-full bg-zinc-800 dark:bg-zinc-300"
-          animate={{ left: `${minP}%`, width: `${maxP - minP}%` }}
+          className="absolute h-full rounded-full bg-neutral-800 dark:bg-neutral-300"
+          style={{
+            left: rangeLeft,
+            width: rangeWidth,
+          }}
         />
       </div>
 
-      {(["min", "max"] as const).map((type) => {
-        const left = type === "min" ? minP : maxP;
+      <motion.div
+        onPointerDown={(e) => {
+          (e.target as HTMLElement).setPointerCapture(e.pointerId);
+          dragging.current = "min";
+        }}
+        className="absolute h-8 w-8 cursor-grab rounded-full border-[6px] border-[#010103] bg-[#FEFEFE] shadow-2xl active:cursor-grabbing dark:border-neutral-300 dark:bg-neutral-800"
+        style={{ left: thumbMinLeft }}
+      />
 
-        return (
-          <motion.div
-            key={type}
-            onPointerDown={(e) => {
-              (e.target as HTMLElement).setPointerCapture(e.pointerId);
-              setDragging(type);
-            }}
-            className={cn(
-              "absolute h-8 w-8 rounded-full cursor-grab active:cursor-grabbing",
-              "bg-[#FEFEFE] dark:bg-zinc-800",
-              "border-[6px] border-[#010103] dark:border-zinc-300",
-              "shadow-2xl",
-              dragging === type && "z-20 scale-110"
-            )}
-            style={{ left: `calc(${left}% - 16px)` }}
-          />
-        );
-      })}
+      <motion.div
+        onPointerDown={(e) => {
+          (e.target as HTMLElement).setPointerCapture(e.pointerId);
+          dragging.current = "max";
+        }}
+        className="absolute h-8 w-8 cursor-grab rounded-full border-[6px] border-[#010103] bg-[#FEFEFE] shadow-2xl active:cursor-grabbing dark:border-neutral-300 dark:bg-neutral-800"
+        style={{ left: thumbMaxLeft }}
+      />
     </div>
   );
 };
 
-/* ---------- Main ---------- */
 export const PriceRangeCard: FC<PriceRangeCardProps> = ({
   defaultRange = [800, 2400],
   min = 0,
@@ -210,10 +221,10 @@ export const PriceRangeCard: FC<PriceRangeCardProps> = ({
   const [range, setRange] = useState<[number, number]>(defaultRange);
 
   return (
-    <div className="flex w-full items-center justify-center bg-transparent transition-colors duration-500 lg:px-4 py-6">
-      <div className="w-full max-w-88 sm:max-w-sm overflow-hidden rounded-[2rem] border border-[#F0F0F0] dark:border-zinc-800 bg-[#FEFEFE] dark:bg-zinc-900 shadow-xl">
+    <div className="flex w-full items-center justify-center bg-transparent py-6 lg:px-4">
+      <div className="w-full max-w-88 overflow-hidden rounded-[2rem] border border-[#F0F0F0] bg-[#FEFEFE] shadow-xl sm:max-w-sm dark:border-neutral-800 dark:bg-neutral-900">
         <div className="flex flex-col gap-4 p-5 sm:p-6">
-          <h2 className="text-xl font-extrabold tracking-tight text-[#010103] dark:text-zinc-100">
+          <h2 className="text-xl font-extrabold tracking-tight text-[#010103] dark:text-neutral-100">
             Price Range
           </h2>
 
@@ -225,16 +236,16 @@ export const PriceRangeCard: FC<PriceRangeCardProps> = ({
             onChange={setRange}
           />
 
-          <div className="flex flex-col gap-3 sm:gap-4 mt-2">
+          <div className="mt-2 flex flex-col gap-3 sm:gap-4">
             {(["From", "To"] as const).map((label, i) => (
               <div
                 key={label}
-                className="rounded-2xl bg-[#F4F4FB] dark:bg-zinc-800/50 p-4 transition-colors flex flex-col gap-1"
+                className="flex flex-col gap-1 rounded-2xl bg-[#F4F4FB] p-4 dark:bg-neutral-800/50"
               >
-                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#76767D] dark:text-zinc-500">
+                <span className="text-[10px] font-bold tracking-wider text-[#76767D] uppercase sm:text-xs dark:text-neutral-500">
                   {label}
                 </span>
-                <div className="text-xl sm:text-2xl font-bold">
+                <div className="text-xl font-bold sm:text-2xl">
                   <RollingNumber value={range[i]} prefix={prefix} />
                 </div>
               </div>
@@ -242,21 +253,20 @@ export const PriceRangeCard: FC<PriceRangeCardProps> = ({
           </div>
         </div>
 
-        <div className="flex gap-3 sm:gap-4 px-5 sm:px-6 pb-6 pt-2">
+        <div className="flex gap-3 px-5 pt-2 pb-6 sm:gap-4 sm:px-6">
           <button
-            className="flex-1 bg-[#000002] dark:bg-zinc-100 hover:bg-[#000002dd] dark:hover:bg-white text-[#FEFEFE] dark:text-zinc-950 py-2.5 rounded-full text-sm sm:text-base transition-all active:scale-95"
+            className="flex-1 rounded-full bg-[#000002] py-2.5 text-sm text-[#FEFEFE] active:scale-95 sm:text-base dark:bg-neutral-100 dark:text-neutral-950"
             onClick={() => onApply?.(range)}
           >
             Apply
           </button>
-          
 
           <button
             onClick={() => {
               setRange(defaultRange);
               onCancel?.(defaultRange);
             }}
-            className="flex-1 rounded-full border border-[#E4E4E9] dark:border-zinc-700 py-2.5 text-sm sm:text-base font-bold text-[#69686F] dark:text-zinc-400 transition-all active:scale-95 hover:bg-gray-50 dark:hover:bg-zinc-800"
+            className="flex-1 rounded-full border border-[#E4E4E9] py-2.5 text-sm font-bold text-[#69686F] hover:bg-gray-50 active:scale-95 sm:text-base dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800"
           >
             Cancel
           </button>

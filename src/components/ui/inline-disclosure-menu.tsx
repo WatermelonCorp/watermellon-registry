@@ -10,9 +10,14 @@ import {
   PencilEdit02Icon,
   Share01Icon,
 } from "@hugeicons/core-free-icons";
-import { AnimatePresence, LayoutGroup, motion, type Transition, type Variants } from "motion/react";
+import {
+  AnimatePresence,
+  LayoutGroup,
+  motion,
+  type Transition,
+  type Variants,
+} from "motion/react";
 
-/* ---------- Types ---------- */
 export interface MenuItemProps {
   icon: React.ReactNode;
   label: string;
@@ -26,15 +31,45 @@ export interface InlineDisclosureMenuProps {
   onDelete?: () => void;
 }
 
-/* ---------- Motion ---------- */
-const spring: Transition = { type: "spring", stiffness: 320, damping: 26 };
+const spring: Transition = {
+  type: "spring",
+  bounce: 0,
+  duration: 0.4,
+};
 
 const menuVariants: Variants = {
   hidden: { opacity: 0, scale: 0.94 },
   visible: { opacity: 1, scale: 1, transition: spring },
 };
 
-/* ---------- Item ---------- */
+const deleteVariants: Variants = {
+  initial: (confirm: boolean) => ({
+    y: confirm ? 60 : -60,
+  }),
+  animate: {
+    y: 0,
+    transition: spring,
+  },
+  exit: (confirm: boolean) => ({
+    y: confirm ? -60 : 60,
+    transition: spring,
+  }),
+};
+
+const confirmVariants: Variants = {
+  initial: (confirm: boolean) => ({
+    y: confirm ? 60 : -60,
+  }),
+  animate: {
+    y: 0,
+    transition: spring,
+  },
+  exit: (confirm: boolean) => ({
+    y: confirm ? -60 : 60,
+    transition: spring,
+  }),
+};
+
 const MenuItem: React.FC<MenuItemProps> = ({
   icon,
   label,
@@ -43,23 +78,21 @@ const MenuItem: React.FC<MenuItemProps> = ({
 }) => (
   <button
     onClick={onClick}
-    className={`w-full flex items-center gap-3 sm:gap-4
-      px-3 py-2 rounded-xl
-      text-[#363538] dark:text-zinc-200
-      hover:bg-[#F6F5FA] dark:hover:bg-zinc-800
-      transition-colors text-left ${className}`}
+    className={`flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-[#363538] transition-colors hover:bg-[#F6F5FA] sm:gap-4 dark:text-zinc-200 dark:hover:bg-zinc-800 ${className}`}
   >
     <span className="text-gray-500 dark:text-zinc-400">{icon}</span>
-    <span className="text-base sm:text-[18px] font-medium tracking-tight">
+    <span className="text-base font-medium tracking-tight sm:text-[18px]">
       {label}
     </span>
   </button>
 );
 
-/* ---------- Main ---------- */
 export function InlineDisclosureMenu({
   menuItems = [
-    { icon: <HugeiconsIcon icon={PencilEdit02Icon} size={24} />, label: "Edit" },
+    {
+      icon: <HugeiconsIcon icon={PencilEdit02Icon} size={24} />,
+      label: "Edit",
+    },
     { icon: <HugeiconsIcon icon={Copy01Icon} size={24} />, label: "Duplicate" },
     {
       icon: <HugeiconsIcon icon={FavouriteIcon} size={24} />,
@@ -74,7 +107,6 @@ export function InlineDisclosureMenu({
   const [confirm, setConfirm] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
-  /* click outside */
   React.useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -87,22 +119,16 @@ export function InlineDisclosureMenu({
   }, []);
 
   return (
-    <div className="relative flex justify-center w-full">
+    <div className="relative flex w-full justify-center">
       <div ref={ref} className="relative">
-        {/* Trigger */}
         <motion.button
           whileTap={{ scale: 0.95 }}
           onClick={() => setOpen((v) => !v)}
-          className="w-12 h-12 sm:w-14 sm:h-14
-            flex items-center justify-center
-            rounded-2xl bg-white dark:bg-zinc-900
-            border-2 border-[#EEEEF2] dark:border-zinc-800
-            text-gray-500 dark:text-zinc-400"
+          className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-[#EEEEF2] bg-white text-gray-500 sm:h-14 sm:w-14 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
         >
-          <MoreVertical className="w-5 h-5 sm:w-6 sm:h-6" />
+          <MoreVertical className="h-5 w-5 sm:h-6 sm:w-6" />
         </motion.button>
 
-        {/* Menu */}
         <AnimatePresence>
           {open && (
             <motion.div
@@ -110,42 +136,37 @@ export function InlineDisclosureMenu({
               initial="hidden"
               animate="visible"
               exit="hidden"
-              className="absolute z-50
-                left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-                w-[260px] sm:w-[304px]
-                bg-white dark:bg-zinc-900
-                border-2 border-[#EEEEF2] dark:border-zinc-800
-                rounded-2xl shadow-xl overflow-hidden"
+              className="absolute top-1/2 left-1/2 z-50 w-[260px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border-2 border-[#EEEEF2] bg-white shadow-xl sm:w-[304px] dark:border-zinc-800 dark:bg-zinc-900"
             >
-              {/* Header */}
-              <div
-                className="px-4 py-2 sm:px-6
-                bg-[#FAFAFC] dark:bg-zinc-800/50
-                border-b-2 border-[#EEEEF2] dark:border-zinc-800"
-              >
-                <span className="text-sm sm:text-[16px] text-[#828287] dark:text-zinc-500 font-medium">
+              <div className="border-b-2 border-[#EEEEF2] bg-[#FAFAFC] px-4 py-2 sm:px-6 dark:border-zinc-800 dark:bg-zinc-800/50">
+                <span className="text-sm font-medium text-[#828287] sm:text-[16px] dark:text-zinc-500">
                   More Options
                 </span>
               </div>
 
               <LayoutGroup>
-                <div className="px-2 py-2 flex flex-col gap-2">
+                <div className="flex flex-col gap-2 px-2 py-2">
                   {menuItems.map((item, i) => (
                     <MenuItem key={i} {...item} />
                   ))}
                 </div>
 
                 {showDelete && (
-                  <div className="relative border-t-2 border-[#EEEEF2] dark:border-zinc-800 h-[56px]">
-                    <AnimatePresence mode="wait">
+                  <div className="relative h-[56px] overflow-hidden border-t-2 border-[#EEEEF2] dark:border-zinc-800">
+                    <AnimatePresence
+                      custom={confirm}
+                      mode="popLayout"
+                      initial={false}
+                    >
                       {!confirm ? (
                         <motion.div
                           key="delete"
-                          className="absolute inset-0 px-2 flex items-center"
-                          initial={{ opacity: 0, y: 6 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -6 }}
-                          transition={spring}
+                          custom={confirm}
+                          variants={deleteVariants}
+                          initial="initial"
+                          animate="animate"
+                          exit="exit"
+                          className="absolute inset-0 flex items-center px-2"
                         >
                           <MenuItem
                             icon={
@@ -156,31 +177,30 @@ export function InlineDisclosureMenu({
                               />
                             }
                             label="Delete"
-                            className="text-[#e94447]"
+                            className="cursor-pointer text-[#e94447]"
                             onClick={() => setConfirm(true)}
                           />
                         </motion.div>
                       ) : (
                         <motion.div
                           key="confirm"
-                          className="absolute inset-0 px-2 flex gap-2 items-center"
-                          initial={{ opacity: 0, y: 6 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -6 }}
-                          transition={spring}
+                          custom={confirm}
+                          variants={confirmVariants}
+                          initial="initial"
+                          animate="animate"
+                          exit="exit"
+                          className="absolute inset-0 flex items-center gap-2 px-2"
                         >
                           <button
                             onClick={onDelete}
-                            className="flex-1 h-10 rounded-xl
-                              bg-[#F24140] text-white font-semibold"
+                            className="h-10 flex-1 cursor-pointer rounded-xl bg-[#F24140] font-semibold text-white"
                           >
                             Yes, Delete
                           </button>
+
                           <button
                             onClick={() => setConfirm(false)}
-                            className="flex-1 h-10 rounded-xl
-                              border border-gray-200 dark:border-zinc-700
-                              text-gray-600 dark:text-zinc-300"
+                            className="h-10 flex-1 cursor-pointer rounded-xl border border-gray-200 text-gray-600 dark:border-zinc-700 dark:text-zinc-300"
                           >
                             Cancel
                           </button>
