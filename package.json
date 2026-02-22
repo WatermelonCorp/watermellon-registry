@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "registry:build": "shadcn build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "wrangler deploy",
+    "deploy:dry": "wrangler deploy --dry-run"
   },
   "dependencies": {
     "@aliimam/icons": "^0.1.9",
