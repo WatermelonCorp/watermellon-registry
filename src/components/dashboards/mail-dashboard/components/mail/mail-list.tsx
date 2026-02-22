@@ -3,7 +3,7 @@
 import { IconBrandSlack, IconClockFilled, IconMailFilled, IconPlus, IconSearch } from "@tabler/icons-react"
 import { SidebarInput, SidebarTrigger } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 import { mails as mailData, pinnedUsers, type Mail } from "../../data"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
