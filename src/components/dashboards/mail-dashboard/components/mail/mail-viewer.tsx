@@ -13,7 +13,7 @@ import {
   IconChevronLeft
 } from "@tabler/icons-react"
 import { Textarea } from "@/components/ui/textarea"
-import { Field, FieldContent } from "@/components/ui/field"
+import { Field, FieldContent } from "../ui/field"
 import { Button } from "@/components/ui/button"
 
 export function MailViewer({ id }: { id: string }) {
