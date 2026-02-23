@@ -154,7 +154,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: React.Componen
       <SidebarHeader className="border-b border-neutral-200 dark:border-neutral-800 data-[state=open]:py-1">
         <SidebarMenuButton
           size="lg"
-          className="hover:bg-transparent data-[state=open]:text-sidebar-accent-foreground"
+          className="hover:bg-transparent data-[state=open]:text-sidebar-accent-foreground active:bg-transparent"
         >
           <div className="bg-neutral-100 dark:bg-neutral-700 text-neutral-900 dark:text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-md border border-neutral-200 dark:border-neutral-600">
             <data.company.logo className="size-4" />

@@ -15,8 +15,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
 import { Calendar, Plus } from "lucide-react";
 import { companiesData, segmentColors } from "../data";
-
-
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "./ui/dialog";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 function WinProbabilityBar({ value }: { value: number }) {
   const filledBars = Math.round((value / 100) * 20);
@@ -98,7 +99,7 @@ export function CompaniesTable() {
             {companiesData.map((company) => (
               <TableRow
                 key={company.id}
-                className="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 transition-colors"
+                className="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 transition-colors cursor-pointer"
               >
                 <TableCell className="px-4">
                   <Checkbox />
@@ -110,7 +111,7 @@ export function CompaniesTable() {
                   {company.segments.map((segment) => (
                     <Badge
                       key={segment}
-                      className={`${segmentColors[segment]} text-xs font-medium`}
+                      className={`${segmentColors[segment]} text-xs font-medium hover:-translate-y-0.5 hover:shadow transition-all duration-300 cursor-pointer`}
                       variant="secondary"
                     >
                       {segment}
@@ -179,10 +180,34 @@ export function CompaniesTable() {
           <span>Avg win probability</span>
           {/* <span className="text-neutral-700 dark:text-neutral-300">{avgWinProbability}%</span> */}
         </div>
-        <div className="flex-1 flex items-center justify-start gap-2 md:pl-3 py-2.5 hover:text-neutral-900 dark:hover:text-neutral-200 cursor-pointer transition-colors">
-          <Plus className="size-3.5" />
-          <span>Add Calculation</span>
-        </div>
+        <Dialog>
+          <DialogTrigger render={
+            <div className="flex-1 flex items-center justify-start gap-2 md:pl-3 py-2.5 hover:text-neutral-900 dark:hover:text-neutral-200 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 active:scale-95 group" />
+          }>
+            <Plus className="size-3.5 group-hover:rotate-90 transition-transform duration-300" />
+            <span>Add Calculation</span>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Add Custom Calculation</DialogTitle>
+              <DialogDescription>
+                Define a new metric or calculation to display in the footer.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid gap-2">
+                <Input id="calc-name" placeholder="Calculation Name (e.g., Total Revenue)" />
+              </div>
+              <div className="grid gap-2">
+                <Input id="calc-formula" placeholder="Formula (e.g., SUM(Pipeline Value))" />
+              </div>
+            </div>
+            <DialogFooter>
+              <DialogClose render={<Button variant="outline" className="rounded-full" />}>Cancel</DialogClose>
+              <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full">Add Calculation</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
