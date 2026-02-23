@@ -1,6 +1,6 @@
 import { CompanyFilters } from "./components/company-filters";
 import { CompaniesTable } from "./components/companies-table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
 export const CompanyView = () => {
   return (
@@ -10,19 +10,19 @@ export const CompanyView = () => {
           <TabsList className="bg-transparent p-0 px-3 flex gap-4">
             <TabsTrigger
               value="companies"
-              className="rounded-none shadow-none! bg-transparent! border-x-0! border-t-0! border-b-2! border-transparent data-[state=active]:border-b-neutral-900! dark:data-[state=active]:border-b-white! focus-visible:ring-0! focus-visible:ring-offset-0!"
+              className="rounded-none shadow-none! bg-transparent! border-x-0! border-t-0! border-b-2! border-transparent data-[state=active]:border-b-neutral-900! dark:data-[state=active]:border-b-white! focus-visible:ring-0! focus-visible:ring-offset-0! hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
             >
               Companies
             </TabsTrigger>
             <TabsTrigger
               value="deals"
-              className="rounded-none shadow-none! bg-transparent! border-x-0! border-t-0! border-b-2! border-transparent data-[state=active]:border-b-neutral-900! dark:data-[state=active]:border-b-white! focus-visible:ring-0! focus-visible:ring-offset-0!"
+              className="rounded-none shadow-none! bg-transparent! border-x-0! border-t-0! border-b-2! border-transparent data-[state=active]:border-b-neutral-900! dark:data-[state=active]:border-b-white! focus-visible:ring-0! focus-visible:ring-offset-0! hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
             >
               Deals
             </TabsTrigger>
             <TabsTrigger
               value="forecast"
-              className="rounded-none shadow-none! bg-transparent! border-x-0! border-t-0! border-b-2! border-transparent data-[state=active]:border-b-neutral-900! dark:data-[state=active]:border-b-white! focus-visible:ring-0! focus-visible:ring-offset-0!"
+              className="rounded-none shadow-none! bg-transparent! border-x-0! border-t-0! border-b-2! border-transparent data-[state=active]:border-b-neutral-900! dark:data-[state=active]:border-b-white! focus-visible:ring-0! focus-visible:ring-offset-0! hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
             >
               Forecast
             </TabsTrigger>
