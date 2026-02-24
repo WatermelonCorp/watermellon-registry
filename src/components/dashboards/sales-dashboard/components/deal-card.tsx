@@ -41,7 +41,7 @@ const ProbabilityBar: React.FC<{ value: number }> = ({ value }) => {
 
 const DealCard: React.FC<DealCardProps> = ({ deal }) => {
   return (
-    <div className="bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700/90 rounded-xl p-4 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all group cursor-pointer shadow-sm">
+    <div className="bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700/90 rounded-xl p-4 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-[0.98] group cursor-pointer">
       <div className="flex justify-between items-start mb-1.5">
         <h4 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors truncate">
           {deal.company}
@@ -54,7 +54,7 @@ const DealCard: React.FC<DealCardProps> = ({ deal }) => {
 
       <div className="flex flex-wrap gap-1.5 mb-3">
         <span
-          className={`px-2 py-0.5 rounded text-[10px] font-bold ${deal.segment === "Enterprise"
+          className={`px-2 py-0.5 rounded text-[10px] font-bold transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-sm ${deal.segment === "Enterprise"
             ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-800"
             : deal.segment === "Mid-Market"
               ? "bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 border border-teal-200 dark:border-teal-800"
@@ -78,7 +78,7 @@ const DealCard: React.FC<DealCardProps> = ({ deal }) => {
           <div className="flex items-center gap-2">
             <img
               src={deal.owner.avatar}
-              className="w-5 h-5 rounded-full"
+              className="w-5 h-5 rounded-full transition-all duration-300 hover:scale-110 hover:ring-2 hover:ring-indigo-500/30 cursor-pointer"
               alt={deal.owner.name}
             />
             <span className="text-[11px] text-neutral-600 dark:text-neutral-500 font-medium">
