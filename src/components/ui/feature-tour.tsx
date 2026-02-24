@@ -1,6 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { X } from 'lucide-react';
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import {
+    motion,
+    AnimatePresence,
+    useReducedMotion,
+    type Transition,
+} from "motion/react";
+import { X } from "lucide-react";
 
 export interface TourStep {
     id: string;
@@ -14,160 +21,254 @@ interface FeatureTourProps {
     onClose: () => void;
     onLearnMore?: (step: TourStep) => void;
     className?: string;
+    loop?: boolean;
+    closeOnBackdrop?: boolean;
 }
+
+/* ─────────────────────────
+   Typed Motion Curves
+───────────────────────── */
+
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
+const FAST_OUT = [0.22, 1, 0.36, 1] as const;
+
+const SPRING_ICON: Transition = {
+    type: "spring",
+    stiffness: 420,
+    damping: 34,
+    mass: 0.7,
+};
+
+const SPRING_BG: Transition = {
+    type: "spring",
+    stiffness: 340,
+    damping: 30,
+    mass: 0.8,
+};
 
 export const FeatureTour: React.FC<FeatureTourProps> = ({
     steps,
     onClose,
     onLearnMore,
-    className = ""
+    className = "",
+    loop = false,
+    closeOnBackdrop = true,
 }) => {
+    const shouldReduceMotion = useReducedMotion();
+    const containerRef = useRef<HTMLDivElement>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [direction, setDirection] = useState(0);
+
+    if (!steps || steps.length === 0) return null;
 
     const goToStep = (index: number) => {
-        setDirection(index > currentIndex ? 1 : -1);
+        if (index === currentIndex) return;
         setCurrentIndex(index);
+    };
+
+    const goNext = () => {
+        setCurrentIndex((prev) =>
+            prev === steps.length - 1 ? (loop ? 0 : prev) : prev + 1
+        );
+    };
+
+    const goPrev = () => {
+        setCurrentIndex((prev) =>
+            prev === 0 ? (loop ? steps.length - 1 : prev) : prev - 1
+        );
     };
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'ArrowRight' && currentIndex < steps.length - 1) {
-                goToStep(currentIndex + 1);
-            } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
-                goToStep(currentIndex - 1);
-            } else if (e.key === 'Escape') {
-                onClose();
-            }
+            if (e.key === "ArrowRight") goNext();
+            if (e.key === "ArrowLeft") goPrev();
+            if (e.key === "Escape") onClose();
         };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [currentIndex, steps.length, onClose]);
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [steps.length, loop, onClose]);
 
-    const variants = {
-        enter: (direction: number) => ({
-            x: direction > 0 ? 100 : -100,
-            opacity: 0,
-            scale: 0.95,
-            filter: 'blur(10px)',
-        }),
-        center: {
-            zIndex: 1,
-            x: 0,
-            opacity: 1,
-            scale: 1,
-            filter: 'blur(0px)',
-        },
-        exit: (direction: number) => ({
-            zIndex: 0,
-            x: direction < 0 ? 100 : -100,
-            opacity: 0,
-            scale: 0.95,
-            filter: 'blur(10px)',
-        }),
-    };
+    useEffect(() => {
+        const btn = containerRef.current?.querySelector("button");
+        btn?.focus();
+    }, []);
 
     const currentStep = steps[currentIndex];
 
     return (
-        <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className={`relative w-full max-w-[400px] sm:aspect-[1/1.3] min-h-[520px] sm:min-h-0 rounded-[34px] border-[1.2px] shadow-sm p-6 sm:p-8 flex flex-col items-center overflow-hidden transition-colors duration-300 bg-[#FEFEFE] border-[#F0EFF6] dark:bg-[#151517] dark:border-white/5 [--shining-gradient:linear-gradient(90deg,transparent_0%,transparent_40%,rgba(255,255,255,1)_50%,transparent_60%,transparent_100%)] dark:[--shining-gradient:linear-gradient(90deg,transparent_0%,transparent_40%,rgba(255,255,255,0.8)_50%,transparent_60%,transparent_100%)] ${className}`}
+        <div
+            className="flex items-center justify-center"
+            onClick={closeOnBackdrop ? onClose : undefined}
+            role="dialog"
+            aria-modal="true"
         >
-            <button title='close'
-                onClick={onClose}
-                className="absolute top-6 right-6 p-2 rounded-full transition-colors group z-50 bg-[#ADACB8] hover:bg-[#ADACB8]/70 dark:bg-[#2C2C2E] dark:hover:bg-[#3A3A3C]"
+            <motion.div
+                ref={containerRef}
+                onClick={(e) => e.stopPropagation()}
+                initial={{
+                    opacity: 0,
+                    scale: 0.96,
+                    y: 16,
+                    filter: "blur(4px)",
+                }}
+                animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                }}
+                exit={{
+                    opacity: 0,
+                    scale: 0.98,
+                    y: 12,
+                }}
+                transition={{
+                    duration: 0.18,
+                    ease: EASE_OUT,
+                }}
+                className={`relative w-full max-w-[400px] sm:aspect-[1/1.3] min-h-[520px] sm:min-h-0 rounded-[34px] border shadow-sm p-6 sm:p-8 flex flex-col items-center overflow-hidden transition-colors duration-300 bg-white border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800 ${className}`}
             >
-                <X size={20} strokeWidth={3} className="text-[#FEFDFF]" />
-            </button>
+                <button
+                    onClick={onClose}
+                    aria-label="Close tour"
+                    className="absolute top-6 right-6 p-2 rounded-full transition-colors z-50 bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-800 dark:hover:bg-neutral-700"
+                >
+                    <X
+                        size={20}
+                        strokeWidth={3}
+                        className="text-white dark:text-neutral-200"
+                    />
+                </button>
 
-            <div className="flex-1 w-full flex flex-col items-center justify-center relative">
-                <AnimatePresence initial={false} custom={direction} mode="wait">
-                    <motion.div
-                        key={currentIndex}
-                        custom={direction}
-                        variants={variants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        transition={{
-                            x: { type: "spring", stiffness: 300, damping: 30 },
-                            opacity: { duration: 0.4 },
-                            scale: { duration: 0.4 },
-                            filter: { duration: 0.4 }
-                        }}
-                        className="w-full flex flex-col items-center text-center"
-                    >
-                        <div className=" flex items-center justify-center min-h-[100px]">
+                <div className="flex-1 w-full flex flex-col items-center justify-center relative">
+
+                    {/* Icon Morph */}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentStep.id}
+                            initial={{
+                                opacity: 0,
+                                scale: 0.92,
+                                y: 8,
+                                filter: "blur(3px)",
+                            }}
+                            animate={{
+                                opacity: 1,
+                                scale: 1,
+                                y: 0,
+                                filter: "blur(0px)",
+                            }}
+                            exit={{
+                                opacity: 0,
+                                scale: 0.92,
+                                y: -6,
+                                filter: "blur(3px)",
+                            }}
+                            transition={{
+                                duration: 0.16,
+                                ease: FAST_OUT,
+                            }}
+                            className="relative flex items-center justify-center min-h-[120px]"
+                        >
                             <motion.div
-                                initial={{ scale: 0.5, rotate: -10, opacity: 0 }}
-                                animate={{ scale: 1, rotate: 0, opacity: 1 }}
-                                transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
-                                className="dark:text-white"
+                                layoutId="tour-icon-bg"
+                                transition={SPRING_BG}
+                                className="absolute w-24 h-24 rounded-3xl
+                           bg-neutral-100 dark:bg-neutral-800
+                           shadow-inner dark:shadow-black/40"
+                            />
+
+                            <motion.div
+                                layoutId="tour-icon"
+                                transition={SPRING_ICON}
+                                className="relative text-neutral-700 dark:text-neutral-200
+                           drop-shadow-[0_4px_12px_rgba(0,0,0,0.12)]
+                           dark:drop-shadow-[0_4px_16px_rgba(255,255,255,0.12)]"
                             >
                                 {currentStep.icon}
                             </motion.div>
-                        </div>
+                        </motion.div>
+                    </AnimatePresence>
 
-                        <div className="space-y-2 px-4 mt-8 sm:mt-12">
-                            {/* Shining Title Animation */}
-                            <motion.h2
-                                initial={{ backgroundPosition: '-200% 0' }}
-                                animate={{ backgroundPosition: '200% 0' }}
-                                transition={{
-                                    delay: 0.5,
-                                    duration: 2,
-                                    ease: "easeInOut",
-                                    repeat: 0
-                                }}
-                                style={{
-                                    backgroundImage: 'var(--shining-gradient)',
-                                    backgroundSize: '200% 100%',
-                                    backgroundClip: 'text',
-                                    WebkitBackgroundClip: 'text',
-                                }}
-                                className="text-[26px] font-bold transition-colors text-transparent bg-[#252525] dark:bg-white"
-                            >
+                    {/* Content Slide */}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={`content-${currentStep.id}`}
+                            initial={{
+                                opacity: 0,
+                                y: shouldReduceMotion ? 0 : 20,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                y: 0,
+                            }}
+                            exit={{
+                                opacity: 0,
+                                y: shouldReduceMotion ? 0 : -14,
+                            }}
+                            transition={{
+                                duration: 0.16,
+                                ease: EASE_OUT,
+                            }}
+                            className="space-y-2 px-4 mt-8 sm:mt-12 text-center"
+                        >
+                            <h2 className="text-[26px] font-bold text-neutral-900 dark:text-white">
                                 {currentStep.title}
-                            </motion.h2>
+                            </h2>
 
-                            <p className="text-[20px] font-medium leading-tight transition-colors text-[#98979A] dark:text-[#7C7C80]">
+                            <p className="text-[20px] font-medium leading-tight text-neutral-500 dark:text-neutral-400">
                                 {currentStep.description}
                             </p>
-                        </div>
 
-                        <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            onClick={() => onLearnMore?.(currentStep)}
-                            className="mt-6 sm:mt-10 px-10 py-3 rounded-full font-semibold text-lg transition-colors bg-[#F1F1F4] text-[#4F4F5A] hover:bg-[#EAEAEF] dark:bg-[#2C2C2E] dark:text-white dark:hover:bg-[#3A3A3C]"
+                            {onLearnMore && (
+                                <motion.button
+                                    whileHover={{ scale: 1.03 }}
+                                    whileTap={{ scale: 0.97 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 400,
+                                        damping: 30,
+                                    }}
+                                    onClick={() => onLearnMore(currentStep)}
+                                    className="mt-6 sm:mt-10 px-10 py-3 rounded-full font-semibold text-lg transition-colors bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
+                                >
+                                    Learn More
+                                </motion.button>
+                            )}
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {/* Dots */}
+                <div className="mt-6 sm:mt-8 flex items-center gap-3" role="tablist">
+                    {steps.map((step, index) => (
+                        <button
+                            key={step.id}
+                            role="tab"
+                            aria-selected={index === currentIndex}
+                            aria-label={`Go to ${step.title}`}
+                            onClick={() => goToStep(index)}
+                            className="relative h-2 focus:outline-none"
                         >
-                            Learn More
-                        </motion.button>
-                    </motion.div>
-                </AnimatePresence>
-            </div>
+                            <motion.div
+                                animate={{
+                                    scale: index === currentIndex ? 1.2 : 1,
+                                }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 300,
+                                    damping: 20,
+                                }}
+                                className={`h-[12px] w-[12px] rounded-full ${index === currentIndex
+                                    ? "bg-neutral-500 dark:bg-neutral-200"
+                                    : "bg-neutral-200 dark:bg-neutral-700"
+                                    }`}
+                            />
+                        </button>
+                    ))}
+                </div>
 
-            <div className="mt-6 sm:mt-8 flex items-center gap-3">
-                {steps.map((_, index) => (
-                    <button title='page'
-                        key={index}
-                        onClick={() => goToStep(index)}
-                        className="relative h-2 group focus:outline-none"
-                    >
-                        <div
-                            className={`h-[12px] rounded-full transition-all duration-500 w-[12px] ease-out ${index === currentIndex
-                                ? 'bg-gray-400 dark:bg-gray-100'
-                                : 'bg-gray-200 group-hover:bg-gray-300 dark:bg-[#2C2C2E]'
-                                }`}
-                        />
-                    </button>
-                ))}
-            </div>
-
-            <div className="absolute inset-0 pointer-events-none rounded-[40px] bg-linear-to-br from-white/20 via-transparent to-black/2 dark:from-white/5 dark:via-transparent dark:to-black/40" />
-        </motion.div>
+                <div className="absolute inset-0 pointer-events-none rounded-[40px] bg-linear-to-br from-white/20 via-transparent to-black/5 dark:from-white/5 dark:via-transparent dark:to-black/40" />
+            </motion.div>
+        </div>
     );
 };
