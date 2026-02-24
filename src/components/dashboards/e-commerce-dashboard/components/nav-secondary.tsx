@@ -48,10 +48,11 @@ export function NavSecondary({
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton
               asChild
+              className="transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
             >
               <a href={item.url} onClick={(e) => item.isDisabled && e.preventDefault()}>
                 {item.icon && (
-                  <item.icon className="!size-5 text-neutral-500" />
+                  <item.icon className="size-5! text-neutral-500" />
                 )}
                 <span className="text-neutral-500 font-medium tracking-tight text-base">
                   {item.name}
@@ -93,8 +94,8 @@ export function NavSecondary({
           </SidebarMenuItem>
         ))}
         <SidebarMenuItem>
-          <SidebarMenuButton className="text-sidebar-foreground/70">
-            <IconDots className="text-sidebar-foreground/70 !size-5" />
+          <SidebarMenuButton className="text-sidebar-foreground/70 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer">
+            <IconDots className="text-sidebar-foreground/70 size-5!" />
             <span className="font-semibold text-neutral-500">More</span>
           </SidebarMenuButton>
         </SidebarMenuItem>

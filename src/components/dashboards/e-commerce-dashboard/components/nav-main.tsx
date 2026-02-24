@@ -33,7 +33,7 @@ export function NavMain({
               <SidebarMenuButton
                 size={"lg"}
                 tooltip={item.title}
-                className="h-9"
+                className="h-9 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
                 isActive={currentView ? item.title === currentView : item.isActive}
                 onClick={(e) => {
                   if (item.isDisabled) {
@@ -47,12 +47,12 @@ export function NavMain({
                 }}
                 asChild={!onNavigate}
               >
-                  {item.icon && (
-                    <item.icon className="!size-5 text-neutral-500" />
-                  )}
-                  <span className="text-neutral-500 font-medium tracking-tight text-base">
-                    {item.title}
-                  </span>
+                {item.icon && (
+                  <item.icon className="size-5! text-neutral-500" />
+                )}
+                <span className="text-neutral-500 font-medium tracking-tight text-base">
+                  {item.title}
+                </span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
