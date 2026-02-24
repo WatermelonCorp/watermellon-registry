@@ -8,6 +8,12 @@ import {
     SelectTrigger,
     SelectValue,
 } from "./components/ui/select"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "./components/ui/dropdown-menu"
 import OverviewTabContent from "./components/overview-tab-content"
 
 export default function DashboardPageView() {
@@ -16,28 +22,28 @@ export default function DashboardPageView() {
             <Tabs defaultValue="overview" className="w-full">
                 <div className="flex flex-col md:flex-row md:items-center justify-between min-h-[3.8rem] border-b px-7 max-md:p-4 py-2 md:py-0 gap-4">
                     <TabsList className="bg-neutral-100 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 group-data-[orientation=horizontal]/tabs:h-10 p-0 overflow-x-auto overflow-y-hidden max-w-full max-md:w-full justify-start md:justify-center">
-                        <TabsTrigger value="overview" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! dark:data-[state=active]:border-r-neutral-800 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white border-r border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none!">
-                            <Mail className="size-4" />
-                            Overview
+                        <TabsTrigger value="overview" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! dark:data-[state=active]:border-r-neutral-800 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white border-r border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none! transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 cursor-pointer">
+                            <Mail className="size-4 transition-transform duration-300 group-hover:scale-110" />
+                            <span className="transition-transform duration-300">Overview</span>
                         </TabsTrigger>
-                        <TabsTrigger value="order" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! dark:data-[state=active]:border-r-neutral-800 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white border-r border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none!">
-                            <Mail className="size-4" />
-                            Order
+                        <TabsTrigger value="order" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! dark:data-[state=active]:border-r-neutral-800 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white border-r border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none! transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 cursor-pointer">
+                            <Mail className="size-4 transition-transform duration-300 group-hover:scale-110" />
+                            <span className="transition-transform duration-300">Order</span>
                         </TabsTrigger>
-                        <TabsTrigger value="sales" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none!">
-                            <Mail className="size-4" />
-                            Sales
+                        <TabsTrigger value="sales" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none! transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 cursor-pointer">
+                            <Mail className="size-4 transition-transform duration-300 group-hover:scale-110" />
+                            <span className="transition-transform duration-300">Sales</span>
                         </TabsTrigger>
                     </TabsList>
 
                     <div className="flex items-center gap-2 max-md:w-full max-md:justify-end">
-                        <Button variant="ghost" size="icon" className="text-neutral-500 dark:text-neutral-200 bg-neutral-100/50 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200 dark:hover:bg-neutral-800">
-                            <RefreshCcw className="size-4" />
+                        <Button variant="ghost" size="icon" className="text-neutral-500 dark:text-neutral-200 bg-neutral-100/50 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.95] hover:bg-neutral-200/50 dark:hover:bg-neutral-800 cursor-pointer group hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <RefreshCcw className="size-4 transition-transform duration-500 group-hover:rotate-180" />
                         </Button>
 
                         <Select defaultValue="monthly">
                             <SelectTrigger
-                                className="h-9 w-fit bg-neutral-100/50 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200 dark:hover:bg-neutral-800 px-2 gap-2 text-neutral-900 dark:text-neutral-100 data-[state=open]:bg-neutral-200 dark:data-[state=open]:bg-neutral-800 focus:ring-1 focus:ring-neutral-200 dark:focus:ring-neutral-700 shadow-none!"
+                                className="h-9 w-fit bg-neutral-100/50 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 px-2 gap-2 text-neutral-900 dark:text-neutral-100 data-[state=open]:bg-neutral-200 dark:data-[state=open]:bg-neutral-800 focus:ring-1 focus:ring-neutral-200 dark:focus:ring-neutral-700 shadow-none! transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
                             >
                                 <Calendar className="size-4" />
                                 <SelectValue placeholder="Select period" />
@@ -50,15 +56,31 @@ export default function DashboardPageView() {
                             </SelectContent>
                         </Select>
 
-                        <Button className="
-                            flex items-center rounded-md text-white hover:bg-blue-700
-                            bg-blue-700
-                            shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)]
-                            transition-all active:scale-[0.98] active:brightness-95
-                        ">
-                            <Download className="size-4" />
-                            Download
-                        </Button>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button className="
+                                    flex items-center rounded-md text-white hover:bg-blue-600 dark:hover:bg-blue-600
+                                    bg-blue-700
+                                    shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)]
+                                    hover:shadow-[inset_2px_4px_12px_rgba(255,255,255,0.5),inset_-2px_-4px_12px_rgba(0,0,0,0.4),0_4px_12px_rgba(29,78,216,0.3)]
+                                    transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.96] active:brightness-95 cursor-pointer group
+                                ">
+                                    <Download className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                                    Download
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-40 border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 z-50">
+                                <DropdownMenuItem className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">
+                                    Download CSV
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">
+                                    Download Excel
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">
+                                    Download PDF
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
                 </div>
 

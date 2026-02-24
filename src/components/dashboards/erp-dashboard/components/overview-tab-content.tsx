@@ -12,6 +12,20 @@ import {
     SelectValue,
 } from "./ui/select"
 import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "./ui/dropdown-menu"
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "./ui/dialog"
+import {
     Bar,
     BarChart,
     CartesianGrid,
@@ -48,7 +62,7 @@ const OverviewTabContent = () => {
                 {stats.map((stat, index) => (
                     <Card
                         key={index}
-                        className={`bg-white dark:bg-neutral-800/40 border border-neutral-200 dark:border-none hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-none rounded-lg pt-4 pb-3 px-4 min-w-0 ${cardBorderStyles}`}
+                        className={`bg-white dark:bg-neutral-800/40 border border-neutral-200 dark:border-none hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-all duration-300 hover:-translate-y-1 hover:shadow cursor-pointer group shadow-none rounded-lg pt-4 pb-3 px-4 min-w-0 ${cardBorderStyles}`}
                     >
                         <CardContent className="p-5 flex flex-col gap-3.5 py-0 px-0 min-w-0">
                             <div className="text-neutral-500 text-[13px] font-medium leading-none tracking-tight wrap-break-word whitespace-normal">
@@ -68,9 +82,9 @@ const OverviewTabContent = () => {
                                         `}
                                     >
                                         {stat.trendType === 'up' ? (
-                                            <ArrowUp className="size-3" strokeWidth={2.5} />
+                                            <ArrowUp className="size-3 transition-transform duration-300 group-hover:-translate-y-0.5" strokeWidth={2.5} />
                                         ) : (
-                                            <ArrowDown className="size-3" strokeWidth={2.5} />
+                                            <ArrowDown className="size-3 transition-transform duration-300 group-hover:translate-y-0.5" strokeWidth={2.5} />
                                         )}
                                         {stat.trend}
                                     </Badge>
@@ -87,11 +101,11 @@ const OverviewTabContent = () => {
             {/* Charts Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-w-0">
                 {/* Sales Performance */}
-                <Card className={`bg-neutral-50/50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-none py-4 px-6 shadow-none rounded-xl min-w-0 ${cardBorderStyles}`}>
+                <Card className={`bg-neutral-50/50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-none py-4 px-6 shadow-none rounded-xl min-w-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${cardBorderStyles}`}>
                     <CardHeader className="p-0 flex flex-row flex-wrap items-center justify-between gap-4 space-y-0">
                         <CardTitle className="text-neutral-900 dark:text-neutral-100 text-base font-semibold whitespace-nowrap">Sales Performance</CardTitle>
                         <Select defaultValue="2w">
-                            <SelectTrigger className="h-7! w-fit shrink-0 bg-neutral-100 dark:bg-neutral-800/20! border-[1.5px] border-neutral-200 dark:border-neutral-800 text-neutral-500 font-medium text-xs pl-3 pr-2 gap-1.5 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors focus:ring-0">
+                            <SelectTrigger className="h-7! w-fit shrink-0 bg-neutral-100 dark:bg-neutral-800/20! border-[1.5px] border-neutral-200 dark:border-neutral-800 text-neutral-500 font-medium text-xs pl-3 pr-2 gap-1.5 rounded-full hover:bg-neutral-200/50 dark:hover:bg-neutral-800 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer focus:ring-0 shadow-none ">
                                 <SelectValue placeholder="Period" />
                             </SelectTrigger>
                             <SelectContent className="bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-neutral-100">
@@ -162,15 +176,15 @@ const OverviewTabContent = () => {
                 </Card>
 
                 {/* Email Data Chart */}
-                <Card className={`bg-neutral-50/50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-none py-4 px-6 shadow-none rounded-xl ${cardBorderStyles}`}>
+                <Card className={`bg-neutral-50/50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-none py-4 px-6 shadow-none rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${cardBorderStyles}`}>
                     <CardHeader className="p-0 flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-2 sm:space-y-0">
                         <CardTitle className="text-neutral-900 dark:text-neutral-100 text-base font-semibold">Email Data Chart</CardTitle>
                         <div className="flex flex-wrap items-center gap-3">
-                            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded-full shrink-0">
+                            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded-full shrink-0 transition-transform duration-300 hover:-translate-y-0.5 cursor-default">
                                 <div className="size-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,1)]" />
                                 <span className="text-neutral-500 dark:text-neutral-400 text-[11px] font-medium whitespace-nowrap">Click Through Rate</span>
                             </div>
-                            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded-full shrink-0">
+                            <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded-full shrink-0 transition-transform duration-300 hover:-translate-y-0.5 cursor-default">
                                 <div className="size-2 rounded-full bg-neutral-600 shadow-[0_0_8px_rgba(113,113,122,0.5)]" />
                                 <span className="text-neutral-500 dark:text-neutral-400 text-[11px] font-medium whitespace-nowrap">Open Rate</span>
                             </div>
@@ -230,20 +244,20 @@ const OverviewTabContent = () => {
             </div>
 
             {/* Employees Table Card */}
-            <Card className={`bg-white dark:bg-neutral-900/40 border border-neutral-200 dark:border-none py-4 px-4 shadow-none rounded-xl ${cardBorderStyles}`}>
+            <Card className={`bg-white dark:bg-neutral-900/40 border border-neutral-200 dark:border-none py-4 px-4 shadow-none rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${cardBorderStyles}`}>
                 <CardHeader className="p-0 flex flex-col lg:flex-row items-start lg:items-center justify-between space-y-2 lg:space-y-0">
                     <CardTitle className="text-neutral-900 dark:text-neutral-100 text-base font-semibold">All Employees</CardTitle>
                     <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
-                        <div className="relative group/search flex-1 min-w-[160px] lg:flex-none lg:w-64">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-neutral-500 group-focus-within/search:text-neutral-900 dark:group-focus-within/search:text-neutral-400 transition-colors" />
+                        <div className="relative group/search flex-1 min-w-[160px] lg:flex-none lg:w-64 transition-all duration-300 hover:-translate-y-0.5">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-neutral-500 group-focus-within/search:text-neutral-500 dark:group-focus-within/search:text-neutral-500 transition-colors z-10 pointer-events-none" />
                             <Input
                                 placeholder="Search"
-                                className="h-9! w-full bg-neutral-100 dark:bg-neutral-800! border-neutral-200 dark:border-neutral-800/50 pl-9 text-xs text-neutral-900 dark:text-neutral-300 placeholder:text-neutral-500 rounded-sm focus-visible:ring-0 focus-visible:border-neutral-300 dark:focus-visible:border-neutral-700 transition-all shadow-none"
+                                className="h-9! w-full bg-neutral-100 dark:bg-neutral-800! border-neutral-200 dark:border-neutral-800/50 pl-9 text-xs text-neutral-900 dark:text-neutral-300 placeholder:text-neutral-500 rounded-sm focus-visible:ring-0 focus-visible:border-neutral-300 dark:focus-visible:border-neutral-700 transition-all duration-300 group-hover/search:shadow-sm group-hover/search:border-neutral-300 dark:group-hover/search:border-neutral-700 shadow-none"
                             />
                         </div>
                         <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
                             <Select defaultValue="all">
-                                <SelectTrigger className="h-9 w-fit bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200 dark:hover:bg-neutral-800 px-2 gap-2 text-neutral-900 dark:text-neutral-100 data-[state=open]:bg-neutral-200 dark:data-[state=open]:bg-neutral-800 focus:ring-1 focus:ring-neutral-200 dark:focus:ring-neutral-700 shadow-none">
+                                <SelectTrigger className="h-9 w-fit bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 px-2 gap-2 text-neutral-900 dark:text-neutral-100 data-[state=open]:bg-neutral-200 dark:data-[state=open]:bg-neutral-800 focus:ring-1 focus:ring-neutral-200 dark:focus:ring-neutral-700 shadow-none transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer">
                                     <SelectValue placeholder="All Status" />
                                 </SelectTrigger>
                                 <SelectContent position="popper" align="end" sideOffset={5} className="bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-neutral-100 min-w-[160px]">
@@ -253,7 +267,7 @@ const OverviewTabContent = () => {
                                 </SelectContent>
                             </Select>
                             <Select defaultValue="all">
-                                <SelectTrigger className="h-9 w-fit bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200 dark:hover:bg-neutral-800 px-2 gap-2 text-neutral-900 dark:text-neutral-100 data-[state=open]:bg-neutral-200 dark:data-[state=open]:bg-neutral-800 focus:ring-1 focus:ring-neutral-200 dark:focus:ring-neutral-700 shadow-none">
+                                <SelectTrigger className="h-9 w-fit bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 px-2 gap-2 text-neutral-900 dark:text-neutral-100 data-[state=open]:bg-neutral-200 dark:data-[state=open]:bg-neutral-800 focus:ring-1 focus:ring-neutral-200 dark:focus:ring-neutral-700 shadow-none transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer">
                                     <SelectValue placeholder="All Role" />
                                 </SelectTrigger>
                                 <SelectContent position="popper" align="end" sideOffset={5} className="bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-neutral-100 min-w-[160px]">
@@ -263,10 +277,19 @@ const OverviewTabContent = () => {
                                 </SelectContent>
                             </Select>
                             <Separator orientation="vertical" className="hidden sm:block h-5 bg-neutral-200 dark:bg-neutral-800 mx-1 data-[orientation=vertical]:h-6" />
-                            <Button className="text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200 dark:hover:bg-neutral-800 ml-auto sm:ml-0">
-                                <Download className="size-3.5" />
-                                Export
-                            </Button>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button className="text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 ml-auto sm:ml-0 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer group shadow-none">
+                                        <Download className="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                                        Export
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end" className="w-40 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 shadow-md">
+                                    <DropdownMenuItem className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">Export as CSV</DropdownMenuItem>
+                                    <DropdownMenuItem className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">Export as Excel</DropdownMenuItem>
+                                    <DropdownMenuItem className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">Export as PDF</DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </div>
                 </CardHeader>
@@ -288,32 +311,32 @@ const OverviewTabContent = () => {
                                     </div>
                                 </TableHead>
                                 <TableHead className="text-neutral-400 text-xs font-semibold h-10">
-                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-300 transition-colors px-1">
+                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors px-1">
                                         Employee ID <ChevronsUpDown className="size-3 text-neutral-500" strokeWidth={2.5} />
                                     </div>
                                 </TableHead>
                                 <TableHead className="text-neutral-400 text-xs font-semibold h-10">
-                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-300 transition-colors px-1">
+                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors px-1">
                                         Employee name <ChevronsUpDown className="size-3 text-neutral-500" strokeWidth={2.5} />
                                     </div>
                                 </TableHead>
                                 <TableHead className="text-neutral-400 text-xs font-semibold h-10">
-                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-300 transition-colors px-1">
+                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors px-1">
                                         Email <ChevronsUpDown className="size-3 text-neutral-500" strokeWidth={2.5} />
                                     </div>
                                 </TableHead>
                                 <TableHead className="text-neutral-400 text-xs font-semibold h-10">
-                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-300 transition-colors px-1">
+                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors px-1">
                                         Role <ChevronsUpDown className="size-3 text-neutral-500" strokeWidth={2.5} />
                                     </div>
                                 </TableHead>
                                 <TableHead className="text-neutral-400 text-xs font-semibold h-10">
-                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-300 transition-colors px-1">
+                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors px-1">
                                         Departments <ChevronsUpDown className="size-3 text-neutral-500" strokeWidth={2.5} />
                                     </div>
                                 </TableHead>
                                 <TableHead className="text-neutral-400 text-xs font-semibold h-10">
-                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-300 transition-colors px-1">
+                                    <div className="flex items-center justify-between gap-1.5 cursor-pointer hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors px-1">
                                         Status <ChevronsUpDown className="size-3 text-neutral-500" strokeWidth={2.5} />
                                     </div>
                                 </TableHead>
@@ -322,7 +345,7 @@ const OverviewTabContent = () => {
                         </TableHeader>
                         <TableBody>
                             {employees.map((emp, i) => (
-                                <TableRow key={i} className="border-neutral-200/50 dark:border-neutral-800/30 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/20 transition-colors group">
+                                <TableRow key={i} className="border-neutral-200/50 dark:border-neutral-800/30 hover:bg-neutral-50 dark:hover:bg-neutral-800/20 transition-all duration-300 hover:shadow-sm cursor-pointer group  dark:hover:border-neutral-700">
                                     <TableCell className="w-12 text-center p-0">
                                         <div className="flex justify-center items-center">
                                             <Checkbox
@@ -340,7 +363,7 @@ const OverviewTabContent = () => {
                                     <TableCell className="text-neutral-500 dark:text-neutral-400 text-xs py-4 font-medium">{emp.email}</TableCell>
                                     <TableCell className="text-neutral-500 dark:text-neutral-400 text-xs py-4 font-medium">{emp.role}</TableCell>
                                     <TableCell className="py-4">
-                                        <Badge className="text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200 dark:hover:bg-neutral-800 h-6">
+                                        <Badge className="text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 h-6">
                                             {emp.department}
                                         </Badge>
                                     </TableCell>
@@ -359,12 +382,45 @@ const OverviewTabContent = () => {
                                     </TableCell>
                                     <TableCell className="text-right py-4 pr-1">
                                         <div className="flex items-center justify-end gap-1.5">
-                                            <Button variant="ghost" size="icon" className="size-8 text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200 dark:hover:bg-neutral-800">
-                                                <EyeIcon className="size-4" />
-                                            </Button>
-                                            <Button variant="ghost" size="icon" className="size-8 text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200 dark:hover:bg-neutral-800">
-                                                <EllipsisVertical className="size-4" />
-                                            </Button>
+                                            <Dialog>
+                                                <DialogTrigger asChild>
+                                                    <Button variant="ghost" size="icon" className="size-8 text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200/30 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-110 active:scale-95 shadow-none">
+                                                        <EyeIcon className="size-4" />
+                                                    </Button>
+                                                </DialogTrigger>
+                                                <DialogContent className="sm:max-w-[400px] bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800">
+                                                    <DialogHeader>
+                                                        <DialogTitle className="text-neutral-900 dark:text-neutral-100">Employee Profile</DialogTitle>
+                                                        <DialogDescription className="text-neutral-500">
+                                                            Detailed view of {emp.name}'s profile.
+                                                        </DialogDescription>
+                                                    </DialogHeader>
+                                                    <div className="flex items-center gap-4 py-4">
+                                                        <img src={emp.image} alt={emp.name} className="size-16 rounded-full object-cover border border-neutral-200 dark:border-neutral-800" />
+                                                        <div>
+                                                            <h4 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">{emp.name}</h4>
+                                                            <p className="text-sm text-neutral-500 dark:text-neutral-400">{emp.email}</p>
+                                                            <div className="flex items-center gap-2 mt-3">
+                                                                <Badge className="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 border-none">{emp.role}</Badge>
+                                                                <Badge className="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 border-none">{emp.department}</Badge>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </DialogContent>
+                                            </Dialog>
+
+                                            <DropdownMenu>
+                                                <DropdownMenuTrigger asChild>
+                                                    <Button variant="ghost" size="icon" className="size-8 text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800/50 border-t border-x-0 border-b-0 border-t-neutral-200 dark:border-t-neutral-700/80 hover:bg-neutral-200/30 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-110 active:scale-95 shadow-none">
+                                                        <EllipsisVertical className="size-4" />
+                                                    </Button>
+                                                </DropdownMenuTrigger>
+                                                <DropdownMenuContent align="end" className="w-40 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800">
+                                                    <DropdownMenuItem className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">Edit Employee</DropdownMenuItem>
+                                                    <DropdownMenuItem className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">Change Role</DropdownMenuItem>
+                                                    <DropdownMenuItem className="cursor-pointer text-rose-500 focus:bg-rose-50 dark:focus:bg-rose-500/10 focus:text-rose-600 dark:focus:text-rose-400">Suspend Account</DropdownMenuItem>
+                                                </DropdownMenuContent>
+                                            </DropdownMenu>
                                         </div>
                                     </TableCell>
                                 </TableRow>
