@@ -5,17 +5,25 @@ import { SiteHeader } from "./components/site-header";
 export const DashboardLayout = ({
   children,
   onNavigate,
-  currentView
+  currentView,
+  onTogglePreview,
+  isPreviewHidden
 }: {
   children: React.ReactNode;
   onNavigate?: (view: string) => void;
-  currentView?: string
+  currentView?: string;
+  onTogglePreview?: () => void;
+  isPreviewHidden?: boolean;
 }) => {
   return (
     <SidebarProvider>
       <AppSidebar onNavigate={onNavigate} currentView={currentView} />
       <SidebarInset>
-        <SiteHeader currentView={currentView} />
+        <SiteHeader
+          currentView={currentView}
+          onTogglePreview={onTogglePreview}
+          isPreviewHidden={isPreviewHidden}
+        />
         <main className="flex-1">
           {children}
         </main>

@@ -31,7 +31,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
       <SidebarHeader className="border-b px-2 md:px-0 border-border">
         <SidebarMenuButton
           className="
-            flex items-center justify-center gap-2 px-8 py-3 font-sans text-base font-medium text-white/90 hover:text-white tracking-tight rounded-xl h-12 bg-linear-to-b from-[#279596] to-[#318A8B] shadow-[inset_0_4px_6px_rgba(255,255,255,0.4),inset_0_-4px_6px_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.1)]
+            flex items-center justify-center gap-2 px-8 py-3 font-sans text-base font-medium text-white/90 hover:text-white tracking-tight rounded-xl h-12 bg-linear-to-b from-[#279596] to-[#318A8B] shadow-[inset_0_4px_6px_rgba(255,255,255,0.4),inset_0_-4px_6px_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.1)] hover:scale-95 transition-all duration-300 ease-in-out
           "
         >
           <Plus className="size-6" strokeWidth={2.5} />
