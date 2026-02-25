@@ -10,7 +10,6 @@ import {
 
 import {
   Avatar,
-  AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar"
 import {
@@ -47,11 +46,14 @@ export function NavUser({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-neutral-500/30 bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground h-14"
+              className="data-[state=open]:bg-neutral-500/30 bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground h-14 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm active:scale-[0.98] cursor-pointer"
             >
-              <Avatar className="h-8 w-8 rounded-lg grayscale">
-                <AvatarImage src={user.avatar} alt={user.name} />
-                <AvatarFallback className="rounded-lg bg-neutral-200 dark:bg-neutral-600">CN</AvatarFallback>
+              <Avatar className="h-8 w-8 rounded-lg! bg-transparent border-none p-0 overflow-hidden">
+                {user.avatar ? (
+                  <AvatarImage src={user.avatar} alt={user.name} className="rounded-lg!" />
+                ) : (
+                  <div className="h-full w-full rounded-lg! bg-indigo-100 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400 font-semibold m-0 flex items-center justify-center border-none">CN</div>
+                )}
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
@@ -70,9 +72,12 @@ export function NavUser({
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src={user.avatar} alt={user.name} />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                <Avatar className="h-8 w-8 rounded-lg! bg-transparent border-none p-0 overflow-hidden">
+                  {user.avatar ? (
+                    <AvatarImage src={user.avatar} alt={user.name} className="rounded-lg!" />
+                  ) : (
+                    <div className="h-full w-full rounded-lg! bg-indigo-100 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400 font-semibold m-0 flex items-center justify-center border-none">CN</div>
+                  )}
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">{user.name}</span>

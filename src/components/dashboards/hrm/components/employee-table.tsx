@@ -46,7 +46,7 @@ export function EmployeeTable({ employees }: EmployeeTableProps) {
               <TableRow
                 key={employee.id}
                 className={cn(
-                  "hover:bg-muted/60 cursor-pointer transition-colors border-none text-muted-foreground hover:text-foreground",
+                  "hover:bg-muted/60 cursor-pointer transition-all duration-300 hover:shadow-sm border-none text-muted-foreground hover:text-foreground",
                 )}
               >
                 <TableCell className="font-medium  pl-2 py-2">

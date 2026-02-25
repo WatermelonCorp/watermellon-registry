@@ -32,7 +32,7 @@ const getDarkBadgeStyles = (bg: string) => {
 };
 
 export const StreamCard = ({ card }: { card: StreamCardProps }) => (
-    <Card className="shadow-none bg-neutral-200/35 dark:bg-neutral-900 rounded-lg border-none px-3 py-2.5 gap-3">
+    <Card className="shadow-none bg-neutral-200/35 dark:bg-neutral-900 rounded-lg border-none px-3 py-2.5 gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-[0.98] cursor-pointer group">
         <CardHeader className="p-0 flex flex-row items-start justify-between space-y-0">
             <div className="flex gap-2">
                 <div className={cn("size-7 rounded-sm flex items-center justify-center text-white shadow-sm", card.logoBg)}>
@@ -43,8 +43,8 @@ export const StreamCard = ({ card }: { card: StreamCardProps }) => (
                     <span className="text-[13px] text-neutral-500 dark:text-neutral-400 font-medium">{card.code}</span>
                 </div>
             </div>
-            <Avatar className="size-8 border-2 border-white dark:border-neutral-800 shadow-sm">
-                <AvatarImage src={card.avatar} className="grayscale hover:grayscale-0 transition-all cursor-pointer" />
+            <Avatar className="size-8 border-2 border-white dark:border-neutral-800 shadow-sm transition-all duration-300 hover:scale-110 hover:ring-2 hover:ring-indigo-500/30 cursor-pointer">
+                <AvatarImage src={card.avatar} className="grayscale hover:grayscale-0 transition-all duration-300" />
                 <AvatarFallback>
                     <IconUser className="size-4" />
                 </AvatarFallback>
@@ -74,11 +74,10 @@ export const StreamCard = ({ card }: { card: StreamCardProps }) => (
                         key={i}
                         variant="secondary"
                         className={cn(
-                            "flex items-center gap-1.5 px-2 py-1 rounded-full border- shadow-none font- text-[12px] tracking-tight",
+                            "flex items-center gap-1.5 px-2 py-1 rounded-full shadow-none text-[12px] tracking-tight transition-all duration-300 hover:scale-105 hover:shadow-sm cursor-pointer border dark:border-neutral-700/50",
                             tag.bg,
                             tag.color,
-                            getDarkBadgeStyles(tag.bg),
-                            "dark:border-neutral-700/50"
+                            getDarkBadgeStyles(tag.bg)
                         )}
                     >
                         <span className="flex items-center justify-center">{tag.icon}</span>

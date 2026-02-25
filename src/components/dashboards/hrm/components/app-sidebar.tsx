@@ -152,7 +152,7 @@ export function IconRail({
               <Button
                 variant="ghost"
                 size="icon"
-                className="size-10 text-neutral-500 hover:text-foreground hover:bg-muted"
+                className="size-10 text-neutral-500 hover:text-foreground hover:bg-muted transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
                 asChild
               >
                 <a href="#" onClick={(e) => e.preventDefault()}>
@@ -216,7 +216,7 @@ export function SecondarySidebar({
             <Button
               variant="ghost"
               size="icon"
-              className="size-8 text-muted-foreground hover:text-foreground hover:bg-muted"
+              className="size-8 text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
               onClick={onToggle}
             >
               <X className="size-4" />
@@ -244,7 +244,7 @@ export function SecondarySidebar({
                   }
                 }}
                 className={cn(
-                  "flex items-center gap-2 rounded-md px-2.5 py-2 text-sm transition-colors",
+                  "flex items-center gap-2 rounded-md px-2.5 py-2 text-sm transition-all duration-300 hover:translate-x-1 active:scale-[0.98]",
                   (currentView ? currentView === item.label : item.isActive)
                     ? "bg-sidebar-primary text-sidebar-primary-foreground font-medium"
                     : "text-muted-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
@@ -287,7 +287,7 @@ export function SecondarySidebar({
                       return;
                     }
                   }}
-                  className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors
+                  className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-all duration-300 hover:translate-x-1
                     text-sidebar-foreground/50 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                 >
                   <div
@@ -323,7 +323,7 @@ function ThemeIconButton({ item }: { item: typeof secondaryIconItems[0] }) {
           <Button
             variant="ghost"
             size="icon"
-            className="size-10 text-neutral-500 hover:text-foreground hover:bg-muted"
+            className="size-10 text-neutral-500 hover:text-foreground hover:bg-muted transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
             <item.icon className="size-4" />
@@ -341,7 +341,7 @@ function ThemeIconButton({ item }: { item: typeof secondaryIconItems[0] }) {
         <Button
           variant="ghost"
           size="icon"
-          className="size-10 text-neutral-500 hover:text-foreground hover:bg-muted"
+          className="size-10 text-neutral-500 hover:text-foreground hover:bg-muted transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
           asChild
         >
           <a href="#" onClick={(e) => e.preventDefault()}>
@@ -385,7 +385,7 @@ function CollapsibleSection({
                 onNavigate(item.label);
               }
             }}
-            className="flex items-center gap-1.5 rounded-md px-2 pl-3 py-1.5 text-sm transition-colors
+            className="flex items-center gap-1.5 rounded-md px-2 pl-3 py-1.5 text-sm transition-all duration-300 hover:translate-x-1
               text-sidebar-foreground/55 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
           >
             <item.icon className="size-4" />
