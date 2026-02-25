@@ -50,10 +50,40 @@ export const TranscribeVoiceMessage: React.FC<VoiceMessageProps> = ({
     };
 
     const remainingTime = Math.ceil(initialDuration - currentTime);
-    const progressPercent = (currentTime / initialDuration) * 100;
-    const words = transcription.split(' ');
-    const revealedWordCount = Math.floor((currentTime / initialDuration) * words.length);
-    const visibleTranscription = words.slice(0, Math.max(1, revealedWordCount)).join(' ');
+    const progressPercent = currentTime / initialDuration;
+
+    const chars = transcription.split('');
+    const totalChars = chars.length;
+    const isDone = currentTime >= initialDuration;
+
+    // When done, reveal everything with no fade zone trickery
+    const revealedCount = isDone ? totalChars : Math.floor(progressPercent * totalChars);
+    const fadeZone = 5;
+
+    const getCharStyle = (i: number): React.CSSProperties | null => {
+        const distFromFrontier = revealedCount - i;
+
+        // Completely hidden — don't render
+        if (distFromFrontier <= 0) return null;
+
+        // Done: all chars fully visible, no blur at all
+        if (isDone) {
+            return { opacity: 1, filter: 'none', display: 'inline' };
+        }
+
+        // Frontier fade zone
+        if (distFromFrontier <= fadeZone) {
+            const t = distFromFrontier / fadeZone;
+            return {
+                opacity: t,
+                filter: `blur(${((1 - t) * 5).toFixed(2)}px)`,
+                display: 'inline',
+                transition: 'opacity 0.07s ease-out, filter 0.07s ease-out',
+            };
+        }
+
+        return { opacity: 1, filter: 'none', display: 'inline' };
+    };
 
     return (
         <div className={`w-full flex flex-col items-center justify-center p-2 sm:p-4 antialiased select-none ${className}`}>
@@ -77,15 +107,17 @@ export const TranscribeVoiceMessage: React.FC<VoiceMessageProps> = ({
                         onClick={handlePlayToggle}
                         className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center transition-all active:scale-90 text-neutral-900 dark:text-white"
                     >
-                        {isPlaying ? <TbPlayerPauseFilled size={20} className="sm:w-5.5" /> : <TbPlayerPlayFilled size={20} className="ml-0.5 sm:ml-1 sm:w-5.5" />}
+                        {isPlaying
+                            ? <TbPlayerPauseFilled size={20} className="sm:w-5.5" />
+                            : <TbPlayerPlayFilled size={20} className="ml-0.5 sm:ml-1 sm:w-5.5" />
+                        }
                     </button>
 
-                    {/* Waveform Visualization */}
+                    {/* Waveform */}
                     <div className="flex items-center gap-0.5 sm:gap-[3.5px] h-8 sm:h-10 overflow-hidden">
                         {waveformHeights.map((h, i) => {
                             const barProgress = (i / waveformHeights.length) * 100;
-                            const isPlayed = barProgress < progressPercent;
-
+                            const isPlayed = barProgress < progressPercent * 100;
                             return (
                                 <motion.div
                                     key={i}
@@ -113,28 +145,32 @@ export const TranscribeVoiceMessage: React.FC<VoiceMessageProps> = ({
                     </span>
                 </div>
 
-                {/* Transcription Bubble  */}
+                {/* Transcription Bubble */}
                 <AnimatePresence>
                     {showTranscription && (
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                            initial={{ opacity: 0, scale: 0.85, y: 8 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                            exit={{ opacity: 0, scale: 0.85, y: 8 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 400 }}
-                            className="absolute bottom-[170%] sm:bottom-[170%] left-0 z-20 pointer-events-none origin-bottom-left"
+                            className="absolute bottom-[170%] left-0 z-20 pointer-events-none origin-bottom-left"
                         >
                             <div className="relative">
-                                {/* Main Bubble */}
-                                <div className="rounded-2xl sm:rounded-[28px] p-4 sm:p-6 w-[calc(100vw-5rem)] max-w-60 sm:max-w-70 shadow-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-white/10">
-                                    <p className="text-sm sm:text-lg leading-relaxed font-bold tracking-tight text-neutral-900 dark:text-white">
-                                        {visibleTranscription}
-                                        <motion.span
-                                            animate={{ opacity: [1, 0] }}
-                                            transition={{ repeat: Infinity, duration: 0.8 }}
-                                            className="inline-block w-0.5 h-[1.1em] ml-0.5 align-middle bg-neutral-400 dark:bg-neutral-500"
-                                        />
+                                <motion.div
+                                    layout
+                                    transition={{ type: 'spring', damping: 32, stiffness: 300 }}
+                                    className="rounded-2xl sm:rounded-[28px] px-4 py-4 sm:px-6 sm:py-5 w-[calc(100vw-5rem)] max-w-60 sm:max-w-70 shadow-xl border bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-white/10 overflow-hidden"
+                                >
+                                    <p className="text-sm sm:text-lg leading-relaxed font-bold tracking-tight text-neutral-900 dark:text-white wrap-break-word">
+                                        {chars.map((char, i) => {
+                                            const style = getCharStyle(i);
+                                            if (!style) return null;
+                                            return (
+                                                <span key={i} style={style}>{char}</span>
+                                            );
+                                        })}
                                     </p>
-                                </div>
+                                </motion.div>
 
                                 {/* Speech Bubble Connectors */}
                                 <div className="absolute -bottom-9 left-4 flex flex-col gap-1.5 items-center">
