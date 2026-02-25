@@ -16,6 +16,14 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "./ui/sidebar"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog"
 
 export function NavSecondary({
   items,
@@ -31,6 +39,11 @@ export function NavSecondary({
       url: string
       isDisabled?: boolean
     }[]
+    dialog?: {
+      title: string
+      description: string
+      content: React.ReactNode
+    }
   }[]
 }) {
   const pathname = "/financial-center/invoice-manager"
@@ -49,7 +62,7 @@ export function NavSecondary({
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton
                     tooltip={item.title}
-                    className={`rounded transition-colors ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+                    className={`rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
                     isActive={pathname === item.url}
                   >
 
@@ -64,7 +77,7 @@ export function NavSecondary({
                       <SidebarMenuSubItem key={subItem.title}>
                         <SidebarMenuSubButton
                           asChild
-                          className={`rounded transition-colors ${pathname === subItem.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+                          className={`rounded transition-all duration-200 hover:translate-x-1 ${pathname === subItem.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
                           isActive={pathname === subItem.url}
                         >
 
@@ -84,22 +97,44 @@ export function NavSecondary({
             </Collapsible>
           ) : (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton
-                asChild
-                tooltip={item.title}
-                className={`rounded transition-colors ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
-                isActive={pathname === item.url}
-              >
-
-                <a href={item.isDisabled ? "#" : item.url} onClick={(e) => {
-                  if (item.isDisabled) {
-                    e.preventDefault();
-                  }
-                }}>
-                  {item.icon && <item.icon />}
-                  <span>{item.title}</span>
-                </a>
-              </SidebarMenuButton>
+              {item.dialog ? (
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <SidebarMenuButton
+                      tooltip={item.title}
+                      className={`rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+                    >
+                      {item.icon && <item.icon />}
+                      <span>{item.title}</span>
+                    </SidebarMenuButton>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>{item.dialog.title}</DialogTitle>
+                      <DialogDescription>
+                        {item.dialog.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    {item.dialog.content}
+                  </DialogContent>
+                </Dialog>
+              ) : (
+                <SidebarMenuButton
+                  asChild
+                  tooltip={item.title}
+                  className={`rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+                  isActive={pathname === item.url}
+                >
+                  <a href={item.isDisabled ? "#" : item.url} onClick={(e) => {
+                    if (item.isDisabled) {
+                      e.preventDefault();
+                    }
+                  }}>
+                    {item.icon && <item.icon />}
+                    <span>{item.title}</span>
+                  </a>
+                </SidebarMenuButton>
+              )}
             </SidebarMenuItem>
           )
         )}
