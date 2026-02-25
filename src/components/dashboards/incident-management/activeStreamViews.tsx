@@ -51,6 +51,7 @@ export function ActiveStreamViews() {
                             <TabsTrigger
                                 key={tab.value}
                                 value={tab.value}
+                                disabled={tab.value !== "flowView"}
                                 className="group bg-transparent dark:bg-transparent data-[state=active]:bg-transparent dark:data-[state=active]:bg-transparent shadow-none! data-[state=active]:shadow-none! border-t-0! border-x-0! border-b-0! data-[state=active]:border-b-[1.5px]! data-[state=active]:border-orange-500! dark:data-[state=active]:border-orange-500! rounded-none flex items-center gap-2 font-medium data-[state=active]:font-medium tracking-tight data-[state=active]:text-neutral-800 dark:data-[state=active]:text-neutral-200 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-[15px] px-1 h-9 text-neutral-500 dark:text-neutral-400 max-md:whitespace-nowrap focus:ring-0! focus:outline-none! focus-visible:ring-0! focus-visible:outline-none! focus-visible:border-t-0! focus-visible:border-x-0! cursor-pointer"
                             >
                                 <tab.icon className="size-5 text-neutral-400 dark:text-neutral-500 group-data-[state=active]:text-orange-500 dark:group-data-[state=active]:text-orange-500 transition-colors duration-300" strokeWidth={1.5} />
