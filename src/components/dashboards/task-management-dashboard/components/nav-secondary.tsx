@@ -32,7 +32,7 @@ export function NavSecondary({
         <SidebarMenu>
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild size="default" className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-400/15 dark:hover:bg-neutral-800/50 transition-colors">
+              <SidebarMenuButton asChild size="default" className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-400/15 dark:hover:bg-neutral-800/50 transition-all active:scale-[0.98]">
                 {item.onClick ? (
                   <button
                     onClick={(e) => {
@@ -64,7 +64,7 @@ export function NavSecondary({
                 )}
               </SidebarMenuButton>
               {item.badge && (
-                <SidebarMenuBadge className="text-muted-foreground/50 bg-neutral-200 px-0.5 text-neutral-700 rounded text-[10px] dark:bg-neutral-800 dark:text-neutral-400">
+                <SidebarMenuBadge className="bg-neutral-200 px-0.5 text-neutral-700 rounded text-[10px] dark:bg-neutral-800 dark:text-neutral-400">
                   {item.badge}
                 </SidebarMenuBadge>
               )}
