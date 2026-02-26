@@ -1459,6 +1459,20 @@
       ]
     },
     {
+      "name": "changeable-pricing-section",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/changeable-pricing-section.tsx",
+          "target": "components/ui/changeable-pricing-section.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "chart",
       "type": "registry:ui",
       "dependencies": [
@@ -3652,6 +3666,20 @@
       ]
     },
     {
+      "name": "layered-progressive-disclosure",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/layered-progressive-disclosure.tsx",
+          "target": "components/ui/layered-progressive-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "liquid",
       "type": "registry:ui",
       "dependencies": [
@@ -3774,6 +3802,20 @@
           "path": "src/components/pages/luminia-luxe-realestate/ui/agents-carousel.css",
           "target": "components/watermelon/landing/luminia-luxe-realestate/ui/agents-carousel.css",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "macos-sidebar",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/macos-sidebar.tsx",
+          "target": "components/ui/macos-sidebar.tsx",
+          "type": "registry:ui"
         }
       ]
     },
@@ -4050,6 +4092,20 @@
         {
           "path": "src/components/ui/morphing-discovery-bar.tsx",
           "target": "components/ui/morphing-discovery-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "morphing-sidebar-controls",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/morphing-sidebar-controls.tsx",
+          "target": "components/ui/morphing-sidebar-controls.tsx",
           "type": "registry:ui"
         }
       ]
@@ -5278,6 +5334,20 @@
         {
           "path": "src/components/ui/spinner.tsx",
           "target": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/split-button.tsx",
+          "target": "components/ui/split-button.tsx",
           "type": "registry:ui"
         }
       ]

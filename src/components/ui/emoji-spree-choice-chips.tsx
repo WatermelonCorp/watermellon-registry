@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+"use client";
+
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 export interface InterestItem {
     id: string;
@@ -8,10 +10,10 @@ export interface InterestItem {
 }
 
 interface Particle {
-    id: number;
+    id: string;
     emoji: string;
-    x: number;
-    y: number;
+    xOffset: number;
+    rotate: number;
 }
 
 interface Props {
@@ -19,107 +21,100 @@ interface Props {
     onChange?: (selectedIds: string[]) => void;
 }
 
-export const EmojiSpreeChips: React.FC<Props> = ({ interests, onChange }) => {
+export const EmojiSpreeChips: React.FC<Props> = ({
+    interests,
+    onChange,
+}) => {
     const [selected, setSelected] = useState<string[]>([]);
     const [particles, setParticles] = useState<Particle[]>([]);
-    const containerRef = useRef<HTMLDivElement>(null);
 
-    const toggleInterest = (id: string, emoji: string, e: React.MouseEvent<HTMLButtonElement>) => {
-        const isSelected = selected.includes(id);
-        const newSelected = isSelected
-            ? selected.filter((i) => i !== id)
-            : [...selected, id];
-
-        setSelected(newSelected);
-        onChange?.(newSelected);
-
-        if (!containerRef.current) return;
-
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const rect = e.currentTarget.getBoundingClientRect();
-
-        const centerX = rect.left + rect.width / 2 - containerRect.left;
-        const centerY = rect.top - containerRect.top;
-
-        const newParticles = Array.from({ length: 3 }).map(() => ({
-            id: Math.random() + Date.now(),
+    const spawnParticles = (emoji: string) => {
+        const newParticles: Particle[] = Array.from({ length: 3 }).map(() => ({
+            id: crypto.randomUUID(),
             emoji,
-            x: centerX,
-            y: centerY,
+            xOffset: (Math.random() - 0.5) * 180,
+            rotate: (Math.random() - 0.5) * 40,
         }));
 
-        setParticles((prev) => [...prev, ...newParticles]);
+        setParticles(newParticles);
+
+        setTimeout(() => {
+            setParticles([]);
+        }, 1600);
     };
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setParticles((prev) => prev.filter(p => p.id > Date.now() - 1000));
-        }, 1000);
-        return () => clearInterval(timer);
-    }, []);
+    const toggleInterest = (id: string, emoji: string) => {
+        setSelected((prev) => {
+            const exists = prev.includes(id);
+            const updated = exists
+                ? prev.filter((i) => i !== id)
+                : [...prev, id];
+
+            onChange?.(updated);
+
+            if (!exists) spawnParticles(emoji);
+
+            return updated;
+        });
+    };
 
     return (
-        <div ref={containerRef} className="w-full max-w-4xl min-h-[600px] select-none overflow-hidden py-10 relative">
-            <h2 className="text-2xl sm:text-[36px] font-bold tracking-tight mb-6 px-6 ml-4 sm:ml-8 transition-colors text-[#343336] dark:text-[#fefefe]">
-                Interests
-            </h2>
+        <div className="w-full max-w-4xl min-h-[600px] relative overflow-hidden py-10 isolate">
+            <h2 className="text-3xl font-bold mb-8 px-6">Interests</h2>
 
-            {/* Staggered Grid Container */}
-            <div className="flex flex-wrap gap-x-3 gap-y-5 sm:gap-x-4 sm:gap-y-7 px-4 sm:px-10 justify-center">
+            {/* Chips */}
+            <div className="flex flex-wrap gap-4 px-6 justify-center relative z-20">
                 {interests.map((item) => {
                     const isSelected = selected.includes(item.id);
+
                     return (
                         <motion.button
                             key={item.id}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={(e) => toggleInterest(item.id, item.emoji, e)}
-                            className={`
-                  flex items-center justify-center gap-2 sm:gap-4 px-3 sm:px-4 py-[8px] sm:py-[10px] rounded-full border-[1.6px] 
-                  text-sm sm:text-[18px] font-semibold transition-all duration-300 whitespace-nowrap 
-                  ${isSelected
-                                    ? 'bg-[#fefefe] dark:bg-[#26262b] border-[#E6E5EA] dark:border-[#3f3f46] text-[#262626] dark:text-[#fefefe]'
-                                    : 'bg-[#F4F4F9] dark:bg-[#1a1a1e] border-[#F4F4F9]/80 dark:border-[#1a1a1e] text-[#262626] dark:text-[#a1a1aa] hover:border-[#E5E5E5] dark:hover:border-[#3f3f46]'}
-                `}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                            onClick={() => toggleInterest(item.id, item.emoji)}
+                            className={`flex items-center gap-3 px-5 py-2 rounded-full border text-lg font-semibold
+                ${isSelected
+                                    ? "bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-600"
+                                    : "bg-neutral-100 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800"
+                                }`}
                         >
-                            <span className="text-lg sm:text-xl">{item.emoji}</span>
-                            <span className='text-lg sm:text-xl font-bold'>{item.label}</span>
+                            <span>{item.emoji}</span>
+                            <span>{item.label}</span>
                         </motion.button>
                     );
                 })}
             </div>
 
-            {/* Floating Emoji Particles */}
-            <div className="absolute inset-0 pointer-events-none z-50 overflow-hidden">
+            {/* PARTICLES */}
+            <div className="absolute inset-0 pointer-events-none">
                 <AnimatePresence>
-                    {particles.map((p, i) => (
-                        <motion.div
+                    {particles.map((p, index) => (
+                        <FloatingEmoji
                             key={p.id}
-                            initial={{ opacity: 0, scale: 0.2, y: p.y, x: p.x }}
-                            animate={{
-                                opacity: [0, 1, 1, 0],
-                                scale: [0.5, 2, 1.8, 1.2],
-                                y: p.y - 250,
-                                x: p.x + (i % 2 === 0 ? 100 : -40),
-                                rotate: i % 2 === 0 ? 20 : -20
-                            }}
-                            transition={{ duration: 1, ease: "easeOut" }}
-                            className="absolute text-5xl sm:text-7xl drop-shadow-xl"
-                        >
-                            {p.emoji}
-                        </motion.div>
+                            emoji={p.emoji}
+                            delay={index * 0.08}
+                            xOffset={p.xOffset}
+                            rotate={p.rotate}
+                        />
                     ))}
                 </AnimatePresence>
             </div>
 
-            {/* Counter Badge */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40">
+            {/* Selected Pill */}
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20">
                 <AnimatePresence>
                     {selected.length > 0 && (
                         <motion.div
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 50 }}
-                            className="backdrop-blur-md border-[1.59px] px-8 sm:px-12 py-3 sm:py-[18px] rounded-full shadow-xl text-lg sm:text-xl font-bold transition-colors bg-[#fefefe]/80 dark:bg-[#1a1a1e]/80 border-[#E6E5EA] dark:border-[#3f3f46] text-[#68686F] dark:text-[#fefefe] whitespace-nowrap"
+                            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 40 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 200,
+                                damping: 20,
+                            }}
+                            className="relative border px-10 py-4 rounded-full shadow-lg text-xl font-bold bg-white dark:bg-neutral-900"
                         >
                             {selected.length} Interests
                         </motion.div>
@@ -127,5 +122,51 @@ export const EmojiSpreeChips: React.FC<Props> = ({ interests, onChange }) => {
                 </AnimatePresence>
             </div>
         </div>
+    );
+};
+
+/* Floating Emoji Component */
+const FloatingEmoji = ({
+    emoji,
+    delay,
+    xOffset,
+    rotate,
+}: {
+    emoji: string;
+    delay: number;
+    xOffset: number;
+    rotate: number;
+}) => {
+    const [phase, setPhase] = useState<"up" | "down">("up");
+
+    return (
+        <motion.div
+            initial={{ y: 0, x: 0, opacity: 0, scale: 0.6, rotate: 0 }}
+            animate={{
+                y: [0, -240, 0],
+                x: [0, xOffset, xOffset * 0.4],
+                opacity: [0, 1, 0.9],
+                scale: [0.6, 1.8, 1],
+                rotate: [0, rotate, rotate * 0.5],
+            }}
+            transition={{
+                duration: 1.4,
+                ease: "easeInOut",
+                delay,
+            }}
+            onUpdate={(latest) => {
+                if (typeof latest.y === "number") {
+                    if (latest.y < -130) {
+                        setPhase("up");
+                    } else {
+                        setPhase("down");
+                    }
+                }
+            }}
+            className={`absolute left-1/2 bottom-20 text-6xl -translate-x-1/2 ${phase === "up" ? "z-30" : "z-10"
+                }`}
+        >
+            {emoji}
+        </motion.div>
     );
 };

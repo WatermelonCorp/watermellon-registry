@@ -1,5 +1,14 @@
+"use client";
+
 import React, { useState, useCallback, useEffect } from 'react';
-import { motion, AnimatePresence, type Variants, useMotionValue, useSpring, useTransform } from 'motion/react';
+import {
+    motion,
+    AnimatePresence,
+    type Variants,
+    useMotionValue,
+    useSpring,
+    useTransform
+} from 'motion/react';
 import { X } from 'lucide-react';
 
 export interface GalleryItem {
@@ -25,32 +34,29 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
     const [activeIndex, setActiveIndex] = useState(0);
 
     const [responsiveSizes, setResponsiveSizes] = useState({
-        radius: radius,
-        thumbnailSize: thumbnailSize,
-        centerSize: centerSize
+        radius,
+        thumbnailSize,
+        centerSize
     });
 
     useEffect(() => {
         const updateSizes = () => {
             const width = window.innerWidth;
-            if (width < 640) { // Mobile
+
+            if (width < 640) {
                 setResponsiveSizes({
                     radius: Math.min(radius, 140),
                     thumbnailSize: Math.min(thumbnailSize, 80),
                     centerSize: Math.min(centerSize, 280)
                 });
-            } else if (width < 1024) { // Tablet
+            } else if (width < 1024) {
                 setResponsiveSizes({
                     radius: Math.min(radius, 200),
                     thumbnailSize: Math.min(thumbnailSize, 90),
                     centerSize: Math.min(centerSize, 340)
                 });
-            } else { // Desktop
-                setResponsiveSizes({
-                    radius: radius,
-                    thumbnailSize: thumbnailSize,
-                    centerSize: centerSize
-                });
+            } else {
+                setResponsiveSizes({ radius, thumbnailSize, centerSize });
             }
         };
 
@@ -68,10 +74,8 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
     });
 
     const toggleExpand = useCallback(() => {
-        setIsExpanded((prev) => !prev);
-        if (!isExpanded) {
-            rotation.set(0);
-        }
+        setIsExpanded(prev => !prev);
+        if (!isExpanded) rotation.set(0);
     }, [isExpanded, rotation]);
 
     const handleItemClick = (index: number) => {
@@ -93,12 +97,12 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
                         initial={{ scale: 0.8, opacity: 0, y: 30 }}
                         animate={{ scale: 1, opacity: 1, y: 0 }}
                         exit={{ scale: 0.4, opacity: 0, transition: { duration: 0.25 } }}
-                        transition={{ type: 'spring' as const, stiffness: 260, damping: 25 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 25 }}
                         className="relative z-10"
                     >
                         <div
                             style={{ width: responsiveSizes.centerSize, height: responsiveSizes.centerSize }}
-                            className="relative p-3 sm:p-4 rounded-[32px] sm:rounded-[42px] overflow-hidden border-[1.7px] transition-colors duration-300 bg-white border-[#F4F4F4] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] dark:bg-[#1C1C1E] dark:border-white/10 dark:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)]"
+                            className="relative p-3 sm:p-4 rounded-[32px] sm:rounded-[42px] overflow-hidden border transition-colors duration-300 bg-white border-neutral-200 shadow-2xl dark:bg-neutral-900 dark:border-neutral-800"
                         >
                             <img
                                 src={items[activeIndex].url}
@@ -107,12 +111,12 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
                                 draggable={false}
                             />
 
-                            <button title='close'
+                            <button
                                 onClick={toggleExpand}
-                                className="absolute top-6 right-6 sm:top-8 sm:right-8 w-8 h-8 sm:w-10 sm:h-10 backdrop-blur-xl rounded-full flex items-center justify-center shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 bg-[#F6F1F0] hover:bg-white dark:bg-white/10 dark:hover:bg-white/20"
+                                className="absolute top-6 right-6 sm:top-8 sm:right-8 w-8 h-8 sm:w-10 sm:h-10 backdrop-blur-xl rounded-full flex items-center justify-center shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 bg-neutral-100 hover:bg-white dark:bg-white/10 dark:hover:bg-white/20"
                             >
-                                <X size={20} className="sm:hidden text-[#908B90] dark:text-white" />
-                                <X size={28} className="hidden sm:block text-[#908B90] dark:text-white" />
+                                <X size={20} className="sm:hidden text-neutral-500 dark:text-white" />
+                                <X size={28} className="hidden sm:block text-neutral-500 dark:text-white" />
                             </button>
                         </div>
                     </motion.div>
@@ -125,8 +129,7 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
                         exit="collapsed"
                         className="relative flex items-center justify-center w-full h-full cursor-grab active:cursor-grabbing"
                         onPan={(_, info) => {
-                            const current = rotation.get();
-                            rotation.set(current + info.delta.x * 0.5);
+                            rotation.set(rotation.get() + info.delta.x * 0.5);
                         }}
                     >
                         {items.map((item, index) => {
@@ -147,7 +150,6 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
                     </motion.div>
                 )}
             </AnimatePresence>
-
         </div>
     );
 };
@@ -162,7 +164,15 @@ interface ItemProps {
     onClick: () => void;
 }
 
-const Item: React.FC<ItemProps> = ({ index, item, baseAngle, radius, thumbnailSize, rotation, onClick }) => {
+const Item: React.FC<ItemProps> = ({
+    index,
+    item,
+    baseAngle,
+    radius,
+    thumbnailSize,
+    rotation,
+    onClick
+}) => {
     const x = useTransform(rotation, (r: number) => {
         const currentAngle = baseAngle + (r * Math.PI) / 180;
         return Math.cos(currentAngle) * radius;
@@ -192,7 +202,7 @@ const Item: React.FC<ItemProps> = ({ index, item, baseAngle, radius, thumbnailSi
         >
             <div
                 style={{ width: thumbnailSize, height: thumbnailSize }}
-                className="p-1.5 sm:p-2 rounded-[18px] sm:rounded-[24px] shadow-2xl border overflow-hidden transition-colors duration-300 bg-white border-white/80 ring-1 ring-black/[0.03] dark:bg-[#1C1C1E] dark:border-white/10 dark:ring-white/5"
+                className="p-1.5 sm:p-2 rounded-[18px] sm:rounded-[24px] shadow-2xl border overflow-hidden transition-colors duration-300 bg-white border-neutral-200 ring-1 ring-black/5 dark:bg-neutral-900 dark:border-neutral-800 dark:ring-white/5"
             >
                 <img
                     src={item.url}
