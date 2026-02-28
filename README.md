@@ -20,10 +20,12 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" /></a>
+  <a href="https://github.com/WatermelonCorp/watermellon-registry/actions/workflows/ci.yml"><img src="https://github.com/WatermelonCorp/watermellon-registry/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
   <a href="https://github.com/WatermelonCorp/watermellon-registry/stargazers"><img src="https://img.shields.io/github/stars/WatermelonCorp/watermellon-registry?style=social" alt="Stars" /></a>
   <a href="https://github.com/WatermelonCorp/watermellon-registry/issues"><img src="https://img.shields.io/github/issues/WatermelonCorp/watermellon-registry" alt="Issues" /></a>
   <a href="https://github.com/WatermelonCorp/watermellon-registry/pulls"><img src="https://img.shields.io/github/issues-pr/WatermelonCorp/watermellon-registry" alt="Pull Requests" /></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" /></a>
+  <a href="https://github.com/sponsors/WatermelonCorp"><img src="https://img.shields.io/badge/Sponsor-WatermelonCorp-pink?logo=github-sponsors" alt="Sponsor" /></a>
 </p>
 
 ---
