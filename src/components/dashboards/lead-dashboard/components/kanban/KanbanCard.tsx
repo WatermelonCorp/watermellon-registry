@@ -10,6 +10,17 @@ import {
 } from "../ui/popover"
 import { IconUser, IconMailForward } from '@tabler/icons-react'
 
+interface KanbanCardType {
+    id: string
+    title: string
+    description: string
+    type: string
+    user: string
+    avatarColor: string
+    date: string
+    comments: number
+}
+
 export const StatusMarker = ({ type }: { type: string }) => {
     switch (type) {
         case "urgent":
@@ -33,7 +44,7 @@ export const StatusMarker = ({ type }: { type: string }) => {
     }
 }
 
-export const getStatusStyles = (type: string) => {
+const getStatusStyles = (type: string) => {
     switch (type) {
         case "urgent":
             return {
@@ -56,7 +67,7 @@ export const getStatusStyles = (type: string) => {
     }
 }
 
-export const KanbanCard = ({ card, columnId }: { card: any, columnId: string }) => {
+export const KanbanCard = ({ card, columnId }: { card: KanbanCardType, columnId: string }) => {
     const {
         attributes,
         listeners,

@@ -293,7 +293,7 @@ export const KanbanBoardView = () => {
                                     strategy={verticalListSortingStrategy}
                                 >
                                     {column.cards.map((card) => (
-                                        <KanbanCard key={card.id} card={card} columnId={column.id} />
+                                        <KanbanCard key={String(card.id)} card={{ ...card, id: String(card.id) }} columnId={column.id} />
                                     ))}
                                 </SortableContext>
 
