@@ -56,7 +56,7 @@ export const getStatusStyles = (type: string) => {
     }
 }
 
-export const KanbanCard = ({ card, index, columnId }: { card: any, index: number, columnId: string }) => {
+export const KanbanCard = ({ card, columnId }: { card: any, columnId: string }) => {
     const {
         attributes,
         listeners,
