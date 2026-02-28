@@ -1,0 +1,49 @@
+name: Bug Report
+description: Create a report to help us improve
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: component
+    attributes:
+      label: Component Name
+      description: Which component is this bug related to? (e.g., Button, Accordion)
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Expected vs Actual Behavior
+      description: Tell us what should happen, and what happens instead. Steps to reproduce are very helpful!
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment Info
+      description: OS, Browser, React version, Tailwind version...
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Screen Recording
+      description: If applicable, add screenshots or links to a quick screen recording to help explain your problem.
+    validations:
+      required: false
