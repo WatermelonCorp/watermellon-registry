@@ -51,11 +51,35 @@ import { Badge } from "./components/ui/badge"
 import { Card, CardContent, CardHeader } from "./components/ui/card"
 import { cn } from "@/lib/utils"
 import { Separator } from "./components/ui/separator"
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "./components/ui/dialog"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "./components/ui/dropdown-menu"
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "./components/ui/popover"
+import { Label } from "./components/ui/label"
+import { Textarea } from "./components/ui/textarea"
 import { amsGroups, visualizeGroups, type Task, type Group } from "./data"
 
 function ProjectCard({ title, logo, count, groups, isPrivate }: { title: string, logo: React.ReactNode, count: number, groups: Group[], isPrivate?: boolean }) {
     return (
-        <Card className="flex flex-col gap-0 dark:border-neutral-800/60 bg-white dark:bg-neutral-900 shadow-none overflow-hidden rounded-lg  p-0">
+        <Card className="flex flex-col gap-0 dark:border-neutral-800/60 bg-white dark:bg-neutral-900 shadow-none overflow-hidden rounded-lg p-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-neutral-900/40">
             <CardHeader className="flex flex-row items-center justify-between px-4 py-3! border-b dark:border-neutral-800/50">
                 <div className="flex items-center gap-2.5">
                     {logo}
@@ -68,10 +92,46 @@ function ProjectCard({ title, logo, count, groups, isPrivate }: { title: string,
                         </Badge>
                     </div>
                 </div>
-                <div className="flex items-center gap-3 text-neutral-500">
-                    <IconArrowsSort className="size-4 " />
-                    <IconUserCircle className="size-4.5 " />
-                    <IconDots className="size-4 " />
+                <div className="flex items-center gap-1 text-neutral-500">
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="icon" className="size-8 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
+                                <IconArrowsSort className="size-4 text-neutral-500" />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Sort by Date</DropdownMenuItem>
+                            <DropdownMenuItem>Sort by Priority</DropdownMenuItem>
+                            <DropdownMenuItem>Sort by Assignee</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="icon" className="size-8 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
+                                <IconUserCircle className="size-4.5 text-neutral-500" />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                            <DropdownMenuItem>View all members</DropdownMenuItem>
+                            <DropdownMenuItem>Invite member</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="icon" className="size-8 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
+                                <IconDots className="size-4" />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                            <DropdownMenuLabel>Project Actions</DropdownMenuLabel>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem>Project Settings</DropdownMenuItem>
+                            <DropdownMenuItem>Manage Members</DropdownMenuItem>
+                            <DropdownMenuItem>Export Data</DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem className="text-red-500">Archive Project</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                 </div>
             </CardHeader>
             <CardContent className="p-0 gap-0">
@@ -88,9 +148,17 @@ function ProjectCard({ title, logo, count, groups, isPrivate }: { title: string,
                     <FilterPill icon={<IconCircle className="size-3.5" />} label="Status" />
                     <FilterPill icon={<IconGitBranch className="size-3.5" />} label="Parent" />
                     <FilterPill icon={<IconFlag className="size-3.5" />} label="Priority" />
-                    <div className="flex items-center px-1 size-6 justify-center border border-neutral-200 dark:border-neutral-800 rounded-full">
-                        <IconDots className="size-3 text-neutral-500" />
-                    </div>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <button className="flex items-center px-1 size-6 justify-center border border-neutral-200 dark:border-neutral-800 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                                <IconDots className="size-3 text-neutral-500" />
+                            </button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Save Filter</DropdownMenuItem>
+                            <DropdownMenuItem>Clear All</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                 </div>
 
                 {/* Groups */}
@@ -106,10 +174,43 @@ function ProjectCard({ title, logo, count, groups, isPrivate }: { title: string,
                                             {group.count}
                                         </Badge>
                                     </div>
-                                    <div className="flex items-center gap-2">
-                                        <IconEye className="size-4 text-neutral-500" />
-                                        <IconArrowsSort className="size-4 text-neutral-500" />
-                                        <IconDots className="size-4 text-neutral-500" />
+                                    <div className="flex items-center gap-1">
+                                        <DropdownMenu>
+                                            <DropdownMenuTrigger asChild>
+                                                <button className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition-colors">
+                                                    <IconEye className="size-4 text-neutral-500" />
+                                                </button>
+                                            </DropdownMenuTrigger>
+                                            <DropdownMenuContent align="end">
+                                                <DropdownMenuItem>Show Completed</DropdownMenuItem>
+                                                <DropdownMenuItem>Compact View</DropdownMenuItem>
+                                            </DropdownMenuContent>
+                                        </DropdownMenu>
+                                        <DropdownMenu>
+                                            <DropdownMenuTrigger asChild>
+                                                <button className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition-colors">
+                                                    <IconArrowsSort className="size-4 text-neutral-500" />
+                                                </button>
+                                            </DropdownMenuTrigger>
+                                            <DropdownMenuContent align="end">
+                                                <DropdownMenuItem>Sort Alphabetically</DropdownMenuItem>
+                                                <DropdownMenuItem>Sort by Status</DropdownMenuItem>
+                                            </DropdownMenuContent>
+                                        </DropdownMenu>
+                                        <DropdownMenu>
+                                            <DropdownMenuTrigger asChild>
+                                                <button className="p-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition-colors">
+                                                    <IconDots className="size-4 text-neutral-500" />
+                                                </button>
+                                            </DropdownMenuTrigger>
+                                            <DropdownMenuContent align="end">
+                                                <DropdownMenuItem>Rename Group</DropdownMenuItem>
+                                                <DropdownMenuItem>Change Color</DropdownMenuItem>
+                                                <DropdownMenuItem>Hide Group</DropdownMenuItem>
+                                                <DropdownMenuSeparator />
+                                                <DropdownMenuItem className="text-red-500">Delete Group</DropdownMenuItem>
+                                            </DropdownMenuContent>
+                                        </DropdownMenu>
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2.5">
@@ -128,7 +229,7 @@ function ProjectCard({ title, logo, count, groups, isPrivate }: { title: string,
 
 function FilterPill({ icon, label }: { icon: React.ReactNode, label: string }) {
     return (
-        <div className="flex items-center gap-1 h-6 px-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-[11px] text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors cursor-pointer shrink-0 font-medium">
+        <div className="flex items-center gap-1 h-6 px-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-[11px] text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all active:scale-95 cursor-pointer shrink-0 font-medium whitespace-nowrap">
             {icon}
             {label}
         </div>
@@ -150,7 +251,7 @@ function TaskItem({ task }: { task: Task }) {
     }
 
     return (
-        <div className="flex items-center gap-3 p-1.5 rounded-full bg-white dark:bg-neutral-800/20 border dark:border-neutral-700/40 dar shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:border-neutral-200 dark:hover:border-neutral-700 transition-all duration-200 cursor-pointer group">
+        <div className="flex items-center gap-3 p-1.5 rounded-full bg-white dark:bg-neutral-800/20 border dark:border-neutral-700/40 shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:border-neutral-200 dark:hover:border-neutral-700 transition-all duration-200 cursor-pointer group active:scale-[0.985]">
             <div className="flex items-center gap-2.5 shrink-0 px-0.5">
                 {statusIcons[task.status]}
                 {priorityIcons[task.priority]}
@@ -168,12 +269,12 @@ function TaskItem({ task }: { task: Task }) {
                 )}
             </div>
 
-            <div className="flex items-center gap-4 shrink-0">
+            <div className="flex items-center gap-2 shrink-0">
                 <Badge variant="outline" className="text-[9px] h-4.5 uppercase rounded-full border dark:border-neutral-800 text-neutral-500 bg-neutral-50/50 dark:bg-neutral-900 shadow-none max-md:hidden">
                     # {task.category}
                 </Badge>
 
-                <span className="text-[12px] text-neutral-500 font-medium w-10 text-right tabular-nums tracking-tight hidden sm:block">{task.date}</span>
+                <span className="text-[12px] text-neutral-500 font-medium w-fit min-w-[44px] whitespace-nowrap shrink-0 text-right tabular-nums tracking-tight hidden sm:block">{task.date}</span>
 
                 <div className={cn("size-5 rounded-full bg-linear-to-br shadow-[0_2px_4px_rgba(0,0,0,0.1)] ring-1 ring-white/10", task.avatarGradient)} />
             </div>
@@ -201,7 +302,20 @@ export default function TasksPageView() {
                             <span className="text-neutral-400 font-light">/</span>
                             <span className="text-neutral-500">Overview</span>
                         </div>
-                        <IconDots className="size-3.5 text-neutral-400 ml-1 hover:text-neutral-600 cursor-pointer transition-colors" />
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <button className="ml-1 p-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors group">
+                                    <IconDots className="size-3.5 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300" />
+                                </button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="start">
+                                <DropdownMenuLabel>Page Settings</DropdownMenuLabel>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem>Layout Settings</DropdownMenuItem>
+                                <DropdownMenuItem>Customize View</DropdownMenuItem>
+                                <DropdownMenuItem>Export View</DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                         <IconLock className="size-3.5 text-neutral-400 hover:text-neutral-600 cursor-pointer transition-colors" />
                     </div>
                 </div>
@@ -226,23 +340,61 @@ export default function TasksPageView() {
                         <IconSearch className="absolute left-2.5 top-1/2 -translate-y-1/2 size-3.5 text-neutral-400 group-focus-within:text-neutral-500 transition-colors" />
                         <Input
                             placeholder="Search..."
-                            className="h-8 w-8 sm:w-56 pl-8 pr-2 sm:pr-12 bg-neutral-100/50 dark:bg-neutral-900/50 focus-visible:bg-background focus-visible:ring-1 focus-visible:border-neutral-200 transition-all rounded-md text-xs border-neutral-200 dark:border-neutral-800 shadow-none placeholder:text-neutral-400 font-medium"
+                            className="h-8 w-8 sm:w-56 pl-8 pr-2 sm:pr-12 bg-neutral-100/50 dark:bg-neutral-900/50 focus-visible:bg-background focus-visible:ring-1 focus-visible:border-neutral-200 transition-all hover:border-neutral-300 dark:hover:border-neutral-700 rounded-md text-xs border-neutral-200 dark:border-neutral-800 shadow-none placeholder:text-neutral-400 font-medium"
                         />
                         <kbd className="absolute right-1.5 top-1/2 -translate-y-1/2 hidden md:flex h-5 items-center justify-center gap-1 rounded-[4px] border border-neutral-200 bg-white px-1.5 text-[10px] font-medium text-neutral-500 opacity-100 pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 select-none">
                             <span className="text-[12px] h-3.5 flex items-center">⌘</span>
                             <span className="h-3.5 flex items-center">K</span>
                         </kbd>
                     </div>
-                    <Button variant="outline" size="icon" className="size-8 hidden xs:flex items-center justify-center hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 transition-colors">
-                        <IconBell className="size-4" />
-                    </Button>
-                    <Button variant="outline" size="icon" className="size-8 hidden sm:flex items-center justify-center hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 transition-colors">
-                        <IconQuestionMark className="size-4" />
-                    </Button>
-                    <Button variant="outline" className="h-8 px-3 gap-1.5 hidden md:flex items-center justify-center hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md shadow-none font-medium text-xs tracking-tight border-neutral-200 dark:border-neutral-800 transition-colors">
-                        <IconUpload className="size-3.5" />
-                        <span>Share</span>
-                    </Button>
+                    <Popover>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" size="icon" className="size-8 hidden xs:flex items-center justify-center hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 transition-all active:scale-95">
+                                <IconBell className="size-4" />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent align="end" className="w-80 p-0">
+                            <div className="flex items-center justify-between border-b px-4 py-3">
+                                <span className="font-semibold text-sm">Notifications</span>
+                                <span className="text-xs text-indigo-600 dark:text-indigo-400 cursor-pointer hover:underline font-medium">Mark all as read</span>
+                            </div>
+                            <div className="flex flex-col items-center justify-center py-8 text-center text-sm text-neutral-500">
+                                <IconBell className="size-8 text-neutral-300 dark:text-neutral-700 mb-2" strokeWidth={1.5} />
+                                No new notifications
+                            </div>
+                        </PopoverContent>
+                    </Popover>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="outline" size="icon" className="size-8 hidden sm:flex items-center justify-center hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 transition-all active:scale-95">
+                                <IconQuestionMark className="size-4" />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-48">
+                            <DropdownMenuItem>Help Center</DropdownMenuItem>
+                            <DropdownMenuItem>Keyboard Shortcuts</DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem>Give Feedback</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button variant="outline" className="h-8 px-3 gap-1.5 hidden md:flex items-center justify-center hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md shadow-none font-medium text-xs tracking-tight border-neutral-200 dark:border-neutral-800 transition-all active:scale-95">
+                                <IconUpload className="size-3.5" />
+                                <span>Share</span>
+                            </Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>Share Dashboard</DialogTitle>
+                                <DialogDescription>Anyone with the link can view this dashboard.</DialogDescription>
+                            </DialogHeader>
+                            <div className="flex gap-2 mt-2">
+                                <Input value="https://watermelon.co/d/tasks" readOnly />
+                                <Button className="shrink-0 bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-500 dark:hover:bg-indigo-600">Copy Link</Button>
+                            </div>
+                        </DialogContent>
+                    </Dialog>
                 </div>
             </header>
 
@@ -263,7 +415,8 @@ export default function TasksPageView() {
                                 <TabsTrigger
                                     key={tab.value}
                                     value={tab.value}
-                                    className="relative gap-1.5 px-1 py-0 bg-transparent shadow-none! data-[state=active]:bg-transparent dark:data-[state=active]:bg-transparent! data-[state=active]:shadow-none! rounded-none text-neutral-500 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-neutral-100 border-x-0 border-t-0 border-b-0 data-[state=active]:border-b-[1.5px]! data-[state=active]:border-neutral-900 dark:data-[state=active]:border-neutral-100 data-[state=active]:-mb-px data-[state=active]:z-10 font-medium text-[13px] transition-none group items-center flex tracking-tight shrink-0 whitespace-nowrap"
+                                    disabled={tab.value !== "overview"}
+                                    className="relative gap-1.5 px-1 py-0 bg-transparent shadow-none! data-[state=active]:bg-transparent dark:data-[state=active]:bg-transparent! data-[state=active]:shadow-none! rounded-none text-neutral-500 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-neutral-100 border-x-0 border-t-0 border-b-0 data-[state=active]:border-b-[1.5px]! data-[state=active]:border-neutral-900 dark:data-[state=active]:border-neutral-100 data-[state=active]:-mb-px data-[state=active]:z-10 font-medium text-[13px] transition-all active:scale-95 group items-center flex tracking-tight shrink-0 whitespace-nowrap"
                                 >
                                     <tab.icon className="size-4" />
                                     {tab.label}
@@ -272,39 +425,176 @@ export default function TasksPageView() {
                         </TabsList>
 
                         <div className="flex items-center">
-                            <Button variant="outline" className="h-8 gap-1 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50 rounded-md text-[12px] shadow-none font-medium shrink-0 dark:border-neutral-800 transition-colors">
-                                <IconPlus className="size-3" />
-                                <span className="max-md:hidden">Add View</span>
-                            </Button>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="outline" className="h-8 gap-1 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50 rounded-md text-[12px] shadow-none font-medium shrink-0 dark:border-neutral-800 transition-all active:scale-95">
+                                        <IconPlus className="size-3" />
+                                        <span className="max-md:hidden">Add View</span>
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="start">
+                                    <DropdownMenuItem className="gap-2">
+                                        <IconLayoutGrid className="size-4" /> Board
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem className="gap-2">
+                                        <IconList className="size-4" /> List
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem className="gap-2">
+                                        <IconTable className="size-4" /> Table
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem className="gap-2">
+                                        <IconCalendarEvent className="size-4" /> Calendar
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-1.5 ml-4 shrink-0">
                         <div className="hidden sm:flex items-center gap-1">
-                            <Button variant="outline" size="icon" className="size-8 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
-                                <IconLayoutGrid className="size-4" />
-                            </Button>
-                            <Button variant="outline" size="icon" className="size-8 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
-                                <IconUserCircle className="size-4.5" />
-                            </Button>
-                            <Button variant="outline" size="icon" className="size-8 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
-                                <IconCircleCheck className="size-4" />
-                            </Button>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="outline" size="icon" className="size-8 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all active:scale-95">
+                                        <IconLayoutGrid className="size-4" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end">
+                                    <DropdownMenuLabel>Group By</DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem>Status</DropdownMenuItem>
+                                    <DropdownMenuItem>Assignee</DropdownMenuItem>
+                                    <DropdownMenuItem>Priority</DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="outline" size="icon" className="size-8 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all active:scale-95">
+                                        <IconUserCircle className="size-4.5" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end">
+                                    <DropdownMenuLabel>Quick Assign</DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem>Me</DropdownMenuItem>
+                                    <DropdownMenuItem>Team</DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="outline" size="icon" className="size-8 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all active:scale-95">
+                                        <IconCircleCheck className="size-4" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end">
+                                    <DropdownMenuItem>Mark Visible as Done</DropdownMenuItem>
+                                    <DropdownMenuItem>Clear Completed</DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
 
                         <div className="flex items-center gap-1.5 font-medium">
-                            <Button variant="outline" className="h-8 gap-2 px-3 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-xs font-medium transition-colors">
-                                <IconAdjustmentsHorizontal className="size-4" />
-                                <span className="hidden xs:inline">Filter (3)</span>
-                            </Button>
-                            <Button variant="outline" className="h-8 gap-2 px-3 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-xs font-medium transition-colors">
-                                <IconSortAscending className="size-4" />
-                                <span className="hidden xs:inline">Sort</span>
-                            </Button>
-                            <Button className="h-8 gap-2 px-3 rounded-md shadow-xs bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white text-xs font-medium border-none shrink-0 ml-1 transition-colors">
-                                <IconCirclePlus className="size-4" />
-                                <span className="hidden xs:inline">Add Task</span>
-                            </Button>
+                            <Popover>
+                                <PopoverTrigger asChild>
+                                    <Button variant="outline" className="h-8 gap-2 px-3 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-xs font-medium transition-all active:scale-95">
+                                        <IconAdjustmentsHorizontal className="size-4" />
+                                        <span className="hidden xs:inline">Filter (3)</span>
+                                    </Button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-80" align="end">
+                                    <div className="grid gap-4">
+                                        <div className="space-y-2">
+                                            <h4 className="font-medium leading-none">Filters</h4>
+                                            <p className="text-sm text-muted-foreground">
+                                                Advanced task filtering options.
+                                            </p>
+                                        </div>
+                                        <div className="grid gap-2">
+                                            <div className="flex items-center justify-between text-xs">
+                                                <span className="text-neutral-500">Status</span>
+                                                <span className="text-indigo-600 font-medium cursor-pointer">Clear</span>
+                                            </div>
+                                            <div className="flex flex-wrap gap-1.5">
+                                                <Badge className="rounded-full bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border-indigo-200 cursor-pointer">To Do</Badge>
+                                                <Badge variant="outline" className="rounded-full cursor-pointer hover:bg-neutral-50">In Progress</Badge>
+                                                <Badge variant="outline" className="rounded-full cursor-pointer hover:bg-neutral-50">Done</Badge>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </PopoverContent>
+                            </Popover>
+
+                            <Popover>
+                                <PopoverTrigger asChild>
+                                    <Button variant="outline" className="h-8 gap-2 px-3 rounded-md shadow-none border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-xs font-medium transition-all active:scale-95">
+                                        <IconSortAscending className="size-4" />
+                                        <span className="hidden xs:inline">Sort</span>
+                                    </Button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-56" align="end">
+                                    <div className="space-y-1.5">
+                                        <DropdownMenuLabel className="px-1 text-xs text-neutral-500 uppercase">Sort By</DropdownMenuLabel>
+                                        <div className="flex flex-col gap-0.5">
+                                            <button className="flex items-center gap-2 px-2 py-1.5 text-xs rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 w-full text-left transition-colors">
+                                                <IconCalendarEvent className="size-3.5" /> Due Date
+                                            </button>
+                                            <button className="flex items-center gap-2 px-2 py-1.5 text-xs rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 w-full text-left transition-colors">
+                                                <IconAlertTriangleFilled className="size-3.5" /> Priority
+                                            </button>
+                                            <button className="flex items-center gap-2 px-2 py-1.5 text-xs rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 w-full text-left transition-colors font-medium text-indigo-600 bg-indigo-50 dark:bg-indigo-900/20">
+                                                <IconSortAscending className="size-3.5" /> Alphabetical
+                                            </button>
+                                        </div>
+                                    </div>
+                                </PopoverContent>
+                            </Popover>
+                            <Dialog>
+                                <DialogTrigger asChild>
+                                    <Button className="h-8 gap-2 px-3 rounded-md shadow-xs bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white text-xs font-medium border-none shrink-0 ml-1 transition-all active:scale-95">
+                                        <IconCirclePlus className="size-4" />
+                                        <span className="hidden xs:inline">Add Task</span>
+                                    </Button>
+                                </DialogTrigger>
+                                <DialogContent className="sm:max-w-[425px]">
+                                    <DialogHeader>
+                                        <DialogTitle>Create New Task</DialogTitle>
+                                        <DialogDescription>
+                                            Add a new task to your project. Click save when you're done.
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                    <div className="grid gap-4 py-4">
+                                        <div className="grid gap-2">
+                                            <Label htmlFor="task-name">Task Name</Label>
+                                            <Input id="task-name" placeholder="Enter task name..." />
+                                        </div>
+                                        <div className="grid gap-2">
+                                            <Label htmlFor="task-description">Description</Label>
+                                            <Textarea id="task-description" placeholder="Add more details..." />
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-4">
+                                            <div className="grid gap-2">
+                                                <Label htmlFor="priority">Priority</Label>
+                                                <select id="priority" className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-900">
+                                                    <option>Low</option>
+                                                    <option>Normal</option>
+                                                    <option>High</option>
+                                                    <option>Urgent</option>
+                                                </select>
+                                            </div>
+                                            <div className="grid gap-2">
+                                                <Label htmlFor="status">Status</Label>
+                                                <select id="status" className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-900">
+                                                    <option>To Do</option>
+                                                    <option>In Progress</option>
+                                                    <option>Done</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <DialogFooter>
+                                        <Button type="submit" className="bg-indigo-600 hover:bg-indigo-700 text-white">Save Task</Button>
+                                    </DialogFooter>
+                                </DialogContent>
+                            </Dialog>
                         </div>
                     </div>
                 </div>

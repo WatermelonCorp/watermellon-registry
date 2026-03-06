@@ -32,7 +32,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton
               size="lg"
-              className="bg-background border border-border"
+              className="bg-background border border-border transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group/profile"
             >
               <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-md">
                 <Command className="size-4" />
@@ -47,7 +47,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 onClick={() => {
                   toggleSidebar();
                 }}
-                className="size-4 text-muted-foreground"
+                className="size-4 text-muted-foreground transition-all duration-200 hover:scale-[1.05] active:scale-90 cursor-pointer hover:text-primary"
               />
             </SidebarMenuButton>
           </SidebarMenuItem>

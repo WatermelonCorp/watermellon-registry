@@ -29,7 +29,7 @@ export function NavFooter({
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton
               asChild
-              className={`rounded transition-colors ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+              className={`rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
               isActive={pathname === item.url}
             >
               <a href={item.isDisabled ? "#" : item.url} onClick={(e) => {

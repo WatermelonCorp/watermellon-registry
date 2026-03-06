@@ -2,8 +2,6 @@ import { ReceiptText, Inbox, Star, Send, FileText, Calendar, Archive, AlertCircl
 
 export const initialInvoice = {
     invoiceNumber: "INV-0231",
-    companyName: "Acme Corp.",
-    companyEmail: "hi@acmecorp.com",
     billedByName: "John Jacobs",
     billedByEmail: "hijacob@gmail.com",
     billedByAddress: "123 Maple Street, Springfield",

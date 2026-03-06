@@ -15,12 +15,14 @@ export const CompanyView = () => {
               Companies
             </TabsTrigger>
             <TabsTrigger
+              disabled
               value="deals"
               className="rounded-none shadow-none! bg-transparent! border-x-0! border-t-0! border-b-2! border-transparent data-[state=active]:border-b-neutral-900! dark:data-[state=active]:border-b-white! focus-visible:ring-0! focus-visible:ring-offset-0! hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
             >
               Deals
             </TabsTrigger>
             <TabsTrigger
+              disabled
               value="forecast"
               className="rounded-none shadow-none! bg-transparent! border-x-0! border-t-0! border-b-2! border-transparent data-[state=active]:border-b-neutral-900! dark:data-[state=active]:border-b-white! focus-visible:ring-0! focus-visible:ring-offset-0! hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
             >

@@ -28,7 +28,7 @@ export function NavProjects({
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
-            <SidebarMenuButton asChild tooltip={item.name} className=" hover:bg-indigo-600/5 hover:text-indigo-600  text-sidebar-foreground/70 tracking-tight data-[active=true]:bg-indigo-600/5 data-[active=true]:text-indigo-600">
+            <SidebarMenuButton asChild tooltip={item.name} className=" hover:bg-indigo-600/5 hover:text-indigo-600  text-sidebar-foreground/70 tracking-tight data-[active=true]:bg-indigo-600/5 data-[active=true]:text-indigo-600 dark:data-[active=true]:bg-indigo-600/20 dark:data-[active=true]:text-indigo-400 dark:hover:text-indigo-400 dark:hover:bg-indigo-600/20 transition-all duration-200 hover:translate-x-1 active:scale-95">
               <a href={item.isDisabled ? "#" : item.url} onClick={(e) => {
                 if (item.isDisabled) {
                   e.preventDefault();

@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { initialInvoice } from "./data";
 
-export const InvoiceView = () => {
+export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) => {
   const [view, setView] = useState("form");
   const [invoice, setInvoice] = useState(initialInvoice);
 
@@ -26,8 +26,6 @@ export const InvoiceView = () => {
 
   interface Invoice {
     invoiceNumber: string;
-    companyName: string;
-    companyEmail: string;
     billedByName: string;
     billedByEmail: string;
     billedByAddress: string;
@@ -82,7 +80,7 @@ export const InvoiceView = () => {
       {/* View Switcher for Mobile/Tablet */}
       <div className="lg:hidden mb-4">
         <Select value={view} onValueChange={setView}>
-          <SelectTrigger className="w-full h-10 bg-background dark:bg-card shadow-none font-medium border-border">
+          <SelectTrigger className="w-full h-10 bg-background dark:bg-card shadow-none font-medium border-border hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors">
             <SelectValue placeholder="Select View" />
           </SelectTrigger>
           <SelectContent>
@@ -96,8 +94,12 @@ export const InvoiceView = () => {
         {/* Left Side - Form */}
         <div
           className={cn(
-            "lg:flex-1 p-4 border-[1.5px] rounded-lg lg:overflow-y-auto scrollbar-hide bg-card border-border",
-            view !== "form" && "hidden lg:block"
+            "p-4 border-[1.5px] rounded-lg lg:overflow-y-auto scrollbar-hide bg-card border-border",
+            // On mobile (lg:hidden), if view isn't 'form', hide this. 
+            // On desktop (lg:block), if isPreviewHidden is true, center and set width. Otherwise fill available space.
+            view !== "form" && "hidden lg:flex",
+            view === "form" && "flex lg:flex-1",
+            isPreviewHidden ? "lg:w-[60%] lg:mx-auto lg:block" : "lg:flex-1"
           )}
         >
           <div className="space-y-6">
@@ -116,47 +118,13 @@ export const InvoiceView = () => {
               />
             </div>
 
-            {/* Company Details */}
-            <div>
-              <h3 className="font-semibold mb-3 text-foreground/90 tracking-tight">
-                Company Details
-              </h3>
-              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4">
-                <div>
-                  <label className="text-xs text-muted-foreground mb-1 block font-medium">
-                    Company Name
-                  </label>
-                  <Input
-                    value={invoice.companyName}
-                    onChange={(e) =>
-                      handleInputChange("companyName", e.target.value)
-                    }
-                    placeholder="Your Company"
-                    className="h-9"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs text-muted-foreground mb-1 block font-medium">
-                    Company Email
-                  </label>
-                  <Input
-                    value={invoice.companyEmail}
-                    onChange={(e) =>
-                      handleInputChange("companyEmail", e.target.value)
-                    }
-                    placeholder="company@email.com"
-                    className="h-9"
-                  />
-                </div>
-              </div>
-            </div>
 
             {/* Client Details */}
             <div>
               <h3 className="font-semibold mb-3 text-foreground/90 tracking-tight">
                 Billed By
               </h3>
-              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4">
+              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Name
@@ -204,7 +172,7 @@ export const InvoiceView = () => {
               <h3 className="font-semibold mb-3 text-foreground/90 tracking-tight">
                 Billed To
               </h3>
-              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4">
+              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Company
@@ -253,7 +221,7 @@ export const InvoiceView = () => {
                 Dates
               </h3>
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-background/30 rounded-xl border border-border p-3">
+                <div className="bg-background/30 rounded-xl border border-border p-3 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Date Issued
                   </label>
@@ -266,7 +234,7 @@ export const InvoiceView = () => {
                     className="h-9"
                   />
                 </div>
-                <div className="bg-background/30 rounded-xl border border-border p-3">
+                <div className="bg-background/30 rounded-xl border border-border p-3 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Due Date
                   </label>
@@ -289,7 +257,7 @@ export const InvoiceView = () => {
               </h3>
               <div className="space-y-3">
                 {invoice.items.map((item, index) => (
-                  <div key={index} className="border border-border bg-background/30 rounded-xl p-4 space-y-3">
+                  <div key={index} className="border border-border bg-background/30 rounded-xl p-4 space-y-3 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                     <div className="space-y-1">
                       <label className="text-xs text-muted-foreground block font-medium">Description</label>
                       <Input
@@ -345,7 +313,7 @@ export const InvoiceView = () => {
                 <Button
                   onClick={addItem}
                   variant="outline"
-                  className="w-full h-10 text-sm rounded-xl border-dashed border-[1.5px] border-border bg-background/50 hover:bg-muted/50 transition-colors"
+                  className="w-full h-10 text-sm rounded-xl border-dashed border-[1.5px] border-border bg-background/50 hover:bg-muted/50 hover:border-neutral-300 dark:hover:border-neutral-700 hover:-translate-y-0.5 hover:shadow-sm active:scale-95 transition-all duration-300"
                 >
                   + Add Item
                 </Button>
@@ -354,16 +322,18 @@ export const InvoiceView = () => {
           </div>
         </div>
 
-        {/* Right Side - Preview */}
         <div
           className={cn(
-            "lg:flex-1 h-fit lg:h-full bg-muted/50 dark:bg-neutral-950/40 rounded-xl border-[1.5px] border-border lg:overflow-hidden",
-            view !== "preview" && "hidden lg:block"
+            "h-fit lg:h-full bg-muted/50 dark:bg-neutral-950/40 rounded-xl border-[1.5px] border-border lg:overflow-y-auto custom-scrollbar",
+            // Mobile toggle logic
+            view !== "preview" && "hidden lg:block",
+            // Desktop hide logic
+            isPreviewHidden ? "lg:hidden" : "lg:flex-1"
           )}
         >
-          <div className="w-full lg:h-full flex lg:items-center justify-center p-4 sm:p-8 lg:p-10 overflow-y-auto lg:overflow-hidden custom-scrollbar">
+          <div className="w-full min-h-full h-fit flex justify-center p-4 sm:p-8 lg:p-10">
             <div
-              className="relative bg-white dark:bg-neutral-900 rounded-lg p-6 lg:p-10 border-[1.5px] border-border w-full lg:max-w-4xl h-fit lg:h-full shadow-2xl shadow-neutral-200/50 dark:shadow-neutral-950/50 flex flex-col justify-between lg:origin-center lg:scale-[0.95] 2xl:scale-100 transform transition-transform duration-300"
+              className="relative bg-white dark:bg-neutral-900 rounded-lg p-6 lg:p-10 border-[1.5px] border-border w-full lg:max-w-4xl h-fit shadow-2xl shadow-neutral-200/50 dark:shadow-neutral-950/50 flex flex-col justify-between lg:origin-top lg:scale-[0.95] 2xl:scale-100 transform transition-transform duration-300"
               style={{
                 clipPath:
                   "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)",
@@ -458,7 +428,7 @@ export const InvoiceView = () => {
                     </thead>
                     <tbody>
                       {invoice.items.map((item, index) => (
-                        <tr key={index} className="border-b border-border/50">
+                        <tr key={index} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
                           <td className="py-2 sm:py-3 text-[10px] lg:text-sm text-muted-foreground font-medium">
                             {item.description}
                           </td>
