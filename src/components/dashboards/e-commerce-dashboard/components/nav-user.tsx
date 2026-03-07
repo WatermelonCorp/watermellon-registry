@@ -46,7 +46,7 @@ export function NavUser({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-neutral-500/30 bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground h-14 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm active:scale-[0.98] cursor-pointer"
+              className="data-[state=open]:bg-neutral-500/30 bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground h-14 transition-colors duration-300 hover:shadow-sm cursor-pointer"
             >
               <Avatar className="h-8 w-8 rounded-lg! bg-transparent border-none p-0 overflow-hidden">
                 {user.avatar ? (

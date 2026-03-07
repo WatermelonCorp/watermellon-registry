@@ -33,7 +33,7 @@ export function NavMain({
               <SidebarMenuButton
                 size={"lg"}
                 tooltip={item.title}
-                className="h-9 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
+                className="h-9 transition-colors duration-300 cursor-pointer"
                 isActive={currentView ? item.title === currentView : item.isActive}
                 onClick={(e) => {
                   if (item.isDisabled) {
