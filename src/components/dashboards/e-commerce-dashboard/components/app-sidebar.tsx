@@ -135,7 +135,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton
                   size="lg"
-                  className="data-[state=open]:bg-sidebar-accent bg-white dark:bg-neutral-900 shadow data-[state=open]:text-sidebar-accent-foreground h-15 px-3 border border-transparent dark:border-neutral-800 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] cursor-pointer"
+                  className="data-[state=open]:bg-sidebar-accent bg-white dark:bg-neutral-900 shadow data-[state=open]:text-sidebar-accent-foreground h-15 px-3 border border-transparent dark:border-neutral-800 transition-colors duration-300 hover:shadow-md cursor-pointer"
                 >
                   <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-md">
                     <IconBrandAppgallery stroke={2} />
