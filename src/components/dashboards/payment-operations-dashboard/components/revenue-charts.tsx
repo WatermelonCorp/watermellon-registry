@@ -43,11 +43,11 @@ const chartConfig = {
 
 export function RevenueChart() {
   return (
-    <Card className="w-full rounded-none shadow-sm p-0.5 bg-zinc-100 dark:bg-zinc-800 gap-0 border-none transition-all duration-300 hover:shadow-md hover:-translate-y-1 group/card">
+    <Card className="w-full rounded-none shadow-sm p-0.5 bg-zinc-100 dark:bg-zinc-800 gap-0 border-none group/card">
       <CardHeader className="w-full px-2 mt-1">
-        <div className="flex items-center gap-2 text-muted-foreground group-hover/card:translate-x-1 transition-transform duration-300">
+        <div className="flex items-center gap-2 text-muted-foreground">
           <DollarSign className="w-4 h-4 group-hover/card:text-primary transition-colors duration-300" />
-          <span className="text-lg font-medium  text-foreground">
+          <span className="text-lg font-medium text-foreground">
             Net revenue
           </span>
         </div>
@@ -57,7 +57,7 @@ export function RevenueChart() {
           <h2 className="text-2xl font-medium tracking-tight tabular-nums">
             ₹18,46,720
           </h2>
-          <Badge className="bg-green-500/20 text-green-600 hover:bg-green-500/30 active:scale-95 transition-all duration-200 border-none px-1.5 py-0.5 flex gap-0.5 items-center font-medium cursor-pointer">
+          <Badge className="bg-green-500/20 text-green-600 hover:bg-green-500/30 transition-colors duration-200 border-none px-1.5 py-0.5 flex gap-0.5 items-center font-medium cursor-pointer">
             <ArrowUpRight className="size-5 stroke-2" /> 5.7%
           </Badge>
         </div>

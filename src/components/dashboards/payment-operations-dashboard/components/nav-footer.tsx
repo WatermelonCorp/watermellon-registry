@@ -43,19 +43,19 @@ export function NavUser({
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[active=true]:bg-white data-[active=true]:text-zinc-900 data-[active=true]:shadow-sm rounded-none hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-white transition-all duration-200 group/userBtn"
+              className="data-[active=true]:bg-white data-[active=true]:text-zinc-900 data-[active=true]:shadow-sm rounded-none hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-white transition-colors duration-200 group/userBtn"
             >
-              <Avatar className="h-8 w-8 rounded-none grayscale group-hover/userBtn:grayscale-0 group-hover/userBtn:scale-105 transition-all duration-300">
+              <Avatar className="h-8 w-8 rounded-none">
                 <AvatarImage src={user.avatar} alt={user.name} />
                 <AvatarFallback className="rounded-none bg-zinc-200">CN</AvatarFallback>
               </Avatar>
-              <div className="grid flex-1 text-left text-sm leading-tight group-hover/userBtn:translate-x-0.5 transition-transform duration-200">
+              <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
                 <span className="text-muted-foreground truncate text-xs">
                   {user.email}
                 </span>
               </div>
-              <IconDotsVertical className="ml-auto size-4 group-hover/userBtn:text-primary transition-colors duration-200" />
+              <IconDotsVertical className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent

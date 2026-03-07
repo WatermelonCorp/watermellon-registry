@@ -41,12 +41,12 @@ export function PaymentsSummary() {
   ];
 
   return (
-    <Card className="border-none shadow-sm bg-zinc-100 dark:bg-zinc-800 rounded-none p-0.5 gap-0 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group/card">
-      <CardHeader className="flex flex-row items-center gap-2 p-2 ">
-        <div className="bg-muted p-1 rounded group-hover/card:scale-110 transition-transform duration-300">
+    <Card className="border-none shadow-sm bg-zinc-100 dark:bg-zinc-800 rounded-none p-0.5 gap-0 group/card">
+      <CardHeader className="flex flex-row items-center gap-2 p-2">
+        <div className="bg-muted p-1 rounded">
           <BanknoteX className="size-4 text-muted-foreground group-hover/card:text-foreground transition-colors" />
         </div>
-        <CardTitle className="text-md font-medium text-foreground group-hover/card:translate-x-1 transition-transform duration-300">
+        <CardTitle className="text-md font-medium text-foreground">
           Payments
         </CardTitle>
       </CardHeader>
@@ -63,17 +63,17 @@ export function PaymentsSummary() {
           {data.map((item, i) => (
             <div key={i} className="flex justify-between items-center text-sm p-2 -mx-2 hover:bg-muted/50 rounded-md transition-colors duration-200 cursor-pointer group">
               <div className="flex items-center gap-2">
-                <div className={`w-3 h-3 rounded-sm ${item.color} group-hover:scale-110 transition-transform`} />
+                <div className={`w-3 h-3 rounded-sm ${item.color}`} />
                 <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-200">{item.label}</span>
               </div>
-              <span className="font-medium tabular-nums group-hover:translate-x-1 transition-transform duration-200">{item.amount}</span>
+              <span className="font-medium tabular-nums">{item.amount}</span>
             </div>
           ))}
         </div>
         <div className="mt-8 flex justify-between items-center text-xs text-muted-foreground">
           <Popover>
             <PopoverTrigger asChild>
-              <button className="text-muted-foreground font-medium text-sm underline underline-offset-3 hover:text-foreground active:scale-95 transition-all duration-200">
+              <button className="text-muted-foreground font-medium text-sm underline underline-offset-3 hover:text-foreground transition-colors duration-200">
                 View More
               </button>
             </PopoverTrigger>
@@ -114,7 +114,7 @@ export function PaymentsSummary() {
               <div className="p-2 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50">
                 <Button variant="ghost" className="w-full h-8 text-xs font-medium justify-between group hover:bg-zinc-200/50 dark:hover:bg-zinc-800 rounded-none text-foreground">
                   Open full analytics
-                  <ArrowUpRight className="size-3.5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowUpRight className="size-3.5" />
                 </Button>
               </div>
             </PopoverContent>

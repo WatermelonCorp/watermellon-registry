@@ -15,7 +15,7 @@ export function ModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="relative hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm hover:-translate-y-0.5">
+        <Button variant="outline" size="icon" className="relative transition-colors duration-300 shadow-sm">
           <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90 group-hover:text-primary" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 group-hover:text-primary" />
           <span className="sr-only">Toggle theme</span>
