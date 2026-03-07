@@ -34,13 +34,13 @@ export function FailedPayments() {
   ];
 
   return (
-    <Card className="border-none shadow-sm bg-zinc-100 dark:bg-zinc-800 rounded-none p-0.5 gap-0 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group/card">
+    <Card className="border-none shadow-sm bg-zinc-100 dark:bg-zinc-800 rounded-none p-0.5 gap-0 group/card">
       <CardHeader className="flex flex-row items-center justify-between p-2">
         <div className="flex items-center gap-2">
-          <div className="bg-muted p-1 rounded group-hover/card:scale-110 transition-transform duration-300">
+          <div className="bg-muted p-1 rounded">
             <BanknoteX className="size-4 text-muted-foreground group-hover/card:text-foreground transition-colors" />
           </div>
-          <CardTitle className="text-xs font-semibold text-md text-foreground group-hover/card:translate-x-1 transition-transform duration-300">
+          <CardTitle className="text-xs font-semibold text-md text-foreground">
             Failed Payments
           </CardTitle>
         </div>
@@ -51,9 +51,9 @@ export function FailedPayments() {
           {data.map((item, i) => (
             <div
               key={i}
-              className="flex items-center justify-between p-2 hover:bg-muted dark:hover:bg-muted transition-all duration-200 cursor-pointer group gap-4 rounded-md"
+              className="flex items-center justify-between p-2 hover:bg-muted dark:hover:bg-muted transition-colors duration-200 cursor-pointer group gap-4 rounded-md"
             >
-              <div className="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
+              <div className="flex items-center gap-3">
                 <div className="flex flex-col">
                   <span className="text-md font-medium text-base leading-none">
                     {item.amount}
@@ -63,7 +63,7 @@ export function FailedPayments() {
                   </span>
                 </div>
               </div>
-              <Badge className="bg-red-500/20 text-red-600 hover:bg-red-500/30 group-hover:scale-105 transition-all border-none px-1.5 py-0.5 flex gap-0.5 items-center font-medium cursor-pointer uppercase rounded-none">
+              <Badge className="bg-red-500/20 text-red-600 hover:bg-red-500/30 transition-colors border-none px-1.5 py-0.5 flex gap-0.5 items-center font-medium cursor-pointer uppercase rounded-none">
                 {item.status}
               </Badge>
             </div>
@@ -72,7 +72,7 @@ export function FailedPayments() {
       </CardContent>
       <CardFooter className="bg-white dark:bg-zinc-900 flex-1 px-3 pb-2 ">
         <div className=" flex justify-between items-center text-xs text-muted-foreground w-full">
-          <button className="text-muted-foreground text-sm font-medium hover:text-foreground active:scale-95 transition-all">
+          <button className="text-muted-foreground text-sm font-medium hover:text-foreground transition-colors">
             3 of 3
           </button>
           <span className="text-sm font-medium text-muted-foreground">

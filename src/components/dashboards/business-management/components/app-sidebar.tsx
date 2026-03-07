@@ -153,7 +153,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: React.Componen
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">
-                <Input id="name" placeholder="Timeline name..." />
+                <Input id="name" placeholder="Timeline name..." className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
               </div>
             </div>
             <DialogFooter>
@@ -261,3 +261,4 @@ export function AppSidebar({ onNavigate, currentView, ...props }: React.Componen
     </Sidebar>
   )
 }
+

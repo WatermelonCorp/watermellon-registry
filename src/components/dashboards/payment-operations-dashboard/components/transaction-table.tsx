@@ -76,10 +76,10 @@ export const rows = [
 
 export function TransactionsTable() {
   return (
-    <Card className="border-none rounded-none bg-zinc-100 dark:bg-zinc-800 w-full  p-0.5 gap-0 pb-1 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group/card">
+    <Card className="border-none rounded-none bg-zinc-100 dark:bg-zinc-800 w-full p-0.5 gap-0 pb-1 group/card">
       <CardHeader className="p-2">
-        <div className="flex items-center gap-2 group-hover/card:translate-x-1 transition-transform duration-300">
-          <ArrowLeftRight className="size-4 text-muted-foreground group-hover/card:text-primary group-hover/card:rotate-180 transition-all duration-500" />
+        <div className="flex items-center gap-2">
+          <ArrowLeftRight className="size-4 text-muted-foreground group-hover/card:text-primary transition-colors duration-300" />
           <CardTitle className="text-sm font-medium text-foreground">
             Recent Transactions
           </CardTitle>
@@ -104,7 +104,7 @@ export function TransactionsTable() {
               key={i}
               className="hover:bg-slate-50/50 dark:hover:bg-neutral-800 transition-colors cursor-pointer group"
             >
-              <TableCell className="font-medium text-muted-foreground group-hover:text-foreground transition-colors group-hover:translate-x-1 duration-200">
+              <TableCell className="font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-200">
                 {tx.customer}
               </TableCell>
               <TableCell className="tabular-nums font-medium text-muted-foreground">
@@ -133,7 +133,7 @@ export function TransactionsTable() {
               <TableCell>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <button className="text-muted-foreground dark:text-muted-foreground text-sm font-medium underline underline-offset-3 hover:text-foreground active:scale-95 transition-all">
+                    <button className="text-muted-foreground dark:text-muted-foreground text-sm font-medium underline underline-offset-3 hover:text-foreground transition-colors">
                       {tx.status === "Failed" ? "Retry" : "View"}
                     </button>
                   </DialogTrigger>

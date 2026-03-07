@@ -24,13 +24,13 @@ export function DashboardHeader() {
   return (
     <header className="flex h-fit items-start justify-between gap-4 flex-col md:flex-row md:items-center">
       <div className="">
-        <h1 className="text-2xl font-medium tracking-tight leading-tight hover:scale-105 origin-left transition-transform duration-300 cursor-default">
+        <h1 className="text-2xl font-medium tracking-tight leading-tight cursor-default">
           Dashboard
         </h1>
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           Showing data for the last
           <Select defaultValue="21">
-            <SelectTrigger className="h-fit shadow-none rounded-none max-h-6 border-none bg-linear-to-b from-zinc-100 to-zinc-200 dark:bg-linear-to-b dark:from-zinc-700 dark:to-zinc-800 px-2 py-0  text-xs font-sm focus:ring-0 text-foreground hover:bg-zinc-200 dark:hover:bg-zinc-600 hover:scale-105 active:scale-95 transition-all duration-200">
+            <SelectTrigger className="h-fit shadow-none rounded-none max-h-6 border-none bg-linear-to-b from-zinc-100 to-zinc-200 dark:bg-linear-to-b dark:from-zinc-700 dark:to-zinc-800 px-2 py-0 text-xs font-sm focus:ring-0 text-foreground hover:bg-zinc-200 dark:hover:bg-zinc-600 transition-colors duration-200">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
@@ -60,9 +60,9 @@ export function DashboardHeader() {
             <DialogTrigger asChild>
               <Button
                 size="icon"
-                className="size-8 rounded-full bg-zinc-700 dark:bg-zinc-100 hover:bg-black hover:scale-110 active:scale-95 transition-all duration-300 shadow-md group/btn"
+                className="size-8 rounded-full bg-zinc-700 dark:bg-zinc-100 hover:bg-black transition-colors duration-300 shadow-md group/btn"
               >
-                <Plus className="size-4 text-white dark:text-black group-hover/btn:rotate-90 transition-transform duration-300" />
+                <Plus className="size-4 text-white dark:text-black" />
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px] rounded-none shadow-2xl p-0 overflow-hidden border-zinc-200 dark:border-zinc-800">
