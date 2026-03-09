@@ -19,6 +19,7 @@ import {
   Terminal,
   Settings,
 } from "lucide-react"
+import { Button } from "./ui/button"
 
 import { TeamSwitcher } from "./team-switcher"
 import {
@@ -134,13 +135,42 @@ const data = {
       title: "Support Center",
       url: "#",
       icon: Headset,
-      isDisabled: true,
+      dialog: {
+        title: "Customer Support",
+        description: "How can we help you today?",
+        content: (
+          <div className="grid gap-4 py-4">
+            <p className="text-sm text-muted-foreground">Contact our support team for any issues or questions about your account.</p>
+            <div className="flex flex-col gap-2">
+              <Button className="w-full">Open Live Chat</Button>
+              <Button variant="outline" className="w-full">Read Documentation</Button>
+            </div>
+          </div>
+        )
+      }
     },
     {
       title: "Notifications",
       url: "#",
       icon: Bell,
-      isDisabled: true,
+      dialog: {
+        title: "System Notifications",
+        description: "Stay updated with your latest alerts.",
+        content: (
+          <div className="space-y-4 py-4">
+            {[1, 2].map((i) => (
+              <div key={i} className="flex gap-3 items-start border-b pb-3 last:border-0 last:pb-0">
+                <div className="size-2 bg-primary rounded-full mt-1.5 shrink-0" />
+                <div>
+                  <p className="text-sm font-medium">New Feature: AI Invoicing</p>
+                  <p className="text-xs text-muted-foreground">You can now use AI to generate invoice descriptions automatically.</p>
+                </div>
+              </div>
+            ))}
+            <Button variant="link" className="w-full text-xs h-auto p-0">View all alerts</Button>
+          </div>
+        )
+      }
     },
   ],
   navTertiary: [

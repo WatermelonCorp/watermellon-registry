@@ -31,7 +31,7 @@ export function NavMain({
             <SidebarMenuButton
               asChild
               tooltip={item.name}
-              className={`rounded transition-colors ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+              className={`rounded transition-colors duration-200 hover:bg-muted ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
               isActive={pathname === item.url}
             >
 
