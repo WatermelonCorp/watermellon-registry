@@ -40,7 +40,7 @@ const PlatformIcon = ({ platform }: { platform: string }) => {
 }
 
 export const MeetingCard = ({ meeting }: { meeting: any }) => (
-    <Card className="border-[1.3px] border-neutral-200/80 bg-neutral-100/60 dark:bg-neutral-800/50 dark:border-neutral-800 shadow-none px-2 pt-1.5 pb-2.5 gap-2 transition-all duration-200 hover:-translate-y-1 hover:shadow-md active:scale-[0.98] cursor-pointer group">
+    <Card className="border-[1.3px] border-neutral-200/80 bg-neutral-100/60 dark:bg-neutral-800/50 dark:border-neutral-800 shadow-none px-2 pt-1.5 pb-2.5 gap-2 transition-colors duration-200 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/80 cursor-pointer group outline-none">
         <CardHeader className="p-0! flex flex-row items-center justify-between space-y-0">
             <div className="flex items-center gap-1.5 overflow-hidden">
                 <PlatformIcon platform={meeting.platform} />
@@ -48,7 +48,7 @@ export const MeetingCard = ({ meeting }: { meeting: any }) => (
             </div>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="icon" className="size-6 text-neutral-400 dark:text-neutral-500 transition-all active:scale-90 opacity-0 group-hover:opacity-100 data-[state=open]:opacity-100">
+                    <Button variant="ghost" size="icon" className="size-6 text-neutral-400 dark:text-neutral-500 transition-colors opacity-0 group-hover:opacity-100 data-[state=open]:opacity-100 outline-none focus-visible:ring-0">
                         <IconDotsVertical className="w-4 h-4" />
                     </Button>
                 </DropdownMenuTrigger>

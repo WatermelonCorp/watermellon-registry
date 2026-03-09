@@ -54,7 +54,7 @@ export default function MeetingsView() {
                 <div className="flex items-center gap-2">
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className="size-8 text-neutral-500 lg:hidden transition-all active:scale-90 hover:bg-neutral-100 dark:hover:bg-neutral-800">
+                            <Button variant="ghost" size="icon" className="size-8 text-neutral-500 lg:hidden transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800 outline-none focus-visible:ring-0">
                                 <IconFilter className="size-4" />
                             </Button>
                         </SheetTrigger>
@@ -69,7 +69,7 @@ export default function MeetingsView() {
                     </Sheet>
                     <Dialog>
                         <DialogTrigger asChild>
-                            <Button size="icon" className="h-8 w-8 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-all active:scale-90 shadow-sm hover:shadow-indigo-500/20">
+                            <Button size="icon" className="h-8 w-8 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors shadow-sm hover:shadow-indigo-500/20 outline-none focus-visible:ring-0">
                                 <IconPlus className="w-5 h-5 text-white" />
                             </Button>
                         </DialogTrigger>
@@ -117,13 +117,13 @@ export default function MeetingsView() {
                             <Button
                                 variant="outline"
                                 onClick={() => setShowFilters(!showFilters)}
-                                className={`h-9 gap-1.5 text-neutral-600 dark:text-neutral-300 bg-white dark:bg-neutral-900 border-[1.3px] border-neutral-200 dark:border-neutral-800 px-2.5! tracking-tight transition-all hover:bg-neutral-50 dark:hover:bg-neutral-800 active:scale-95 shadow-none ${!showFilters ? "bg-neutral-100 dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700" : ""}`}
+                                className={`h-9 gap-1.5 text-neutral-600 dark:text-neutral-300 bg-white dark:bg-neutral-900 border-[1.3px] border-neutral-200 dark:border-neutral-800 px-2.5! tracking-tight transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800 shadow-none outline-none focus-visible:ring-0 ${!showFilters ? "bg-neutral-100 dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700" : ""}`}
                             >
                                 <IconFilter className={`w-4 h-4 ${!showFilters ? "text-neutral-900 dark:text-neutral-100" : "text-neutral-400 dark:text-neutral-500"}`} />
                                 {showFilters ? "Hide Filters" : "Show Filters"}
                             </Button>
                             <Select defaultValue="all">
-                                <SelectTrigger className="w-fit h-9 font-medium bg-white dark:bg-neutral-900 border-[1.3px] text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-800 px-2.5! tracking-tight transition-all hover:bg-neutral-50 dark:hover:bg-neutral-800 active:scale-95 shadow-none">
+                                <SelectTrigger className="w-fit h-9 font-medium bg-white dark:bg-neutral-900 border-[1.3px] text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-800 px-2.5! tracking-tight transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800 shadow-none outline-none focus-visible:ring-0">
                                     <IconColumns className="w-4 h-4 text-neutral-400 dark:text-neutral-500" />
                                     <SelectValue placeholder="All Meetings" />
                                 </SelectTrigger>
@@ -136,21 +136,21 @@ export default function MeetingsView() {
 
                         <div className="flex items-center gap-2">
                             <Tabs defaultValue="kanban" className="w-auto">
-                                <TabsList className="h-8 p-0 bg-neutral-100 dark:bg-neutral-800 border-none shadow-none">
-                                    <TabsTrigger value="kanban" className="h-full! w-9 p-0 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-600 dark:data-[state=active]:text-neutral-200 data-[state=active]:shadow-none text-neutral-400 dark:text-neutral-500 dark:data-[state=active]:border-none transition-all active:scale-90 hover:bg-neutral-50 dark:hover:bg-neutral-800/50">
+                                <TabsList className="h-8 p-0 bg-neutral-100 dark:bg-neutral-800 border-none shadow-none focus-visible:outline-none">
+                                    <TabsTrigger value="kanban" className="h-full! w-9 p-0 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-600 dark:data-[state=active]:text-neutral-200 data-[state=active]:shadow-none text-neutral-400 dark:text-neutral-500 dark:data-[state=active]:border-none transition-colors hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 outline-none focus-visible:ring-0">
                                         <IconColumns className="size-4" strokeWidth={2} />
                                     </TabsTrigger>
-                                    <TabsTrigger value="grid" className="h-full! w-9 p-0 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-600 dark:data-[state=active]:text-neutral-200 data-[state=active]:shadow-none text-neutral-400 dark:text-neutral-500 dark:data-[state=active]:border-none transition-all active:scale-90 hover:bg-neutral-50 dark:hover:bg-neutral-800/50">
+                                    <TabsTrigger value="grid" className="h-full! w-9 p-0 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-600 dark:data-[state=active]:text-neutral-200 data-[state=active]:shadow-none text-neutral-400 dark:text-neutral-500 dark:data-[state=active]:border-none transition-colors hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 outline-none focus-visible:ring-0">
                                         <IconLayoutGrid className="size-4" strokeWidth={2} />
                                     </TabsTrigger>
-                                    <TabsTrigger value="calendar" className="h-full! w-9 p-0 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-600 dark:data-[state=active]:text-neutral-200 data-[state=active]:shadow-none text-neutral-400 dark:text-neutral-500 dark:data-[state=active]:border-none transition-all active:scale-90 hover:bg-neutral-50 dark:hover:bg-neutral-800/50">
+                                    <TabsTrigger value="calendar" className="h-full! w-9 p-0 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-600 dark:data-[state=active]:text-neutral-200 data-[state=active]:shadow-none text-neutral-400 dark:text-neutral-500 dark:data-[state=active]:border-none transition-colors hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 outline-none focus-visible:ring-0">
                                         <IconCalendar className="size-4" strokeWidth={2} />
                                     </TabsTrigger>
                                 </TabsList>
                             </Tabs>
                             <div className="relative">
                                 <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 dark:text-neutral-500" />
-                                <Input placeholder="Search" className="h-9 pl-9 w-[200px] bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 placeholder:font-medium border-[1.3px] dark:text-neutral-200" />
+                                <Input placeholder="Search" className="h-9 pl-9 w-[200px] bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 placeholder:font-medium border-[1.3px] dark:text-neutral-200 focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none transition-colors shadow-none" />
                                 <span className="absolute right-2.5 top-1/2 -translate-y-1/2 h-5 min-w-[36px] items-center justify-center flex gap-1 text-[10px] text-neutral-400 dark:text-neutral-500 font-medium bg-neutral-100 dark:bg-neutral-800 border border-neutral-200/50 dark:border-neutral-700/50 px-1 rounded select-none pointer-events-none">
                                     <Command className="size-3" strokeWidth={2} />
                                     <span className="text-[11px]">K</span>
@@ -158,7 +158,7 @@ export default function MeetingsView() {
                             </div>
                             <Dialog>
                                 <DialogTrigger asChild>
-                                    <Button variant="outline" className="h-9 gap-1.5 border-[1.3px] transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800 active:scale-95 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300 tracking-tight shadow-none">
+                                    <Button variant="outline" className="h-9 gap-1.5 border-[1.3px] transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-300 tracking-tight shadow-none outline-none focus-visible:ring-0">
                                         <IconUpload className="w-4 h-4 text-neutral-400 dark:text-neutral-500" />
                                         Import
                                     </Button>
@@ -181,7 +181,7 @@ export default function MeetingsView() {
 
                             <Dialog>
                                 <DialogTrigger asChild>
-                                    <Button className="h-9 gap-1.5 border-[1.3px] transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800 active:scale-95 bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-800 tracking-tight shadow-none">
+                                    <Button className="h-9 gap-1.5 border-[1.3px] transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800 bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-800 tracking-tight shadow-none outline-none focus-visible:ring-0">
                                         <IconPlus className="w-4 h-4 text-neutral-400 dark:text-neutral-500" />
                                         Schedule
                                     </Button>
@@ -225,7 +225,7 @@ export default function MeetingsView() {
                                         <div className="flex items-center gap-1">
                                             <Dialog>
                                                 <DialogTrigger asChild>
-                                                    <Button variant="ghost" size="icon" className="size-6 text-neutral-400 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-800/50 hover:bg-neutral-100 dark:hover:bg-neutral-800 border-[1.1px] border-transparent dark:border-neutral-700/50 rounded-sm transition-all active:scale-90">
+                                                    <Button variant="ghost" size="icon" className="size-6 text-neutral-400 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-800/50 hover:bg-neutral-100 dark:hover:bg-neutral-800 border-[1.1px] border-transparent dark:border-neutral-700/50 rounded-sm transition-colors outline-none focus-visible:ring-0">
                                                         <Maximize2 className="size-3.5" />
                                                     </Button>
                                                 </DialogTrigger>
@@ -243,7 +243,7 @@ export default function MeetingsView() {
 
                                             <Dialog>
                                                 <DialogTrigger asChild>
-                                                    <Button variant="ghost" size="icon" className="size-6 text-neutral-400 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-800/50 hover:bg-neutral-100 dark:hover:bg-neutral-800 border-[1.1px] border-transparent dark:border-neutral-700/50 rounded-sm transition-all active:scale-90">
+                                                    <Button variant="ghost" size="icon" className="size-6 text-neutral-400 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-800/50 hover:bg-neutral-100 dark:hover:bg-neutral-800 border-[1.1px] border-transparent dark:border-neutral-700/50 rounded-sm transition-colors outline-none focus-visible:ring-0">
                                                         <Plus className="size-3.5" />
                                                     </Button>
                                                 </DialogTrigger>

@@ -80,8 +80,8 @@ export const SidebarFilters = () => {
                             </CollapsibleTrigger>
                             <CollapsibleContent className="pt-2 pl-0.5">
                                 <div className="flex gap-2">
-                                    <Input placeholder="From" className="h-8 text-xs border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-none dark:text-neutral-200" />
-                                    <Input placeholder="To" className="h-8 text-xs border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-none dark:text-neutral-200" />
+                                    <Input placeholder="From" className="h-8 text-xs border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-none dark:text-neutral-200 focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none transition-colors" />
+                                    <Input placeholder="To" className="h-8 text-xs border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-none dark:text-neutral-200 focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none transition-colors" />
                                 </div>
                             </CollapsibleContent>
                         </Collapsible>
@@ -150,7 +150,7 @@ export const SidebarFilters = () => {
                             </CollapsibleTrigger>
                             <CollapsibleContent className=" pt-2">
                                 <Select>
-                                    <SelectTrigger className="h-8 text-xs bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-none  w-full dark:text-neutral-200">
+                                    <SelectTrigger className="h-8 text-xs bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-none w-full dark:text-neutral-200 focus-visible:ring-0 outline-none transition-colors">
                                         <SelectValue placeholder="Enter Company" />
                                     </SelectTrigger>
                                     <SelectContent>
