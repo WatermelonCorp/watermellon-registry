@@ -71,7 +71,7 @@ export const DashboardView = () => {
           return (
             <div
               key={card.id}
-              className="bg-card border rounded-lg border-border p-3 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer group"
+              className="bg-card border rounded-lg border-border p-3 flex flex-col transition-colors duration-300 hover:bg-muted/50 cursor-pointer group shadow-none"
             >
               <div className="flex items-start justify-between mb-1">
                 <p className="text-xs text-muted-foreground font-medium tracking">
@@ -98,7 +98,7 @@ export const DashboardView = () => {
       {/* Charts Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {/* Attendance Overview Chart */}
-        <div className="col-span-1 md:col-span-2 lg:col-span-2 bg-card border rounded-lg border-border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+        <div className="col-span-1 md:col-span-2 lg:col-span-2 bg-card border rounded-lg border-border p-4 transition-colors duration-300 shadow-none">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 border-b-[1.5px] border-border border-dashed pb-4">
             <div className="flex items-center gap-2">
               <div className="bg-muted p-1 rounded">
@@ -112,19 +112,19 @@ export const DashboardView = () => {
               <TabsList className="bg-neutral-300/10 border border-neutral-300/20 rounded-md p-1 h-9 items-center gap-1">
                 <TabsTrigger
                   value="7days"
-                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
+                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-colors duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
                 >
                   Last 7 days
                 </TabsTrigger>
                 <TabsTrigger
                   value="30days"
-                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
+                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-colors duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
                 >
                   Last 30 days
                 </TabsTrigger>
                 <TabsTrigger
                   value="year"
-                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
+                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-colors duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
                 >
                   Last Year
                 </TabsTrigger>
@@ -243,7 +243,7 @@ export const DashboardView = () => {
         {/* Right Side Charts */}
         <div className="col-span-1 md:col-span-2 lg:col-span-1 flex flex-col md:flex-row lg:flex-col gap-4">
           {/* Working Format */}
-          <div className="flex-1 bg-card border rounded-lg border-border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+          <div className="flex-1 bg-card border rounded-lg border-border p-4 transition-colors duration-300 hover:bg-muted/50 cursor-pointer group shadow-none">
             <div className="flex items-center gap-2 mb-4 border-b-[1.5px] border-border border-dashed pb-4">
               <div className="bg-muted p-1 rounded">
                 <Users className="size-4 text-blue-400" />
@@ -292,7 +292,7 @@ export const DashboardView = () => {
           </div>
 
           {/* Job Overview */}
-          <div className="flex-1 bg-card border rounded-lg border-border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+          <div className="flex-1 bg-card border rounded-lg border-border p-4 transition-colors duration-300 hover:bg-muted/50 cursor-pointer group shadow-none">
             <div className="flex items-center gap-2 mb-4 border-b-[1.5px] border-border border-dashed pb-3">
               <div className="bg-muted p-1 rounded">
                 <BriefcaseBusiness className="size-4 text-green-400" />
@@ -367,7 +367,7 @@ export const DashboardView = () => {
         </div>
       </div>
 
-      <div className="bg-muted/40 p-4 rounded-lg border border-border mt-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+      <div className="bg-muted/40 p-4 rounded-lg border border-border mt-5 transition-colors duration-300 shadow-none">
         <div className=" flex items-center justify-between">
           {/* Left - View Tabs */}
           <Tabs defaultValue="list" className="w-full gap-4">
@@ -385,14 +385,15 @@ export const DashboardView = () => {
                 <TabsList className="bg-neutral-300/10 border max-md:w-full max-md:h-10 border-neutral-300/20 rounded-md h-9 p-1 gap-1">
                   <TabsTrigger
                     value="list"
-                    className="gap-2 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 max-md:h-8 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
+                    className="gap-2 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 max-md:h-8 transition-colors duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
                   >
                     <List className="size-4" />
                     List View
                   </TabsTrigger>
                   <TabsTrigger
                     value="board"
-                    className="gap-2 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 max-md:h-8 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
+                    disabled
+                    className="gap-2 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 max-md:h-8 transition-colors duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
                   >
                     <LayoutGrid className="size-4" />
                     Board View
@@ -402,7 +403,7 @@ export const DashboardView = () => {
                   <Select defaultValue="pipeline-value">
                     <SelectTrigger
                       size="sm"
-                      className="w-fit py-[17px] text-xs bg-muted/50 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer hover:shadow-sm"
+                      className="w-fit py-[17px] text-xs bg-muted/50 transition-colors duration-300 cursor-pointer shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none"
                     >
                       <span className="text-muted-foreground text-xs">Status</span>
                       <SelectValue placeholder="Sort by" />
@@ -415,8 +416,8 @@ export const DashboardView = () => {
                   </Select>
                   <Popover>
                     <PopoverTrigger asChild>
-                      <Button variant="outline" size="icon" className="!size-9 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer hover:shadow-sm">
-                        <Filter className="size-4 transition-transform duration-300 group-hover:scale-110" />
+                      <Button variant="outline" size="icon" className="!size-9 transition-colors duration-300 cursor-pointer shadow-none">
+                        <Filter className="size-4" />
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-80 p-4" align="end">
@@ -431,7 +432,7 @@ export const DashboardView = () => {
                           <div className="grid grid-cols-3 items-center gap-4">
                             <Label htmlFor="department">Department</Label>
                             <Select defaultValue="all">
-                              <SelectTrigger id="department" className="col-span-2 h-8">
+                              <SelectTrigger id="department" className="col-span-2 h-8 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none">
                                 <SelectValue placeholder="Select" />
                               </SelectTrigger>
                               <SelectContent>
