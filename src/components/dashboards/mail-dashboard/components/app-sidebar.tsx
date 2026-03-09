@@ -123,7 +123,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         hidden: false,
                       }}
                       isActive={isActive}
-                      className="group-data-[collapsible=icon]:h-10! max-md:h-10 group-data-[collapsible=icon]:w-10! group-data-[collapsible=icon]:p-0! flex items-center justify-start group-data-[collapsible=icon]:justify-center rounded-lg hover:bg-sidebar-accent active:scale-95 transition-all data-[active=true]:bg-sidebar-accent data-[active=true]:border data-[active=true]:border-sidebar-border data-[active=true]:shadow-[inset_0px_2px_4px_rgba(0,0,0,0.3)] w-full gap-3 px-3 group-data-[collapsible=icon]:px-0"
+                      className="group-data-[collapsible=icon]:h-10! max-md:h-10 group-data-[collapsible=icon]:w-10! group-data-[collapsible=icon]:p-0! flex items-center justify-start group-data-[collapsible=icon]:justify-center rounded-lg hover:bg-sidebar-accent transition-colors duration-200 data-[active=true]:bg-sidebar-accent data-[active=true]:border data-[active=true]:border-sidebar-border data-[active=true]:shadow-[inset_0px_2px_4px_rgba(0,0,0,0.3)] w-full gap-3 px-3 group-data-[collapsible=icon]:px-0"
                       asChild
                     >
                       <a
