@@ -10,41 +10,30 @@ import {
 } from "../ui/popover"
 import { IconUser, IconMailForward } from '@tabler/icons-react'
 
-interface KanbanCardType {
-    id: string
-    title: string
-    description: string
-    type: string
-    user: string
-    avatarColor: string
-    date: string
-    comments: number
-}
-
 export const StatusMarker = ({ type }: { type: string }) => {
     switch (type) {
         case "urgent":
             return (
-                <div className="bg-red-100/50 dark:bg-red-500/10 border-[1.5px] border-red-200/60 dark:border-red-500/20 p-1 rounded-full shrink-0 hover:scale-110 transition-transform duration-200 cursor-default">
+                <div className="bg-red-100/50 dark:bg-red-500/10 border-[1.5px] border-red-200/60 dark:border-red-500/20 p-1 rounded-full shrink-0 transition-colors duration-200 hover:bg-red-200/50 dark:hover:bg-red-500/20 cursor-default">
                     <IconAlertCircle className="size-3.5 text-red-700 dark:text-red-400" strokeWidth={1.7} />
                 </div>
             )
         case "done":
             return (
-                <div className="bg-emerald-100/50 dark:bg-emerald-500/10 border-[1.5px] border-emerald-200/60 dark:border-emerald-500/20 p-1 rounded-full shrink-0 hover:scale-110 transition-transform duration-200 cursor-default">
+                <div className="bg-emerald-100/50 dark:bg-emerald-500/10 border-[1.5px] border-emerald-200/60 dark:border-emerald-500/20 p-1 rounded-full shrink-0 transition-colors duration-200 hover:bg-emerald-200/50 dark:hover:bg-emerald-500/20 cursor-default">
                     <IconCircleCheck className="size-3.5 text-emerald-700 dark:text-emerald-400" strokeWidth={2.5} />
                 </div>
             )
         default:
             return (
-                <div className="bg-zinc-100/50 dark:bg-zinc-500/10 border-[1.5px] border-zinc-200/60 dark:border-zinc-500/20 p-1 rounded-full shrink-0 hover:scale-110 transition-transform duration-200 cursor-default">
+                <div className="bg-zinc-100/50 dark:bg-zinc-500/10 border-[1.5px] border-zinc-200/60 dark:border-zinc-500/20 p-1 rounded-full shrink-0 transition-colors duration-200 hover:bg-zinc-200/50 dark:hover:bg-zinc-500/20 cursor-default">
                     {type === "mail" ? <IconMail className="size-3.5 text-zinc-500 dark:text-zinc-400" /> : <IconFileText className="size-3.5 text-zinc-500 dark:text-zinc-400" />}
                 </div>
             )
     }
 }
 
-const getStatusStyles = (type: string) => {
+export const getStatusStyles = (type: string) => {
     switch (type) {
         case "urgent":
             return {
@@ -67,7 +56,7 @@ const getStatusStyles = (type: string) => {
     }
 }
 
-export const KanbanCard = ({ card, columnId }: { card: KanbanCardType, columnId: string }) => {
+export const KanbanCard = ({ card, columnId }: { card: any, columnId: string }) => {
     const {
         attributes,
         listeners,
@@ -94,7 +83,7 @@ export const KanbanCard = ({ card, columnId }: { card: KanbanCardType, columnId:
 
     return (
         <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-            <Card className="touch-none overflow-hidden border-[1.5px] border-neutral-200 dark:border-zinc-800 shadow-xs hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] transition-all duration-200 cursor-grab active:cursor-grabbing bg-white dark:bg-zinc-900 group p-0 shrink-0">
+            <Card className="touch-none overflow-hidden border-[1.5px] border-neutral-200 dark:border-zinc-800 shadow-xs hover:shadow-sm hover:-translate-y-0.5 transition-colors duration-200 cursor-grab active:cursor-grabbing bg-white dark:bg-zinc-900 group p-0 shrink-0">
                 <CardContent className="p-0 flex flex-col pointer-events-none select-none">
                     <div className="p-4 flex flex-col gap-2.5">
                         <div className="flex items-start justify-between gap-2">
@@ -110,7 +99,7 @@ export const KanbanCard = ({ card, columnId }: { card: KanbanCardType, columnId:
                         <Popover>
                             <PopoverTrigger asChild>
                                 <div className="flex items-center gap-2 min-w-0 pointer-events-auto cursor-pointer hover:z-10 group/avatar">
-                                    <Avatar className="size-4.5 shadow-xs shrink-0 group-hover/avatar:scale-110 group-hover/avatar:-translate-y-0.5 active:scale-95 transition-all duration-200">
+                                    <Avatar className="size-4.5 shadow-xs shrink-0 transition-transform duration-200">
                                         <AvatarFallback className={`${card.avatarColor} text-[6px] text-white font-bold`}>
                                             {card.user.split(' ').map((n: string) => n[0]).join('')}
                                         </AvatarFallback>
@@ -132,11 +121,11 @@ export const KanbanCard = ({ card, columnId }: { card: KanbanCardType, columnId:
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-0.5 mt-1.5">
-                                    <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md transition-colors text-left">
+                                    <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md outline-none transition-colors text-left focus-visible:bg-zinc-100 dark:focus-visible:bg-zinc-800/80">
                                         <IconUser className="size-4" />
                                         View Profile
                                     </button>
-                                    <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md transition-colors text-left">
+                                    <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md outline-none transition-colors text-left focus-visible:bg-zinc-100 dark:focus-visible:bg-zinc-800/80">
                                         <IconMailForward className="size-4" />
                                         Send Message
                                     </button>

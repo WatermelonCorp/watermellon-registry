@@ -59,7 +59,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               if (!hasItems) {
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton tooltip={item.title} className="font-semibold tracking-tight hover:scale-[1.02] active:scale-[0.98] hover:translate-x-0.5 transition-all duration-200">
+                    <SidebarMenuButton tooltip={item.title} className="font-semibold tracking-tight transition-colors duration-200">
                       {item.icon && <item.icon strokeWidth={2.5} />}
                       <span>{item.title}</span>
                     </SidebarMenuButton>
@@ -76,7 +76,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 >
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuButton tooltip={item.title} className="font-semibold tracking-tight hover:scale-[1.02] active:scale-[0.98] hover:translate-x-0.5 transition-all duration-200">
+                      <SidebarMenuButton tooltip={item.title} className="font-semibold tracking-tight transition-colors duration-200">
                         {item.icon && <item.icon strokeWidth={2.5} />}
                         <span>{item.title}</span>
                         <IconChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90 h-4 w-4" />
@@ -86,7 +86,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       <SidebarMenuSub>
                         {item.items?.map((subItem) => (
                           <SidebarMenuSubItem key={subItem.title}>
-                            <SidebarMenuSubButton asChild isActive={subItem.isActive} className="font-semibold tracking-tight hover:translate-x-1 hover:text-zinc-900 dark:hover:text-white transition-all duration-200">
+                            <SidebarMenuSubButton asChild isActive={subItem.isActive} className="font-semibold tracking-tight hover:text-zinc-900 dark:hover:text-white transition-colors duration-200">
                               <a href={subItem.url}>
                                 <span>{subItem.title}</span>
                               </a>
@@ -117,7 +117,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <SidebarMenu>
                 {data.favorites.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton tooltip={item.title} className="tracking-tight hover:scale-[1.02] active:scale-[0.98] hover:translate-x-0.5 transition-all duration-200">
+                    <SidebarMenuButton tooltip={item.title} className="tracking-tight transition-colors duration-200">
                       {item.icon && <item.icon />}
                       <span>{item.title}</span>
                     </SidebarMenuButton>
@@ -134,7 +134,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           {data.footer.map((item) => (
             <SidebarMenuItem key={item.title} className="font-semibold tracking-tight">
-              <SidebarMenuButton tooltip={item.title} className="hover:scale-[1.02] active:scale-[0.98] hover:translate-x-0.5 transition-all duration-200">
+              <SidebarMenuButton tooltip={item.title} className="transition-colors duration-200">
                 {item.icon && <item.icon strokeWidth={2.5} />}
                 <span>{item.title}</span>
               </SidebarMenuButton>

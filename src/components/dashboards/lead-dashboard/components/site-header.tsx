@@ -68,7 +68,7 @@ export function SiteHeader() {
                     <IconSearch className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" strokeWidth={2.5} />
                     <Input
                         placeholder="Search or ⌘K..."
-                        className="h-8 w-52 rounded-md bg-muted/40 pl-9 pr-12 text-sm focus-visible:ring-1 focus-visible:ring-primary/20"
+                        className="h-8 w-52 rounded-md bg-muted/40 pl-9 pr-12 text-sm transition-colors focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none"
                     />
                 </div>
 
@@ -135,16 +135,16 @@ export function SiteHeader() {
                             </div>
                         </div>
                         <div className="flex flex-col gap-0.5 mt-1.5">
-                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md transition-colors text-left">
+                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md outline-none focus-visible:bg-zinc-100 dark:focus-visible:bg-zinc-800/80 transition-colors text-left">
                                 <IconUser className="size-4" />
                                 Profile Profile
                             </button>
-                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md transition-colors text-left">
+                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md outline-none focus-visible:bg-zinc-100 dark:focus-visible:bg-zinc-800/80 transition-colors text-left">
                                 <IconSettings className="size-4" />
                                 Account Settings
                             </button>
                             <div className="h-px bg-border my-1" />
-                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-md transition-colors text-left font-medium">
+                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-md outline-none focus-visible:bg-red-50 dark:focus-visible:bg-red-500/10 transition-colors text-left font-medium">
                                 <IconLogout className="size-4" />
                                 Sign out
                             </button>
