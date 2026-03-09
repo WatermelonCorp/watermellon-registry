@@ -180,17 +180,17 @@ export const KanbanBoardView = () => {
                     <div className="flex items-center gap-2 md:gap-3 overflow-x-auto overflow-y-hidden no-scrollbar w-full md:w-auto md:pb-0 shrink-0">
                         <Tabs defaultValue="kanban" className="w-auto shrink-0">
                             <TabsList className="h-8! rounded-lg bg-muted/50 border p-0">
-                                <TabsTrigger value="kanban" className="h-full w-9 p-0 rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-xs hover:bg-muted/80 transition-all duration-200 active:scale-95">
+                                <TabsTrigger value="kanban" className="h-full w-9 p-0 rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-xs hover:bg-muted/80 transition-colors duration-200 outline-none focus-visible:ring-0">
                                     <IconLayoutColumns className="size-4" strokeWidth={2} />
                                 </TabsTrigger>
-                                <TabsTrigger value="list" className="h-full w-9 p-0 rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-xs hover:bg-muted/80 transition-all duration-200 active:scale-95">
+                                <TabsTrigger value="list" className="h-full w-9 p-0 rounded-lg data-[state=active]:bg-background data-[state=active]:shadow-xs hover:bg-muted/80 transition-colors duration-200 outline-none focus-visible:ring-0">
                                     <IconLayoutList className="size-4" strokeWidth={2} />
                                 </TabsTrigger>
                             </TabsList>
                         </Tabs>
 
                         <Select defaultValue="all">
-                            <SelectTrigger className="h-8! w-fit gap-1 rounded-lg border bg-background px-2.5 hover:bg-muted/50 active:scale-95 transition-all duration-200 font-medium text-[13px] shrink-0">
+                            <SelectTrigger className="h-8! w-fit gap-1 rounded-lg border bg-background px-2.5 hover:bg-muted/50 transition-colors duration-200 font-medium text-[13px] shrink-0 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0">
                                 <SelectValue placeholder="All leads" />
                             </SelectTrigger>
                             <SelectContent>
@@ -202,7 +202,7 @@ export const KanbanBoardView = () => {
 
                         <Popover>
                             <PopoverTrigger asChild>
-                                <Button variant="outline" className="h-8 px-2.5 rounded-lg gap-1.5 font-medium text-[13px] hover:bg-muted/50 active:scale-95 transition-all duration-200 shrink-0">
+                                <Button variant="outline" className="h-8 px-2.5 rounded-lg gap-1.5 font-medium text-[13px] hover:bg-muted/50 transition-colors duration-200 shrink-0 outline-none focus-visible:ring-0">
                                     <IconAdjustmentsHorizontal className="size-4" strokeWidth={2} />
                                     Filter
                                 </Button>
@@ -213,7 +213,7 @@ export const KanbanBoardView = () => {
                                     <div className="flex flex-col gap-1.5">
                                         <Label className="text-xs">Assigned to</Label>
                                         <Select defaultValue="any">
-                                            <SelectTrigger className="h-8 text-xs">
+                                            <SelectTrigger className="h-8 text-xs outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0">
                                                 <SelectValue placeholder="Select user" />
                                             </SelectTrigger>
                                             <SelectContent>
@@ -225,7 +225,7 @@ export const KanbanBoardView = () => {
                                     <div className="flex flex-col gap-1.5">
                                         <Label className="text-xs">Date matched</Label>
                                         <Select defaultValue="any">
-                                            <SelectTrigger className="h-8 text-xs">
+                                            <SelectTrigger className="h-8 text-xs outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0">
                                                 <SelectValue placeholder="Select date range" />
                                             </SelectTrigger>
                                             <SelectContent>
@@ -241,7 +241,7 @@ export const KanbanBoardView = () => {
 
                         <Dialog>
                             <DialogTrigger asChild>
-                                <Button className="h-8 px-2.5 rounded-lg gap-1.5 text-[13px] font-semibold bg-zinc-950 text-white hover:bg-zinc-800 hover:shadow-md active:scale-95 transition-all duration-200 shrink-0">
+                                <Button className="h-8 px-2.5 rounded-lg gap-1.5 text-[13px] font-semibold bg-zinc-950 text-white hover:bg-zinc-800 hover:shadow-md transition-colors duration-200 shrink-0 outline-none focus-visible:ring-0">
                                     <IconCirclePlus className="size-4" strokeWidth={2.5} />
                                     Add lead
                                 </Button>
@@ -256,16 +256,16 @@ export const KanbanBoardView = () => {
                                 <div className="grid gap-4 py-4">
                                     <div className="grid gap-2">
                                         <Label htmlFor="company">Company / Title</Label>
-                                        <Input id="company" placeholder="e.g. Acme Corp Web Redesign" />
+                                        <Input id="company" placeholder="e.g. Acme Corp Web Redesign" className="focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none transition-colors" />
                                     </div>
                                     <div className="grid gap-2">
                                         <Label htmlFor="contact">Primary Contact</Label>
-                                        <Input id="contact" placeholder="e.g. John Doe" />
+                                        <Input id="contact" placeholder="e.g. John Doe" className="focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none transition-colors" />
                                     </div>
                                     <div className="grid gap-2">
                                         <Label htmlFor="status">Initial Status</Label>
                                         <Select defaultValue="contacted">
-                                            <SelectTrigger>
+                                            <SelectTrigger className="outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-neutral-400 dark:focus:border-neutral-600 shadow-none transition-colors">
                                                 <SelectValue />
                                             </SelectTrigger>
                                             <SelectContent>
@@ -293,13 +293,13 @@ export const KanbanBoardView = () => {
                                     strategy={verticalListSortingStrategy}
                                 >
                                     {column.cards.map((card) => (
-                                        <KanbanCard key={String(card.id)} card={{ ...card, id: String(card.id) }} columnId={column.id} />
+                                        <KanbanCard key={card.id} card={card} columnId={column.id} />
                                     ))}
                                 </SortableContext>
 
                                 <Dialog>
                                     <DialogTrigger asChild>
-                                        <Button variant="outline" className="h-10 w-full rounded-lg border-neutral-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 hover:bg-white dark:hover:bg-zinc-800 hover:border-neutral-300 dark:hover:border-zinc-700 gap-1.5 text-muted-foreground font-semibold text-sm shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 shrink-0">
+                                        <Button variant="outline" className="h-10 w-full rounded-lg border-neutral-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 hover:bg-white dark:hover:bg-zinc-800 hover:border-neutral-300 dark:hover:border-zinc-700 gap-1.5 text-muted-foreground font-semibold text-sm shadow-xs hover:shadow-sm transition-colors duration-200 shrink-0 outline-none focus-visible:ring-0">
                                             <IconPlus className="size-4" />
                                             Add
                                         </Button>
@@ -314,11 +314,11 @@ export const KanbanBoardView = () => {
                                         <div className="grid gap-4 py-4">
                                             <div className="grid gap-2">
                                                 <Label htmlFor="title">Lead Title</Label>
-                                                <Input id="title" placeholder="e.g. Acme Corp Redesign" />
+                                                <Input id="title" placeholder="e.g. Acme Corp Redesign" className="focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none transition-colors" />
                                             </div>
                                             <div className="grid gap-2">
                                                 <Label htmlFor="desc">Description</Label>
-                                                <Input id="desc" placeholder="Brief details about the lead..." />
+                                                <Input id="desc" placeholder="Brief details about the lead..." className="focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none transition-colors" />
                                             </div>
                                         </div>
                                         <DialogFooter>

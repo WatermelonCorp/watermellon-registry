@@ -20,22 +20,22 @@ export const BoardColumn = ({ column, children }: { column: any, children: React
                 </div>
                 <Popover>
                     <PopoverTrigger asChild>
-                        <Button variant="ghost" size="icon" className="size-8 text-muted-foreground hover:text-foreground dark:hover:text-zinc-100 dark:hover:bg-zinc-800 hover:scale-110 active:scale-95 transition-all duration-200 pointer-events-auto">
+                        <Button variant="ghost" size="icon" className="size-8 text-muted-foreground hover:text-foreground dark:hover:text-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200 pointer-events-auto outline-none focus-visible:ring-0">
                             <IconDots className="size-4" />
                         </Button>
                     </PopoverTrigger>
                     <PopoverContent align="end" className="w-48 p-1.5 shadow-lg border-neutral-200 dark:border-zinc-800 pointer-events-auto">
                         <div className="flex flex-col gap-0.5">
-                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md transition-colors text-left">
+                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md outline-none focus-visible:bg-zinc-100 dark:focus-visible:bg-zinc-800/80 transition-colors text-left">
                                 <IconEdit className="size-4" />
                                 Rename column
                             </button>
-                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md transition-colors text-left">
+                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80 rounded-md outline-none focus-visible:bg-zinc-100 dark:focus-visible:bg-zinc-800/80 transition-colors text-left">
                                 <IconSettings className="size-4" />
                                 Column settings
                             </button>
                             <div className="h-px bg-border my-1" />
-                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-md transition-colors text-left font-medium">
+                            <button className="w-full flex items-center gap-2 px-2 py-1.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-md outline-none focus-visible:bg-red-50 dark:focus-visible:bg-red-500/10 transition-colors text-left font-medium">
                                 <IconTrash className="size-4" />
                                 Delete column
                             </button>
