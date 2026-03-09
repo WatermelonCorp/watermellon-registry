@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { initialInvoice } from "./data";
 
-export const InvoiceView = () => {
+export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) => {
   const [view, setView] = useState("form");
   const [invoice, setInvoice] = useState(initialInvoice);
 
@@ -26,8 +26,6 @@ export const InvoiceView = () => {
 
   interface Invoice {
     invoiceNumber: string;
-    companyName: string;
-    companyEmail: string;
     billedByName: string;
     billedByEmail: string;
     billedByAddress: string;
@@ -82,7 +80,7 @@ export const InvoiceView = () => {
       {/* View Switcher for Mobile/Tablet */}
       <div className="lg:hidden mb-4">
         <Select value={view} onValueChange={setView}>
-          <SelectTrigger className="w-full h-10 bg-background dark:bg-card shadow-none font-medium border-border">
+          <SelectTrigger className="w-full h-10 bg-background dark:bg-card shadow-none font-medium border-border hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors">
             <SelectValue placeholder="Select View" />
           </SelectTrigger>
           <SelectContent>
@@ -96,8 +94,12 @@ export const InvoiceView = () => {
         {/* Left Side - Form */}
         <div
           className={cn(
-            "lg:flex-1 p-4 border-[1.5px] rounded-lg lg:overflow-y-auto scrollbar-hide bg-card border-border",
-            view !== "form" && "hidden lg:block"
+            "p-4 border-[1.5px] rounded-lg lg:overflow-y-auto scrollbar-hide bg-card border-border",
+            // On mobile (lg:hidden), if view isn't 'form', hide this. 
+            // On desktop (lg:block), if isPreviewHidden is true, center and set width. Otherwise fill available space.
+            view !== "form" && "hidden lg:block",
+            view === "form" && "block lg:flex-1",
+            isPreviewHidden ? "lg:w-[60%] lg:mx-auto lg:block" : "lg:flex-1"
           )}
         >
           <div className="space-y-6">
@@ -112,51 +114,17 @@ export const InvoiceView = () => {
                   handleInputChange("invoiceNumber", e.target.value)
                 }
                 placeholder="INV-0001"
-                className="h-10"
+                className="h-10 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none"
               />
             </div>
 
-            {/* Company Details */}
-            <div>
-              <h3 className="font-semibold mb-3 text-foreground/90 tracking-tight">
-                Company Details
-              </h3>
-              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4">
-                <div>
-                  <label className="text-xs text-muted-foreground mb-1 block font-medium">
-                    Company Name
-                  </label>
-                  <Input
-                    value={invoice.companyName}
-                    onChange={(e) =>
-                      handleInputChange("companyName", e.target.value)
-                    }
-                    placeholder="Your Company"
-                    className="h-9"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs text-muted-foreground mb-1 block font-medium">
-                    Company Email
-                  </label>
-                  <Input
-                    value={invoice.companyEmail}
-                    onChange={(e) =>
-                      handleInputChange("companyEmail", e.target.value)
-                    }
-                    placeholder="company@email.com"
-                    className="h-9"
-                  />
-                </div>
-              </div>
-            </div>
 
             {/* Client Details */}
             <div>
               <h3 className="font-semibold mb-3 text-foreground/90 tracking-tight">
                 Billed By
               </h3>
-              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4">
+              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Name
@@ -167,7 +135,7 @@ export const InvoiceView = () => {
                       handleInputChange("billedByName", e.target.value)
                     }
                     placeholder="Your Name"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
                 <div>
@@ -180,7 +148,7 @@ export const InvoiceView = () => {
                       handleInputChange("billedByEmail", e.target.value)
                     }
                     placeholder="email@email.com"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
                 <div>
@@ -193,7 +161,7 @@ export const InvoiceView = () => {
                       handleInputChange("billedByAddress", e.target.value)
                     }
                     placeholder="Street Address"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
               </div>
@@ -204,7 +172,7 @@ export const InvoiceView = () => {
               <h3 className="font-semibold mb-3 text-foreground/90 tracking-tight">
                 Billed To
               </h3>
-              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4">
+              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Company
@@ -215,7 +183,7 @@ export const InvoiceView = () => {
                       handleInputChange("billedToCompany", e.target.value)
                     }
                     placeholder="Client Company"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
                 <div>
@@ -228,7 +196,7 @@ export const InvoiceView = () => {
                       handleInputChange("billedToEmail", e.target.value)
                     }
                     placeholder="client@email.com"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
                 <div>
@@ -241,7 +209,7 @@ export const InvoiceView = () => {
                       handleInputChange("billedToAddress", e.target.value)
                     }
                     placeholder="Street Address"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
               </div>
@@ -253,7 +221,7 @@ export const InvoiceView = () => {
                 Dates
               </h3>
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-background/30 rounded-xl border border-border p-3">
+                <div className="bg-background/30 rounded-xl border border-border p-3 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Date Issued
                   </label>
@@ -263,10 +231,10 @@ export const InvoiceView = () => {
                       handleInputChange("dateIssued", e.target.value)
                     }
                     placeholder="Date"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
-                <div className="bg-background/30 rounded-xl border border-border p-3">
+                <div className="bg-background/30 rounded-xl border border-border p-3 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Due Date
                   </label>
@@ -276,7 +244,7 @@ export const InvoiceView = () => {
                       handleInputChange("dueDate", e.target.value)
                     }
                     placeholder="Date"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
               </div>
@@ -289,7 +257,7 @@ export const InvoiceView = () => {
               </h3>
               <div className="space-y-3">
                 {invoice.items.map((item, index) => (
-                  <div key={index} className="border border-border bg-background/30 rounded-xl p-4 space-y-3">
+                  <div key={index} className="border border-border bg-background/30 rounded-xl p-4 space-y-3 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                     <div className="space-y-1">
                       <label className="text-xs text-muted-foreground block font-medium">Description</label>
                       <Input
@@ -298,7 +266,7 @@ export const InvoiceView = () => {
                           handleItemChange(index, "description", e.target.value)
                         }
                         placeholder="Item description"
-                        className="h-9 text-sm"
+                        className="h-9 text-sm focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                       />
                     </div>
                     <div className="grid grid-cols-3 gap-3">
@@ -312,7 +280,7 @@ export const InvoiceView = () => {
                           onChange={(e) =>
                             handleItemChange(index, "qty", e.target.value)
                           }
-                          className="h-9 text-sm"
+                          className="h-9 text-sm focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                         />
                       </div>
                       <div>
@@ -325,7 +293,7 @@ export const InvoiceView = () => {
                           onChange={(e) =>
                             handleItemChange(index, "cost", e.target.value)
                           }
-                          className="h-9 text-sm"
+                          className="h-9 text-sm focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                         />
                       </div>
                       <div>
@@ -336,7 +304,7 @@ export const InvoiceView = () => {
                           type="number"
                           value={item.total.toFixed(2)}
                           readOnly
-                          className="h-9 text-sm bg-muted/50"
+                          className="h-9 text-sm bg-muted/50 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                         />
                       </div>
                     </div>
@@ -345,7 +313,7 @@ export const InvoiceView = () => {
                 <Button
                   onClick={addItem}
                   variant="outline"
-                  className="w-full h-10 text-sm rounded-xl border-dashed border-[1.5px] border-border bg-background/50 hover:bg-muted/50 transition-colors"
+                  className="w-full h-10 text-sm rounded-xl border-dashed border-[1.5px] border-border bg-background/50 hover:bg-muted/50 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-sm transition-colors duration-300 cursor-pointer"
                 >
                   + Add Item
                 </Button>
@@ -354,16 +322,18 @@ export const InvoiceView = () => {
           </div>
         </div>
 
-        {/* Right Side - Preview */}
         <div
           className={cn(
-            "lg:flex-1 h-fit lg:h-full bg-muted/50 dark:bg-neutral-950/40 rounded-xl border-[1.5px] border-border lg:overflow-hidden",
-            view !== "preview" && "hidden lg:block"
+            "h-fit lg:h-full bg-muted/50 dark:bg-neutral-950/40 rounded-xl border-[1.5px] border-border lg:overflow-y-auto custom-scrollbar",
+            // Mobile toggle logic
+            view !== "preview" && "hidden lg:block",
+            // Desktop hide logic
+            isPreviewHidden ? "lg:hidden" : "lg:flex-1"
           )}
         >
-          <div className="w-full lg:h-full flex lg:items-center justify-center p-4 sm:p-8 lg:p-10 overflow-y-auto lg:overflow-hidden custom-scrollbar">
+          <div className="w-full min-h-full h-fit flex justify-center p-4 sm:p-8 lg:p-10">
             <div
-              className="relative bg-white dark:bg-neutral-900 rounded-lg p-6 lg:p-10 border-[1.5px] border-border w-full lg:max-w-4xl h-fit lg:h-full shadow-2xl shadow-neutral-200/50 dark:shadow-neutral-950/50 flex flex-col justify-between lg:origin-center lg:scale-[0.95] 2xl:scale-100 transform transition-transform duration-300"
+              className="relative bg-white dark:bg-neutral-900 rounded-lg p-6 lg:p-10 border-[1.5px] border-border w-full lg:max-w-4xl h-fit shadow-2xl shadow-neutral-200/50 dark:shadow-neutral-950/50 flex flex-col justify-between lg:origin-top lg:scale-[0.95] 2xl:scale-100 transform transition-transform duration-300"
               style={{
                 clipPath:
                   "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)",
@@ -458,7 +428,7 @@ export const InvoiceView = () => {
                     </thead>
                     <tbody>
                       {invoice.items.map((item, index) => (
-                        <tr key={index} className="border-b border-border/50">
+                        <tr key={index} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
                           <td className="py-2 sm:py-3 text-[10px] lg:text-sm text-muted-foreground font-medium">
                             {item.description}
                           </td>
