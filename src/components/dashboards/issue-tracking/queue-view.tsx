@@ -94,8 +94,6 @@ export default function QueueView() {
     const [newItemOrigin, setNewItemOrigin] = useState("")
     const [newItemPriority, setNewItemPriority] = useState("Moderate")
 
-    const currentStatus = STATUSES.find(s => s.label === status) ?? STATUSES[0]
-    const currentPriority = PRIORITIES.find(p => p.label === priority) ?? PRIORITIES[1]
 
     return (
         <div className="flex flex-col min-h-full lg:h-full bg-white dark:bg-neutral-950 font-mono p-2.5 gap-2.5">
@@ -105,17 +103,17 @@ export default function QueueView() {
                     <SidebarTrigger />
                 </div>
                 <div className="flex items-center gap-0.5 flex-nowrap whitespace-nowrap">
-                    <div className="flex items-center shrink-0 gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 rounded-l-md transition-all duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-zinc-900/50 hover:-translate-y-px active:translate-y-0 active:scale-[0.97] flex-nowrap whitespace-nowrap">
+                    <div className="flex items-center shrink-0 gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 rounded-l-md transition-colors duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-zinc-900/50 flex-nowrap whitespace-nowrap">
                         <span className="text-neutral-400 dark:text-neutral-700 text-xs font-medium whitespace-nowrap">MF-214 ·</span>
                         <span className="text-orange-500 dark:text-orange-300 font-medium whitespace-nowrap text-xs">Repair Context Graph Routing</span>
                         <X className="size-4 text-neutral-400 dark:text-neutral-500 shrink-0 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors" />
                     </div>
-                    <div className="flex items-center shrink-0 gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 transition-all duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-zinc-900/50 hover:-translate-y-px active:translate-y-0 active:scale-[0.97] flex-nowrap whitespace-nowrap">
+                    <div className="flex items-center shrink-0 gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-zinc-900/50 flex-nowrap whitespace-nowrap">
                         <span className="text-neutral-400 dark:text-neutral-700 text-xs font-medium whitespace-nowrap">MF-215 ·</span>
                         <span className="text-green-600 dark:text-green-300 font-medium whitespace-nowrap text-xs">Rebuild Left-Rail Grouping</span>
                         <X className="size-4 text-neutral-400 dark:text-neutral-500 shrink-0 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors" />
                     </div>
-                    <div className="flex items-center shrink-0 gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 rounded-r-md transition-all duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-zinc-900/50 hover:-translate-y-px active:translate-y-0 active:scale-[0.97] flex-nowrap whitespace-nowrap">
+                    <div className="flex items-center shrink-0 gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 rounded-r-md transition-colors duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-zinc-900/50 flex-nowrap whitespace-nowrap">
                         <span className="text-neutral-400 dark:text-neutral-700 text-xs font-medium whitespace-nowrap">MF-216 ·</span>
                         <span className="text-lime-600 dark:text-lime-300 font-medium whitespace-nowrap text-xs">Improve Similarity Scoring</span>
                         <X className="size-4 text-neutral-400 dark:text-neutral-500 shrink-0 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors" />
@@ -161,7 +159,7 @@ export default function QueueView() {
                                     {/* Status */}
                                     <Popover>
                                         <PopoverTrigger asChild>
-                                            <div className="flex items-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 rounded-l-md transition-all duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 hover:-translate-y-px active:translate-y-0 active:scale-95 text-xs shrink-0 select-none">
+                                            <div className="flex items-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 rounded-l-md transition-colors duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 text-xs shrink-0 select-none">
                                                 <div className="size-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
                                                 {status}
                                                 <ChevronDown className="size-3 text-neutral-400 dark:text-neutral-600" />
@@ -171,7 +169,7 @@ export default function QueueView() {
                                             <p className="text-[10px] text-neutral-400 dark:text-neutral-600 px-2 py-1 uppercase tracking-widest">Status</p>
                                             {STATUSES.map(s => (
                                                 <button key={s.label} onClick={() => setStatus(s.label)}
-                                                    className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                                                    className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:bg-neutral-100 dark:focus:bg-neutral-800 outline-none transition-colors">
                                                     {s.icon}
                                                     <span>{s.label}</span>
                                                     {status === s.label && <Check className="size-3 ml-auto text-neutral-400" />}
@@ -183,7 +181,7 @@ export default function QueueView() {
                                     {/* Label */}
                                     <Popover>
                                         <PopoverTrigger asChild>
-                                            <div className="flex items-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 transition-all duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 hover:-translate-y-px active:translate-y-0 active:scale-95 text-xs shrink-0 select-none">
+                                            <div className="flex items-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 text-xs shrink-0 select-none">
                                                 <IconDeviceVisionProFilled className="size-3.5 opacity-30 dark:opacity-20 group-hover:opacity-60 dark:group-hover:opacity-50 transition-opacity duration-300" />
                                                 {activeLabels.length === 1 ? activeLabels[0] : `${activeLabels.length} labels`}
                                                 <ChevronDown className="size-3 text-neutral-400 dark:text-neutral-600" />
@@ -193,7 +191,7 @@ export default function QueueView() {
                                             <p className="text-[10px] text-neutral-400 dark:text-neutral-600 px-2 py-1 uppercase tracking-widest">Labels</p>
                                             {LABELS.map(l => (
                                                 <button key={l} onClick={() => setActiveLabels(prev => prev.includes(l) ? prev.filter(x => x !== l) : [...prev, l])}
-                                                    className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                                                    className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:bg-neutral-100 dark:focus:bg-neutral-800 outline-none transition-colors">
                                                     <span>{l}</span>
                                                     {activeLabels.includes(l) && <Check className="size-3 ml-auto text-neutral-400" />}
                                                 </button>
@@ -204,7 +202,7 @@ export default function QueueView() {
                                     {/* Owners */}
                                     <Popover>
                                         <PopoverTrigger asChild>
-                                            <div className="flex items-center justify-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 transition-all duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 hover:-translate-y-px active:translate-y-0 active:scale-95 text-xs shrink-0 select-none">
+                                            <div className="flex items-center justify-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 text-xs shrink-0 select-none">
                                                 <div className="flex -space-x-2">
                                                     {[1, 2, 3].map(i => (
                                                         <div key={i} className="size-4 rounded-full border border-neutral-200 dark:border-zinc-900 bg-neutral-200 dark:bg-zinc-800 ring-1 ring-neutral-200/50 dark:ring-zinc-800/50 overflow-hidden">
@@ -220,7 +218,7 @@ export default function QueueView() {
                                             <p className="text-[10px] text-neutral-400 dark:text-neutral-600 px-2 py-1 uppercase tracking-widest">Assignees</p>
                                             {TEAM.map(member => (
                                                 <button key={member.name} onClick={() => setOwners(prev => prev.includes(member.name) ? prev.filter(x => x !== member.name) : [...prev, member.name])}
-                                                    className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                                                    className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:bg-neutral-100 dark:focus:bg-neutral-800 outline-none transition-colors">
                                                     <div className="size-5 rounded-full overflow-hidden shrink-0">
                                                         <img src={member.img} alt="" className="w-full h-full object-cover" />
                                                     </div>
@@ -234,7 +232,7 @@ export default function QueueView() {
                                     {/* Effort */}
                                     <Popover>
                                         <PopoverTrigger asChild>
-                                            <div className="flex items-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 transition-all duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 hover:-translate-y-px active:translate-y-0 active:scale-95 text-xs shrink-0 whitespace-nowrap select-none">
+                                            <div className="flex items-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 text-xs shrink-0 whitespace-nowrap select-none">
                                                 {effort ? `${effort} pts` : "Add effort"}
                                                 <ChevronDown className="size-3 text-neutral-400 dark:text-neutral-600" />
                                             </div>
@@ -244,7 +242,7 @@ export default function QueueView() {
                                             <div className="flex flex-wrap gap-1.5">
                                                 {EFFORT_POINTS.map(pt => (
                                                     <button key={pt} onClick={() => setEffort(effort === pt ? null : pt)}
-                                                        className={`w-9 h-9 rounded-md text-xs font-semibold transition-all duration-150 active:scale-95 ${effort === pt ? 'bg-neutral-900 dark:bg-white text-white dark:text-neutral-900' : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'}`}>
+                                                        className={`w-9 h-9 rounded-md text-xs font-semibold outline-none transition-colors duration-150 ${effort === pt ? 'bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 border-none' : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 focus:bg-neutral-200 dark:focus:bg-neutral-700'}`}>
                                                         {pt}
                                                     </button>
                                                 ))}
@@ -255,7 +253,7 @@ export default function QueueView() {
                                     {/* Priority */}
                                     <Popover>
                                         <PopoverTrigger asChild>
-                                            <div className="flex items-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 rounded-r-md transition-all duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 hover:-translate-y-px active:translate-y-0 active:scale-95 text-xs flex-1 shrink-0 whitespace-nowrap select-none">
+                                            <div className="flex items-center gap-2 px-2 py-1.5 bg-neutral-100 dark:bg-neutral-900 rounded-r-md transition-colors duration-150 cursor-pointer group hover:bg-neutral-200/60 dark:hover:bg-neutral-900/50 text-xs flex-1 shrink-0 whitespace-nowrap select-none">
                                                 <IconCircleDashed className="size-3.5 opacity-30 dark:opacity-20 group-hover:opacity-60 dark:group-hover:opacity-50 transition-opacity duration-300" />
                                                 Priority: {priority}
                                                 <ChevronDown className="size-3 text-neutral-400 dark:text-neutral-600" />
@@ -265,7 +263,7 @@ export default function QueueView() {
                                             <p className="text-[10px] text-neutral-400 dark:text-neutral-600 px-2 py-1 uppercase tracking-widest">Priority</p>
                                             {PRIORITIES.map(p => (
                                                 <button key={p.label} onClick={() => setPriority(p.label)}
-                                                    className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                                                    className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:bg-neutral-100 dark:focus:bg-neutral-800 outline-none transition-colors">
                                                     {p.icon}
                                                     <span>{p.label}</span>
                                                     {priority === p.label && <Check className="size-3 ml-auto text-neutral-400" />}
@@ -298,9 +296,9 @@ export default function QueueView() {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-4 pt-2">
                                             {WORK_ITEMS.map((item, idx) => (
                                                 <Card key={idx}
-                                                    className="bg-transparent border-[1.5px] border-neutral-200 dark:border-neutral-800/60 hover:bg-neutral-50 dark:hover:bg-neutral-900/10 gap-0 hover:border-neutral-300 dark:hover:border-neutral-700/60 transition-all duration-200 cursor-pointer group shadow-none hover:-translate-y-1 hover:shadow-md dark:hover:shadow-neutral-950 active:translate-y-0 active:scale-[0.98] relative overflow-hidden rounded-lg p-1.5">
+                                                    className="bg-transparent border-[1.5px] border-neutral-200 dark:border-neutral-800/60 hover:bg-neutral-50 dark:hover:bg-neutral-900/10 gap-0 hover:border-neutral-300 dark:hover:border-neutral-700/60 transition-colors duration-200 cursor-pointer group shadow-none hover:shadow-sm relative overflow-hidden rounded-lg p-1.5">
                                                     <CardHeader className="p-3 flex flex-row items-start gap-2 border-b-[1.5px] border-neutral-200 dark:border-neutral-800/60">
-                                                        <div className="size-7 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-[16px] shrink-0 group-hover:scale-105 transition-all duration-300 shadow-inner">
+                                                        <div className="size-7 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-[16px] shrink-0 transition-colors duration-300 shadow-inner">
                                                             {item.icon}
                                                         </div>
                                                         <div className="space-y-0.5">
@@ -333,15 +331,15 @@ export default function QueueView() {
                                                             </div>
                                                         </div>
                                                         <div className="flex flex-wrap items-center gap-2">
-                                                            <Badge variant="outline" className="bg-neutral-100 dark:bg-neutral-900/60 text-neutral-500 dark:text-neutral-500 border-none rounded-full py-1.5 px-2.5 text-xs ring-1 ring-neutral-300 dark:ring-neutral-800/60 flex items-center gap-1.5 hover:text-neutral-700 dark:hover:text-neutral-300 hover:scale-105 active:scale-95 transition-all duration-150 cursor-pointer">
+                                                            <Badge variant="outline" className="bg-neutral-100 dark:bg-neutral-900/60 text-neutral-500 dark:text-neutral-500 border-none rounded-full py-1.5 px-2.5 text-xs ring-1 ring-neutral-300 dark:ring-neutral-800/60 flex items-center gap-1.5 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors duration-150 cursor-pointer">
                                                                 <Hourglass className="size-4 text-yellow-600/80" />
                                                                 Time-Sensitive
                                                             </Badge>
-                                                            <Badge variant="outline" className="bg-neutral-100 dark:bg-neutral-900/60 text-neutral-500 dark:text-neutral-500 border-none rounded-full py-1.5 px-2.5 text-xs ring-1 ring-neutral-300 dark:ring-neutral-800/60 flex items-center gap-1.5 hover:text-neutral-700 dark:hover:text-neutral-300 hover:scale-105 active:scale-95 transition-all duration-150 cursor-pointer">
+                                                            <Badge variant="outline" className="bg-neutral-100 dark:bg-neutral-900/60 text-neutral-500 dark:text-neutral-500 border-none rounded-full py-1.5 px-2.5 text-xs ring-1 ring-neutral-300 dark:ring-neutral-800/60 flex items-center gap-1.5 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors duration-150 cursor-pointer">
                                                                 <Box className="size-3 text-indigo-600/80" />
                                                                 Platform
                                                             </Badge>
-                                                            <Badge variant="outline" className="bg-neutral-100 dark:bg-neutral-900/60 text-neutral-500 dark:text-neutral-500 border-none rounded-full py-1.5 px-2.5 text-xs ring-1 ring-neutral-300 dark:ring-neutral-800/60 flex items-center gap-1.5 hover:text-neutral-700 dark:hover:text-neutral-300 hover:scale-105 active:scale-95 transition-all duration-150 cursor-pointer">
+                                                            <Badge variant="outline" className="bg-neutral-100 dark:bg-neutral-900/60 text-neutral-500 dark:text-neutral-500 border-none rounded-full py-1.5 px-2.5 text-xs ring-1 ring-neutral-300 dark:ring-neutral-800/60 flex items-center gap-1.5 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors duration-150 cursor-pointer">
                                                                 <RefreshCw className="size-3 text-orange-600/80" />
                                                                 Live
                                                             </Badge>
@@ -438,10 +436,9 @@ export default function QueueView() {
                     {/* Footer Input */}
                     <div className="p-6 shrink-0">
                         <div className="flex items-center gap-2 max-w-2xl mx-auto w-full group">
-                            {/* Paperclip Popover */}
                             <Popover>
                                 <PopoverTrigger asChild>
-                                    <div className="cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-900 size-11 flex items-center justify-center rounded-lg transition-all duration-150 hover:scale-110 active:scale-95">
+                                    <div className="cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-900 size-11 flex items-center justify-center rounded-lg transition-colors duration-150 hover:shadow-sm">
                                         <Paperclip className="size-5 text-neutral-400 dark:text-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-400" />
                                     </div>
                                 </PopoverTrigger>
@@ -453,7 +450,7 @@ export default function QueueView() {
                                         { icon: <FileText className="size-3.5" />, label: "From docs" },
                                     ].map(opt => (
                                         <button key={opt.label}
-                                            className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                                            className="w-full flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:bg-neutral-100 dark:focus:bg-neutral-800 outline-none transition-colors">
                                             {opt.icon}
                                             <span>{opt.label}</span>
                                         </button>
@@ -465,7 +462,7 @@ export default function QueueView() {
                                 <Input
                                     type="text"
                                     placeholder="type message"
-                                    className="w-full bg-neutral-100/80 dark:bg-neutral-900/50 border-neutral-200 dark:border-neutral-800/80 rounded-lg py-5 pl-3 pr-5 text-sm text-neutral-700 dark:text-neutral-200 placeholder:text-neutral-400 dark:placeholder:text-neutral-700 focus-visible:ring-0 focus-visible:border-neutral-400/60 dark:focus-visible:border-neutral-600 transition-all font-mono shadow-inner border-[1.5px]"
+                                    className="w-full bg-neutral-100/80 dark:bg-neutral-900/50 border-neutral-200 dark:border-neutral-800/80 rounded-lg py-5 pl-3 pr-5 text-sm text-neutral-700 dark:text-neutral-200 placeholder:text-neutral-400 dark:placeholder:text-neutral-700 transition-colors font-mono shadow-inner border-[1.5px] focus-visible:ring-0 focus-visible:border-neutral-400 focus-visible:ring-offset-0 dark:focus-visible:border-neutral-600 outline-none"
                                 />
                             </div>
                         </div>
@@ -487,18 +484,18 @@ export default function QueueView() {
                             <Label className="text-xs text-neutral-500 dark:text-neutral-400">Title</Label>
                             <Input value={newItemTitle} onChange={e => setNewItemTitle(e.target.value)}
                                 placeholder="What needs to be done?"
-                                className="bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 text-xs placeholder:text-neutral-400 dark:placeholder:text-neutral-600 font-mono focus-visible:ring-0 focus-visible:border-neutral-400/60 dark:focus-visible:border-neutral-600" />
+                                className="bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 text-xs placeholder:text-neutral-400 dark:placeholder:text-neutral-600 font-mono transition-colors focus-visible:ring-0 focus-visible:border-neutral-400 focus-visible:ring-offset-0 dark:focus-visible:border-neutral-600 outline-none shadow-none" />
                         </div>
                         <div className="space-y-1.5">
                             <Label className="text-xs text-neutral-500 dark:text-neutral-400">Origin</Label>
                             <Input value={newItemOrigin} onChange={e => setNewItemOrigin(e.target.value)}
                                 placeholder="e.g. Customer Portal"
-                                className="bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 text-xs placeholder:text-neutral-400 dark:placeholder:text-neutral-600 font-mono focus-visible:ring-0 focus-visible:border-neutral-400/60 dark:focus-visible:border-neutral-600" />
+                                className="bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 text-xs placeholder:text-neutral-400 dark:placeholder:text-neutral-600 font-mono transition-colors focus-visible:ring-0 focus-visible:border-neutral-400 focus-visible:ring-offset-0 dark:focus-visible:border-neutral-600 outline-none shadow-none" />
                         </div>
                         <div className="space-y-1.5">
                             <Label className="text-xs text-neutral-500 dark:text-neutral-400">Priority</Label>
                             <Select value={newItemPriority} onValueChange={setNewItemPriority}>
-                                <SelectTrigger className="bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 text-xs font-mono focus:ring-0 focus-visible:ring-0 h-9">
+                                <SelectTrigger className="bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 text-xs font-mono focus:ring-0 focus-visible:ring-0 h-9 transition-colors focus-visible:border-neutral-400 focus-visible:ring-offset-0 dark:focus-visible:border-neutral-600 shadow-none">
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent className="bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 font-mono text-xs">
@@ -516,7 +513,7 @@ export default function QueueView() {
                             Cancel
                         </Button>
                         <Button onClick={() => setAddItemOpen(false)}
-                            className="text-xs bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-100 font-mono h-8 px-4 active:scale-95 transition-all">
+                            className="text-xs bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-100 font-mono h-8 px-4 transition-colors">
                             Create Item
                         </Button>
                     </DialogFooter>
