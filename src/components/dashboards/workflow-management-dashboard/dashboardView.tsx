@@ -32,17 +32,17 @@ export default function Home() {
       selectTask(tasks[0].id);
       hasInitializedRef.current = true;
     }
-  }, [tasks, selectedTaskId, isMobile]);
+  }, [tasks, selectedTaskId, isMobile, selectTask]);
 
   useEffect(() => {
     if (isMobile && selectedTaskId) {
-      setDrawerOpen(true);
+      setTimeout(() => setDrawerOpen(true), 0);
     }
   }, [isMobile, selectedTaskId]);
 
   useEffect(() => {
     if (!selectedTaskId) {
-      setDrawerOpen(false);
+      setTimeout(() => setDrawerOpen(false), 0);
     }
   }, [selectedTaskId]);
 

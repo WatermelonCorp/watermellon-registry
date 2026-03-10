@@ -185,10 +185,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <Button
                 variant="ghost"
                 size="sm"
-                className=" p-1 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all cursor-pointer active:scale-90"
+                className=" p-1 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
                 onClick={() => setOpen(true)}
               >
-                <Search className="size-4 transition-transform hover:scale-110" />
+                <Search className="size-4" />
               </Button>
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogContent className="p-0 overflow-hidden sm:max-w-2xl border-none shadow-2xl bg-transparent">
@@ -245,10 +245,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="p-1 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all cursor-pointer active:scale-90"
+                    className="p-1 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
                   >
                     <div className="relative">
-                      <BellIcon className="size-4 transition-transform hover:scale-110" />
+                      <BellIcon className="size-4" />
                       <span className="absolute -top-1 -right-1 flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -312,7 +312,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenuItem>
-          <SidebarMenuButton tooltip="Options" className=" data-[active=true]:bg-white dark:data-[active=true]:bg-black data-[active=true]:text-zinc-900 dark:data-[active=true]:text-white data-[active=true]:hover:bg-zinc-100 dark:data-[active=true]:hover:bg-zinc-800 data-[active=true]:hover:text-zinc-900 data-[active=true]:shadow-sm rounded-none">
+          <SidebarMenuButton tooltip="Options" className=" data-[active=true]:bg-white dark:data-[active=true]:bg-black data-[active=true]:text-zinc-900 dark:data-[active=true]:text-white data-[active=true]:hover:bg-zinc-100 dark:data-[active=true]:hover:bg-zinc-800 data-[active=true]:hover:text-zinc-900 data-[active=true]:shadow-sm rounded-none transition-colors outline-none focus-visible:ring-0">
             <IconSettings />
             <span>Options</span>
           </SidebarMenuButton>
