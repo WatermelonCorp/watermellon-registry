@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export interface JournalEntry {
@@ -51,10 +51,7 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
             y: direction > 0 ? 10 : -10,
             opacity: 0,
         }),
-        center: {
-            y: 0,
-            opacity: 1,
-        },
+        center: { y: 0, opacity: 1 },
         exit: (direction: number) => ({
             y: direction > 0 ? -10 : 10,
             opacity: 0,
@@ -65,16 +62,13 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
 
     return (
         <div className="min-h-full w-full flex flex-col items-center justify-center p-6 transition-colors duration-500 bg-transparent">
-            
-            <div className="relative w-full max-w-90 h-85 rounded-4xl shadow-sm flex overflow-hidden select-none border transition-colors duration-300 bg-[#F3EFE9] border-[#e5e4de]/50 dark:bg-[#1A1A1C] dark:border-white/5">
 
-                {/* vertical left area */}
-                <div className="w-13.5 m-1 flex flex-col items-center justify-center relative z-10 rounded-full border transition-colors duration-300 overflow-hidden bg-[#FEFEFE] border-[#e5e4de]/50 dark:bg-[#242426] dark:border-white/5">
+            <div className="relative w-full max-w-90 h-85 rounded-[32px] shadow-sm flex overflow-hidden select-none border transition-colors duration-300 bg-[#F3EFE9] border-[#e5e4de]/50 dark:bg-neutral-900 dark:border-neutral-800">
 
-                    {/* Top Blur Overlay */}
-                    <div className="absolute top-0 left-0 w-full h-20 z-20 pointer-events-none backdrop-blur-[0.5px] bg-linear-to-b from-[#FEFEFE] via-[#FEFEFE]/80 to-transparent dark:from-[#242426] dark:via-[#242426]/80 dark:to-transparent" />
+                <div className="w-13.5 m-1 flex flex-col items-center justify-center relative z-10 rounded-full border transition-colors duration-300 overflow-hidden bg-[#FEFEFE] border-[#e5e4de]/50 dark:bg-neutral-800 dark:border-neutral-700">
 
-                    {/* Vertical Track */}
+                    <div className="absolute top-0 left-0 w-full h-20 z-20 pointer-events-none backdrop-blur-[0.5px] bg-linear-to-b from-[#FEFEFE] via-[#FEFEFE]/80 to-transparent dark:from-neutral-800 dark:via-neutral-800/80 dark:to-transparent" />
+
                     <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-10">
                         <motion.div
                             animate={{ y: -(currentIndex * ITEM_HEIGHT) }}
@@ -89,9 +83,9 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                                         onClick={() => setCurrentIndex(index)}
                                         animate={{ scale: isActive ? 1.2 : 1 }}
                                         className={`h-9.25 w-9.25 flex items-center justify-center rounded-full text-[16px] font-bold transition-colors cursor-pointer shrink-0 
-                                            ${isActive 
-                                                ? 'text-[#1C1C1E] bg-[#F0ECE6] dark:text-white dark:bg-white/10' 
-                                                : 'text-[#B0AFB8] hover:bg-[#F0ECE6] dark:text-gray-600 dark:hover:text-gray-400'
+                                            ${isActive
+                                                ? 'text-[#1C1C1E] bg-[#F0ECE6] dark:text-white dark:bg-neutral-700'
+                                                : 'text-[#B0AFB8] hover:bg-[#F0ECE6] dark:text-neutral-600 dark:hover:text-neutral-400'
                                             }`}
                                     >
                                         {entry.day.toString().padStart(2, '0')}
@@ -101,13 +95,10 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                         </motion.div>
                     </div>
 
-                    {/* Bottom Blur Overlay */}
-                    <div className="absolute bottom-0 left-0 w-full h-20 z-20 pointer-events-none backdrop-blur-[0.5px] bg-linear-to-t from-[#FEFEFE] via-[#FEFEFE]/80 to-transparent dark:from-[#242426] dark:via-[#242426]/80 dark:to-transparent" />
+                    <div className="absolute bottom-0 left-0 w-full h-20 z-20 pointer-events-none backdrop-blur-[0.5px] bg-linear-to-t from-[#FEFEFE] via-[#FEFEFE]/80 to-transparent dark:from-neutral-800 dark:via-neutral-800/80 dark:to-transparent" />
                 </div>
 
-                {/* Main Content Area */}
                 <div className="flex-1 p-4 flex flex-col">
-                    {/* Header */}
                     <div className="flex items-center justify-between mb-6">
                         <div className="overflow-hidden">
                             <AnimatePresence mode="wait" custom={direction}>
@@ -119,7 +110,7 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                                     animate="center"
                                     exit="exit"
                                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                                    className="text-lg font-medium tracking-tight text-[#918D87] dark:text-gray-500"
+                                    className="text-lg font-medium tracking-tight text-[#918D87] dark:text-neutral-400"
                                 >
                                     {currentEntry.month} {currentEntry.day}
                                 </motion.h2>
@@ -127,14 +118,16 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                         </div>
 
                         <div className="flex gap-2">
-                            {[ 
-                                { title: 'left', action: handlePrev, disabled: currentIndex === 0, icon: <ChevronLeft size={20} strokeWidth={2.5}/> },
-                                { title: 'right', action: handleNext, disabled: currentIndex === entries.length - 1, icon: <ChevronRight size={20} strokeWidth={2.5}/> }
+                            {[
+                                { title: 'left', action: handlePrev, disabled: currentIndex === 0, icon: <ChevronLeft size={20} strokeWidth={2.5} /> },
+                                { title: 'right', action: handleNext, disabled: currentIndex === entries.length - 1, icon: <ChevronRight size={20} strokeWidth={2.5} /> }
                             ].map((btn) => (
-                                <button key={btn.title} title={btn.title}
+                                <button
+                                    key={btn.title}
+                                    title={btn.title}
                                     onClick={btn.action}
                                     disabled={btn.disabled}
-                                    className="w-8 h-8 flex items-center justify-center rounded-full transition-colors bg-[#Fefefe] text-[#B8B8B5] hover:bg-[#Fefefe]/70 disabled:hover:bg-[#f2f1eb] dark:bg-white/5 dark:text-gray-500 dark:hover:bg-white/10 dark:disabled:opacity-20"
+                                    className="w-8 h-8 flex items-center justify-center rounded-full transition-colors bg-[#Fefefe] text-[#B8B8B5] hover:bg-[#Fefefe]/70 disabled:hover:bg-[#f2f1eb] dark:bg-neutral-800 dark:text-neutral-500 dark:hover:bg-neutral-700 dark:disabled:opacity-20"
                                 >
                                     {btn.icon}
                                 </button>
@@ -142,7 +135,6 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                         </div>
                     </div>
 
-                    {/* Content Body */}
                     <div className="flex-1 flex flex-col overflow-hidden">
                         <div className="flex-1">
                             <AnimatePresence mode="wait" custom={direction}>
@@ -154,7 +146,7 @@ export const JournalNavigation: React.FC<JournalNavigationProps> = ({
                                     animate="center"
                                     exit="exit"
                                     transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                                    className="text-[18px] -tracking-wide leading-relaxed font-bold transition-colors text-[#292422] dark:text-gray-200"
+                                    className="text-[18px] -tracking-wide leading-relaxed font-bold transition-colors text-[#292422] dark:text-neutral-200"
                                 >
                                     {currentEntry.content}
                                 </motion.div>

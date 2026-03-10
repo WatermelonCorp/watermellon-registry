@@ -2,10 +2,6 @@
 
 import {
   Users,
-  CheckCircle,
-  Briefcase,
-  LogIn,
-  Clock,
   Calendar,
   BriefcaseBusiness,
   Info,
@@ -15,8 +11,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  type ChartConfig,
-} from "@/components/ui/chart";
+} from "./components/ui/chart";
 import {
   Area,
   AreaChart,
@@ -26,13 +21,22 @@ import {
   PieChart,
   Pie,
   Cell,
-  Label,
+  Label as RechartsLabel,
 } from "recharts";
 import { Filter, List, LayoutGrid } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { EmployeeTable } from "./employee-table";
-import { employees } from "./employees";
+import { Button } from "./components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
+import { EmployeeTable } from "./components/employee-table";
+import {
+  employees,
+  dashboardCards,
+  attendanceData,
+  attendanceChartConfig,
+  workingFormatData,
+  jobOverviewData,
+  jobChartConfig,
+  totalJobs
+} from "./data";
 
 import {
   Select,
@@ -40,109 +44,18 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "./components/ui/select";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "./components/ui/popover";
+import { Label } from "./components/ui/label";
+import { Input } from "./components/ui/input";
 
 export const DashboardView = () => {
-  const dashboardCards = [
-    {
-      id: 1,
-      title: "TOTAL EMPLOYEES",
-      value: "230",
-      subtitle: "This month",
-      icon: Users,
-      bgColor: "bg-blue-500/20",
-      iconColor: "text-blue-400",
-    },
-    {
-      id: 2,
-      title: "ATTENDANCE TODAY",
-      value: "78%",
-      subtitle: "228 / 248",
-      icon: CheckCircle,
-      bgColor: "bg-green-500/20",
-      iconColor: "text-green-400",
-    },
-    {
-      id: 3,
-      title: "TOTAL PROJECT",
-      value: "120",
-      subtitle: "This month",
-      icon: Briefcase,
-      bgColor: "bg-purple-500/20",
-      iconColor: "text-purple-400",
-    },
-    {
-      id: 4,
-      title: "OPEN POSITIONS",
-      value: "18",
-      subtitle: "5+ Urgent",
-      icon: LogIn,
-      bgColor: "bg-yellow-500/20",
-      iconColor: "text-yellow-400",
-    },
-    {
-      id: 5,
-      title: "PENDING APPROVALS",
-      value: "14",
-      subtitle: "6 Leaves",
-      icon: Clock,
-      bgColor: "bg-red-500/20",
-      iconColor: "text-red-400",
-    },
-  ];
-
-  // Attendance Overview Data
-  const attendanceData = [
-    { day: "Monday", attendance: 65, lateArrival: 45 },
-    { day: "Tuesday", attendance: 72, lateArrival: 38 },
-    { day: "Wednesday", attendance: 68, lateArrival: 42 },
-    { day: "Thursday", attendance: 78, lateArrival: 55 },
-    { day: "Friday", attendance: 55, lateArrival: 48 },
-    { day: "Saturday", attendance: 48, lateArrival: 35 },
-    { day: "Sunday", attendance: 52, lateArrival: 40 },
-  ];
-
-  const attendanceChartConfig = {
-    attendance: {
-      label: "Attendance",
-      color: "hsl(0, 0%, 100%)",
-    },
-    lateArrival: {
-      label: "Late arrival",
-      color: "hsl(0, 0%, 40%)",
-    },
-  } satisfies ChartConfig;
-
-  // Working Format Data
-  const workingFormatData = {
-    total: 230,
-    onSite: { percentage: 46.8, color: "#3b82f6" },
-    hybrid: { percentage: 26.8, color: "#a855f7" },
-    remote: { percentage: 26.4, color: "#06b6d4" },
-  };
-
-  // Job Overview Data
-  const jobOverviewData = [
-    { name: "Active Jobs", value: 40, fill: "#f59e0b" },
-    { name: "Interview", value: 20, fill: "#3b82f6" },
-    { name: "Remaining", value: 10, fill: "#374151" },
-  ];
-
-  const jobChartConfig = {
-    activeJobs: {
-      label: "Active Jobs",
-      color: "#f59e0b",
-    },
-    interview: {
-      label: "Interview",
-      color: "#3b82f6",
-    },
-  } satisfies ChartConfig;
-
-  const totalJobs = 70;
-
   return (
-    <div className="w-full h-full p-5 overflow-y-auto">
+    <div className="min-h-full w-full p-6">
       <div className="mb-6">
         <h1 className="text-2xl tracking-tight text-foreground mb-1">
           Welcome To, GR8R HRM!
@@ -152,23 +65,23 @@ export const DashboardView = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {dashboardCards.map((card) => {
           const IconComponent = card.icon;
           return (
             <div
               key={card.id}
-              className="bg-neutral-600/10 border rounded-lg border-neutral-400/10 p-3 flex flex-col"
+              className="bg-card border rounded-lg border-border p-3 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer group"
             >
               <div className="flex items-start justify-between mb-1">
-                <p className="text-xs text-neutral-700 font-medium tracking">
+                <p className="text-xs text-muted-foreground font-medium tracking">
                   {card.title}
                 </p>
-                <div className={`bg-neutral-500/15 p-1 rounded`}>
+                <div className={`bg-muted p-1 rounded`}>
                   <IconComponent className={`size-3 ${card.iconColor}`} />
                 </div>
               </div>
-              <p className="text-2xl font-medium text-white mb-3">
+              <p className="text-2xl font-medium text-foreground mb-3">
                 {card.value}
               </p>
               <div className="flex items-center justify-between">
@@ -183,29 +96,40 @@ export const DashboardView = () => {
       </div>
 
       {/* Charts Section */}
-      <div className="grid grid-cols-3 gap-4 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {/* Attendance Overview Chart */}
-        <div className="col-span-2 bg-neutral-600/10 border rounded-lg border-neutral-400/10 p-4">
-          <div className="flex items-center justify-between mb-4 border-b-[1.5px] border-neutral-500/20 border-dashed pb-4">
+        <div className="col-span-1 md:col-span-2 lg:col-span-2 bg-card border rounded-lg border-border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 border-b-[1.5px] border-border border-dashed pb-4">
             <div className="flex items-center gap-2">
-              <div className="bg-neutral-500/10 p-1 rounded">
+              <div className="bg-muted p-1 rounded">
                 <Calendar className="size-4 text-orange-400" />
               </div>
-              <h3 className="text-sm font-medium text-white">
+              <h3 className="text-sm font-medium text-foreground">
                 Attendance Overview
               </h3>
             </div>
-            <div className="flex items-center gap-1 bg-neutral-600/50 rounded-md p-1">
-              <button className="px-3 py-1 text-xs text-white bg-neutral-900 rounded">
-                Last 7 days
-              </button>
-              <button className="px-3 py-1 text-xs text-neutral-400 hover:text-white">
-                Last 30 days
-              </button>
-              <button className="px-3 py-1 text-xs text-neutral-400 hover:text-white">
-                Last Year
-              </button>
-            </div>
+            <Tabs defaultValue="7days" className="w-fit">
+              <TabsList className="bg-neutral-300/10 border border-neutral-300/20 rounded-md p-1 h-9 items-center gap-1">
+                <TabsTrigger
+                  value="7days"
+                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
+                >
+                  Last 7 days
+                </TabsTrigger>
+                <TabsTrigger
+                  value="30days"
+                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
+                >
+                  Last 30 days
+                </TabsTrigger>
+                <TabsTrigger
+                  value="year"
+                  className="px-3 text-xs data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
+                >
+                  Last Year
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
           </div>
 
           <ChartContainer
@@ -224,13 +148,13 @@ export const DashboardView = () => {
                   x2="0"
                   y2="1"
                 >
-                  <stop offset="0%" stopColor="rgba(255,255,255,0.2)" />
-                  <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                  <stop offset="0%" stopColor="var(--chart-2)" stopOpacity={0.3} />
+                  <stop offset="100%" stopColor="var(--chart-2)" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="rgba(255,255,255,0.1)"
+                stroke="var(--border)"
                 vertical={true}
                 horizontal={false}
               />
@@ -253,7 +177,7 @@ export const DashboardView = () => {
               <ChartTooltip
                 content={
                   <ChartTooltipContent
-                    formatter={(_value, name) => {
+                    formatter={(_, name) => {
                       if (name === "attendance") {
                         return (
                           <div className="flex flex-col gap-1">
@@ -280,7 +204,8 @@ export const DashboardView = () => {
               <Area
                 type="monotone"
                 dataKey="lateArrival"
-                stroke="rgba(255,255,255,0.3)"
+                stroke="var(--muted-foreground)"
+                strokeOpacity={0.3}
                 strokeDasharray="5 5"
                 fill="transparent"
                 strokeWidth={2}
@@ -288,7 +213,7 @@ export const DashboardView = () => {
               <Area
                 type="monotone"
                 dataKey="attendance"
-                stroke="rgba(255,255,255,0.9)"
+                stroke="var(--chart-2)"
                 fill="url(#attendanceGradient)"
                 strokeWidth={2}
               />
@@ -296,45 +221,45 @@ export const DashboardView = () => {
           </ChartContainer>
 
           {/* Legend and Footer */}
-          <div className="flex items-center justify-between mt-6 border-t-[1.5px] border-neutral-500/20 border-dashed pt-4">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mt-6 border-t-[1.5px] border-border border-dashed pt-4">
+            <div className="flex max-md:justify-between items-center gap-4">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-white/80 rounded-sm" />
-                <span className="text-xs text-neutral-400">Attendance</span>
+                <div className="w-3 h-3 bg-chart-2 rounded-sm" />
+                <span className="text-xs text-muted-foreground">Attendance</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-neutral-500 rounded-sm" />
-                <span className="text-xs text-neutral-400">Late arrival</span>
+                <div className="w-3 h-3 bg-muted-foreground/30 rounded-sm" />
+                <span className="text-xs text-muted-foreground">Late arrival</span>
               </div>
             </div>
-            <div className="flex items-center gap-1 text-xs text-neutral-400">
+            <div className="flex items-center gap-1 text-xs text-muted-foreground">
               <Info className="size-4" />
               <span>78% </span>
-              <span className="text-neutral-500"> Attendance Today</span>
+              <span className="text-muted-foreground/60"> Attendance Today</span>
             </div>
           </div>
         </div>
 
         {/* Right Side Charts */}
-        <div className="flex flex-col gap-4">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 flex flex-col md:flex-row lg:flex-col gap-4">
           {/* Working Format */}
-          <div className="bg-neutral-600/10 border rounded-lg border-neutral-400/10 p-4">
-            <div className="flex items-center gap-2 mb-4 border-b-[1.5px] border-neutral-500/20 border-dashed pb-4">
-              <div className="bg-neutral-500/10 p-1 rounded">
+          <div className="flex-1 bg-card border rounded-lg border-border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+            <div className="flex items-center gap-2 mb-4 border-b-[1.5px] border-border border-dashed pb-4">
+              <div className="bg-muted p-1 rounded">
                 <Users className="size-4 text-blue-400" />
               </div>
-              <h3 className="text-sm font-medium text-white">Working Format</h3>
+              <h3 className="text-sm font-medium text-foreground">Working Format</h3>
             </div>
 
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs text-neutral-400">TOTAL EMPLOYEES</span>
-              <span className="text-lg font-semibold text-white">
+              <span className="text-xs text-muted-foreground">TOTAL EMPLOYEES</span>
+              <span className="text-lg font-semibold text-foreground">
                 {workingFormatData.total}
               </span>
             </div>
 
             {/* Progress Bar */}
-            <div className="w-full h-3 bg-neutral-700 rounded-full overflow-hidden flex">
+            <div className="w-full h-3 bg-muted rounded-full overflow-hidden flex">
               <div
                 className="h-full bg-blue-500"
                 style={{ width: `${workingFormatData.onSite.percentage}%` }}
@@ -350,16 +275,16 @@ export const DashboardView = () => {
             </div>
 
             {/* Legend */}
-            <div className="flex items-center gap-4 mt-5 border-t-[1.5px] border-neutral-500/20 border-dashed pt-3">
+            <div className="flex items-center gap-4 mt-5 border-t-[1.5px] border-border border-dashed pt-3">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                <span className="text-xs text-neutral-400">
+                <span className="text-xs text-muted-foreground">
                   {workingFormatData.onSite.percentage}% On Site
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-purple-500 rounded-full" />
-                <span className="text-xs text-neutral-400">
+                <span className="text-xs text-muted-foreground">
                   {workingFormatData.hybrid.percentage}% Hybrid
                 </span>
               </div>
@@ -367,12 +292,12 @@ export const DashboardView = () => {
           </div>
 
           {/* Job Overview */}
-          <div className="bg-neutral-600/10 border rounded-lg border-neutral-400/10 p-4">
-            <div className="flex items-center gap-2 mb-4 border-b-[1.5px] border-neutral-500/20 border-dashed pb-3">
-              <div className="bg-neutral-500/10 p-1 rounded">
+          <div className="flex-1 bg-card border rounded-lg border-border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
+            <div className="flex items-center gap-2 mb-4 border-b-[1.5px] border-border border-dashed pb-3">
+              <div className="bg-muted p-1 rounded">
                 <BriefcaseBusiness className="size-4 text-green-400" />
               </div>
-              <h3 className="text-sm font-medium text-white">Job Overview</h3>
+              <h3 className="text-sm font-medium text-foreground">Job Overview</h3>
             </div>
 
             <ChartContainer
@@ -394,7 +319,7 @@ export const DashboardView = () => {
                   {jobOverviewData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.fill} />
                   ))}
-                  <Label
+                  <RechartsLabel
                     content={({ viewBox }) => {
                       if (viewBox && "cx" in viewBox && "cy" in viewBox) {
                         return (
@@ -407,14 +332,14 @@ export const DashboardView = () => {
                             <tspan
                               x={viewBox.cx}
                               y={(viewBox.cy || 0) - 35}
-                              className="fill-white text-2xl font-bold"
+                              className="fill-foreground text-2xl font-bold"
                             >
                               {totalJobs}
                             </tspan>
                             <tspan
                               x={viewBox.cx}
                               y={(viewBox.cy || 0) - 18}
-                              className="fill-neutral-400 text-[10px]"
+                              className="fill-muted-foreground text-[10px]"
                             >
                               TOTAL JOBS
                             </tspan>
@@ -428,46 +353,47 @@ export const DashboardView = () => {
             </ChartContainer>
 
             {/* Legend */}
-            <div className="flex items-center justify-center gap-6 border-t-[1.5px] border-neutral-500/20 border-dashed pt-3 mt-4">
+            <div className="flex items-center justify-center gap-6 border-t-[1.5px] border-border border-dashed pt-3 mt-4">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-amber-500 rounded-full" />
-                <span className="text-xs text-neutral-400">40 Active Jobs</span>
+                <span className="text-xs text-muted-foreground">40 Active Jobs</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                <span className="text-xs text-neutral-400">20 Interview</span>
+                <span className="text-xs text-muted-foreground">20 Interview</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-neutral-500/10 p-4 rounded-lg border border-neutral-400/15 mt-5">
+      <div className="bg-muted/40 p-4 rounded-lg border border-border mt-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group">
         <div className=" flex items-center justify-between">
           {/* Left - View Tabs */}
           <Tabs defaultValue="list" className="w-full gap-4">
-            <div className="flex w-full items-center justify-between">
+            <div className="flex w-full flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center gap-2">
-                <div className="bg-neutral-500/10 p-1.5 rounded">
+                <div className="bg-muted p-1.5 rounded">
                   <ScanFace className="size-4 text-orange-400" />
                 </div>
-                <h3 className=" font-medium text-white">
+                <h3 className=" font-medium text-foreground">
                   Employee Activities
                 </h3>
               </div>
 
-              <div className="flex gap-2">
-                <TabsList className="bg-neutral-300/10 border border-neutral-300/20 rounded-md h-9 p-1">
+              <div className="flex flex-wrap items-center gap-2 max-md:justify-end">
+                <TabsList className="bg-neutral-300/10 border max-md:w-full max-md:h-10 border-neutral-300/20 rounded-md h-9 p-1 gap-1">
                   <TabsTrigger
                     value="list"
-                    className="gap-2 dark:data-[state=active]:bg-neutral-900 h-7"
+                    className="gap-2 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 max-md:h-8 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
                   >
                     <List className="size-4" />
                     List View
                   </TabsTrigger>
                   <TabsTrigger
+                    disabled
                     value="board"
-                    className="gap-2 dark:data-[state=active]:bg-neutral-900 h-7"
+                    className="gap-2 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 max-md:h-8 transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"
                   >
                     <LayoutGrid className="size-4" />
                     Board View
@@ -477,20 +403,59 @@ export const DashboardView = () => {
                   <Select defaultValue="pipeline-value">
                     <SelectTrigger
                       size="sm"
-                      className="w-fit py-[17px] text-xs bg-neutral-800"
+                      className="w-fit py-[17px] text-xs bg-muted/50 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer hover:shadow-sm"
                     >
-                      <span className="text-neutral-400 text-xs">Status</span>
+                      <span className="text-muted-foreground text-xs">Status</span>
                       <SelectValue placeholder="Sort by" />
                     </SelectTrigger>
-                    <SelectContent className="bg-neutral-900 border-neutral-700">
-                      <SelectItem value="pipeline-value">All</SelectItem>
-                      <SelectItem value="name">Active</SelectItem>
-                      <SelectItem value="activity">On Leave</SelectItem>
+                    <SelectContent className="bg-popover border-border">
+                      <SelectItem value="pipeline-value" className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">All</SelectItem>
+                      <SelectItem value="name" className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">Active</SelectItem>
+                      <SelectItem value="activity" className="cursor-pointer focus:bg-neutral-100 dark:focus:bg-neutral-800">On Leave</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Button variant="outline" size="icon" className="!size-9">
-                    <Filter className="size-4" />
-                  </Button>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button variant="outline" size="icon" className="!size-9 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer hover:shadow-sm">
+                        <Filter className="size-4 transition-transform duration-300 group-hover:scale-110" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-80 p-4" align="end">
+                      <div className="grid gap-4">
+                        <div className="space-y-2">
+                          <h4 className="font-medium leading-none">Filter Employees</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Set the properties to refine the list.
+                          </p>
+                        </div>
+                        <div className="grid gap-3">
+                          <div className="grid grid-cols-3 items-center gap-4">
+                            <Label htmlFor="department">Department</Label>
+                            <Select defaultValue="all">
+                              <SelectTrigger id="department" className="col-span-2 h-8">
+                                <SelectValue placeholder="Select" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="all">All Departments</SelectItem>
+                                <SelectItem value="engineering">Engineering</SelectItem>
+                                <SelectItem value="design">Design</SelectItem>
+                                <SelectItem value="marketing">Marketing</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                          <div className="grid grid-cols-3 items-center gap-4">
+                            <Label htmlFor="search">Search</Label>
+                            <Input
+                              id="search"
+                              placeholder="Name or Email..."
+                              className="col-span-2 h-8"
+                            />
+                          </div>
+                          <Button className="w-full mt-2" size="sm">Apply Filters</Button>
+                        </div>
+                      </div>
+                    </PopoverContent>
+                  </Popover>
                 </div>
               </div>
             </div>

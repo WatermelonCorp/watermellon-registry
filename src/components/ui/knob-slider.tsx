@@ -6,8 +6,116 @@ import React, {
   useEffect,
   useCallback,
   useMemo,
+  useId,
 } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import {
+  motion,
+  MotionValue,
+  useSpring,
+  useTransform,
+  motionValue,
+} from "motion/react";
+import useMeasure from "react-use-measure";
+
+/* ───────── Sliding Number ───────── */
+
+const DIGIT_SPRING = {
+  type: "spring" as const,
+  stiffness: 280,
+  damping: 24,
+  mass: 0.3,
+};
+
+function Digit({ value, place }: { value: number; place: number }) {
+  const digit = Math.floor(value / place) % 10;
+  const mv = useMemo(() => motionValue(digit), []);
+  const spring = useSpring(mv, DIGIT_SPRING);
+
+  useEffect(() => {
+    spring.set(digit);
+  }, [digit, spring]);
+
+  return (
+    <div
+      className="relative inline-block overflow-hidden tabular-nums"
+      style={{ width: "0.6em" }}
+    >
+      <div className="invisible">0</div>
+      {Array.from({ length: 10 }, (_, i) => (
+        <SlotDigit key={i} mv={spring} number={i} />
+      ))}
+    </div>
+  );
+}
+
+function SlotDigit({
+  mv,
+  number,
+}: {
+  mv: MotionValue<number>;
+  number: number;
+}) {
+  const id = useId();
+  const [ref, bounds] = useMeasure();
+
+  const y = useTransform(mv, (latest) => {
+    if (!bounds.height) return 0;
+    const offset = (10 + number - (latest % 10)) % 10;
+    let pos = offset * bounds.height;
+    if (offset > 5) pos -= 10 * bounds.height;
+    return pos;
+  });
+
+  if (!bounds.height)
+    return (
+      <span ref={ref} className="invisible absolute">
+        {number}
+      </span>
+    );
+
+  return (
+    <motion.span
+      ref={ref}
+      style={{ y }}
+      layoutId={`${id}-${number}`}
+      transition={DIGIT_SPRING}
+      className="absolute inset-0 flex items-center justify-center"
+    >
+      {number}
+    </motion.span>
+  );
+}
+
+function SlidingNumber({
+  value,
+  blur,
+}: {
+  value: number;
+  blur: number;
+}) {
+  const str = Math.abs(value).toString();
+  const int = parseInt(str, 10);
+  const places = str
+    .split("")
+    .map((_, i) => Math.pow(10, str.length - i - 1));
+
+  return (
+    <motion.div
+      animate={{ filter: `blur(${blur}px)` }}
+      transition={{ duration: 0.15 }}
+      className="flex items-center justify-center font-bold tabular-nums tracking-tight"
+      style={{
+        fontFamily: "ui-rounded, SF Pro Rounded, system-ui, sans-serif",
+      }}
+    >
+      {places.map((place, i) => (
+        <Digit key={`${place}-${i}`} value={int} place={place} />
+      ))}
+    </motion.div>
+  );
+}
+
+/* ───────── Knob ───────── */
 
 interface KnobSliderProps {
   value: number;
@@ -25,165 +133,137 @@ export const KnobSlider: React.FC<KnobSliderProps> = ({
   size = 320,
 }) => {
   const knobRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
+  const [dragging, setDragging] = useState(false);
 
-  const tickCount = 60;
-  const startAngle = 0;
-  const endAngle = 360;
+  const tickCount = 72;
+  const innerSize = size * 0.68;
 
-  const calculateValueFromAngle = useCallback(
-    (angle: number) => {
-      let normalizedAngle = (angle + 360) % 360;
-      const range = endAngle - startAngle;
-      const valueRange = max - min;
-      const rawValue =
-        ((normalizedAngle - startAngle) / range) * valueRange + min;
-      return Math.max(min, Math.min(max, Math.round(rawValue)));
-    },
-    [min, max],
-  );
+  /* Blur intensity */
+  const prev = useRef(value);
+  const blur = Math.min(10, Math.abs(value - prev.current));
+  useEffect(() => {
+    prev.current = value;
+  }, [value]);
 
-  const handleInteraction = useCallback(
-    (clientX: number, clientY: number) => {
+  /* Convert pointer → snapped value */
+  const updateFromPointer = useCallback(
+    (x: number, y: number) => {
       if (!knobRef.current) return;
+
       const rect = knobRef.current.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const dx = clientX - centerX;
-      const dy = clientY - centerY;
-      let angle = (Math.atan2(dy, dx) * 180) / Math.PI + 90;
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      let angle = (Math.atan2(y - cy, x - cx) * 180) / Math.PI + 90;
       if (angle < 0) angle += 360;
-      const newValue = calculateValueFromAngle(angle);
+
+      /* Snap to nearest tick */
+      const tickAngle = 360 / tickCount;
+      const snappedAngle = Math.round(angle / tickAngle) * tickAngle;
+
+      const percent = snappedAngle / 360;
+      const newValue = Math.round(percent * (max - min) + min);
+
       onChange(newValue);
     },
-    [onChange, calculateValueFromAngle],
+    [min, max, onChange]
   );
 
   useEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      if (isDragging) handleInteraction(e.clientX, e.clientY);
-    };
-    const onTouchMove = (e: TouchEvent) => {
-      if (isDragging)
-        handleInteraction(e.touches[0].clientX, e.touches[0].clientY);
-    };
-    const onEnd = () => setIsDragging(false);
-    if (isDragging) {
-      window.addEventListener("mousemove", onMouseMove);
-      window.addEventListener("mouseup", onEnd);
-      window.addEventListener("touchmove", onTouchMove, { passive: false });
-      window.addEventListener("touchend", onEnd);
-    }
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseup", onEnd);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("touchend", onEnd);
-    };
-  }, [isDragging, handleInteraction]);
+    const move = (e: MouseEvent) =>
+      dragging && updateFromPointer(e.clientX, e.clientY);
+    const up = () => setDragging(false);
 
-  const currentAngle = useMemo(() => {
-    return ((value - min) / (max - min)) * (endAngle - startAngle) + startAngle;
-  }, [value, min, max]);
+    if (dragging) {
+      window.addEventListener("mousemove", move);
+      window.addEventListener("mouseup", up);
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", up);
+    };
+  }, [dragging, updateFromPointer]);
+
+  const currentAngle = ((value - min) / (max - min)) * 360;
 
   return (
     <div
-      className={`flex items-center justify-center selection:bg-transparent [--tick-active:#84838A] dark:[--tick-active:#E4E4E7] [--tick-inactive:#D5D4DD] dark:[--tick-inactive:#27272a] [--knob-bg:#FEFEFE] dark:[--knob-bg:#1a1a1c] [--text-color:#85848D] dark:[--text-color:#E4E4E7] [--knob-shadow:15px_15px_25px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8),inset_0_1px_2px_rgba(255,255,255,1),inset_0_-1px_2px_rgba(0,0,0,0.05)] dark:[--knob-shadow:15px_15px_30px_rgba(0,0,0,0.6),-5px_-5px_15px_rgba(255,255,255,0.02),inset_0_1px_1px_rgba(255,255,255,0.05)]`}
+      ref={knobRef}
+      onMouseDown={(e) => {
+        setDragging(true);
+        updateFromPointer(e.clientX, e.clientY);
+      }}
+      className="relative flex items-center justify-center rounded-full
+                 bg-neutral-100 dark:bg-neutral-900
+                 cursor-pointer select-none
+                 transition-colors duration-300"
+      style={{ width: size, height: size }}
     >
-      <div
-        className="relative flex items-center justify-center select-none touch-none"
-        style={{ width: size, height: size }}
+      {/* Tick Ring */}
+      <svg
+        viewBox="0 0 100 100"
+        className="absolute inset-0 w-full h-full pointer-events-none
+                   text-neutral-400 dark:text-neutral-600"
       >
-        <div className="absolute rounded-full border-[1.8px] w-[95%] h-[95%] transition-colors duration-300 bg-[#fcfdfe] border-[#EEEDF2] dark:bg-[#151517] dark:border-[#222225]" />
+        {Array.from({ length: tickCount }).map((_, i) => {
+          const angle = (i * 360) / tickCount;
+          return (
+            <line
+              key={i}
+              x1="50"
+              y1="4"
+              x2="50"
+              y2="9"
+              transform={`rotate(${angle} 50 50)`}
+              stroke="currentColor"
+              strokeWidth="0.7"
+              strokeLinecap="round"
+              opacity="0.7"
+            />
+          );
+        })}
+      </svg>
 
-        <svg
-          className="absolute inset-0 pointer-events-none z-50"
-          viewBox="0 0 100 100"
-        >
-          {Array.from({ length: tickCount }).map((_, i) => {
-            const angle = (i * 360) / tickCount;
-            const active = (angle / 360) * (max - min) + min <= value;
-            return (
-              <line
-                key={i}
-                x1="50"
-                y1="10"
-                x2="50"
-                y2="13"
-                transform={`rotate(${angle} 50 50)`}
-                stroke={active ? "var(--tick-active)" : "var(--tick-inactive)"}
-                strokeWidth="0.7"
-                strokeLinecap="round"
-                className="transition-colors duration-200"
-              />
-            );
-          })}
-        </svg>
-
+      {/* Arrow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ transform: `rotate(${currentAngle}deg)` }}
+      >
         <div
-          ref={knobRef}
-          onMouseDown={(e) => {
-            setIsDragging(true);
-            handleInteraction(e.clientX, e.clientY);
-          }}
-          onTouchStart={(e) => {
-            setIsDragging(true);
-            handleInteraction(e.touches[0].clientX, e.touches[0].clientY);
-          }}
-          className="relative border-[1.8px] flex items-center justify-center rounded-full cursor-grab active:cursor-grabbing z-20 transition-all duration-300 active:scale-[0.98] border-neutral-300 dark:border-[#2c2c2e]"
+          className="absolute left-1/2 -translate-x-1/2
+                     border-l-transparent border-r-transparent
+                     border-b-neutral-500 dark:border-b-neutral-300"
           style={{
-            width: "60%",
-            height: "60%",
-            backgroundColor: "var(--knob-bg)",
-            boxShadow: "var(--knob-shadow)",
+            top: size * 0.12,
+            borderLeftWidth: size * 0.025,
+            borderRightWidth: size * 0.025,
+            borderBottomWidth: size * 0.045,
+            borderStyle: "solid",
           }}
-        >
-          <div className="flex flex-col items-center justify-center pointer-events-none overflow-hidden h-full w-full">
-            <BlurredNumber value={value} color="var(--text-color)" />
-          </div>
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            animate={{ rotate: currentAngle }}
-            transition={{ type: "spring", stiffness: 400, damping: 28 }}
-          >
-            <div className="absolute top-[-10px] left-1/2 -translate-x-1/2 w-1 h-6 rounded-full shadow-md bg-[#84848D] dark:bg-[#E4E4E7]" />
-          </motion.div>
-        </div>
-
-        <div
-          className="absolute rounded-full pointer-events-none transition-colors duration-300 bg-[#F4F4FB] dark:bg-[#121214]"
-          style={{ width: "88%", height: "88%" }}
         />
       </div>
-    </div>
-  );
-};
 
-const BlurredNumber: React.FC<{ value: number; color: string }> = ({
-  value,
-  color,
-}) => {
-  return (
-    <div className="relative h-24 w-full flex items-center justify-center">
-      <AnimatePresence mode="popLayout" initial={false}>
-        <motion.div
-          key={value}
-          initial={{ opacity: 0, y: 20, filter: "blur(10px)", scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
-          exit={{ opacity: 0, y: -20, filter: "blur(10px)", scale: 0.9 }}
-          transition={{
-            type: "spring",
-            stiffness: 600,
-            damping: 40,
-            opacity: { duration: 0.1 },
-            filter: { duration: 0.1 },
-          }}
-          className="absolute text-[78px] font-bold font-sans tabular-nums transition-colors duration-300"
-          style={{ color: color, textShadow: "0 2px 10px rgba(0,0,0,0.05)" }}
+      {/* Inner Knob */}
+      <div
+        className="relative rounded-full flex items-center justify-center
+                   bg-white dark:bg-neutral-800
+                   shadow-lg dark:shadow-black/40
+                   transition-colors duration-300"
+        style={{
+          width: innerSize,
+          height: innerSize,
+        }}
+      >
+        <div className="absolute inset-0 rounded-full border border-neutral-200 dark:border-neutral-700" />
+
+        <div
+          className="text-neutral-600 dark:text-neutral-300"
+          style={{ fontSize: innerSize * 0.28 }}
         >
-          {value}
-        </motion.div>
-      </AnimatePresence>
+          <SlidingNumber value={value} blur={blur} />
+        </div>
+      </div>
     </div>
   );
 };

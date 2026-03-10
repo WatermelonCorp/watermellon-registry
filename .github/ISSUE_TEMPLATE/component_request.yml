@@ -1,0 +1,44 @@
+name: Component Request
+description: Request a new UI component for the registry
+title: "[Component]: "
+labels: ["component", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new component for Watermelon UI! 🍉
+  - type: input
+    id: name
+    attributes:
+      label: Component Name
+      description: What should this component be called?
+      placeholder: e.g., DateRangePicker, AnimatedTabs
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      description: Where does this fit? (Inputs, Data Display, Feedback, Navigation, Layout, Charts, Blocks)
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Description & Use Case
+      description: Why is this component useful? How would someone use it?
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Design References
+      description: Any links to Dribbble, Twitter, or existing libraries that show what this might look like?
+    validations:
+      required: false
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Willing to contribute?
+      options:
+        - label: Yes, I would like to try building this component myself!

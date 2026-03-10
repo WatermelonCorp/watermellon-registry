@@ -1,88 +1,225 @@
-# Watermelon UI Library
+<p align="center">
+  <a href="https://ui.watermelon.sh">
+    <img src="https://img.shields.io/badge/Watermelon_UI-🍉-green?style=for-the-badge" alt="Watermelon UI" />
+  </a>
+</p>
 
-A collection of re-usable UI components for your React applications.
+<h1 align="center">Watermelon UI Registry</h1>
 
-[ui.watermelon.sh](https://ui.watermelon.sh)
+<p align="center">
+  A growing collection of <strong>260+ beautifully crafted, copy-pasteable React UI components</strong> built with Tailwind CSS, Radix UI, and Framer Motion.
+</p>
+
+<p align="center">
+  <a href="https://ui.watermelon.sh">Website</a> ·
+  <a href="#components">Components</a> ·
+  <a href="#installation">Installation</a> ·
+  <a href="CONTRIBUTING.md">Contributing</a> ·
+  <a href="https://github.com/WatermelonCorp/watermellon-registry/issues">Issues</a>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" /></a>
+  <a href="https://github.com/WatermelonCorp/watermellon-registry/actions/workflows/ci.yml"><img src="https://github.com/WatermelonCorp/watermellon-registry/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
+  <a href="https://github.com/WatermelonCorp/watermellon-registry/stargazers"><img src="https://img.shields.io/github/stars/WatermelonCorp/watermellon-registry?style=social" alt="Stars" /></a>
+  <a href="https://github.com/WatermelonCorp/watermellon-registry/issues"><img src="https://img.shields.io/github/issues/WatermelonCorp/watermellon-registry" alt="Issues" /></a>
+  <a href="https://github.com/WatermelonCorp/watermellon-registry/pulls"><img src="https://img.shields.io/github/issues-pr/WatermelonCorp/watermellon-registry" alt="Pull Requests" /></a>
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" /></a>
+  <a href="https://github.com/sponsors/WatermelonCorp"><img src="https://img.shields.io/badge/Sponsor-WatermelonCorp-pink?logo=github-sponsors" alt="Sponsor" /></a>
+</p>
+
+---
 
 ## Table of Contents
 
-- [Introduction](#introduction)
+- [About](#about)
+- [Components](#components)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing (Adding Components)](#contributing-adding-components)
-- [Registry Structure](#registry-structure)
+- [Local Development](#local-development)
+- [Contributing](#contributing)
+- [Community](#community)
+- [License](#license)
 
-## Introduction
+## About
 
-This registry provides a set of copy-pasteable components that you can easily integrate into your projects. It is built to work seamlessly with modern React stacks, typically leveraging Tailwind CSS and sometimes Framer Motion or other libraries.
+Watermelon UI is an open-source component registry that provides **production-ready, copy-pasteable React components**. Instead of installing a monolithic component library, you pick exactly the components you need — each one is self-contained with its own dependencies.
+
+### Key Features
+
+- **260+ Components** — Buttons, inputs, cards, accordions, modals, charts, dashboards, and much more
+- **Copy-Paste Architecture** — Components are added directly to your project, giving you full ownership and control
+- **shadcn/ui Compatible** — Works seamlessly with the `shadcn` CLI and registry protocol
+- **Modern Stack** — Built with React 19, Tailwind CSS v4, Radix UI, and Framer Motion
+- **TypeScript First** — Every component is fully typed out of the box
+- **Customizable** — Components live in your codebase — modify them however you want
+
+## Components
+
+Browse all components at **[ui.watermelon.sh](https://ui.watermelon.sh)**.
+
+Components are organized into categories:
+
+| Category | Examples |
+|----------|----------|
+| **Inputs** | Button, Input, Checkbox, Select, Switch, Slider, AI Input |
+| **Data Display** | Card, Avatar, Badge, Alert, Accordion, Table |
+| **Feedback** | Dialog, Alert Dialog, Toast (Sonner), Progress |
+| **Navigation** | Breadcrumb, Tabs, Sidebar, Carousel |
+| **Layout** | Separator, Collapsible, Split Panels |
+| **Charts** | Area, Bar, Line, Pie, Radar (via Recharts) |
+| **Blocks** | Full page sections, dashboards, login forms |
 
 ## Installation
 
-You can add components to your project using the `shadcn` CLI (or compatible tools) by pointing to this registry.
+### Via shadcn CLI (Recommended)
+
+Add any component to your project using the `shadcn` CLI:
 
 ```bash
-npx shadcn@latest add  https://registry.watermelon.sh/<component-name>.json
+npx shadcn@latest add "https://registry.watermelon.sh/<component-name>.json"
 ```
 
-Alternatively, for local development or manual usage, you can simply copy the component files from `src/components/ui` into your project.
+**Examples:**
+
+```bash
+# Add a button component
+npx shadcn@latest add "https://registry.watermelon.sh/button.json"
+
+# Add an animated accordion
+npx shadcn@latest add "https://registry.watermelon.sh/animated-accordion.json"
+
+# Add a chart component
+npx shadcn@latest add "https://registry.watermelon.sh/chart.json"
+```
+
+### Manual Installation
+
+You can also copy component files directly from `src/components/ui/` into your project's component directory.
+
+### Prerequisites
+
+- **React** 18+ (React 19 recommended)
+- **Tailwind CSS** v4
+- A path alias `@/` pointing to your `src/` directory (standard in Next.js, Vite, etc.)
 
 ## Usage
-
-Once a component is added to your project, you can import and use it like any other React component.
 
 ```tsx
 import { Button } from "@/components/ui/button";
 
 export default function App() {
-  return <Button>Click me</Button>;
+  return (
+    <div className="p-8">
+      <Button variant="default">Click me</Button>
+    </div>
+  );
 }
 ```
 
-## Contributing (Adding Components)
+## Local Development
 
-To add a new component to this registry, follow these steps:
+### Prerequisites
 
-### 1. Create the Component
+- [Bun](https://bun.sh) (preferred) or Node.js 20+
 
-Create your component file in the `src/components/ui/` directory.
-
-- **Path**: `src/components/ui/<component-name>.tsx`
-- **Naming Convention**: Use `kebab-case` for filenames (e.g., `my-new-component.tsx`).
-
-Example `src/components/ui/my-new-component.tsx`:
-
-```tsx
-import * as React from "react";
-
-export function MyNewComponent() {
-  return <div>Hello World</div>;
-}
-```
-
-### 2. Sync the Registry
-
-Run the registry synchronization script to automatically add your new component to `registry.json`. This script scans the `src/components/ui` directory, detects dependencies, and updates the registry configuration.
+### Getting Started
 
 ```bash
-node scripts/sync-registry.js
+# Clone the repository
+git clone https://github.com/WatermelonCorp/watermellon-registry.git
+cd watermellon-registry
+
+# Install dependencies
+bun install
+# or
+npm install
+
+# Start the dev server
+bun dev
+# or
+npm run dev
 ```
 
-You should see output indicating that your component has been added:
+### Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `bun dev` | Start Vite development server |
+| `bun run build` | Type-check and build for production |
+| `bun run lint` | Run ESLint |
+| `bun run preview` | Preview production build locally |
+| `bun run registry:build` | Build the shadcn registry |
+| `bun run deploy` | Deploy to Cloudflare Workers (Vercel) |
+
+### Project Structure
 
 ```
-Reading registry.json...
-Listing UI components...
-Found missing component: my-new-component.tsx
-Adding 1 new components to registry...
-Done!
+watermellon-registry/
+├── public/r/              # Built registry JSON files (one per component)
+├── src/
+│   ├── components/
+│   │   ├── ui/            # 260+ UI component source files
+│   │   ├── blocks/        # Full page block components
+│   │   ├── dashboards/    # Dashboard components
+│   │   └── pages/         # Full page components
+│   ├── hooks/             # Custom React hooks
+│   ├── lib/               # Utility functions (cn, etc.)
+│   └── static-assets/     # Static assets
+├── scripts/
+│   ├── sync-registry.js   # Syncs components → registry.json
+│   └── sync-dashboards.js # Syncs dashboard components
+├── registry.json          # Master registry configuration
+├── components.json        # shadcn configuration
+└── wrangler.jsonc         # Cloudflare Workers config
 ```
 
-### 3. Verify
+## Contributing
 
-Check `registry.json` to ensure your component has been added correctly with the appropriate dependencies.
+We love contributions! Whether it's fixing a bug, adding a new component, improving documentation, or suggesting features — every contribution helps make Watermelon UI better.
 
-## Registry Structure
+Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
-- **`registry.json`**: The main configuration file that lists all available components, their dependencies, and file paths.
-- **`src/components/ui/`**: The directory containing the source code for all UI components.
-- **`scripts/sync-registry.js`**: The automation script that updates `registry.json` based on the files in `src/components/ui/`.
+### Quick Start for Contributors
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feat/my-component`
+3. Add your component in `src/components/ui/`
+4. Run `node scripts/sync-registry.js` to update the registry
+5. Commit and push: `git push origin feat/my-component`
+6. Open a Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
+
+## Community
+
+- [GitHub Discussions](https://github.com/WatermelonCorp/watermellon-registry/discussions) — Ask questions and share ideas
+- [GitHub Issues](https://github.com/WatermelonCorp/watermellon-registry/issues) — Report bugs or request features
+
+## Governance & Policies
+
+- [Code of Conduct](CODE_OF_CONDUCT.md) — Our community standards
+- [Security Policy](SECURITY.md) — How to report vulnerabilities
+- [AI Policy](AI_POLICY.md) — Guidelines on AI-generated contributions
+- [License](LICENSE) — MIT License
+
+## Acknowledgements
+
+Watermelon UI is built on the shoulders of amazing open-source projects:
+
+- [shadcn/ui](https://ui.shadcn.com) — Registry protocol and CLI
+- [Radix UI](https://www.radix-ui.com) — Accessible component primitives
+- [Tailwind CSS](https://tailwindcss.com) — Utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion) — Animation library
+- [Recharts](https://recharts.org) — Chart library
+- [Vite](https://vitejs.dev) — Build tool
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  Made with 🍉 by the <a href="https://github.com/WatermelonCorp">Watermelon</a> community
+</p>

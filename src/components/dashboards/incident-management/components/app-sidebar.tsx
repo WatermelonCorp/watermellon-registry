@@ -169,7 +169,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                   </div>
                   <span className="font-semibold text-base">OceanLabs</span>
                 </div>
-                <div className="flex items-center justify-center size-8 rounded-md bg-[#f8f8f8] dark:bg-neutral-900 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] transition-colors">
+                <div className="flex items-center justify-center size-8 rounded-md bg-[#f8f8f8] dark:bg-neutral-900 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer">
                   <SidebarTrigger className="text-neutral-500 dark:text-neutral-400" />
                 </div>
               </div>
@@ -193,7 +193,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                   {item.items ? (
                     <>
                       <CollapsibleTrigger asChild>
-                        <SidebarMenuButton tooltip={item.title} className="h-10 px-2.5 rounded-lg text-neutral-500 dark:text-neutral-400 font-normal text-[15.5px] tracking-tight data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500! dark:hover:text-neutral-400!">
+                        <SidebarMenuButton tooltip={item.title} className="h-10 px-2.5 rounded-lg text-neutral-500 dark:text-neutral-400 font-normal text-[15.5px] tracking-tight data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500! dark:hover:text-neutral-400! transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer">
                           {item.icon && <item.icon className="!size-5" />}
                           <span>{item.title}</span>
                           <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
@@ -206,7 +206,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                               <SidebarMenuSubButton
                                 asChild
                                 isActive={pathname === subItem.url}
-                                className="h-10 px-2.5 rounded-lg text-neutral-500 dark:text-neutral-400 font-normal text-[15.5px] tracking-tight data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500! dark:hover:text-neutral-400!"
+                                className="h-10 px-2.5 rounded-lg text-neutral-500 dark:text-neutral-400 font-normal text-[15.5px] tracking-tight data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500! dark:hover:text-neutral-400! transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
                               >
                                 <a href={subItem.url} onClick={(e) => subItem.isDisabled && e.preventDefault()}>
                                   {subItem.icon && <subItem.icon className="size-5! text-neutral-500! dark:text-neutral-400! data-[active=true]:text-white!" />}
@@ -223,7 +223,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                       asChild
                       tooltip={item.title}
                       isActive={currentView ? (item.title === "Activity stream" && currentView === "Activity Stream") : item.isActive}
-                      className="h-10 px-2.5 rounded-lg text-neutral-500 dark:text-neutral-400 font-normal text-[15.5px] tracking-tight data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500 dark:hover:text-neutral-400"
+                      className="h-10 px-2.5 rounded-lg text-neutral-500 dark:text-neutral-400 font-normal text-[15.5px] tracking-tight data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
                     >
                       <a
                         href={item.url}
@@ -266,7 +266,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                       <SidebarMenuButton
                         asChild
                         isActive={pathname === item.url}
-                        className="h-9 rounded-sm hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-200 data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] text-neutral-500 dark:text-neutral-400 font-normal tracking-tight text-[15px]"
+                        className="h-9 rounded-sm hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500 dark:hover:text-neutral-400 data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] text-neutral-500 dark:text-neutral-400 font-normal tracking-tight text-[15px] transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
                       >
                         <a href={item.url} onClick={(e) => item.isDisabled && e.preventDefault()}>
                           <item.icon className="size-5!" />
@@ -298,7 +298,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                       <SidebarMenuButton
                         asChild
                         isActive={pathname === item.url}
-                        className="h-9 rounded-sm hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-200 data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] text-neutral-500 dark:text-neutral-400 font-normal tracking-tight text-[15px]"
+                        className="h-9 rounded-sm hover:bg-[#f8f8f8] dark:hover:bg-neutral-800 hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,1)] dark:hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.4),inset_-2px_-2px_5px_rgba(255,255,255,0.05)] hover:text-neutral-500 dark:hover:text-neutral-400 data-[active=true]:text-white! data-[active=true]:bg-orange-500 data-[active=true]:shadow-[inset_2px_4px_8px_rgba(255,255,255,0.4),inset_-2px_-4px_8px_rgba(0,0,0,0.3)] text-neutral-500 dark:text-neutral-400 font-normal tracking-tight text-[15px] transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
                       >
                         <a href={item.url} onClick={(e) => item.isDisabled && e.preventDefault()}>
                           <item.icon className="size-5!" />
@@ -321,7 +321,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton
                   size="lg"
-                  className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                  className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
                 >
                   <Avatar className="h-8 w-8 rounded-full">
                     <AvatarImage

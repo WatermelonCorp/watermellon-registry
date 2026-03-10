@@ -47,13 +47,13 @@ export const SiteHeader = ({ currentView }: { currentView?: string }) => {
         </div>
       </div>
       <div className="flex gap-2 items-center">
-        <div className="rounded-full size-7 flex justify-center items-center border-y border-neutral-200 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors cursor-pointer">
+        <div className="rounded-full size-7 flex justify-center items-center border-y border-neutral-200 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer">
           <Search className="size-4" />
         </div>
-        <div className="rounded-full size-7 flex justify-center items-center border-y border-neutral-200 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors cursor-pointer">
+        <div className="rounded-full size-7 flex justify-center items-center border-y border-neutral-200 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer">
           <Bell className="size-4" />
         </div>
-        <div className="rounded-full h-fit flex justify-center items-center border-y border-neutral-200 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white p-1 md:pr-2.5 gap-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors cursor-pointer">
+        <div className="rounded-full h-fit flex justify-center items-center border-y border-neutral-200 dark:border-neutral-600 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white p-1 md:pr-2.5 gap-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer">
           <img
             src={
               "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

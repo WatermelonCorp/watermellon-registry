@@ -4,7 +4,6 @@ import * as React from "react"
 import {
   BarChart3,
   Calendar,
-  ChevronDown,
   CircleHelp,
   Compass,
   FileText,
@@ -42,8 +41,11 @@ import {
   SidebarMenuSubItem,
   SidebarTrigger
 } from "./ui/sidebar"
-import { Button } from "@/components/ui/button"
+import { Button } from "./ui/button"
 import { useLocation } from "react-router-dom"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "./ui/dialog"
+import { Input } from "./ui/input"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu"
 
 const data = {
   quickActions: [
@@ -109,29 +111,57 @@ export function AppSidebar({ onNavigate, currentView, ...props }: React.Componen
         <SidebarMenu>
           <SidebarMenuItem>
             <div className="flex w-full items-center justify-between">
-              <SidebarMenuButton className="flex-1 justify-start px-0 hover:bg-transparent">
+              <SidebarMenuButton className="flex-1 justify-start px-0 hover:bg-transparent active:bg-transparent">
                 <div className="flex items-center gap-2">
                   <div className="flex size-6 items-center justify-center rounded bg-orange-500 text-white font-semibold">
                     A
                   </div>
-                  <div className="flex items-center gap-1">
-                    <span className="text-sm font-semibold">Acme inc</span>
-                    <ChevronDown className="size-3 opacity-50" />
-                  </div>
+                  <span className="text-sm font-semibold">Acme inc</span>
                 </div>
               </SidebarMenuButton>
               <div className="flex items-center gap-1.5">
-                <MoreHorizontal className="size-4 opacity-50" />
-                <SidebarTrigger className="size-4 opacity-50" />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <MoreHorizontal className="size-4 text-neutral-500 hover:text-orange-500! cursor-pointer transition-transform duration-300" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Settings</DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Log out</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <SidebarTrigger className="size-4 text-neutral-500 hover:text-orange-500! transition-transform duration-300" />
               </div>
             </div>
           </SidebarMenuItem>
         </SidebarMenu>
 
-        <Button className="w-full gap-1 flex justify-center items-center shadow-none border-neutral-200 dark:border-neutral-800" variant="outline">
-          <Plus className="size-3.5" />
-          New timeline
-        </Button>
+        <Dialog>
+          <DialogTrigger render={<Button className="w-full gap-1 flex justify-center items-center shadow-none border-neutral-200 dark:border-neutral-700 hover:bg-neutral-200/10! dark:hover:bg-neutral-700/10" variant="outline" />}>
+            <Plus className="size-3.5 text-neutral-500 hover:text-orange-500" />
+            New timeline
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Create New Timeline</DialogTitle>
+              <DialogDescription>
+                Fill in the details for your new timeline.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid gap-2">
+                <Input id="name" placeholder="Timeline name..." />
+              </div>
+            </div>
+            <DialogFooter>
+              <DialogClose render={<Button variant="outline" />}>Cancel</DialogClose>
+              <Button type="submit">Create</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </SidebarHeader>
 
       <SidebarContent>

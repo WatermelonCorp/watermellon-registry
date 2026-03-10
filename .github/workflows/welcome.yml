@@ -1,0 +1,42 @@
+name: Welcome New Contributor
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    if: github.repository == 'WatermelonCorp/watermellon-registry'
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            // Get list of commits to check if the user is a first-time contributor
+            const creator = context.payload.pull_request.user.login;
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
+            
+            // Note: In a real advanced check, you might paginate commits.
+            // This is a simple welcome for the PR.
+            
+            const message = `
+            Welcome @${creator}! :tada: :watermelon:
+
+            Thank you for opening your first pull request in **Watermelon UI Registry**! 
+            We are incredibly excited to see new contributions. 
+
+            Here are a few next steps while our maintainers review:
+            - Make sure you've read our [Contributing Guide](https://github.com/WatermelonCorp/watermellon-registry/blob/main/CONTRIBUTING.md).
+            - If this PR adds a _new component_, ensure you ran \`node scripts/sync-registry.js\` and included the generated `.json` files.
+            - Ensure all CI tests pass.
+
+            We will review this PR as soon as possible. Thank you again! :rocket:
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: owner,
+              repo: repo,
+              body: message
+            });
