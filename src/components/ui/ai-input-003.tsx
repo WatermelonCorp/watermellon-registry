@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowUp, Youtube } from "lucide-react";
 
 export type MentionType = "google" | "youtube" | null;
@@ -19,7 +19,6 @@ interface AiInput003Props {
   placeholder?: string;
 }
 
-// --- Internal Components ---
 const MentionBadge: React.FC<{ type: MentionType; compact?: boolean }> = ({
   type,
   compact = false,
@@ -30,12 +29,12 @@ const MentionBadge: React.FC<{ type: MentionType; compact?: boolean }> = ({
 
   return (
     <div
-      className={`flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-300 select-none
-            ${compact ? "text-xs" : "text-sm"}
-            bg-zinc-100 dark:bg-[#222] border border-zinc-200 dark:border-[#333]`}
+      className={`flex items-center gap-2 rounded-xl px-3 py-1.5 transition-all duration-300 select-none ${
+        compact ? "text-xs" : "text-sm"
+      } border border-neutral-200 bg-neutral-100 dark:border-[#333] dark:bg-[#222]`}
     >
       {isGoogle ? (
-        <div className="w-5 h-5 flex items-center justify-center bg-white rounded-md shadow-sm border border-zinc-100 dark:border-transparent">
+        <div className="flex h-5 w-5 items-center justify-center rounded-md border border-neutral-100 bg-white shadow-sm dark:border-transparent">
           <svg viewBox="0 0 24 24" width="14" height="14">
             <path
               d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -56,11 +55,11 @@ const MentionBadge: React.FC<{ type: MentionType; compact?: boolean }> = ({
           </svg>
         </div>
       ) : (
-        <div className="w-5 h-5 flex items-center justify-center bg-red-600 rounded-md shadow-sm">
-          <Youtube size={14} className="text-white fill-white" />
+        <div className="flex h-5 w-5 items-center justify-center rounded-md bg-red-600 shadow-sm">
+          <Youtube size={14} className="fill-white text-white" />
         </div>
       )}
-      <span className="text-zinc-600 dark:text-gray-300 font-medium">
+      <span className="font-medium text-neutral-600 dark:text-neutral-300">
         {label}
       </span>
     </div>
@@ -131,33 +130,32 @@ export const AiInput003: React.FC<AiInput003Props> = ({
   };
 
   return (
-    <div className="flex flex-col h-screen w-full bg-white dark:bg-black text-zinc-900 dark:text-white overflow-hidden selection:bg-zinc-200 dark:selection:bg-white/20 border-x border-zinc-200 dark:border-zinc-800/50 relative">
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -bottom-[10%] left-1/2 -translate-x-1/2 w-[100%] h-[30%] bg-zinc-100/50 dark:bg-zinc-500/10 blur-[120px]" />
+    <div className="relative flex h-screen w-full flex-col overflow-hidden border-x border-neutral-200 bg-white text-neutral-900 selection:bg-neutral-200 dark:border-neutral-800/50 dark:bg-black dark:text-white dark:selection:bg-white/20">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -bottom-[10%] left-1/2 h-[30%] w-[100%] -translate-x-1/2 bg-neutral-100/50 blur-[120px] dark:bg-neutral-500/10" />
       </div>
 
-      {/* Messages Scroll Area  */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto px-4 flex flex-col custom-scrollbar relative z-10"
+        className="custom-scrollbar relative z-10 flex flex-1 flex-col overflow-y-auto px-4"
       >
         <div className="flex-grow" />
-        <div className="w-full max-w-2xl mx-auto py-10 space-y-6">
+        <div className="mx-auto w-full max-w-2xl space-y-6 py-10">
           <AnimatePresence initial={false}>
             {messages.map((msg) => (
               <motion.div
                 key={msg.id}
                 initial={{ opacity: 0, scale: 0.95, y: 10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                className={`flex flex-col ${msg.sender === "user" ? "items-end" : "items-start"}`}
+                className={`flex flex-col ${
+                  msg.sender === "user" ? "items-end" : "items-start"
+                }`}
               >
                 <div
-                  className={`px-5 py-3 rounded-[10px] max-w-[85%] text-[15px] leading-relaxed shadow-sm transition-colors duration-300
-                  ${
+                  className={`max-w-[85%] rounded-[10px] px-5 py-3 text-[15px] leading-relaxed shadow-sm transition-colors duration-300 ${
                     msg.sender === "user"
-                      ? "bg-zinc-100 dark:bg-[#1a1a1a] text-zinc-800 dark:text-zinc-100 rounded-br-none border border-zinc-200 dark:border-zinc-800/50"
-                      : "bg-zinc-50 dark:bg-zinc-900/40 text-zinc-700 dark:text-zinc-200 border border-zinc-100 dark:border-zinc-800/30"
+                      ? "rounded-br-none border border-neutral-200 bg-neutral-100 text-neutral-800 dark:border-neutral-800/50 dark:bg-[#1a1a1a] dark:text-neutral-100"
+                      : "border border-neutral-100 bg-neutral-50 text-neutral-700 dark:border-neutral-800/30 dark:bg-neutral-900/40 dark:text-neutral-200"
                   }`}
                 >
                   {msg.text}
@@ -173,25 +171,24 @@ export const AiInput003: React.FC<AiInput003Props> = ({
           </AnimatePresence>
 
           {isTyping && (
-            <div className="flex items-center gap-1.5 px-4 h-6">
-              <div className="w-1 h-1 bg-zinc-300 dark:bg-zinc-500 rounded-full animate-bounce [animation-delay:-0.3s]" />
-              <div className="w-1 h-1 bg-zinc-300 dark:bg-zinc-500 rounded-full animate-bounce [animation-delay:-0.15s]" />
-              <div className="w-1 h-1 bg-zinc-300 dark:bg-zinc-500 rounded-full animate-bounce" />
+            <div className="flex h-6 items-center gap-1.5 px-4">
+              <div className="h-1 w-1 animate-bounce rounded-full bg-neutral-300 [animation-delay:-0.3s] dark:bg-neutral-500" />
+              <div className="h-1 w-1 animate-bounce rounded-full bg-neutral-300 [animation-delay:-0.15s] dark:bg-neutral-500" />
+              <div className="h-1 w-1 animate-bounce rounded-full bg-neutral-300 dark:bg-neutral-500" />
             </div>
           )}
         </div>
       </div>
 
-      {/* Input Bar Area */}
-      <div className="flex justify-center items-center w-full px-4 pb-12 pt-4 bg-gradient-to-t from-zinc-50 dark:from-black via-zinc-50/80 dark:via-black to-transparent relative z-20 transition-colors duration-300">
-        <div className="w-full max-w-2xl relative">
+      <div className="relative z-20 flex w-full items-center justify-center  px-4 pt-4 pb-12 transition-colors duration-300 dark:from-black dark:via-black">
+        <div className="relative w-full max-w-2xl">
           <AnimatePresence>
             {mention && (
               <motion.div
                 initial={{ opacity: 0, y: 10, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                className="absolute left-4 bottom-full mb-4"
+                className="absolute bottom-full left-4 mb-4"
               >
                 <MentionBadge type={mention} />
               </motion.div>
@@ -211,7 +208,7 @@ export const AiInput003: React.FC<AiInput003Props> = ({
               stiffness: 300,
               damping: 28,
             }}
-            className="relative flex items-center bg-white dark:bg-zinc-900/40 rounded-full border border-zinc-300 dark:border-zinc-800 px-6 pr-4 py-3 overflow-hidden group shadow-md dark:shadow-sm transition-colors duration-300"
+            className="group relative flex items-center overflow-hidden rounded-full border border-neutral-700 bg-black/5 px-6 py-3 pr-4 transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-800/70 dark:shadow-sm"
           >
             {isSending && (
               <motion.div
@@ -221,8 +218,7 @@ export const AiInput003: React.FC<AiInput003Props> = ({
                   duration: 0.6,
                   ease: "easeInOut",
                 }}
-                className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t
-                                from-red-500/25 via-red-500/10 to-white/10  skew-x-12  blur-md"
+                className="pointer-events-none absolute inset-0 z-0 skew-x-12 bg-gradient-to-t from-red-500/25 via-red-500/10 to-white/10 blur-md"
               />
             )}
 
@@ -232,7 +228,7 @@ export const AiInput003: React.FC<AiInput003Props> = ({
               onChange={handleInputChange}
               onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
               placeholder={placeholder}
-              className="flex-1 bg-transparent border-none outline-none text-[18px] font-semibold text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-gray-500 py-2 z-10"
+              className="z-10 flex-1 border-none bg- py-2 text-[18px] font-semibold text-neutral-900 placeholder-neutral-400 outline-none dark:text-neutral-100 dark:placeholder-neutral-500"
               autoFocus
             />
 
@@ -240,12 +236,11 @@ export const AiInput003: React.FC<AiInput003Props> = ({
               whileTap={{ scale: 0.9 }}
               onClick={handleSendMessage}
               disabled={!inputValue.trim()}
-              className={`ml-4 w-10 h-10 flex items-center justify-center rounded-full z-10 transition-all duration-300
-      ${
-        inputValue.trim()
-          ? "bg-zinc-900 dark:bg-white text-white dark:text-black shadow-lg shadow-zinc-200 dark:shadow-none active:scale-95"
-          : "bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 opacity-50"
-      }`}
+              className={`z-10 ml-4 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 ${
+                inputValue.trim()
+                  ? "bg-neutral-900 text-white shadow-sm shadow-neutral-200 active:scale-95 dark:bg-white dark:text-black dark:shadow-none"
+                  : "bg-neutral-50 text-neutral-400  dark:bg-neutral-700 dark:text-neutral-200"
+              }`}
             >
               <ArrowUp size={20} strokeWidth={3} />
             </motion.button>

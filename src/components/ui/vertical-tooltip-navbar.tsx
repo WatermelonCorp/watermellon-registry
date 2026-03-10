@@ -1,129 +1,221 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
-import { motion, AnimatePresence, LayoutGroup, type Transition } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
+import { useRef, useState, type ReactNode } from "react";
+import { MessageCircle, Inbox, Circle, CommandIcon } from "lucide-react";
 
-export interface ToolbarItem {
-  id: string;
-  icon: React.ReactNode;
+const DEFAULT_ITEMS: TooltipItem[] = [
+  {
+    icon: <MessageCircle className="h-full w-full" />,
+    label: "Comment",
+    labelHasKeyword: ["C"],
+    hasBadge: false,
+  },
+  {
+    icon: <Inbox className="h-full w-full" />,
+    label: "Inbox",
+    labelHasKeyword: ["I"],
+    hasBadge: true,
+  },
+  {
+    icon: <Circle className="h-full w-full" />,
+    label: "Record",
+    labelHasKeyword: ["R"],
+    hasBadge: false,
+  },
+];
+export type TooltipItem = {
+  icon: ReactNode;
   label: string;
-  shortcut: string[];
-  showDot?: boolean;
-}
-
-interface TooltipNavbarProps {
-  items: ToolbarItem[];
-}
-
-const sharedLayoutTransition: Transition = {
-  type: "spring",
-  stiffness: 500,
-  damping: 30,
-  mass: 0.8,
+  labelHasKeyword?: (string | ReactNode)[] | false;
+  hasBadge?: boolean;
 };
 
-export function VerticalTooltipNavbar({ items }: TooltipNavbarProps) {
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+interface TooltipVerticalNavbarProps {
+  items: TooltipItem[];
+  tooltipDelay?: number;
+}
 
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+export const TooltipVerticalNavbar = ({
+  items = DEFAULT_ITEMS,
+  tooltipDelay = 300,
+}: TooltipVerticalNavbarProps) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [coords, setCoords] = useState({ clipPath: "", translateY: 0 });
 
-  const activeIndex = useMemo(
-    () => items.findIndex((item) => item.id === hoveredId),
-    [hoveredId, items]
-  );
+  const measureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-  const activeItem = items[activeIndex];
+  const [isEntering, setIsEntering] = useState(true);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const calculatePosition = (index: number) => {
+    const activeLabel = measureRefs.current[index];
+    const activeIcon = buttonRefs.current[index];
+
+    if (!activeLabel || !activeIcon) return null;
+
+    const labelTop = activeLabel.offsetTop;
+    const labelHeight = activeLabel.offsetHeight;
+    const labelCenter = labelTop + labelHeight / 2;
+
+    const iconTop = activeIcon.offsetTop;
+    const iconHeight = activeIcon.offsetHeight;
+    const iconCenter = iconTop + iconHeight / 2;
+
+    const totalHeight = measureRefs.current.reduce(
+      (acc, el) => acc + (el?.offsetHeight || 0),
+      0
+    );
+
+    const cTop = (labelTop / totalHeight) * 100;
+    const cBottom = 100 - ((labelTop + labelHeight) / totalHeight) * 100;
+
+    return {
+      clipPath: `inset(${cTop}% 0 ${cBottom}% 0 round 8px)`,
+      translateY: iconCenter - labelCenter,
+    };
+  };
+
+  const handleMouseEnter = (index: number) => {
+    const newCoords = calculatePosition(index);
+    if (!newCoords) return;
+
+    if (activeIndex === null) {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      setIsEntering(true);
+
+      timeoutRef.current = setTimeout(() => {
+        setCoords(newCoords);
+        setActiveIndex(index);
+      }, tooltipDelay);
+    } else {
+      setCoords(newCoords);
+      setActiveIndex(index);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveIndex(null);
+    setCoords({ clipPath: "", translateY: 0 });
+    setIsEntering(true);
+  };
 
   return (
-    <div className="flex items-center justify-center h-full w-full bg-transparent selection:bg-neutral-200 p-4">
-      <div className="relative z-10 flex flex-col items-center">
-        <div className="relative flex items-center">
-          <LayoutGroup>
-            <div
-              className="relative flex flex-col items-center p-2 bg-black dark:bg-[#111] gap-2 sm:gap-4 backdrop-blur-md border border-neutral-800 rounded-full shadow-2xl"
-              onMouseLeave={() => setHoveredId(null)}
+    <div className="flex h-screen items-center px-8">
+      <div className="relative text-white" onMouseLeave={handleMouseLeave}>
+        <AnimatePresence>
+          {activeIndex !== null && coords.clipPath !== "" && (
+            <motion.div
+              className="absolute top-0 left-16"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
-              {items.map((item) => (
-                <button
-                  key={item.id}
-                  onMouseEnter={() => setHoveredId(item.id)}
-                  onClick={() => setHoveredId(item.id)} 
-                  className={`
-                    relative z-20 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full
-                    transition-colors duration-200 outline-none group text-white
-                  `}
-                >
-                  {hoveredId === item.id && (
-                    <motion.div
-                      layoutId="nav-pill-vertical"
-                      className="absolute inset-0 bg-neutral-800 dark:bg-[#353535] rounded-full z-[-1]"
-                      transition={sharedLayoutTransition}
-                    />
-                  )}
-
-                  <span className="relative flex items-center justify-center scale-90 sm:scale-100">
-                    {item.icon}
-                    {item.showDot && (
-                      <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-blue-500 rounded-full ring-2 ring-black" />
-                    )}
-                  </span>
-                </button>
-              ))}
-
-              {/* Tooltip */}
-              <AnimatePresence>
-                {hoveredId && activeItem && (
-                  <motion.div
-                    key="tooltip"
-                    initial={{ opacity: 0, x: isMobile ? -5 : 10, scale: 0.9 }}
-                    animate={{ opacity: 1, x: 0, scale: 1 }}
-                    exit={{ opacity: 0, x: isMobile ? -5 : 10, scale: 0.9 }}
-                    transition={sharedLayoutTransition}
-                    className={`absolute flex items-center pointer-events-none z-50 ${
-                      isMobile ? "left-full ml-4" : "right-full mr-4"
-                    }`}
-                    style={{
-                    
-                      top: `calc(${activeIndex * (isMobile ? 48 : 60)}px + ${isMobile ? '12px' : '14px'})`,
-                    }}
-                  >
-                    <div className="flex items-center gap-2 px-3 py-2 bg-black dark:bg-[#0c0c0c] border border-neutral-800 rounded-xl shadow-2xl whitespace-nowrap">
-                      <motion.span
-                        layout="position"
-                        className="text-[13px] sm:text-[14px] font-medium text-neutral-100"
-                      >
-                        {activeItem.label}
-                      </motion.span>
-
-                      {activeItem.shortcut.length > 0 && (
-                        <motion.div layout="position" className="flex gap-1">
-                          {activeItem.shortcut.map((key, idx) => (
-                            <kbd
-                              key={idx}
-                              className="hidden xs:flex min-w-[1.2rem] h-4.5 items-center justify-center bg-neutral-800 border border-neutral-700/50 px-1 rounded-lg text-[10px] font-bold text-neutral-400 uppercase"
+              <motion.div
+                className="bg-black dark:bg-neutral-800"
+                animate={{
+                  clipPath: coords.clipPath,
+                  y: coords.translateY,
+                }}
+                transition={{
+                  type: "spring",
+                  bounce: 0,
+                  duration: isEntering ? 0 : 0.4,
+                }}
+                onUpdate={() => {
+                  if (isEntering) {
+                    setIsEntering(false);
+                  }
+                }}
+              >
+                <div className="flex flex-col items-start justify-center">
+                  {items.map((item, index) => (
+                    <div
+                      key={`real-${index}`}
+                      className="flex h-10 items-center justify-center gap-2 px-3 text-sm font-medium whitespace-nowrap"
+                    >
+                      <span className="text-white">{item.label}</span>
+                      {item.hasBadge && (
+                        <div className="flex items-center gap-0.5 text-white/40">
+                          <span className="flex items-center justify-center rounded-sm border border-white/20 p-1">
+                            <CommandIcon className="size-3 text-neutral-500" />
+                          </span>
+                        </div>
+                      )}
+                      {item.labelHasKeyword && (
+                        <div className="flex items-center gap-0.5 text-white/40">
+                          {item.labelHasKeyword.map((key, i) => (
+                            <span
+                              key={i}
+                              className="flex items-center justify-center rounded-sm border border-white/20 px-1 tabular-nums"
                             >
                               {key}
-                            </kbd>
+                            </span>
                           ))}
-                        </motion.div>
+                        </div>
                       )}
                     </div>
-                    
-                    {/* Tooltip Arrow  */}
-                    <div className={`w-2 h-2 bg-black dark:bg-transparent rotate-45 absolute ${isMobile ? '-left-1' : '-right-1'}`} />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </LayoutGroup>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <div className="z-10 flex flex-col items-center justify-center rounded-full bg-black/95 p-2 backdrop-blur dark:bg-neutral-800">
+          {items.map((item, index) => (
+            <button
+              key={index}
+              onMouseEnter={() => handleMouseEnter(index)}
+              ref={(el) => {
+                buttonRefs.current[index] = el;
+              }}
+              className="flex cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-white/10"
+            >
+              <div className="flex size-10 items-center justify-center p-1.5 dark:text-neutral-200">
+                {item.icon}
+              </div>
+              <span className="sr-only">{item.label}</span>
+            </button>
+          ))}
         </div>
+      </div>
+
+      <div className="pointer-events-none absolute top-0 left-0 flex flex-col overflow-hidden whitespace-nowrap opacity-0">
+        {items.map((item, index) => (
+          <div
+            key={`measure-${index}`}
+            ref={(el) => {
+              measureRefs.current[index] = el;
+            }}
+            className="flex h-10 items-center justify-center gap-2 px-3 text-sm font-medium whitespace-nowrap"
+          >
+            <span>{item.label}</span>
+            {item.hasBadge && (
+              <div className="flex items-center gap-0.5 text-white/40">
+                <span className="flex items-center justify-center rounded-sm border border-white/20 p-1">
+                  <CommandIcon className="size-3 text-neutral-500" />
+                </span>
+              </div>
+            )}
+            {item.labelHasKeyword && (
+              <div className="flex items-center gap-0.5 text-white/40">
+                {item.labelHasKeyword.map((key, i) => (
+                  <span
+                    key={i}
+                    className="flex items-center justify-center rounded-sm border border-white/20 px-1 tabular-nums"
+                  >
+                    {typeof key === "string" ? key : "⌘"}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};

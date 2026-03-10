@@ -1,11 +1,19 @@
 "use client";
 
 import { type FC, useState } from "react";
-import { motion, AnimatePresence, type Transition } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  type Transition,
+  MotionConfig,
+  LayoutGroup,
+} from "motion/react";
 import { Undo2 } from "lucide-react";
 import { FaThumbsDown, FaThumbsUp } from "react-icons/fa6";
+import useMeasure from "react-use-measure";
+import { cn } from "@/lib/utils";
+import type { IconType } from "react-icons";
 
-/* ---------- Types ---------- */
 export type FeedbackStatus = "idle" | "up" | "down";
 
 export interface QuickFeedbackProps {
@@ -16,21 +24,13 @@ export interface QuickFeedbackProps {
   onUndo?: () => void;
 }
 
-/* ---------- Motion ---------- */
-const containerTransition = {
+const containerTransition: Transition = {
   type: "spring",
-  stiffness: 500,
-  damping: 30,
+  stiffness: 150,
+  damping: 15,
   mass: 1,
-} as const;
-
-const contentTransition: Transition = {
-  type: "tween",
-  duration: 0.2,
-  ease: "easeOut",
 };
 
-/* ---------- Component ---------- */
 export const QuickFeedback: FC<QuickFeedbackProps> = ({
   defaultStatus = "idle",
   feedbackText = "Feedback Received!",
@@ -50,100 +50,115 @@ export const QuickFeedback: FC<QuickFeedbackProps> = ({
   };
 
   return (
-    <div className="relative flex w-full items-center justify-center bg-transparent transition-colors duration-500 px-4">
-      <AnimatePresence mode="wait">
-        {status === "idle" ? (
-          <motion.div
-            key="idle"
-            layout
-            className="flex gap-3 sm:gap-4 w-full justify-center max-w-68"
-          >
-            {/* Thumbs Up */}
-            <motion.button
-              layoutId="container-up"
-              transition={containerTransition}
-              onClick={() => handleFeedback("up")}
-              className="
-                flex h-16 sm:h-17 flex-1 sm:w-32
-                items-center justify-center rounded-full
-                bg-[#F3EFE9] dark:bg-zinc-900
-                hover:bg-[#ebe7e1] dark:hover:bg-zinc-800
-                border border-red-100 dark:border-zinc-800
-                active:scale-95
-              "
-            >
-              <FaThumbsUp className="h-7 w-7 sm:h-8 sm:w-8 text-[#020200de] dark:text-zinc-100" />
-            </motion.button>
-
-            {/* Thumbs Down */}
-            <motion.button
-              layoutId="container-down"
-              transition={containerTransition}
-              onClick={() => handleFeedback("down")}
-              className="
-                flex h-16 sm:h-17 flex-1 sm:w-32
-                items-center justify-center rounded-full
-                bg-[#F3EFE9] dark:bg-zinc-900
-                hover:bg-[#ebe7e1] dark:hover:bg-zinc-800
-                border border-transparent dark:border-zinc-800
-                active:scale-95
-              "
-            >
-              <FaThumbsDown className="h-7 w-7 sm:h-8 sm:w-8 text-[#020200de] dark:text-zinc-100 scale-x-[-1]" />
-            </motion.button>
-          </motion.div>
-        ) : (
-          <motion.div
-            key="feedback"
-            layoutId={status === "up" ? "container-up" : "container-down"}
-            transition={containerTransition}
-            className="
-              flex h-16 sm:h-17 w-full max-w-112.5
-              items-center justify-between rounded-full
-              bg-[#F3EFE9] dark:bg-zinc-900
-              border border-transparent dark:border-zinc-800
-              pl-4 sm:pl-6 pr-2 sm:pr-4 overflow-hidden
-            "
-          >
-            {/* Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1, ...contentTransition }}
-              className="flex items-center gap-2 min-w-0"
-            >
-              {status === "up" ? (
-                <FaThumbsUp className="h-6 w-6 sm:h-7 sm:w-7 shrink-0 text-[#020200] dark:text-zinc-100" />
-              ) : (
-                <FaThumbsDown className="h-6 w-6 sm:h-7 sm:w-7 shrink-0 text-[#020200] dark:text-zinc-100" />
+    <div className="relative flex w-full items-center justify-center gap-4 bg-transparent px-4 transition-colors duration-500">
+      <MotionConfig transition={containerTransition}>
+        <LayoutGroup>
+          <div className="relative flex items-center justify-center gap-2">
+            <AnimatePresence mode="sync" initial={false}>
+              {(status === "idle" || status === "up") && (
+                <QuickFeedbackButton
+                  key="up-btn"
+                  name="up"
+                  handleFeedback={() => handleFeedback("up")}
+                  handleUndo={handleUndo}
+                  status={status}
+                  feedbackText={feedbackText}
+                  Icon={FaThumbsUp}
+                />
               )}
+              {(status === "idle" || status === "down") && (
+                <QuickFeedbackButton
+                  key="down-btn"
+                  name="down"
+                  handleFeedback={() => handleFeedback("down")}
+                  handleUndo={handleUndo}
+                  status={status}
+                  feedbackText="Sorry about that"
+                  Icon={FaThumbsDown}
+                />
+              )}
+            </AnimatePresence>
+          </div>
+        </LayoutGroup>
+      </MotionConfig>
+    </div>
+  );
+};
 
-              <span className="ml-1 sm:ml-2 truncate font-bold tracking-wide text-[#020200] dark:text-zinc-100 text-sm sm:text-lg">
+interface QuickFeedbackButtonProps {
+  name: "up" | "down";
+  handleFeedback: () => void;
+  handleUndo: () => void;
+  status: FeedbackStatus;
+  feedbackText: string;
+  Icon: IconType;
+}
+
+export const QuickFeedbackButton: FC<QuickFeedbackButtonProps> = ({
+  name,
+  handleFeedback,
+  handleUndo,
+  status,
+  feedbackText,
+  Icon,
+}) => {
+  const [ref, bounds] = useMeasure({ offsetSize: true });
+  const isActive = name === status;
+
+  return (
+    <motion.div
+      layout="position"
+      animate={{
+        opacity: 1,
+        width: bounds.width > 0 ? bounds.width : "auto",
+        height: bounds.height > 0 ? bounds.height : "auto",
+      }}
+      className="relative overflow-hidden rounded-full bg-[#F3EFE9] will-change-transform dark:border-neutral-800 dark:bg-neutral-900"
+    >
+      <motion.div
+        ref={ref}
+        className={cn(
+          "flex w-fit items-center justify-center gap-1 px-12 py-3",
+          isActive && "px-4.5 py-3.5"
+        )}
+      >
+        <motion.button
+          layout
+          onClick={handleFeedback}
+          className={cn(
+            "ml-1 flex shrink-0 items-center justify-center rounded-full",
+            isActive && "pointer-events-none"
+          )}
+        >
+          <Icon className="size-8 text-[#020200de] dark:text-neutral-100" />
+        </motion.button>
+
+        <AnimatePresence mode="popLayout" initial={false}>
+          {isActive && (
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              className="flex shrink-0 items-center gap-2 whitespace-nowrap"
+            >
+              <span className="ml-1 text-sm font-bold tracking-wide text-[#020200] sm:ml-2 sm:text-lg dark:text-neutral-100">
                 {feedbackText}
               </span>
-            </motion.div>
 
-            {/* Undo */}
-            <motion.button
-              onClick={handleUndo}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={contentTransition}
-              className="
-                ml-2 flex items-center gap-1 sm:gap-2
-                rounded-full bg-[#E0DCD4] dark:bg-zinc-800
-                px-3 sm:px-4 py-2 sm:py-2.5 font-bold
-                text-[#020200] dark:text-zinc-200
-                hover:bg-[#d6d2ca] dark:hover:bg-zinc-700
-                active:scale-95 transition text-xs sm:text-base
-              "
-            >
-              <Undo2 size={16} className="sm:w-5 sm:h-5" strokeWidth={2.5} />
-              Undo
-            </motion.button>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleUndo();
+                }}
+                className="flex shrink-0 items-center gap-1 rounded-full bg-[#E0DCD4] px-3 py-2 text-xs font-bold text-[#020200] transition hover:bg-[#d6d2ca] active:scale-95 sm:text-base dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+              >
+                <Undo2 size={16} className="sm:h-5 sm:w-5" strokeWidth={2.5} />
+                Undo
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </motion.div>
   );
 };

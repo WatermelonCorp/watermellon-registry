@@ -1,173 +1,193 @@
 "use client";
 
-import { useState, useRef, useEffect, type FC, type ReactNode } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "motion/react";
+import { useRef, useState } from "react";
+import type { IconType } from "react-icons";
 
-export interface Step {
+export type Step = {
   id: string;
   label: string;
-  icon: ReactNode;
-}
+  icon: IconType;
+};
 
 interface StepIndicatorProps {
-  steps?: Step[];
-  currentStep?: number;
+  steps: Step[];
+  tooltipDelay?: number;
   onStepChange?: (index: number) => void;
 }
 
-export const StepIndicator: FC<StepIndicatorProps> = ({
-  steps = [],
+export const StepIndicator = ({
+  steps,
+  tooltipDelay = 0,
   onStepChange,
-}) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+}: StepIndicatorProps) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [coords, setCoords] = useState({ clipPath: "", translateX: 0 });
 
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const measureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [isEntering, setIsEntering] = useState(true);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const [lastHoveredIndex, setLastHoveredIndex] = useState<number | null>(null);
+  const calculatePosition = (index: number) => {
+    const activeLabel = measureRefs.current[index];
+    const activeButton = buttonRefs.current[index];
 
-  const [containerWidth, setContainerWidth] = useState(0);
+    if (!activeLabel || !activeButton) return null;
 
-  useEffect(() => {
-    const update = () => {
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
+    const labelLeft = activeLabel.offsetLeft;
+    const labelWidth = activeLabel.offsetWidth;
+    const labelCenter = labelLeft + labelWidth / 2;
+
+    const buttonLeft = activeButton.offsetLeft;
+    const buttonWidth = activeButton.offsetWidth;
+    const buttonCenter = buttonLeft + buttonWidth / 2;
+
+    const totalWidth = measureRefs.current.reduce(
+      (acc, el) => acc + (el?.offsetWidth || 0),
+      0
+    );
+
+    const cLeft = (labelLeft / totalWidth) * 100;
+    const cRight = 100 - ((labelLeft + labelWidth) / totalWidth) * 100;
+
+    return {
+      clipPath: `inset(0 ${cRight}% 0 ${cLeft}% round 9999px)`,
+      translateX: buttonCenter - labelCenter,
+    };
+  };
+
+  const handleShow = (index: number) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+    const performUpdate = () => {
+      const newCoords = calculatePosition(index);
+      if (newCoords) {
+        setCoords(newCoords);
+        setActiveIndex(index);
       }
     };
 
-    update();
-
-    const resizeObserver = new ResizeObserver(update);
-
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    if (activeIndex === null) {
+      setIsEntering(true);
+      if (tooltipDelay > 0) {
+        timeoutRef.current = setTimeout(performUpdate, tooltipDelay);
+      } else {
+        performUpdate();
+      }
+    } else {
+      setIsEntering(false);
+      performUpdate();
     }
+  };
 
-    return () => resizeObserver.disconnect();
-  }, []);
-
-  const stepWidth = steps.length > 0 ? containerWidth / steps.length : 0;
-
-  const positionIndex =
-    lastHoveredIndex === null
-      ? -1
-      : Math.min(Math.max(lastHoveredIndex, 0), steps.length - 1);
-
-  const tooltipCenter =
-    positionIndex === -1 ? 0 : stepWidth * positionIndex + stepWidth / 2;
-
-  const getClipPath = () => {
-    if (!containerWidth || stepWidth === 0)
-      return "inset(0 50% 0 50% round 999px)";
-
-    const left = tooltipCenter - stepWidth / 2;
-    const right = containerWidth - (tooltipCenter + stepWidth / 2);
-
-    return `inset(0px ${right}px 0px ${left}px round 999px)`;
+  const handleHide = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveIndex(null);
+    setCoords({ clipPath: "", translateX: 0 });
+    setIsEntering(true);
   };
 
   return (
-    <div className="flex w-full items-center justify-center bg-white dark:bg-zinc-950">
+    <div className="flex w-full items-center justify-center bg-white py-20 dark:bg-zinc-950">
       <div className="w-full max-w-[420px]">
         <div
-          ref={containerRef}
           className="relative flex h-3 w-full items-center gap-3 px-1"
-          onMouseLeave={() => setHoveredIndex(null)}
+          onMouseLeave={handleHide}
         >
-          <div className="pointer-events-none absolute bottom-full left-0 h-14 w-full">
-            <motion.div
-              className="absolute inset-0 h-9 rounded-full bg-black dark:bg-white"
-              initial={false}
-              animate={{
-                clipPath: getClipPath(),
-                opacity: hoveredIndex === null ? 0 : 1,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 30,
-              }}
-            >
-              <div className="relative h-full w-full">
-                {steps.map((step, index) => {
-                  const center = stepWidth * index;
-
-                  return (
-                    <motion.div
-                      key={step.id}
-                      className="absolute top-0"
-                      animate={{ x: center }}
-                      style={{ x: "-100%" }}
-                    >
-                      <AnimatePresence mode="popLayout">
-                        {hoveredIndex === index && (
-                          <motion.div
-                            initial={{
-                              opacity: 0,
-                              scale: 0.9,
-                              filter: "blur(6px)",
-                            }}
-                            animate={{
-                              opacity: 1,
-                              scale: 1,
-                              filter: "blur(0px)",
-                            }}
-                            exit={{
-                              opacity: 0,
-                              scale: 0.9,
-                              filter: "blur(6px)",
-                            }}
-                            transition={{
-                              duration: 0.4,
-                            }}
-                            className="flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-2 text-white shadow-lg dark:bg-white dark:text-black"
-                          >
-                            {step.icon}
-
-                            <span className="font-semibold whitespace-nowrap">
-                              {step.label}
-                            </span>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </motion.div>
-          </div>
-
-          {steps.map((step, index) => {
-            const isHovered = hoveredIndex === index;
-
-            return (
-              <div
-                key={step.id}
-                className="group relative h-3 flex-1 cursor-pointer"
-                onMouseEnter={() => {
-                  setHoveredIndex(index);
-                  setLastHoveredIndex(index);
-                }}
-                onClick={() => onStepChange?.(index)}
+          <AnimatePresence>
+            {activeIndex !== null && coords.clipPath !== "" && (
+              <motion.div
+                className="pointer-events-none absolute bottom-10 left-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
               >
-                <div className="absolute inset-0 rounded-full bg-zinc-200 dark:bg-zinc-800" />
-
                 <motion.div
-                  className="absolute inset-0 rounded-full bg-zinc-900 dark:bg-white"
-                  initial={false}
+                  className="flex bg-black dark:bg-white"
                   animate={{
-                    opacity: isHovered ? 1 : 0,
-                    scaleY: isHovered ? 1.25 : 1,
+                    clipPath: coords.clipPath,
+                    x: coords.translateX,
                   }}
                   transition={{
                     type: "spring",
-                    stiffness: 300,
-                    damping: 25,
+                    bounce: 0,
+                    duration: isEntering ? 0 : 0.4,
                   }}
-                />
-              </div>
-            );
-          })}
+                  onUpdate={() => {
+                    if (isEntering) setIsEntering(false);
+                  }}
+                >
+                  <div className="inline-flex items-center justify-center">
+                    {steps.map((step, index) => (
+                      <motion.div
+                        key={`real-${step.id}`}
+                        animate={{
+                          opacity: activeIndex === index ? 1 : 0,
+                          filter:
+                            activeIndex === index ? "blur(0px)" : "blur(4px)",
+                        }}
+                        transition={{ duration: 0.4 }}
+                        className="flex items-center justify-center gap-2 px-4 py-2 whitespace-nowrap text-white dark:text-black"
+                      >
+                        <step.icon className="size-5" />
+                        <span className="text-lg font-semibold">
+                          {step.label}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {steps.map((step, index) => (
+            <button
+              key={step.id}
+              ref={(el) => {
+                buttonRefs.current[index] = el;
+              }}
+              onMouseEnter={() => handleShow(index)}
+              onFocus={() => handleShow(index)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                  handleHide();
+                }
+              }}
+              onClick={() => onStepChange?.(index)}
+              className="group relative h-3 flex-1 cursor-pointer outline-none"
+            >
+              <div
+                className={cn(
+                  "absolute inset-0 rounded-full bg-zinc-200 transition-colors duration-300 dark:bg-zinc-800",
+                  "group-focus-visible:ring-2 group-focus-visible:ring-zinc-400 group-focus-visible:ring-offset-4 dark:group-focus-visible:ring-offset-zinc-950",
+                  activeIndex === index && "bg-zinc-800 dark:bg-zinc-100"
+                )}
+              />
+            </button>
+          ))}
         </div>
+      </div>
+
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 flex h-0 overflow-hidden whitespace-nowrap opacity-0"
+        aria-hidden="true"
+      >
+        {steps.map((step, index) => (
+          <div
+            key={`measure-${step.id}`}
+            ref={(el) => {
+              measureRefs.current[index] = el;
+            }}
+            className="flex items-center justify-center gap-2 px-4 py-2"
+          >
+            <step.icon className="size-5" />
+            <span className="text-lg font-semibold">{step.label}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

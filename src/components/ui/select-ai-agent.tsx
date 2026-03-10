@@ -1,169 +1,241 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
-import { ArrowRight, ChevronUp, ChevronDown } from 'lucide-react';
-import { HugeiconsIcon } from '@hugeicons/react';
-import { ChatGptIcon, ClaudeIcon, GoogleGeminiIcon } from '@hugeicons/core-free-icons';
+import React, { useState } from "react";
+import { motion, AnimatePresence, LayoutGroup } from "motion/react";
+import { ArrowRight, ChevronUp, ChevronDown } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ChatGptIcon,
+  ClaudeIcon,
+  GoogleGeminiIcon,
+} from "@hugeicons/core-free-icons";
 
 export interface AIAgent {
-    id: string;
-    name: string;
-    icon: React.ReactNode;
+  id: string;
+  name: string;
+  icon: React.ReactNode;
 }
 
 interface SelectAIAgentProps {
-    agents?: AIAgent[];
-    onSendMessage?: (message: string, agentId: string) => void;
-    className?: string;
+  agents?: AIAgent[];
+  onSendMessage?: (message: string, agentId: string) => void;
+  className?: string;
 }
 
 const AGENTS = [
-    {
-        id: 'chatgpt', name: 'Chatgpt', icon: <HugeiconsIcon
-            icon={ChatGptIcon}
-            size={24}
-            color="currentColor"
-            strokeWidth={1.5}
-        />
-    },
-    {
-        id: 'gemini', name: 'Gemini', icon: <HugeiconsIcon
-            icon={GoogleGeminiIcon}
-            size={24}
-            color="currentColor"
-            strokeWidth={1.5}
-        />
-    },
-    {
-        id: 'claude', name: 'Claude', icon: <HugeiconsIcon
-            icon={ClaudeIcon}
-            size={24}
-            color="currentColor"
-            strokeWidth={1.5}
-        />
-    },
+  {
+    id: "chatgpt",
+    name: "Chatgpt",
+    icon: (
+      <HugeiconsIcon
+        icon={ChatGptIcon}
+        size={24}
+        color="currentColor"
+        strokeWidth={1.5}
+      />
+    ),
+  },
+  {
+    id: "gemini",
+    name: "Gemini",
+    icon: (
+      <HugeiconsIcon
+        icon={GoogleGeminiIcon}
+        size={24}
+        color="currentColor"
+        strokeWidth={1.5}
+      />
+    ),
+  },
+  {
+    id: "claude",
+    name: "Claude",
+    icon: (
+      <HugeiconsIcon
+        icon={ClaudeIcon}
+        size={24}
+        color="currentColor"
+        strokeWidth={1.5}
+      />
+    ),
+  },
 ];
 
-export const SelectAIAgent: React.FC<SelectAIAgentProps> = ({ agents = AGENTS, onSendMessage, className = "" }) => {
-    const [selectedAgent, setSelectedAgent] = useState<AIAgent>(agents[0]);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [message, setMessage] = useState("");
-    const [appType, setAppType] = useState<"Web App" | "Mobile App">("Web App");
+export const SelectAIAgent: React.FC<SelectAIAgentProps> = ({
+  agents = AGENTS,
+  onSendMessage,
+  className = "",
+}) => {
+  const [selectedAgent, setSelectedAgent] = useState<AIAgent>(agents[0]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [appType, setAppType] = useState<"Web App" | "Mobile App">("Web App");
 
-    return (
-        <div className={`w-full flex flex-col items-center justify-center p-4 sm:p-6 antialiased select-none ${className}`}>
+  return (
+    <div
+      className={`flex w-full flex-col items-center justify-center p-4 antialiased select-none sm:p-6 ${className}`}
+    >
+      <div className="relative z-40 w-full max-w-[95%] sm:max-w-110">
+        <LayoutGroup>
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 30,
+                  mass: 0.8,
+                }}
+                className="absolute -top-16 left-0 z-0 flex w-fit origin-bottom-left gap-1 rounded-full border-[1.6px] border-[#E8E7ED] bg-white/90 p-1.5 backdrop-blur-xl sm:gap-2 dark:border-white/10 dark:bg-neutral-900/95"
+              >
+                {agents.map((agent) => (
+                  <button
+                    key={agent.id}
+                    onClick={() => {
+                      setSelectedAgent(agent);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all active:scale-95 sm:h-11 sm:w-11 dark:brightness-150 ${
+                      selectedAgent.id === agent.id
+                        ? "border-[1.8px] border-[#E9E8EB] bg-white shadow-sm dark:border-white/20 dark:bg-white"
+                        : "text-neutral-500 hover:bg-neutral-50 dark:text-neutral-400 dark:hover:bg-white/5"
+                    }`}
+                  >
+                    <div className="scale-110 sm:scale-125">{agent.icon}</div>
+                  </button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-            <div className="relative w-full max-w-[95%] sm:max-w-110">
-                <LayoutGroup>
-                    {/* Floating Menu */}
-                    <AnimatePresence>
-                        {isMenuOpen && (
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8, y: 10, filter: "blur(8px)" }}
-                                animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
-                                exit={{ opacity: 0, scale: 0.8, y: 10, filter: "blur(8px)" }}
-                                transition={{
-                                    type: "spring",
-                                    stiffness: 400,
-                                    damping: 30,
-                                    mass: 0.8
-                                }}
-                                className="absolute -top-14 left-0 w-fit backdrop-blur-xl border-[1.6px] shadow-xl rounded-full p-1.5 flex gap-1 sm:gap-2 z-60 origin-bottom-left bg-white/90 border-[#E8E7ED] dark:bg-zinc-900/95 dark:border-white/10"
-                            >
-                                {agents.map((agent) => (
-                                    <button
-                                        key={agent.id}
-                                        onClick={() => {
-                                            setSelectedAgent(agent);
-                                            setIsMenuOpen(false);
-                                        }}
-                                        className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center shrink-0 justify-center transition-all active:scale-95
-                        ${selectedAgent.id === agent.id
-                                                ? "bg-white border-[1.8px] border-[#E9E8EB] dark:bg-white dark:border-white/20 shadow-sm"
-                                                : "hover:bg-gray-50 dark:hover:bg-white/5 text-zinc-500 dark:text-zinc-400"
-                                            }`}
-                                    >
-                                        <div className="scale-110 sm:scale-125">{agent.icon}</div>
-                                    </button>
-                                ))}
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+          <motion.div
+            layout
+            className="rounded-[28px] border border-[#E8E7EF]/70 bg-neutral-100 p-4 shadow-sm transition-all sm:rounded-[36px] sm:p-5 dark:border-white/10 dark:bg-neutral-900"
+          >
+            <div className="flex items-start gap-3 sm:gap-4">
+              <motion.button
+                layoutId={`agent-${selectedAgent.id}`}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="mt-1 flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center"
+              >
+                <div className="dark:brightness- scale-[1.4] text-neutral-800 sm:scale-[1.6] dark:text-neutral-100 dark:brightness-125">
+                  {selectedAgent.icon}
+                </div>
+              </motion.button>
 
-                    {/* Main Input Box */}
-                    <motion.div
-                        layout
-                        className="rounded-[28px] sm:rounded-[36px] p-4 sm:p-5 shadow-sm border transition-all
-                            bg-zinc-100 border-[#E8E7EF]/70 dark:bg-zinc-900 dark:border-white/10"
-                    >
-                        <div className="flex items-start gap-3 sm:gap-4">
-                            {/* Active Icon Toggle */}
-                            <motion.button
-                                layoutId={`agent-${selectedAgent.id}`}
-                                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="mt-1 w-8 h-8 flex items-center justify-center shrink-0 cursor-pointer"
-                            >
-                                <div className="scale-[1.4] sm:scale-[1.6] text-zinc-800 dark:text-zinc-100">
-                                    {selectedAgent.icon}
-                                </div>
-                            </motion.button>
-
-                            <div className="flex-1 flex flex-col h-14 sm:h-18 gap-3 sm:gap-5 ml-1">
-                                <input
-                                    type="text"
-                                    placeholder="Start a new project"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    className="w-full bg-transparent border-none outline-none text-lg sm:text-[20px] font-medium pt-1 
-                                        text-black placeholder:text-[#C6C5CA] dark:text-white dark:placeholder:text-zinc-600"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="flex items-center mt-6 sm:mt-8 justify-between w-full">
-                            {/* Mode Selector Pill */}
-                            <motion.button
-                                layout
-                                transition={{ type: "spring", stiffness: 260, damping: 26, mass: 0.9 }}
-                                onClick={() => setAppType(t => (t === "Web App" ? "Mobile App" : "Web App"))}
-                                className="flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-xs border-[1.8px] active:scale-95 transition-all
-                                    bg-white border-[#E8E7EF] hover:bg-gray-50 dark:bg-zinc-800 dark:border-white/5 dark:hover:bg-zinc-700"
-                            >
-                                <div className="relative overflow-hidden h-5 sm:h-6">
-                                    <AnimatePresence mode="popLayout">
-                                        <motion.span
-                                            key={appType}
-                                            initial={{ y: 12, opacity: 0, filter: "blur(4px)" }}
-                                            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                                            exit={{ y: -12, opacity: 0, filter: "blur(4px)" }}
-                                            transition={{ type: "spring", stiffness: 200, damping: 22, mass: 0.6 }}
-                                            className="block text-sm sm:text-base font-bold whitespace-nowrap text-[#535256] dark:text-zinc-300"
-                                        >
-                                            {appType}
-                                        </motion.span>
-                                    </AnimatePresence>
-                                </div>
-
-                                <div className="flex flex-col -space-y-1 text-[#BDBCC3] dark:text-zinc-600">
-                                    <ChevronUp size={14} strokeWidth={3} />
-                                    <ChevronDown size={14} strokeWidth={3} />
-                                </div>
-                            </motion.button>
-
-                            {/* Action Button */}
-                            <button
-                                title='send'
-                                onClick={() => onSendMessage?.(message, selectedAgent.id)}
-                                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center hover:scale-105 active:scale-90 transition-all shadow-md
-                                    bg-zinc-900 text-white dark:bg-white dark:text-black"
-                            >
-                                <ArrowRight size={20} strokeWidth={2.5} />
-                            </button>
-                        </div>
-                    </motion.div>
-                </LayoutGroup>
+              <div className="ml-1 flex h-14 flex-1 flex-col gap-3 sm:h-18 sm:gap-5">
+                <input
+                  type="text"
+                  placeholder="Start a new project"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full border-none bg-transparent pt-1 text-lg font-medium text-black outline-none placeholder:text-[#C6C5CA] sm:text-[20px] dark:text-white dark:placeholder:text-neutral-600"
+                />
+              </div>
             </div>
-        </div>
-    );
+
+            <div className="mt-6 flex w-full items-center justify-between sm:mt-8">
+              <motion.button
+                onClick={() =>
+                  setAppType((t) =>
+                    t === "Web App" ? "Mobile App" : "Web App"
+                  )
+                }
+                className="flex items-center gap-2 overflow-hidden rounded-full border-[1.8px] border-[#E8E7EF] bg-white px-4 py-1.5 shadow-xs transition-all hover:bg-neutral-50 active:scale-95 sm:px-5 sm:py-2 dark:border-white/5 dark:bg-neutral-800 dark:hover:bg-neutral-800/50"
+              >
+                <div className="relative h-5 overflow-hidden sm:h-6">
+                  <AnimatedText
+                    text={appType}
+                    className="text-sm font-semibold whitespace-nowrap text-[#535256] sm:text-base dark:text-neutral-300"
+                  />
+                </div>
+
+                <motion.div
+                  layout
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 26,
+                  }}
+                  className="flex flex-col -space-y-1 text-[#BDBCC3] dark:text-neutral-600"
+                >
+                  <ChevronUp size={14} strokeWidth={3} />
+                  <ChevronDown size={14} strokeWidth={3} />
+                </motion.div>
+              </motion.button>
+
+              <button
+                title="send"
+                onClick={() => onSendMessage?.(message, selectedAgent.id)}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-white shadow-md transition-all hover:scale-105 active:scale-90 sm:h-11 sm:w-11 dark:bg-white dark:text-black"
+              >
+                <ArrowRight size={20} strokeWidth={2.5} />
+              </button>
+            </div>
+          </motion.div>
+        </LayoutGroup>
+      </div>
+    </div>
+  );
 };
+
+function AnimatedText({
+  text,
+  className,
+  delayStep = 0.014,
+}: {
+  text: string;
+  className?: string;
+  delayStep?: number;
+}) {
+  const chars = text.split("");
+
+  return (
+    <span className={className} style={{ display: "inline-flex" }}>
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.span key={text} style={{ display: "inline-flex " }}>
+          {chars.map((char, i) => (
+            <motion.span
+              key={i}
+              initial={{
+                y: 10,
+                opacity: 0,
+                scale: 0.5,
+                filter: "blur(2px)",
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                filter: "blur(0px)",
+              }}
+              exit={{
+                y: -10,
+                opacity: 0,
+                scale: 0.5,
+                filter: "blur(2px)",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 240,
+                damping: 16,
+                mass: 1.2,
+                delay: i * delayStep,
+              }}
+              style={{
+                display: "inline-block",
+                whiteSpace: char === " " ? "pre" : undefined,
+                willChange: "transform",
+              }}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   motion,
   useMotionValue,
@@ -10,149 +10,143 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-/* ---------------- Types ---------------- */
-
-export interface FractionalPickerProps {
-  min?: number;
-  max?: number;
-  value?: number;
-  defaultValue?: number;
-  onChange?: (value: number) => void;
-  width?: number;
-  itemWidth?: number;
-  className?: string;
-}
-
-/* ---------------- Constants ---------------- */
-
-const TICK_COUNT = 10;
-
-/* ---------------- Ruler Item ---------------- */
-
 interface RulerItemProps {
   value: number;
   x: MotionValue<number>;
   itemWidth: number;
-  center: number;
+  max: number;
 }
 
-function RulerItem({ value, x, itemWidth, center }: RulerItemProps) {
+function RulerItem({ value, x, itemWidth, max }: RulerItemProps) {
   const distance = useTransform(x, (latest) => {
-    const pos = value * itemWidth + latest + center;
-    return Math.abs(pos - center);
+    const itemPos = value * itemWidth;
+    return Math.abs(itemPos + latest);
   });
 
-  const scale = useTransform(distance, [0, itemWidth * 1.5], [1.1, 0.85]);
-  const opacity = useTransform(distance, [0, itemWidth * 2], [1, 0.75]);
+  const opacity = useTransform(distance, [0, itemWidth], [1, 0.3]);
+  const scale = useTransform(distance, [0, itemWidth * 0.8], [1.1, 0.9]);
 
   return (
-    <div className="flex flex-col items-center shrink-0" style={{ width: itemWidth }}>
-      <motion.span
-        className="mb-5 text-[26px] tabular-nums text-foreground select-none"
-        style={{ scale, opacity }}
-      >
-        {value}
-      </motion.span>
+    <div className="flex h-full shrink-0 flex-col" style={{ width: itemWidth }}>
+      <div className="relative flex h-full w-full flex-col items-center justify-end">
+        <motion.span
+          className="text-foreground mb-1 text-4xl font-semibold tabular-nums select-none"
+          style={{ opacity, scale }}
+        >
+          {value}
+        </motion.span>
 
-      <div className="flex relative w-full justify-between px-px">
-        {Array.from({ length: TICK_COUNT }).map((_, i) => (
-          <div
-            key={`${value}-tick-${i}`}
-            className={cn(
-              "w-[1.5px] rounded-full bg-muted",
-              i === 0 ? "h-6 ml-1" : "mt-2.5  h-3"
-            )}
-          />
-        ))}
+        <div className="relative flex h-8 w-full items-end">
+          <div className="absolute left-1/2 z-10 h-8 w-[4px] -translate-x-1/2 rounded-t-full bg-neutral-400 dark:bg-neutral-200" />
+          <div className="flex w-full translate-x-1/2 justify-evenly">
+            {value !== max &&
+              Array.from({ length: 4 }).map((_, i) => (
+                <div
+                  key={`${value}-sub-${i}`}
+                  className="h-4 w-[4px] rounded-t-full bg-neutral-200 dark:bg-neutral-600"
+                />
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-/* ---------------- Component ---------------- */
-
 export function FractionalPicker({
   min = 0,
-  max = 100,
-  value,
-  defaultValue = min,
+  max = 20,
+  defaultValue = 0,
+  itemWidth = 80,
   onChange,
-  width = 420,
-  itemWidth = 70,
   className,
-}: FractionalPickerProps) {
-  const isControlled = value !== undefined;
-  const [internal, setInternal] = React.useState(defaultValue);
+}: any) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
 
-  const currentValue = isControlled ? value : internal;
-
-  const center = width / 2;
-  const x = useMotionValue(-currentValue * itemWidth);
-
-  React.useEffect(() => {
-    animate(x, -currentValue * itemWidth, {
-      type: "spring",
-      stiffness: 260,
-      damping: 28,
-    });
-  }, [currentValue, itemWidth, x]);
-
-  React.useEffect(() => {
-    return x.on("change", (latest) => {
-      const next = Math.round(-latest / itemWidth);
-      if (next >= min && next <= max && next !== currentValue) {
-        if (!isControlled) setInternal(next);
-        onChange?.(next);
-      }
-    });
-  }, [x, itemWidth, min, max, currentValue, isControlled, onChange]);
+  const x = useMotionValue(-defaultValue * itemWidth);
+  const [activeValue, setActiveValue] = useState(defaultValue);
 
   const snap = () => {
-    const snapped = Math.round(x.get() / itemWidth) * itemWidth;
-    animate(x, snapped, { type: "spring", stiffness: 260, damping: 30 });
+    const currentX = x.get();
+    console.log(currentX);
+    const closestValue = Math.round(currentX / itemWidth) * itemWidth;
+    animate(x, closestValue, {
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    });
   };
+
+  useEffect(() => {
+    return x.on("change", (latest) => {
+      const val = Math.abs(Math.round(latest / itemWidth));
+      if (val !== activeValue && val >= min && val <= max) {
+        setActiveValue(val);
+        onChange?.(val);
+      }
+    });
+  }, [x, itemWidth, activeValue, onChange, min, max]);
+
+  useLayoutEffect(() => {
+    if (!containerRef.current) return;
+
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
   return (
     <div
+      ref={containerRef}
       className={cn(
-        "relative overflow-hidden rounded-2xl border bg-background shadow-sm",
+        "bg-background border-border relative max-w-[600px] overflow-hidden rounded-4xl border shadow-sm",
         className
       )}
-      style={{ width, height: 130 }}
+      style={{ height: 120 }}
     >
-      {/* Pointer */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 z-10">
-        <div className="h-5 w-10 rounded-b-xl bg-gray-200 mx-auto" />
-        <div className="mt-2 h-2 w-2 rounded-full bg-gray-200 mx-auto" />
+      <div className="pointer-events-none absolute top-0 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center">
+        <div
+          className="h-6 w-10 rounded-b-xl bg-neutral-200"
+          style={{ clipPath: "polygon(0 0, 100% 0, 80% 100%, 20% 100%)" }}
+        />
+        <div className="mt-1 h-1.5 w-1.5 rounded-full bg-neutral-200" />
       </div>
 
-      {/* Fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-14 bg-linear-to-r from-background to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-linear-to-l from-background to-transparent z-10" />
-
-      {/* Ruler */}
       <motion.div
         drag="x"
-        dragConstraints={{ left: -max * itemWidth, right: -min * itemWidth }}
-        dragElastic={0.08}
+        style={{
+          x,
+          paddingLeft: containerWidth / 2 - itemWidth / 2,
+          paddingRight: containerWidth / 2 - itemWidth / 2,
+        }}
+        dragConstraints={{
+          left: -max * itemWidth,
+          right: -min * itemWidth,
+        }}
+        dragElastic={0.1}
         onDragEnd={snap}
-        style={{ x }}
-        className="flex h-full items-end cursor-grab active:cursor-grabbing"
+        className="flex h-full cursor-grab items-end active:cursor-grabbing"
       >
-        <div style={{ minWidth: center - itemWidth / 2 }} />
-
         {Array.from({ length: max - min + 1 }, (_, i) => (
           <RulerItem
-            key={i}
+            key={i + min}
             value={i + min}
             x={x}
             itemWidth={itemWidth}
-            center={center}
+            max={max}
           />
         ))}
-
-        <div style={{ minWidth: center - itemWidth / 2 }} />
       </motion.div>
+
+      <div className="from-background via-background/60 pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r to-transparent" />
+      <div className="from-background via-background/60 pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l to-transparent" />
     </div>
   );
 }
