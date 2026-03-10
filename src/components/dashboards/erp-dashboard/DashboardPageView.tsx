@@ -26,11 +26,11 @@ export default function DashboardPageView() {
                             <Mail className="size-4 transition-transform duration-300 group-hover:scale-110" />
                             <span className="transition-transform duration-300">Overview</span>
                         </TabsTrigger>
-                        <TabsTrigger value="order" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! dark:data-[state=active]:border-r-neutral-800 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white border-r border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none! transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 cursor-pointer">
+                        <TabsTrigger disabled value="order" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! dark:data-[state=active]:border-r-neutral-800 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-white border-r border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none! transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 cursor-pointer">
                             <Mail className="size-4 transition-transform duration-300 group-hover:scale-110" />
                             <span className="transition-transform duration-300">Order</span>
                         </TabsTrigger>
-                        <TabsTrigger value="sales" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none! transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 cursor-pointer">
+                        <TabsTrigger disabled value="sales" className="gap-2 px-3 data-[state=active]:bg-neutral-200/40 dark:data-[state=active]:bg-neutral-800/50! border-neutral-200 dark:border-neutral-800 rounded-none h-10 data-[state=active]:shadow-none! transition-all duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 cursor-pointer">
                             <Mail className="size-4 transition-transform duration-300 group-hover:scale-110" />
                             <span className="transition-transform duration-300">Sales</span>
                         </TabsTrigger>

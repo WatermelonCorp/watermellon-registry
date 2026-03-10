@@ -1,12 +1,24 @@
 "use client"
 
 import { IconBrandSlack, IconClockFilled, IconMailFilled, IconPlus, IconSearch } from "@tabler/icons-react"
-import { SidebarInput, SidebarTrigger } from "@/components/ui/sidebar"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
+import { SidebarInput, SidebarTrigger } from "../../components/ui/sidebar"
+import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
 import { mails as mailData, pinnedUsers, type Mail } from "../../data"
 import { cn } from "@/lib/utils"
-import { Button } from "../ui/button"
+import { Button } from "../../components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../../components/ui/dialog"
+import { Input } from "../../components/ui/input"
+import { Textarea } from "../../components/ui/textarea"
+import { Label } from "../../components/ui/label"
 
 export function MailList({
   mails = mailData,
@@ -67,6 +79,7 @@ export function MailList({
               Email
             </TabsTrigger>
             <TabsTrigger
+              disabled
               value="slack"
               className="bg-transparent border-none p-0 flex items-center gap-2.5 text-xs text-muted-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent transition-colors font-normal max-w-fit px-2.5 data-[state=active]:font-normal"
             >
@@ -75,6 +88,7 @@ export function MailList({
             </TabsTrigger>
             <TabsTrigger
               value="unread"
+              disabled
               className="bg-transparent border-none p-0 flex items-center gap-2.5 text-xs text-muted-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent transition-colors font-normal max-w-fit px-2.5 data-[state=active]:font-normal"
             >
               <IconClockFilled className="size-5" />
@@ -85,10 +99,40 @@ export function MailList({
 
         {/* Action Button */}
         <div className="px-2 py-2 border-b ">
-          <Button variant="ghost" className="flex justify-start gap-3 w-full h-full pb-2 pt-0 text-muted-foreground hover:text-foreground transition-colors group hover:bg-transparent!">
-            <IconPlus className="size-5" />
-            <span className="text-sm font-medium text-foreground tracking-tight">New message</span>
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="ghost" className="flex justify-start gap-3 w-full h-full pb-2 pt-0 text-muted-foreground hover:text-foreground transition-colors group hover:bg-transparent!">
+                <IconPlus className="size-5" />
+                <span className="text-sm font-medium text-foreground tracking-tight">New message</span>
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[500px]">
+              <DialogHeader>
+                <DialogTitle>New Message</DialogTitle>
+                <DialogDescription>
+                  Compose a new email or message.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="to">To</Label>
+                  <Input id="to" placeholder="recipient@example.com" />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input id="subject" placeholder="What is this about?" />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" placeholder="Type your message here..." className="min-h-[150px]" />
+                </div>
+              </div>
+              <DialogFooter>
+                <Button type="button" variant="outline" className="mr-auto">Save Draft</Button>
+                <Button type="submit">Send Message</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </div>
 
         {/* List Content */}

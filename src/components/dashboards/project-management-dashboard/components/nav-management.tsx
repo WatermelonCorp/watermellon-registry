@@ -19,6 +19,19 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu"
 
 export function NavManagement({
   management,
@@ -42,22 +55,42 @@ export function NavManagement({
               <span>Management</span>
             </CollapsibleTrigger>
             <div className="flex items-center gap-2">
-              <Plus className="size-3.5 text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 cursor-pointer" />
-              <GripVertical className="size-3.5 text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 cursor-pointer" />
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Plus className="size-3.5 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-100 cursor-pointer transition-all duration-200 hover:scale-[1.05] active:scale-90" />
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Add Team Member</DialogTitle>
+                  </DialogHeader>
+                  <div className="p-4 space-y-4">
+                    <p className="text-sm text-neutral-500">Invite new members to collaborate on your projects.</p>
+                  </div>
+                </DialogContent>
+              </Dialog>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <GripVertical className="size-3.5 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-100 cursor-pointer transition-all duration-200 hover:scale-[1.05] active:scale-90" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>Manage Permissions</DropdownMenuItem>
+                  <DropdownMenuItem>Audit Log</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </SidebarGroupLabel>
         <CollapsibleContent>
           <SidebarMenu>
             {management.map((item) => (
-              <SidebarMenuItem key={item.name}>
-                <SidebarMenuButton asChild tooltip={item.name} className="text-neutral-500 dark:text-neutral-400 text-xs h-8 font-medium data-[active=true]:border-border hover:border hover:border-border data-[active=true]:text-neutral-600 dark:data-[active=true]:text-neutral-300 hover:text-neutral-600 dark:hover:text-neutral-300">
+              <SidebarMenuItem key={item.name} className="group/nav-item">
+                <SidebarMenuButton asChild tooltip={item.name} className="text-neutral-500 dark:text-neutral-400 text-xs h-8 font-medium data-[active=true]:border-border hover:border hover:border-border data-[active=true]:text-neutral-600 dark:data-[active=true]:text-neutral-300 hover:text-neutral-600 dark:hover:text-neutral-300 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
                   <a href={item.isDisabled ? "#" : item.url} onClick={(e) => {
                     if (item.isDisabled) {
                       e.preventDefault();
                     }
                   }}>
-                    <item.icon />
+                    <item.icon className="transition-transform duration-300 group-hover/nav-item:scale-[1.05]" />
                     <span className="tracking-tight">{item.name}</span>
                   </a>
                 </SidebarMenuButton>

@@ -17,6 +17,14 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
 } from "./ui/sidebar"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu"
 import { data } from "../data"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -52,24 +60,41 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </div>
             <span className="text-lg font-serif">OceanLabs</span>
           </div>
-          <SidebarTrigger className="-mr-1 ml-auto" />
+          <SidebarTrigger className="-mr-1 ml-auto hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition-all active:scale-[0.98]" />
         </div>
 
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton className="border bg-white dark:bg-neutral-900 dark:border-neutral-800">
-              <div className="flex aspect-square size-5 items-center justify-center rounded bg-linear-to-br from-orange-400 to-rose-400 text-white">
-                {/* Team Logo Placeholder */}
-              </div>
-              <div className="grid flex-1 text-left text-sm leading-tight">
-                <div className="flex items-center gap-2">
-                  <span className="truncate font-semibold">{activeTeam.name}</span>
-                  <span className="rounded bg-indigo-100 px-1 py-0.5 text-[10px] font-bold text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
-                    {activeTeam.plan}
-                  </span>
+            <SidebarMenuButton asChild className="border bg-white dark:bg-neutral-900 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-all active:scale-[0.98]">
+              <div className="flex w-full items-center">
+                <div className="flex aspect-square size-5 items-center justify-center rounded bg-linear-to-br from-orange-400 to-rose-400 text-white">
+                  {/* Team Logo Placeholder */}
                 </div>
+                <div className="grid flex-1 text-left text-sm leading-tight ml-2">
+                  <div className="flex items-center gap-2">
+                    <span className="truncate font-semibold">{activeTeam.name}</span>
+                    <span className="rounded bg-indigo-100 px-1 py-0.5 text-[10px] font-bold text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+                      {activeTeam.plan}
+                    </span>
+                  </div>
+                </div>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button className="ml-auto p-1.5 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-md transition-colors shrink-0 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
+                      <IconDots className="size-3.5" />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-56">
+                    <DropdownMenuLabel>Workspace Actions</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>Switch Workspace</DropdownMenuItem>
+                    <DropdownMenuItem>Workspace Settings</DropdownMenuItem>
+                    <DropdownMenuItem>Manage Subscriptions</DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem className="text-red-600 focus:bg-red-50 focus:text-red-600 dark:focus:bg-red-950/50">Leave Workspace</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
-              <IconDots className="ml-auto size-3 text-neutral-400" />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

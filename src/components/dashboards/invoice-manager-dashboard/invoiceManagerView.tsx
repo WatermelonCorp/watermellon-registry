@@ -25,6 +25,29 @@ import {
     PaginationLink,
 } from "./components/ui/pagination"
 import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "./components/ui/dialog"
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "./components/ui/popover"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+    DropdownMenuSeparator,
+} from "./components/ui/dropdown-menu"
+import { Input } from "./components/ui/input"
+import { Label } from "./components/ui/label"
+import {
     ChevronLeft,
     ChevronRight,
     Plus,
@@ -33,7 +56,15 @@ import {
     Search,
     RefreshCw,
     GripVertical,
+    Download,
+    Upload,
+    FileJson,
+    FileSpreadsheet,
+    FileText,
+    Share2,
+    Copy,
 } from "lucide-react"
+import { invoiceData } from "./data"
 
 const StatusBadge = ({ status }: { status: string }) => {
     const statusStyles: Record<string, string> = {
@@ -45,35 +76,13 @@ const StatusBadge = ({ status }: { status: string }) => {
 
     return (
         <span
-            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-medium border ${statusStyles[status] || "bg-muted text-muted-foreground border-border"
+            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-medium border transition-transform duration-200 hover:scale-110 cursor-default ${statusStyles[status] || "bg-muted text-muted-foreground border-border"
                 }`}
         >
             {status}
         </span>
     )
 }
-
-
-const invoiceData = [
-    { id: 1, company: "BrightPath", clientName: "Olivia Carter", dealValue: "$1300", businessReport: "Financial dashboard for investment tracking.", invoiceDate: "24/10/2025", status: "Rejected", category: "Finance" },
-    { id: 2, company: "CoreVision", clientName: "Ethan Miller", dealValue: "$2500", businessReport: "Designed an AI workflow tool for customer support.", invoiceDate: "26/10/2025", status: "Accepted", category: "AI" },
-    { id: 3, company: "VentureEdge", clientName: "Amelia Thompson", dealValue: "$3600", businessReport: "Created a sleek B2B portfolio website.", invoiceDate: "31/10/2025", status: "Under Review", category: "B2B" },
-    { id: 4, company: "Skyline Group", clientName: "Liam Johnson", dealValue: "$800", businessReport: "Developed a SaaS analytics platform for performance.", invoiceDate: "03/11/2025", status: "Processing", category: "SaaS" },
-    { id: 5, company: "NextLink", clientName: "Charlotte Davis", dealValue: "$4200", businessReport: "Automated internal operations with a central dashboard.", invoiceDate: "07/11/2025", status: "Accepted", category: "Automation" },
-    { id: 6, company: "HelloOne", clientName: "Noah Anderson", dealValue: "$2300", businessReport: "Smart AI platform for marketing personalization.", invoiceDate: "10/11/2025", status: "Rejected", category: "Tech" },
-    { id: 7, company: "NovaTech", clientName: "Isabella White", dealValue: "$10,800", businessReport: "SaaS client dashboard for enterprise reporting.", invoiceDate: "8/11/2025", status: "Under Review", category: "SaaS" },
-    { id: 8, company: "AxisLogic", clientName: "James Wilson", dealValue: "$2300", businessReport: "B2B CRM to streamline client communication.", invoiceDate: "12/11/2025", status: "Accepted", category: "B2B" },
-    { id: 9, company: "FusionWorks", clientName: "Mia Martinez", dealValue: "$7500", businessReport: "Automation tool for logistics management.", invoiceDate: "14/11/2025", status: "Under Review", category: "Automation" },
-    { id: 10, company: "DataVerse", clientName: "Benjamin Moore", dealValue: "$15,000", businessReport: "Built a big data analytics dashboard.", invoiceDate: "15/11/2025", status: "Processing", category: "Tech" },
-    { id: 11, company: "Optima Corp", clientName: "Harper Lewis", dealValue: "$4200", businessReport: "Lead management dashboard for sales teams.", invoiceDate: "18/11/2025", status: "Rejected", category: "B2B" },
-    { id: 12, company: "StratusFlow", clientName: "Lucas Robinson", dealValue: "$2500", businessReport: "Engineered a finance forecasting platform.", invoiceDate: "19/11/2025", status: "Accepted", category: "Finance" },
-    { id: 13, company: "BluePeak", clientName: "Ella Walker", dealValue: "$4200", businessReport: "Designed a SaaS UI focused on client retention.", invoiceDate: "20/11/2025", status: "Accepted", category: "SaaS" },
-    { id: 14, company: "NeuraSys", clientName: "Henry Hall", dealValue: "$1300", businessReport: "Built an AI interface for business predictions.", invoiceDate: "22/11/2025", status: "Under Review", category: "AI" },
-    { id: 15, company: "VortexPro", clientName: "Grace Allen", dealValue: "$15,000", businessReport: "Automation dashboard for team operations.", invoiceDate: "23/11/2025", status: "Rejected", category: "Automation" },
-    { id: 16, company: "OmniReach", clientName: "Jack Turner", dealValue: "$4200", businessReport: "Developed a B2B outreach portal for marketing.", invoiceDate: "24/11/2025", status: "Processing", category: "B2B" },
-    { id: 17, company: "DataFusion", clientName: "Scarlett King", dealValue: "$4,890", businessReport: "Built a corporate finance reporting tool.", invoiceDate: "26/11/2025", status: "Accepted", category: "Finance" },
-    { id: 18, company: "Lumeon", clientName: "William Scott", dealValue: "$1300", businessReport: "Designed an AI-driven business insights app.", invoiceDate: "29/11/2025", status: "Rejected", category: "Tech" },
-]
 
 export const InvoiceManagerView = () => {
     const [selectedRows, setSelectedRows] = useState<number[]>([])
@@ -111,28 +120,115 @@ export const InvoiceManagerView = () => {
                     <h1 className="text-sm font-medium text-foreground">Invoice Manager</h1>
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
-                    <Button
-                        size="sm"
-                        className="text-[10px] sm:text-xs bg-muted text-muted-foreground rounded hover:bg-muted/80 h-8 sm:h-9 hidden sm:flex border border-border"
-                    >
-                        Import & Export
-                    </Button>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button
+                                size="sm"
+                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 hidden sm:flex border border-border transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5"
+                            >
+                                <Download className="size-3 mr-1.5" />
+                                Import & Export
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-48">
+                            <DropdownMenuItem>
+                                <Upload className="size-4 mr-2" />
+                                Import CSV
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem>
+                                <FileSpreadsheet className="size-4 mr-2" />
+                                Export Excel
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                                <FileText className="size-4 mr-2" />
+                                Export PDF
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                                <FileJson className="size-4 mr-2" />
+                                Export JSON
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
 
-                    <Button
-                        size="sm"
-                        className="text-[10px] sm:text-xs bg-muted text-muted-foreground rounded hover:bg-muted/80 h-8 sm:h-9 border border-border"
-                    >
-                        <Plus className="size-3.5" />
-                        <span className="hidden xs:inline">Add New</span>
-                        <span className="xs:hidden">Add</span>
-                    </Button>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button
+                                size="sm"
+                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 border border-border transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5"
+                            >
+                                <Plus className="size-3.5" />
+                                <span className="hidden xs:inline">Add New</span>
+                                <span className="xs:hidden">Add</span>
+                            </Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>Create New Invoice</DialogTitle>
+                                <DialogDescription>
+                                    Enter the details for the new invoice here.
+                                </DialogDescription>
+                            </DialogHeader>
+                            <div className="grid gap-4 py-4">
+                                <div className="grid grid-cols-4 items-center gap-4">
+                                    <Label htmlFor="company" className="text-right">Company</Label>
+                                    <Input id="company" placeholder="Acme Inc." className="col-span-3" />
+                                </div>
+                                <div className="grid grid-cols-4 items-center gap-4">
+                                    <Label htmlFor="client" className="text-right">Client Name</Label>
+                                    <Input id="client" placeholder="John Smith" className="col-span-3" />
+                                </div>
+                                <div className="grid grid-cols-4 items-center gap-4">
+                                    <Label htmlFor="value" className="text-right">Deal Value</Label>
+                                    <Input id="value" placeholder="$0.00" className="col-span-3" />
+                                </div>
+                            </div>
+                            <DialogFooter>
+                                <Button type="submit">Save Invoice</Button>
+                            </DialogFooter>
+                        </DialogContent>
+                    </Dialog>
 
-                    <Button
-                        size="sm"
-                        className="text-[10px] sm:text-xs bg-muted text-muted-foreground rounded hover:bg-muted/80 h-8 sm:h-9 hidden sm:flex border border-border"
-                    >
-                        Share
-                    </Button>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button
+                                size="sm"
+                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 hidden sm:flex border border-border transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5"
+                            >
+                                <Share2 className="size-3 mr-1.5" />
+                                Share
+                            </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-md">
+                            <DialogHeader>
+                                <DialogTitle>Share Invoice</DialogTitle>
+                                <DialogDescription>
+                                    Anyone with the link can view this invoice.
+                                </DialogDescription>
+                            </DialogHeader>
+                            <div className="flex items-center space-x-2 py-4">
+                                <div className="grid flex-1 gap-2">
+                                    <Label htmlFor="link" className="sr-only">
+                                        Link
+                                    </Label>
+                                    <Input
+                                        id="link"
+                                        defaultValue="https://watermelon.xyz/invoice/inv-7821"
+                                        readOnly
+                                    />
+                                </div>
+                                <Button type="submit" size="sm" className="px-3">
+                                    <span className="sr-only">Copy</span>
+                                    <Copy className="h-4 w-4" />
+                                </Button>
+                            </div>
+                            <DialogFooter className="sm:justify-start">
+                                <Button type="button" variant="secondary" className="w-full">
+                                    Email Link
+                                </Button>
+                            </DialogFooter>
+                        </DialogContent>
+                    </Dialog>
 
                 </div>
             </div>
@@ -140,34 +236,93 @@ export const InvoiceManagerView = () => {
             <div className="flex flex-col lg:flex-row lg:items-center justify-between px-4 py-3 border-b border-border gap-4 lg:gap-2">
 
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                    <Button
-                        size="sm"
-                        className="text-[10px] sm:text-xs bg-muted text-muted-foreground rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9"
-                    >
-                        <RefreshCw className="size-3.5" />
-                        Update
-                    </Button>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button
+                                size="sm"
+                                variant="ghost"
+                                className="text-[10px] sm:text-xs bg-muted text-muted-foreground rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5 hover:shadow"
+                            >
+                                <RefreshCw className="size-3.5" />
+                                Update
+                            </Button>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[425px]">
+                            <DialogHeader>
+                                <DialogTitle>Data Synchronization</DialogTitle>
+                                <DialogDescription>
+                                    Refreshing your dashboard with the latest data from the server.
+                                </DialogDescription>
+                            </DialogHeader>
+                            <div className="flex flex-col items-center justify-center py-8 gap-4">
+                                <RefreshCw className="size-8 text-primary animate-spin" />
+                                <p className="text-sm font-medium">Syncing invoices...</p>
+                                <div className="w-full bg-muted rounded-full h-1.5 overflow-hidden">
+                                    <div className="bg-primary h-full w-[65%] rounded-full animate-pulse" />
+                                </div>
+                            </div>
+                            <DialogFooter>
+                                <Button type="button" variant="secondary" className="w-full">Cancel Sync</Button>
+                            </DialogFooter>
+                        </DialogContent>
+                    </Dialog>
                     {selectedCount > 0 && (
-                        <span className="text-[10px] sm:text-xs bg-muted flex items-center justify-center text-muted-foreground px-2.5 py-1.5 h-8 sm:h-9 sm:py-2 rounded font-medium">
+                        <span className="text-[10px] sm:text-xs bg-muted flex items-center justify-center text-muted-foreground px-2.5 py-1.5 h-8 sm:h-9 sm:py-2 rounded font-medium transition-all animate-in fade-in zoom-in-95 duration-200">
                             {selectedCount} Selected
                         </span>
                     )}
-                    <Button
-                        size="sm"
-                        variant="ghost"
-                        className="text-[10px] sm:text-xs text-muted-foreground bg-muted rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9"
-                    >
-                        <Filter className="size-3.5" />
-                        Filter
-                    </Button>
-                    <Button
-                        size="sm"
-                        variant="ghost"
-                        className="text-[10px] sm:text-xs text-muted-foreground bg-muted rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9"
-                    >
-                        <ArrowUpDown className="size-3.5" />
-                        Sort
-                    </Button>
+                    <Popover>
+                        <PopoverTrigger asChild>
+                            <Button
+                                size="sm"
+                                variant="ghost"
+                                className="text-[10px] sm:text-xs text-muted-foreground bg-muted rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5 hover:shadow"
+                            >
+                                <Filter className="size-3.5" />
+                                Filter
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-56 p-3">
+                            <div className="space-y-3">
+                                <h4 className="font-medium text-xs leading-none">Filters</h4>
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <Checkbox id="status-accepted" />
+                                        <Label htmlFor="status-accepted" className="text-xs">Accepted</Label>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Checkbox id="status-review" />
+                                        <Label htmlFor="status-review" className="text-xs">Under Review</Label>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Checkbox id="status-rejected" />
+                                        <Label htmlFor="status-rejected" className="text-xs">Rejected</Label>
+                                    </div>
+                                </div>
+                                <Button size="sm" className="w-full text-xs h-7">Apply Filters</Button>
+                            </div>
+                        </PopoverContent>
+                    </Popover>
+
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button
+                                size="sm"
+                                variant="ghost"
+                                className="text-[10px] sm:text-xs text-muted-foreground bg-muted rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5 hover:shadow"
+                            >
+                                <ArrowUpDown className="size-3.5" />
+                                Sort
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="start" className="w-40">
+                            <DropdownMenuItem>Date: NewestFirst</DropdownMenuItem>
+                            <DropdownMenuItem>Date: Oldest First</DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem>Value: High to Low</DropdownMenuItem>
+                            <DropdownMenuItem>Value: Low to High</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                     <span className="text-[10px] sm:text-xs text-muted-foreground font-medium ml-2">80 Results</span>
                 </div>
 
@@ -212,7 +367,7 @@ export const InvoiceManagerView = () => {
                         {invoiceData.map((row) => (
                             <TableRow
                                 key={row.id}
-                                className={`border-border hover:bg-muted/20 border-b ${selectedRows.includes(row.id) ? "bg-muted/30" : ""
+                                className={`border-border hover:bg-muted/20 border-b transition-all duration-200 hover:translate-x-1 ${selectedRows.includes(row.id) ? "bg-muted/30" : ""
                                     }`}
                                 data-state={selectedRows.includes(row.id) ? "selected" : undefined}
                             >
@@ -269,7 +424,7 @@ export const InvoiceManagerView = () => {
                     <PaginationContent className="gap-1">
                         <PaginationItem>
                             <button
-                                className="size-8 sm:size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-muted disabled:opacity-50"
+                                className="size-8 sm:size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-muted transition-all duration-200 hover:scale-110 active:scale-90 disabled:opacity-50"
                                 disabled={currentPage === 1}
                                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                             >
@@ -286,7 +441,7 @@ export const InvoiceManagerView = () => {
                                         setCurrentPage(page)
                                     }}
                                     isActive={currentPage === page}
-                                    className={`size-8 sm:size-7 text-[10px] sm:text-xs rounded ${currentPage === page
+                                    className={`size-8 sm:size-7 text-[10px] sm:text-xs rounded transition-all duration-200 hover:scale-110 active:scale-90 ${currentPage === page
                                         ? "bg-primary text-primary-foreground dark:text-white font-medium"
                                         : "text-muted-foreground hover:bg-muted"
                                         }`}
@@ -300,7 +455,7 @@ export const InvoiceManagerView = () => {
                         </PaginationItem>
                         <PaginationItem>
                             <button
-                                className="size-8 sm:size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-muted"
+                                className="size-8 sm:size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-muted transition-all duration-200 hover:scale-110 active:scale-90"
                                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                             >
                                 <ChevronRight className="size-4" />
