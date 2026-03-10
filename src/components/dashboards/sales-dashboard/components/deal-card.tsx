@@ -1,4 +1,4 @@
-import { type Deal } from "../types";
+import { type Deal } from '../types';
 
 interface DealCardProps {
   deal: Deal;
@@ -7,11 +7,11 @@ interface DealCardProps {
 const Sparkline: React.FC<{ data: number[] }> = ({ data }) => {
   const max = Math.max(...data);
   return (
-    <div className="flex items-end gap-[1px] h-3">
+    <div className="flex h-3 items-end gap-[1px]">
       {data.map((v, i) => (
         <div
           key={i}
-          className="w-1 bg-teal-500/80 rounded-t-[0.5px]"
+          className="w-1 rounded-t-[0.5px] bg-teal-500/80"
           style={{ height: `${(v / max) * 100}%` }}
         />
       ))}
@@ -22,77 +22,80 @@ const Sparkline: React.FC<{ data: number[] }> = ({ data }) => {
 const ProbabilityBar: React.FC<{ value: number }> = ({ value }) => {
   return (
     <div className="flex items-center gap-1.5">
-      <div className="flex gap-[1px] w-12 h-2.5">
+      <div className="flex h-2.5 w-12 gap-[1px]">
         {[...Array(10)].map((_, i) => {
           const isActive = (i + 1) * 10 <= value;
-          let color = "bg-neutral-200 dark:bg-neutral-800";
+          let color = 'bg-neutral-200 dark:bg-neutral-800';
           if (isActive) {
-            if (value > 75) color = "bg-green-500";
-            else if (value > 40) color = "bg-yellow-500";
-            else color = "bg-red-500";
+            if (value > 75) color = 'bg-green-500';
+            else if (value > 40) color = 'bg-yellow-500';
+            else color = 'bg-red-500';
           }
-          return <div key={i} className={`flex-1 rounded-[1px] ${color} transition-colors`} />;
+          return <div key={i} className={`flex-1 rounded-[1px] ${color}`} />;
         })}
       </div>
-      <span className="text-[10px] text-neutral-500 dark:text-neutral-500 font-bold">{value}%</span>
+      <span className="text-[10px] font-bold text-neutral-500 dark:text-neutral-500">
+        {value}%
+      </span>
     </div>
   );
 };
 
 const DealCard: React.FC<DealCardProps> = ({ deal }) => {
   return (
-    <div className="bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700/90 rounded-xl p-4 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:scale-[0.98] group cursor-pointer">
-      <div className="flex justify-between items-start mb-1.5">
-        <h4 className="text-sm font-semibold text-neutral-600 dark:text-neutral-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors truncate">
+    <div className="group cursor-pointer rounded-xl border border-neutral-200 bg-neutral-50 p-4 transition-colors hover:border-neutral-300 dark:border-neutral-700/90 dark:bg-neutral-800/50 dark:hover:border-neutral-600">
+      <div className="mb-1.5 flex items-start justify-between">
+        <h4 className="truncate text-sm font-semibold text-neutral-600 transition-colors group-hover:text-indigo-600 dark:text-neutral-400 dark:group-hover:text-indigo-400">
           {deal.company}
         </h4>
       </div>
 
-      <div className="text-lg font-bold text-neutral-900 dark:text-white mb-3 tracking-tight ">
+      <div className="mb-3 text-lg font-bold tracking-tight text-neutral-900 dark:text-white">
         ${deal.value.toLocaleString()}
       </div>
 
-      <div className="flex flex-wrap gap-1.5 mb-3">
+      <div className="mb-3 flex flex-wrap gap-1.5">
         <span
-          className={`px-2 py-0.5 rounded text-[10px] font-bold transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-sm ${deal.segment === "Enterprise"
-            ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-800"
-            : deal.segment === "Mid-Market"
-              ? "bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 border border-teal-200 dark:border-teal-800"
-              : "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800"
-            }`}
+          className={`rounded px-2 py-0.5 text-[10px] font-bold ${
+            deal.segment === 'Enterprise'
+              ? 'border border-blue-200 bg-blue-100 text-blue-700 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-400'
+              : deal.segment === 'Mid-Market'
+                ? 'border border-teal-200 bg-teal-100 text-teal-700 dark:border-teal-800 dark:bg-teal-900/30 dark:text-teal-400'
+                : 'border border-yellow-200 bg-yellow-100 text-yellow-700 dark:border-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400'
+          }`}
         >
           {deal.segment}
         </span>
         {deal.tags.map((tag) => (
           <span
             key={tag}
-            className="px-2 py-0.5 rounded bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 text-[10px] font-bold border border-neutral-300 dark:border-neutral-700"
+            className="rounded border border-neutral-300 bg-neutral-200 px-2 py-0.5 text-[10px] font-bold text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400"
           >
             {tag}
           </span>
         ))}
       </div>
 
-      <div className="space-y-2.5 pt-3 border-t border-neutral-200 dark:border-neutral-800">
-        <div className="flex justify-between items-center">
+      <div className="space-y-2.5 border-t border-neutral-200 pt-3 dark:border-neutral-800">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img
               src={deal.owner.avatar}
-              className="w-5 h-5 rounded-full transition-all duration-300 hover:scale-110 hover:ring-2 hover:ring-indigo-500/30 cursor-pointer"
+              className="h-5 w-5 rounded-full"
               alt={deal.owner.name}
             />
-            <span className="text-[11px] text-neutral-600 dark:text-neutral-500 font-medium">
+            <span className="text-[11px] font-medium text-neutral-600 dark:text-neutral-500">
               {deal.owner.name}
             </span>
           </div>
           <Sparkline data={deal.activityHistory} />
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <ProbabilityBar value={deal.winProbability} />
-          <div className="flex items-center gap-1 text-[10px] text-neutral-500 dark:text-neutral-600 font-bold">
+          <div className="flex items-center gap-1 text-[10px] font-bold text-neutral-500 dark:text-neutral-600">
             <svg
-              className="w-3 h-3"
+              className="h-3 w-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
