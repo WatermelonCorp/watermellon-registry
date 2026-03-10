@@ -33,7 +33,7 @@ export default function TaskDetailHeader() {
         <Button
           variant="ghost"
           size="sm"
-          className=" p-1 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all cursor-pointer active:scale-90"
+          className=" p-1 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
           onClick={() => selectTask(null)}
         >
           <X className="size-4 transition-transform hover:rotate-90" />
@@ -44,7 +44,7 @@ export default function TaskDetailHeader() {
         <Button
           variant="ghost"
           size="sm"
-          className=" text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all cursor-pointer active:scale-95"
+          className=" text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
         >
           <Check className="size-4 hover:bg-muted/50 cursor-pointer" />
           <p>close as completed</p>
@@ -55,7 +55,7 @@ export default function TaskDetailHeader() {
             <Button
               variant="ghost"
               size="sm"
-              className="  text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all cursor-pointer active:scale-95"
+              className="  text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
             >
               <AlertCircle className="size-4" />
               <p>View Details</p>
@@ -97,7 +97,7 @@ export default function TaskDetailHeader() {
             <Button
               variant="ghost"
               size="sm"
-              className=" text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all cursor-pointer active:scale-95"
+              className=" text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
             >
               <Ellipsis className="size-4" />
             </Button>

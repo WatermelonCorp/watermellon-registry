@@ -33,21 +33,21 @@ export default function Header() {
               <TabsList className="h-8 w-full justify-start bg-transparent p-0 gap-1">
                 <TabsTrigger
                   value="all"
-                  className="h-7 px-3 text-[12px] rounded-md data-[state=active]:bg-neutral-100 data-[state=active]:border-border data-[state=active]:border data-[state=active]:text-muted-foreground transition-all hover:bg-muted active:scale-95"
+                  className="h-7 px-3 text-[12px] rounded-md data-[state=active]:bg-neutral-100 data-[state=active]:border-border data-[state=active]:border data-[state=active]:text-muted-foreground transition-colors hover:bg-muted"
                 >
                   All tasks
                 </TabsTrigger>
                 <TabsTrigger
                   value="team"
                   disabled
-                  className="h-7 px-3 text-[12px] rounded-md data-[state=active]:bg-neutral-100 data-[state=active]:border-border data-[state=active]:border data-[state=active]:text-muted-foreground transition-all hover:bg-muted active:scale-95"
+                  className="h-7 px-3 text-[12px] rounded-md data-[state=active]:bg-neutral-100 data-[state=active]:border-border data-[state=active]:border data-[state=active]:text-muted-foreground transition-colors hover:bg-muted"
                 >
                   Tasks team
                 </TabsTrigger>
                 <TabsTrigger
                   value="sales"
                   disabled
-                  className="h-7 px-3 text-[12px] rounded-md data-[state=active]:bg-neutral-100 data-[state=active]:border-border data-[state=active]:border data-[state=active]:text-muted-foreground transition-all hover:bg-muted active:scale-95"
+                  className="h-7 px-3 text-[12px] rounded-md data-[state=active]:bg-neutral-100 data-[state=active]:border-border data-[state=active]:border data-[state=active]:text-muted-foreground transition-colors hover:bg-muted"
                 >
                   Sales
                 </TabsTrigger>
@@ -58,8 +58,8 @@ export default function Header() {
         <div className="flex items-center gap-2 text-muted-foreground font-medium mr-2">
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="flex items-center gap-2 bg-transparent text-muted-foreground hover:bg-muted/50 transition-all active:scale-95 group">
-                <Settings className=" size-4 transition-transform group-hover:rotate-45" />
+              <Button className="flex items-center gap-2 bg-transparent text-muted-foreground hover:bg-muted/50 transition-colors group shadow-none">
+                <Settings className=" size-4" />
                 <span className="text-sm">Configure</span>
               </Button>
             </DialogTrigger>

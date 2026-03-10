@@ -23,21 +23,7 @@ export function TaskList() {
   const { tasks, selectedTaskId, selectTask, toggleSubTask } = useTaskStore();
 
 
-  const EmptyState = () => (
-    <div className="flex flex-col items-center justify-center h-[400px] px-6 text-center">
-      <div className="size-12 rounded-full bg-muted flex items-center justify-center mb-4">
-        <Inbox className="size-6 text-muted-foreground/60" />
-      </div>
-      <h3 className="text-sm font-medium text-foreground">No tasks found</h3>
-      <p className="text-xs text-muted-foreground mt-1 mb-4">
-        Try adjusting your filters or create a new task to get started.
-      </p>
-      <Button variant="outline" size="sm" className="h-8 gap-2 text-xs">
-        <Plus className="size-3.5" />
-        New Task
-      </Button>
-    </div>
-  );
+
 
   return (
     <div className="flex flex-col h-full bg-foreground/5 dark:bg-black overflow-hidden">
@@ -45,17 +31,29 @@ export function TaskList() {
         <ScrollArea className="flex-1 min-h-0 w-full">
           <div className="p-2.5 space-y-1">
             {tasks.length === 0 ? (
-              <EmptyState />
+              <div className="flex flex-col items-center justify-center h-[400px] px-6 text-center">
+                <div className="size-12 rounded-full bg-muted flex items-center justify-center mb-4">
+                  <Inbox className="size-6 text-muted-foreground/60" />
+                </div>
+                <h3 className="text-sm font-medium text-foreground">No tasks found</h3>
+                <p className="text-xs text-muted-foreground mt-1 mb-4">
+                  Try adjusting your filters or create a new task to get started.
+                </p>
+                <Button variant="outline" size="sm" className="h-8 gap-2 text-xs">
+                  <Plus className="size-3.5" />
+                  New Task
+                </Button>
+              </div>
             ) : (
               tasks.map((task) => (
                 <div key={task.id} className="flex flex-col">
                   <div
                     onClick={() => selectTask(task.id)}
                     className={cn(
-                      "p-3 rounded-none border cursor-pointer transition-all duration-200 mb-1 shadow-card group/card active:scale-[0.98]",
+                      "p-3 rounded-none border cursor-pointer transition-colors duration-200 mb-1 shadow-card group/card",
                       selectedTaskId === task.id
                         ? "border-blue-400 bg-card ring-1 ring-blue-400/20"
-                        : "bg-card hover:bg-muted/40 border-border hover:-translate-y-0.5"
+                        : "bg-card hover:bg-muted/40 border-border"
                     )}
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -108,9 +106,9 @@ export function TaskList() {
                     {task.subTasks.map((subTask) => (
                       <div
                         key={subTask.id}
-                        className="group flex items-center gap-2 px-3 py-1.5 rounded-none bg-muted shadow-card transition-all hover:bg-muted/80 active:translate-x-0.5"
+                        className="group flex items-center gap-2 px-3 py-1.5 rounded-none bg-muted shadow-card transition-colors hover:bg-muted/80"
                       >
-                        <CornerDownRight className="size-3.5 text-muted-foreground/50 shrink-0 transition-transform group-hover:translate-x-0.5" />
+                        <CornerDownRight className="size-3.5 text-muted-foreground/50 shrink-0" />
 
                         <div className="flex items-center gap-2 flex-1">
                           <Checkbox

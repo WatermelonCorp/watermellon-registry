@@ -86,7 +86,7 @@ export function TaskDetail() {
               {task.subTasks.map((sub) => (
                 <div
                   key={sub.id}
-                  className="flex items-center gap-3 p-3 bg-foreground/5 border border-border/50 rounded-none group hover:bg-muted transition-all duration-200 active:scale-[0.99] cursor-pointer"
+                  className="flex items-center gap-3 p-3 bg-foreground/5 border border-border/50 rounded-none group hover:bg-muted transition-colors duration-200 cursor-pointer"
                 >
                   <Checkbox
                     id={sub.id}
@@ -126,7 +126,7 @@ export function TaskDetail() {
                   </span>
                   <Button
                     size="sm"
-                    className="h-8 w-8 rounded-none bg-blue-600 hover:bg-blue-700 transition-all active:scale-90"
+                    className="h-8 w-8 rounded-none bg-blue-600 hover:bg-blue-700 transition-colors"
                   >
                     <Send className="size-3.5" />
                   </Button>

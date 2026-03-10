@@ -33,7 +33,7 @@ export default function TaskListHeader() {
           <Button
             variant="ghost"
             size="sm"
-            className="h-8 gap-2 px-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all flex items-center justify-center cursor-pointer active:scale-95"
+            className="h-8 gap-2 px-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors flex items-center justify-center cursor-pointer"
           >
             <ListFilter className="size-3" />
             Filter
@@ -78,7 +78,7 @@ export default function TaskListHeader() {
           <Button
             variant="ghost"
             size="sm"
-            className="h-8 gap-2 px-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all flex items-center justify-center cursor-pointer active:scale-95"
+            className="h-8 gap-2 px-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors flex items-center justify-center cursor-pointer"
           >
             <LayoutPanelLeft className="size-3" />
             Display
