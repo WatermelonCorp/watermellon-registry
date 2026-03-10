@@ -69,7 +69,7 @@ export default function InvoicesPageView() {
                             <h1 className="text-[15px] font-semibold">Invoices</h1>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
-                                    <Button variant="ghost" size="icon" className="size-6 text-muted-foreground/50 hover:text-muted-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition-all active:scale-90">
+                                    <Button variant="ghost" size="icon" className="size-6 text-muted-foreground/50 hover:text-muted-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition-colors">
                                         <IconDots className="size-3.5" />
                                     </Button>
                                 </DropdownMenuTrigger>
@@ -88,8 +88,8 @@ export default function InvoicesPageView() {
                 </div>
                 <Dialog>
                     <DialogTrigger asChild>
-                        <Button className="group h-8 bg-indigo-600 hover:bg-indigo-700 active:scale-95 transition-all duration-200 hover:shadow-md hover:shadow-indigo-500/20 text-white text-xs px-3 gap-2 rounded-md shrink-0 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-                            <IconPlus className="size-3.5 transition-transform group-hover:rotate-90" />
+                        <Button className="group h-8 bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200 hover:shadow-md hover:shadow-indigo-500/20 text-white text-xs px-3 gap-2 rounded-md shrink-0 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+                            <IconPlus className="size-3.5" />
                             <span className="hidden sm:inline">Create Invoice</span>
                         </Button>
                     </DialogTrigger>
@@ -103,21 +103,21 @@ export default function InvoicesPageView() {
                         <div className="grid gap-4 py-4">
                             <div className="grid gap-2">
                                 <Label htmlFor="client">Client Name</Label>
-                                <Input id="client" placeholder="e.g. Acme Corp" />
+                                <Input id="client" placeholder="e.g. Acme Corp" className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="grid gap-2">
                                     <Label htmlFor="amount">Amount</Label>
-                                    <Input id="amount" type="number" placeholder="0.00" />
+                                    <Input id="amount" type="number" placeholder="0.00" className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
                                 </div>
                                 <div className="grid gap-2">
                                     <Label htmlFor="due-date">Due Date</Label>
-                                    <Input id="due-date" type="date" />
+                                    <Input id="due-date" type="date" className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
                                 </div>
                             </div>
                             <div className="grid gap-2">
                                 <Label htmlFor="notes">Notes</Label>
-                                <Textarea id="notes" placeholder="Optional notes for the client..." />
+                                <Textarea id="notes" placeholder="Optional notes for the client..." className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
                             </div>
                         </div>
                         <DialogFooter>
@@ -132,15 +132,15 @@ export default function InvoicesPageView() {
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between px-5 py-3 gap-4 border-b bg-background">
                     <div className="flex items-center gap-3 w-full overflow-x-auto scrollbar-hide">
                         <TabsList className="bg-transparent p-1 gap-2">
-                            <TabsTrigger value="board" className="gap-2 h-9 transition-all duration-200 active:scale-95 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 data-[state=active]:shadow-none! data-[state=active]:border-neutral-300/80 dark:data-[state=active]:border-neutral-700/50">
+                            <TabsTrigger value="board" className="gap-2 h-9 transition-colors duration-200 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 data-[state=active]:shadow-none! data-[state=active]:border-neutral-300/80 dark:data-[state=active]:border-neutral-700/50 text-foreground">
                                 <IconLayoutGrid className="size-4" />
                                 Board
                             </TabsTrigger>
-                            <TabsTrigger disabled value="overview" className="gap-2 h-9 transition-all duration-200 active:scale-95 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 data-[state=active]:shadow-none! data-[state=active]:border-neutral-300/80 dark:data-[state=active]:border-neutral-700/50">
+                            <TabsTrigger disabled value="overview" className="gap-2 h-9 transition-colors duration-200 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 data-[state=active]:shadow-none! data-[state=active]:border-neutral-300/80 dark:data-[state=active]:border-neutral-700/50 text-foreground">
                                 <IconCalendarEvent className="size-4" />
                                 Overview
                             </TabsTrigger>
-                            <TabsTrigger disabled value="list" className="gap-2 h-9 transition-all duration-200 active:scale-95 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 data-[state=active]:shadow-none! data-[state=active]:border-neutral-300/80 dark:data-[state=active]:border-neutral-700/50">
+                            <TabsTrigger disabled value="list" className="gap-2 h-9 transition-colors duration-200 data-[state=active]:bg-neutral-100 dark:data-[state=active]:bg-neutral-800 data-[state=active]:shadow-none! data-[state=active]:border-neutral-300/80 dark:data-[state=active]:border-neutral-700/50 text-foreground">
                                 <IconLayoutSidebar className="size-4" />
                                 List
                             </TabsTrigger>
@@ -152,7 +152,7 @@ export default function InvoicesPageView() {
                         />
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button size="sm" className="text-muted-foreground gap-1.5 bg-background border hover:bg-neutral-50 dark:hover:bg-neutral-900 active:scale-95 transition-all duration-200 h-9 shrink-0">
+                                <Button size="sm" className="text-muted-foreground gap-1.5 bg-background border hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-200 h-9 shrink-0 cursor-pointer">
                                     <IconPlus className="size-4" />
                                     <span className="hidden sm:inline">Add View</span>
                                 </Button>
@@ -169,7 +169,7 @@ export default function InvoicesPageView() {
                     <div className="flex items-center gap-2 w-full lg:w-auto">
                         <div className="relative flex-1 lg:w-64">
                             <IconSearch className="absolute left-2.5 top-2.5 size-4 text-muted-foreground" />
-                            <Input placeholder="Search invoice..." className="pl-9 bg-muted/50 shadow-none focus-visible:ring-1 border w-full" />
+                            <Input placeholder="Search invoice..." className="pl-9 bg-muted/50 shadow-none border w-full focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
                         </div>
                         <Separator
                             orientation="vertical"
@@ -177,7 +177,7 @@ export default function InvoicesPageView() {
                         />
                         <Popover>
                             <PopoverTrigger asChild>
-                                <Button variant="outline" size="sm" className="gap-2 h-9 active:scale-95 transition-all duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900 shadow-xs">
+                                <Button variant="outline" size="sm" className="gap-2 h-9 transition-colors duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900 shadow-xs cursor-pointer">
                                     <IconLayoutGrid className="size-4" />
                                     View
                                 </Button>
@@ -193,7 +193,7 @@ export default function InvoicesPageView() {
 
                         <Popover>
                             <PopoverTrigger asChild>
-                                <Button variant="outline" size="sm" className="gap-2 h-9 active:scale-95 transition-all duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900 shadow-xs">
+                                <Button variant="outline" size="sm" className="gap-2 h-9 transition-colors duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900 shadow-xs cursor-pointer">
                                     <IconFilter className="size-4" />
                                     Filter
                                 </Button>
@@ -203,7 +203,7 @@ export default function InvoicesPageView() {
                                     <h4 className="font-medium text-sm leading-none">Filter Invoices</h4>
                                     <div className="grid gap-2">
                                         <Label htmlFor="status-filter" className="text-xs">Status</Label>
-                                        <Input id="status-filter" placeholder="Filter by status..." className="h-8 text-xs" />
+                                        <Input id="status-filter" placeholder="Filter by status..." className="h-8 text-xs focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
                                     </div>
                                     <div className="flex justify-end gap-2 pt-2">
                                         <Button variant="outline" size="sm" className="h-7 text-xs">Reset</Button>
@@ -229,7 +229,7 @@ export default function InvoicesPageView() {
                                         <span className="text-xs font-medium text-neutral-500 font-mono">12</span>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
-                                                <Button variant="ghost" size="icon" className="size-6 text-neutral-500 hover:bg-orange-200/50 dark:hover:bg-orange-500/20 active:scale-90 transition-all">
+                                                <Button variant="ghost" size="icon" className="size-6 text-neutral-500 hover:bg-orange-200/50 dark:hover:bg-orange-500/20 transition-colors cursor-pointer">
                                                     <IconDots className="size-3.5" />
                                                 </Button>
                                             </DropdownMenuTrigger>
@@ -266,7 +266,7 @@ export default function InvoicesPageView() {
                                         <span className="text-xs font-medium text-neutral-500 font-mono">12</span>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
-                                                <Button variant="ghost" size="icon" className="size-6 text-neutral-500 hover:bg-emerald-200/50 dark:hover:bg-emerald-500/20 active:scale-90 transition-all">
+                                                <Button variant="ghost" size="icon" className="size-6 text-neutral-500 hover:bg-emerald-200/50 dark:hover:bg-emerald-500/20 transition-colors cursor-pointer">
                                                     <IconDots className="size-3.5" />
                                                 </Button>
                                             </DropdownMenuTrigger>
@@ -303,7 +303,7 @@ export default function InvoicesPageView() {
                                         <span className="text-xs font-medium text-neutral-500 font-mono">12</span>
                                         <DropdownMenu>
                                             <DropdownMenuTrigger asChild>
-                                                <Button variant="ghost" size="icon" className="size-6 text-neutral-500 hover:bg-neutral-200 dark:hover:bg-neutral-700 active:scale-90 transition-all">
+                                                <Button variant="ghost" size="icon" className="size-6 text-neutral-500 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors cursor-pointer">
                                                     <IconDots className="size-3.5" />
                                                 </Button>
                                             </DropdownMenuTrigger>

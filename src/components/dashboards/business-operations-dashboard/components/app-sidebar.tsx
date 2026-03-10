@@ -46,7 +46,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <span className="font-semibold truncate text-[15px] tracking-tight">Ocean Labs</span>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="size-5 text-muted-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all active:scale-90 ml-0.5">
+                      <Button variant="ghost" size="icon" className="size-5 text-muted-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors ml-0.5 cursor-pointer">
                         <IconDots className="size-3" />
                       </Button>
                     </DropdownMenuTrigger>
@@ -72,7 +72,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>
-                <SidebarTrigger className="ml-auto text-neutral-500 group-data-[collapsible=icon]:hidden transition-all duration-200 hover:scale-110 active:scale-95 hover:bg-neutral-100 dark:hover:bg-neutral-800" />
+                <SidebarTrigger className="ml-auto text-neutral-500 group-data-[collapsible=icon]:hidden transition-colors duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 cursor-pointer" />
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -82,7 +82,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <IconSearch className="absolute left-2 top-2.5 size-4 text-muted-foreground group-data-[collapsible=icon]:left-1/2 group-data-[collapsible=icon]:top-1/2 group-data-[collapsible=icon]:-translate-x-1/2 group-data-[collapsible=icon]:-translate-y-1/2 group-data-[collapsible=icon]:size-4" />
             <input
               placeholder="Search anything..."
-              className="w-full bg-white dark:bg-neutral-800/50 rounded-md py-2 pl-8 pr-4 text-sm focus:outline-hidden border border-sidebar-border group-data-[collapsible=icon]:w-8 group-data-[collapsible=icon]:h-8 group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:placeholder:text-transparent transition-all hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-sm"
+              className="w-full bg-white dark:bg-neutral-800/50 rounded-md py-2 pl-8 pr-4 text-sm focus:outline-hidden border border-sidebar-border group-data-[collapsible=icon]:w-8 group-data-[collapsible=icon]:h-8 group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:placeholder:text-transparent transition-all hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-sm focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground"
             />
           </div>
         </div>

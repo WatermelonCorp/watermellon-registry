@@ -52,7 +52,7 @@ export function ActiveStreamViews() {
                                 key={tab.value}
                                 value={tab.value}
                                 disabled={tab.value !== "flowView"}
-                                className="group bg-transparent dark:bg-transparent data-[state=active]:bg-transparent dark:data-[state=active]:bg-transparent shadow-none! data-[state=active]:shadow-none! border-t-0! border-x-0! border-b-0! data-[state=active]:border-b-[1.5px]! data-[state=active]:border-orange-500! dark:data-[state=active]:border-orange-500! rounded-none flex items-center gap-2 font-medium data-[state=active]:font-medium tracking-tight data-[state=active]:text-neutral-800 dark:data-[state=active]:text-neutral-200 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 text-[15px] px-1 h-9 text-neutral-500 dark:text-neutral-400 max-md:whitespace-nowrap focus:ring-0! focus:outline-none! focus-visible:ring-0! focus-visible:outline-none! focus-visible:border-t-0! focus-visible:border-x-0! cursor-pointer"
+                                className="group bg-transparent dark:bg-transparent data-[state=active]:bg-transparent dark:data-[state=active]:bg-transparent shadow-none! data-[state=active]:shadow-none! border-t-0! border-x-0! border-b-0! data-[state=active]:border-b-[1.5px]! data-[state=active]:border-orange-500! dark:data-[state=active]:border-orange-500! rounded-none flex items-center gap-2 font-medium data-[state=active]:font-medium tracking-tight data-[state=active]:text-neutral-800 dark:data-[state=active]:text-neutral-200 transition-colors duration-300 text-[15px] px-1 h-9 text-neutral-500 dark:text-neutral-400 max-md:whitespace-nowrap focus:ring-0! focus:outline-none! focus-visible:ring-0! focus-visible:outline-none! focus-visible:border-t-0! focus-visible:border-x-0! cursor-pointer"
                             >
                                 <tab.icon className="size-5 text-neutral-400 dark:text-neutral-500 group-data-[state=active]:text-orange-500 dark:group-data-[state=active]:text-orange-500 transition-colors duration-300" strokeWidth={1.5} />
                                 <span className="">{tab.label}</span>
@@ -63,7 +63,7 @@ export function ActiveStreamViews() {
                 <TabsContent value="flowView" className="flex-1 flex flex-col p-6 pt-3 bg-white dark:bg-neutral-950 overflow-hidden gap-7 min-h-0">
                     {/* Filters */}
                     <div className="flex flex-wrap items-center gap-4">
-                        <Button variant="outline" className="bg-neutral-200/50 dark:bg-neutral-900/50 hover:bg-[#f2f2f2] dark:hover:bg-neutral-800 border-neutral-100/50 dark:border-neutral-800/50 rounded-lg px-3 flex items-center gap-3 font-medium text-neutral-800 dark:text-neutral-200 shadow-none transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer">
+                        <Button variant="outline" className="bg-neutral-200/50 dark:bg-neutral-900/50 hover:bg-[#f2f2f2] dark:hover:bg-neutral-800 border-neutral-100/50 dark:border-neutral-800/50 rounded-lg px-3 flex items-center gap-3 font-medium text-neutral-800 dark:text-neutral-200 shadow-none transition-colors duration-300 cursor-pointer">
                             Filter
                             <Badge variant="secondary" className="bg-white dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 rounded px-2 py-0.5 size-4 flex justify-center shadow border dark:border-neutral-700">0</Badge>
                         </Button>
@@ -90,7 +90,7 @@ export function ActiveStreamViews() {
                             },
                         ].map((filter) => (
                             <Select key={filter.value}>
-                                <SelectTrigger className="w-fit bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 rounded-lg pl-3 pr-2 font-medium text-neutral-400 dark:text-neutral-500 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/60 shadow-none transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer text-sm">
+                                <SelectTrigger className="w-fit bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 rounded-lg pl-3 pr-2 font-medium text-neutral-400 dark:text-neutral-500 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/60 shadow-none transition-colors duration-300 cursor-pointer text-sm focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none hover:text-neutral-700! dark:hover:text-neutral-300!">
                                     <SelectValue placeholder={filter.label} />
                                 </SelectTrigger>
                                 <SelectContent className="rounded-xl border-neutral-100 dark:border-neutral-800 shadow-xl">

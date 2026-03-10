@@ -78,7 +78,7 @@ export const SettingsView = () => {
             <Search className="pointer-events-none absolute top-1/2 left-2.5 size-4 -translate-y-1/2 text-neutral-400" />
             <Input
               placeholder="Search"
-              className="pl-8 pr-14 h-8 w-full md:w-56 text-sm bg-background border-border placeholder:text-neutral-400"
+              className="pl-8 pr-14 h-8 w-full md:w-56 text-sm bg-background border-border placeholder:text-neutral-400 focus-visible:border-neutral-300 dark:focus-visible:border-neutral-700 focus-visible:ring-0"
             />
             <div className="absolute top-1/2 right-2 flex items-center gap-0.5 -translate-y-1/2 text-xs text-neutral-500 bg-muted py-0.5 px-1.5 rounded">
               <Command className="size-3" />
@@ -86,7 +86,7 @@ export const SettingsView = () => {
             </div>
           </div>
           <Select defaultValue="all">
-            <SelectTrigger className="w-fit !h-8 text-sm border-border transition-all duration-200 hover:bg-muted hover:scale-[1.02] active:scale-[0.98] group/status">
+            <SelectTrigger className="w-fit !h-8 text-sm border-border transition-colors outline-none focus-visible:ring-0 hover:bg-muted group/status">
               <span className="text-neutral-500 transition-colors group-hover/status:text-primary">
                 Status:
               </span>
@@ -101,7 +101,7 @@ export const SettingsView = () => {
           </Select>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="px-2.5 py-2 hover:bg-muted dark:hover:bg-neutral-800 rounded-md border border-border h-8 flex items-center gap-1.5 text-sm text-neutral-500 transition-all duration-200 hover:scale-[1.05] active:scale-[0.95] group">
+              <button className="px-2.5 py-2 hover:bg-muted dark:hover:bg-neutral-800 rounded-md border border-border h-8 flex items-center gap-1.5 text-sm text-neutral-500 transition-colors outline-none focus-visible:ring-0 group">
                 <ArrowDownUp className="size-3.5 text-neutral-500 transition-colors group-hover:text-primary" />
                 Sort
               </button>
@@ -136,7 +136,7 @@ export const SettingsView = () => {
             </TabsTrigger>
             <TabsTrigger
               value="workspace"
-              className="rounded-none text-neutral-500 dark:text-neutral-400 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-neutral-100 data-[state=active]:border-b-[1.5px] data-[state=active]:border-b-neutral-900 dark:data-[state=active]:border-b-neutral-100 data-[state=active]:shadow-none! p-0 pb-2 font-normal tracking-tight whitespace-nowrap border-t-0 border-x-0 dark:data-[state=active]:bg-transparent transition-all duration-200 hover:text-neutral-900 dark:hover:text-neutral-100 hover:scale-[1.02] active:scale-[0.98]"
+              className="rounded-none text-neutral-500 dark:text-neutral-400 data-[state=active]:text-neutral-900 dark:data-[state=active]:text-neutral-100 data-[state=active]:border-b-[1.5px] data-[state=active]:border-b-neutral-900 dark:data-[state=active]:border-b-neutral-100 data-[state=active]:shadow-none! p-0 pb-2 font-normal tracking-tight whitespace-nowrap border-t-0 border-x-0 dark:data-[state=active]:bg-transparent transition-colors hover:text-neutral-900 dark:hover:text-neutral-100 outline-none focus-visible:ring-0"
             >
               Workspace
             </TabsTrigger>
@@ -182,7 +182,7 @@ export const SettingsView = () => {
         <TabsContent value="workspace" className="border-0 overflow-y-auto">
           <div className="py-4 space-y-4">
             {/* Workspace Logo Section */}
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight transition-all duration-300 hover:bg-muted/80 group/logo">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight group/logo">
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
                   <Settings className="size-4 text-neutral-500 transition-colors duration-300 group-hover/logo:text-primary group-hover/logo:rotate-90" />
@@ -192,10 +192,10 @@ export const SettingsView = () => {
                   Manage workspace logo and visual identity
                 </p>
               </div>
-              <div className="bg-background p-2 flex-1 rounded-md transition-all duration-300 group-hover/logo:shadow-sm border border-transparent group-hover/logo:border-border/50">
-                <div className="bg-secondary/30 rounded-lg border border-border transition-colors duration-300 group-hover/logo:bg-secondary/40">
+              <div className="bg-background p-2 flex-1 rounded-md border border-neutral-200 dark:border-neutral-800">
+                <div className="bg-secondary/30 rounded-lg border border-border">
                   <div className="flex items-center gap-2 bg-background p-2 rounded-t-lg">
-                    <Avatar className="size-11 rounded-full bg-background border border-border transition-transform duration-500 hover:scale-110 cursor-pointer shadow-sm hover:shadow-md">
+                    <Avatar className="size-11 rounded-full bg-background border border-border transition-colors hover:shadow-md cursor-pointer outline-none focus-visible:ring-0">
                       <AvatarFallback className="bg-background rounded-full text-neutral-600 dark:text-neutral-400 border border-border">
                         <Globe className="size-5" />
                       </AvatarFallback>
@@ -212,7 +212,7 @@ export const SettingsView = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="m-2 border-border text-neutral-400 font-normal transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:bg-muted group"
+                    className="m-2 border-border text-neutral-400 font-normal transition-colors hover:bg-muted group outline-none focus-visible:ring-0"
                   >
                     <Download className="size-3.5 text-neutral-500 transition-colors group-hover:text-primary" />
                     Upload
@@ -222,7 +222,7 @@ export const SettingsView = () => {
             </div>
 
             {/* Workspace Information Section */}
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight transition-all duration-300 hover:bg-muted/80 group/info">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight group/info">
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
                   <Settings className="size-4 text-neutral-500 transition-colors duration-300 group-hover/info:text-primary group-hover/info:rotate-90" />
@@ -232,54 +232,54 @@ export const SettingsView = () => {
                   Edit workspace name, URL and description details
                 </p>
               </div>
-              <div className="bg-background p-2 flex-1 rounded-md flex flex-col gap-4 transition-all duration-300 group-hover/info:shadow-sm border border-transparent group-hover/info:border-border/50">
-                <div className="bg-secondary/30 rounded-lg p-2 transition-all duration-200 hover:bg-secondary/50 focus-within:ring-1 focus-within:ring-primary/20 focus-within:bg-secondary/60 group/field">
-                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors group-focus-within/field:text-primary">
+              <div className="bg-background p-2 flex-1 rounded-md flex flex-col gap-4 border border-neutral-200 dark:border-neutral-800">
+                <div className="bg-secondary/30 rounded-lg p-2 transition-colors hover:bg-secondary/50 group/field">
+                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors">
                     Workspace Name
                   </Label>
                   <div className="relative">
-                    <Type className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 group-hover/field:text-primary group-focus-within/field:text-primary transition-colors" />
+                    <Type className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 transition-colors" />
                     <Input
                       defaultValue="The Web Dev Company"
-                      className="pl-9 bg-background border-border text-neutral-600 dark:text-neutral-400 text-sm transition-all duration-200 focus:scale-[1.01]"
+                      className="pl-9 bg-background border-border text-neutral-600 dark:text-neutral-400 text-sm transition-colors focus-visible:border-neutral-300 dark:focus-visible:border-neutral-700 outline-none focus-visible:ring-0 shadow-none"
                     />
                   </div>
                 </div>
-                <div className="bg-secondary/30 rounded-lg p-2 transition-all duration-200 hover:bg-secondary/50 focus-within:ring-1 focus-within:ring-primary/20 focus-within:bg-secondary/60 group/field">
-                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors group-focus-within/field:text-primary">Workspace URL</Label>
+                <div className="bg-secondary/30 rounded-lg p-2 transition-colors hover:bg-secondary/50 group/field">
+                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors">Workspace URL</Label>
                   <div className="relative">
-                    <Link className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 group-hover/field:text-primary group-focus-within/field:text-primary transition-colors" />
+                    <Link className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 transition-colors" />
                     <Input
                       defaultValue="thewebdevcompany"
-                      className="pl-9 bg-background border-border text-neutral-600 dark:text-neutral-400 text-sm transition-all duration-200 focus:scale-[1.01]"
+                      className="pl-9 bg-background border-border text-neutral-600 dark:text-neutral-400 text-sm transition-colors focus-visible:border-neutral-300 dark:focus-visible:border-neutral-700 outline-none focus-visible:ring-0 shadow-none"
                     />
                   </div>
                 </div>
-                <div className="bg-secondary/30 rounded-lg p-2 transition-all duration-200 hover:bg-secondary/50 focus-within:ring-1 focus-within:ring-primary/20 focus-within:bg-secondary/60 group/field">
-                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors group-focus-within/field:text-primary">Industry</Label>
+                <div className="bg-secondary/30 rounded-lg p-2 transition-colors hover:bg-secondary/50 group/field">
+                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors">Industry</Label>
                   <div className="relative">
-                    <Building2 className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 group-hover/field:text-primary group-focus-within/field:text-primary transition-colors" />
+                    <Building2 className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 transition-colors" />
                     <Input
                       defaultValue="Technology"
-                      className="pl-9 bg-background border-border text-neutral-600 dark:text-neutral-400 text-sm transition-all duration-200 focus:scale-[1.01]"
+                      className="pl-9 bg-background border-border text-neutral-600 dark:text-neutral-400 text-sm transition-colors focus-visible:border-neutral-300 dark:focus-visible:border-neutral-700 outline-none focus-visible:ring-0 shadow-none"
                     />
                   </div>
                 </div>
-                <div className="bg-secondary/30 rounded-lg p-2 transition-all duration-200 hover:bg-secondary/50 focus-within:ring-1 focus-within:ring-primary/20 focus-within:bg-secondary/60 group/field">
-                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors group-focus-within/field:text-primary">
+                <div className="bg-secondary/30 rounded-lg p-2 transition-colors hover:bg-secondary/50 group/field">
+                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors">
                     Description{" "}
                     <span className="text-neutral-400">(Optional)</span>
                   </Label>
                   <Textarea
                     defaultValue="We are a modern web development agency specializing in building scalable SaaS products, custom dashboards, and enterprise solutions. Our team collaborates daily using TaskFlow to manage projects, track progress, and deliver high-quality work on time"
-                    className="bg-background border-border min-h-[100px] resize-none text-neutral-600 dark:text-neutral-400 text-sm transition-all duration-200 focus:scale-[1.01]"
+                    className="bg-background border-border min-h-[100px] resize-none text-neutral-600 dark:text-neutral-400 text-sm transition-colors focus-visible:border-neutral-300 dark:focus-visible:border-neutral-700 outline-none focus-visible:ring-0 shadow-none"
                   />
                 </div>
               </div>
             </div>
 
             {/* Workspace Preferences Section */}
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight transition-all duration-300 hover:bg-muted/80 group/prefs">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight group/prefs">
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
                   <Settings className="size-4 text-neutral-500 transition-colors duration-300 group-hover/prefs:text-primary group-hover/prefs:rotate-90" />
@@ -289,15 +289,15 @@ export const SettingsView = () => {
                   Configure default settings and access controls
                 </p>
               </div>
-              <div className="bg-background p-2 flex-1 rounded-md flex flex-col gap-4 transition-all duration-300 group-hover/prefs:shadow-sm border border-transparent group-hover/prefs:border-border/50">
-                <div className="bg-secondary/30 rounded-lg p-2 transition-all duration-200 hover:bg-secondary/50 focus-within:ring-1 focus-within:ring-primary/20 focus-within:bg-secondary/60 group/field">
-                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors group-focus-within/field:text-primary">
+              <div className="bg-background p-2 flex-1 rounded-md flex flex-col gap-4 border border-neutral-200 dark:border-neutral-800">
+                <div className="bg-secondary/30 rounded-lg p-2 transition-colors hover:bg-secondary/50 group/field">
+                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors">
                     Week Starts On
                   </Label>
                   <div className="relative">
-                    <Calendar className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 z-10 group-hover/field:text-primary group-focus-within/field:text-primary transition-colors" />
+                    <Calendar className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 z-10 transition-colors" />
                     <Select defaultValue="monday">
-                      <SelectTrigger className="pl-9 bg-background border-border w-full text-neutral-600 dark:text-neutral-400 transition-all duration-200 hover:bg-muted active:scale-[0.98]">
+                      <SelectTrigger className="pl-9 bg-background border-border w-full text-neutral-600 dark:text-neutral-400 transition-colors hover:bg-muted outline-none focus-visible:ring-0 shadow-none">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -308,16 +308,16 @@ export const SettingsView = () => {
                     </Select>
                   </div>
                 </div>
-                <div className="bg-secondary/30 rounded-lg p-2 transition-all duration-200 hover:bg-secondary/50 focus-within:ring-1 focus-within:ring-primary/20 focus-within:bg-secondary/60 group/field">
-                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors group-focus-within/field:text-primary">
+                <div className="bg-secondary/30 rounded-lg p-2 transition-colors hover:bg-secondary/50 group/field">
+                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors">
                     Language<span className="text-red-500">*</span>
                   </Label>
                   <div className="relative">
-                    <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-sm z-10 transition-transform duration-200 group-hover/field:scale-110">
+                    <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-sm z-10 transition-colors">
                       🇺🇸
                     </span>
                     <Select defaultValue="en-us">
-                      <SelectTrigger className="pl-9 bg-background border-border w-full text-neutral-600 dark:text-neutral-400 transition-all duration-200 hover:bg-muted active:scale-[0.98]">
+                      <SelectTrigger className="pl-9 bg-background border-border w-full text-neutral-600 dark:text-neutral-400 transition-colors hover:bg-muted outline-none focus-visible:ring-0 shadow-none">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -330,12 +330,12 @@ export const SettingsView = () => {
                     </Select>
                   </div>
                 </div>
-                <div className="bg-secondary/30 rounded-lg p-2 transition-all duration-200 hover:bg-secondary/50 focus-within:ring-1 focus-within:ring-primary/20 focus-within:bg-secondary/60 group/field">
-                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors group-focus-within/field:text-primary">Time Zone</Label>
+                <div className="bg-secondary/30 rounded-lg p-2 transition-colors hover:bg-secondary/50 group/field">
+                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors">Time Zone</Label>
                   <div className="relative">
-                    <Globe className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 z-10 group-hover/field:text-primary group-focus-within/field:text-primary transition-colors" />
+                    <Globe className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 z-10 transition-colors" />
                     <Select defaultValue="pst">
-                      <SelectTrigger className="pl-9 bg-background border-border w-full text-neutral-600 dark:text-neutral-400 transition-all duration-200 hover:bg-muted active:scale-[0.98]">
+                      <SelectTrigger className="pl-9 bg-background border-border w-full text-neutral-600 dark:text-neutral-400 transition-colors hover:bg-muted outline-none focus-visible:ring-0 shadow-none">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -356,14 +356,14 @@ export const SettingsView = () => {
                     </Select>
                   </div>
                 </div>
-                <div className="bg-secondary/30 rounded-lg p-2 transition-all duration-200 hover:bg-secondary/50 focus-within:ring-1 focus-within:ring-primary/20 focus-within:bg-secondary/60 group/field">
-                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors group-focus-within/field:text-primary">
+                <div className="bg-secondary/30 rounded-lg p-2 transition-colors hover:bg-secondary/50 group/field">
+                  <Label className="text-neutral-700 dark:text-neutral-300 mb-2 transition-colors">
                     Allow Members to Create Projects
                   </Label>
                   <div className="relative">
-                    <Users className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 z-10 group-hover/field:text-primary group-focus-within/field:text-primary transition-colors" />
+                    <Users className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-neutral-400 z-10 transition-colors" />
                     <Select defaultValue="disabled">
-                      <SelectTrigger className="pl-9 bg-background border-border w-full text-neutral-600 dark:text-neutral-400 transition-all duration-200 hover:bg-muted active:scale-[0.98]">
+                      <SelectTrigger className="pl-9 bg-background border-border w-full text-neutral-600 dark:text-neutral-400 transition-colors hover:bg-muted outline-none focus-visible:ring-0 shadow-none">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -400,7 +400,7 @@ export const SettingsView = () => {
               {integrations.map((integration) => (
                 <div
                   key={integration.id}
-                  className="bg-card border border-border rounded-lg flex flex-col justify-between min-h-[160px] relative transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg hover:-translate-y-1 group/card"
+                  className="bg-card border border-border rounded-lg flex flex-col justify-between min-h-[160px] relative transition-colors hover:shadow-lg hover:bg-muted/30 group/card"
                 >
                   {/* Connected Badge */}
                   {integration.connected && (
@@ -437,7 +437,7 @@ export const SettingsView = () => {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="border-border font-normal px-3 flex-1/2 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:bg-accent"
+                          className="border-border font-normal px-3 flex-1/2 transition-colors hover:bg-accent outline-none focus-visible:ring-0"
                           onClick={() => setSelectedIntegration(integration)}
                         >
                           Manage {integration.name}
@@ -447,7 +447,7 @@ export const SettingsView = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="w-full border-border font-normal transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:bg-primary hover:text-primary-foreground"
+                        className="w-full border-border font-normal transition-colors hover:bg-primary hover:text-primary-foreground outline-none focus-visible:ring-0"
                       >
                         Connect
                       </Button>
@@ -472,13 +472,13 @@ export const SettingsView = () => {
                   Manage Integration
                 </DialogTitle>
                 <div className="flex items-center gap-1">
-                  <Button variant="ghost" size="icon" className="size-8 transition-transform duration-200 hover:scale-110 active:scale-90">
+                  <Button variant="ghost" size="icon" className="size-8 transition-colors hover:bg-muted outline-none focus-visible:ring-0">
                     <Expand className="size-4 text-neutral-500" />
                   </Button>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="size-8 transition-transform duration-200 hover:scale-110 active:scale-90 hover:bg-red-50 hover:text-red-500 group"
+                    className="size-8 transition-colors hover:bg-red-50 hover:text-red-500 group outline-none focus-visible:ring-0"
                     onClick={() => setSelectedIntegration(null)}
                   >
                     <X className="size-4 text-neutral-500 group-hover:text-red-500" />
@@ -595,12 +595,12 @@ export const SettingsView = () => {
 
                   {/* Footer Actions */}
                   <div className="mt-6 space-y-3">
-                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors outline-none focus-visible:ring-0 shadow-none">
                       Save Changes
                     </Button>
                     <Button
                       variant="ghost"
-                      className="w-full border text-red-500 hover:text-red-600 hover:bg-red-50 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                      className="w-full border text-red-500 hover:text-red-600 hover:bg-red-50 transition-colors shadow-none outline-none focus-visible:ring-0"
                     >
                       Disconnect
                     </Button>

@@ -76,7 +76,7 @@ const StatusBadge = ({ status }: { status: string }) => {
 
     return (
         <span
-            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-medium border transition-transform duration-200 hover:scale-110 cursor-default ${statusStyles[status] || "bg-muted text-muted-foreground border-border"
+            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-medium border transition-colors duration-200 cursor-default ${statusStyles[status] || "bg-muted text-muted-foreground border-border"
                 }`}
         >
             {status}
@@ -124,7 +124,7 @@ export const InvoiceManagerView = () => {
                         <DropdownMenuTrigger asChild>
                             <Button
                                 size="sm"
-                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 hidden sm:flex border border-border transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5"
+                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 hidden sm:flex border border-border transition-colors duration-200 hover:shadow-sm"
                             >
                                 <Download className="size-3 mr-1.5" />
                                 Import & Export
@@ -155,7 +155,7 @@ export const InvoiceManagerView = () => {
                         <DialogTrigger asChild>
                             <Button
                                 size="sm"
-                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 border border-border transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5"
+                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 border border-border transition-colors duration-200 hover:shadow-sm"
                             >
                                 <Plus className="size-3.5" />
                                 <span className="hidden xs:inline">Add New</span>
@@ -172,15 +172,15 @@ export const InvoiceManagerView = () => {
                             <div className="grid gap-4 py-4">
                                 <div className="grid grid-cols-4 items-center gap-4">
                                     <Label htmlFor="company" className="text-right">Company</Label>
-                                    <Input id="company" placeholder="Acme Inc." className="col-span-3" />
+                                    <Input id="company" placeholder="Acme Inc." className="col-span-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none" />
                                 </div>
                                 <div className="grid grid-cols-4 items-center gap-4">
                                     <Label htmlFor="client" className="text-right">Client Name</Label>
-                                    <Input id="client" placeholder="John Smith" className="col-span-3" />
+                                    <Input id="client" placeholder="John Smith" className="col-span-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none" />
                                 </div>
                                 <div className="grid grid-cols-4 items-center gap-4">
                                     <Label htmlFor="value" className="text-right">Deal Value</Label>
-                                    <Input id="value" placeholder="$0.00" className="col-span-3" />
+                                    <Input id="value" placeholder="$0.00" className="col-span-3 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none" />
                                 </div>
                             </div>
                             <DialogFooter>
@@ -193,7 +193,7 @@ export const InvoiceManagerView = () => {
                         <DialogTrigger asChild>
                             <Button
                                 size="sm"
-                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 hidden sm:flex border border-border transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5"
+                                className="text-[10px] sm:text-xs bg-white text-muted-foreground rounded hover:bg-white/80 dark:bg-muted dark:hover:bg-muted/80 h-8 sm:h-9 hidden sm:flex border border-border transition-colors duration-200 hover:shadow-sm"
                             >
                                 <Share2 className="size-3 mr-1.5" />
                                 Share
@@ -215,6 +215,7 @@ export const InvoiceManagerView = () => {
                                         id="link"
                                         defaultValue="https://watermelon.xyz/invoice/inv-7821"
                                         readOnly
+                                        className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none"
                                     />
                                 </div>
                                 <Button type="submit" size="sm" className="px-3">
@@ -241,7 +242,7 @@ export const InvoiceManagerView = () => {
                             <Button
                                 size="sm"
                                 variant="ghost"
-                                className="text-[10px] sm:text-xs bg-muted text-muted-foreground rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5 hover:shadow"
+                                className="text-[10px] sm:text-xs bg-muted text-muted-foreground rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-colors duration-200 hover:shadow-sm"
                             >
                                 <RefreshCw className="size-3.5" />
                                 Update
@@ -276,7 +277,7 @@ export const InvoiceManagerView = () => {
                             <Button
                                 size="sm"
                                 variant="ghost"
-                                className="text-[10px] sm:text-xs text-muted-foreground bg-muted rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5 hover:shadow"
+                                className="text-[10px] sm:text-xs text-muted-foreground bg-muted rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-colors duration-200 hover:shadow-sm"
                             >
                                 <Filter className="size-3.5" />
                                 Filter
@@ -309,7 +310,7 @@ export const InvoiceManagerView = () => {
                             <Button
                                 size="sm"
                                 variant="ghost"
-                                className="text-[10px] sm:text-xs text-muted-foreground bg-muted rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:-translate-y-0.5 hover:shadow"
+                                className="text-[10px] sm:text-xs text-muted-foreground bg-muted rounded hover:bg-muted/80 gap-1.5 h-8 sm:h-9 transition-colors duration-200 hover:shadow-sm"
                             >
                                 <ArrowUpDown className="size-3.5" />
                                 Sort
@@ -332,7 +333,7 @@ export const InvoiceManagerView = () => {
                         <input
                             type="text"
                             placeholder="Search for the client"
-                            className="w-full bg-muted/40 border border-border rounded px-8 py-1.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring transition-all"
+                            className="w-full bg-muted/40 border border-border rounded px-8 py-1.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 shadow-none transition-colors"
                         />
                     </div>
 
@@ -367,7 +368,7 @@ export const InvoiceManagerView = () => {
                         {invoiceData.map((row) => (
                             <TableRow
                                 key={row.id}
-                                className={`border-border hover:bg-muted/20 border-b transition-all duration-200 hover:translate-x-1 ${selectedRows.includes(row.id) ? "bg-muted/30" : ""
+                                className={`border-border hover:bg-muted/20 border-b transition-colors duration-200 ${selectedRows.includes(row.id) ? "bg-muted/30" : ""
                                     }`}
                                 data-state={selectedRows.includes(row.id) ? "selected" : undefined}
                             >
@@ -424,7 +425,7 @@ export const InvoiceManagerView = () => {
                     <PaginationContent className="gap-1">
                         <PaginationItem>
                             <button
-                                className="size-8 sm:size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-muted transition-all duration-200 hover:scale-110 active:scale-90 disabled:opacity-50"
+                                className="size-8 sm:size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-muted transition-colors duration-200 disabled:opacity-50"
                                 disabled={currentPage === 1}
                                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                             >
@@ -441,7 +442,7 @@ export const InvoiceManagerView = () => {
                                         setCurrentPage(page)
                                     }}
                                     isActive={currentPage === page}
-                                    className={`size-8 sm:size-7 text-[10px] sm:text-xs rounded transition-all duration-200 hover:scale-110 active:scale-90 ${currentPage === page
+                                    className={`size-8 sm:size-7 text-[10px] sm:text-xs rounded transition-colors duration-200 ${currentPage === page
                                         ? "bg-primary text-primary-foreground dark:text-white font-medium"
                                         : "text-muted-foreground hover:bg-muted"
                                         }`}
@@ -455,7 +456,7 @@ export const InvoiceManagerView = () => {
                         </PaginationItem>
                         <PaginationItem>
                             <button
-                                className="size-8 sm:size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-muted transition-all duration-200 hover:scale-110 active:scale-90"
+                                className="size-8 sm:size-7 flex items-center justify-center rounded text-muted-foreground hover:bg-muted transition-colors duration-200"
                                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                             >
                                 <ChevronRight className="size-4" />

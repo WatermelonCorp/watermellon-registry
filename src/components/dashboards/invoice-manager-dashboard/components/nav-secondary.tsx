@@ -62,7 +62,7 @@ export function NavSecondary({
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton
                     tooltip={item.title}
-                    className={`rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+                    className={`rounded transition-colors duration-200 hover:bg-muted ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
                     isActive={pathname === item.url}
                   >
 
@@ -77,7 +77,7 @@ export function NavSecondary({
                       <SidebarMenuSubItem key={subItem.title}>
                         <SidebarMenuSubButton
                           asChild
-                          className={`rounded transition-all duration-200 hover:translate-x-1 ${pathname === subItem.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+                          className={`rounded transition-colors duration-200 hover:bg-muted ${pathname === subItem.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
                           isActive={pathname === subItem.url}
                         >
 
@@ -102,7 +102,7 @@ export function NavSecondary({
                   <DialogTrigger asChild>
                     <SidebarMenuButton
                       tooltip={item.title}
-                      className={`rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+                      className={`rounded transition-colors duration-200 hover:bg-muted ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
                     >
                       {item.icon && <item.icon />}
                       <span>{item.title}</span>
@@ -122,7 +122,7 @@ export function NavSecondary({
                 <SidebarMenuButton
                   asChild
                   tooltip={item.title}
-                  className={`rounded transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
+                  className={`rounded transition-colors duration-200 hover:bg-muted ${pathname === item.url ? "text-sidebar-foreground bg-sidebar-accent" : "text-sidebar-foreground/70"}`}
                   isActive={pathname === item.url}
                 >
                   <a href={item.isDisabled ? "#" : item.url} onClick={(e) => {

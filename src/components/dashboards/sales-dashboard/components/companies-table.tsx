@@ -1,5 +1,5 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client';
+import { useMemo } from 'react';
 
 import {
   Table,
@@ -8,16 +8,25 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./ui/table";
-import { Badge } from "./ui/badge";
-import { Checkbox } from "./ui/checkbox";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Separator } from "./ui/separator";
-import { Calendar, Plus } from "lucide-react";
-import { companiesData, segmentColors } from "../data";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "./ui/dialog";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+} from './ui/table';
+import { Badge } from './ui/badge';
+import { Checkbox } from './ui/checkbox';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { Separator } from './ui/separator';
+import { Calendar, Plus } from 'lucide-react';
+import { companiesData, segmentColors } from '../data';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from './ui/dialog';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
 
 function WinProbabilityBar({ value }: { value: number }) {
   const filledBars = Math.round((value / 100) * 20);
@@ -27,38 +36,39 @@ function WinProbabilityBar({ value }: { value: number }) {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="flex items-center gap-0.5 w-fit h-3">
+      <div className="flex h-3 w-fit items-center gap-0.5">
         {Array.from({ length: 20 }).map((_, i) => {
-          let barColor = "bg-neutral-200 dark:bg-neutral-700";
+          let barColor = 'bg-neutral-200 dark:bg-neutral-700';
           if (i < redBars) {
-            barColor = "bg-red-500";
+            barColor = 'bg-red-500';
           } else if (i < redBars + yellowBars) {
-            barColor = "bg-yellow-500";
+            barColor = 'bg-yellow-500';
           } else if (i < redBars + yellowBars + greenBars) {
-            barColor = "bg-green-500";
+            barColor = 'bg-green-500';
           }
-          return <div key={i} className={`w-0.5 h-full ${barColor} transition-colors`} />;
+          return <div key={i} className={`h-full w-0.5 ${barColor}`} />;
         })}
       </div>
-      <span className="text-sm text-neutral-600 dark:text-neutral-300 font-bold whitespace-nowrap">{value}%</span>
+      <span className="text-sm font-bold whitespace-nowrap text-neutral-600 dark:text-neutral-300">
+        {value}%
+      </span>
     </div>
   );
 }
 
 function ActivityTrend() {
-  const [heights, setHeights] = useState<string[]>([]);
-
-  useEffect(() => {
-    setHeights(Array.from({ length: 12 }).map(() => `${Math.random() * 100}%`));
-  }, []);
+  const heights = useMemo(
+    () => Array.from({ length: 12 }).map(() => `${Math.random() * 100}%`),
+    [],
+  );
 
   return (
-    <div className="flex items-end gap-0.5 h-3">
-      {Array.from({ length: 12 }).map((_, i) => (
+    <div className="flex h-3 items-end gap-0.5">
+      {heights.map((height, i) => (
         <div
           key={i}
-          className=" bg-green-500 w-1"
-          style={{ height: heights[i] || "2px", minHeight: "2px" }}
+          className="w-1 bg-green-500"
+          style={{ height, minHeight: '2px' }}
         />
       ))}
     </div>
@@ -67,51 +77,59 @@ function ActivityTrend() {
 
 export function CompaniesTable() {
   const totalCompanies = companiesData.length;
-  //   const sumPipeline = companiesData.reduce(
-  //     (sum, company) => sum + company.pipelineValue,
-  //     0
-  //   );
-  //   const avgWinProbability = Math.round(
-  //     companiesData.reduce((sum, company) => sum + company.winProbability, 0) /
-  //       companiesData.length
-  //   );
 
   return (
-    <div className="border-y border-neutral-200 dark:border-neutral-800 overflow-hidden flex flex-col">
+    <div className="flex flex-col overflow-hidden border-y border-neutral-200 dark:border-neutral-800">
       <div className="overflow-x-auto">
         <Table>
           <TableHeader>
-            <TableRow className="border-b border-neutral-200 dark:border-neutral-800 hover:bg-transparent">
+            <TableRow className="border-b border-neutral-200 hover:bg-transparent dark:border-neutral-800">
               <TableHead className="w-12 px-4">
                 <Checkbox />
               </TableHead>
-              <TableHead className="text-neutral-500 dark:text-neutral-500 text-xs px-4 min-w-[150px]">Companies</TableHead>
-              <TableHead className="text-neutral-500 dark:text-neutral-500 text-xs px-4 min-w-[200px]">Segment & Stage</TableHead>
-              <TableHead className="text-neutral-500 dark:text-neutral-500 text-xs px-4 min-w-[180px]">Account Owner</TableHead>
-              <TableHead className="text-neutral-500 dark:text-neutral-500 text-xs px-4 min-w-[100px]">Open Deals</TableHead>
-              <TableHead className="text-neutral-500 dark:text-neutral-500 text-xs px-4 min-w-[140px]">Pipeline Value</TableHead>
-              <TableHead className="text-neutral-500 dark:text-neutral-500 text-xs px-4 min-w-[150px]">Win Probability</TableHead>
-              <TableHead className="text-neutral-500 dark:text-neutral-500 text-xs px-4 min-w-[120px]">Activity Trend</TableHead>
-              <TableHead className="text-neutral-500 dark:text-neutral-500 text-xs px-4 min-w-[180px]">Last Interaction</TableHead>
+              <TableHead className="min-w-[150px] px-4 text-xs text-neutral-500 dark:text-neutral-500">
+                Companies
+              </TableHead>
+              <TableHead className="min-w-[200px] px-4 text-xs text-neutral-500 dark:text-neutral-500">
+                Segment & Stage
+              </TableHead>
+              <TableHead className="min-w-[180px] px-4 text-xs text-neutral-500 dark:text-neutral-500">
+                Account Owner
+              </TableHead>
+              <TableHead className="min-w-[100px] px-4 text-xs text-neutral-500 dark:text-neutral-500">
+                Open Deals
+              </TableHead>
+              <TableHead className="min-w-[140px] px-4 text-xs text-neutral-500 dark:text-neutral-500">
+                Pipeline Value
+              </TableHead>
+              <TableHead className="min-w-[150px] px-4 text-xs text-neutral-500 dark:text-neutral-500">
+                Win Probability
+              </TableHead>
+              <TableHead className="min-w-[120px] px-4 text-xs text-neutral-500 dark:text-neutral-500">
+                Activity Trend
+              </TableHead>
+              <TableHead className="min-w-[180px] px-4 text-xs text-neutral-500 dark:text-neutral-500">
+                Last Interaction
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {companiesData.map((company) => (
               <TableRow
                 key={company.id}
-                className="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 transition-colors cursor-pointer"
+                className="cursor-pointer border-b border-neutral-200 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900/50"
               >
                 <TableCell className="px-4">
                   <Checkbox />
                 </TableCell>
-                <TableCell className="font-medium text-neutral-900 dark:text-white px-4">
+                <TableCell className="px-4 font-medium text-neutral-900 dark:text-white">
                   {company.name}
                 </TableCell>
                 <TableCell className="flex items-center gap-2 px-4">
                   {company.segments.map((segment) => (
                     <Badge
                       key={segment}
-                      className={`${segmentColors[segment]} text-xs font-medium hover:-translate-y-0.5 hover:shadow transition-all duration-300 cursor-pointer`}
+                      className={`${segmentColors[segment]} text-xs font-medium`}
                       variant="secondary"
                     >
                       {segment}
@@ -131,11 +149,11 @@ export function CompaniesTable() {
                     </span>
                   </div>
                 </TableCell>
-                <TableCell className="text-neutral-700 dark:text-neutral-300 px-4">
+                <TableCell className="px-4 text-neutral-700 dark:text-neutral-300">
                   {company.openDeals}
                 </TableCell>
-                <TableCell className="text-neutral-700 dark:text-neutral-300 px-4">
-                  ${company.pipelineValue.toLocaleString("en-US")}
+                <TableCell className="px-4 text-neutral-700 dark:text-neutral-300">
+                  ${company.pipelineValue.toLocaleString('en-US')}
                 </TableCell>
                 <TableCell className="px-4">
                   <WinProbabilityBar value={company.winProbability} />
@@ -143,7 +161,7 @@ export function CompaniesTable() {
                 <TableCell className="px-4">
                   <ActivityTrend />
                 </TableCell>
-                <TableCell className="text-neutral-600 dark:text-neutral-400 px-4">
+                <TableCell className="px-4 text-neutral-600 dark:text-neutral-400">
                   <div className="flex items-center gap-2">
                     <Calendar className="size-4 text-neutral-400 dark:text-neutral-500" />
                     <span className="text-sm">
@@ -151,7 +169,7 @@ export function CompaniesTable() {
                     </span>
                     <Separator
                       orientation="vertical"
-                      className="data-[orientation=vertical]:h-4 bg-neutral-200 dark:bg-neutral-800"
+                      className="bg-neutral-200 data-[orientation=vertical]:h-4 dark:bg-neutral-800"
                     />
                     <span className="text-xs text-neutral-400 dark:text-neutral-500">
                       {company.lastInteraction.type}
@@ -163,28 +181,28 @@ export function CompaniesTable() {
           </TableBody>
         </Table>
       </div>
-      <div className="border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 w-full flex flex-col md:flex-row text-sm text-neutral-600 dark:text-neutral-500 px-4">
-        <div className="flex-1 flex items-center gap-2 border-b md:border-b-0 md:border-r border-neutral-200 dark:border-neutral-800 py-2.5">
-          <span className="font-semibold text-neutral-900 dark:text-neutral-300">{totalCompanies}</span>
+      <div className="flex w-full flex-col border-t border-neutral-200 bg-neutral-50 px-4 text-sm text-neutral-600 md:flex-row dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-500">
+        <div className="flex flex-1 items-center gap-2 border-b border-neutral-200 py-2.5 md:border-r md:border-b-0 dark:border-neutral-800">
+          <span className="font-semibold text-neutral-900 dark:text-neutral-300">
+            {totalCompanies}
+          </span>
           <span> Companies in view</span>
         </div>
-        <div className="flex-1 flex items-center gap-2 border-b md:border-b-0 md:border-r border-neutral-200 dark:border-neutral-800 md:pl-3 py-2.5">
+        <div className="flex flex-1 items-center gap-2 border-b border-neutral-200 py-2.5 md:border-r md:border-b-0 md:pl-3 dark:border-neutral-800">
           <Plus className="size-3.5" />
           <span>Sum of pipeline</span>
-          {/* <span className="text-neutral-700 dark:text-neutral-300">
-            ${(sumPipeline / 1000000).toFixed(2)}M
-          </span> */}
         </div>
-        <div className="flex-1 flex items-center gap-2 border-b md:border-b-0 md:border-r border-neutral-200 dark:border-neutral-800 md:pl-3 py-2.5">
+        <div className="flex flex-1 items-center gap-2 border-b border-neutral-200 py-2.5 md:border-r md:border-b-0 md:pl-3 dark:border-neutral-800">
           <Plus className="size-3.5" />
           <span>Avg win probability</span>
-          {/* <span className="text-neutral-700 dark:text-neutral-300">{avgWinProbability}%</span> */}
         </div>
         <Dialog>
-          <DialogTrigger render={
-            <div className="flex-1 flex items-center justify-start gap-2 md:pl-3 py-2.5 hover:text-neutral-900 dark:hover:text-neutral-200 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 active:scale-95 group" />
-          }>
-            <Plus className="size-3.5 group-hover:rotate-90 transition-transform duration-300" />
+          <DialogTrigger
+            render={
+              <div className="group flex flex-1 cursor-pointer items-center justify-start gap-2 py-2.5 transition-colors hover:text-neutral-900 md:pl-3 dark:hover:text-neutral-200" />
+            }
+          >
+            <Plus className="size-3.5" />
             <span>Add Calculation</span>
           </DialogTrigger>
           <DialogContent>
@@ -196,15 +214,27 @@ export function CompaniesTable() {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">
-                <Input id="calc-name" placeholder="Calculation Name (e.g., Total Revenue)" />
+                <Input
+                  id="calc-name"
+                  placeholder="Calculation Name (e.g., Total Revenue)"
+                />
               </div>
               <div className="grid gap-2">
-                <Input id="calc-formula" placeholder="Formula (e.g., SUM(Pipeline Value))" />
+                <Input
+                  id="calc-formula"
+                  placeholder="Formula (e.g., SUM(Pipeline Value))"
+                />
               </div>
             </div>
             <DialogFooter>
-              <DialogClose render={<Button variant="outline" className="rounded-full" />}>Cancel</DialogClose>
-              <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full">Add Calculation</Button>
+              <DialogClose
+                render={<Button variant="outline" className="rounded-full" />}
+              >
+                Cancel
+              </DialogClose>
+              <Button className="rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
+                Add Calculation
+              </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

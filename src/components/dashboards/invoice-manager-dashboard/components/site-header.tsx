@@ -67,11 +67,11 @@ export const SiteHeader = () => {
         <header className="flex h-12 shrink-0 items-center justify-between gap-2 border-b px-2">
             {/* Left side: Sidebar Trigger + Back button + Breadcrumbs */}
             <div className="flex items-center gap-3">
-                <SidebarTrigger className="-ml-1 md:hidden transition-all duration-200 hover:scale-110 active:scale-95" />
+                <SidebarTrigger className="-ml-1 md:hidden transition-colors duration-200 hover:shadow-sm" />
                 <Button
                     variant="ghost"
                     size="icon"
-                    className="size-6 bg-muted-foreground/5 rounded transition-all duration-200 hover:scale-110 active:scale-95 hover:bg-muted-foreground/10"
+                    className="size-6 bg-muted-foreground/5 rounded transition-colors duration-200 hover:bg-muted-foreground/10"
                     onClick={() => router.back()}
                 >
                     <ArrowLeft className="size-2.5" />
@@ -106,7 +106,7 @@ export const SiteHeader = () => {
             <div className="flex items-center gap-2">
                 <Popover>
                     <PopoverTrigger asChild>
-                        <Button variant="ghost" size="icon" className="size-6 bg-muted-foreground/5 rounded hidden sm:flex transition-all duration-200 hover:scale-110 active:scale-95 hover:bg-muted-foreground/10">
+                        <Button variant="ghost" size="icon" className="size-6 bg-muted-foreground/5 rounded hidden sm:flex transition-colors duration-200 hover:bg-muted-foreground/10">
                             <Grid3X3 className="size-2.5" />
                         </Button>
                     </PopoverTrigger>
@@ -130,7 +130,7 @@ export const SiteHeader = () => {
 
                 <Popover>
                     <PopoverTrigger asChild>
-                        <Button variant="ghost" size="icon" className="size-6 bg-muted-foreground/5 rounded hidden sm:flex transition-all duration-200 hover:scale-110 active:scale-95 hover:bg-muted-foreground/10">
+                        <Button variant="ghost" size="icon" className="size-6 bg-muted-foreground/5 rounded hidden sm:flex transition-colors duration-200 hover:bg-muted-foreground/10">
                             <Bell className="size-2.5" />
                         </Button>
                     </PopoverTrigger>
@@ -155,7 +155,7 @@ export const SiteHeader = () => {
 
                 <Popover>
                     <PopoverTrigger asChild>
-                        <Button variant="ghost" size="icon" className="size-6 bg-muted-foreground/5 rounded hidden sm:flex transition-all duration-200 hover:scale-110 active:scale-95 hover:bg-muted-foreground/10">
+                        <Button variant="ghost" size="icon" className="size-6 bg-muted-foreground/5 rounded hidden sm:flex transition-colors duration-200 hover:bg-muted-foreground/10">
                             <MessageSquare className="size-2.5" />
                         </Button>
                     </PopoverTrigger>
@@ -188,7 +188,7 @@ export const SiteHeader = () => {
 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Avatar className="size-5 transition-transform duration-200 hover:scale-110 cursor-pointer">
+                        <Avatar className="size-5 transition-colors duration-200 cursor-pointer hover:ring-2 hover:ring-muted-foreground/20">
                             <AvatarImage src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                             <AvatarFallback className="text-xs">JD</AvatarFallback>
                         </Avatar>

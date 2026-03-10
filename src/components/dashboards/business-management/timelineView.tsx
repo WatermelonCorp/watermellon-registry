@@ -84,7 +84,7 @@ export const TimelineView = () => {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                         placeholder="Search"
-                        className="pl-10 h-9 bg-muted/50 border-muted"
+                        className="pl-10 h-9 bg-muted/50 border-muted focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground"
                     />
                 </div>
             </div>
@@ -99,7 +99,7 @@ export const TimelineView = () => {
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input
                                 placeholder="Search"
-                                className="pl-10 bg-muted/50 shadow-none border-[1.5px] border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 hover:dark:border-neutral-600 transition-all duration-300"
+                                className="pl-10 bg-muted/50 shadow-none border-[1.5px] border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 hover:dark:border-neutral-600 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 transition-all duration-300 text-foreground"
                             />
                             <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground bg-neutral-500/10 dark:bg-neutral-800 px-1.5 py-0.5 rounded">
                                 /
@@ -108,7 +108,7 @@ export const TimelineView = () => {
                     </div>
                     <div className="flex items-center">
                         <Dialog>
-                            <DialogTrigger render={<Button variant="outline" size="sm" className="gap-1 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer active:scale-95 border-[1.5px] border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 hover:dark:border-neutral-600" />}>
+                            <DialogTrigger render={<Button variant="outline" size="sm" className="gap-1 transition-colors duration-300 cursor-pointer border-[1.5px] border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 hover:dark:border-neutral-600" />}>
                                 <Plus className="size-3.5 text-neutral-500" />
                                 Add
                             </DialogTrigger>
@@ -121,7 +121,7 @@ export const TimelineView = () => {
                                 </DialogHeader>
                                 <div className="grid gap-4 py-4">
                                     <div className="grid gap-2">
-                                        <Input id="name" placeholder="Item name..." />
+                                        <Input id="name" placeholder="Item name..." className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
                                     </div>
                                 </div>
                                 <DialogFooter>
@@ -136,7 +136,7 @@ export const TimelineView = () => {
                         />
                         <div className="flex items-center gap-1.5">
                             <Flag className="size-4 text-orange-500 fill-orange-500" />
-                            <span className="text-sm font-medium text-neutral-500 hover:text-neutral-600 hover:dark:text-neutral-400 cursor-pointer hover:scale-105 transition-all duration-100">
+                            <span className="text-sm font-medium text-neutral-500 hover:text-neutral-600 hover:dark:text-neutral-400 cursor-pointer transition-colors duration-100">
                                 1/4
                             </span>
                         </div>
@@ -145,8 +145,8 @@ export const TimelineView = () => {
                             className="mx-2 data-[orientation=vertical]:h-4"
                         />
                         <div className="flex items-center gap-2 text-sm text-neutral-500">
-                            <Inbox className="size-4 hover:text-orange-500 hover:scale-110 active:scale-95 transition-all duration-100 cursor-pointer" />
-                            <Bell className="size-4 hover:text-orange-500 hover:scale-110 active:scale-95 transition-all duration-100 cursor-pointer" />
+                            <Inbox className="size-4 hover:text-orange-500 transition-colors duration-100 cursor-pointer" />
+                            <Bell className="size-4 hover:text-orange-500 transition-colors duration-100 cursor-pointer" />
                         </div>
                     </div>
                 </div>
@@ -159,14 +159,14 @@ export const TimelineView = () => {
                         <div className="flex md:hidden items-center gap-2">
                             <div className="flex items-center gap-1">
                                 <Flag className="size-3 text-orange-500 fill-orange-500" />
-                                <span className="text-sm font-medium text-neutral-500 hover:text-neutral-600 hover:dark:text-neutral-400 cursor-pointer hover:scale-105 transition-all duration-100">1/4</span>
+                                <span className="text-sm font-medium text-neutral-500 hover:text-neutral-600 hover:dark:text-neutral-400 cursor-pointer transition-colors duration-100">1/4</span>
                             </div>
                             <Separator
                                 orientation="vertical"
                                 className="data-[orientation=vertical]:h-3"
                             />
-                            <Inbox className="size-4 hover:text-orange-500 hover:scale-110 active:scale-95 transition-all duration-100 cursor-pointer" />
-                            <Bell className="size-4 hover:text-orange-500 hover:scale-110 active:scale-95 transition-all duration-100 cursor-pointer" />
+                            <Inbox className="size-4 hover:text-orange-500 transition-colors duration-100 cursor-pointer" />
+                            <Bell className="size-4 hover:text-orange-500 transition-colors duration-100 cursor-pointer" />
                         </div>
                     </div>
 
@@ -201,7 +201,7 @@ export const TimelineView = () => {
 
                             {/* Date Range */}
                             <Button variant="outline" size="sm" className="gap-2 group bg-transparent! tracking-tight font-normal shrink-0 hover:border-neutral-300 shadow-none">
-                                <Calendar className="h-4 w-4 text-neutral-500 group-hover:text-orange-500 group-hover:scale-105 transition-all duration-100 cursor-pointer" />
+                                <Calendar className="h-4 w-4 text-neutral-500 group-hover:text-orange-500 transition-colors duration-100 cursor-pointer" />
                                 <span className="hidden sm:inline">Sep 28, 2025</span> <MoveRight className="h-4 w-4 text-neutral-500 group-hover:dark:text-neutral-300 group-hover:text-neutral-600  transition-all duration-100" /> <span className="hidden sm:inline">Oct 4, 2025</span>
                                 <span className="sm:hidden">Sep 28 - Oct 4</span>
                             </Button>
@@ -226,14 +226,24 @@ export const TimelineView = () => {
                                     className="h-4"
                                 />
 
-                                {/* Export Button */}
-                                <Button size="sm" className="gap-2 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer active:scale-95">
-                                    <Download className="size-4" />
-                                    <span className="hidden md:inline">Export</span>
-                                </Button>
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger asChild>
+                                        <Button size="sm" className="gap-2 transition-colors duration-300 cursor-pointer">
+                                            <Download className="size-4" />
+                                            <span className="hidden md:inline">Export</span>
+                                        </Button>
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent align="end">
+                                        <DropdownMenuLabel>Export Options</DropdownMenuLabel>
+                                        <DropdownMenuSeparator />
+                                        <DropdownMenuItem>Export as CSV</DropdownMenuItem>
+                                        <DropdownMenuItem>Export as PDF</DropdownMenuItem>
+                                        <DropdownMenuItem>Export to Google Sheets</DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
                                 {/* Mobile Add Button */}
                                 <Dialog>
-                                    <DialogTrigger render={<Button variant="outline" size="icon" className="md:hidden size-8 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer active:scale-95" />}>
+                                    <DialogTrigger render={<Button variant="outline" size="icon" className="md:hidden size-8 transition-colors duration-300 cursor-pointer" />}>
                                         <Plus className="size-4 text-neutral-500" />
                                     </DialogTrigger>
                                     <DialogContent>
@@ -245,7 +255,7 @@ export const TimelineView = () => {
                                         </DialogHeader>
                                         <div className="grid gap-4 py-4">
                                             <div className="grid gap-2">
-                                                <Input id="name" placeholder="Item name..." />
+                                                <Input id="name" placeholder="Item name..." className="focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 text-foreground" />
                                             </div>
                                         </div>
                                         <DialogFooter>
@@ -267,7 +277,7 @@ export const TimelineView = () => {
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
                         <div className="flex items-center gap-3 w-full sm:w-auto">
                             <Select defaultValue="acme">
-                                <SelectTrigger size="sm" className="px-2 w-full sm:w-fit bg-background! group shadow-none hover:-translate-y-0.5 hover:dark:bg-neutral-700/30! transition-all duration-300 cursor-pointer hover:bg-neutral-200/20!">
+                                <SelectTrigger size="sm" className="px-2 w-full sm:w-fit bg-background! group shadow-none hover:dark:bg-neutral-700/30! transition-colors duration-300 cursor-pointer hover:bg-neutral-200/20!">
                                     <div className="flex items-center gap-1.5">
                                         <MapPin className="size-3.5 text-neutral-500 group-hover:text-orange-500 transition-all duration-100 cursor-pointer" />
                                         <SelectValue placeholder="Company" />
@@ -280,7 +290,7 @@ export const TimelineView = () => {
                             </Select>
 
                             <Select defaultValue="all">
-                                <SelectTrigger size="sm" className="px-2 w-full sm:w-fit bg-background! group shadow-none hover:bg-neutral-200/20! hover:dark:bg-neutral-700/30! hover:-translate-y-0.5 transition-all duration-300 cursor-pointer">
+                                <SelectTrigger size="sm" className="px-2 w-full sm:w-fit bg-background! group shadow-none hover:bg-neutral-200/20! hover:dark:bg-neutral-700/30! transition-colors duration-300 cursor-pointer">
                                     <div className="flex items-center gap-1.5">
                                         <Layers2 className="size-3.5 text-neutral-500 group-hover:text-orange-500 transition-all duration-100 cursor-pointer" />
                                         <SelectValue placeholder="Department" />
@@ -295,10 +305,34 @@ export const TimelineView = () => {
                             </Select>
                         </div>
 
-                        <Button variant="outline" size="sm" className="font-normal w-full sm:w-auto hover:-translate-y-0.5 transition-all duration-300 cursor-pointer active:scale-95 group shadow-none hover:bg-neutral-200/20! hover:dark:bg-neutral-700/30!">
-                            <MessageSquareText className="size-3.5 text-neutral-500 group-hover:text-orange-500 transition-all duration-100 cursor-pointer" />
-                            Feedback
-                        </Button>
+                        <Dialog>
+                            <DialogTrigger render={<Button variant="outline" size="sm" className="font-normal w-full sm:w-auto transition-colors duration-300 cursor-pointer group shadow-none hover:bg-neutral-200/20! hover:dark:bg-neutral-700/30!" />}>
+                                <MessageSquareText className="size-3.5 text-neutral-500 group-hover:text-orange-500 transition-all duration-100 cursor-pointer" />
+                                Feedback
+                            </DialogTrigger>
+                            <DialogContent>
+                                <DialogHeader>
+                                    <DialogTitle>Send Feedback</DialogTitle>
+                                    <DialogDescription>
+                                        Share your thoughts or suggestions with us.
+                                    </DialogDescription>
+                                </DialogHeader>
+                                <div className="grid gap-4 py-4">
+                                    <div className="grid gap-2">
+                                        <textarea
+                                            className="flex min-h-[100px] w-full rounded-md border border-neutral-300 dark:border-neutral-700 bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 text-foreground"
+                                            placeholder="Write your feedback here..."
+                                        />
+                                    </div>
+                                </div>
+                                <DialogFooter>
+                                    <DialogClose render={<Button variant="outline" />}>
+                                        Cancel
+                                    </DialogClose>
+                                    <Button type="submit">Send Feedback</Button>
+                                </DialogFooter>
+                            </DialogContent>
+                        </Dialog>
                     </div>
                 </div>
             </div>
@@ -306,7 +340,7 @@ export const TimelineView = () => {
             {/* Metrics Cards Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
                 {metricsData.map((metric, index) => (
-                    <Card key={index} className="border-border p-4 bg-background gap-0 shadow-none hover:scale-105 transition-all duration-300 cursor-pointer hover:bg-neutral-200/10! hover:dark:bg-neutral-700/20!">
+                    <Card key={index} className="border-border p-4 bg-background gap-0 shadow-none transition-colors duration-300 cursor-pointer hover:bg-neutral-200/10! hover:dark:bg-neutral-700/20!">
                         <CardHeader className="flex items-center justify-between p-0 mb-1">
                             <div className="flex items-center gap-2">
                                 <span className={`size-4.5 rounded ${metric.color} flex items-center justify-center`}>
@@ -319,7 +353,7 @@ export const TimelineView = () => {
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button variant="ghost" className="h-5 w-5 px-0! text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-100 rounded-sm transition-colors duration-300 cursor-pointer group hover:bg-neutral-200/40! hover:dark:bg-neutral-700/30!">
-                                        <MoreVertical className="size-3.5 group-active:scale-85 transition-all duration-300" />
+                                        <MoreVertical className="size-3.5 transition-colors duration-300" />
                                     </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end">
@@ -363,7 +397,7 @@ export const TimelineView = () => {
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="ghost" size="icon" className="h-6 w-6 ml-auto transition-all duration-300 text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-100 cursor-pointer hover:bg-neutral-200/40! hover:dark:bg-neutral-700/30! group">
-                                    <MoreVertical className="h-3 w-3 group-active:scale-85 transition-all duration-300" />
+                                    <MoreVertical className="h-3 w-3 transition-colors duration-300" />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
@@ -475,7 +509,7 @@ export const TimelineView = () => {
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="ghost" size="icon" className="h-6 w-6 ml-auto transition-all duration-300 cursor-pointer hover:bg-neutral-200/40! hover:dark:bg-neutral-700/30! group text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-100">
-                                    <MoreVertical className="h-3 w-3 group-active:scale-85 transition-all duration-300" />
+                                    <MoreVertical className="h-3 w-3 transition-colors duration-300" />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
@@ -498,11 +532,11 @@ export const TimelineView = () => {
                                         <span className="text-sm">{item.title}</span>
                                     </div>
                                     {item.actionText ? (
-                                        <Button variant="outline" size="sm" className="h-7 text-xs hover:-translate-y-0.5 transition-transform duration-300 hover:bg-neutral-200/20 dark:hover:bg-neutral-800/40">
+                                        <Button variant="outline" size="sm" className="h-7 text-xs transition-colors duration-300 hover:bg-neutral-200/20 dark:hover:bg-neutral-800/40">
                                             {item.actionText}
                                         </Button>
                                     ) : (
-                                        <Button variant="outline" size="icon" className="h-7 w-7 hover:bg-neutral-200/20 dark:hover:bg-neutral-800/40 hover:translate-x-0.5 transition-transform duration-300">
+                                        <Button variant="outline" size="icon" className="h-7 w-7 hover:bg-neutral-200/20 dark:hover:bg-neutral-800/40 transition-colors duration-300">
                                             <ArrowRight className="h-4 w-4" />
                                         </Button>
                                     )}
@@ -539,7 +573,7 @@ export const TimelineView = () => {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="ghost" size="icon" className="h-6 w-6 transition-all duration-300 cursor-pointer hover:bg-neutral-200/40! hover:dark:bg-neutral-700/30! hover:text-neutral-700 dark:hover:text-neutral-100 group text-neutral-400 dark:text-neutral-500">
-                                <MoreVertical className="h-3 w-3 group-active:scale-85 transition-all duration-300" />
+                                <MoreVertical className="h-3 w-3 transition-colors duration-300" />
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">

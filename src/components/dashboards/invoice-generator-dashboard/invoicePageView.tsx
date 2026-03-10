@@ -97,8 +97,8 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
             "p-4 border-[1.5px] rounded-lg lg:overflow-y-auto scrollbar-hide bg-card border-border",
             // On mobile (lg:hidden), if view isn't 'form', hide this. 
             // On desktop (lg:block), if isPreviewHidden is true, center and set width. Otherwise fill available space.
-            view !== "form" && "hidden lg:flex",
-            view === "form" && "flex lg:flex-1",
+            view !== "form" && "hidden lg:block",
+            view === "form" && "block lg:flex-1",
             isPreviewHidden ? "lg:w-[60%] lg:mx-auto lg:block" : "lg:flex-1"
           )}
         >
@@ -114,7 +114,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                   handleInputChange("invoiceNumber", e.target.value)
                 }
                 placeholder="INV-0001"
-                className="h-10"
+                className="h-10 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none"
               />
             </div>
 
@@ -124,7 +124,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
               <h3 className="font-semibold mb-3 text-foreground/90 tracking-tight">
                 Billed By
               </h3>
-              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Name
@@ -135,7 +135,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                       handleInputChange("billedByName", e.target.value)
                     }
                     placeholder="Your Name"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
                 <div>
@@ -148,7 +148,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                       handleInputChange("billedByEmail", e.target.value)
                     }
                     placeholder="email@email.com"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
                 <div>
@@ -161,7 +161,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                       handleInputChange("billedByAddress", e.target.value)
                     }
                     placeholder="Street Address"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
               </div>
@@ -172,7 +172,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
               <h3 className="font-semibold mb-3 text-foreground/90 tracking-tight">
                 Billed To
               </h3>
-              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+              <div className="space-y-3 p-3 rounded-xl border border-border bg-background/30 px-4 py-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                 <div>
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Company
@@ -183,7 +183,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                       handleInputChange("billedToCompany", e.target.value)
                     }
                     placeholder="Client Company"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
                 <div>
@@ -196,7 +196,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                       handleInputChange("billedToEmail", e.target.value)
                     }
                     placeholder="client@email.com"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
                 <div>
@@ -209,7 +209,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                       handleInputChange("billedToAddress", e.target.value)
                     }
                     placeholder="Street Address"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
               </div>
@@ -221,7 +221,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                 Dates
               </h3>
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-background/30 rounded-xl border border-border p-3 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                <div className="bg-background/30 rounded-xl border border-border p-3 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Date Issued
                   </label>
@@ -231,10 +231,10 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                       handleInputChange("dateIssued", e.target.value)
                     }
                     placeholder="Date"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
-                <div className="bg-background/30 rounded-xl border border-border p-3 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                <div className="bg-background/30 rounded-xl border border-border p-3 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                   <label className="text-xs text-muted-foreground mb-1 block font-medium">
                     Due Date
                   </label>
@@ -244,7 +244,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                       handleInputChange("dueDate", e.target.value)
                     }
                     placeholder="Date"
-                    className="h-9"
+                    className="h-9 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                   />
                 </div>
               </div>
@@ -257,7 +257,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
               </h3>
               <div className="space-y-3">
                 {invoice.items.map((item, index) => (
-                  <div key={index} className="border border-border bg-background/30 rounded-xl p-4 space-y-3 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div key={index} className="border border-border bg-background/30 rounded-xl p-4 space-y-3 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors duration-300 shadow-none">
                     <div className="space-y-1">
                       <label className="text-xs text-muted-foreground block font-medium">Description</label>
                       <Input
@@ -266,7 +266,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                           handleItemChange(index, "description", e.target.value)
                         }
                         placeholder="Item description"
-                        className="h-9 text-sm"
+                        className="h-9 text-sm focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                       />
                     </div>
                     <div className="grid grid-cols-3 gap-3">
@@ -280,7 +280,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                           onChange={(e) =>
                             handleItemChange(index, "qty", e.target.value)
                           }
-                          className="h-9 text-sm"
+                          className="h-9 text-sm focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                         />
                       </div>
                       <div>
@@ -293,7 +293,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                           onChange={(e) =>
                             handleItemChange(index, "cost", e.target.value)
                           }
-                          className="h-9 text-sm"
+                          className="h-9 text-sm focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                         />
                       </div>
                       <div>
@@ -304,7 +304,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                           type="number"
                           value={item.total.toFixed(2)}
                           readOnly
-                          className="h-9 text-sm bg-muted/50"
+                          className="h-9 text-sm bg-muted/50 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-foreground"
                         />
                       </div>
                     </div>
@@ -313,7 +313,7 @@ export const InvoiceView = ({ isPreviewHidden }: { isPreviewHidden?: boolean }) 
                 <Button
                   onClick={addItem}
                   variant="outline"
-                  className="w-full h-10 text-sm rounded-xl border-dashed border-[1.5px] border-border bg-background/50 hover:bg-muted/50 hover:border-neutral-300 dark:hover:border-neutral-700 hover:-translate-y-0.5 hover:shadow-sm active:scale-95 transition-all duration-300"
+                  className="w-full h-10 text-sm rounded-xl border-dashed border-[1.5px] border-border bg-background/50 hover:bg-muted/50 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-sm transition-colors duration-300 cursor-pointer"
                 >
                   + Add Item
                 </Button>

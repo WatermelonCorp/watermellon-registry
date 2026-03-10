@@ -57,7 +57,7 @@ export const SiteHeader = ({
       <div className="flex items-center gap-2 py-5">
         <ModeToggle />
         <Button
-          className="group h-9 rounded-lg text-muted-foreground tracking-tight border-border shadow-none bg-background hidden lg:flex transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm active:scale-95"
+          className="group h-9 rounded-lg text-muted-foreground tracking-tight border-border shadow-none bg-background hidden lg:flex transition-colors duration-300 hover:shadow-sm"
           variant="outline"
           onClick={onTogglePreview}
         >
@@ -76,7 +76,7 @@ export const SiteHeader = ({
         <Popover>
           <PopoverTrigger asChild>
             <Button
-              className="group h-9 rounded-lg text-muted-foreground tracking-tight border-border shadow-none bg-background hidden sm:flex transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm active:scale-95"
+              className="group h-9 rounded-lg text-muted-foreground tracking-tight border-border shadow-none bg-background hidden sm:flex transition-colors duration-300 hover:shadow-sm"
               variant="outline"
             >
               <Save className="size-4 transition-transform duration-300 group-hover:scale-110" />
@@ -95,7 +95,7 @@ export const SiteHeader = ({
 
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="group h-9 rounded-lg px-3 sm:px-4 tracking-tight border-[1.5px] bg-neutral-900 text-white/90 font-medium text-sm shadow-[inset_0_4px_6px_rgba(255,255,255,0.4),inset_0_-4px_6px_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.1)] border-none dark:bg-neutral-800 hover:bg-neutral-800 dark:hover:bg-neutral-700 transition-all duration-300 hover:scale-[1.02] active:scale-95 hover:shadow-lg">
+            <Button className="group h-9 rounded-lg px-3 sm:px-4 tracking-tight border-[1.5px] bg-neutral-900 text-white/90 font-medium text-sm shadow-[inset_0_4px_6px_rgba(255,255,255,0.4),inset_0_-4px_6px_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.1)] border-none dark:bg-neutral-800 hover:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors duration-300 hover:shadow-lg">
               <Send className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               <span className="hidden sm:inline">Send Invoice</span>
             </Button>

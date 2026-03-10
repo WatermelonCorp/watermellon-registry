@@ -99,7 +99,7 @@ export function MailViewer({ id }: { id: string }) {
           <TooltipProvider delayDuration={300}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-all active:scale-95">
+                <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-colors outline-none focus-visible:bg-muted">
                   <IconSparkles className="size-5" />
                 </button>
               </TooltipTrigger>
@@ -109,7 +109,7 @@ export function MailViewer({ id }: { id: string }) {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-all active:scale-95">
+              <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-colors outline-none focus-visible:bg-muted">
                 <IconUserCircle className="size-5" />
               </button>
             </DropdownMenuTrigger>
@@ -123,7 +123,7 @@ export function MailViewer({ id }: { id: string }) {
           <TooltipProvider delayDuration={300}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-all active:scale-95">
+                <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-colors outline-none focus-visible:bg-muted">
                   <IconBookmark className="size-5" />
                 </button>
               </TooltipTrigger>
@@ -134,7 +134,7 @@ export function MailViewer({ id }: { id: string }) {
           <TooltipProvider delayDuration={300}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-all active:scale-95">
+                <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-colors outline-none focus-visible:bg-muted">
                   <IconArchive className="size-5" />
                 </button>
               </TooltipTrigger>
@@ -144,7 +144,7 @@ export function MailViewer({ id }: { id: string }) {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-all active:scale-95 ml-auto">
+              <button className="text-muted-foreground hover:text-foreground hover:bg-muted p-1.5 rounded-md transition-colors ml-auto outline-none focus-visible:bg-muted">
                 <IconDotsVertical className="size-5" />
               </button>
             </DropdownMenuTrigger>
@@ -160,17 +160,17 @@ export function MailViewer({ id }: { id: string }) {
           <FieldContent className="gap-0">
             {/* Attachments Section */}
             <div className="flex items-center gap-2 px-1 pb-2 overflow-x-auto scrollbar-hide">
-              <div className="flex items-center gap-1 bg-background hover:bg-muted/50 px-2 py-1.5 rounded-md border border-border transition-all active:scale-[0.98] cursor-pointer group shrink-0 text-foreground shadow-sm">
+              <div className="flex items-center gap-1 bg-background hover:bg-muted/50 px-2 py-1.5 rounded-md border border-border transition-colors cursor-pointer group shrink-0 text-foreground shadow-sm">
                 <IconFileText className="size-3.5 group-hover:text-foreground" />
                 <span className="text-[11px] text-foreground/80 font-medium">agreement.pdf</span>
-                <button className="text-muted-foreground hover:text-foreground hover:bg-muted-foreground/20 transition-colors bg-muted rounded p-0.5 ml-0.5 active:scale-90">
+                <button className="text-muted-foreground hover:text-foreground hover:bg-muted-foreground/20 transition-colors bg-muted rounded p-0.5 ml-0.5 outline-none focus-visible:ring-0">
                   <IconX className="size-3" />
                 </button>
               </div>
-              <div className="flex items-center gap-1 bg-background hover:bg-muted/50 px-2 py-1.5 rounded-md border border-border transition-all active:scale-[0.98] cursor-pointer group shrink-0 text-foreground shadow-sm">
+              <div className="flex items-center gap-1 bg-background hover:bg-muted/50 px-2 py-1.5 rounded-md border border-border transition-colors cursor-pointer group shrink-0 text-foreground shadow-sm">
                 <IconFolder className="size-3.5 group-hover:text-foreground" />
                 <span className="text-[11px] text-foreground/80 font-medium">Roadmap.pdf</span>
-                <button className="text-muted-foreground hover:text-foreground hover:bg-muted-foreground/20 transition-colors bg-muted rounded p-0.5 ml-0.5 active:scale-90">
+                <button className="text-muted-foreground hover:text-foreground hover:bg-muted-foreground/20 transition-colors bg-muted rounded p-0.5 ml-0.5 outline-none focus-visible:ring-0">
                   <IconX className="size-3" />
                 </button>
               </div>
@@ -187,7 +187,7 @@ export function MailViewer({ id }: { id: string }) {
                 <TooltipProvider delayDuration={300}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="p-2 rounded-full bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground hover:shadow-sm transition-all active:scale-90">
+                      <button className="p-2 rounded-full bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground hover:shadow-sm transition-colors outline-none focus-visible:ring-0">
                         <IconPlus className="size-4" />
                       </button>
                     </TooltipTrigger>
@@ -195,7 +195,7 @@ export function MailViewer({ id }: { id: string }) {
                   </Tooltip>
                 </TooltipProvider>
 
-                <Button size="sm" className="bg-orange-600 hover:bg-orange-500 text-white rounded-full px-4 h-9 gap-2 font-medium shadow-[0_0_15px_rgba(249,115,22,0.3)] transition-all hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-0.5 active:scale-95 active:translate-y-0">
+                <Button size="sm" className="bg-orange-600 hover:bg-orange-500 text-white rounded-full px-4 h-9 gap-2 font-medium shadow-[0_0_15px_rgba(249,115,22,0.3)] transition-colors hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] outline-none focus-visible:ring-0">
                   <span>Send</span>
                   <IconBrandTelegram className="size-4" />
                 </Button>

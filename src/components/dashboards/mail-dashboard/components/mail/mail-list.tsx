@@ -36,10 +36,10 @@ export function MailList({
         <div className="relative group border-b p-3 flex items-center gap-2">
           <SidebarTrigger className="md:hidden size-9" />
           <div className="relative flex-1 group">
-            <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-muted-foreground/60 group-focus-within:text-foreground transition-colors" />
+            <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-muted-foreground/60 transition-colors" />
             <SidebarInput
               placeholder="search"
-              className="pl-9 bg-muted-foreground/10 border-none focus:bg-background transition-colors dark:bg-muted-foreground/10 h-9 rounded-lg"
+              className="pl-9 bg-muted-foreground/10 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 transition-colors h-9 rounded-lg outline-none focus-visible:ring-0 shadow-none"
             />
             <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1 px-1.5  rounded bg-muted border border-border/50 text-[10px] text-muted-foreground font-medium shadow">
               <span className="text-sm">⌘</span>
@@ -56,7 +56,7 @@ export function MailList({
           <div className="flex items-center justify-between overflow-x-auto px-1">
             {pinnedUsers.map((user) => (
               <div key={user.name} className="flex flex-col items-center gap-2">
-                <Avatar className="size-9 hover:scale-105 cursor-pointer">
+                <Avatar className="size-9 transition-transform duration-200 cursor-pointer">
                   <AvatarImage src={user.avatar} className="object-cover" />
                   <AvatarFallback className="bg-muted text-[10px]">{user.name[0]}</AvatarFallback>
                 </Avatar>
@@ -116,15 +116,15 @@ export function MailList({
               <div className="grid gap-4 py-4">
                 <div className="grid gap-2">
                   <Label htmlFor="to">To</Label>
-                  <Input id="to" placeholder="recipient@example.com" />
+                  <Input id="to" placeholder="recipient@example.com" className="focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none transition-colors" />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="What is this about?" />
+                  <Input id="subject" placeholder="What is this about?" className="focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none transition-colors" />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Type your message here..." className="min-h-[150px]" />
+                  <Textarea id="message" placeholder="Type your message here..." className="min-h-[150px] focus-visible:ring-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none transition-colors" />
                 </div>
               </div>
               <DialogFooter>

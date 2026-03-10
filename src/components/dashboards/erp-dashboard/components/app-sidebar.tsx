@@ -44,21 +44,22 @@ interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
 export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProps) {
   const [open, setOpen] = React.useState(true)
   const [openTeam, setOpenTeam] = React.useState(true)
+  const [showSecurityCard, setShowSecurityCard] = React.useState(true)
 
   return (
     <Sidebar {...props}>
       <SidebarHeader className="px-0 pt-0 border-b">
         <SidebarMenu className="border-b h-18 px-2 justify-center pt-2.5">
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild className="transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer hover:bg-transparent">
+            <SidebarMenuButton size="lg" asChild className="transition-colors duration-300 cursor-pointer hover:bg-transparent">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 group">
-                  <div className="bg-blue-600 dark:bg-sidebar-primary text-white dark:text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-md transition-transform duration-300 group-hover:scale-105">
+                  <div className="bg-blue-600 dark:bg-sidebar-primary text-white dark:text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-md transition-colors duration-300">
                     <Bolt className="size-4" strokeWidth={2.5} />
                   </div>
                   <span className="font-medium text-base">OceanLabs</span>
                 </div>
-                <div className="bg-neutral-100/50 dark:bg-neutral-800/50 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 size-7 flex justify-center items-center rounded-sm transition-transform duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"><SidebarTrigger className="cursor-pointer" /></div>
+                <div className="bg-neutral-100/50 dark:bg-neutral-800/50 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 size-7 flex justify-center items-center rounded-sm transition-colors duration-300 cursor-pointer"><SidebarTrigger className="cursor-pointer" /></div>
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -72,7 +73,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
             <Collapsible open={open} onOpenChange={setOpen}>
               <CollapsibleTrigger asChild>
                 <SidebarGroupLabel className="" asChild>
-                  <div className="flex items-center justify-between gap-1.5 text-neutral-500! cursor-pointer transition-colors duration-300 hover:text-neutral-800 dark:hover:text-neutral-300 group">Main Menu {open ? <ChevronDown className="size-3.5! transition-transform duration-300 group-hover:-translate-y-0.5" /> : <ChevronUp className="size-3.5! transition-transform duration-300 group-hover:-translate-y-0.5" />}</div>
+                  <div className="flex items-center justify-between gap-1.5 text-neutral-500! cursor-pointer transition-colors duration-300 hover:text-neutral-800 dark:hover:text-neutral-300 group">Main Menu {open ? <ChevronDown className="size-3.5!" /> : <ChevronUp className="size-3.5!" />}</div>
                 </SidebarGroupLabel>
               </CollapsibleTrigger>
               <CollapsibleContent>
@@ -81,7 +82,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton
                         asChild
-                        className="h-9 rounded-sm hover:bg-neutral-200/50 dark:hover:bg-neutral-800 data-[active=true]:bg-neutral-200/50 dark:data-[active=true]:bg-neutral-800 transition-all duration-300 hover:translate-x-1 active:scale-[0.98] cursor-pointer group"
+                        className="h-9 rounded-sm hover:bg-neutral-200/50 dark:hover:bg-neutral-800 data-[active=true]:bg-neutral-200/50 dark:data-[active=true]:bg-neutral-800 transition-colors duration-300 cursor-pointer group"
                         isActive={currentView ? item.title === currentView : item.isActive}
                       >
                         <a
@@ -97,7 +98,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                             }
                           }}
                         >
-                          <item.icon className="size-4 transition-transform duration-300 group-hover:scale-110" />
+                          <item.icon className="size-4" />
                           {item.title}
                         </a>
                       </SidebarMenuButton>
@@ -113,7 +114,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
             <Collapsible open={openTeam} onOpenChange={setOpenTeam}>
               <CollapsibleTrigger asChild>
                 <SidebarGroupLabel className="" asChild>
-                  <div className="flex items-center justify-between gap-1.5 text-neutral-500! cursor-pointer transition-colors duration-300 hover:text-neutral-800 dark:hover:text-neutral-300 group">Team Management {openTeam ? <Minus className="size-3.5! transition-transform duration-300 group-hover:-translate-y-0.5" /> : <PlusIcon className="size-3.5! transition-transform duration-300 group-hover:-translate-y-0.5" />}</div>
+                  <div className="flex items-center justify-between gap-1.5 text-neutral-500! cursor-pointer transition-colors duration-300 hover:text-neutral-800 dark:hover:text-neutral-300 group">Team Management {openTeam ? <Minus className="size-3.5!" /> : <PlusIcon className="size-3.5!" />}</div>
                 </SidebarGroupLabel>
               </CollapsibleTrigger>
               <CollapsibleContent>
@@ -122,7 +123,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton
                         asChild
-                        className="h-9 rounded-sm hover:bg-neutral-200/50 dark:hover:bg-neutral-800 data-[active=true]:bg-neutral-200/50 dark:data-[active=true]:bg-neutral-800 transition-all duration-300 hover:translate-x-1 active:scale-[0.98] cursor-pointer group"
+                        className="h-9 rounded-sm hover:bg-neutral-200/50 dark:hover:bg-neutral-800 data-[active=true]:bg-neutral-200/50 dark:data-[active=true]:bg-neutral-800 transition-colors duration-300 cursor-pointer group"
                         isActive={currentView ? item.title === currentView : false}
                       >
                         <a
@@ -138,7 +139,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                             }
                           }}
                         >
-                          <item.icon className="size-4 transition-transform duration-300 group-hover:scale-110" />
+                          <item.icon className="size-4" />
                           {item.title}
                         </a>
                       </SidebarMenuButton>
@@ -152,13 +153,14 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
       </SidebarContent>
 
       <SidebarFooter className="p-4">
-        <div className="relative overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-4 group transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer">
+        {showSecurityCard && (
+        <div className="relative overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-4 group transition-colors duration-300 cursor-pointer">
           <div className="flex items-start justify-between mb-4">
-            <div className="size-9 rounded-md bg-green-500 flex items-center justify-center shadow-[0_0_10px_rgba(34,197,94,0.5)] transition-transform duration-300 group-hover:scale-110">
+            <div className="size-9 rounded-md bg-green-500 flex items-center justify-center shadow-[0_0_10px_rgba(34,197,94,0.5)] transition-colors duration-300">
               <ShieldCheck className="size-5 text-white" strokeWidth={2} />
             </div>
           </div>
-          <Button size="icon-xs" className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 rounded-full border-y border-y-neutral-500/40 bg-neutral-500/10 absolute top-2 right-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer z-10">
+          <Button onClick={(e) => { e.stopPropagation(); setShowSecurityCard(false); }} size="icon-xs" className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 rounded-full border-y border-y-neutral-500/40 bg-neutral-500/10 absolute top-2 right-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 transition-colors duration-300 cursor-pointer z-10">
             <X className="size-4!" />
           </Button>
 
@@ -168,7 +170,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
           </p>
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="w-full h-9 py-2 bg-neutral-100/50 dark:bg-neutral-800/50 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white text-xs font-medium rounded-sm border border-neutral-200 dark:border-neutral-700 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer shadow-sm hover:shadow-md">
+              <Button className="w-full h-9 py-2 bg-neutral-100/50 dark:bg-neutral-800/50 hover:bg-neutral-200/50 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white text-xs font-medium rounded-sm border border-neutral-200 dark:border-neutral-700 transition-colors duration-300 cursor-pointer shadow-sm hover:shadow-md">
                 Enable 2-step verification
               </Button>
             </DialogTrigger>
@@ -185,19 +187,19 @@ export function AppSidebar({ onNavigate, currentView, ...props }: AppSidebarProp
                 </div>
                 <div className="grid w-full items-center gap-1.5">
                   <Label htmlFor="code" className="text-neutral-700 dark:text-neutral-300">Authentication Code</Label>
-                  <Input type="text" id="code" placeholder="000 000" className="h-10 bg-neutral-100/50 dark:bg-neutral-800/50 border-neutral-200 dark:border-neutral-700 focus-visible:ring-1 focus-visible:border-neutral-300 dark:focus-visible:border-neutral-600 shadow-none text-center tracking-widest text-lg" />
+                  <Input type="text" id="code" placeholder="000 000" className="h-10 bg-neutral-100/50 dark:bg-neutral-800/50 border-neutral-200 dark:border-neutral-700 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 outline-none shadow-none text-center tracking-widest text-lg text-foreground" />
                 </div>
               </div>
               <DialogFooter>
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white border-transparent cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 active:scale-95">Verify and Enable</Button>
+                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white border-transparent cursor-pointer transition-colors duration-300">Verify and Enable</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
         </div>
+        )}
       </SidebarFooter>
 
       <SidebarRail />
     </Sidebar>
   )
 }
-

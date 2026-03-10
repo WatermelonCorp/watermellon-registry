@@ -69,7 +69,7 @@ export const DashboardView = () => {
             return (
               <Card
                 key={metric.id}
-                className="shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98] cursor-pointer group"
+                className="shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800 transition-colors duration-300 hover:shadow-lg cursor-pointer group"
               >
                 <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-neutral-300 dark:border-neutral-800">
                   <CardHeader className="p-0 gap-1.5 w-full text-left">
@@ -108,7 +108,7 @@ export const DashboardView = () => {
                     className="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center justify-between w-full text-neutral-700 dark:text-neutral-300 text-sm transition-colors duration-300"
                   >
                     <span>View Report</span>
-                    <IconArrowNarrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    <IconArrowNarrowRight className="size-4" />
                   </a>
                 </CardFooter>
               </Card>
@@ -117,7 +117,7 @@ export const DashboardView = () => {
         </div>
 
         {/* Revenue Chart */}
-        <Card className="w-full xl:w-2xl min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+        <Card className="w-full xl:w-2xl min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800 transition-colors duration-300 hover:shadow-lg">
           <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-5 gap-8 border border-neutral-300 dark:border-neutral-800">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <div>
@@ -131,7 +131,7 @@ export const DashboardView = () => {
                 </div>
               </div>
               <Select defaultValue="month" onValueChange={(val) => toast.info(`Revenue graph updated to show: ${val}`)}>
-                <SelectTrigger className="w-24 shadow-none border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-900">
+                <SelectTrigger className="w-24 shadow-none border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-colors duration-300 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-900 focus:ring-0 focus:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 focus-visible:ring-0 outline-none text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -241,7 +241,7 @@ export const DashboardView = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-4 min-w-0">
-        <Card className="flex-1 min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+        <Card className="flex-1 min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800 transition-colors duration-300 hover:shadow-lg">
           <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-neutral-300 dark:border-neutral-800">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <CardTitle className="text-xl font-semibold tracking-tight">
@@ -270,7 +270,7 @@ export const DashboardView = () => {
                 </TableHeader>
                 <TableBody>
                   {transactions.map((transaction) => (
-                    <TableRow key={transaction.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-all duration-300 hover:scale-[1.01] hover:shadow-sm cursor-pointer border-transparent hover:border-neutral-200 dark:hover:border-neutral-700">
+                    <TableRow key={transaction.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors duration-300 hover:shadow-sm cursor-pointer border-transparent hover:border-neutral-200 dark:hover:border-neutral-700">
                       <TableCell className="py-2 lg:py-4">
                         <div className="flex flex-col xl:flex-row xl:items-center gap-2 xl:gap-3">
                           <div
@@ -325,12 +325,12 @@ export const DashboardView = () => {
           </div>
         </Card>
 
-        <Card className="w-full lg:w-xl min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+        <Card className="w-full lg:w-xl min-w-0 shadow-none bg-neutral-200/60 dark:bg-neutral-900 p-1 gap-0 border border-neutral-300 dark:border-neutral-800 transition-colors duration-300 hover:shadow-lg">
           <div className="bg-white dark:bg-neutral-950 w-full h-full flex flex-col rounded-lg p-4 gap-4 border border-border">
             <CardHeader className="flex flex-row items-center justify-between p-0">
               <CardTitle>Traffic Channel</CardTitle>
               <Select defaultValue="all" onValueChange={(val) => toast.info(`Traffic channel filtered by: ${val}`)}>
-                <SelectTrigger className="w-fit shrink-0 shadow-none border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-900">
+                <SelectTrigger className="w-fit shrink-0 shadow-none border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-colors duration-300 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-900 focus:ring-0 focus:ring-offset-0 focus-visible:border-neutral-400 dark:focus-visible:border-neutral-600 focus-visible:ring-0 outline-none text-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

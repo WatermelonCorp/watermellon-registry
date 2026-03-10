@@ -26,7 +26,7 @@ export function TeamSwitcher({
         <div className="flex w-full items-center">
           <SidebarMenuButton
             size="default"
-            className="flex-1 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground hover:bg-transparent active:scale-[0.98] transition-all duration-200 group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:w-auto! group-data-[collapsible=icon]:flex-none"
+            className="flex-1 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground hover:bg-transparent active:bg-transparent group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:w-auto! group-data-[collapsible=icon]:flex-none"
           >
             <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-7 items-center justify-center rounded transition-transform duration-200 group-hover:scale-110">
               <activeTeam.logo className="size-3.5" />

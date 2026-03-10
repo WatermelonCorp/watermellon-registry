@@ -25,14 +25,14 @@ export const KanbanColumn = ({
             <div className="flex items-center gap-1.5 bg-neutral-200/50 dark:bg-neutral-800/50 px-2 py-1.5 rounded-lg group cursor-pointer">
                 <Icon className="size-4 text-neutral-600 dark:text-neutral-400" />
                 <h3 className="font text-neutral-800 dark:text-neutral-200 text-sm tracking-tight">{title}</h3>
-                <Badge variant="secondary" className="bg-white dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 group-hover:shadow dark:group-hover:bg-neutral-700/50 rounded size-4.5 border-none text-[12px] transition-all duration-300 group-hover:-translate-y-0.5 active:scale-95 cursor-pointer">
+                <Badge variant="secondary" className="bg-white dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 group-hover:shadow dark:group-hover:bg-neutral-700/50 rounded size-4.5 border-none text-[12px] transition-colors duration-300 cursor-pointer">
                     {count}
                 </Badge>
             </div>
             <div className="flex items-center gap-1 text-neutral-400 dark:text-neutral-500">
                 <Dialog>
                     <DialogTrigger asChild>
-                        <Button variant="ghost" size="icon-sm" className=" hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer">
+                        <Button variant="ghost" size="icon-sm" className=" hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 rounded-lg transition-colors duration-300 cursor-pointer">
                             <IconPlus className="size-4" />
                         </Button>
                     </DialogTrigger>
@@ -61,7 +61,7 @@ export const KanbanColumn = ({
                 </Dialog>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon-sm" className="hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 rounded-lg transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer">
+                        <Button variant="ghost" size="icon-sm" className="hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 rounded-lg transition-colors duration-300 cursor-pointer">
                             <IconDots className="size-4" />
                         </Button>
                     </DropdownMenuTrigger>
