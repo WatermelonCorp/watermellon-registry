@@ -1,270 +1,419 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Mic, X, Play, Square } from 'lucide-react';
-import { RiSendPlaneFill } from 'react-icons/ri';
-import { FaCheck } from 'react-icons/fa6';
+import React, { useState, useEffect, useRef } from "react";
+import {
+  motion,
+  AnimatePresence,
+  type Transition,
+  MotionConfig,
+} from "motion/react";
+import { Mic, X, Play, Square } from "lucide-react";
+import { RiSendPlaneFill } from "react-icons/ri";
+import { FaCheck } from "react-icons/fa6";
 
 export const RecorderState = {
-  IDLE: 'IDLE',
-  RECORDING: 'RECORDING',
-  REVIEWING: 'REVIEWING',
-  PLAYING: 'PLAYING',
+  IDLE: "IDLE",
+  RECORDING: "RECORDING",
+  REVIEWING: "REVIEWING",
+  PLAYING: "PLAYING",
 } as const;
 
-export type RecorderState =
-  (typeof RecorderState)[keyof typeof RecorderState];
-
+export type RecorderState = (typeof RecorderState)[keyof typeof RecorderState];
 
 interface VoiceNoteRecorderProps {
-    onSend?: (data: { duration: number; blob: Blob | null }) => void;
-    onCancel?: () => void;
-    maxDuration?: number;
+  onSend?: (data: { duration: number; blob: Blob | null }) => void;
+  onCancel?: () => void;
+  maxDuration?: number;
 }
 
 export const VoiceNote: React.FC<VoiceNoteRecorderProps> = ({
-    onSend,
-    onCancel,
-    maxDuration = 4,
+  onSend,
+  onCancel,
+  maxDuration = 4,
 }) => {
-    const [state, setState] = useState<RecorderState>(RecorderState.IDLE);
-    const [duration, setDuration] = useState(0);
-    const [playbackTime, setPlaybackTime] = useState(0);
+  const [state, setState] = useState<RecorderState>(RecorderState.IDLE);
+  const [duration, setDuration] = useState(0);
+  const [playbackTime, setPlaybackTime] = useState(0);
 
-    const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-    const playbackTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const playbackTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-    const spring = { type: 'spring', stiffness: 400, damping: 30 } as const;
+  const spring: Transition = { type: "spring", stiffness: 400, damping: 40 };
 
-    const startRecording = () => {
-        setState(RecorderState.RECORDING);
-        setDuration(0);
-        timerRef.current = setInterval(() => {
-            setDuration(prev => {
-                if (prev >= maxDuration) {
-                    stopRecording();
-                    return prev;
-                }
-                return prev + 1;
-            });
-        }, 1000);
+  const startRecording = () => {
+    setState(RecorderState.RECORDING);
+    setDuration(0);
+    timerRef.current = setInterval(() => {
+      setDuration((prev) => {
+        if (prev >= maxDuration) {
+          stopRecording();
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 1000);
+  };
+
+  const stopRecording = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    setState(RecorderState.REVIEWING);
+  };
+
+  const cancelRecording = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    if (playbackTimerRef.current) clearInterval(playbackTimerRef.current);
+    setDuration(0);
+    setPlaybackTime(0);
+    setState(RecorderState.IDLE);
+    onCancel?.();
+  };
+
+  const startPlayback = () => {
+    setState(RecorderState.PLAYING);
+    setPlaybackTime(duration);
+    playbackTimerRef.current = setInterval(() => {
+      setPlaybackTime((prev) => {
+        if (prev <= 0) {
+          stopPlayback();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  const stopPlayback = () => {
+    if (playbackTimerRef.current) clearInterval(playbackTimerRef.current);
+    setPlaybackTime(0);
+    setState(RecorderState.REVIEWING);
+  };
+
+  const handleSend = () => {
+    onSend?.({ duration, blob: null });
+  };
+
+  const [barHeights, setBarHeights] = useState<number[][]>([]);
+
+  useEffect(() => {
+    const heights = [...Array(6)].map(() => [
+      8 + Math.random() * 6,
+      18 + Math.random() * 10,
+      12 + Math.random() * 8,
+      24 + Math.random() * 12,
+      10 + Math.random() * 6,
+    ]);
+    requestAnimationFrame(() => setBarHeights(heights));
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+      if (playbackTimerRef.current) clearInterval(playbackTimerRef.current);
     };
+  }, []);
 
-    const stopRecording = () => {
-        if (timerRef.current) clearInterval(timerRef.current);
-        setState(RecorderState.REVIEWING);
-    };
+  const actionBtnClass = `w-16 h-16 rounded-full border-[1.6px]  flex items-center justify-center shrink-0 transition-colors duration-300 bg-[#fefefe] dark:bg-neutral-900 border-[#E8E7EF] dark:border-white/5`;
 
-    const cancelRecording = () => {
-        if (timerRef.current) clearInterval(timerRef.current);
-        if (playbackTimerRef.current) clearInterval(playbackTimerRef.current);
-        setDuration(0);
-        setPlaybackTime(0);
-        setState(RecorderState.IDLE);
-        onCancel?.();
-    };
+  return (
+    <div className="flex min-h-full w-full flex-col items-center justify-center space-y-12 bg-transparent p-8 transition-colors duration-500">
+      <div className="flex items-center gap-3">
+        <MotionConfig transition={spring}>
+          <AnimatePresence mode="popLayout">
+            {state !== RecorderState.IDLE && (
+              <motion.button
+                key="cancel-btn"
+                initial={{ opacity: 0, filter: "blur(4px)", x: "95px" }}
+                animate={{ opacity: 1, filter: "blur(0)", x: "0px" }}
+                exit={{ opacity: 1, filter: "blur(4px)", x: "95px" }}
+                onClick={cancelRecording}
+                className={actionBtnClass}
+              >
+                <X size={28} className="text-slate-700 dark:text-neutral-100" />
+              </motion.button>
+            )}
+          </AnimatePresence>
 
-    const startPlayback = () => {
-        setState(RecorderState.PLAYING);
-        setPlaybackTime(duration);
-        playbackTimerRef.current = setInterval(() => {
-            setPlaybackTime(prev => {
-                if (prev <= 0) {
-                    stopPlayback();
-                    return 0;
-                }
-                return prev - 1;
-            });
-        }, 1000);
-    };
-
-    const stopPlayback = () => {
-        if (playbackTimerRef.current) clearInterval(playbackTimerRef.current);
-        setPlaybackTime(0);
-        setState(RecorderState.REVIEWING);
-    };
-
-    const handleSend = () => {
-        onSend?.({ duration, blob: null });
-        cancelRecording();
-    };
-
-    const formatTime = (s: number) => `${s.toString().padStart(2, '0')}s`;
-
-    useEffect(() => {
-        return () => {
-            if (timerRef.current) clearInterval(timerRef.current);
-            if (playbackTimerRef.current) clearInterval(playbackTimerRef.current);
-        };
-    }, []);
-
-    const actionBtnClass = `w-16 h-16 rounded-full border-[1.6px] shadow-sm flex items-center justify-center shrink-0 transition-colors duration-300 bg-[#fefefe] dark:bg-[#1a1a1e] border-[#E8E7EF] dark:border-[#2d2d33]`;
-
-    return (
-    <div className="min-h-full w-full flex flex-col items-center justify-center p-8 space-y-12 transition-colors duration-500 bg-transparent">
-        
-        <div className="flex items-center gap-3">
-            <AnimatePresence mode='popLayout'>
-                {state !== RecorderState.IDLE && (
-                    <motion.button
-                        key="cancel-btn"
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.8, opacity: 0 }}
-                        transition={spring}
-                        onClick={cancelRecording}
-                        className={actionBtnClass}
-                    >
-                        <X size={28} className="text-slate-700 dark:text-[#fefefe]" />
-                    </motion.button>
-                )}
+          <motion.div
+            animate={{
+              width: state === RecorderState.IDLE ? "65px" : "110px",
+            }}
+            className={`relative z-20 flex items-center justify-center overflow-hidden transition-colors duration-300 ${
+              state === RecorderState.IDLE ? "h-16 w-16" : "h-16 px-6"
+            } rounded-full border-[1.6px] ${
+              state === RecorderState.RECORDING
+                ? "border-none bg-[#FEE5E4] dark:bg-[#441010]"
+                : "border-[#E8E7EF] bg-[#fefefe] dark:border-[#2d2d33] dark:bg-[#1a1a1e]"
+            } `}
+            style={{
+              borderRadius: 32,
+            }}
+          >
+            <AnimatePresence mode="popLayout">
+              {state === RecorderState.RECORDING && (
+                <motion.svg
+                  className="pointer-events-none absolute inset-0 h-full w-full"
+                  initial={{ opacity: 0, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, filter: "blur(0)" }}
+                  exit={{ opacity: 0, filter: "blur(8px)" }}
+                >
+                  <motion.rect
+                    x="2"
+                    y="2"
+                    rx="30"
+                    width="calc(100% - 4px)"
+                    height="calc(100% - 4px)"
+                    fill="none"
+                    stroke="#ef4444"
+                    strokeWidth="3"
+                    pathLength={1}
+                    strokeDasharray="1"
+                    strokeDashoffset="1"
+                    strokeLinecap="round"
+                    initial={{ strokeDashoffset: 1 }}
+                    animate={{ strokeDashoffset: 0 }}
+                    transition={{
+                      duration: maxDuration,
+                      ease: "linear",
+                    }}
+                  />
+                </motion.svg>
+              )}
             </AnimatePresence>
 
-            {/* CENTER WIDGET */}
-            <motion.div
-                layout
-                transition={spring}
-                className={`
-                    relative flex items-center justify-center overflow-hidden shadow-sm transition-colors duration-300
-                    ${state === RecorderState.IDLE ? 'w-16 h-16' : 'h-16 px-6'} 
-                    rounded-full border-[1.6px]
-                    ${state === RecorderState.RECORDING 
-                        ? 'bg-[#FEE5E4] dark:bg-[#441010] border-none' 
-                        : 'bg-[#fefefe] dark:bg-[#1a1a1e] border-[#E8E7EF] dark:border-[#2d2d33]'
+            <AnimatePresence mode="popLayout" initial={false}>
+              {state === RecorderState.IDLE && (
+                <motion.button
+                  key="mic-icon"
+                  initial={{ opacity: 0, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, filter: "blur(0)" }}
+                  exit={{ opacity: 0, filter: "blur(8px)" }}
+                  onClick={startRecording}
+                  className="flex items-center justify-center"
+                >
+                  <Mic
+                    size={28}
+                    className="text-slate-800 dark:text-neutral-100"
+                  />
+                </motion.button>
+              )}
+
+              {state === RecorderState.RECORDING && (
+                <motion.div
+                  key="recording-ui"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="z-10 flex items-center gap-1.5"
+                >
+                  {barHeights.map((heights, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{ height: heights }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "linear",
+                        delay: i * 0.08,
+                      }}
+                      style={{ originY: 1 }}
+                      className="w-1.5 rounded-full bg-[#FC3229]"
+                    />
+                  ))}
+                </motion.div>
+              )}
+
+              {(state === RecorderState.REVIEWING ||
+                state === RecorderState.PLAYING) && (
+                <motion.div
+                  key="review-ui"
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  className="z-10 flex items-center gap-2"
+                >
+                  <motion.button
+                    key={
+                      state === RecorderState.PLAYING ? "stop-btn" : "play-btn"
                     }
-                `}
-            >
-                {/* Progress Border for Recording */}
-                <AnimatePresence>
-                    {state === RecorderState.RECORDING && (
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                            <motion.rect
-                                x="2"
-                                y="2"
-                                rx="30"
-                                width="calc(100% - 4px)"
-                                height="calc(100% - 4px)"
-                                fill="none"
-                                stroke="#ef4444"
-                                strokeWidth="3"
-                                pathLength={1}
-                                strokeDasharray="1"
-                                strokeDashoffset="1"
-                                strokeLinecap="round"
-                                initial={{ strokeDashoffset: 1 }}
-                                animate={{ strokeDashoffset: 0 }}
-                                transition={{
-                                    duration: maxDuration,
-                                    ease: "linear",
-                                }}
-                            />
-                        </svg>
+                    onClick={
+                      state === RecorderState.PLAYING
+                        ? stopPlayback
+                        : startPlayback
+                    }
+                    className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+                      state === RecorderState.PLAYING
+                        ? "bg-transparent text-red-500 dark:text-red-400"
+                        : "text-slate-800 dark:text-neutral-100"
+                    } `}
+                    initial={{ opacity: 0, filter: "blur(4px)", scale: 0.25 }}
+                    animate={{ opacity: 1, filter: "blur(0)", scale: 1 }}
+                    exit={{ opacity: 0, filter: "blur(4px)", scale: 0.25 }}
+                  >
+                    {state === RecorderState.PLAYING ? (
+                      <Square size={22} fill="currentColor" />
+                    ) : (
+                      <Play size={22} fill="currentColor" />
                     )}
-                </AnimatePresence>
-
-                <AnimatePresence mode="popLayout">
-                    {/* IDLE MIC */}
-                    {state === RecorderState.IDLE && (
-                        <motion.button
-                            key="mic-icon"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            transition={{ duration: 0.2 }}
-                            onClick={startRecording}
-                            className="flex items-center justify-center"
-                        >
-                            <Mic size={28} className="text-slate-800 dark:text-[#fefefe]" />
-                        </motion.button>
-                    )}
-
-                    {/* RECORDING BARS */}
-                    {state === RecorderState.RECORDING && (
-                        <motion.div
-                            key="recording-ui"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="flex items-center gap-1.5 z-10"
-                        >
-                            {[1, 2, 3, 4, 5, 6].map(i => (
-                                <motion.div
-                                    key={i}
-                                    animate={{ height: [10, 22, 14, 28, 16][i % 5] }}
-                                    transition={{
-                                        duration: 0.4,
-                                        repeat: Infinity,
-                                        repeatType: 'reverse',
-                                        delay: i * 0.04,
-                                    }}
-                                    className="w-1.5 rounded-full bg-[#FC3229]"
-                                />
-                            ))}
-                        </motion.div>
-                    )}
-
-                    {/* REVIEW / PLAYBACK */}
-                    {(state === RecorderState.REVIEWING || state === RecorderState.PLAYING) && (
-                        <motion.div
-                            key="review-ui"
-                            initial={{ opacity: 0, y: 5 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -5 }}
-                            className="flex items-center gap-2 z-10"
-                        >
-                            <button
-                                onClick={state === RecorderState.PLAYING ? stopPlayback : startPlayback}
-                                className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors
-                                    ${state === RecorderState.PLAYING 
-                                        ? 'bg-red-100 text-red-500 dark:bg-red-900/40 dark:text-red-400' 
-                                        : 'text-slate-800 dark:text-[#fefefe]'
-                                    }
-                                `}
-                            >
-                                {state === RecorderState.PLAYING ? (
-                                    <Square size={22} fill="currentColor" />
-                                ) : (
-                                    <Play size={22} fill="currentColor" />
-                                )}
-                            </button>
-                            <span className="text-[20px] font-bold tabular-nums transition-colors text-[#282828] dark:text-[#fefefe]">
-                                {formatTime(state === RecorderState.PLAYING ? playbackTime : duration)}
-                            </span>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </motion.div>
-
-            {/* ACTION BUTTONS */}
-            <AnimatePresence mode='popLayout'>
-                {state === RecorderState.RECORDING && (
-                    <motion.button
-                        key="check-btn"
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.8, opacity: 0 }}
-                        transition={spring}
-                        onClick={stopRecording}
-                        className={actionBtnClass}
-                    >
-                        <FaCheck size={26} className="text-slate-700 dark:text-[#fefefe]" />
-                    </motion.button>
-                )}
-
-                {(state === RecorderState.REVIEWING || state === RecorderState.PLAYING) && (
-                    <motion.button
-                        key="send-btn"
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.8, opacity: 0 }}
-                        transition={spring}
-                        onClick={handleSend}
-                        className={actionBtnClass}
-                    >
-                        <RiSendPlaneFill size={26} className="text-[#272727] dark:text-[#fefefe]" />
-                    </motion.button>
-                )}
+                  </motion.button>
+                  <span className="flex items-center gap-0.5 justify-center text-[20px] font-bold text-[#282828] tabular-nums transition-colors dark:text-neutral-100">
+                    <AnimatedNumber
+                      value={
+                        state === RecorderState.PLAYING
+                          ? playbackTime
+                          : duration
+                      }
+                    />
+                    <motion.span layout>s</motion.span>
+                  </span>
+                </motion.div>
+              )}
             </AnimatePresence>
-        </div>
+          </motion.div>
+
+          <AnimatePresence mode="popLayout">
+            {(state === RecorderState.RECORDING ||
+              state === RecorderState.REVIEWING ||
+              state === RecorderState.PLAYING) && (
+              <motion.button
+                initial={{ opacity: 0, filter: "blur(4px)", x: -95 }}
+                animate={{ opacity: 1, filter: "blur(0)", x: 0 }}
+                exit={{ opacity: 0, filter: "blur(4px)", x: -95 }}
+                className={actionBtnClass}
+              >
+                <AnimatePresence mode="popLayout">
+                  <motion.div
+                    key={
+                      state === RecorderState.RECORDING
+                        ? "check-btn"
+                        : state === RecorderState.REVIEWING ||
+                          state === RecorderState.PLAYING
+                        ? "send-btn"
+                        : "cancel-btn"
+                    }
+                    initial={{ opacity: 0, filter: "blur(4px)", scale: 0.25 }}
+                    animate={{ opacity: 1, filter: "blur(0)", scale: 1 }}
+                    exit={{ opacity: 0, filter: "blur(4px)", scale: 0.25 }}
+                    onClick={
+                      state === RecorderState.RECORDING
+                        ? stopRecording
+                        : state === RecorderState.PLAYING
+                        ? startRecording
+                        : handleSend
+                    }
+                  >
+                    {state === RecorderState.RECORDING && (
+                      <FaCheck
+                        size={26}
+                        className="text-slate-700 dark:text-neutral-100"
+                      />
+                    )}
+
+                    {(state === RecorderState.REVIEWING ||
+                      state === RecorderState.PLAYING) && (
+                      <RiSendPlaneFill
+                        size={26}
+                        className="text-[#272727] dark:text-neutral-100"
+                      />
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </motion.button>
+            )}
+          </AnimatePresence>
+        </MotionConfig>
+      </div>
     </div>
-    );
+  );
 };
+
+interface AnimatedNumberProps {
+  value: number;
+  className?: string;
+}
+
+const digitVariants = {
+  initial: (dir: number) => ({
+    y: dir > 0 ? 8 : -8,
+    opacity: 0,
+    scale: 0.5,
+    z: 0,
+    filter: "blur(2px)",
+  }),
+  animate: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    z: 10,
+    filter: "blur(0px)",
+  },
+  exit: (dir: number) => ({
+    y: dir > 0 ? -8 : 8,
+    opacity: 0,
+    scale: 0.5,
+    z: 0,
+    filter: "blur(2px)",
+  }),
+};
+
+export function AnimatedNumber({ value, className }: AnimatedNumberProps) {
+  const [direction, setDirection] = React.useState(0);
+  const prevValueRef = React.useRef(value);
+
+  React.useEffect(() => {
+    const prev = prevValueRef.current;
+    if (value > prev) setDirection(1);
+    else if (value < prev) setDirection(-1);
+    prevValueRef.current = value;
+  }, [value]);
+
+  const digits = value.toString().split("");
+
+  const [prevDigits, setPrevDigits] = React.useState<string[]>([]);
+  const [prevTicks, setPrevTicks] = React.useState<number[]>([]);
+
+  const len = digits.length;
+  const lenDiff = len - prevDigits.length;
+
+  const nextTicks = digits.map((digit, i) => {
+    const prevI = i - lenDiff;
+    const prevDigit = prevI >= 0 ? prevDigits[prevI] : undefined;
+    const prevTick = prevI >= 0 ? prevTicks[prevI] : 0;
+    return digit !== prevDigit ? (prevTick ?? 0) + 1 : prevTick ?? 0;
+  });
+
+  React.useEffect(() => {
+    setPrevTicks(nextTicks);
+    setPrevDigits(digits);
+  }, [digits, nextTicks]);
+
+  return (
+    <div
+      className={`relative flex items-center justify-center gap-1 tabular-nums ${
+        className ?? ""
+      }`}
+    >
+      {digits.map((digit, index) => (
+        <div key={`${index}-${len}`} className="relative w-3">
+          <AnimatePresence mode="popLayout" initial={false} custom={direction}>
+            <motion.span
+              layout
+              key={nextTicks[index]}
+              custom={direction}
+              variants={digitVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 16,
+                mass: 1.2,
+              }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              {digit}
+            </motion.span>
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+}

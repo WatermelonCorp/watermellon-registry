@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { LuCircleDotDashed } from 'react-icons/lu';
-import { FaArrowRotateRight } from 'react-icons/fa6';
-import { TbAlertOctagonFilled } from 'react-icons/tb';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, MotionConfig } from "motion/react";
+import { LuCircleDotDashed } from "react-icons/lu";
+import { FaArrowRotateRight } from "react-icons/fa6";
+import { TbAlertOctagonFilled } from "react-icons/tb";
+import { cn } from "@/lib/utils";
 
 interface InlineFeedbackProps {
   errorMessage?: string;
@@ -11,162 +12,163 @@ interface InlineFeedbackProps {
 }
 
 export const FeedbackAction: React.FC<InlineFeedbackProps> = ({
-  errorMessage = 'Sync Failed',
-  loadingMessage = 'Syncing',
+  errorMessage = "Sync Failed",
+  loadingMessage = "Syncing",
   onRetry,
 }) => {
-  const [status, setStatus] = useState<'error' | 'loading'>('error');
+  const [status, setStatus] = useState<"error" | "loading">("error");
 
   const handleRetry = () => {
-    setStatus('loading');
+    setStatus("loading");
     onRetry?.();
   };
 
   useEffect(() => {
-    if (status === 'loading') {
+    if (status === "loading") {
       const timer = setTimeout(() => {
-        setStatus('error');
+        setStatus("error");
       }, 3500);
       return () => clearTimeout(timer);
     }
   }, [status]);
 
   return (
-    <div className="min-h-full flex items-center justify-center p-4 transition-colors bg-transparent dark:bg-neutral-950">
-      <div className="flex items-center gap-3 h-14">
-        {/* STATUS PILL */}
-        <motion.div
-          layout
-          initial={false}
-          transition={{
-            layout: {
-              type: 'spring',
-              stiffness: 260,
-              damping: 26,
-              mass: 0.9,
-            },
-          }}
-          className={`relative flex items-center h-15.5 px-6 min-w-40 justify-center rounded-full border overflow-hidden shadow-sm transition-colors ${status === 'error'
-            ? 'bg-neutral-100 border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800'
-            : 'bg-neutral-100 border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800'
-            }`}
+    <div className="flex min-h-full items-center justify-center bg-transparent p-4 dark:bg-neutral-950">
+      <div className="flex h-14 items-center gap-3">
+        <MotionConfig
+          transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
         >
-          <AnimatePresence mode="popLayout">
-            {status === 'error' ? (
-              <motion.div
-                key="error"
-                initial={{ opacity: 0, y: 8, filter: 'blur(8px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, y: -8, filter: 'blur(8px)' }}
-                transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-                className="flex items-center gap-2"
-              >
-                <TbAlertOctagonFilled
-                  size={26}
-                  className="text-red-500 dark:text-red-400"
-                />
-                <span className="font-bold text-xl tracking-tight text-red-500 dark:text-red-400">
-                  {errorMessage}
-                </span>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="loading"
-                initial={{ opacity: 0, y: 8, filter: 'blur(8px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, y: -8, filter: 'blur(8px)' }}
-                transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-                className="relative flex items-center gap-2"
-              >
-                {/* SPINNER */}
+          <motion.div
+            animate={{ width: "auto" }}
+            layout
+            initial={false}
+            className={cn(
+              "relative z-20 flex items-center justify-center overflow-hidden border px-6 py-4",
+              status === "error"
+                ? "border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900"
+                : "border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900"
+            )}
+            style={{
+              borderRadius: 32,
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, filter: "blur(8px)" }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+              className="flex items-center gap-2"
+            >
+              <AnimatePresence mode="popLayout">
                 <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 1.2, ease: 'linear' }}
-                  className="relative flex items-center justify-center"
+                  layout
+                  key={status}
+                  initial={{ opacity: 0, scale: 0.25, filter: "blur(2px)" }}
+                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, scale: 0.25, filter: "blur(2px)" }}
+                  transition={{ type: "spring", bounce: 0, duration: 0.3 }}
                 >
-                  {/* glow */}
-                  <motion.div
-                    className="absolute inset-0 rounded-full"
-                    animate={{ opacity: [0.25, 0.6, 0.25] }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 1.4,
-                      ease: 'easeInOut',
-                    }}
-                    style={{
-                      boxShadow:
-                        '0 0 12px rgba(255,255,255,0.12)',
-                    }}
-                  />
-
-                  {/* sweep */}
-                  <motion.div
-                    className="absolute inset-0 rounded-full"
-                    animate={{ rotate: 360 }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 2,
-                      ease: 'linear',
-                    }}
-                    style={{
-                      background:
-                        'conic-gradient(from 0deg, transparent 60%, rgba(255,255,255,0.6), transparent)',
-                      maskImage:
-                        'radial-gradient(circle, transparent 55%, black 56%)',
-                      WebkitMaskImage:
-                        'radial-gradient(circle, transparent 55%, black 56%)',
-                    }}
-                  />
-
-                  <LuCircleDotDashed
-                    size={26}
-                    strokeWidth={2.8}
-                    className="text-neutral-500 dark:text-neutral-400"
-                  />
+                  {status === "error" ? (
+                    <TbAlertOctagonFilled
+                      size={26}
+                      className={cn("text-red-500 dark:text-red-500")}
+                    />
+                  ) : (
+                    <LuCircleDotDashed
+                      size={26}
+                      strokeWidth={2.8}
+                      className={cn(
+                        "animate-spin text-neutral-700 dark:text-neutral-200"
+                      )}
+                    />
+                  )}
                 </motion.div>
+              </AnimatePresence>
 
-                <span className="font-bold text-xl text-neutral-900 dark:text-neutral-200">
-                  {loadingMessage}
-                </span>
+              <AnimatedText
+                text={status === "error" ? errorMessage : loadingMessage}
+                className={cn(
+                  "text-xl font-semibold",
+                  status === "error"
+                    ? "text-red-500"
+                    : "text-neutral-700 dark:text-neutral-200"
+                )}
+              />
+            </motion.div>
+          </motion.div>
 
-                {/* TEXT SHINE */}
-                <motion.span
-                  className="absolute inset-0 pointer-events-none dark:opacity-60"
-                  initial={{ x: '-150%' }}
-                  animate={{ x: '150%' }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 1.8,
-                    ease: 'linear',
-                  }}
-                  style={{
-                    background:
-                      'linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35), transparent 80%)',
-                  }}
-                />
-              </motion.div>
+          <AnimatePresence mode="popLayout">
+            {status === "error" && (
+              <motion.button
+                initial={{
+                  opacity: 0,
+                  x: -55,
+                  filter: "blur(4px)",
+                  scale: 0.8,
+                }}
+                animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
+                exit={{ opacity: 1, x: -55, filter: "blur(4px)", scale: 0.8 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                whileHover={{ scale: 1.06 }}
+                whileTap={{ scale: 0.94 }}
+                onClick={handleRetry}
+                className={cn(
+                  "z-10 flex h-14 w-14 items-center justify-center rounded-full bg-neutral-900 text-white dark:bg-neutral-100 dark:text-black"
+                )}
+              >
+                <FaArrowRotateRight size={22} />
+              </motion.button>
             )}
           </AnimatePresence>
-        </motion.div>
-
-        {/* RETRY BUTTON */}
-        <AnimatePresence>
-          {status === 'error' && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.85, x: -16 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.85, x: -16 }}
-              transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-              whileHover={{ scale: 1.06 }}
-              whileTap={{ scale: 0.94 }}
-              onClick={handleRetry}
-              className="w-14 h-14 rounded-full shadow-lg flex items-center justify-center bg-black text-white dark:bg-neutral-100 dark:text-black"
-            >
-              <FaArrowRotateRight size={22} />
-            </motion.button>
-          )}
-        </AnimatePresence>
+        </MotionConfig>
       </div>
     </div>
   );
 };
+
+function AnimatedText({
+  text,
+  className,
+  delayStep = 0.014,
+}: {
+  text: string;
+  className?: string;
+  delayStep?: number;
+}) {
+  const chars = text.split("");
+
+  return (
+    <span style={{ display: "inline-flex" }}>
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.span
+          layout
+          key={text}
+          style={{ display: "inline-flex", willChange: "transform" }}
+        >
+          {chars.map((char, i) => (
+            <motion.span
+              key={i}
+              initial={{ y: 10, opacity: 0, scale: 0.5, filter: "blur(2px)" }}
+              animate={{ y: 0, opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ y: -10, opacity: 0, scale: 0.5, filter: "blur(2px)" }}
+              transition={{
+                type: "spring",
+                stiffness: 240,
+                damping: 16,
+                mass: 1.2,
+                delay: i * delayStep,
+              }}
+              style={{
+                display: "inline-block",
+                whiteSpace: char === " " ? "pre" : undefined,
+              }}
+              className={className}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}

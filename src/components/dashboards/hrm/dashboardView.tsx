@@ -391,6 +391,7 @@ export const DashboardView = () => {
                     List View
                   </TabsTrigger>
                   <TabsTrigger
+                    disabled
                     value="board"
                     disabled
                     className="gap-2 data-[state=active]:bg-white dark:data-[state=active]:bg-neutral-900 h-7 max-md:h-8 transition-colors duration-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 dark:hover:text-foreground cursor-pointer"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, type ChangeEvent } from "react";
 import { motion, AnimatePresence, type Transition } from "motion/react";
 import { ArrowRight, ChevronUp, ChevronDown } from "lucide-react";
 
@@ -31,7 +31,15 @@ export const QuickSwitcher: React.FC<QuickSwitcherProps> = ({
   onActionClick,
 }) => {
   const [mode, setMode] = useState<QuickSwitcherMode>(defaultMode);
+  const [value, setValue] = useState<string>("");
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
+  const onSubmit = () => {
+    onActionClick?.(mode);
+  };
   const toggleMode = () => {
     setMode((prev) => (prev === "ask" ? "generate" : "ask"));
   };
@@ -75,17 +83,28 @@ export const QuickSwitcher: React.FC<QuickSwitcherProps> = ({
       </button>
 
       <div className="relative flex h-full flex-grow items-center overflow-hidden px-4">
-        <AnimatedText
-          text={mode === "ask" ? askLabel : generateLabel}
-          className="truncate text-[18px] font-semibold whitespace-nowrap text-neutral-400 sm:text-[20px] dark:text-neutral-500"
+        <AnimatePresence mode="popLayout" initial={false}>
+          {value.length <= 0 && (
+            <AnimatedText
+              text={mode === "ask" ? askLabel : generateLabel}
+              className="pointer-events-none absolute top-1/2 left-4 z-10 -translate-y-1/2 truncate text-[18px] font-semibold whitespace-nowrap text-neutral-400 sm:text-[20px] dark:text-neutral-500"
+            />
+          )}
+        </AnimatePresence>
+
+        <input
+          type="text"
+          value={value}
+          onChange={handleChange}
+          className="w-full flex-1 border-none bg-transparent text-[18px] font-semibold text-neutral-900 placeholder-transparent ring-0 outline-none focus:ring-0 focus:outline-none sm:text-[20px] dark:text-neutral-100"
         />
       </div>
 
       <motion.button
         whileHover={{ x: 2 }}
         whileTap={{ scale: 0.9 }}
-        onClick={() => onActionClick?.(mode)}
         className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-gray-100 bg-white text-neutral-900 shadow-sm transition-colors hover:bg-neutral-100 active:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700 dark:active:bg-neutral-800"
+        onClick={onSubmit}
       >
         <ArrowRight size={22} strokeWidth={2.5} />
       </motion.button>

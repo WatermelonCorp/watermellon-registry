@@ -28,7 +28,7 @@ export function TeamSwitcher({
             size="default"
             className="flex-1 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground hover:bg-transparent active:bg-transparent group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:w-auto! group-data-[collapsible=icon]:flex-none"
           >
-            <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-7 items-center justify-center rounded">
+            <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-7 items-center justify-center rounded transition-transform duration-200 group-hover:scale-110">
               <activeTeam.logo className="size-3.5" />
             </div>
             <div className="grid flex-1 text-left text-sm leading-tight group-data-[collapsible=icon]:hidden">

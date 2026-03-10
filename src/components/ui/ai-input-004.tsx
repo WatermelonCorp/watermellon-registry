@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Plus, Mic, ArrowUp } from "lucide-react";
 
 type AppState = "IDLE" | "GENERATING" | "RESULT";
@@ -37,12 +37,10 @@ export const AiInput004: React.FC<AiInputProps> = ({
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#fdf2f8]">
-      {/* --- IMPROVED MOVING BACKGROUND --- */}
+    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-[#fdf2f8]">
       <div className="absolute inset-0 z-0">
-        {/* Blue Blob */}
         <motion.div
-          className="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] rounded-full blur-[120px] bg-blue-200/50"
+          className="absolute top-[-10%] left-[-10%] h-[70%] w-[70%] rounded-full bg-blue-200/50 blur-[120px]"
           animate={{
             x: [0, 50, 0],
             y: [0, 30, 0],
@@ -50,9 +48,9 @@ export const AiInput004: React.FC<AiInputProps> = ({
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
-        {/* Purple Blob */}
+
         <motion.div
-          className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full blur-[120px] bg-purple-200/50"
+          className="absolute right-[-10%] bottom-[-10%] h-[60%] w-[60%] rounded-full bg-purple-200/50 blur-[120px]"
           animate={{
             x: [0, -40, 0],
             y: [0, -60, 0],
@@ -60,9 +58,9 @@ export const AiInput004: React.FC<AiInputProps> = ({
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
-        {/* Pink Blob */}
+
         <motion.div
-          className="absolute top-[20%] right-[10%] w-[40%] h-[40%] rounded-full blur-[100px] bg-pink-100/40"
+          className="absolute top-[20%] right-[10%] h-[40%] w-[40%] rounded-full bg-pink-100/40 blur-[100px]"
           animate={{
             x: [0, -20, 0],
             y: [0, 40, 0],
@@ -83,7 +81,7 @@ export const AiInput004: React.FC<AiInputProps> = ({
               y: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.3 },
             }}
-            className="absolute z-20 text-lg md:text-[22px] tracking-tight text-gray-400/80 font-normal text-center px-4"
+            className="absolute z-20 px-4 text-center text-lg font-normal tracking-tight text-neutral-400/80 md:text-[22px]"
           >
             <motion.span
               style={{
@@ -101,7 +99,7 @@ export const AiInput004: React.FC<AiInputProps> = ({
               }}
             >
               Generating Your{" "}
-              <span className="font-semibold text-gray-500/50">
+              <span className="font-semibold text-neutral-500/50">
                 $Billion Dollar
               </span>{" "}
               saas...
@@ -110,7 +108,6 @@ export const AiInput004: React.FC<AiInputProps> = ({
         )}
       </AnimatePresence>
 
-      {/* --- INPUT BOX --- */}
       <AnimatePresence>
         {(appState === "IDLE" || appState === "RESULT") && (
           <motion.div
@@ -123,10 +120,10 @@ export const AiInput004: React.FC<AiInputProps> = ({
               padding: "8px 12px",
             }}
             exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
-            className="relative z-10 w-full max-w-[calc(100vw-32px)] md:w-[440px] bg-white/80 backdrop-blur-xl border border-white/40 shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
+            className="relative z-10 w-full max-w-[calc(100vw-32px)] border border-white/40 bg-white/80 shadow-[0_10px_40px_rgba(0,0,0,0.04)] backdrop-blur-xl md:w-[440px]"
           >
-            <div className="flex items-center w-full gap-2">
-              <Plus className="w-5 h-5 text-gray-400 cursor-pointer hover:text-gray-600 transition-colors" />
+            <div className="flex w-full items-center gap-2">
+              <Plus className="h-5 w-5 cursor-pointer text-neutral-400 transition-colors hover:text-neutral-600" />
 
               <textarea
                 ref={textareaRef}
@@ -140,16 +137,18 @@ export const AiInput004: React.FC<AiInputProps> = ({
                 }}
                 placeholder={placeholder}
                 rows={1}
-                className="flex-1 bg-transparent outline-none resize-none text-[16px] text-gray-800 placeholder-gray-400 py-2 min-h-[40px]"
+                className="min-h-[40px] flex-1 resize-none bg-transparent py-2 text-[16px] text-neutral-800 placeholder-neutral-400 outline-none"
               />
 
               <div className="flex items-center gap-3">
-                <Mic className="w-5 h-5 text-gray-400 cursor-pointer hover:text-gray-600" />
+                <Mic className="h-5 w-5 cursor-pointer text-neutral-400 hover:text-neutral-600" />
                 <button
                   onClick={handleSubmit}
-                  className={`w-9 h-9 rounded-full flex items-center justify-center text-white transition-all duration-200 ${hasContent ? "bg-black" : "bg-black/20"}`}
+                  className={`flex h-9 w-9 items-center justify-center rounded-full text-white transition-all duration-200 ${
+                    hasContent ? "bg-black" : "bg-black/20"
+                  }`}
                 >
-                  <ArrowUp className="w-5 h-5" />
+                  <ArrowUp className="h-5 w-5" />
                 </button>
               </div>
             </div>

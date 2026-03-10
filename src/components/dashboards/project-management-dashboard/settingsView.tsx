@@ -185,7 +185,7 @@ export const SettingsView = () => {
             <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight group/logo">
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-                  <Settings className="size-4 text-neutral-500" />
+                  <Settings className="size-4 text-neutral-500 transition-colors duration-300 group-hover/logo:text-primary group-hover/logo:rotate-90" />
                   Workspace Logo
                 </h3>
                 <p className="text-xs text-neutral-500 md:mt-1 md:max-w-48 leading-tight tracking-tight px-0.5">
@@ -200,7 +200,7 @@ export const SettingsView = () => {
                         <Globe className="size-5" />
                       </AvatarFallback>
                     </Avatar>
-                    <div>
+                    <div className="transition-transform duration-300 group-hover/logo:translate-x-1">
                       <p className="font-medium text-neutral-900 dark:text-neutral-100 text-sm">
                         The Web Dev Company
                       </p>
@@ -225,7 +225,7 @@ export const SettingsView = () => {
             <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight group/info">
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-                  <Settings className="size-4 text-neutral-500" />
+                  <Settings className="size-4 text-neutral-500 transition-colors duration-300 group-hover/info:text-primary group-hover/info:rotate-90" />
                   Workspace Information
                 </h3>
                 <p className="text-xs text-neutral-500 md:mt-1 md:max-w-48 leading-tight tracking-tight px-0.5">
@@ -282,7 +282,7 @@ export const SettingsView = () => {
             <div className="flex flex-col md:flex-row gap-4 md:gap-8 bg-muted/50 p-3 rounded-md tracking-tight group/prefs">
               <div className="flex flex-col gap-2">
                 <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-                  <Settings className="size-4 text-neutral-500" />
+                  <Settings className="size-4 text-neutral-500 transition-colors duration-300 group-hover/prefs:text-primary group-hover/prefs:rotate-90" />
                   Workspace Preferences
                 </h3>
                 <p className="text-xs text-neutral-500 md:mt-1 md:max-w-48 leading-tight tracking-tight px-0.5">

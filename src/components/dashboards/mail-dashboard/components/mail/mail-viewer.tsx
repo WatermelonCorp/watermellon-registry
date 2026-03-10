@@ -207,4 +207,3 @@ export function MailViewer({ id }: { id: string }) {
     </div>
   )
 }
-

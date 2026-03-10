@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useMemo, type FC, type ChangeEvent } from "react";
-import { motion } from "motion/react";
-import NumberFlow from "@number-flow/react";
+import { AnimatePresence, motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
-/* ---------- Types ---------- */
 interface AdaptiveSliderProps {
   value?: number;
   min?: number;
@@ -53,7 +52,6 @@ const getColorSettings = (
   }
 };
 
-/* ---------- Component ---------- */
 export const AdaptiveSlider: FC<AdaptiveSliderProps> = ({
   value,
   min = DEFAULT_MIN,
@@ -98,9 +96,9 @@ export const AdaptiveSlider: FC<AdaptiveSliderProps> = ({
       </span>
 
       <div className="mb-8 flex items-baseline gap-2">
-        <NumberFlow
-          value={calories}
-          className="text-5xl font-extrabold tracking-tight sm:text-6xl overflow-hidden"
+        <AnimatedText
+          value={calories.toString()}
+          className="overflow-hidden text-5xl font-extrabold tracking-tight sm:text-6xl"
         />
         <motion.span
           layout
@@ -140,11 +138,55 @@ export const AdaptiveSlider: FC<AdaptiveSliderProps> = ({
           animate={{
             left: `calc((${percentage} / 100) * (100% - 52px))`,
           }}
-          transition={{ type: "spring", stiffness: 400, damping: 35 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
           <div className="size-10 rounded-full bg-white shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]" />
         </motion.div>
       </div>
     </motion.div>
+  );
+};
+
+const AnimatedText = ({
+  value,
+  className,
+}: {
+  value: string;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={cn(
+        "flex text-lg tracking-tight will-change-transform",
+        className
+      )}
+    >
+      <AnimatePresence mode="popLayout" initial={false}>
+        {value.split("").map((char, index) => {
+          const displayChar = char === " " ? "\u00A0" : char;
+
+          return (
+            <motion.span
+              key={char + index}
+              initial={{ opacity: 1, y: 0, scale: 1 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                  // delay: 0.03 * index,
+                },
+              }}
+              exit={{ opacity: 0, y: 0, scale: 1, transition: { duration: 0 } }}
+            >
+              {displayChar}
+            </motion.span>
+          );
+        })}
+      </AnimatePresence>
+    </div>
   );
 };

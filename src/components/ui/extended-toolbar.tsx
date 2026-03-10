@@ -1,166 +1,160 @@
-"use client";
+'use client';
 
-import { type FC, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { type FC, useState, forwardRef } from 'react';
+import { motion, type Transition } from 'framer-motion';
+import useMeasure from 'react-use-measure';
+import { ChevronRight } from 'lucide-react';
 import {
   BsChatLeftFill,
   BsFillArchiveFill,
   BsFillInboxFill,
   BsFillPinAngleFill,
   BsTrash3Fill,
-} from "react-icons/bs";
-import { IoImage } from "react-icons/io5";
-import { PiShareFatFill } from "react-icons/pi";
-import { AiFillTag } from "react-icons/ai";
-import type { IconType } from "react-icons";
+} from 'react-icons/bs';
+import { IoImage } from 'react-icons/io5';
+import { PiShareFatFill } from 'react-icons/pi';
+import { AiFillTag } from 'react-icons/ai';
+import type { IconType } from 'react-icons';
 
-/* ---------- Types ---------- */
-export interface ToolbarItem {
+interface ToolbarItem {
   icon: IconType;
   label: string;
-  size: number;
-  onClick?: () => void;
 }
 
-export interface ExtendedToolbarProps {
+interface ExtendedToolbarProps {
   primaryItems?: ToolbarItem[];
   secondaryItems?: ToolbarItem[];
-  defaultExpanded?: boolean;
-  showThemeToggle?: boolean;
 }
 
-/* ---------- Motion ---------- */
-const springTransition = {
-  stiffness: 300,
-  damping: 30,
-} as const;
+const springConfig: Transition = {
+  type: 'spring',
+  stiffness: 240,
+  damping: 24,
+  mass: 1.2,
+};
 
-/* ---------- Defaults ---------- */
 const DEFAULT_PRIMARY: ToolbarItem[] = [
-  { icon: BsFillInboxFill, size: 28, label: "Inbox" },
-  { icon: BsChatLeftFill, size: 22, label: "Chat" },
-  { icon: BsFillPinAngleFill, size: 28, label: "Pin" },
-  { icon: AiFillTag, size: 28, label: "Tag" },
+  { icon: BsFillInboxFill, label: 'Inbox' },
+  { icon: BsChatLeftFill, label: 'Chat' },
+  { icon: BsFillPinAngleFill, label: 'Pin' },
+  { icon: AiFillTag, label: 'Tag' },
 ];
 
 const DEFAULT_SECONDARY: ToolbarItem[] = [
-  { icon: IoImage, size: 28, label: "Image" },
-  { icon: BsFillArchiveFill, size: 26, label: "Archive" },
-  { icon: PiShareFatFill, size: 28, label: "Share" },
-  { icon: BsTrash3Fill, size: 28, label: "Delete" },
+  { icon: IoImage, label: 'Image' },
+  { icon: BsFillArchiveFill, label: 'Archive' },
+  { icon: PiShareFatFill, label: 'Share' },
+  { icon: BsTrash3Fill, label: 'Delete' },
 ];
-
-/* ---------- Component ---------- */
+const SIDE_PADDING = 8;
 export const ExtendedToolbar: FC<ExtendedToolbarProps> = ({
   primaryItems = DEFAULT_PRIMARY,
   secondaryItems = DEFAULT_SECONDARY,
-  defaultExpanded = false,
 }) => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const [primaryRef, primaryBounds] = useMeasure({ offsetSize: true });
+  const [secondaryRef, secondaryBounds] = useMeasure({ offsetSize: true });
+  const [toggleRef, toggleBounds] = useMeasure({ offsetSize: true });
+
+  const currentWidth = isExpanded
+    ? secondaryBounds.width + toggleBounds.width + SIDE_PADDING
+    : primaryBounds.width + toggleBounds.width + SIDE_PADDING;
 
   return (
-   <div className="relative flex w-full items-center justify-center bg-transparent transition-colors duration-500 px-4">
-      {/* Toolbar */}
+    <div className="flex items-center justify-center">
       <motion.div
-        layout
-        transition={springTransition}
-        className="
-          flex items-center gap-2 px-2 py-2
-          bg-[#F4F4F9] dark:bg-zinc-900/90
-          border border-[#f4f4f9e2] dark:border-zinc-800
-          backdrop-blur-md rounded-full
-          shadow-sm shadow-slate-200/50 dark:shadow-none
-          w-fit min-w-55 h-16
-        "
+        animate={{
+          width: currentWidth > 0 ? currentWidth : 'auto',
+        }}
+        transition={springConfig}
+        className="relative overflow-hidden rounded-full border border-white/40 bg-neutral-100 py-2 dark:border-white/10 dark:bg-neutral-900"
       >
-        {/* Toggle */}
-        <motion.button
-          layout
-          onClick={() => setIsExpanded((v) => !v)}
-          transition={springTransition}
-          style={{ order: isExpanded ? 0 : 2 }}
-          className="
-            relative z-10 flex h-12 w-12
-            items-center justify-center
-            rounded-full bg-[#FEFEFE] dark:bg-zinc-800
-            border border-transparent dark:border-zinc-700
-            shadow-sm focus:outline-none
-          "
+        <motion.div
+          animate={{
+            x: isExpanded ? -(primaryBounds.width - SIDE_PADDING) : 0,
+          }}
+          transition={springConfig}
+          className="flex h-full items-center"
         >
-          <AnimatePresence mode="popLayout" initial={false}>
-            {isExpanded ? (
-              <motion.div
-                key="left"
-                initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
-                animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronLeft size={36} strokeWidth={2} className="text-[#858489] dark:text-zinc-400" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="right"
-                initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
-                animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronRight size={36} strokeWidth={2} className="text-[#858489] dark:text-zinc-400" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
+          <div
+            ref={primaryRef}
+            className="flex shrink-0 items-center gap-4 pr-2 pl-4"
+          >
+            {primaryItems.map((item, i) => (
+              <ToolbarIcon
+                key={`p-${i}`}
+                icon={item.icon}
+                active={!isExpanded}
+              />
+            ))}
+          </div>
 
-        {/* Icons */}
-        <div className="flex flex-1 items-center justify-center overflow-hidden">
-          <AnimatePresence mode="popLayout" initial={false}>
-            {!isExpanded ? (
-              <motion.div
-                key="primary"
-                className="flex items-center gap-2.5"
-                initial={{ opacity: 0, x: -20, filter: "blur(4px)" }}
-                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, x: -20, filter: "blur(4px)" }}
-                transition={{ ...springTransition, opacity: { duration: 0.2 } }}
-              >
-                {primaryItems.map((item) => (
-                  <ToolbarIcon key={item.label} {...item} />
-                ))}
-              </motion.div>
-            ) : (
-              <motion.div
-                key="secondary"
-                className="flex items-center gap-2.5"
-                initial={{ opacity: 0, x: 20, filter: "blur(4px)" }}
-                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, x: 20, filter: "blur(4px)" }}
-                transition={{ ...springTransition, opacity: { duration: 0.2 } }}
-              >
-                {secondaryItems.map((item) => (
-                  <ToolbarIcon key={item.label} {...item} />
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+          <ToggleButton
+            ref={toggleRef}
+            isOpen={isExpanded}
+            onClick={() => setIsExpanded(!isExpanded)}
+          />
+
+          <div
+            ref={secondaryRef}
+            className="flex shrink-0 items-center gap-4 pr-4 pl-2"
+          >
+            {secondaryItems.map((item, i) => (
+              <ToolbarIcon
+                key={`s-${i}`}
+                icon={item.icon}
+                active={isExpanded}
+              />
+            ))}
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );
 };
 
-/* ---------- Icon ---------- */
-const ToolbarIcon: FC<ToolbarItem> = ({ icon: Icon, label, size, onClick }) => (
-  <button
-    aria-label={label}
-    onClick={onClick}
-    className="
-      p-2 text-[#66666F] dark:text-zinc-500
-      hover:text-[#2d2d34] hover:dark:text-zinc-300
-      transition-colors focus:outline-none
-    "
+const ToolbarIcon = ({
+  icon: Icon,
+  active,
+}: {
+  icon: IconType;
+  active: boolean;
+}) => (
+  <motion.div
+    initial={false}
+    animate={{
+      opacity: active ? 1 : 0,
+      filter: active ? 'blur(0px)' : 'blur(4px)',
+    }}
+    transition={{ duration: 0.2 }}
   >
-    <Icon size={size} />
-  </button>
+    <Icon className="size-5 text-neutral-500" />
+  </motion.div>
+);
+
+interface ToggleButtonProps {
+  isOpen: boolean;
+  onClick: () => void;
+}
+
+const ToggleButton = forwardRef<HTMLDivElement, ToggleButtonProps>(
+  ({ isOpen, onClick }, ref) => (
+    <div
+      ref={ref}
+      onClick={onClick}
+      className="z-10 flex shrink-0 cursor-pointer items-center justify-center rounded-full bg-white p-2 transition-transform active:scale-95 dark:bg-neutral-800"
+    >
+      <motion.div
+        initial={false}
+        animate={{ rotate: isOpen ? 180 : 0 }}
+        transition={springConfig}
+      >
+        <ChevronRight
+          size={18}
+          className="text-neutral-600 dark:text-neutral-300"
+        />
+      </motion.div>
+    </div>
+  ),
 );
