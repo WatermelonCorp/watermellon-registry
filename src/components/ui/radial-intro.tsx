@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
 import * as React from 'react';
@@ -108,7 +107,7 @@ function RadialIntro({
     }, 1300);
 
     return () => stops.forEach((stop) => stop());
-  }, []);
+  }, [animate, scope]);
 
   return (
     <LayoutGroup>

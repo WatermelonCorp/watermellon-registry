@@ -1,7 +1,6 @@
 "use client";
 
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
+import React, { useEffect, useRef, useState, useLayoutEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 
 type ScrollAxis = "horizontal" | "vertical" | "both";
@@ -27,7 +26,7 @@ export function ScrollFade({
   const [showTop, setShowTop] = useState(false);
   const [showBottom, setShowBottom] = useState(false);
 
-  const checkScroll = () => {
+  const checkScroll = useCallback(() => {
     const el = containerRef.current;
     if (!el) return;
 
@@ -53,11 +52,11 @@ export function ScrollFade({
         Math.ceil(scrollTop + clientHeight) < Math.floor(scrollHeight - 1)
       );
     }
-  };
+  }, [axis]);
 
   useLayoutEffect(() => {
     requestAnimationFrame(checkScroll);
-  }, [axis]);
+  }, [axis, checkScroll]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -81,7 +80,7 @@ export function ScrollFade({
       ro.disconnect();
       cancelAnimationFrame(raf);
     };
-  }, [axis]);
+  }, [axis, checkScroll]);
 
   return (
     <div className="relative">

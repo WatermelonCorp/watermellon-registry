@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, AnimatePresence } from 'motion/react';
 import { X, Clock, Calendar, Settings, Bell, ExternalLink, BookOpen, AlignRight } from 'lucide-react';
@@ -43,7 +42,7 @@ export const DraggableToolbar: React.FC<DraggableToolbarProps> = ({
             x.set(width - 64);
             y.set(height / 2);
         }
-    }, []);
+    }, [x, y]);
 
     // Monitoring X for side switching
     useEffect(() => {

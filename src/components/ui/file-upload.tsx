@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import React, { useState, useRef, useCallback } from "react";
@@ -317,7 +316,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const validateFile = (file: File): string | null => {
+  const validateFile = useCallback((file: File): string | null => {
     // Check file size
     if (file.size > maxFileSize * 1024 * 1024) {
       return `File size must be less than ${maxFileSize}MB`;
@@ -332,9 +331,9 @@ const FileUpload: React.FC<FileUploadProps> = ({
     }
 
     return null;
-  };
+  }, [maxFileSize, acceptedTypes]);
 
-  const processFiles = async (files: FileList | File[]) => {
+  const processFiles = useCallback(async (files: FileList | File[]) => {
     setIsUploading(true);
     const fileArray = Array.from(files);
     const newFiles: UploadedFile[] = [];
@@ -399,7 +398,19 @@ const FileUpload: React.FC<FileUploadProps> = ({
     setUploadedFiles(updatedFiles);
     onFilesChange?.(updatedFiles);
     setIsUploading(false);
-  };
+  }, [
+    validateFile,
+    uploadedFiles,
+    maxFiles,
+    onUploadStart,
+    provider,
+    localMode,
+    uploadOptions,
+    onUploadSuccess,
+    onUploadError,
+    multiple,
+    onFilesChange,
+  ]);
 
   const handleDrop = useCallback(
     (e: React.DragEvent<HTMLDivElement>) => {
@@ -411,7 +422,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
         processFiles(files);
       }
     },
-    [uploadedFiles, maxFiles, multiple]
+    [processFiles]
   );
 
   const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {

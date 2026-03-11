@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useRef, useEffect, type FC, type ChangeEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Check } from "lucide-react";
@@ -39,9 +38,11 @@ interface FlagIconProps {
 const FlagIcon: FC<FlagIconProps> = ({ countryCode, emoji }) => {
   const [imgError, setImgError] = useState(false);
 
-  useEffect(() => {
+  const [prevCountryCode, setPrevCountryCode] = useState(countryCode);
+  if (prevCountryCode !== countryCode) {
+    setPrevCountryCode(countryCode);
     setImgError(false);
-  }, [countryCode]);
+  }
 
   if (!countryCode) return <span className="text-lg sm:text-xl">{emoji}</span>;
 
@@ -230,11 +231,7 @@ export const SwapCurrencyCard: FC<SwapCurrencyCardProps> = ({
   const [fromCurrency, setFromCurrency] = useState(fromDefault);
   const [toCurrency, setToCurrency] = useState(toDefault);
   const [fromAmount, setFromAmount] = useState(defaultAmount);
-  const [toAmount, setToAmount] = useState("");
-
-  useEffect(() => {
-    setToAmount(convert(fromAmount, fromCurrency, toCurrency));
-  }, []);
+  const [toAmount, setToAmount] = useState(() => convert(defaultAmount, fromDefault, toDefault));
 
   const convert = (amount: string, from: Currency, to: Currency): string => {
     const val = parseFloat(amount);

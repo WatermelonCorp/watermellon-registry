@@ -1,7 +1,6 @@
 "use client";
 
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useRef, useState, useEffect, type FC } from "react";
+import { useRef, useState, useEffect, useCallback, type FC } from "react";
 import {
   motion,
   useMotionValue,
@@ -26,9 +25,14 @@ const SPRING: Transition = {
 
 const AnimatedNumber: FC<AnimatedNumberProps> = ({ value }) => {
   const [display, setDisplay] = useState(value);
+  const displayRef = useRef(display);
 
   useEffect(() => {
-    const controls = animate(display, value, {
+    displayRef.current = display;
+  }, [display]);
+
+  useEffect(() => {
+    const controls = animate(displayRef.current, value, {
       duration: 0.2,
       onUpdate(latest) {
         setDisplay(Math.round(latest));
@@ -82,7 +86,7 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({
     return () => resizeObserver.disconnect();
   }, [tickCount, initialValue, x]);
 
-  const updateValue = (clientX: number) => {
+  const updateValue = useCallback((clientX: number) => {
     if (!step) return;
 
     let posX = clientX - sliderLeft - padding;
@@ -94,7 +98,7 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({
 
     setValue(snappedIndex);
     x.set(snappedX + padding);
-  };
+  }, [step, sliderLeft, sliderWidth, x]);
 
   useEffect(() => {
     const move = (e: MouseEvent) => {
@@ -111,7 +115,7 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseup", up);
     };
-  }, [isDragging, step, sliderLeft, sliderWidth]);
+  }, [isDragging, step, sliderLeft, sliderWidth, updateValue]);
 
   useEffect(() => {
     const move = (e: TouchEvent) => {
@@ -128,7 +132,7 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({
       window.removeEventListener("touchmove", move);
       window.removeEventListener("touchend", end);
     };
-  }, [isDragging, step, sliderLeft, sliderWidth]);
+  }, [isDragging, step, sliderLeft, sliderWidth, updateValue]);
 
   return (
     <div className="flex w-full flex-col items-center justify-center dark:bg-zinc-950">

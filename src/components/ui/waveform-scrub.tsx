@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from "react";
 import {
   motion,
@@ -43,6 +42,11 @@ export const WaveformScrub: React.FC<WaveformScrubProps> = ({
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const isDark = theme === "dark";
 
+  const currentTimeRef = useRef(currentTime);
+  useEffect(() => {
+    currentTimeRef.current = currentTime;
+  }, [currentTime]);
+
   const isFinished = currentTime >= duration;
 
   useEffect(() => {
@@ -57,10 +61,10 @@ export const WaveformScrub: React.FC<WaveformScrubProps> = ({
     updateWidth();
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
-  }, [duration, currentTime]);
+  }, [duration, currentTime, x]);
 
   useEffect(() => {
-    if (isPlaying && currentTime < duration) {
+    if (isPlaying && currentTimeRef.current < duration) {
       timerRef.current = setInterval(() => {
         setCurrentTime((prev) => {
           const next = Math.min(prev + 0.1, duration);

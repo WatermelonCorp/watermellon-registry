@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 export interface UseAudioPlaybackOptions {
   onPlay?: () => void;
@@ -35,6 +34,8 @@ export const useAudioPlayback = (
   const audioRef = useRef<HTMLAudioElement>(null);
   const animationRef = useRef<number | null>(null);
   const objectUrlRef = useRef<string | null>(null);
+  const optionsRef = useRef(options);
+  optionsRef.current = options;
 
   // Update audio URL when source changes
   useEffect(() => {
@@ -72,14 +73,14 @@ export const useAudioPlayback = (
     };
   }, []);
 
-  const updatePlaybackTime = () => {
+  const updatePlaybackTime = useCallback(function updateTime() {
     if (audioRef.current && isPlaying && !audioRef.current.paused) {
       setPlaybackTime(audioRef.current.currentTime);
-      animationRef.current = requestAnimationFrame(updatePlaybackTime);
+      animationRef.current = requestAnimationFrame(updateTime);
     }
-  };
+  }, [isPlaying]);
 
-  const togglePlayback = async () => {
+  const togglePlayback = useCallback(async () => {
     if (!audioRef.current || !audioLoaded) return;
 
     try {
@@ -90,19 +91,19 @@ export const useAudioPlayback = (
           cancelAnimationFrame(animationRef.current);
           animationRef.current = null;
         }
-        options?.onPause?.();
+        optionsRef.current?.onPause?.();
       } else {
         await audioRef.current.play();
         setIsPlaying(true);
         updatePlaybackTime();
-        options?.onPlay?.();
+        optionsRef.current?.onPlay?.();
       }
     } catch (error) {
       console.error("Error playing audio:", error);
       setIsPlaying(false);
-      options?.onError?.(error as Error);
+      optionsRef.current?.onError?.(error as Error);
     }
-  };
+  }, [isPlaying, audioLoaded, updatePlaybackTime]);
 
   const stop = () => {
     if (!audioRef.current) return;
@@ -143,7 +144,7 @@ export const useAudioPlayback = (
   };
 
   // Audio event handlers
-  const handleLoadedMetadata = () => {
+  const handleLoadedMetadata = useCallback(() => {
     if (
       audioRef.current &&
       !isNaN(audioRef.current.duration) &&
@@ -152,9 +153,9 @@ export const useAudioPlayback = (
       setDuration(audioRef.current.duration);
       setAudioLoaded(true);
     }
-  };
+  }, []);
 
-  const handleCanPlay = () => {
+  const handleCanPlay = useCallback(() => {
     if (
       audioRef.current &&
       !isNaN(audioRef.current.duration) &&
@@ -163,15 +164,15 @@ export const useAudioPlayback = (
       setDuration(audioRef.current.duration);
       setAudioLoaded(true);
     }
-  };
+  }, []);
 
-  const handleTimeUpdate = () => {
+  const handleTimeUpdate = useCallback(() => {
     if (audioRef.current && isPlaying) {
       setPlaybackTime(audioRef.current.currentTime);
     }
-  };
+  }, [isPlaying]);
 
-  const handleEnded = () => {
+  const handleEnded = useCallback(() => {
     setIsPlaying(false);
     setPlaybackTime(0);
     if (animationRef.current) {
@@ -181,15 +182,15 @@ export const useAudioPlayback = (
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
     }
-    options?.onEnd?.();
-  };
+    optionsRef.current?.onEnd?.();
+  }, []);
 
-  const handleError = (e: React.SyntheticEvent<HTMLAudioElement>) => {
+  const handleError = useCallback((e: React.SyntheticEvent<HTMLAudioElement>) => {
     console.error("Audio error:", e);
     setAudioLoaded(false);
     setIsPlaying(false);
-    options?.onError?.(new Error("Error loading audio file"));
-  };
+    optionsRef.current?.onError?.(new Error("Error loading audio file"));
+  }, []);
 
   // Attach event handlers
   useEffect(() => {
@@ -211,7 +212,7 @@ export const useAudioPlayback = (
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       audio.removeEventListener("error", handleError as any);
     };
-  }, [isPlaying, options]);
+  }, [handleTimeUpdate, handleEnded, handleError, handleLoadedMetadata, handleCanPlay]);
 
   return {
     isPlaying,

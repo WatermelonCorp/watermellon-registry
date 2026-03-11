@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from "react";
 import type WaveSurfer from "wavesurfer.js";
 
@@ -55,6 +54,9 @@ export const useAudioWaveform = (
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
 
+  const callbacksRef = useRef({ onPlay, onPause, onEnd, onError, onReady });
+  callbacksRef.current = { onPlay, onPause, onEnd, onError, onReady };
+
   useEffect(() => {
     if (!waveformRef.current || !audioUrl) return;
 
@@ -90,23 +92,23 @@ export const useAudioWaveform = (
       wavesurfer.on("ready", () => {
         setIsLoading(false);
         setDuration(wavesurfer!.getDuration());
-        onReady?.();
+        callbacksRef.current.onReady?.();
       });
 
       wavesurfer.on("play", () => {
         setIsPlaying(true);
-        onPlay?.();
+        callbacksRef.current.onPlay?.();
       });
 
       wavesurfer.on("pause", () => {
         setIsPlaying(false);
-        onPause?.();
+        callbacksRef.current.onPause?.();
       });
 
       wavesurfer.on("finish", () => {
         setIsPlaying(false);
         setCurrentTime(0);
-        onEnd?.();
+        callbacksRef.current.onEnd?.();
       });
 
       wavesurfer.on("audioprocess", () => {
@@ -120,7 +122,7 @@ export const useAudioWaveform = (
       wavesurfer.on("error", (error) => {
         console.error("WaveSurfer error:", error);
         setIsLoading(false);
-        onError?.(new Error(String(error)));
+        callbacksRef.current.onError?.(new Error(String(error)));
       });
     });
 

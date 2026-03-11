@@ -1,7 +1,6 @@
 "use client";
 
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
     motion,
     AnimatePresence,
@@ -64,17 +63,17 @@ export const FeatureTour: React.FC<FeatureTourProps> = ({
         setCurrentIndex(index);
     };
 
-    const goNext = () => {
+    const goNext = useCallback(() => {
         setCurrentIndex((prev) =>
             prev === steps.length - 1 ? (loop ? 0 : prev) : prev + 1
         );
-    };
+    }, [steps.length, loop]);
 
-    const goPrev = () => {
+    const goPrev = useCallback(() => {
         setCurrentIndex((prev) =>
             prev === 0 ? (loop ? steps.length - 1 : prev) : prev - 1
         );
-    };
+    }, [steps.length, loop]);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -84,7 +83,7 @@ export const FeatureTour: React.FC<FeatureTourProps> = ({
         };
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [steps?.length, loop, onClose]);
+    }, [steps?.length, loop, onClose, goNext, goPrev]);
 
     useEffect(() => {
         const btn = containerRef.current?.querySelector("button");

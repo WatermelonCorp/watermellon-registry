@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client"
 
 import * as React from "react"
@@ -715,10 +714,8 @@ function DayColumn({
       height: `${(duration / totalMinutes) * 100}%`,
     }
   }, [
-    context?.activeId,
     context?.deltaY,
     context?.activeSpan,
-    context?.overDayIndex,
     timeIncrements,
     totalMinutes,
     startOffset,
