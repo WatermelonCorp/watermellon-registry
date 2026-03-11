@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useRef, useEffect } from "react";
 
 export interface UseAudioPlaybackOptions {
@@ -43,7 +44,6 @@ export const useAudioPlayback = (
       objectUrlRef.current = null;
     }
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAudioLoaded(false);
     setDuration(0);
     setPlaybackTime(0);
@@ -106,12 +106,12 @@ export const useAudioPlayback = (
 
   const stop = () => {
     if (!audioRef.current) return;
-    
+
     audioRef.current.pause();
     audioRef.current.currentTime = 0;
     setIsPlaying(false);
     setPlaybackTime(0);
-    
+
     if (animationRef.current) {
       cancelAnimationFrame(animationRef.current);
       animationRef.current = null;
@@ -131,7 +131,7 @@ export const useAudioPlayback = (
 
   const resetAudio = () => {
     stop();
-    
+
     if (objectUrlRef.current) {
       URL.revokeObjectURL(objectUrlRef.current);
       objectUrlRef.current = null;

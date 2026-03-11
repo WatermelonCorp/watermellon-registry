@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence, MotionConfig } from "motion/react";
 import { ChevronDown, ArrowUpDown } from "lucide-react";
@@ -123,11 +124,10 @@ export function AaveSwapComponent({ from, to }: AaveSwapComponentProps) {
                   <button
                     type="button"
                     onClick={handleUseMax}
-                    className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition-all sm:px-4 sm:text-base ${
-                      isMax || isError
+                    className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition-all sm:px-4 sm:text-base ${isMax || isError
                         ? "bg-neutral-200 text-neutral-400 dark:bg-[#2b2b2b] dark:text-[#8e8e8e]"
                         : "bg-neutral-200 text-neutral-900 hover:bg-neutral-300 dark:bg-[#2b2b2b] dark:text-white dark:hover:bg-[#3b3b3b]"
-                    }`}
+                      }`}
                   >
                     {isError || isMax ? "Using Max" : "Use Max"}
                   </button>

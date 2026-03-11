@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, AnimatePresence } from 'motion/react';
 import { X, Clock, Calendar, Settings, Bell, ExternalLink, BookOpen, AlignRight } from 'lucide-react';

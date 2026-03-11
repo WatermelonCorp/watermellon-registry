@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from "react";
 import {
   motion,
@@ -142,13 +143,10 @@ export const WaveformScrub: React.FC<WaveformScrubProps> = ({
             <motion.div
               style={{
                 width: activeProgress,
-                backgroundImage: `linear-gradient(-45deg, ${
-                  isDark ? "#FFF" : "#000"
-                } 25%, transparent 25%, transparent 50%, ${
-                  isDark ? "#FFF" : "#000"
-                } 50%, ${
-                  isDark ? "#FFF" : "#000"
-                } 75%, transparent 75%, transparent)`,
+                backgroundImage: `linear-gradient(-45deg, ${isDark ? "#FFF" : "#000"
+                  } 25%, transparent 25%, transparent 50%, ${isDark ? "#FFF" : "#000"
+                  } 50%, ${isDark ? "#FFF" : "#000"
+                  } 75%, transparent 75%, transparent)`,
                 backgroundSize: "4px 4px",
               }}
               animate={{

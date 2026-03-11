@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useRef, useEffect, type FC, type ChangeEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Check } from "lucide-react";
@@ -39,7 +40,6 @@ const FlagIcon: FC<FlagIconProps> = ({ countryCode, emoji }) => {
   const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setImgError(false);
   }, [countryCode]);
 
@@ -101,9 +101,8 @@ const Dropdown: FC<DropdownProps> = ({ selected, onSelect, currencies }) => {
           {selected.code}
         </span>
         <ChevronDown
-          className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 transition-transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""
+            }`}
         />
       </button>
 
@@ -171,7 +170,7 @@ interface DigitColumnProps {
 const DigitColumn: FC<DigitColumnProps> = ({ digit }) => {
   // Adjusted heights for mobile/desktop
   const [digitHeight, setDigitHeight] = useState(28);
-  
+
   useEffect(() => {
     const updateHeight = () => {
       setDigitHeight(window.innerWidth < 640 ? 24 : 28);

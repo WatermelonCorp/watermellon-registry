@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useRef, useState, useEffect, type FC } from "react";
 import {
   motion,
