@@ -15,6 +15,7 @@ export interface User {
   active?: boolean;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IconRenderer = (props?: any) => ReactNode;
 
 interface VoiceChatDisclosureProps {

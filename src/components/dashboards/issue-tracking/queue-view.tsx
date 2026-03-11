@@ -48,7 +48,7 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select"
 import { Separator } from "./components/ui/separator"
 import { Label } from "./components/ui/label"
-import { IconAlertCircleFilled, IconAlertHexagon, IconCalendarTime, IconCircleDashed, IconDeviceVisionProFilled, IconPennant, IconSettingsFilled, IconSparkles2Filled, IconTriangleFilled } from '@tabler/icons-react'
+import { IconAlertCircleFilled, IconAlertHexagon, IconCalendarTime, IconCircleDashed, IconDeviceVisionProFilled, IconPennant, IconSettingsFilled, IconStarFilled, IconTriangleFilled } from '@tabler/icons-react'
 
 const STATUSES = [
     { label: "Active", icon: <Circle className="size-3 fill-emerald-500 text-emerald-500" />, color: "text-emerald-500" },
@@ -142,7 +142,7 @@ export default function QueueView() {
 
                             <div className="relative mb-12 group flex gap-4 items-start">
                                 <div className="bg-neutral-100 dark:bg-neutral-800 p-1 rounded-sm size-5 flex items-center justify-center">
-                                    <IconSparkles2Filled className="size-3 text-neutral-600 dark:text-neutral-200" />
+                                    <IconStarFilled className="size-3 text-neutral-600 dark:text-neutral-200" />
                                 </div>
                                 <p className="text-neutral-400 dark:text-neutral-700 leading-normal text-xs max-w-xl font-normal">
                                     Our retrieval layer is returning &quot;related&quot; items that feel random,
@@ -408,7 +408,7 @@ export default function QueueView() {
                                 {/* System Messages */}
                                 <div className="flex items-end gap-3">
                                     <div className='h-6 w-6 rounded-md bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center'>
-                                        <IconSparkles2Filled className='size-3.5 text-orange-500 dark:text-orange-600' />
+                                        <IconStarFilled className='size-3.5 text-orange-500 dark:text-orange-600' />
                                     </div>
                                     <div className='flex flex-col gap-2 flex-1'>
                                         <div className="text-xs w-fit bg-neutral-100 dark:bg-neutral-900 px-3.5 py-2 text-neutral-600 dark:text-neutral-200 rounded-xl rounded-bl-sm">

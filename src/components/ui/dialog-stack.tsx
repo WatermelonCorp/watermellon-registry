@@ -9,6 +9,7 @@ export interface StackItem {
   id: string;
   title: string;
   type: 'form' | 'steps';
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   steps?: { icon: any; text: string }[];
   buttonText?: string;
 }
@@ -17,6 +18,7 @@ interface DialogStackProps {
   stack: StackItem[];
   trigger: {
     label: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     icon: any;
   };
 }

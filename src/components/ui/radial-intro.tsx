@@ -67,11 +67,13 @@ function RadialIntro({
 
     // build sequence for orbit placement
     const orbitPlacementSequence: AnimationSequence = [
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ...arms.map((el): [Element, Record<string, any>, any] => [
         el,
         { rotate: angleOf(el) },
         { ...transition, at: 0 },
       ]),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ...imgs.map((img): [Element, Record<string, any>, any] => [
         img,
         { rotate: -angleOf(armOfImg(img)!), opacity: 1 },

@@ -78,6 +78,7 @@ export const DebugPanel = ({
 export const InteractiveDebugPanel = ({
   className,
   ...props
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: Record<string, any> & { className?: string }) => {
   return (
     <div

@@ -401,6 +401,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
   };
 
   const handleDrop = useCallback(
+    // eslint-disable-next-line react-hooks/preserve-manual-memoization
     (e: React.DragEvent<HTMLDivElement>) => {
       e.preventDefault();
       setIsDragOver(false);
@@ -455,15 +456,13 @@ const FileUpload: React.FC<FileUploadProps> = ({
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onClick={handleFileSelect}
-        className={`relative cursor-pointer rounded-lg border-2 border-dashed p-8 text-center transition-colors ${
-          isDragOver
+        className={`relative cursor-pointer rounded-lg border-2 border-dashed p-8 text-center transition-colors ${isDragOver
             ? "border-blue-400 bg-blue-50 dark:border-blue-500 dark:bg-blue-950/20"
             : "border-zinc-300 hover:border-zinc-400 dark:border-zinc-600 dark:hover:border-zinc-500"
-        } ${
-          uploadedFiles.length > 0
+          } ${uploadedFiles.length > 0
             ? "bg-zinc-50 dark:bg-zinc-800/50"
             : "hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
-        } `}
+          } `}
       >
         <input
           ref={fileInputRef}
@@ -476,20 +475,18 @@ const FileUpload: React.FC<FileUploadProps> = ({
 
         <div className="flex flex-col items-center">
           <DocumentUpload
-            className={`mx-auto h-12 w-12 ${
-              isDragOver ? "text-blue-500" : "text-zinc-400"
-            }`}
+            className={`mx-auto h-12 w-12 ${isDragOver ? "text-blue-500" : "text-zinc-400"
+              }`}
             variant="Bulk"
             color="currentColor"
           />
 
           <div className="mt-4">
             <p
-              className={`text-sm font-medium ${
-                isDragOver
+              className={`text-sm font-medium ${isDragOver
                   ? "text-blue-600"
                   : "text-zinc-700 dark:text-zinc-300"
-              }`}
+                }`}
             >
               {title}
               {required && <span className="ml-1 text-red-500">*</span>}
@@ -547,7 +544,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
               >
                 <div className="flex items-center gap-3">
                   {showPreviews && file.preview ? (
-                    // eslint-disable-next-line @next/next/no-img-element
+
                     <img
                       src={file.preview}
                       alt={file.name}

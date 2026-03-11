@@ -137,7 +137,7 @@ type GithubStarsProps = WithAsChild<
     value?: number;
     delay?: number;
   } & UseIsInViewOptions &
-    HTMLMotionProps<'div'>
+  HTMLMotionProps<'div'>
 >;
 
 function GithubStars({
@@ -393,32 +393,32 @@ function mergeProps<T extends HTMLElement>(
   return merged;
 }
 
+const motionCache = new Map<React.ElementType, React.ElementType>();
+
+function getMotionComponent(type: React.ElementType) {
+  if (typeof type === 'object' && type !== null && isMotionComponent(type)) return type;
+  if (!motionCache.has(type)) {
+    motionCache.set(type, motion.create(type));
+  }
+  return motionCache.get(type)!;
+}
+
 function Slot<T extends HTMLElement = HTMLElement>({
   children,
   ref,
   ...props
 }: SlotProps<T>) {
-  const isAlreadyMotion =
-    typeof children.type === 'object' &&
-    children.type !== null &&
-    isMotionComponent(children.type);
-
-  const Base = React.useMemo(
-    () =>
-      isAlreadyMotion
-        ? (children.type as React.ElementType)
-        : motion.create(children.type as React.ElementType),
-    [isAlreadyMotion, children.type],
-  );
-
   if (!React.isValidElement(children)) return null;
+
+  const ComponentType = getMotionComponent(children.type as React.ElementType);
 
   const { ref: childRef, ...childProps } = children.props as AnyProps;
 
   const mergedProps = mergeProps(childProps, props);
 
   return (
-    <Base {...mergedProps} ref={mergeRefs(childRef as React.Ref<T>, ref)} />
+    // eslint-disable-next-line react-hooks/static-components
+    <ComponentType {...mergedProps} ref={mergeRefs(childRef as React.Ref<T>, ref)} />
   );
 }
 
@@ -610,10 +610,10 @@ function SlidingNumber({
         typeof decimalPlaces === 'number' && decimalPlaces >= 0
           ? decimalPlaces
           : (() => {
-              const s = String(number);
-              const idx = s.indexOf('.');
-              return idx >= 0 ? s.length - idx - 1 : 0;
-            })();
+            const s = String(number);
+            const idx = s.indexOf('.');
+            return idx >= 0 ? s.length - idx - 1 : 0;
+          })();
 
       const factor = Math.pow(10, inferredDecimals);
 
@@ -657,15 +657,16 @@ function SlidingNumber({
 
   const finalIntLength = padStart
     ? Math.max(
-        Math.floor(Math.abs(number)).toString().length,
-        newIntStrRaw.length,
-      )
+      Math.floor(Math.abs(number)).toString().length,
+      newIntStrRaw.length,
+    )
     : newIntStrRaw.length;
 
   const newIntStr = padStart
     ? newIntStrRaw.padStart(finalIntLength, '0')
     : newIntStrRaw;
 
+  // eslint-disable-next-line react-hooks/refs
   const prevFormatted = formatNumber(prevNumberRef.current);
   const [prevIntStrRaw = '', prevDecStrRaw = ''] = prevFormatted.split('.');
   const prevIntStr = padStart
@@ -702,8 +703,8 @@ function SlidingNumber({
     () =>
       newDecStrRaw
         ? Array.from({ length: newDecStrRaw.length }, (_, i) =>
-            Math.pow(10, newDecStrRaw.length - i - 1),
-          )
+          Math.pow(10, newDecStrRaw.length - i - 1),
+        )
         : [],
     [newDecStrRaw],
   );

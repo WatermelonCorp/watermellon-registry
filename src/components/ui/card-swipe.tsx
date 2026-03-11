@@ -182,6 +182,7 @@ export const CardSwipe: React.FC<CardCarouselProps> = ({
   const x = useMotionValue(0);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

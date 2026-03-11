@@ -109,9 +109,12 @@ export const CommandSearch: FC<Props> = ({
       }
     };
     // Use capture to catch the event before other listeners
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     window.addEventListener("keydown", handleEscape as any, true);
-    return () =>
+    return () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       window.removeEventListener("keydown", handleEscape as any, true);
+    };
   }, [onClose]);
 
   const filteredItems = useMemo(() => {
@@ -121,6 +124,7 @@ export const CommandSearch: FC<Props> = ({
   }, [query, items]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActiveIndex(0);
   }, [query]);
 

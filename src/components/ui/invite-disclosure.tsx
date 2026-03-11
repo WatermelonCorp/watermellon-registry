@@ -147,9 +147,11 @@ export const InviteDisclosure: React.FC<InviteDisclosureProps> = ({
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F5F5] dark:bg-neutral-700">
                         {invite.icon && React.isValidElement(invite.icon)
                           ? React.cloneElement(
+                              // eslint-disable-next-line @typescript-eslint/no-explicit-any
                               invite.icon as React.ReactElement<any>,
                               {
                                 className: `${
+                                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                   (invite.icon as React.ReactElement<any>).props
                                     .className
                                 } dark:text-neutral-300`,

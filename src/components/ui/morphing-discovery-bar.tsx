@@ -129,7 +129,6 @@ export const MorphingDiscoveryBar: React.FC<MorphingDiscoveryBarProps> = ({
                             layoutId="pill-bg"
                             className="absolute inset-0 z-[-1] rounded-full shadow-sm bg-[(--active-bg)] dark:bg-neutral-800 dark:border dark:border-neutral-700"
                             style={{
-                              // @ts-ignore
                               '--active-bg': cat.activeColor
                             } as React.CSSProperties}
                             transition={transition}

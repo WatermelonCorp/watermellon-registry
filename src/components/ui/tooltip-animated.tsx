@@ -316,6 +316,7 @@ function TooltipOverlay() {
       }),
       flip(),
       shift({ padding: 8 }),
+      // eslint-disable-next-line react-hooks/refs
       floatingArrow({ element: arrowRef }),
     ],
   });
@@ -380,10 +381,10 @@ function TooltipOverlay() {
                     rendered.open
                       ? { opacity: 1, scale: 1, x: 0, y: 0 }
                       : {
-                          opacity: 0,
-                          scale: 0,
-                          ...initialFromSide(rendered.data.side),
-                        }
+                        opacity: 0,
+                        scale: 0,
+                        ...initialFromSide(rendered.data.side),
+                      }
                   }
                   exit={{
                     opacity: 0,
@@ -703,32 +704,32 @@ function mergeProps<T extends HTMLElement>(
   return merged;
 }
 
+const motionCache = new Map<React.ElementType, React.ElementType>();
+
+function getMotionComponent(type: React.ElementType) {
+  if (typeof type === 'object' && type !== null && isMotionComponent(type)) return type;
+  if (!motionCache.has(type)) {
+    motionCache.set(type, motion.create(type));
+  }
+  return motionCache.get(type)!;
+}
+
 function Slot<T extends HTMLElement = HTMLElement>({
   children,
   ref,
   ...props
 }: SlotProps<T>) {
-  const isAlreadyMotion =
-    typeof children.type === 'object' &&
-    children.type !== null &&
-    isMotionComponent(children.type);
-
-  const Base = React.useMemo(
-    () =>
-      isAlreadyMotion
-        ? (children.type as React.ElementType)
-        : motion.create(children.type as React.ElementType),
-    [isAlreadyMotion, children.type],
-  );
-
   if (!React.isValidElement(children)) return null;
+
+  const ComponentType = getMotionComponent(children.type as React.ElementType);
 
   const { ref: childRef, ...childProps } = children.props as AnyProps;
 
   const mergedProps = mergeProps(childProps, props);
 
   return (
-    <Base {...mergedProps} ref={mergeRefs(childRef as React.Ref<T>, ref)} />
+    // eslint-disable-next-line react-hooks/static-components
+    <ComponentType {...mergedProps} ref={mergeRefs(childRef as React.Ref<T>, ref)} />
   );
 }
 

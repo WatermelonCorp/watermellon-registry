@@ -39,6 +39,7 @@ const PlatformIcon = ({ platform }: { platform: string }) => {
     }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const MeetingCard = ({ meeting }: { meeting: any }) => (
     <Card className="border-[1.3px] border-neutral-200/80 bg-neutral-100/60 dark:bg-neutral-800/50 dark:border-neutral-800 shadow-none px-2 pt-1.5 pb-2.5 gap-2 transition-colors duration-200 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/80 cursor-pointer group outline-none">
         <CardHeader className="p-0! flex flex-row items-center justify-between space-y-0">

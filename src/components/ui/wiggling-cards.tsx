@@ -60,6 +60,76 @@ const GAP = 40;
 const DRAG_BUFFER = 80;
 const VELOCITY_THRESHOLD = 500;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Card({ card, i, CARD_WIDTH, GAP, x }: { card: CardData; i: number; CARD_WIDTH: number; GAP: number; x: any }) {
+  const Icon = card.icon;
+  const center = -(i * (CARD_WIDTH + GAP));
+
+  const distance = useTransform(x, (v: number) => v - center);
+
+  const rotate = useTransform(
+    distance,
+    [-CARD_WIDTH, -CARD_WIDTH * 0.2, 0, CARD_WIDTH * 0.2, CARD_WIDTH],
+    [10, 10, 0, -10, -10]
+  );
+
+  const blur = useTransform(
+    distance,
+    [-CARD_WIDTH, -CARD_WIDTH * 0.2, 0, CARD_WIDTH * 0.2, CARD_WIDTH],
+    [4, 2, 0, 2, 4]
+  );
+
+  const opacity = useTransform(
+    distance,
+    [-CARD_WIDTH, -CARD_WIDTH * 0.2, 0, CARD_WIDTH * 0.2, CARD_WIDTH],
+    [0, 0.8, 1, 0.8, 0]
+  );
+
+  const filter = useMotionTemplate`blur(${blur}px)`;
+
+  return (
+    <motion.div
+      style={{
+        opacity,
+        rotate,
+        filter,
+        minWidth: CARD_WIDTH,
+      }}
+      className="relative flex h-80 flex-col justify-between rounded-[40px] border-2 border-[#E0DEDA] bg-white p-6"
+    >
+      <div className="flex flex-col gap-10">
+        <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#F4F4FC]/80">
+          <Icon
+            className="h-14 w-14 text-[#020204]"
+            strokeWidth={1.5}
+          />
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <div className="flex w-fit items-center rounded-2xl bg-[#F4F4FC] px-3 py-0.5 text-lg font-medium text-[#68676E]">
+            <FaArrowUpLong className="mr-1 h-3 w-3" />
+            {card.percentage}
+          </div>
+
+          <h2 className="text-[42px] font-bold text-[#020204]">
+            {card.value}
+          </h2>
+
+          <p className="text-[20px] font-medium text-[#000002]">
+            {card.label}
+          </p>
+        </div>
+      </div>
+
+      <div className="absolute right-7 bottom-9">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F4F4FB]">
+          <ArrowUpRight className="h-6 w-6" />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export function WigglingCards({ cards }: { cards?: CardData[] }) {
   const data = cards ?? DEFAULT_CARDS;
 
@@ -67,7 +137,7 @@ export function WigglingCards({ cards }: { cards?: CardData[] }) {
 
   const x = useMotionValue(-(index * (CARD_WIDTH + GAP)));
 
-  const handleDragEnd = (_: any, info: PanInfo) => {
+  const handleDragEnd = (_: unknown, info: PanInfo) => {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
 
@@ -103,75 +173,9 @@ export function WigglingCards({ cards }: { cards?: CardData[] }) {
           }}
           onDragEnd={handleDragEnd}
         >
-          {data.map((card, i) => {
-            const Icon = card.icon;
-            const center = -(i * (CARD_WIDTH + GAP));
-
-            const distance = useTransform(x, (v) => v - center);
-
-            const rotate = useTransform(
-              distance,
-              [-CARD_WIDTH, -CARD_WIDTH * 0.2, 0, CARD_WIDTH * 0.2, CARD_WIDTH],
-              [10, 10, 0, -10, -10]
-            );
-
-            const blur = useTransform(
-              distance,
-              [-CARD_WIDTH, -CARD_WIDTH * 0.2, 0, CARD_WIDTH * 0.2, CARD_WIDTH],
-              [4, 2, 0, 2, 4]
-            );
-
-            const opacity = useTransform(
-              distance,
-              [-CARD_WIDTH, -CARD_WIDTH * 0.2, 0, CARD_WIDTH * 0.2, CARD_WIDTH],
-              [0, 0.8, 1, 0.8, 0]
-            );
-
-            const filter = useMotionTemplate`blur(${blur}px)`;
-
-            return (
-              <motion.div
-                key={card.id}
-                style={{
-                  opacity,
-                  rotate,
-                  filter,
-                  minWidth: CARD_WIDTH,
-                }}
-                className="relative flex h-80 flex-col justify-between rounded-[40px] border-2 border-[#E0DEDA] bg-white p-6"
-              >
-                <div className="flex flex-col gap-10">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#F4F4FC]/80">
-                    <Icon
-                      className="h-14 w-14 text-[#020204]"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <div className="flex w-fit items-center rounded-2xl bg-[#F4F4FC] px-3 py-0.5 text-lg font-medium text-[#68676E]">
-                      <FaArrowUpLong className="mr-1 h-3 w-3" />
-                      {card.percentage}
-                    </div>
-
-                    <h2 className="text-[42px] font-bold text-[#020204]">
-                      {card.value}
-                    </h2>
-
-                    <p className="text-[20px] font-medium text-[#000002]">
-                      {card.label}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="absolute right-7 bottom-9">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F4F4FB]">
-                    <ArrowUpRight className="h-6 w-6" />
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+          {data.map((card, i) => (
+            <Card key={card.id} card={card} i={i} CARD_WIDTH={CARD_WIDTH} GAP={GAP} x={x} />
+          ))}
         </motion.div>
       </div>
 
@@ -180,9 +184,8 @@ export function WigglingCards({ cards }: { cards?: CardData[] }) {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`h-3 w-3 rounded-full transition-colors ${
-              i === index ? "bg-[#ADACB8]" : "bg-[#E5E4F0]"
-            }`}
+            className={`h-3 w-3 rounded-full transition-colors ${i === index ? "bg-[#ADACB8]" : "bg-[#E5E4F0]"
+              }`}
           />
         ))}
       </div>

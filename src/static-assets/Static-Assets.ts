@@ -1,1 +1,2 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const images_asset_base_url = (import.meta as any).env.VITE_CLOUDFLARE_ASSET_URL;

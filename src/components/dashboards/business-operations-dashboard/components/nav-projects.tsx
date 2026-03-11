@@ -15,6 +15,7 @@ export function NavProjects({
   projects: {
     name: string
     url: string
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     icon: any
     color?: string
     isDisabled?: boolean

@@ -22,7 +22,6 @@ export function Terminal({
   stdout,
   stderr,
   exitCode,
-  durationMs: _durationMs,
   cwd,
   truncated,
   maxCollapsedLines,
@@ -243,7 +242,7 @@ export function ActionButtons({
               "min-h-11 w-full text-base",
               "@sm/actions:min-h-0 @sm/actions:w-auto @sm/actions:px-3 @sm/actions:py-2 @sm/actions:text-sm",
               action.isConfirming &&
-                "ring-destructive ring-2 ring-offset-2 motion-safe:animate-pulse",
+              "ring-destructive ring-2 ring-offset-2 motion-safe:animate-pulse",
             )}
             aria-label={
               action.shortcut ? `${label} (${action.shortcut})` : label
@@ -454,10 +453,10 @@ export function normalizeActionsConfig(
   return Array.isArray(actions)
     ? { items }
     : {
-        items,
-        align: actions.align,
-        confirmTimeout: actions.confirmTimeout,
-      };
+      items,
+      align: actions.align,
+      confirmTimeout: actions.confirmTimeout,
+    };
 }
 
 

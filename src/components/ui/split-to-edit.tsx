@@ -48,6 +48,7 @@ export const SplitToEdit: FC<SplitToEditProps> = ({
   const hoursInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHours(initialHours);
     setMinutes(initialMinutes);
     setTempHours(String(initialHours));

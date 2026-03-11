@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause } from 'lucide-react';
 
 interface ModernVideoPlayerProps {
-  src: string; 
+  src: string;
   loop?: boolean;
   autoPlay?: boolean;
   poster?: string;
-  className?: string; 
+  className?: string;
 }
 
 export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
@@ -34,7 +34,7 @@ export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
       if (isPlaying) {
         videoRef.current.pause();
       } else {
-        videoRef.current.play().catch(() => {});
+        videoRef.current.play().catch(() => { });
       }
       setIsPlaying(!isPlaying);
     }
@@ -202,7 +202,7 @@ export const MobileVideoPlayer: React.FC<ModernVideoPlayerProps> = ({
 
           {/* Time Displays */}
           <div className="flex justify-between mt-4 text-[10px] sm:text-xs font-mono tracking-widest text-[#1a1a1a]/60 dark:text-white/60">
-            <span>{formatTime(videoRef.current?.currentTime)}</span>
+            <span>{formatTime((progress / 100) * duration)}</span>
             <span>{formatTime(duration)}</span>
           </div>
         </div>

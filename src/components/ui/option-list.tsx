@@ -261,6 +261,7 @@ export function OptionList({
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setUncontrolledSelected((prev) => {
       const normalized = parseSelectionToIdSet(
         Array.from(prev),
@@ -313,6 +314,7 @@ export function OptionList({
 
   useEffect(() => {
     if (optionStates.length === 0) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActiveIndex((prev) => {
       if (
         prev < 0 ||

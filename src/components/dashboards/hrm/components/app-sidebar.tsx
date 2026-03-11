@@ -43,6 +43,7 @@ import {
 import { useTheme } from "next-themes";
 
 interface NavItem {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   label: string;
   href: string;

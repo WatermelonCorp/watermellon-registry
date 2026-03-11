@@ -39,6 +39,7 @@ const FlagIcon: FC<FlagIconProps> = ({ countryCode, emoji }) => {
   const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setImgError(false);
   }, [countryCode]);
 

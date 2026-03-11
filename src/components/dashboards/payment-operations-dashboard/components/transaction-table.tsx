@@ -114,13 +114,12 @@ export function TransactionsTable() {
                 <div
                   className={`
                   font-normal px-2 py-0.5 rounded-none w-fit 
-                  ${
-                    tx.status === "Success"
+                  ${tx.status === "Success"
                       ? "bg-green-500/20 text-green-600"
                       : tx.status === "Refunded"
-                      ? "bg-orange-500/20 text-orange-600"
-                      : "bg-red-500/20 text-red-600"
-                  }
+                        ? "bg-orange-500/20 text-orange-600"
+                        : "bg-red-500/20 text-red-600"
+                    }
                 `}
                 >
                   {tx.status}
@@ -142,11 +141,11 @@ export function TransactionsTable() {
                       <DialogHeader>
                         <DialogTitle className="text-xl tracking-tight">Transaction Details</DialogTitle>
                         <DialogDescription className="font-mono text-xs mt-1">
-                          ID: TX-{Math.random().toString(36).substring(7).toUpperCase()}
+                          ID: TX-{10098 + i}
                         </DialogDescription>
                       </DialogHeader>
                     </div>
-                    
+
                     <div className="px-6 py-5">
                       <div className="flex items-center gap-4 mb-6">
                         <div className="flex-1 space-y-1">
@@ -164,13 +163,12 @@ export function TransactionsTable() {
                           <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Status</p>
                           <div
                             className={`font-medium px-2 py-0.5 rounded-none w-fit text-xs inline-flex items-center 
-                            ${
-                              tx.status === "Success"
+                            ${tx.status === "Success"
                                 ? "bg-green-500/20 text-green-700 dark:text-green-500"
                                 : tx.status === "Refunded"
-                                ? "bg-orange-500/20 text-orange-700 dark:text-orange-500"
-                                : "bg-red-500/20 text-red-700 dark:text-red-500"
-                            }`}
+                                  ? "bg-orange-500/20 text-orange-700 dark:text-orange-500"
+                                  : "bg-red-500/20 text-red-700 dark:text-red-500"
+                              }`}
                           >
                             {tx.status}
                           </div>
@@ -185,7 +183,7 @@ export function TransactionsTable() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="flex flex-col sm:flex-row gap-2 px-6 py-4 bg-zinc-50 dark:bg-zinc-900/50 border-t border-zinc-200 dark:border-zinc-800 sm:justify-end">
                       <Button variant="outline" className="rounded-none h-9 text-xs font-medium w-full sm:w-auto hover:bg-zinc-100 dark:hover:bg-zinc-800">Download Receipt</Button>
                       <Button className="rounded-none h-9 text-xs font-medium w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors">

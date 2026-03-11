@@ -605,6 +605,7 @@ export default function App() {
   const [controlsVisible, setControlsVisible] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let timeout: any;
     const handleScroll = () => {
       setControlsVisible(true);

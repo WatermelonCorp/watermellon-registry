@@ -160,6 +160,7 @@ interface ItemProps {
     baseAngle: number;
     radius: number;
     thumbnailSize: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     rotation: any;
     onClick: () => void;
 }

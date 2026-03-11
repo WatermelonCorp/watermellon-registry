@@ -46,6 +46,7 @@ export const PredictiveText: React.FC<PredictiveInputProps> = ({
       const matches = dict
         .filter(word => word.toLowerCase().startsWith(lastWord) && word.toLowerCase() !== lastWord)
         .slice(0, 3);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSuggestions(matches);
     } else {
       setSuggestions([]);

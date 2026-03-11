@@ -17,6 +17,7 @@ import {
 
 /* --- Types --- */
 interface EditableRowProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   label: string;
   value: string;

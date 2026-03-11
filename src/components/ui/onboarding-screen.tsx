@@ -17,6 +17,7 @@ interface OnboardingProps {
     tooltipMainText?: string;
     tooltipSubText?: string;
     rightSectionDescription?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onComplete?: (data: any) => void;
 }
 

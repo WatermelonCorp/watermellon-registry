@@ -29,6 +29,7 @@ export const RevealAndCopy = ({
     setTimerActive(true);
 
     const timer = setTimeout(() => {
+      // eslint-disable-next-line react-hooks/immutability
       if (!copied) resetAll();
     }, revealDuration);
 

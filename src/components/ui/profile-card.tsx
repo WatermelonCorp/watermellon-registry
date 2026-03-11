@@ -142,6 +142,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
     );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const DataRow = ({ icon, label, children }: { icon: any, label: string, children: React.ReactNode }) => (
     <div className="flex items-center justify-between gap-4 py-0.5">
         <div className="flex items-center gap-3 text-[#A1A1A1] shrink-0">

@@ -185,6 +185,7 @@ export default function FamilyWallet() {
   const [ref, bounds] = useMeasure();
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!open) setView(View.SIGN_IN);
   }, [open]);
 

@@ -18,6 +18,7 @@ export const KanbanColumn = ({
     title: string
     count: number
     cards: StreamCardProps[]
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     icon: any
 }) => (
     <div className="flex-1 min-w-[340px] border-x-[1.5px] p-1.5 flex flex-col gap-4 border-neutral-100 dark:border-neutral-900 min-h-0">

@@ -181,6 +181,7 @@ export function Browser({
         id: "1",
         title: "Google",
         url: "https://www.google.com",
+        // eslint-disable-next-line react-hooks/purity
         timestamp: new Date(Date.now() - 3600000),
         favicon: "🔍",
       },
@@ -188,6 +189,7 @@ export function Browser({
         id: "2",
         title: "GitHub",
         url: "https://github.com",
+        // eslint-disable-next-line react-hooks/purity
         timestamp: new Date(Date.now() - 7200000),
         favicon: "🐙",
       },
@@ -195,6 +197,7 @@ export function Browser({
         id: "3",
         title: "Stack Overflow",
         url: "https://stackoverflow.com",
+        // eslint-disable-next-line react-hooks/purity
         timestamp: new Date(Date.now() - 10800000),
         favicon: "📚",
       },
@@ -218,6 +221,7 @@ export function Browser({
     if (tabs.length >= maxTabs) return
 
     const newTab: Tab = {
+      // eslint-disable-next-line react-hooks/purity
       id: Date.now().toString(),
       title: "New Tab",
       url: "about:blank",

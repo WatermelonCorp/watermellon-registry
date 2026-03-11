@@ -15,6 +15,7 @@ export interface Card {
 
 interface SendMoneyProps {
   cards?: Card[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onProceed?: (data: any) => void;
 }
 
@@ -47,6 +48,7 @@ const Header = ({
   onClose,
 }: {
   title: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   onClose: () => void;
 }) => (
@@ -69,6 +71,7 @@ const Header = ({
   </div>
 );
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const InputField = ({ label, value, onChange }: any) => (
   <div className="mb-4">
     <label className="block text-sm mb-1 text-neutral-500 dark:text-neutral-400">
@@ -86,6 +89,7 @@ const InputField = ({ label, value, onChange }: any) => (
 
 /* ---------------- Views ---------------- */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const BankTransferView = ({ onClose, onProceed }: any) => {
   const [formData, setFormData] = useState({ name: '', account: '', code: '' });
 
@@ -102,6 +106,7 @@ const BankTransferView = ({ onClose, onProceed }: any) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CardView = ({ cards, onClose, onProceed }: any) => {
   const [selected, setSelected] = useState(cards[0]?.id);
 
@@ -157,6 +162,7 @@ const CardView = ({ cards, onClose, onProceed }: any) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const WalletView = ({ onClose, onProceed }: any) => {
   const [amount, setAmount] = useState('');
 

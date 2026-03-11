@@ -649,6 +649,16 @@ function DayColumn({
   slotClassName = "bg-muted",
 }: DayColumnProps) {
   const containerRef = React.useRef<HTMLDivElement>(null)
+  const [containerHeight, setContainerHeight] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!containerRef.current) return
+    const observer = new ResizeObserver((entries) => {
+      setContainerHeight(entries[0].contentRect.height)
+    })
+    observer.observe(containerRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   const context = React.useContext(AvailabilityDragContext)
 
@@ -678,13 +688,12 @@ function DayColumn({
     })
 
   // Calculate ghost position
-  const showGhost = context?.activeId && context.overDayIndex === dayIndex && containerRef.current && !isDayDisabled
+  const showGhost = Boolean(context?.activeId && context.overDayIndex === dayIndex && containerHeight > 0 && !isDayDisabled)
 
   const ghostStyle = React.useMemo(() => {
-    if (!showGhost || !context?.activeSpan || !containerRef.current) return null
+    if (!showGhost || !context?.activeSpan || !containerHeight) return null
 
     const span = context.activeSpan
-    const containerHeight = containerRef.current.clientHeight
     const pixelsPerMinute = containerHeight / totalMinutes
 
     const deltaMinutesRaw = context.deltaY / pixelsPerMinute
@@ -713,6 +722,7 @@ function DayColumn({
     totalMinutes,
     startOffset,
     showGhost,
+    containerHeight,
   ])
 
   return (
@@ -766,7 +776,7 @@ function DayColumn({
         />
       )}
 
-      {events.map((event, _i) => {
+      {events.map((event) => {
         // Calculate neighbors considering BOTH events and disabled regions for resizing constraints
         // sortedConstraints contains both. We just need to find neighbors relative to THIS event in that list.
 

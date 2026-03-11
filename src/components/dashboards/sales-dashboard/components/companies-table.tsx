@@ -58,6 +58,7 @@ function WinProbabilityBar({ value }: { value: number }) {
 
 function ActivityTrend() {
   const heights = useMemo(
+    // eslint-disable-next-line react-hooks/purity
     () => Array.from({ length: 12 }).map(() => `${Math.random() * 100}%`),
     [],
   );

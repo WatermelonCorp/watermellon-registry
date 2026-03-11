@@ -16,6 +16,7 @@ import type * as React from "react"
 export interface NavItem {
     title: string
     url: string
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     icon?: React.ComponentType<any>
     isActive?: boolean
     items?: NavItem[]

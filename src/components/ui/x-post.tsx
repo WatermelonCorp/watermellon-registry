@@ -15,7 +15,7 @@ export interface XPostProps {
 
 function Avatar({ src, alt }: { src: string; alt: string }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
+
     <img
       src={src}
       alt={alt}
@@ -119,7 +119,7 @@ function PostMedia({
       onClick={() => onOpen?.()}
     >
       {media.type === "image" ? (
-        // eslint-disable-next-line @next/next/no-img-element
+
         <img
           src={media.url}
           alt={media.alt}
@@ -149,7 +149,7 @@ function PostLinkPreview({ preview }: { preview: XPostLinkPreview }) {
       className="hover:bg-muted/50 mt-2 block overflow-hidden rounded-xl border transition-colors"
     >
       {preview.imageUrl && (
-        // eslint-disable-next-line @next/next/no-img-element
+
         <img
           src={preview.imageUrl}
           alt=""
@@ -178,7 +178,7 @@ function QuotedPostCard({ post }: { post: XPostData }) {
   return (
     <div className="hover:bg-muted/30 mt-2 rounded-xl border p-3 transition-colors">
       <div className="flex min-w-0 items-center gap-1">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+
         <img
           src={post.author.avatarUrl}
           alt={`${post.author.name} avatar`}
@@ -204,7 +204,7 @@ function QuotedPostCard({ post }: { post: XPostData }) {
       </div>
       {post.text && <p className="mt-1.5">{post.text}</p>}
       {post.media && (
-        // eslint-disable-next-line @next/next/no-img-element
+
         <img
           src={post.media.url}
           alt={post.media.alt}
@@ -623,7 +623,7 @@ export function ActionButtons({
               "min-h-11 w-full text-base",
               "@sm/actions:min-h-0 @sm/actions:w-auto @sm/actions:px-3 @sm/actions:py-2 @sm/actions:text-sm",
               action.isConfirming &&
-                "ring-destructive ring-2 ring-offset-2 motion-safe:animate-pulse",
+              "ring-destructive ring-2 ring-offset-2 motion-safe:animate-pulse",
             )}
             aria-label={
               action.shortcut ? `${label} (${action.shortcut})` : label
@@ -667,7 +667,7 @@ export function ActionButtons({
   );
 }
 
-"use client";
+
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 
@@ -961,10 +961,10 @@ export function normalizeActionsConfig(
   return Array.isArray(actions)
     ? { items }
     : {
-        items,
-        align: actions.align,
-        confirmTimeout: actions.confirmTimeout,
-      };
+      items,
+      align: actions.align,
+      confirmTimeout: actions.confirmTimeout,
+    };
 }
 
 export function formatRelativeTime(iso: string): string {

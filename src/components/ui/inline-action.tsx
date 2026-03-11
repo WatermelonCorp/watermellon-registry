@@ -33,7 +33,7 @@ export const InlineAction: React.FC<InlineActionProps> = ({
     try {
       await onAction();
       setStatus("success");
-    } catch (error) {
+    } catch {
       setStatus("idle");
     }
   };

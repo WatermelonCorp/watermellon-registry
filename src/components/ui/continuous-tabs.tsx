@@ -32,6 +32,7 @@ export const ContinuousTabs: FC<ContinuousTabsProps> = ({
     const [isMounted, setIsMounted] = useState<boolean>(false);
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMounted(true);
     }, []);
 

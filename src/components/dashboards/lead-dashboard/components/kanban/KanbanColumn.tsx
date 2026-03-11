@@ -6,6 +6,7 @@ import {
     PopoverTrigger,
 } from "../ui/popover"
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const BoardColumn = ({ column, children }: { column: any, children: React.ReactNode }) => {
     return (
         <div className="flex flex-col gap-4.5 w-[85vw] sm:w-[320px] lg:w-auto shrink-0 snap-center lg:snap-align-none h-full min-h-0">

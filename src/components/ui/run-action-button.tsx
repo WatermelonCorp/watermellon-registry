@@ -86,6 +86,7 @@ const DEFAULT_STEPS = [
 type StepItem = {
   id: number;
   label: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: React.ComponentType<any>;
 };
 

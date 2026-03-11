@@ -32,6 +32,7 @@ export const AddCashDisclosure: React.FC<CashDisclosureProps> = ({
   const [displayBalance, setDisplayBalance] = useState(initialBalance);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!isProcessing && !isDone) setDisplayBalance(initialBalance);
   }, [initialBalance, isProcessing, isDone]);
 

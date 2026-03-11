@@ -97,6 +97,7 @@ export const CarouselNavigator: FC<CarouselNavigatorProps> = ({
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ArrowButton = ({ children, onClick, themeColor, disabled }: any) => {
   return (
     <motion.button

@@ -486,8 +486,8 @@ function DataTableBody() {
       hasWarnedRowKeyRef.current = true;
       console.warn(
         "[DataTable] Missing `rowIdKey` prop. Using array index as React key can cause reconciliation issues when data reorders (focus traps, animation glitches, incorrect state preservation). " +
-          "Strongly recommended: Pass a `rowIdKey` prop that points to a unique identifier in your row data (e.g., 'id', 'uuid', 'symbol').\n" +
-          'Example: <DataTable rowIdKey="id" columns={...} data={...} />',
+        "Strongly recommended: Pass a `rowIdKey` prop that points to a unique identifier in your row data (e.g., 'id', 'uuid', 'symbol').\n" +
+        'Example: <DataTable rowIdKey="id" columns={...} data={...} />',
       );
     }
   }, [rowIdKey, data.length]);
@@ -528,11 +528,11 @@ function DataTableRow({ row, className }: DataTableRowProps) {
 
 interface DataTableCellProps {
   value:
-    | string
-    | number
-    | boolean
-    | null
-    | (string | number | boolean | null)[];
+  | string
+  | number
+  | boolean
+  | null
+  | (string | number | boolean | null)[];
   column: Column;
   row: DataTableRowData;
   className?: string;
@@ -907,30 +907,30 @@ type Tone = "success" | "warning" | "danger" | "info" | "neutral";
 export type FormatConfig =
   | { kind: "text" }
   | {
-      kind: "number";
-      decimals?: number;
-      unit?: string;
-      compact?: boolean;
-      showSign?: boolean;
-    }
+    kind: "number";
+    decimals?: number;
+    unit?: string;
+    compact?: boolean;
+    showSign?: boolean;
+  }
   | { kind: "currency"; currency: string; decimals?: number }
   | {
-      kind: "percent";
-      decimals?: number;
-      showSign?: boolean;
-      basis?: "fraction" | "unit";
-    }
+    kind: "percent";
+    decimals?: number;
+    showSign?: boolean;
+    basis?: "fraction" | "unit";
+  }
   | { kind: "date"; dateFormat?: "short" | "long" | "relative" }
   | {
-      kind: "delta";
-      decimals?: number;
-      upIsPositive?: boolean;
-      showSign?: boolean;
-    }
+    kind: "delta";
+    decimals?: number;
+    upIsPositive?: boolean;
+    showSign?: boolean;
+  }
   | {
-      kind: "status";
-      statusMap: Record<string, { tone: Tone; label?: string }>;
-    }
+    kind: "status";
+    statusMap: Record<string, { tone: Tone; label?: string }>;
+  }
   | { kind: "boolean"; labels?: { true: string; false: string } }
   | { kind: "link"; hrefKey?: string; external?: boolean }
   | { kind: "badge"; colorMap?: Record<string, Tone> }
@@ -997,13 +997,13 @@ export function StatusBadge({ value, options }: StatusBadgeProps) {
       className={cn(
         "border",
         config.tone === "warning" &&
-          "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-100",
+        "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-100",
         config.tone === "success" &&
-          "bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-100",
+        "bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-100",
         config.tone === "info" &&
-          "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-100",
+        "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-100",
         config.tone === "danger" &&
-          "bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-100",
+        "bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-100",
       )}
     >
       {label}
@@ -1224,13 +1224,13 @@ export function BadgeValue({ value, options }: BadgeValueProps) {
       className={cn(
         "border",
         tone === "warning" &&
-          "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-100",
+        "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-100",
         tone === "success" &&
-          "bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-100",
+        "bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-100",
         tone === "info" &&
-          "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-100",
+        "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-100",
         tone === "danger" &&
-          "bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-100",
+        "bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-100",
       )}
     >
       {value}
@@ -1290,11 +1290,11 @@ export function ArrayValue({ value, options }: ArrayValueProps) {
 
 interface RenderFormattedValueParams {
   value:
-    | string
-    | number
-    | boolean
-    | null
-    | (string | number | boolean | null)[];
+  | string
+  | number
+  | boolean
+  | null
+  | (string | number | boolean | null)[];
   column: { format?: FormatConfig };
   row?: Record<
     string,
@@ -1500,10 +1500,10 @@ export function normalizeActionsConfig(
   return Array.isArray(actions)
     ? { items }
     : {
-        items,
-        align: actions.align,
-        confirmTimeout: actions.confirmTimeout,
-      };
+      items,
+      align: actions.align,
+      confirmTimeout: actions.confirmTimeout,
+    };
 }
 
 import type { ReactNode } from "react";
@@ -1946,7 +1946,7 @@ export function ActionButtons({
               "min-h-11 w-full text-base",
               "@sm/actions:min-h-0 @sm/actions:w-auto @sm/actions:px-3 @sm/actions:py-2 @sm/actions:text-sm",
               action.isConfirming &&
-                "ring-destructive ring-2 ring-offset-2 motion-safe:animate-pulse",
+              "ring-destructive ring-2 ring-offset-2 motion-safe:animate-pulse",
             )}
             aria-label={
               action.shortcut ? `${label} (${action.shortcut})` : label
@@ -1989,9 +1989,6 @@ export function ActionButtons({
     </div>
   );
 }
-
-
-"use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 
@@ -2159,15 +2156,15 @@ export type ColumnKey<T extends object> = Extract<keyof T, string>;
 export type FormatFor<V> = V extends number
   ? Extract<FormatConfig, { kind: "number" | "currency" | "percent" | "delta" }>
   : V extends boolean
-    ? Extract<FormatConfig, { kind: "boolean" | "status" | "badge" }>
-    : V extends (string | number | boolean | null)[]
-      ? Extract<FormatConfig, { kind: "array" }>
-      : V extends string
-        ? Extract<
-            FormatConfig,
-            { kind: "text" | "link" | "date" | "badge" | "status" }
-          >
-        : Extract<FormatConfig, { kind: "text" }>;
+  ? Extract<FormatConfig, { kind: "boolean" | "status" | "badge" }>
+  : V extends (string | number | boolean | null)[]
+  ? Extract<FormatConfig, { kind: "array" }>
+  : V extends string
+  ? Extract<
+    FormatConfig,
+    { kind: "text" | "link" | "date" | "badge" | "status" }
+  >
+  : Extract<FormatConfig, { kind: "text" }>;
 
 /**
  * Column definition for DataTable
@@ -2384,7 +2381,7 @@ export interface DataTableClientProps<T extends object = RowData> {
  * ```
  */
 export interface DataTableProps<T extends object = RowData>
-  extends DataTableSerializableProps<T>, DataTableClientProps<T> {}
+  extends DataTableSerializableProps<T>, DataTableClientProps<T> { }
 
 export interface DataTableContextValue<T extends object = RowData> {
   columns: Column<T>[];
@@ -2527,7 +2524,7 @@ export function parseNumericLike(input: string): number | null {
   s = s.replace(/^\((.*)\)$/g, "-$1");
 
   // Strip common currency and percent symbols
-  s = s.replace(/[\%$€£¥₩₹₽₺₪₫฿₦₴₡₲₵₸]/g, "");
+  s = s.replace(/[%$€£¥₩₹₽₺₪₫฿₦₴₡₲₵₸]/g, "");
 
   const lastComma = s.lastIndexOf(",");
   const lastDot = s.lastIndexOf(".");

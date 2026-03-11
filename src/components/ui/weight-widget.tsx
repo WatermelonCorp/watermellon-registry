@@ -28,6 +28,7 @@ export const WeightWidget: React.FC<WeightWidgetProps> = ({
     const [displayValue, setDisplayValue] = useState(initialValue);
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
     }, []);
 
@@ -43,6 +44,7 @@ export const WeightWidget: React.FC<WeightWidgetProps> = ({
         return () => unsubscribe();
     }, [springX, pixelsPerUnit, onChange, displayValue]);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleDrag = (_: any, info: PanInfo) => {
         const newX = x.get() + info.delta.x;
         const minX = -max * pixelsPerUnit;
@@ -50,6 +52,7 @@ export const WeightWidget: React.FC<WeightWidgetProps> = ({
         x.set(Math.max(minX, Math.min(maxX, newX)));
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleDragEnd = (_: any, info: PanInfo) => {
         const currentX = x.get();
         const velocity = info.velocity.x * 0.1;

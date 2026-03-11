@@ -58,8 +58,6 @@ export const FeatureTour: React.FC<FeatureTourProps> = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    if (!steps || steps.length === 0) return null;
-
     const goToStep = (index: number) => {
         if (index === currentIndex) return;
         setCurrentIndex(index);
@@ -85,12 +83,14 @@ export const FeatureTour: React.FC<FeatureTourProps> = ({
         };
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [steps.length, loop, onClose]);
+    }, [steps?.length, loop, onClose]);
 
     useEffect(() => {
         const btn = containerRef.current?.querySelector("button");
         btn?.focus();
     }, []);
+
+    if (!steps || steps.length === 0) return null;
 
     const currentStep = steps[currentIndex];
 

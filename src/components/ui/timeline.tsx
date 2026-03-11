@@ -25,12 +25,14 @@ export interface TimelineSlotData {
   rowId: string
   startTime: string // "14:30"
   duration: number // minutes
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any // Additional custom data
 }
 
 export interface TimelineRowData {
   id: string
   label: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any // Additional custom data
 }
 
@@ -252,10 +254,12 @@ export function Timeline({ slots, rows, children, className }: TimelineProps) {
   const [localDraggedTime, setLocalDraggedTime] = useState<string | null>(null)
   const [isValid, setIsValid] = useState(true)
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragStart = (event: any) => {
     setLocalActiveSlot(event.active.id)
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragOver = (event: any) => {
     if (event.over) {
       setLocalOverRow(event.over.id)
@@ -265,6 +269,7 @@ export function Timeline({ slots, rows, children, className }: TimelineProps) {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragMove = (event: any) => {
     const { over, active, delta } = event
 
@@ -289,6 +294,7 @@ export function Timeline({ slots, rows, children, className }: TimelineProps) {
     setIsValid(true)
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragEnd = async (event: any) => {
     const { active, over, delta } = event
 
@@ -346,6 +352,7 @@ export function Timeline({ slots, rows, children, className }: TimelineProps) {
         >
           {React.Children.map(children, child => {
             if (React.isValidElement(child)) {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               return React.cloneElement(child as React.ReactElement<any>, {
                 slots,
                 rows,
@@ -462,6 +469,7 @@ export function TimelineRow({
   className,
   asChild,
   ...props
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: TimelineRowProps & any) {
   const { config, pixelsPerMinute, timelineWidth } = useTimeline()
   const Comp = asChild ? Slot : "div"
@@ -542,6 +550,7 @@ export function TimelineRow({
           return (
             <React.Fragment key={slot.id}>
               {React.isValidElement(slotElement)
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 ? React.cloneElement(slotElement, { activeSlotId: props.activeSlotId } as any)
                 : slotElement}
             </React.Fragment>
@@ -575,6 +584,7 @@ interface TimelineSlotProps {
   asChild?: boolean
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function TimelineSlot({ slot, children, className, asChild, ...props }: TimelineSlotProps & any) {
   const timeline = useTimeline()
   const { config, pixelsPerMinute, onSlotClick, dragPreviewTunnel } = timeline
@@ -791,6 +801,7 @@ interface TimelineGridProps {
   className?: string
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function TimelineGrid({ children, className, ...props }: TimelineGridProps & any) {
   const { timelineWidth } = useTimeline()
 
@@ -806,6 +817,7 @@ export function TimelineGrid({ children, className, ...props }: TimelineGridProp
     >
       {React.Children.map(children, child => {
         if (React.isValidElement(child)) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           return React.cloneElement(child as React.ReactElement<any>, props)
         }
         return child

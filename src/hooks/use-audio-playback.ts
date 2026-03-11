@@ -43,6 +43,7 @@ export const useAudioPlayback = (
       objectUrlRef.current = null;
     }
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAudioLoaded(false);
     setDuration(0);
     setPlaybackTime(0);
@@ -199,6 +200,7 @@ export const useAudioPlayback = (
     audio.addEventListener("canplay", handleCanPlay);
     audio.addEventListener("timeupdate", handleTimeUpdate);
     audio.addEventListener("ended", handleEnded);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     audio.addEventListener("error", handleError as any);
 
     return () => {
@@ -206,6 +208,7 @@ export const useAudioPlayback = (
       audio.removeEventListener("canplay", handleCanPlay);
       audio.removeEventListener("timeupdate", handleTimeUpdate);
       audio.removeEventListener("ended", handleEnded);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       audio.removeEventListener("error", handleError as any);
     };
   }, [isPlaying, options]);

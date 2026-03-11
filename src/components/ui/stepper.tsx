@@ -58,8 +58,10 @@ export function Stepper({
 
   const len = digits.length;
   const prevLen = prevDigits.length;
+  // eslint-disable-next-line react-hooks/refs
   const lenDiff = len - prevLen;
 
+  // eslint-disable-next-line react-hooks/refs
   const nextTicks = digits.map((digit, i) => {
     const prevI = i - lenDiff;
     const prevDigit = prevI >= 0 ? prevDigits[prevI] : undefined;
@@ -68,8 +70,10 @@ export function Stepper({
     return digit !== prevDigit ? (prevTick ?? 0) + 1 : prevTick ?? 0;
   });
 
-  digitTicksRef.current = nextTicks;
-  prevDigitsRef.current = digits;
+  React.useEffect(() => {
+    digitTicksRef.current = nextTicks;
+    prevDigitsRef.current = digits;
+  }, [nextTicks, digits]);
 
   const step = (dir: number) => {
     const next = Math.min(max, Math.max(min, current + dir));

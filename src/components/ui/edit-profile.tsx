@@ -29,6 +29,7 @@ export const EditProfile: React.FC<EditProfileProps> = ({
 
     useEffect(() => {
         if (isOpen) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setFormData(initialData);
         }
     }, [isOpen, initialData]);

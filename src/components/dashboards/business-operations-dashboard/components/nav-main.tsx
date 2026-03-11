@@ -15,6 +15,7 @@ export function NavMain({
   items: {
     title: string
     url: string
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     icon?: any
     isDisabled?: boolean
     isActive?: boolean

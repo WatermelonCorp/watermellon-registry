@@ -5,7 +5,6 @@ import React, {
   useRef,
   useEffect,
   useCallback,
-  useMemo,
   useId,
 } from "react";
 import {
@@ -13,7 +12,7 @@ import {
   MotionValue,
   useSpring,
   useTransform,
-  motionValue,
+  useMotionValue,
 } from "motion/react";
 import useMeasure from "react-use-measure";
 
@@ -28,7 +27,7 @@ const DIGIT_SPRING = {
 
 function Digit({ value, place }: { value: number; place: number }) {
   const digit = Math.floor(value / place) % 10;
-  const mv = useMemo(() => motionValue(digit), []);
+  const mv = useMotionValue(digit);
   const spring = useSpring(mv, DIGIT_SPRING);
 
   useEffect(() => {
@@ -140,8 +139,10 @@ export const KnobSlider: React.FC<KnobSliderProps> = ({
 
   /* Blur intensity */
   const prev = useRef(value);
-  const blur = Math.min(10, Math.abs(value - prev.current));
+  const [blur, setBlur] = useState(0);
+
   useEffect(() => {
+    setBlur(Math.min(10, Math.abs(value - prev.current)));
     prev.current = value;
   }, [value]);
 

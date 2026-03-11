@@ -353,10 +353,10 @@ function SlidingNumber({
         typeof decimalPlaces === 'number' && decimalPlaces >= 0
           ? decimalPlaces
           : (() => {
-              const s = String(number);
-              const idx = s.indexOf('.');
-              return idx >= 0 ? s.length - idx - 1 : 0;
-            })();
+            const s = String(number);
+            const idx = s.indexOf('.');
+            return idx >= 0 ? s.length - idx - 1 : 0;
+          })();
 
       const factor = Math.pow(10, inferredDecimals);
 
@@ -400,15 +400,16 @@ function SlidingNumber({
 
   const finalIntLength = padStart
     ? Math.max(
-        Math.floor(Math.abs(number)).toString().length,
-        newIntStrRaw.length,
-      )
+      Math.floor(Math.abs(number)).toString().length,
+      newIntStrRaw.length,
+    )
     : newIntStrRaw.length;
 
   const newIntStr = padStart
     ? newIntStrRaw.padStart(finalIntLength, '0')
     : newIntStrRaw;
 
+  // eslint-disable-next-line react-hooks/refs
   const prevFormatted = formatNumber(prevNumberRef.current);
   const [prevIntStrRaw = '', prevDecStrRaw = ''] = prevFormatted.split('.');
   const prevIntStr = padStart
@@ -445,8 +446,8 @@ function SlidingNumber({
     () =>
       newDecStrRaw
         ? Array.from({ length: newDecStrRaw.length }, (_, i) =>
-            Math.pow(10, newDecStrRaw.length - i - 1),
-          )
+          Math.pow(10, newDecStrRaw.length - i - 1),
+        )
         : [],
     [newDecStrRaw],
   );

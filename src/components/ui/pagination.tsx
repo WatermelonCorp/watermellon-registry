@@ -55,8 +55,10 @@ export function Pagination({
 
   const len = digits.length;
   const prevLen = prevDigits.length;
+  // eslint-disable-next-line react-hooks/refs
   const lenDiff = len - prevLen;
 
+  // eslint-disable-next-line react-hooks/refs
   const nextTicks = digits.map((digit, i) => {
     const prevI = i - lenDiff;
     const prevDigit = prevI >= 0 ? prevDigits[prevI] : undefined;
@@ -65,8 +67,10 @@ export function Pagination({
     return digit !== prevDigit ? (prevTick ?? 0) + 1 : prevTick ?? 0;
   });
 
-  digitTicksRef.current = nextTicks;
-  prevDigitsRef.current = digits;
+  React.useEffect(() => {
+    digitTicksRef.current = nextTicks;
+    prevDigitsRef.current = digits;
+  }, [nextTicks, digits]);
 
   const paginate = (dir: number) => {
     const next = Math.min(totalPages, Math.max(1, currentPage + dir));
@@ -90,11 +94,10 @@ export function Pagination({
           transition={{ type: "spring", stiffness: 400, damping: 20 }}
           onClick={() => paginate(-1)}
           disabled={currentPage === 1}
-          className={`flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#030303] shadow transition-colors duration-200 hover:bg-zinc-800 hover:text-zinc-100 sm:h-14 sm:w-14 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-800 hover:dark:text-zinc-100 ${
-            currentPage === 1
+          className={`flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#030303] shadow transition-colors duration-200 hover:bg-zinc-800 hover:text-zinc-100 sm:h-14 sm:w-14 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-800 hover:dark:text-zinc-100 ${currentPage === 1
               ? "cursor-not-allowed opacity-50"
               : "cursor-pointer"
-          }`}
+            }`}
         >
           <HiOutlineArrowLeft className="h-5 w-5 sm:h-7 sm:w-7" />
         </motion.button>
@@ -143,11 +146,10 @@ export function Pagination({
           transition={{ type: "spring", stiffness: 400, damping: 20 }}
           onClick={() => paginate(1)}
           disabled={currentPage === totalPages}
-          className={`flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#030303] shadow transition-colors duration-200 hover:bg-zinc-800 hover:text-zinc-100 sm:h-14 sm:w-14 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-800 hover:dark:text-zinc-100 ${
-            currentPage === 1
+          className={`flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#030303] shadow transition-colors duration-200 hover:bg-zinc-800 hover:text-zinc-100 sm:h-14 sm:w-14 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-800 hover:dark:text-zinc-100 ${currentPage === 1
               ? "cursor-not-allowed opacity-50"
               : "cursor-pointer"
-          }`}
+            }`}
         >
           <HiOutlineArrowRight className="h-5 w-5 sm:h-7 sm:w-7" />
         </motion.button>

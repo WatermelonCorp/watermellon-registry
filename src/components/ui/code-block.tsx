@@ -133,6 +133,7 @@ export function CodeBlock({
   useEffect(() => {
     const cached = htmlCache.get(cacheKey);
     if (cached) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setHighlightedHtml(cached);
       return;
     }

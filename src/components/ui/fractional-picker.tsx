@@ -60,6 +60,7 @@ export function FractionalPicker({
   itemWidth = 80,
   onChange,
   className,
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);

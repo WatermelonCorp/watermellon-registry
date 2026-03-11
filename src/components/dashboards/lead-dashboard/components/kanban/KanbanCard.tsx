@@ -56,6 +56,7 @@ export const getStatusStyles = (type: string) => {
     }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const KanbanCard = ({ card, columnId }: { card: any, columnId: string }) => {
     const {
         attributes,

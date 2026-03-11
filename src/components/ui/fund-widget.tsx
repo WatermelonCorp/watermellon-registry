@@ -52,6 +52,59 @@ const SPRING_OPTIONS: Transition = {
   damping: 40,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function FundCard({ item, i, y, CARD_HEIGHT }: { item: FundItem; i: number; y: any; CARD_HEIGHT: number }) {
+  const cardOffset = i * CARD_HEIGHT;
+
+  const rotateX = useTransform(
+    y,
+    [-(cardOffset + CARD_HEIGHT), -cardOffset, -(cardOffset - CARD_HEIGHT)],
+    [-25, 0, 25],
+    { clamp: true }
+  );
+
+  const DEAD_ZONE = CARD_HEIGHT * 0.25;
+
+  const blur = useTransform(
+    y,
+    [
+      -(cardOffset + CARD_HEIGHT),
+      -(cardOffset + DEAD_ZONE),
+      -cardOffset,
+      -(cardOffset - DEAD_ZONE),
+      -(cardOffset - CARD_HEIGHT),
+    ],
+    [8, 0, 0, 0, 8],
+    { clamp: true }
+  );
+
+  const filter = useMotionTemplate`blur(${blur}px)`;
+
+  return (
+    <motion.div
+      className="flex min-h-[320px] min-w-[320px] flex-col p-10 transform-3d"
+      style={{
+        rotateX,
+        filter,
+        transformPerspective: 1000,
+      }}
+    >
+      <h2 className="text-[60px] leading-none font-bold text-zinc-900 dark:text-zinc-100">
+        {item.value}
+      </h2>
+
+      <p className="mt-4 flex items-center gap-2 text-[32px] font-bold text-stone-400 dark:text-stone-400">
+        {item.change}
+        <FaArrowUp className="text-2xl" />
+      </p>
+
+      <h3 className="mt-12 text-[40px] font-bold text-stone-600 dark:text-stone-200">
+        {item.label}
+      </h3>
+    </motion.div>
+  );
+}
+
 export const FundWidget: React.FC<FundWidgetProps> = ({
   data = DEFAULT_DATA,
   initialIndex = 0,
@@ -60,7 +113,8 @@ export const FundWidget: React.FC<FundWidgetProps> = ({
 
   const y = useMotionValue(-(initialIndex * CARD_HEIGHT));
 
-  const handleDragEnd = (_: any, info: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleDragEnd = (_: unknown, info: any) => {
     const offset = info.offset.y;
     const velocity = info.velocity.y;
 
@@ -95,62 +149,9 @@ export const FundWidget: React.FC<FundWidgetProps> = ({
                 }}
                 className="flex cursor-grab flex-col transform-3d active:cursor-grabbing"
               >
-                {data.map((item, i) => {
-                  const cardOffset = i * CARD_HEIGHT;
-
-                  const rotateX = useTransform(
-                    y,
-                    [
-                      -(cardOffset + CARD_HEIGHT),
-                      -cardOffset,
-                      -(cardOffset - CARD_HEIGHT),
-                    ],
-                    [-25, 0, 25],
-                    { clamp: true }
-                  );
-
-                  const DEAD_ZONE = CARD_HEIGHT * 0.25;
-
-                  const blur = useTransform(
-                    y,
-                    [
-                      -(cardOffset + CARD_HEIGHT),
-                      -(cardOffset + DEAD_ZONE),
-                      -cardOffset,
-                      -(cardOffset - DEAD_ZONE),
-                      -(cardOffset - CARD_HEIGHT),
-                    ],
-                    [8, 0, 0, 0, 8],
-                    { clamp: true }
-                  );
-
-                  const filter = useMotionTemplate`blur(${blur}px)`;
-
-                  return (
-                    <motion.div
-                      key={item.id}
-                      className="flex min-h-[320px] min-w-[320px] flex-col p-10 transform-3d"
-                      style={{
-                        rotateX,
-                        filter,
-                        transformPerspective: 1000,
-                      }}
-                    >
-                      <h2 className="text-[60px] leading-none font-bold text-zinc-900 dark:text-zinc-100">
-                        {item.value}
-                      </h2>
-
-                      <p className="mt-4 flex items-center gap-2 text-[32px] font-bold text-stone-400 dark:text-stone-400">
-                        {item.change}
-                        <FaArrowUp className="text-2xl" />
-                      </p>
-
-                      <h3 className="mt-12 text-[40px] font-bold text-stone-600 dark:text-stone-200">
-                        {item.label}
-                      </h3>
-                    </motion.div>
-                  );
-                })}
+                {data.map((item, i) => (
+                  <FundCard key={item.id} item={item} i={i} y={y} CARD_HEIGHT={CARD_HEIGHT} />
+                ))}
               </motion.div>
 
               <div className="absolute top-1/2 right-7 z-20 flex -translate-y-1/2 flex-col">

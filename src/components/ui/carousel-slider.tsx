@@ -19,6 +19,7 @@ export interface Slide {
   img: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IconRenderer = (props?: any) => React.ReactNode;
 
 interface CarouselSliderProps {
@@ -101,6 +102,7 @@ export const CarouselSlider: React.FC<CarouselSliderProps> = ({
     setIndex((prev) => (prev + newDirection + slides.length) % slides.length);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragEnd = (_: any, info: PanInfo) => {
     if (info.offset.x < -120) paginate(1);
     else if (info.offset.x > 120) paginate(-1);

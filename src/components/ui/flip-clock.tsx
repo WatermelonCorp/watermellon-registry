@@ -58,6 +58,7 @@ const FlipUnit: FC<FlipUnitProps> = memo(function FlipUnit({
 
   useEffect(() => {
     if (digit !== prevDigit) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFlipping(true);
       // Wait for the full animation (0.3s top + 0.3s bottom) before resetting
       const timer = setTimeout(() => {

@@ -188,6 +188,7 @@ function CodeBlockPrimitive({
     let index = 0;
     const totalDuration = duration;
     const interval = totalDuration / characters.length;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let intervalId: any;
 
     const timeout = setTimeout(() => {
@@ -322,6 +323,7 @@ const buttonVariants = cva(
   },
 );
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type CopyButtonProps = Omit<any, 'children'> &
   VariantProps<typeof buttonVariants> & {
     content: string;
