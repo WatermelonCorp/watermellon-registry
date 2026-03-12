@@ -119,7 +119,7 @@ export const useAudioWaveform = (
         setCurrentTime(wavesurfer!.getCurrentTime());
       });
 
-      wavesurfer.on("error", (error) => {
+      wavesurfer.on("error", (error: string | Error) => {
         console.error("WaveSurfer error:", error);
         setIsLoading(false);
         callbacksRef.current.onError?.(new Error(String(error)));

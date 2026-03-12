@@ -1,15 +1,10 @@
-import { Oswald } from "next/font/google";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"; 
-
-const myFont = Oswald({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-});
+} from "@/components/ui/accordion";
 
 const items = [
   {
@@ -72,7 +67,7 @@ export default function PricingAccordion() {
               <div className="flex flex-1 items-start gap-4">
                 <p className="text-xs">{item.id}</p>
                 <h1
-                  className={`${myFont.className} uppercase relative text-center text-3xl md:text-5xl`}
+                  className={`uppercase relative text-center text-3xl md:text-5xl`}
                 >
                   {item.title}
                 </h1>

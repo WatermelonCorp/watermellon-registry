@@ -42,7 +42,7 @@ export const useTaskStore = create<TaskState>((set) => ({
     {
       id: "AGE-2201",
       date: "Apr 25",
-      mainTitle:"Onboard new features and introduce key features",
+      mainTitle: "Onboard new features and introduce key features",
       title: "Investigate meeting recording camera visibility issue",
       tags: [
         { label: "Shopify", icon: "S" },
@@ -81,7 +81,7 @@ export const useTaskStore = create<TaskState>((set) => ({
     {
       id: "AGE-2202",
       date: "Apr 25",
-      mainTitle:"Details on Roadmap",
+      mainTitle: "Details on Roadmap",
       title: "Share customer success stories and product roadmap",
       tags: [
         { label: "Stripe", icon: "S" },
@@ -99,7 +99,7 @@ export const useTaskStore = create<TaskState>((set) => ({
     {
       id: "AGE-2203",
       date: "Apr 26",
-      mainTitle:"Quarterly Goals",
+      mainTitle: "Quarterly Goals",
       title: "Check in on quarterly goals and progress",
       tags: [
         { label: "Vercel", icon: "V" },
@@ -117,7 +117,7 @@ export const useTaskStore = create<TaskState>((set) => ({
     {
       id: "AGE-2204",
       date: "Apr 27",
-      mainTitle:"Onboard new users to the agency platform",
+      mainTitle: "Onboard new users to the agency platform",
       title: "Onboard new users to the agency platform",
       tags: [
         { label: "Figma", icon: "F" },
@@ -137,22 +137,22 @@ export const useTaskStore = create<TaskState>((set) => ({
       ],
       timeline: [],
     },
-    
+
   ],
   selectedTaskId: null,
 
   selectTask: (id: string | null) => set({ selectedTaskId: id }),
 
-  toggleSubTask: (taskId, subTaskId) =>
-    set((state) => ({
-      tasks: state.tasks.map((task) =>
+  toggleSubTask: (taskId: string, subTaskId: string) =>
+    set((state: TaskState) => ({
+      tasks: state.tasks.map((task: Task) =>
         task.id === taskId
           ? {
-              ...task,
-              subTasks: task.subTasks.map((st) =>
-                st.id === subTaskId ? { ...st, completed: !st.completed } : st
-              ),
-            }
+            ...task,
+            subTasks: task.subTasks.map((st: SubTask) =>
+              st.id === subTaskId ? { ...st, completed: !st.completed } : st
+            ),
+          }
           : task
       ),
     })),

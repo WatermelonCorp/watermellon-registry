@@ -1,4 +1,4 @@
-import { useTaskStore } from "./store/task-store";
+import { useTaskStore, type Task, type SubTask, type TimelineEvent } from "./store/task-store";
 import { ScrollArea } from "./ui/scroll-area";
 import { Separator } from "./ui/separator";
 import { Send } from "lucide-react";
@@ -10,7 +10,7 @@ import { Button } from "./ui/button";
 
 export function TaskDetail() {
   const { tasks, selectedTaskId, toggleSubTask } = useTaskStore();
-  const task = tasks.find((t) => t.id === selectedTaskId);
+  const task = tasks.find((t: Task) => t.id === selectedTaskId);
 
   if (!task) {
     return (
@@ -83,7 +83,7 @@ export function TaskDetail() {
               Next Moves
             </h3>
             <div className="space-y-4">
-              {task.subTasks.map((sub) => (
+              {task.subTasks.map((sub: SubTask) => (
                 <div
                   key={sub.id}
                   className="flex items-center gap-3 p-3 bg-foreground/5 border border-border/50 rounded-none group hover:bg-muted transition-colors duration-200 cursor-pointer"
@@ -135,7 +135,7 @@ export function TaskDetail() {
             </div>
 
             <div className="relative flex flex-col gap-2 ">
-              {task.timeline?.map((item, index) => (
+              {task.timeline?.map((item: TimelineEvent, index: number) => (
                 <div
                   key={index}
                   className="relative flex items-center justify-between"

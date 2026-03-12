@@ -1,6 +1,6 @@
 import type React from "react"
 import { useEffect, useState } from "react"
-import Image from "next/image"
+
 import {
   Battery,
   BookmarkIcon,
@@ -292,11 +292,11 @@ export function Browser({
       prev.map((tab) =>
         tab.isActive
           ? {
-              ...tab,
-              url,
-              title: new URL(url).hostname || "New Tab",
-              isLoading: simulateLoading,
-            }
+            ...tab,
+            url,
+            title: new URL(url).hostname || "New Tab",
+            isLoading: simulateLoading,
+          }
           : tab
       )
     )
@@ -718,7 +718,7 @@ export function Browser({
             </div>
           ) : (
             <div className="flex h-full items-center justify-center">
-              <Image
+              <img
                 src={image}
                 alt={image}
                 width={320}

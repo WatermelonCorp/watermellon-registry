@@ -1,4 +1,4 @@
-import { useTaskStore } from "./store/task-store";
+import { useTaskStore, type Task, type SubTask } from "./store/task-store";
 import { ScrollArea } from "./ui/scroll-area";
 import { Badge } from "./ui/badge";
 import { Checkbox } from "./ui/checkbox";
@@ -45,7 +45,7 @@ export function TaskList() {
                 </Button>
               </div>
             ) : (
-              tasks.map((task) => (
+              tasks.map((task: Task) => (
                 <div key={task.id} className="flex flex-col">
                   <div
                     onClick={() => selectTask(task.id)}
@@ -80,7 +80,7 @@ export function TaskList() {
                         <div className="size-2 rounded-full border border-muted-foreground" />
                       </div>
                       <div className="flex gap-1.5 overflow-hidden">
-                        {task.tags.map((tag) => (
+                        {task.tags.map((tag: { label: string; icon: string }) => (
                           <Tooltip key={tag.label}>
                             <TooltipTrigger asChild>
                               <Badge
@@ -103,7 +103,7 @@ export function TaskList() {
                   </div>
 
                   <div className=" flex flex-col gap-1 mb-3">
-                    {task.subTasks.map((subTask) => (
+                    {task.subTasks.map((subTask: SubTask) => (
                       <div
                         key={subTask.id}
                         className="group flex items-center gap-2 px-3 py-1.5 rounded-none bg-muted shadow-card transition-colors hover:bg-muted/80"

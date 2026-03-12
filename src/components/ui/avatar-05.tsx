@@ -3,7 +3,7 @@ import {
   AvatarImage,
   AvatarFallback,
 } from "@/components/ui/avatar";
-import { VerifiedBadge } from "@aliimam/logos";
+import { VerifiedBadgeSymbols } from "@aliimam/logos";
 import { Badge } from "@/components/ui/badge";
 
 export default function Avatar05() {
@@ -30,7 +30,7 @@ export default function Avatar05() {
           <AvatarImage src="/ali.jpg" alt="Ali Imam" />
           <AvatarFallback>AI</AvatarFallback>
         </Avatar>
-        <VerifiedBadge
+        <VerifiedBadgeSymbols
           size={18}
           className="absolute -top-1 bg-background rounded-full -right-1 block"
         />
@@ -43,7 +43,7 @@ export default function Avatar05() {
         </Avatar>
         <Badge className="absolute -top-1.5 left-full min-w-5.5 -translate-x-3.5 border-background px-1">
           3
-        </Badge> 
+        </Badge>
       </div>
     </div>
   );

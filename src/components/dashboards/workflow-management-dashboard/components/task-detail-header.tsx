@@ -1,4 +1,4 @@
-import { useTaskStore } from "./store/task-store";
+import { useTaskStore, type Task } from "./store/task-store";
 
 import { AlertCircle, Check, Ellipsis, X, Share2, Trash2, Copy } from "lucide-react";
 import { Separator } from "./ui/separator";
@@ -23,7 +23,7 @@ import { Badge } from "./ui/badge";
 
 export default function TaskDetailHeader() {
   const { tasks, selectedTaskId, selectTask } = useTaskStore();
-  const task = tasks.find((t) => t.id === selectedTaskId);
+  const task = tasks.find((t: Task) => t.id === selectedTaskId);
   if (!task) {
     return null;
   }
@@ -80,7 +80,7 @@ export default function TaskDetailHeader() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <span className="text-xs font-semibold text-muted-foreground uppercase">Tags</span>
                 <div className="col-span-3 flex gap-2">
-                  {task.tags.map(tag => (
+                  {task.tags.map((tag: { label: string; icon: string }) => (
                     <Badge key={tag.label} variant="outline" className="text-[10px]">{tag.label}</Badge>
                   ))}
                 </div>

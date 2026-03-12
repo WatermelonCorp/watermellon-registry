@@ -4,7 +4,7 @@ import {
   Facebook,
   Bluesky,
   Github,
-  Google,
+  GoogleIcon,
   WhatsApp,
   Instagram,
   X,
@@ -19,7 +19,7 @@ export default function ButtonDemo() {
       <Button variant={"outline"} className="w-full">Create account</Button>
       <div className="grid w-full gap-3 grid-cols-3">
         <Button className="w-full" variant="outline" size="icon">
-          <Google />
+          <GoogleIcon />
         </Button>
         <Button className="w-full" variant="outline" size="icon">
           <Github />
@@ -38,7 +38,7 @@ export default function ButtonDemo() {
         <LinkedIn />
       </Button>
       <Button variant="outline" size="icon-lg">
-        <Google />
+        <GoogleIcon />
       </Button>
       <Button variant="outline" size="icon-lg">
         <Github />
@@ -56,7 +56,7 @@ export default function ButtonDemo() {
         <Threads />
       </Button>
       <Button variant="outline">
-        <Google />
+        <GoogleIcon />
         Login with Google
       </Button>
       <Button variant="outline">
