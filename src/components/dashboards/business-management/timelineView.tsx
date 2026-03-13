@@ -6,7 +6,7 @@ import {
     CardContent,
     CardHeader,
     CardTitle,
-} from "./components/ui/card";
+} from "@/components/ui/card";
 import {
     Table,
     TableBody,
@@ -14,29 +14,29 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "./components/ui/table";
+} from "@/components/ui/table";
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./components/ui/select";
-import { Switch } from "./components/ui/switch";
-import { Button } from "./components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
-import { Tabs, TabsList, TabsTrigger } from "./components/ui/tabs";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "./components/ui/dialog";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./components/ui/dropdown-menu";
+} from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import {
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
-} from "./components/ui/chart";
+} from "@/components/ui/chart";
 import {
     SidebarTrigger,
     useSidebar,
-} from "./components/ui/sidebar";
+} from "@/components/ui/sidebar";
 import {
     ComposedChart,
     Bar,
@@ -65,8 +65,8 @@ import {
     ChartColumnBig,
     MoreVertical,
 } from "lucide-react";
-import { Input } from "./components/ui/input";
-import { Separator } from "./components/ui/separator";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 import { metricsData, teamData, salesLaborData, chartConfig, actionItems } from "./data";
 
 export const TimelineView = () => {
@@ -108,9 +108,11 @@ export const TimelineView = () => {
                     </div>
                     <div className="flex items-center">
                         <Dialog>
-                            <DialogTrigger render={<Button variant="outline" size="sm" className="gap-1 transition-colors duration-300 cursor-pointer border-[1.5px] border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 hover:dark:border-neutral-600" />}>
-                                <Plus className="size-3.5 text-neutral-500" />
-                                Add
+                            <DialogTrigger asChild>
+                                <Button variant="outline" size="sm" className="gap-1 transition-colors duration-300 cursor-pointer border-[1.5px] border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 hover:dark:border-neutral-600">
+                                    <Plus className="size-3.5 text-neutral-500" />
+                                    Add
+                                </Button>
                             </DialogTrigger>
                             <DialogContent>
                                 <DialogHeader>
@@ -125,7 +127,7 @@ export const TimelineView = () => {
                                     </div>
                                 </div>
                                 <DialogFooter>
-                                    <DialogClose render={<Button variant="outline" />}>Cancel</DialogClose>
+                                    <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
                                     <Button type="submit">Save changes</Button>
                                 </DialogFooter>
                             </DialogContent>
@@ -243,8 +245,10 @@ export const TimelineView = () => {
                                 </DropdownMenu>
                                 {/* Mobile Add Button */}
                                 <Dialog>
-                                    <DialogTrigger render={<Button variant="outline" size="icon" className="md:hidden size-8 transition-colors duration-300 cursor-pointer" />}>
-                                        <Plus className="size-4 text-neutral-500" />
+                                    <DialogTrigger asChild>
+                                        <Button variant="outline" size="icon" className="md:hidden size-8 transition-colors duration-300 cursor-pointer">
+                                            <Plus className="size-4 text-neutral-500" />
+                                        </Button>
                                     </DialogTrigger>
                                     <DialogContent>
                                         <DialogHeader>
@@ -259,7 +263,7 @@ export const TimelineView = () => {
                                             </div>
                                         </div>
                                         <DialogFooter>
-                                            <DialogClose render={<Button variant="outline" />}>Cancel</DialogClose>
+                                            <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
                                             <Button type="submit">Save</Button>
                                         </DialogFooter>
                                     </DialogContent>
@@ -306,9 +310,11 @@ export const TimelineView = () => {
                         </div>
 
                         <Dialog>
-                            <DialogTrigger render={<Button variant="outline" size="sm" className="font-normal w-full sm:w-auto transition-colors duration-300 cursor-pointer group shadow-none hover:bg-neutral-200/20! hover:dark:bg-neutral-700/30!" />}>
-                                <MessageSquareText className="size-3.5 text-neutral-500 group-hover:text-orange-500 transition-all duration-100 cursor-pointer" />
-                                Feedback
+                            <DialogTrigger asChild>
+                                <Button variant="outline" size="sm" className="font-normal w-full sm:w-auto transition-colors duration-300 cursor-pointer group shadow-none hover:bg-neutral-200/20! hover:dark:bg-neutral-700/30!">
+                                    <MessageSquareText className="size-3.5 text-neutral-500 group-hover:text-orange-500 transition-all duration-100 cursor-pointer" />
+                                    Feedback
+                                </Button>
                             </DialogTrigger>
                             <DialogContent>
                                 <DialogHeader>
@@ -326,8 +332,8 @@ export const TimelineView = () => {
                                     </div>
                                 </div>
                                 <DialogFooter>
-                                    <DialogClose render={<Button variant="outline" />}>
-                                        Cancel
+                                    <DialogClose asChild>
+                                        <Button variant="outline">Cancel</Button>
                                     </DialogClose>
                                     <Button type="submit">Send Feedback</Button>
                                 </DialogFooter>

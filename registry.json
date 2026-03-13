@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "Watermelon UI Library",
   "homepage": "https://github.com/WatermelonCorp/watermellon-registry",
@@ -747,122 +747,43 @@
       ],
       "files": [
         {
-          "path": "src/components/dashboards/business-management/components/app-sidebar.tsx",
+          "path": "src/components/business-management/components/app-sidebar.tsx",
           "target": "components/watermelon/dashboards/business-management/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/business-management/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/chart.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/chart.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/collapsible.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/collapsible.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/switch.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/switch.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/table.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/tooltip.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/dashboardLayout.tsx",
+          "path": "src/components/business-management/dashboardLayout.tsx",
           "target": "components/watermelon/dashboards/business-management/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/business-management/data.ts",
+          "path": "src/components/business-management/data.ts",
           "target": "components/watermelon/dashboards/business-management/data.ts",
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/business-management/demo.tsx",
+          "path": "src/components/business-management/demo.tsx",
           "target": "components/watermelon/dashboards/business-management/demo.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/business-management/timelineView.tsx",
+          "path": "src/components/business-management/timelineView.tsx",
           "target": "components/watermelon/dashboards/business-management/timelineView.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "avatar",
+        "badge",
+        "breadcrumb",
         "button",
         "card",
         "chart",
+        "collapsible",
+        "dialog",
+        "dropdown-menu",
         "input",
+        "popover",
         "select",
         "separator",
         "sheet",
@@ -870,6 +791,7 @@
         "skeleton",
         "switch",
         "table",
+        "tabs",
         "tooltip"
       ]
     },
