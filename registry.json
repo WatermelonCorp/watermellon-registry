@@ -1551,173 +1551,71 @@
       "files": [
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/nav-main.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/nav-main.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/nav-main.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/nav-secondary.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/nav-secondary.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/nav-secondary.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/nav-user.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/nav-user.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/nav-user.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/site-header.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/site-header.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/chart.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/chart.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/checkbox.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/checkbox.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/drawer.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/drawer.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/label.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/label.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/sonner.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/sonner.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/table.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/tabs.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/tabs.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/toggle-group.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/toggle-group.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/toggle.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/toggle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/site-header.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/dashboardView.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/dashboardView.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/dashboardView.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/data.ts",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/data.ts",
+          "target": "components/watermelon/e-commerce-dashboard/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/demo.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/demo.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/demo.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "avatar",
         "badge",
+        "breadcrumb",
         "button",
         "card",
+        "chart",
+        "checkbox",
+        "drawer",
         "dropdown-menu",
         "input",
+        "label",
         "select",
         "separator",
         "sheet",
         "sidebar",
         "skeleton",
+        "sonner",
         "table",
+        "tabs",
+        "toggle-group",
         "toggle",
         "tooltip"
       ]
