@@ -1,6 +1,6 @@
 import { IconDots } from "@tabler/icons-react"
-import { Card, CardContent } from "./ui/card"
-import { Button } from "./ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -8,7 +8,7 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "./ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 
 export interface Invoice {
     id: string

@@ -40,12 +40,12 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarTrigger
-} from "./ui/sidebar"
-import { Button } from "./ui/button"
+} from "@/components/ui/sidebar"
+import { Button } from "@/components/ui/button"
 import { useLocation } from "react-router-dom"
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "./ui/dialog"
-import { Input } from "./ui/input"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 const data = {
   quickActions: [
@@ -140,9 +140,11 @@ export function AppSidebar({ onNavigate, currentView, ...props }: React.Componen
         </SidebarMenu>
 
         <Dialog>
-          <DialogTrigger render={<Button className="w-full gap-1 flex justify-center items-center shadow-none border-neutral-200 dark:border-neutral-700 hover:bg-neutral-200/10! dark:hover:bg-neutral-700/10" variant="outline" />}>
-            <Plus className="size-3.5 text-neutral-500 hover:text-orange-500" />
-            New timeline
+          <DialogTrigger asChild>
+            <Button className="w-full gap-1 flex justify-center items-center shadow-none border-neutral-200 dark:border-neutral-700 hover:bg-neutral-200/10! dark:hover:bg-neutral-700/10" variant="outline">
+              <Plus className="size-3.5 text-neutral-500 hover:text-orange-500" />
+              New timeline
+            </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -157,7 +159,7 @@ export function AppSidebar({ onNavigate, currentView, ...props }: React.Componen
               </div>
             </div>
             <DialogFooter>
-              <DialogClose render={<Button variant="outline" />}>Cancel</DialogClose>
+              <DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose>
               <Button type="submit">Create</Button>
             </DialogFooter>
           </DialogContent>
