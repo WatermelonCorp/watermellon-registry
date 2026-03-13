@@ -1,100 +1,31 @@
-'use client';
+"use client"
 
-import * as React from 'react';
-import { Progress as ProgressPrime } from 'radix-ui';
-import { motion } from 'motion/react';
-import { cn } from '@/lib/utils';
+import * as React from "react"
+import { Progress as ProgressPrimitive } from "radix-ui"
 
-type ProgressProps = ProgressPrimitiveProps;
+import { cn } from "@/lib/utils"
 
-function Progress({ className, ...props }: ProgressProps) {
+function Progress({
+  className,
+  value,
+  ...props
+}: React.ComponentProps<typeof ProgressPrimitive.Root>) {
   return (
-    <ProgressPrimitive
+    <ProgressPrimitive.Root
+      data-slot="progress"
       className={cn(
-        'bg-primary/20 relative h-2 w-full overflow-hidden rounded-full',
-        className,
+        "relative h-2 w-full overflow-hidden rounded-full bg-primary/20",
+        className
       )}
       {...props}
     >
-      <ProgressIndicatorPrimitive className="bg-primary rounded-full h-full w-full flex-1" />
-    </ProgressPrimitive>
-  );
+      <ProgressPrimitive.Indicator
+        data-slot="progress-indicator"
+        className="h-full w-full flex-1 bg-primary transition-all"
+        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+      />
+    </ProgressPrimitive.Root>
+  )
 }
 
-export { Progress, type ProgressProps };
-
-
-
-type ProgressContextType = {
-  value: number;
-};
-
-const [ProgressProvider, useProgress] =
-  getStrictContext<ProgressContextType>('ProgressContext');
-
-type ProgressPrimitiveProps = React.ComponentProps<typeof ProgressPrime.Root>;
-
-function ProgressPrimitive(props: ProgressPrimitiveProps) {
-  return (
-    <ProgressProvider value={{ value: props.value ?? 0 }}>
-      <ProgressPrime.Root data-slot="progress" {...props} />
-    </ProgressProvider>
-  );
-}
-
-const MotionProgressIndicator = motion.create(ProgressPrime.Indicator);
-
-type ProgressIndicatorProps = React.ComponentProps<
-  typeof MotionProgressIndicator
->;
-
-function ProgressIndicatorPrimitive({
-  transition = { type: 'spring', stiffness: 100, damping: 30 },
-  ...props
-}: ProgressIndicatorProps) {
-  const { value } = useProgress();
-
-  return (
-    <MotionProgressIndicator
-      data-slot="progress-indicator"
-      animate={{ x: `-${100 - (value || 0)}%` }}
-      transition={transition}
-      {...props}
-    />
-  );
-}
-
-function getStrictContext<T>(
-  name?: string,
-): readonly [
-  ({
-    value,
-    children,
-  }: {
-    value: T;
-    children?: React.ReactNode;
-  }) => React.JSX.Element,
-  () => T,
-] {
-  const Context = React.createContext<T | undefined>(undefined);
-
-  const Provider = ({
-    value,
-    children,
-  }: {
-    value: T;
-    children?: React.ReactNode;
-  }) => <Context.Provider value={value}>{children}</Context.Provider>;
-
-  const useSafeContext = () => {
-    const ctx = React.useContext(Context);
-    if (ctx === undefined) {
-      throw new Error(`useContext must be used within ${name ?? 'a Provider'}`);
-    }
-    return ctx;
-  };
-
-  return [Provider, useSafeContext] as const;
-}
-
-export { getStrictContext };
+export { Progress }

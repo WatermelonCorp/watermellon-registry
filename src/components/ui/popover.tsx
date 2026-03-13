@@ -1,265 +1,87 @@
-'use client';
+import * as React from "react"
+import { Popover as PopoverPrimitive } from "radix-ui"
 
-import * as React from 'react';
-import { Popover as PopoverPrime } from 'radix-ui';
-import { AnimatePresence, motion, type HTMLMotionProps } from 'motion/react';
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils"
 
-type PopoverProps = PopoverPrimitiveProps;
-
-function Popover(props: PopoverProps) {
-  return <PopoverPrimitive {...props} />;
+function Popover({
+  ...props
+}: React.ComponentProps<typeof PopoverPrimitive.Root>) {
+  return <PopoverPrimitive.Root data-slot="popover" {...props} />
 }
 
-type PopoverTriggerProps = PopoverTriggerPrimitiveProps;
-
-function PopoverTrigger(props: PopoverTriggerProps) {
-  return <PopoverTriggerPrimitive {...props} />;
+function PopoverTrigger({
+  ...props
+}: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {
+  return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />
 }
-
-type PopoverContentProps = PopoverContentPrimitiveProps;
 
 function PopoverContent({
   className,
-  align = 'center',
+  align = "center",
   sideOffset = 4,
   ...props
-}: PopoverContentProps) {
+}: React.ComponentProps<typeof PopoverPrimitive.Content>) {
   return (
-    <PopoverPortalPrimitive>
-      <PopoverContentPrimitive
+    <PopoverPrimitive.Portal>
+      <PopoverPrimitive.Content
+        data-slot="popover-content"
         align={align}
         sideOffset={sideOffset}
         className={cn(
-          'bg-popover text-popover-foreground z-50 w-72 origin-(--radix-popover-content-transform-origin) rounded-md border p-4 shadow-md outline-hidden',
-          className,
+          "z-50 w-72 origin-(--radix-popover-content-transform-origin) rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-hidden data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
+          className
         )}
         {...props}
       />
-    </PopoverPortalPrimitive>
-  );
+    </PopoverPrimitive.Portal>
+  )
 }
 
-type PopoverCloseProps = PopoverClosePrimitiveProps;
+function PopoverAnchor({
+  ...props
+}: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {
+  return <PopoverPrimitive.Anchor data-slot="popover-anchor" {...props} />
+}
 
-function PopoverClose(props: PopoverCloseProps) {
-  return <PopoverClosePrimitive {...props} />;
+function PopoverHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="popover-header"
+      className={cn("flex flex-col gap-1 text-sm", className)}
+      {...props}
+    />
+  )
+}
+
+function PopoverTitle({ className, ...props }: React.ComponentProps<"h2">) {
+  return (
+    <div
+      data-slot="popover-title"
+      className={cn("font-medium", className)}
+      {...props}
+    />
+  )
+}
+
+function PopoverDescription({
+  className,
+  ...props
+}: React.ComponentProps<"p">) {
+  return (
+    <p
+      data-slot="popover-description"
+      className={cn("text-muted-foreground", className)}
+      {...props}
+    />
+  )
 }
 
 export {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  PopoverClose,
-  type PopoverProps,
-  type PopoverTriggerProps,
-  type PopoverContentProps,
-  type PopoverCloseProps,
-};
-
-
-
-type PopoverContextType = {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-};
-
-const [PopoverProvider, usePopover] =
-  getStrictContext<PopoverContextType>('PopoverContext');
-
-type PopoverPrimitiveProps = React.ComponentProps<typeof PopoverPrime.Root>;
-
-function PopoverPrimitive(props: PopoverPrimitiveProps) {
-  const [isOpen, setIsOpen] = useControlledState({
-    value: props?.open,
-    defaultValue: props?.defaultOpen,
-    onChange: props?.onOpenChange,
-  });
-
-  return (
-    <PopoverProvider value={{ isOpen, setIsOpen }}>
-      <PopoverPrime.Root
-        data-slot="popover"
-        {...props}
-        onOpenChange={setIsOpen}
-      />
-    </PopoverProvider>
-  );
+  PopoverAnchor,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverDescription,
 }
-
-type PopoverTriggerPrimitiveProps = React.ComponentProps<
-  typeof PopoverPrime.Trigger
->;
-
-function PopoverTriggerPrimitive(props: PopoverTriggerPrimitiveProps) {
-  return <PopoverPrime.Trigger data-slot="popover-trigger" {...props} />;
-}
-
-type PopoverPortalPrimitiveProps = Omit<
-  React.ComponentProps<typeof PopoverPrime.Portal>,
-  'forceMount'
->;
-
-function PopoverPortalPrimitive(props: PopoverPortalPrimitiveProps) {
-  const { isOpen } = usePopover();
-
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <PopoverPrime.Portal
-          forceMount
-          data-slot="popover-portal"
-          {...props}
-        />
-      )}
-    </AnimatePresence>
-  );
-}
-
-type PopoverContentPrimitiveProps = Omit<
-  React.ComponentProps<typeof PopoverPrime.Content>,
-  'forceMount' | 'asChild'
-> &
-  HTMLMotionProps<'div'>;
-
-function PopoverContentPrimitive({
-  onOpenAutoFocus,
-  onCloseAutoFocus,
-  onEscapeKeyDown,
-  onPointerDownOutside,
-  onFocusOutside,
-  onInteractOutside,
-  align,
-  alignOffset,
-  side,
-  sideOffset,
-  avoidCollisions,
-  collisionBoundary,
-  collisionPadding,
-  arrowPadding,
-  sticky,
-  hideWhenDetached,
-  transition = { type: 'spring', stiffness: 300, damping: 25 },
-  ...props
-}: PopoverContentPrimitiveProps) {
-  return (
-    <PopoverPrime.Content
-      asChild
-      forceMount
-      align={align}
-      alignOffset={alignOffset}
-      side={side}
-      sideOffset={sideOffset}
-      avoidCollisions={avoidCollisions}
-      collisionBoundary={collisionBoundary}
-      collisionPadding={collisionPadding}
-      arrowPadding={arrowPadding}
-      sticky={sticky}
-      hideWhenDetached={hideWhenDetached}
-      onOpenAutoFocus={onOpenAutoFocus}
-      onCloseAutoFocus={onCloseAutoFocus}
-      onEscapeKeyDown={onEscapeKeyDown}
-      onPointerDownOutside={onPointerDownOutside}
-      onInteractOutside={onInteractOutside}
-      onFocusOutside={onFocusOutside}
-    >
-      <motion.div
-        key="popover-content"
-        data-slot="popover-content"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.5 }}
-        transition={transition}
-        {...props}
-      />
-    </PopoverPrime.Content>
-  );
-}
-
-type PopoverAnchorPrimitiveProps = React.ComponentProps<typeof PopoverPrime.Anchor>;
-
-export function PopoverAnchorPrimitive({ ...props }: PopoverAnchorPrimitiveProps) {
-  return <PopoverPrime.Anchor data-slot="popover-anchor" {...props} />;
-}
-
-type PopoverArrowProps = React.ComponentProps<typeof PopoverPrime.Arrow>;
-
-export function PopoverArrowPrimitive(props: PopoverArrowProps) {
-  return <PopoverPrime.Arrow data-slot="popover-arrow" {...props} />;
-}
-
-type PopoverClosePrimitiveProps = React.ComponentProps<typeof PopoverPrime.Close>;
-
-function PopoverClosePrimitive(props: PopoverClosePrimitiveProps) {
-  return <PopoverPrime.Close data-slot="popover-close" {...props} />;
-}
-
-
-function getStrictContext<T>(
-  name?: string,
-): readonly [
-  ({
-    value,
-    children,
-  }: {
-    value: T;
-    children?: React.ReactNode;
-  }) => React.JSX.Element,
-  () => T,
-] {
-  const Context = React.createContext<T | undefined>(undefined);
-
-  const Provider = ({
-    value,
-    children,
-  }: {
-    value: T;
-    children?: React.ReactNode;
-  }) => <Context.Provider value={value}>{children}</Context.Provider>;
-
-  const useSafeContext = () => {
-    const ctx = React.useContext(Context);
-    if (ctx === undefined) {
-      throw new Error(`useContext must be used within ${name ?? 'a Provider'}`);
-    }
-    return ctx;
-  };
-
-  return [Provider, useSafeContext] as const;
-}
-
-export { getStrictContext };
-
-
-interface CommonControlledStateProps<T> {
-  value?: T;
-  defaultValue?: T;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function useControlledState<T, Rest extends any[] = []>(
-  props: CommonControlledStateProps<T> & {
-    onChange?: (value: T, ...args: Rest) => void;
-  },
-): readonly [T, (next: T, ...args: Rest) => void] {
-  const { value, defaultValue, onChange } = props;
-
-  const [state, setInternalState] = React.useState<T>(
-    value !== undefined ? value : (defaultValue as T),
-  );
-
-  React.useEffect(() => {
-    if (value !== undefined) setInternalState(value);
-  }, [value]);
-
-  const setState = React.useCallback(
-    (next: T, ...args: Rest) => {
-      setInternalState(next);
-      onChange?.(next, ...args);
-    },
-    [onChange],
-  );
-
-  return [state, setState] as const;
-}
-
