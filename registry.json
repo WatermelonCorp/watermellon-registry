@@ -747,28 +747,28 @@
       ],
       "files": [
         {
-          "path": "src/components/business-management/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/app-sidebar.tsx",
+          "path": "src/components/dashboards/business-management/components/app-sidebar.tsx",
+          "target": "components/watermelon/business-management/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/business-management/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/business-management/dashboardLayout.tsx",
+          "path": "src/components/dashboards/business-management/dashboardLayout.tsx",
+          "target": "components/watermelon/business-management/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/business-management/data.ts",
-          "target": "components/watermelon/dashboards/business-management/data.ts",
+          "path": "src/components/dashboards/business-management/data.ts",
+          "target": "components/watermelon/business-management/data.ts",
           "type": "registry:component"
         },
         {
-          "path": "src/components/business-management/demo.tsx",
-          "target": "components/watermelon/dashboards/business-management/demo.tsx",
+          "path": "src/components/dashboards/business-management/demo.tsx",
+          "target": "components/watermelon/business-management/demo.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/business-management/timelineView.tsx",
-          "target": "components/watermelon/dashboards/business-management/timelineView.tsx",
+          "path": "src/components/dashboards/business-management/timelineView.tsx",
+          "target": "components/watermelon/business-management/timelineView.tsx",
           "type": "registry:component"
         }
       ],
@@ -806,136 +806,73 @@
       "files": [
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/invoice-card.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/invoice-card.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/invoice-card.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/nav-main.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/nav-main.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/nav-main.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/nav-projects.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/nav-projects.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/nav-projects.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/nav-user.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/nav-user.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/nav-user.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/team-switcher.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/team-switcher.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/collapsible.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/collapsible.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/tabs.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/tabs.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/team-switcher.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/business-operations-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/data.ts",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/data.ts",
+          "target": "components/watermelon/business-operations-dashboard/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/demo.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/demo.tsx",
+          "target": "components/watermelon/business-operations-dashboard/demo.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/invoicesPageView.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/invoicesPageView.tsx",
+          "target": "components/watermelon/business-operations-dashboard/invoicesPageView.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "avatar",
+        "badge",
+        "breadcrumb",
         "button",
         "card",
+        "collapsible",
+        "dialog",
         "dropdown-menu",
         "input",
+        "label",
+        "popover",
         "separator",
         "sheet",
         "sidebar",
         "skeleton",
         "tabs",
+        "textarea",
         "tooltip"
       ]
     },
