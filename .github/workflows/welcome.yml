@@ -28,7 +28,7 @@ jobs:
 
             Here are a few next steps while our maintainers review:
             - Make sure you've read our [Contributing Guide](https://github.com/WatermelonCorp/watermellon-registry/blob/main/CONTRIBUTING.md).
-            - If this PR adds a _new component_, ensure you ran \`node scripts/sync-registry.js\` and included the generated `.json` files.
+            - If this PR adds a _new component_, ensure you ran 'node scripts/sync-registry.js' and included the generated '.json' files.
             - Ensure all CI tests pass.
 
             We will review this PR as soon as possible. Thank you again! :rocket:
