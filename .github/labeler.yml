@@ -1,14 +1,17 @@
 components:
-  - components/**/*
-  - public/r/**/*
-  - scripts/sync-registry.js
+  - any:
+    - 'components/**/*'
+    - 'public/r/**/*'
+    - 'scripts/sync-registry.js'
 
 documentation:
-  - README.md
-  - CONTRIBUTING.md
-  - CODE_OF_CONDUCT.md
-  - AI_POLICY.md
-  - SECURITY.md
+  - any:
+    - 'README.md'
+    - 'CONTRIBUTING.md'
+    - 'CODE_OF_CONDUCT.md'
+    - 'AI_POLICY.md'
+    - 'SECURITY.md'
 
 workflows:
-  - .github/workflows/**/*
+  - any:
+    - '.github/workflows/**/*'
