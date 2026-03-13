@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/primary-button";
+import { Button } from "@/components/watermelon-ui/primary-button";
 
 const items = [
   {

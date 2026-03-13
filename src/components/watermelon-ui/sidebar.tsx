@@ -22,7 +22,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from '@/components/ui/tooltip-animated';
+} from '@/components/watermelon-ui/tooltip-animated';
 
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';
@@ -680,10 +680,7 @@ function SidebarMenuSkeleton({
   ...props
 }: SidebarMenuSkeletonProps) {
   // Random width between 50 to 90%.
-  const width = React.useMemo(() => {
-    // eslint-disable-next-line react-hooks/purity
-    return `${Math.floor(Math.random() * 40) + 50}%`;
-  }, []);
+  const [width] = React.useState(() => `${Math.floor(Math.random() * 40) + 50}%`);
 
   return (
     <div
