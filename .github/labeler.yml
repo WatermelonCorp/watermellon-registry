@@ -1,17 +1,20 @@
 components:
-  - any:
-    - 'components/**/*'
-    - 'public/r/**/*'
-    - 'scripts/sync-registry.js'
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'components/**/*'
+      - 'public/r/**/*'
+      - 'scripts/sync-registry.js'
 
 documentation:
-  - any:
-    - 'README.md'
-    - 'CONTRIBUTING.md'
-    - 'CODE_OF_CONDUCT.md'
-    - 'AI_POLICY.md'
-    - 'SECURITY.md'
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'AI_POLICY.md'
+      - 'SECURITY.md'
 
 workflows:
-  - any:
-    - '.github/workflows/**/*'
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/workflows/**/*'
