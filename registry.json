@@ -4686,6 +4686,18 @@
       ]
     },
     {
+      "name": "shuffle-pinned-item-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/shuffle-pinned-item-base.tsx",
+          "target": "components/ui/shuffle-pinned-item-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "sidebar",
       "type": "registry:ui",
       "dependencies": [
