@@ -1,18 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "Duncan UI Library",
-  "homepage": "https://github.com/Pritam-2002/Duncan_ui_libary",
+  "name": "Watermelon UI Library",
+  "homepage": "https://github.com/WatermelonCorp/watermellon-registry",
   "items": [
     {
       "name": "aave-swap-component",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/aave-swap-component.tsx",
+          "path": "src/components/watermelon-ui/aave-swap-component.tsx",
           "target": "components/ui/aave-swap-component.tsx",
           "type": "registry:ui"
         }
@@ -21,13 +18,10 @@
     {
       "name": "accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-accordion",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/accordion.tsx",
+          "path": "src/components/watermelon-ui/accordion.tsx",
           "target": "components/ui/accordion.tsx",
           "type": "registry:ui"
         }
@@ -37,13 +31,10 @@
       "name": "accordion-03",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "accordion",
-        "primary-button"
-      ],
+      "registryDependencies": ["accordion", "primary-button"],
       "files": [
         {
-          "path": "src/components/ui/accordion-03.tsx",
+          "path": "src/components/watermelon-ui/accordion-03.tsx",
           "target": "components/ui/accordion-03.tsx",
           "type": "registry:ui"
         }
@@ -52,19 +43,15 @@
     {
       "name": "accordion-04",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/accordion-04.tsx",
+          "path": "src/components/watermelon-ui/accordion-04.tsx",
           "target": "components/ui/accordion-04.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-05",
@@ -72,14 +59,12 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/accordion-05.tsx",
+          "path": "src/components/watermelon-ui/accordion-05.tsx",
           "target": "components/ui/accordion-05.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-multiselect",
@@ -91,7 +76,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/accordion-multiselect.tsx",
+          "path": "src/components/watermelon-ui/accordion-multiselect.tsx",
           "target": "components/ui/accordion-multiselect.tsx",
           "type": "registry:ui"
         }
@@ -100,13 +85,10 @@
     {
       "name": "activities-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/activities-card.tsx",
+          "path": "src/components/watermelon-ui/activities-card.tsx",
           "target": "components/ui/activities-card.tsx",
           "type": "registry:ui"
         }
@@ -115,12 +97,10 @@
     {
       "name": "adaptive-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/adaptive-slider.tsx",
+          "path": "src/components/watermelon-ui/adaptive-slider.tsx",
           "target": "components/ui/adaptive-slider.tsx",
           "type": "registry:ui"
         }
@@ -129,13 +109,10 @@
     {
       "name": "add-cash-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/add-cash-disclosure.tsx",
+          "path": "src/components/watermelon-ui/add-cash-disclosure.tsx",
           "target": "components/ui/add-cash-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -144,13 +121,10 @@
     {
       "name": "ai-input-001",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input-001.tsx",
+          "path": "src/components/watermelon-ui/ai-input-001.tsx",
           "target": "components/ui/ai-input-001.tsx",
           "type": "registry:ui"
         }
@@ -159,13 +133,10 @@
     {
       "name": "ai-input-002",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input-002.tsx",
+          "path": "src/components/watermelon-ui/ai-input-002.tsx",
           "target": "components/ui/ai-input-002.tsx",
           "type": "registry:ui"
         }
@@ -174,13 +145,10 @@
     {
       "name": "ai-input-003",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input-003.tsx",
+          "path": "src/components/watermelon-ui/ai-input-003.tsx",
           "target": "components/ui/ai-input-003.tsx",
           "type": "registry:ui"
         }
@@ -189,13 +157,10 @@
     {
       "name": "ai-input-004",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input-004.tsx",
+          "path": "src/components/watermelon-ui/ai-input-004.tsx",
           "target": "components/ui/ai-input-004.tsx",
           "type": "registry:ui"
         }
@@ -204,13 +169,10 @@
     {
       "name": "ai-input-005",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ai-input-005.tsx",
+          "path": "src/components/watermelon-ui/ai-input-005.tsx",
           "target": "components/ui/ai-input-005.tsx",
           "type": "registry:ui"
         }
@@ -219,12 +181,10 @@
     {
       "name": "alert",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
-          "path": "src/components/ui/alert.tsx",
+          "path": "src/components/watermelon-ui/alert.tsx",
           "target": "components/ui/alert.tsx",
           "type": "registry:ui"
         }
@@ -233,15 +193,11 @@
     {
       "name": "alert-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
-          "path": "src/components/ui/alert-01.tsx",
+          "path": "src/components/watermelon-ui/alert-01.tsx",
           "target": "components/ui/alert-01.tsx",
           "type": "registry:ui"
         }
@@ -250,15 +206,11 @@
     {
       "name": "alert-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
-          "path": "src/components/ui/alert-02.tsx",
+          "path": "src/components/watermelon-ui/alert-02.tsx",
           "target": "components/ui/alert-02.tsx",
           "type": "registry:ui"
         }
@@ -267,16 +219,11 @@
     {
       "name": "alert-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert", "button"],
       "files": [
         {
-          "path": "src/components/ui/alert-03.tsx",
+          "path": "src/components/watermelon-ui/alert-03.tsx",
           "target": "components/ui/alert-03.tsx",
           "type": "registry:ui"
         }
@@ -285,15 +232,11 @@
     {
       "name": "alert-04",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
-          "path": "src/components/ui/alert-04.tsx",
+          "path": "src/components/watermelon-ui/alert-04.tsx",
           "target": "components/ui/alert-04.tsx",
           "type": "registry:ui"
         }
@@ -302,16 +245,11 @@
     {
       "name": "alert-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert", "button"],
       "files": [
         {
-          "path": "src/components/ui/alert-05.tsx",
+          "path": "src/components/watermelon-ui/alert-05.tsx",
           "target": "components/ui/alert-05.tsx",
           "type": "registry:ui"
         }
@@ -320,15 +258,11 @@
     {
       "name": "alert-06",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
-          "path": "src/components/ui/alert-06.tsx",
+          "path": "src/components/watermelon-ui/alert-06.tsx",
           "target": "components/ui/alert-06.tsx",
           "type": "registry:ui"
         }
@@ -337,14 +271,10 @@
     {
       "name": "alert-dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/alert-dialog.tsx",
+          "path": "src/components/watermelon-ui/alert-dialog.tsx",
           "target": "components/ui/alert-dialog.tsx",
           "type": "registry:ui"
         }
@@ -353,16 +283,11 @@
     {
       "name": "alert-dialog-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
-          "path": "src/components/ui/alert-dialog-01.tsx",
+          "path": "src/components/watermelon-ui/alert-dialog-01.tsx",
           "target": "components/ui/alert-dialog-01.tsx",
           "type": "registry:ui"
         }
@@ -371,16 +296,11 @@
     {
       "name": "alert-dialog-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
-          "path": "src/components/ui/alert-dialog-02.tsx",
+          "path": "src/components/watermelon-ui/alert-dialog-02.tsx",
           "target": "components/ui/alert-dialog-02.tsx",
           "type": "registry:ui"
         }
@@ -389,16 +309,11 @@
     {
       "name": "alert-dialog-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
-          "path": "src/components/ui/alert-dialog-03.tsx",
+          "path": "src/components/watermelon-ui/alert-dialog-03.tsx",
           "target": "components/ui/alert-dialog-03.tsx",
           "type": "registry:ui"
         }
@@ -407,11 +322,7 @@
     {
       "name": "alphine-booking-form",
       "type": "registry:ui",
-      "dependencies": [
-        "date-fns",
-        "lucide-react",
-        "react-day-picker"
-      ],
+      "dependencies": ["date-fns", "lucide-react", "react-day-picker"],
       "registryDependencies": [
         "button",
         "calendar",
@@ -421,7 +332,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/alphine-booking-form.tsx",
+          "path": "src/components/watermelon-ui/alphine-booking-form.tsx",
           "target": "components/ui/alphine-booking-form.tsx",
           "type": "registry:ui"
         }
@@ -431,15 +342,10 @@
       "name": "alphine-login-form",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "button",
-        "card",
-        "input",
-        "label"
-      ],
+      "registryDependencies": ["button", "card", "input", "label"],
       "files": [
         {
-          "path": "src/components/ui/alphine-login-form.tsx",
+          "path": "src/components/watermelon-ui/alphine-login-form.tsx",
           "target": "components/ui/alphine-login-form.tsx",
           "type": "registry:ui"
         }
@@ -448,13 +354,10 @@
     {
       "name": "animate-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
-          "path": "src/components/ui/animate-button.tsx",
+          "path": "src/components/watermelon-ui/animate-button.tsx",
           "target": "components/ui/animate-button.tsx",
           "type": "registry:ui"
         }
@@ -463,14 +366,10 @@
     {
       "name": "animated-accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/animated-accordion.tsx",
+          "path": "src/components/watermelon-ui/animated-accordion.tsx",
           "target": "components/ui/animated-accordion.tsx",
           "type": "registry:ui"
         }
@@ -479,13 +378,10 @@
     {
       "name": "animated-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
-          "path": "src/components/ui/animated-button.tsx",
+          "path": "src/components/watermelon-ui/animated-button.tsx",
           "target": "components/ui/animated-button.tsx",
           "type": "registry:ui"
         }
@@ -494,12 +390,10 @@
     {
       "name": "audio-player",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/audio-player.tsx",
+          "path": "src/components/watermelon-ui/audio-player.tsx",
           "target": "components/ui/audio-player.tsx",
           "type": "registry:ui"
         },
@@ -513,12 +407,10 @@
     {
       "name": "audio-player-with-waveform",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/audio-player-with-waveform.tsx",
+          "path": "src/components/watermelon-ui/audio-player-with-waveform.tsx",
           "target": "components/ui/audio-player-with-waveform.tsx",
           "type": "registry:ui"
         },
@@ -528,39 +420,28 @@
           "type": "registry:hook"
         }
       ],
-      "registryDependencies": [
-        "select"
-      ]
+      "registryDependencies": ["select"]
     },
     {
       "name": "availability",
       "type": "registry:ui",
-      "dependencies": [
-        "@dnd-kit/core",
-        "lucide-react",
-        "nanoid",
-        "tunnel-rat"
-      ],
+      "dependencies": ["@dnd-kit/core", "lucide-react", "nanoid", "tunnel-rat"],
       "files": [
         {
-          "path": "src/components/ui/availability.tsx",
+          "path": "src/components/watermelon-ui/availability.tsx",
           "target": "components/ui/availability.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "avatar",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-avatar"
-      ],
+      "dependencies": ["@radix-ui/react-avatar"],
       "files": [
         {
-          "path": "src/components/ui/avatar.tsx",
+          "path": "src/components/watermelon-ui/avatar.tsx",
           "target": "components/ui/avatar.tsx",
           "type": "registry:ui"
         }
@@ -569,30 +450,24 @@
     {
       "name": "avatar-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
+      "dependencies": ["@aliimam/icons"],
       "files": [
         {
-          "path": "src/components/ui/avatar-01.tsx",
+          "path": "src/components/watermelon-ui/avatar-01.tsx",
           "target": "components/ui/avatar-01.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-02",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/ui/avatar-02.tsx",
+          "path": "src/components/watermelon-ui/avatar-02.tsx",
           "target": "components/ui/avatar-02.tsx",
           "type": "registry:ui"
         }
@@ -604,25 +479,21 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/avatar-03.tsx",
+          "path": "src/components/watermelon-ui/avatar-03.tsx",
           "target": "components/ui/avatar-03.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-04",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/ui/avatar-04.tsx",
+          "path": "src/components/watermelon-ui/avatar-04.tsx",
           "target": "components/ui/avatar-04.tsx",
           "type": "registry:ui"
         }
@@ -632,13 +503,10 @@
       "name": "avatar-05",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar",
-        "badge"
-      ],
+      "registryDependencies": ["avatar", "badge"],
       "files": [
         {
-          "path": "src/components/ui/avatar-05.tsx",
+          "path": "src/components/watermelon-ui/avatar-05.tsx",
           "target": "components/ui/avatar-05.tsx",
           "type": "registry:ui"
         }
@@ -650,25 +518,20 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/avatar-06.tsx",
+          "path": "src/components/watermelon-ui/avatar-06.tsx",
           "target": "components/ui/avatar-06.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-group",
       "type": "registry:ui",
-      "dependencies": [
-        "@floating-ui/react",
-        "motion"
-      ],
+      "dependencies": ["@floating-ui/react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/avatar-group.tsx",
+          "path": "src/components/watermelon-ui/avatar-group.tsx",
           "target": "components/ui/avatar-group.tsx",
           "type": "registry:ui"
         }
@@ -677,12 +540,10 @@
     {
       "name": "award",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/award.tsx",
+          "path": "src/components/watermelon-ui/award.tsx",
           "target": "components/ui/award.tsx",
           "type": "registry:ui"
         }
@@ -691,13 +552,10 @@
     {
       "name": "badge",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
-          "path": "src/components/ui/badge.tsx",
+          "path": "src/components/watermelon-ui/badge.tsx",
           "target": "components/ui/badge.tsx",
           "type": "registry:ui"
         }
@@ -707,12 +565,10 @@
       "name": "badge-01",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
-          "path": "src/components/ui/badge-01.tsx",
+          "path": "src/components/watermelon-ui/badge-01.tsx",
           "target": "components/ui/badge-01.tsx",
           "type": "registry:ui"
         }
@@ -721,15 +577,11 @@
     {
       "name": "badge-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "badge"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["badge"],
       "files": [
         {
-          "path": "src/components/ui/badge-02.tsx",
+          "path": "src/components/watermelon-ui/badge-02.tsx",
           "target": "components/ui/badge-02.tsx",
           "type": "registry:ui"
         }
@@ -739,12 +591,10 @@
       "name": "badge-03",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
-          "path": "src/components/ui/badge-03.tsx",
+          "path": "src/components/watermelon-ui/badge-03.tsx",
           "target": "components/ui/badge-03.tsx",
           "type": "registry:ui"
         }
@@ -754,12 +604,10 @@
       "name": "badge-04",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
-          "path": "src/components/ui/badge-04.tsx",
+          "path": "src/components/watermelon-ui/badge-04.tsx",
           "target": "components/ui/badge-04.tsx",
           "type": "registry:ui"
         }
@@ -768,15 +616,11 @@
     {
       "name": "badge-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "badge"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["badge"],
       "files": [
         {
-          "path": "src/components/ui/badge-05.tsx",
+          "path": "src/components/watermelon-ui/badge-05.tsx",
           "target": "components/ui/badge-05.tsx",
           "type": "registry:ui"
         }
@@ -788,7 +632,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/book.tsx",
+          "path": "src/components/watermelon-ui/book.tsx",
           "target": "components/ui/book.tsx",
           "type": "registry:ui"
         }
@@ -797,13 +641,10 @@
     {
       "name": "breadcrumb",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/breadcrumb.tsx",
+          "path": "src/components/watermelon-ui/breadcrumb.tsx",
           "target": "components/ui/breadcrumb.tsx",
           "type": "registry:ui"
         }
@@ -815,14 +656,12 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/breadcrumb-01.tsx",
+          "path": "src/components/watermelon-ui/breadcrumb-01.tsx",
           "target": "components/ui/breadcrumb-01.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-02",
@@ -830,31 +669,25 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/breadcrumb-02.tsx",
+          "path": "src/components/watermelon-ui/breadcrumb-02.tsx",
           "target": "components/ui/breadcrumb-02.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
+      "dependencies": ["@aliimam/icons"],
       "files": [
         {
-          "path": "src/components/ui/breadcrumb-03.tsx",
+          "path": "src/components/watermelon-ui/breadcrumb-03.tsx",
           "target": "components/ui/breadcrumb-03.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-04",
@@ -862,45 +695,33 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/breadcrumb-04.tsx",
+          "path": "src/components/watermelon-ui/breadcrumb-04.tsx",
           "target": "components/ui/breadcrumb-04.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "browser",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/browser.tsx",
+          "path": "src/components/watermelon-ui/browser.tsx",
           "target": "components/ui/browser.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "input",
-        "separator"
-      ]
+      "registryDependencies": ["badge", "button", "card", "input", "separator"]
     },
     {
       "name": "budget-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/budget-card.tsx",
+          "path": "src/components/watermelon-ui/budget-card.tsx",
           "target": "components/ui/budget-card.tsx",
           "type": "registry:ui"
         }
@@ -927,121 +748,42 @@
       "files": [
         {
           "path": "src/components/dashboards/business-management/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/app-sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/chart.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/chart.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/collapsible.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/collapsible.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/switch.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/switch.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/table.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-management/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/business-management/components/ui/tooltip.tsx",
+          "target": "components/watermelon/business-management/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-management/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/business-management/dashboardLayout.tsx",
+          "target": "components/watermelon/business-management/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-management/data.ts",
-          "target": "components/watermelon/dashboards/business-management/data.ts",
+          "target": "components/watermelon/business-management/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-management/demo.tsx",
-          "target": "components/watermelon/dashboards/business-management/demo.tsx",
+          "target": "components/watermelon/business-management/demo.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-management/timelineView.tsx",
-          "target": "components/watermelon/dashboards/business-management/timelineView.tsx",
+          "target": "components/watermelon/business-management/timelineView.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "avatar",
+        "badge",
+        "breadcrumb",
         "button",
         "card",
         "chart",
+        "collapsible",
+        "dialog",
+        "dropdown-menu",
         "input",
+        "popover",
         "select",
         "separator",
         "sheet",
@@ -1049,6 +791,7 @@
         "skeleton",
         "switch",
         "table",
+        "tabs",
         "tooltip"
       ]
     },
@@ -1063,149 +806,83 @@
       "files": [
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/invoice-card.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/invoice-card.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/invoice-card.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/nav-main.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/nav-main.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/nav-main.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/nav-projects.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/nav-projects.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/nav-projects.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/nav-user.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/nav-user.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/nav-user.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/components/team-switcher.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/team-switcher.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/collapsible.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/collapsible.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/tabs.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/tabs.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/business-operations-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/business-operations-dashboard/components/team-switcher.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/business-operations-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/data.ts",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/data.ts",
+          "target": "components/watermelon/business-operations-dashboard/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/demo.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/demo.tsx",
+          "target": "components/watermelon/business-operations-dashboard/demo.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/business-operations-dashboard/invoicesPageView.tsx",
-          "target": "components/watermelon/dashboards/business-operations-dashboard/invoicesPageView.tsx",
+          "target": "components/watermelon/business-operations-dashboard/invoicesPageView.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "avatar",
+        "badge",
+        "breadcrumb",
         "button",
         "card",
+        "collapsible",
+        "dialog",
         "dropdown-menu",
         "input",
+        "label",
+        "popover",
         "separator",
         "sheet",
         "sidebar",
         "skeleton",
         "tabs",
+        "textarea",
         "tooltip"
       ]
     },
     {
       "name": "button",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
-          "path": "src/components/ui/button.tsx",
+          "path": "src/components/watermelon-ui/button.tsx",
           "target": "components/ui/button.tsx",
           "type": "registry:ui"
         }
@@ -1214,15 +891,11 @@
     {
       "name": "button-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/button-01.tsx",
+          "path": "src/components/watermelon-ui/button-01.tsx",
           "target": "components/ui/button-01.tsx",
           "type": "registry:ui"
         }
@@ -1231,17 +904,11 @@
     {
       "name": "button-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons", "lucide-react"],
+      "registryDependencies": ["badge", "button"],
       "files": [
         {
-          "path": "src/components/ui/button-02.tsx",
+          "path": "src/components/watermelon-ui/button-02.tsx",
           "target": "components/ui/button-02.tsx",
           "type": "registry:ui"
         }
@@ -1250,15 +917,11 @@
     {
       "name": "button-03",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/button-03.tsx",
+          "path": "src/components/watermelon-ui/button-03.tsx",
           "target": "components/ui/button-03.tsx",
           "type": "registry:ui"
         }
@@ -1267,15 +930,11 @@
     {
       "name": "button-04",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/button-04.tsx",
+          "path": "src/components/watermelon-ui/button-04.tsx",
           "target": "components/ui/button-04.tsx",
           "type": "registry:ui"
         }
@@ -1284,15 +943,11 @@
     {
       "name": "button-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/button-05.tsx",
+          "path": "src/components/watermelon-ui/button-05.tsx",
           "target": "components/ui/button-05.tsx",
           "type": "registry:ui"
         }
@@ -1301,15 +956,11 @@
     {
       "name": "button-06",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/button-06.tsx",
+          "path": "src/components/watermelon-ui/button-06.tsx",
           "target": "components/ui/button-06.tsx",
           "type": "registry:ui"
         }
@@ -1318,15 +969,11 @@
     {
       "name": "button-07",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/button-07.tsx",
+          "path": "src/components/watermelon-ui/button-07.tsx",
           "target": "components/ui/button-07.tsx",
           "type": "registry:ui"
         }
@@ -1335,16 +982,11 @@
     {
       "name": "button-08",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons",
-        "motion"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons", "motion"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/button-08.tsx",
+          "path": "src/components/watermelon-ui/button-08.tsx",
           "target": "components/ui/button-08.tsx",
           "type": "registry:ui"
         }
@@ -1353,16 +995,11 @@
     {
       "name": "calendar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "react-day-picker"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react", "react-day-picker"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/calendar.tsx",
+          "path": "src/components/watermelon-ui/calendar.tsx",
           "target": "components/ui/calendar.tsx",
           "type": "registry:ui"
         }
@@ -1371,12 +1008,10 @@
     {
       "name": "calendar-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/calendar-widget.tsx",
+          "path": "src/components/watermelon-ui/calendar-widget.tsx",
           "target": "components/ui/calendar-widget.tsx",
           "type": "registry:ui"
         }
@@ -1388,7 +1023,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/card.tsx",
+          "path": "src/components/watermelon-ui/card.tsx",
           "target": "components/ui/card.tsx",
           "type": "registry:ui"
         }
@@ -1397,13 +1032,10 @@
     {
       "name": "card-split-accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/card-split-accordion.tsx",
+          "path": "src/components/watermelon-ui/card-split-accordion.tsx",
           "target": "components/ui/card-split-accordion.tsx",
           "type": "registry:ui"
         }
@@ -1420,7 +1052,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/card-swipe.tsx",
+          "path": "src/components/watermelon-ui/card-swipe.tsx",
           "target": "components/ui/card-swipe.tsx",
           "type": "registry:ui"
         }
@@ -1429,13 +1061,10 @@
     {
       "name": "carousel-navigator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/carousel-navigator.tsx",
+          "path": "src/components/watermelon-ui/carousel-navigator.tsx",
           "target": "components/ui/carousel-navigator.tsx",
           "type": "registry:ui"
         }
@@ -1452,8 +1081,20 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/carousel-slider.tsx",
+          "path": "src/components/watermelon-ui/carousel-slider.tsx",
           "target": "components/ui/carousel-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "changeable-pricing-section",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/changeable-pricing-section.tsx",
+          "target": "components/ui/changeable-pricing-section.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1461,12 +1102,10 @@
     {
       "name": "chart",
       "type": "registry:ui",
-      "dependencies": [
-        "recharts"
-      ],
+      "dependencies": ["recharts"],
       "files": [
         {
-          "path": "src/components/ui/chart.tsx",
+          "path": "src/components/watermelon-ui/chart.tsx",
           "target": "components/ui/chart.tsx",
           "type": "registry:ui"
         }
@@ -1475,13 +1114,10 @@
     {
       "name": "chart-2",
       "type": "registry:ui",
-      "dependencies": [
-        "recharts",
-        "zod"
-      ],
+      "dependencies": ["recharts", "zod"],
       "files": [
         {
-          "path": "src/components/ui/chart-2.tsx",
+          "path": "src/components/watermelon-ui/chart-2.tsx",
           "target": "components/ui/chart-2.tsx",
           "type": "registry:ui"
         }
@@ -1491,13 +1127,10 @@
     {
       "name": "checkbox",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/checkbox.tsx",
+          "path": "src/components/watermelon-ui/checkbox.tsx",
           "target": "components/ui/checkbox.tsx",
           "type": "registry:ui"
         }
@@ -1514,14 +1147,12 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/code.tsx",
+          "path": "src/components/watermelon-ui/code.tsx",
           "target": "components/ui/code.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "code-block",
@@ -1536,7 +1167,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/code-block.tsx",
+          "path": "src/components/watermelon-ui/code-block.tsx",
           "target": "components/ui/code-block.tsx",
           "type": "registry:ui"
         }
@@ -1553,7 +1184,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/code-tabs.tsx",
+          "path": "src/components/watermelon-ui/code-tabs.tsx",
           "target": "components/ui/code-tabs.tsx",
           "type": "registry:ui"
         }
@@ -1562,12 +1193,10 @@
     {
       "name": "collapsible",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-collapsible"
-      ],
+      "dependencies": ["@radix-ui/react-collapsible"],
       "files": [
         {
-          "path": "src/components/ui/collapsible.tsx",
+          "path": "src/components/watermelon-ui/collapsible.tsx",
           "target": "components/ui/collapsible.tsx",
           "type": "registry:ui"
         }
@@ -1576,13 +1205,10 @@
     {
       "name": "collection-grid-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/collection-grid-disclosure.tsx",
+          "path": "src/components/watermelon-ui/collection-grid-disclosure.tsx",
           "target": "components/ui/collection-grid-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -1591,12 +1217,10 @@
     {
       "name": "color-watch-selector",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-radio-group"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group"],
       "files": [
         {
-          "path": "src/components/ui/color-watch-selector.tsx",
+          "path": "src/components/watermelon-ui/color-watch-selector.tsx",
           "target": "components/ui/color-watch-selector.tsx",
           "type": "registry:ui"
         }
@@ -1605,13 +1229,10 @@
     {
       "name": "command-search",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/command-search.tsx",
+          "path": "src/components/watermelon-ui/command-search.tsx",
           "target": "components/ui/command-search.tsx",
           "type": "registry:ui"
         }
@@ -1620,13 +1241,10 @@
     {
       "name": "compose-email-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/compose-email-card.tsx",
+          "path": "src/components/watermelon-ui/compose-email-card.tsx",
           "target": "components/ui/compose-email-card.tsx",
           "type": "registry:ui"
         }
@@ -1635,13 +1253,10 @@
     {
       "name": "contextual-ai-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/contextual-ai-bar.tsx",
+          "path": "src/components/watermelon-ui/contextual-ai-bar.tsx",
           "target": "components/ui/contextual-ai-bar.tsx",
           "type": "registry:ui"
         }
@@ -1650,13 +1265,10 @@
     {
       "name": "continuous-pagination",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/continuous-pagination.tsx",
+          "path": "src/components/watermelon-ui/continuous-pagination.tsx",
           "target": "components/ui/continuous-pagination.tsx",
           "type": "registry:ui"
         }
@@ -1665,13 +1277,10 @@
     {
       "name": "continuous-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/continuous-tabs.tsx",
+          "path": "src/components/watermelon-ui/continuous-tabs.tsx",
           "target": "components/ui/continuous-tabs.tsx",
           "type": "registry:ui"
         }
@@ -1680,14 +1289,10 @@
     {
       "name": "copy",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/copy.tsx",
+          "path": "src/components/watermelon-ui/copy.tsx",
           "target": "components/ui/copy.tsx",
           "type": "registry:ui"
         }
@@ -1696,12 +1301,10 @@
     {
       "name": "create-community",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/create-community.tsx",
+          "path": "src/components/watermelon-ui/create-community.tsx",
           "target": "components/ui/create-community.tsx",
           "type": "registry:ui"
         }
@@ -1718,7 +1321,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/create-new-disclosure.tsx",
+          "path": "src/components/watermelon-ui/create-new-disclosure.tsx",
           "target": "components/ui/create-new-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -1727,13 +1330,10 @@
     {
       "name": "credit-usage-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/credit-usage-card.tsx",
+          "path": "src/components/watermelon-ui/credit-usage-card.tsx",
           "target": "components/ui/credit-usage-card.tsx",
           "type": "registry:ui"
         }
@@ -1742,12 +1342,10 @@
     {
       "name": "cursor",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/cursor.tsx",
+          "path": "src/components/watermelon-ui/cursor.tsx",
           "target": "components/ui/cursor.tsx",
           "type": "registry:ui"
         }
@@ -1766,7 +1364,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/data-table.tsx",
+          "path": "src/components/watermelon-ui/data-table.tsx",
           "target": "components/ui/data-table.tsx",
           "type": "registry:ui"
         }
@@ -1775,12 +1373,10 @@
     {
       "name": "debug-panel",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/debug-panel.tsx",
+          "path": "src/components/watermelon-ui/debug-panel.tsx",
           "target": "components/ui/debug-panel.tsx",
           "type": "registry:ui"
         }
@@ -1789,13 +1385,10 @@
     {
       "name": "deployment-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/deployment-card.tsx",
+          "path": "src/components/watermelon-ui/deployment-card.tsx",
           "target": "components/ui/deployment-card.tsx",
           "type": "registry:ui"
         }
@@ -1807,7 +1400,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/device.tsx",
+          "path": "src/components/watermelon-ui/device.tsx",
           "target": "components/ui/device.tsx",
           "type": "registry:ui"
         }
@@ -1816,14 +1409,10 @@
     {
       "name": "dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/dialog.tsx",
+          "path": "src/components/watermelon-ui/dialog.tsx",
           "target": "components/ui/dialog.tsx",
           "type": "registry:ui"
         }
@@ -1832,14 +1421,10 @@
     {
       "name": "dialog-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "@hugeicons/react",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["@hugeicons/react", "lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/dialog-stack.tsx",
+          "path": "src/components/watermelon-ui/dialog-stack.tsx",
           "target": "components/ui/dialog-stack.tsx",
           "type": "registry:ui"
         }
@@ -1848,12 +1433,10 @@
     {
       "name": "discrete-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/discrete-tabs.tsx",
+          "path": "src/components/watermelon-ui/discrete-tabs.tsx",
           "target": "components/ui/discrete-tabs.tsx",
           "type": "registry:ui"
         }
@@ -1870,7 +1453,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/dock.tsx",
+          "path": "src/components/watermelon-ui/dock.tsx",
           "target": "components/ui/dock.tsx",
           "type": "registry:ui"
         }
@@ -1879,13 +1462,10 @@
     {
       "name": "draggable-toolbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/draggable-toolbar.tsx",
+          "path": "src/components/watermelon-ui/draggable-toolbar.tsx",
           "target": "components/ui/draggable-toolbar.tsx",
           "type": "registry:ui"
         }
@@ -1894,13 +1474,10 @@
     {
       "name": "draw-signature",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/draw-signature.tsx",
+          "path": "src/components/watermelon-ui/draw-signature.tsx",
           "target": "components/ui/draw-signature.tsx",
           "type": "registry:ui"
         }
@@ -1912,7 +1489,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/drawer.tsx",
+          "path": "src/components/watermelon-ui/drawer.tsx",
           "target": "components/ui/drawer.tsx",
           "type": "registry:ui"
         }
@@ -1929,7 +1506,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/dropdown-disclosure.tsx",
+          "path": "src/components/watermelon-ui/dropdown-disclosure.tsx",
           "target": "components/ui/dropdown-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -1938,14 +1515,10 @@
     {
       "name": "dropdown-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/dropdown-menu.tsx",
+          "path": "src/components/watermelon-ui/dropdown-menu.tsx",
           "target": "components/ui/dropdown-menu.tsx",
           "type": "registry:ui"
         }
@@ -1978,173 +1551,71 @@
       "files": [
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/nav-main.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/nav-main.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/nav-main.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/nav-secondary.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/nav-secondary.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/nav-secondary.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/nav-user.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/nav-user.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/nav-user.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/components/site-header.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/site-header.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/chart.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/chart.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/checkbox.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/checkbox.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/drawer.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/drawer.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/label.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/label.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/sonner.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/sonner.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/table.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/tabs.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/tabs.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/toggle-group.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/toggle-group.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/toggle.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/toggle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/e-commerce-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/components/site-header.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/dashboardView.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/dashboardView.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/dashboardView.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/data.ts",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/data.ts",
+          "target": "components/watermelon/e-commerce-dashboard/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/e-commerce-dashboard/demo.tsx",
-          "target": "components/watermelon/dashboards/e-commerce-dashboard/demo.tsx",
+          "target": "components/watermelon/e-commerce-dashboard/demo.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "avatar",
         "badge",
+        "breadcrumb",
         "button",
         "card",
+        "chart",
+        "checkbox",
+        "drawer",
         "dropdown-menu",
         "input",
+        "label",
         "select",
         "separator",
         "sheet",
         "sidebar",
         "skeleton",
+        "sonner",
         "table",
+        "tabs",
+        "toggle-group",
         "toggle",
         "tooltip"
       ]
@@ -2152,13 +1623,10 @@
     {
       "name": "edit-badge",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/edit-badge.tsx",
+          "path": "src/components/watermelon-ui/edit-badge.tsx",
           "target": "components/ui/edit-badge.tsx",
           "type": "registry:ui"
         }
@@ -2167,12 +1635,10 @@
     {
       "name": "edit-profile",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/edit-profile.tsx",
+          "path": "src/components/watermelon-ui/edit-profile.tsx",
           "target": "components/ui/edit-profile.tsx",
           "type": "registry:ui"
         }
@@ -2181,13 +1647,10 @@
     {
       "name": "editable-chip",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/editable-chip.tsx",
+          "path": "src/components/watermelon-ui/editable-chip.tsx",
           "target": "components/ui/editable-chip.tsx",
           "type": "registry:ui"
         }
@@ -2196,13 +1659,10 @@
     {
       "name": "emoji-spree-choice-chips",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/emoji-spree-choice-chips.tsx",
+          "path": "src/components/watermelon-ui/emoji-spree-choice-chips.tsx",
           "target": "components/ui/emoji-spree-choice-chips.tsx",
           "type": "registry:ui"
         }
@@ -2381,13 +1841,10 @@
     {
       "name": "event-reminders",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/event-reminders.tsx",
+          "path": "src/components/watermelon-ui/event-reminders.tsx",
           "target": "components/ui/event-reminders.tsx",
           "type": "registry:ui"
         }
@@ -2396,14 +1853,10 @@
     {
       "name": "extended-toolbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
-          "path": "src/components/ui/extended-toolbar.tsx",
+          "path": "src/components/watermelon-ui/extended-toolbar.tsx",
           "target": "components/ui/extended-toolbar.tsx",
           "type": "registry:ui"
         }
@@ -2412,13 +1865,10 @@
     {
       "name": "family-receive-component",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/family-receive-component.tsx",
+          "path": "src/components/watermelon-ui/family-receive-component.tsx",
           "target": "components/ui/family-receive-component.tsx",
           "type": "registry:ui"
         }
@@ -2427,13 +1877,10 @@
     {
       "name": "family-wallet",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/family-wallet.tsx",
+          "path": "src/components/watermelon-ui/family-wallet.tsx",
           "target": "components/ui/family-wallet.tsx",
           "type": "registry:ui"
         }
@@ -2442,13 +1889,10 @@
     {
       "name": "feature-tour",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/feature-tour.tsx",
+          "path": "src/components/watermelon-ui/feature-tour.tsx",
           "target": "components/ui/feature-tour.tsx",
           "type": "registry:ui"
         }
@@ -2465,7 +1909,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/feedback.tsx",
+          "path": "src/components/watermelon-ui/feedback.tsx",
           "target": "components/ui/feedback.tsx",
           "type": "registry:ui"
         }
@@ -2474,13 +1918,10 @@
     {
       "name": "feedback-action",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/feedback-action.tsx",
+          "path": "src/components/watermelon-ui/feedback-action.tsx",
           "target": "components/ui/feedback-action.tsx",
           "type": "registry:ui"
         }
@@ -2489,12 +1930,10 @@
     {
       "name": "file-upload",
       "type": "registry:ui",
-      "dependencies": [
-        "sonner"
-      ],
+      "dependencies": ["sonner"],
       "files": [
         {
-          "path": "src/components/ui/file-upload.tsx",
+          "path": "src/components/watermelon-ui/file-upload.tsx",
           "target": "components/ui/file-upload.tsx",
           "type": "registry:ui"
         }
@@ -2503,14 +1942,10 @@
     {
       "name": "files",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/files.tsx",
+          "path": "src/components/watermelon-ui/files.tsx",
           "target": "components/ui/files.tsx",
           "type": "registry:ui"
         }
@@ -2519,14 +1954,10 @@
     {
       "name": "filter-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
-          "path": "src/components/ui/filter-disclosure.tsx",
+          "path": "src/components/watermelon-ui/filter-disclosure.tsx",
           "target": "components/ui/filter-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -2535,13 +1966,10 @@
     {
       "name": "flip",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
-          "path": "src/components/ui/flip.tsx",
+          "path": "src/components/watermelon-ui/flip.tsx",
           "target": "components/ui/flip.tsx",
           "type": "registry:ui"
         }
@@ -2550,16 +1978,11 @@
     {
       "name": "flip-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/flip-card.tsx",
+          "path": "src/components/watermelon-ui/flip-card.tsx",
           "target": "components/ui/flip-card.tsx",
           "type": "registry:ui"
         }
@@ -2568,12 +1991,10 @@
     {
       "name": "flip-clock",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
-          "path": "src/components/ui/flip-clock.tsx",
+          "path": "src/components/watermelon-ui/flip-clock.tsx",
           "target": "components/ui/flip-clock.tsx",
           "type": "registry:ui"
         }
@@ -2582,13 +2003,10 @@
     {
       "name": "floating-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/floating-disclosure.tsx",
+          "path": "src/components/watermelon-ui/floating-disclosure.tsx",
           "target": "components/ui/floating-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -2600,7 +2018,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/floating-input.tsx",
+          "path": "src/components/watermelon-ui/floating-input.tsx",
           "target": "components/ui/floating-input.tsx",
           "type": "registry:ui"
         }
@@ -2609,13 +2027,10 @@
     {
       "name": "fluid-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/fluid-tabs.tsx",
+          "path": "src/components/watermelon-ui/fluid-tabs.tsx",
           "target": "components/ui/fluid-tabs.tsx",
           "type": "registry:ui"
         }
@@ -2624,13 +2039,10 @@
     {
       "name": "fractional-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/fractional-picker.tsx",
+          "path": "src/components/watermelon-ui/fractional-picker.tsx",
           "target": "components/ui/fractional-picker.tsx",
           "type": "registry:ui"
         }
@@ -2639,13 +2051,10 @@
     {
       "name": "frequency-selector",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/frequency-selector.tsx",
+          "path": "src/components/watermelon-ui/frequency-selector.tsx",
           "target": "components/ui/frequency-selector.tsx",
           "type": "registry:ui"
         }
@@ -2654,12 +2063,10 @@
     {
       "name": "fund-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/fund-widget.tsx",
+          "path": "src/components/watermelon-ui/fund-widget.tsx",
           "target": "components/ui/fund-widget.tsx",
           "type": "registry:ui"
         }
@@ -2668,12 +2075,10 @@
     {
       "name": "gauge",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/gauge.tsx",
+          "path": "src/components/watermelon-ui/gauge.tsx",
           "target": "components/ui/gauge.tsx",
           "type": "registry:ui"
         }
@@ -2702,7 +2107,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/github-stars.tsx",
+          "path": "src/components/watermelon-ui/github-stars.tsx",
           "target": "components/ui/github-stars.tsx",
           "type": "registry:ui"
         }
@@ -2711,13 +2116,10 @@
     {
       "name": "github-stars-wheel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/github-stars-wheel.tsx",
+          "path": "src/components/watermelon-ui/github-stars-wheel.tsx",
           "target": "components/ui/github-stars-wheel.tsx",
           "type": "registry:ui"
         }
@@ -2726,12 +2128,10 @@
     {
       "name": "gooey-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/gooey-menu.tsx",
+          "path": "src/components/watermelon-ui/gooey-menu.tsx",
           "target": "components/ui/gooey-menu.tsx",
           "type": "registry:ui"
         }
@@ -2740,10 +2140,7 @@
     {
       "name": "hero1",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/blocks/sfHerodemo/Hero1.tsx",
@@ -2765,13 +2162,10 @@
     {
       "name": "hover-card",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/hover-card.tsx",
+          "path": "src/components/watermelon-ui/hover-card.tsx",
           "target": "components/ui/hover-card.tsx",
           "type": "registry:ui"
         }
@@ -2932,13 +2326,10 @@
     {
       "name": "icon",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
-          "path": "src/components/ui/icon.tsx",
+          "path": "src/components/watermelon-ui/icon.tsx",
           "target": "components/ui/icon.tsx",
           "type": "registry:ui"
         }
@@ -3133,13 +2524,10 @@
     {
       "name": "inline-action",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion/react"
-      ],
+      "dependencies": ["lucide-react", "motion/react"],
       "files": [
         {
-          "path": "src/components/ui/inline-action.tsx",
+          "path": "src/components/watermelon-ui/inline-action.tsx",
           "target": "components/ui/inline-action.tsx",
           "type": "registry:ui"
         }
@@ -3156,7 +2544,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/inline-disclosure-menu.tsx",
+          "path": "src/components/watermelon-ui/inline-disclosure-menu.tsx",
           "target": "components/ui/inline-disclosure-menu.tsx",
           "type": "registry:ui"
         }
@@ -3173,7 +2561,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/inline-edit.tsx",
+          "path": "src/components/watermelon-ui/inline-edit.tsx",
           "target": "components/ui/inline-edit.tsx",
           "type": "registry:ui"
         }
@@ -3182,13 +2570,10 @@
     {
       "name": "inline-overflow",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/inline-overflow.tsx",
+          "path": "src/components/watermelon-ui/inline-overflow.tsx",
           "target": "components/ui/inline-overflow.tsx",
           "type": "registry:ui"
         }
@@ -3197,13 +2582,10 @@
     {
       "name": "inline-table-control",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/inline-table-control.tsx",
+          "path": "src/components/watermelon-ui/inline-table-control.tsx",
           "target": "components/ui/inline-table-control.tsx",
           "type": "registry:ui"
         }
@@ -3212,13 +2594,10 @@
     {
       "name": "inline-toast",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/inline-toast.tsx",
+          "path": "src/components/watermelon-ui/inline-toast.tsx",
           "target": "components/ui/inline-toast.tsx",
           "type": "registry:ui"
         }
@@ -3230,7 +2609,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/input.tsx",
+          "path": "src/components/watermelon-ui/input.tsx",
           "target": "components/ui/input.tsx",
           "type": "registry:ui"
         }
@@ -3239,13 +2618,10 @@
     {
       "name": "integration-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/integration-card.tsx",
+          "path": "src/components/watermelon-ui/integration-card.tsx",
           "target": "components/ui/integration-card.tsx",
           "type": "registry:ui"
         }
@@ -3254,12 +2630,10 @@
     {
       "name": "invite-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/invite-disclosure.tsx",
+          "path": "src/components/watermelon-ui/invite-disclosure.tsx",
           "target": "components/ui/invite-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -3580,13 +2954,10 @@
     {
       "name": "journal-navigation",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/journal-navigation.tsx",
+          "path": "src/components/watermelon-ui/journal-navigation.tsx",
           "target": "components/ui/journal-navigation.tsx",
           "type": "registry:ui"
         }
@@ -3595,13 +2966,10 @@
     {
       "name": "knob-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/knob-slider.tsx",
+          "path": "src/components/watermelon-ui/knob-slider.tsx",
           "target": "components/ui/knob-slider.tsx",
           "type": "registry:ui"
         }
@@ -3610,12 +2978,10 @@
     {
       "name": "label",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-label"
-      ],
+      "dependencies": ["@radix-ui/react-label"],
       "files": [
         {
-          "path": "src/components/ui/label.tsx",
+          "path": "src/components/watermelon-ui/label.tsx",
           "target": "components/ui/label.tsx",
           "type": "registry:ui"
         }
@@ -3630,7 +2996,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/label-selector.tsx",
+          "path": "src/components/watermelon-ui/label-selector.tsx",
           "target": "components/ui/label-selector.tsx",
           "type": "registry:ui"
         }
@@ -3639,14 +3005,23 @@
     {
       "name": "labeled-progress-indicator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/labeled-progress-indicator.tsx",
+          "path": "src/components/watermelon-ui/labeled-progress-indicator.tsx",
           "target": "components/ui/labeled-progress-indicator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "layered-progressive-disclosure",
+      "type": "registry:ui",
+      "dependencies": ["motion/react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/layered-progressive-disclosure.tsx",
+          "target": "components/ui/layered-progressive-disclosure.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3654,13 +3029,10 @@
     {
       "name": "liquid",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
-          "path": "src/components/ui/liquid.tsx",
+          "path": "src/components/watermelon-ui/liquid.tsx",
           "target": "components/ui/liquid.tsx",
           "type": "registry:ui"
         }
@@ -3669,14 +3041,10 @@
     {
       "name": "list-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
-          "path": "src/components/ui/list-stack.tsx",
+          "path": "src/components/watermelon-ui/list-stack.tsx",
           "target": "components/ui/list-stack.tsx",
           "type": "registry:ui"
         }
@@ -3685,12 +3053,10 @@
     {
       "name": "loop-hook",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/loop-hook.tsx",
+          "path": "src/components/watermelon-ui/loop-hook.tsx",
           "target": "components/ui/loop-hook.tsx",
           "type": "registry:ui"
         }
@@ -3699,11 +3065,7 @@
     {
       "name": "luminia-luxe-realestate",
       "type": "registry:page",
-      "dependencies": [
-        "lucide-react",
-        "react-slick",
-        "slick-carousel"
-      ],
+      "dependencies": ["lucide-react", "react-slick", "slick-carousel"],
       "files": [
         {
           "path": "src/components/pages/luminia-luxe-realestate/Index.tsx",
@@ -3774,6 +3136,18 @@
           "path": "src/components/pages/luminia-luxe-realestate/ui/agents-carousel.css",
           "target": "components/watermelon/landing/luminia-luxe-realestate/ui/agents-carousel.css",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "macos-sidebar",
+      "type": "registry:ui",
+      "dependencies": ["motion/react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/macos-sidebar.tsx",
+          "target": "components/ui/macos-sidebar.tsx",
+          "type": "registry:ui"
         }
       ]
     },
@@ -3954,14 +3328,10 @@
     {
       "name": "management-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-use-measure"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-use-measure"],
       "files": [
         {
-          "path": "src/components/ui/management-bar.tsx",
+          "path": "src/components/watermelon-ui/management-bar.tsx",
           "target": "components/ui/management-bar.tsx",
           "type": "registry:ui"
         }
@@ -3973,7 +3343,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/marquee.tsx",
+          "path": "src/components/watermelon-ui/marquee.tsx",
           "target": "components/ui/marquee.tsx",
           "type": "registry:ui"
         }
@@ -3982,13 +3352,10 @@
     {
       "name": "meeting-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/meeting-card.tsx",
+          "path": "src/components/watermelon-ui/meeting-card.tsx",
           "target": "components/ui/meeting-card.tsx",
           "type": "registry:ui"
         }
@@ -3997,13 +3364,10 @@
     {
       "name": "minimal-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/minimal-carousel.tsx",
+          "path": "src/components/watermelon-ui/minimal-carousel.tsx",
           "target": "components/ui/minimal-carousel.tsx",
           "type": "registry:ui"
         }
@@ -4012,13 +3376,10 @@
     {
       "name": "mobile-video-player",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/mobile-video-player.tsx",
+          "path": "src/components/watermelon-ui/mobile-video-player.tsx",
           "target": "components/ui/mobile-video-player.tsx",
           "type": "registry:ui"
         }
@@ -4027,13 +3388,10 @@
     {
       "name": "morphing-button",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/morphing-button.tsx",
+          "path": "src/components/watermelon-ui/morphing-button.tsx",
           "target": "components/ui/morphing-button.tsx",
           "type": "registry:ui"
         }
@@ -4042,14 +3400,23 @@
     {
       "name": "morphing-discovery-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/morphing-discovery-bar.tsx",
+          "path": "src/components/watermelon-ui/morphing-discovery-bar.tsx",
           "target": "components/ui/morphing-discovery-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "morphing-sidebar-controls",
+      "type": "registry:ui",
+      "dependencies": ["motion/react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/morphing-sidebar-controls.tsx",
+          "target": "components/ui/morphing-sidebar-controls.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4057,32 +3424,23 @@
     {
       "name": "motion-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "embla-carousel-react",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["embla-carousel-react", "lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/motion-carousel.tsx",
+          "path": "src/components/watermelon-ui/motion-carousel.tsx",
           "target": "components/ui/motion-carousel.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "notification-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/notification-list.tsx",
+          "path": "src/components/watermelon-ui/notification-list.tsx",
           "target": "components/ui/notification-list.tsx",
           "type": "registry:ui"
         }
@@ -4091,13 +3449,10 @@
     {
       "name": "onboarding-checklist",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/onboarding-checklist.tsx",
+          "path": "src/components/watermelon-ui/onboarding-checklist.tsx",
           "target": "components/ui/onboarding-checklist.tsx",
           "type": "registry:ui"
         }
@@ -4106,13 +3461,10 @@
     {
       "name": "onboarding-screen",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/onboarding-screen.tsx",
+          "path": "src/components/watermelon-ui/onboarding-screen.tsx",
           "target": "components/ui/onboarding-screen.tsx",
           "type": "registry:ui"
         }
@@ -4121,13 +3473,10 @@
     {
       "name": "onboarding-setup",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/onboarding-setup.tsx",
+          "path": "src/components/watermelon-ui/onboarding-setup.tsx",
           "target": "components/ui/onboarding-setup.tsx",
           "type": "registry:ui"
         }
@@ -4145,7 +3494,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/option-list.tsx",
+          "path": "src/components/watermelon-ui/option-list.tsx",
           "target": "components/ui/option-list.tsx",
           "type": "registry:ui"
         }
@@ -4154,14 +3503,10 @@
     {
       "name": "option-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
-          "path": "src/components/ui/option-picker.tsx",
+          "path": "src/components/watermelon-ui/option-picker.tsx",
           "target": "components/ui/option-picker.tsx",
           "type": "registry:ui"
         }
@@ -4170,30 +3515,23 @@
     {
       "name": "pagination",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/pagination.tsx",
+          "path": "src/components/watermelon-ui/pagination.tsx",
           "target": "components/ui/pagination.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "pagination-animated",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/pagination-animated.tsx",
+          "path": "src/components/watermelon-ui/pagination-animated.tsx",
           "target": "components/ui/pagination-animated.tsx",
           "type": "registry:ui"
         }
@@ -4202,13 +3540,10 @@
     {
       "name": "pin-item",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/pin-item.tsx",
+          "path": "src/components/watermelon-ui/pin-item.tsx",
           "target": "components/ui/pin-item.tsx",
           "type": "registry:ui"
         }
@@ -4217,13 +3552,10 @@
     {
       "name": "pin-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/pin-list.tsx",
+          "path": "src/components/watermelon-ui/pin-list.tsx",
           "target": "components/ui/pin-list.tsx",
           "type": "registry:ui"
         }
@@ -4232,16 +3564,11 @@
     {
       "name": "playful-todolist",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "motion"
-      ],
-      "registryDependencies": [
-        "label"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "motion"],
+      "registryDependencies": ["label"],
       "files": [
         {
-          "path": "src/components/ui/playful-todolist.tsx",
+          "path": "src/components/watermelon-ui/playful-todolist.tsx",
           "target": "components/ui/playful-todolist.tsx",
           "type": "registry:ui"
         }
@@ -4250,13 +3577,10 @@
     {
       "name": "popover",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/popover.tsx",
+          "path": "src/components/watermelon-ui/popover.tsx",
           "target": "components/ui/popover.tsx",
           "type": "registry:ui"
         }
@@ -4265,14 +3589,10 @@
     {
       "name": "portfolio-dashboard",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "recharts"
-      ],
+      "dependencies": ["lucide-react", "motion", "recharts"],
       "files": [
         {
-          "path": "src/components/ui/portfolio-dashboard.tsx",
+          "path": "src/components/watermelon-ui/portfolio-dashboard.tsx",
           "target": "components/ui/portfolio-dashboard.tsx",
           "type": "registry:ui"
         }
@@ -4281,13 +3601,10 @@
     {
       "name": "predictive-text",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/predictive-text.tsx",
+          "path": "src/components/watermelon-ui/predictive-text.tsx",
           "target": "components/ui/predictive-text.tsx",
           "type": "registry:ui"
         }
@@ -4296,13 +3613,10 @@
     {
       "name": "preview-link-card",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/preview-link-card.tsx",
+          "path": "src/components/watermelon-ui/preview-link-card.tsx",
           "target": "components/ui/preview-link-card.tsx",
           "type": "registry:ui"
         }
@@ -4311,13 +3625,10 @@
     {
       "name": "pricing-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/pricing-widget.tsx",
+          "path": "src/components/watermelon-ui/pricing-widget.tsx",
           "target": "components/ui/pricing-widget.tsx",
           "type": "registry:ui"
         }
@@ -4329,7 +3640,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primary-button.tsx",
+          "path": "src/components/watermelon-ui/primary-button.tsx",
           "target": "components/ui/primary-button.tsx",
           "type": "registry:ui"
         }
@@ -4338,13 +3649,10 @@
     {
       "name": "profile-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/profile-card.tsx",
+          "path": "src/components/watermelon-ui/profile-card.tsx",
           "target": "components/ui/profile-card.tsx",
           "type": "registry:ui"
         }
@@ -4353,13 +3661,10 @@
     {
       "name": "progress",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/progress.tsx",
+          "path": "src/components/watermelon-ui/progress.tsx",
           "target": "components/ui/progress.tsx",
           "type": "registry:ui"
         }
@@ -4368,13 +3673,10 @@
     {
       "name": "progressive-input-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/progressive-input-stack.tsx",
+          "path": "src/components/watermelon-ui/progressive-input-stack.tsx",
           "target": "components/ui/progressive-input-stack.tsx",
           "type": "registry:ui"
         }
@@ -4565,13 +3867,10 @@
     {
       "name": "quick-feedback",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/quick-feedback.tsx",
+          "path": "src/components/watermelon-ui/quick-feedback.tsx",
           "target": "components/ui/quick-feedback.tsx",
           "type": "registry:ui"
         }
@@ -4580,12 +3879,10 @@
     {
       "name": "quick-option-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/quick-option-picker.tsx",
+          "path": "src/components/watermelon-ui/quick-option-picker.tsx",
           "target": "components/ui/quick-option-picker.tsx",
           "type": "registry:ui"
         }
@@ -4594,13 +3891,10 @@
     {
       "name": "quick-paste",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/quick-paste.tsx",
+          "path": "src/components/watermelon-ui/quick-paste.tsx",
           "target": "components/ui/quick-paste.tsx",
           "type": "registry:ui"
         }
@@ -4609,13 +3903,10 @@
     {
       "name": "quick-switcher",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/quick-switcher.tsx",
+          "path": "src/components/watermelon-ui/quick-switcher.tsx",
           "target": "components/ui/quick-switcher.tsx",
           "type": "registry:ui"
         }
@@ -4624,13 +3915,10 @@
     {
       "name": "radial-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/radial-carousel.tsx",
+          "path": "src/components/watermelon-ui/radial-carousel.tsx",
           "target": "components/ui/radial-carousel.tsx",
           "type": "registry:ui"
         }
@@ -4639,12 +3927,10 @@
     {
       "name": "radial-intro",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/radial-intro.tsx",
+          "path": "src/components/watermelon-ui/radial-intro.tsx",
           "target": "components/ui/radial-intro.tsx",
           "type": "registry:ui"
         }
@@ -4653,13 +3939,10 @@
     {
       "name": "radial-nav",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/radial-nav.tsx",
+          "path": "src/components/watermelon-ui/radial-nav.tsx",
           "target": "components/ui/radial-nav.tsx",
           "type": "registry:ui"
         }
@@ -4668,14 +3951,10 @@
     {
       "name": "radio-group",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/radio-group.tsx",
+          "path": "src/components/watermelon-ui/radio-group.tsx",
           "target": "components/ui/radio-group.tsx",
           "type": "registry:ui"
         }
@@ -4684,13 +3963,10 @@
     {
       "name": "range-selection-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/range-selection-slider.tsx",
+          "path": "src/components/watermelon-ui/range-selection-slider.tsx",
           "target": "components/ui/range-selection-slider.tsx",
           "type": "registry:ui"
         }
@@ -4699,13 +3975,10 @@
     {
       "name": "returns-calculator-snippet",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/returns-calculator-snippet.tsx",
+          "path": "src/components/watermelon-ui/returns-calculator-snippet.tsx",
           "target": "components/ui/returns-calculator-snippet.tsx",
           "type": "registry:ui"
         }
@@ -4714,13 +3987,10 @@
     {
       "name": "reveal-copy",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/reveal-copy.tsx",
+          "path": "src/components/watermelon-ui/reveal-copy.tsx",
           "target": "components/ui/reveal-copy.tsx",
           "type": "registry:ui"
         }
@@ -4729,13 +3999,10 @@
     {
       "name": "ripple",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
-          "path": "src/components/ui/ripple.tsx",
+          "path": "src/components/watermelon-ui/ripple.tsx",
           "target": "components/ui/ripple.tsx",
           "type": "registry:ui"
         }
@@ -4744,13 +4011,10 @@
     {
       "name": "run-action-button",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/run-action-button.tsx",
+          "path": "src/components/watermelon-ui/run-action-button.tsx",
           "target": "components/ui/run-action-button.tsx",
           "type": "registry:ui"
         }
@@ -4759,12 +4023,10 @@
     {
       "name": "run-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/run-widget.tsx",
+          "path": "src/components/watermelon-ui/run-widget.tsx",
           "target": "components/ui/run-widget.tsx",
           "type": "registry:ui"
         }
@@ -4981,13 +4243,10 @@
     {
       "name": "save-toggle",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/save-toggle.tsx",
+          "path": "src/components/watermelon-ui/save-toggle.tsx",
           "target": "components/ui/save-toggle.tsx",
           "type": "registry:ui"
         }
@@ -5004,7 +4263,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/schedule-button.tsx",
+          "path": "src/components/watermelon-ui/schedule-button.tsx",
           "target": "components/ui/schedule-button.tsx",
           "type": "registry:ui"
         }
@@ -5013,12 +4272,10 @@
     {
       "name": "schedule-date",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/schedule-date.tsx",
+          "path": "src/components/watermelon-ui/schedule-date.tsx",
           "target": "components/ui/schedule-date.tsx",
           "type": "registry:ui"
         }
@@ -5030,7 +4287,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/scroll-fade.tsx",
+          "path": "src/components/watermelon-ui/scroll-fade.tsx",
           "target": "components/ui/scroll-fade.tsx",
           "type": "registry:ui"
         }
@@ -5039,13 +4296,10 @@
     {
       "name": "scroll-island",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/scroll-island.tsx",
+          "path": "src/components/watermelon-ui/scroll-island.tsx",
           "target": "components/ui/scroll-island.tsx",
           "type": "registry:ui"
         }
@@ -5054,13 +4308,10 @@
     {
       "name": "scrub-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/scrub-slider.tsx",
+          "path": "src/components/watermelon-ui/scrub-slider.tsx",
           "target": "components/ui/scrub-slider.tsx",
           "type": "registry:ui"
         }
@@ -5069,13 +4320,10 @@
     {
       "name": "select",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-select",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
       "files": [
         {
-          "path": "src/components/ui/select.tsx",
+          "path": "src/components/watermelon-ui/select.tsx",
           "target": "components/ui/select.tsx",
           "type": "registry:ui"
         }
@@ -5092,7 +4340,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/select-ai-agent.tsx",
+          "path": "src/components/watermelon-ui/select-ai-agent.tsx",
           "target": "components/ui/select-ai-agent.tsx",
           "type": "registry:ui"
         }
@@ -5101,13 +4349,10 @@
     {
       "name": "send-money",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/send-money.tsx",
+          "path": "src/components/watermelon-ui/send-money.tsx",
           "target": "components/ui/send-money.tsx",
           "type": "registry:ui"
         }
@@ -5116,12 +4361,10 @@
     {
       "name": "separator",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-separator"
-      ],
+      "dependencies": ["@radix-ui/react-separator"],
       "files": [
         {
-          "path": "src/components/ui/separator.tsx",
+          "path": "src/components/watermelon-ui/separator.tsx",
           "target": "components/ui/separator.tsx",
           "type": "registry:ui"
         }
@@ -5130,14 +4373,10 @@
     {
       "name": "share-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/share-button.tsx",
+          "path": "src/components/watermelon-ui/share-button.tsx",
           "target": "components/ui/share-button.tsx",
           "type": "registry:ui"
         }
@@ -5146,12 +4385,10 @@
     {
       "name": "share-sheet",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/share-sheet.tsx",
+          "path": "src/components/watermelon-ui/share-sheet.tsx",
           "target": "components/ui/share-sheet.tsx",
           "type": "registry:ui"
         }
@@ -5160,14 +4397,10 @@
     {
       "name": "sheet",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/sheet.tsx",
+          "path": "src/components/watermelon-ui/sheet.tsx",
           "target": "components/ui/sheet.tsx",
           "type": "registry:ui"
         }
@@ -5179,7 +4412,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/shimmer-button.tsx",
+          "path": "src/components/watermelon-ui/shimmer-button.tsx",
           "target": "components/ui/shimmer-button.tsx",
           "type": "registry:ui"
         }
@@ -5188,14 +4421,10 @@
     {
       "name": "show-qr",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "qrcode.react"
-      ],
+      "dependencies": ["lucide-react", "motion", "qrcode.react"],
       "files": [
         {
-          "path": "src/components/ui/show-qr.tsx",
+          "path": "src/components/watermelon-ui/show-qr.tsx",
           "target": "components/ui/show-qr.tsx",
           "type": "registry:ui"
         }
@@ -5204,13 +4433,10 @@
     {
       "name": "shuffle-pinned-item",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/shuffle-pinned-item.tsx",
+          "path": "src/components/watermelon-ui/shuffle-pinned-item.tsx",
           "target": "components/ui/shuffle-pinned-item.tsx",
           "type": "registry:ui"
         }
@@ -5235,7 +4461,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/sidebar.tsx",
+          "path": "src/components/watermelon-ui/sidebar.tsx",
           "target": "components/ui/sidebar.tsx",
           "type": "registry:ui"
         }
@@ -5247,7 +4473,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/skeleton.tsx",
+          "path": "src/components/watermelon-ui/skeleton.tsx",
           "target": "components/ui/skeleton.tsx",
           "type": "registry:ui"
         }
@@ -5256,13 +4482,10 @@
     {
       "name": "slot-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/slot-picker.tsx",
+          "path": "src/components/watermelon-ui/slot-picker.tsx",
           "target": "components/ui/slot-picker.tsx",
           "type": "registry:ui"
         }
@@ -5271,13 +4494,23 @@
     {
       "name": "spinner",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
-          "path": "src/components/ui/spinner.tsx",
+          "path": "src/components/watermelon-ui/spinner.tsx",
           "target": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:ui",
+      "dependencies": ["motion/react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/split-button.tsx",
+          "target": "components/ui/split-button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -5285,13 +4518,10 @@
     {
       "name": "split-to-edit",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/split-to-edit.tsx",
+          "path": "src/components/watermelon-ui/split-to-edit.tsx",
           "target": "components/ui/split-to-edit.tsx",
           "type": "registry:ui"
         }
@@ -5303,7 +4533,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/status-indicator.tsx",
+          "path": "src/components/watermelon-ui/status-indicator.tsx",
           "target": "components/ui/status-indicator.tsx",
           "type": "registry:ui"
         }
@@ -5312,13 +4542,10 @@
     {
       "name": "status-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/status-picker.tsx",
+          "path": "src/components/watermelon-ui/status-picker.tsx",
           "target": "components/ui/status-picker.tsx",
           "type": "registry:ui"
         }
@@ -5327,13 +4554,10 @@
     {
       "name": "step-indicator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/step-indicator.tsx",
+          "path": "src/components/watermelon-ui/step-indicator.tsx",
           "target": "components/ui/step-indicator.tsx",
           "type": "registry:ui"
         }
@@ -5342,13 +4566,10 @@
     {
       "name": "step-pager",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/step-pager.tsx",
+          "path": "src/components/watermelon-ui/step-pager.tsx",
           "target": "components/ui/step-pager.tsx",
           "type": "registry:ui"
         }
@@ -5357,13 +4578,10 @@
     {
       "name": "stepper",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/stepper.tsx",
+          "path": "src/components/watermelon-ui/stepper.tsx",
           "target": "components/ui/stepper.tsx",
           "type": "registry:ui"
         }
@@ -5372,13 +4590,10 @@
     {
       "name": "subscription-calendar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/subscription-calendar.tsx",
+          "path": "src/components/watermelon-ui/subscription-calendar.tsx",
           "target": "components/ui/subscription-calendar.tsx",
           "type": "registry:ui"
         }
@@ -5387,13 +4602,10 @@
     {
       "name": "swap-currency-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/swap-currency-card.tsx",
+          "path": "src/components/watermelon-ui/swap-currency-card.tsx",
           "target": "components/ui/swap-currency-card.tsx",
           "type": "registry:ui"
         }
@@ -5402,13 +4614,10 @@
     {
       "name": "swap-form",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/swap-form.tsx",
+          "path": "src/components/watermelon-ui/swap-form.tsx",
           "target": "components/ui/swap-form.tsx",
           "type": "registry:ui"
         }
@@ -5417,12 +4626,10 @@
     {
       "name": "switch",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-switch"
-      ],
+      "dependencies": ["@radix-ui/react-switch"],
       "files": [
         {
-          "path": "src/components/ui/switch.tsx",
+          "path": "src/components/watermelon-ui/switch.tsx",
           "target": "components/ui/switch.tsx",
           "type": "registry:ui"
         }
@@ -5431,13 +4638,10 @@
     {
       "name": "switch-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/switch-disclosure.tsx",
+          "path": "src/components/watermelon-ui/switch-disclosure.tsx",
           "target": "components/ui/switch-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -5446,12 +4650,10 @@
     {
       "name": "switch-mode",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/switch-mode.tsx",
+          "path": "src/components/watermelon-ui/switch-mode.tsx",
           "target": "components/ui/switch-mode.tsx",
           "type": "registry:ui"
         }
@@ -5463,7 +4665,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/table.tsx",
+          "path": "src/components/watermelon-ui/table.tsx",
           "target": "components/ui/table.tsx",
           "type": "registry:ui"
         }
@@ -5472,12 +4674,10 @@
     {
       "name": "tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/tabs.tsx",
+          "path": "src/components/watermelon-ui/tabs.tsx",
           "target": "components/ui/tabs.tsx",
           "type": "registry:ui"
         }
@@ -5486,13 +4686,10 @@
     {
       "name": "tags",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/tags.tsx",
+          "path": "src/components/watermelon-ui/tags.tsx",
           "target": "components/ui/tags.tsx",
           "type": "registry:ui"
         }
@@ -5518,11 +4715,7 @@
           "target": "components/watermelon/dashboards/task-management-dashboard/components/nav-main.tsx",
           "type": "registry:component"
         },
-        {
-          "path": "src/components/dashboards/task-management-dashboard/components/nav-projects.tsx",
-          "target": "components/watermelon/dashboards/task-management-dashboard/components/nav-projects.tsx",
-          "type": "registry:component"
-        },
+       
         {
           "path": "src/components/dashboards/task-management-dashboard/components/nav-secondary.tsx",
           "target": "components/watermelon/dashboards/task-management-dashboard/components/nav-secondary.tsx",
@@ -5650,7 +4843,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/task-widget-disclosure.tsx",
+          "path": "src/components/watermelon-ui/task-widget-disclosure.tsx",
           "target": "components/ui/task-widget-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -5665,12 +4858,10 @@
         "lucide-react",
         "zod"
       ],
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/ui/terminal.tsx",
+          "path": "src/components/watermelon-ui/terminal.tsx",
           "target": "components/ui/terminal.tsx",
           "type": "registry:ui"
         }
@@ -5682,7 +4873,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/text-gradient.tsx",
+          "path": "src/components/watermelon-ui/text-gradient.tsx",
           "target": "components/ui/text-gradient.tsx",
           "type": "registry:ui"
         }
@@ -5694,7 +4885,7 @@
       "dependencies": [],
       "files": [
         {
-          "path": "src/components/ui/textarea.tsx",
+          "path": "src/components/watermelon-ui/textarea.tsx",
           "target": "components/ui/textarea.tsx",
           "type": "registry:ui"
         }
@@ -5703,14 +4894,10 @@
     {
       "name": "theme-toggler",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/theme-toggler.tsx",
+          "path": "src/components/watermelon-ui/theme-toggler.tsx",
           "target": "components/ui/theme-toggler.tsx",
           "type": "registry:ui"
         }
@@ -5719,12 +4906,10 @@
     {
       "name": "timed-undo-action",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/timed-undo-action.tsx",
+          "path": "src/components/watermelon-ui/timed-undo-action.tsx",
           "target": "components/ui/timed-undo-action.tsx",
           "type": "registry:ui"
         }
@@ -5733,14 +4918,10 @@
     {
       "name": "timeline",
       "type": "registry:ui",
-      "dependencies": [
-        "@dnd-kit/core",
-        "@radix-ui/react-slot",
-        "tunnel-rat"
-      ],
+      "dependencies": ["@dnd-kit/core", "@radix-ui/react-slot", "tunnel-rat"],
       "files": [
         {
-          "path": "src/components/ui/timeline.tsx",
+          "path": "src/components/watermelon-ui/timeline.tsx",
           "target": "components/ui/timeline.tsx",
           "type": "registry:ui"
         }
@@ -5749,13 +4930,10 @@
     {
       "name": "toggle",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-toggle",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
       "files": [
         {
-          "path": "src/components/ui/toggle.tsx",
+          "path": "src/components/watermelon-ui/toggle.tsx",
           "target": "components/ui/toggle.tsx",
           "type": "registry:ui"
         }
@@ -5764,14 +4942,10 @@
     {
       "name": "toggle-group",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/toggle-group.tsx",
+          "path": "src/components/watermelon-ui/toggle-group.tsx",
           "target": "components/ui/toggle-group.tsx",
           "type": "registry:ui"
         }
@@ -5780,12 +4954,10 @@
     {
       "name": "tooltip",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
+      "dependencies": ["@radix-ui/react-tooltip"],
       "files": [
         {
-          "path": "src/components/ui/tooltip.tsx",
+          "path": "src/components/watermelon-ui/tooltip.tsx",
           "target": "components/ui/tooltip.tsx",
           "type": "registry:ui"
         }
@@ -5796,26 +4968,20 @@
       "type": "registry:ui",
       "files": [
         {
-          "path": "src/components/ui/tooltip-animated.tsx",
+          "path": "src/components/watermelon-ui/tooltip-animated.tsx",
           "target": "components/ui/tooltip-animated.tsx",
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@floating-ui/react",
-        "motion"
-      ]
+      "dependencies": ["@floating-ui/react", "motion"]
     },
     {
       "name": "tooltip-navbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/tooltip-navbar.tsx",
+          "path": "src/components/watermelon-ui/tooltip-navbar.tsx",
           "target": "components/ui/tooltip-navbar.tsx",
           "type": "registry:ui"
         }
@@ -5824,13 +4990,10 @@
     {
       "name": "tooltip-radix",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
-          "path": "src/components/ui/tooltip-radix.tsx",
+          "path": "src/components/watermelon-ui/tooltip-radix.tsx",
           "target": "components/ui/tooltip-radix.tsx",
           "type": "registry:ui"
         }
@@ -5839,13 +5002,10 @@
     {
       "name": "trade-summary",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/trade-summary.tsx",
+          "path": "src/components/watermelon-ui/trade-summary.tsx",
           "target": "components/ui/trade-summary.tsx",
           "type": "registry:ui"
         }
@@ -5854,13 +5014,10 @@
     {
       "name": "transaction-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/transaction-list.tsx",
+          "path": "src/components/watermelon-ui/transaction-list.tsx",
           "target": "components/ui/transaction-list.tsx",
           "type": "registry:ui"
         }
@@ -5869,12 +5026,10 @@
     {
       "name": "transcribe-voice-message",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/transcribe-voice-message.tsx",
+          "path": "src/components/watermelon-ui/transcribe-voice-message.tsx",
           "target": "components/ui/transcribe-voice-message.tsx",
           "type": "registry:ui"
         }
@@ -5883,13 +5038,10 @@
     {
       "name": "tree-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/tree-menu.tsx",
+          "path": "src/components/watermelon-ui/tree-menu.tsx",
           "target": "components/ui/tree-menu.tsx",
           "type": "registry:ui"
         }
@@ -5898,15 +5050,10 @@
     {
       "name": "uniswap-dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "motion",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "motion", "tailwind-merge"],
       "files": [
         {
-          "path": "src/components/ui/uniswap-dialog.tsx",
+          "path": "src/components/watermelon-ui/uniswap-dialog.tsx",
           "target": "components/ui/uniswap-dialog.tsx",
           "type": "registry:ui"
         }
@@ -5975,28 +5122,20 @@
     {
       "name": "user-presence-avatar",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
-          "path": "src/components/ui/user-presence-avatar.tsx",
+          "path": "src/components/watermelon-ui/user-presence-avatar.tsx",
           "target": "components/ui/user-presence-avatar.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar",
-        "tooltip"
-      ]
+      "registryDependencies": ["avatar", "tooltip"]
     },
     {
       "name": "utils",
       "type": "registry:lib",
-      "dependencies": [
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
           "path": "src/lib/utils.ts",
@@ -6008,13 +5147,10 @@
     {
       "name": "vertical-tooltip-navbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/vertical-tooltip-navbar.tsx",
+          "path": "src/components/watermelon-ui/vertical-tooltip-navbar.tsx",
           "target": "components/ui/vertical-tooltip-navbar.tsx",
           "type": "registry:ui"
         }
@@ -6023,13 +5159,10 @@
     {
       "name": "video-player",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/video-player.tsx",
+          "path": "src/components/watermelon-ui/video-player.tsx",
           "target": "components/ui/video-player.tsx",
           "type": "registry:ui"
         }
@@ -6038,13 +5171,10 @@
     {
       "name": "video-player-02",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/video-player-02.tsx",
+          "path": "src/components/watermelon-ui/video-player-02.tsx",
           "target": "components/ui/video-player-02.tsx",
           "type": "registry:ui"
         }
@@ -6053,13 +5183,10 @@
     {
       "name": "view-on-map",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/view-on-map.tsx",
+          "path": "src/components/watermelon-ui/view-on-map.tsx",
           "target": "components/ui/view-on-map.tsx",
           "type": "registry:ui"
         }
@@ -6076,7 +5203,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/voice-chat-disclosure.tsx",
+          "path": "src/components/watermelon-ui/voice-chat-disclosure.tsx",
           "target": "components/ui/voice-chat-disclosure.tsx",
           "type": "registry:ui"
         }
@@ -6085,13 +5212,10 @@
     {
       "name": "voice-note",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/voice-note.tsx",
+          "path": "src/components/watermelon-ui/voice-note.tsx",
           "target": "components/ui/voice-note.tsx",
           "type": "registry:ui"
         }
@@ -6100,13 +5224,10 @@
     {
       "name": "voice-transcribe",
       "type": "registry:ui",
-      "dependencies": [
-        "react-icons",
-        "motion"
-      ],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
-          "path": "src/components/ui/voice-transcribe.tsx",
+          "path": "src/components/watermelon-ui/voice-transcribe.tsx",
           "target": "components/ui/voice-transcribe.tsx",
           "type": "registry:ui"
         }
@@ -6115,13 +5236,10 @@
     {
       "name": "waveform-scrub",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/waveform-scrub.tsx",
+          "path": "src/components/watermelon-ui/waveform-scrub.tsx",
           "target": "components/ui/waveform-scrub.tsx",
           "type": "registry:ui"
         }
@@ -6130,13 +5248,10 @@
     {
       "name": "weight-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/weight-widget.tsx",
+          "path": "src/components/watermelon-ui/weight-widget.tsx",
           "target": "components/ui/weight-widget.tsx",
           "type": "registry:ui"
         }
@@ -6145,13 +5260,10 @@
     {
       "name": "wiggling-cards",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/ui/wiggling-cards.tsx",
+          "path": "src/components/watermelon-ui/wiggling-cards.tsx",
           "target": "components/ui/wiggling-cards.tsx",
           "type": "registry:ui"
         }
@@ -6169,7 +5281,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/x-post.tsx",
+          "path": "src/components/watermelon-ui/x-post.tsx",
           "target": "components/ui/x-post.tsx",
           "type": "registry:ui"
         }

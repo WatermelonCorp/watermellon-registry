@@ -4715,11 +4715,7 @@
           "target": "components/watermelon/dashboards/task-management-dashboard/components/nav-main.tsx",
           "type": "registry:component"
         },
-        {
-          "path": "src/components/dashboards/task-management-dashboard/components/nav-projects.tsx",
-          "target": "components/watermelon/dashboards/task-management-dashboard/components/nav-projects.tsx",
-          "type": "registry:component"
-        },
+       
         {
           "path": "src/components/dashboards/task-management-dashboard/components/nav-secondary.tsx",
           "target": "components/watermelon/dashboards/task-management-dashboard/components/nav-secondary.tsx",
