@@ -23,13 +23,13 @@ import {
   Cell,
 } from "recharts";
 
-import { Badge } from "./components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
 import {
   Card,
@@ -38,14 +38,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./components/ui/card";
+} from "@/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./components/ui/select";
+} from "@/components/ui/select";
 import {
   Table,
   TableBody,
@@ -53,7 +53,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./components/ui/table";
+} from "@/components/ui/table";
 import { dashboardMetrics, revenueData, transactions, trafficChannelData } from "./data";
 
 export const DashboardView = () => {
