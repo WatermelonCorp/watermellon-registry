@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/components/watermelon-ui/badge-04.tsx",
-      "content": "import { Badge } from \"@/components/ui/badge\";\n\nexport default function Badge04() {\n  const tags = [\"Design\", \"Next.js\", \"Branding\", \"UI/UX\"];\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {tags.map((tag) => (\n        <Badge key={tag} variant=\"secondary\">\n          {tag}\n        </Badge>\n      ))}\n    </div>\n  );\n}\n",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nexport default function Badge04() {\r\n  const tags = [\"Design\", \"Next.js\", \"Branding\", \"UI/UX\"];\r\n  return (\r\n    <div className=\"flex flex-wrap gap-2\">\r\n      {tags.map((tag) => (\r\n        <Badge key={tag} variant=\"secondary\">\r\n          {tag}\r\n        </Badge>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/badge-04.tsx"
     }

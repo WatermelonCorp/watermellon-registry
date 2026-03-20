@@ -95,6 +95,18 @@
       ]
     },
     {
+      "name": "activities-card-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/activities-card-base.tsx",
+          "target": "components/ui/activities-card-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "adaptive-slider",
       "type": "registry:ui",
       "dependencies": ["motion"],
@@ -114,6 +126,18 @@
         {
           "path": "src/components/watermelon-ui/add-cash-disclosure.tsx",
           "target": "components/ui/add-cash-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "add-cash-disclosure-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/add-cash-disclosure-base.tsx",
+          "target": "components/ui/add-cash-disclosure-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1311,6 +1335,18 @@
       ]
     },
     {
+      "name": "create-community-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/create-community-base.tsx",
+          "target": "components/ui/create-community-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "create-new-disclosure",
       "type": "registry:ui",
       "dependencies": [
@@ -1323,6 +1359,23 @@
         {
           "path": "src/components/watermelon-ui/create-new-disclosure.tsx",
           "target": "components/ui/create-new-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "create-new-disclosure-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/create-new-disclosure-base.tsx",
+          "target": "components/ui/create-new-disclosure-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1426,6 +1479,18 @@
         {
           "path": "src/components/watermelon-ui/dialog-stack.tsx",
           "target": "components/ui/dialog-stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog-stack-base",
+      "type": "registry:ui",
+      "dependencies": ["@hugeicons/react", "lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/dialog-stack-base.tsx",
+          "target": "components/ui/dialog-stack-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1645,6 +1710,18 @@
       ]
     },
     {
+      "name": "edit-profile-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/edit-profile-base.tsx",
+          "target": "components/ui/edit-profile-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "editable-chip",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -1664,6 +1741,18 @@
         {
           "path": "src/components/watermelon-ui/emoji-spree-choice-chips.tsx",
           "target": "components/ui/emoji-spree-choice-chips.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "emoji-spree-choice-chips-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/emoji-spree-choice-chips-base.tsx",
+          "target": "components/ui/emoji-spree-choice-chips-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2580,6 +2669,18 @@
       ]
     },
     {
+      "name": "inline-overflow-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/inline-overflow-base.tsx",
+          "target": "components/ui/inline-overflow-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "inline-table-control",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -2635,6 +2736,18 @@
         {
           "path": "src/components/watermelon-ui/invite-disclosure.tsx",
           "target": "components/ui/invite-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "invite-disclosure-base",
+      "type": "registry:ui",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/invite-disclosure-base.tsx",
+          "target": "components/ui/invite-disclosure-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3374,6 +3487,18 @@
       ]
     },
     {
+      "name": "minimal-carousel-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/minimal-carousel-base.tsx",
+          "target": "components/ui/minimal-carousel-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "mobile-video-player",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -3478,6 +3603,18 @@
         {
           "path": "src/components/watermelon-ui/onboarding-setup.tsx",
           "target": "components/ui/onboarding-setup.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "onboarding-setup-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/onboarding-setup-base.tsx",
+          "target": "components/ui/onboarding-setup-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3654,6 +3791,18 @@
         {
           "path": "src/components/watermelon-ui/profile-card.tsx",
           "target": "components/ui/profile-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "profile-card-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/profile-card-base.tsx",
+          "target": "components/ui/profile-card-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3925,6 +4074,18 @@
       ]
     },
     {
+      "name": "radial-carousel-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/radial-carousel-base.tsx",
+          "target": "components/ui/radial-carousel-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radial-intro",
       "type": "registry:ui",
       "dependencies": ["motion"],
@@ -3980,6 +4141,18 @@
         {
           "path": "src/components/watermelon-ui/returns-calculator-snippet.tsx",
           "target": "components/ui/returns-calculator-snippet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "returns-calculator-snippet-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/returns-calculator-snippet-base.tsx",
+          "target": "components/ui/returns-calculator-snippet-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4600,6 +4773,18 @@
       ]
     },
     {
+      "name": "subscription-calendar-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/subscription-calendar-base.tsx",
+          "target": "components/ui/subscription-calendar-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "swap-currency-card",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -4643,6 +4828,18 @@
         {
           "path": "src/components/watermelon-ui/switch-disclosure.tsx",
           "target": "components/ui/switch-disclosure.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch-disclosure-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/switch-disclosure-base.tsx",
+          "target": "components/ui/switch-disclosure-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4850,6 +5047,23 @@
       ]
     },
     {
+      "name": "task-widget-disclosure-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/task-widget-disclosure-base.tsx",
+          "target": "components/ui/task-widget-disclosure-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "terminal",
       "type": "registry:ui",
       "dependencies": [
@@ -5012,6 +5226,18 @@
       ]
     },
     {
+      "name": "trade-summary-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/trade-summary-base.tsx",
+          "target": "components/ui/trade-summary-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "transaction-list",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -5055,6 +5281,18 @@
         {
           "path": "src/components/watermelon-ui/uniswap-dialog.tsx",
           "target": "components/ui/uniswap-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "uniswap-dialog-base",
+      "type": "registry:ui",
+      "dependencies": ["clsx", "lucide-react", "motion", "tailwind-merge"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/uniswap-dialog-base.tsx",
+          "target": "components/ui/uniswap-dialog-base.tsx",
           "type": "registry:ui"
         }
       ]
