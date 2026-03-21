@@ -1083,6 +1083,23 @@
       ]
     },
     {
+      "name": "card-swipe-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/card-swipe-base.tsx",
+          "target": "components/ui/card-swipe-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "carousel-navigator",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -1107,6 +1124,23 @@
         {
           "path": "src/components/watermelon-ui/carousel-slider.tsx",
           "target": "components/ui/carousel-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel-slider-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/carousel-slider-base.tsx",
+          "target": "components/ui/carousel-slider-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1436,6 +1470,18 @@
       ]
     },
     {
+      "name": "debug-panel-base",
+      "type": "registry:ui",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/debug-panel-base.tsx",
+          "target": "components/ui/debug-panel-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "deployment-card",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -1532,6 +1578,18 @@
         {
           "path": "src/components/watermelon-ui/draggable-toolbar.tsx",
           "target": "components/ui/draggable-toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "draggable-toolbar-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/draggable-toolbar-base.tsx",
+          "target": "components/ui/draggable-toolbar-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1693,6 +1751,18 @@
         {
           "path": "src/components/watermelon-ui/edit-badge.tsx",
           "target": "components/ui/edit-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "edit-badge-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/edit-badge-base.tsx",
+          "target": "components/ui/edit-badge-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3140,6 +3210,18 @@
       ]
     },
     {
+      "name": "layered-progressive-disclosure-base",
+      "type": "registry:ui",
+      "dependencies": ["motion/react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/layered-progressive-disclosure-base.tsx",
+          "target": "components/ui/layered-progressive-disclosure-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "liquid",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority", "motion"],
@@ -3542,6 +3624,18 @@
         {
           "path": "src/components/watermelon-ui/morphing-sidebar-controls.tsx",
           "target": "components/ui/morphing-sidebar-controls.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "morphing-sidebar-controls-base",
+      "type": "registry:ui",
+      "dependencies": ["motion/react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/morphing-sidebar-controls-base.tsx",
+          "target": "components/ui/morphing-sidebar-controls-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4443,6 +4537,23 @@
       ]
     },
     {
+      "name": "schedule-button-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/schedule-button-base.tsx",
+          "target": "components/ui/schedule-button-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "schedule-date",
       "type": "registry:ui",
       "dependencies": ["lucide-react"],
@@ -4665,6 +4776,18 @@
       ]
     },
     {
+      "name": "slot-picker-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/slot-picker-base.tsx",
+          "target": "components/ui/slot-picker-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "spinner",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority"],
@@ -4804,6 +4927,18 @@
         {
           "path": "src/components/watermelon-ui/swap-form.tsx",
           "target": "components/ui/swap-form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "swap-form-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/swap-form-base.tsx",
+          "target": "components/ui/swap-form-base.tsx",
           "type": "registry:ui"
         }
       ]
