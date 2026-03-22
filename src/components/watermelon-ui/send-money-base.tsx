@@ -13,9 +13,30 @@ export interface Card {
   brand: "visa" | "mastercard" | "other";
 }
 
+/* ---------------- Payload Types ---------------- */
+
+type BankPayload = {
+  type: "bank";
+  name: string;
+  account: string;
+  code: string;
+};
+
+type CardPayload = {
+  type: "card";
+  cardId: string;
+};
+
+type WalletPayload = {
+  type: "wallet";
+  amount: string;
+};
+
+type ProceedPayload = BankPayload | CardPayload | WalletPayload;
+
 interface SendMoneyProps {
   cards?: Card[];
-  onProceed?: (data: any) => void;
+  onProceed?: (data: ProceedPayload) => void;
 }
 
 /* ---------------- Brand Icons ---------------- */
@@ -46,7 +67,7 @@ const Header = ({
   id,
 }: {
   title: string;
-  icon: any;
+  icon: React.ElementType;
   onClose: () => void;
   id: string;
 }) => (
@@ -77,7 +98,15 @@ const Header = ({
   </div>
 );
 
-const InputField = ({ label, value, onChange }: any) => (
+/* ---------------- Input ---------------- */
+
+interface InputFieldProps {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+}
+
+const InputField = ({ label, value, onChange }: InputFieldProps) => (
   <div className="mb-4">
     <label className="text-muted-foreground mb-1 block text-sm">{label}</label>
     <input
@@ -90,7 +119,16 @@ const InputField = ({ label, value, onChange }: any) => (
 
 /* ---------------- Views ---------------- */
 
-const BankTransferView = ({ onClose, onProceed }: any) => {
+interface ViewProps {
+  onClose: () => void;
+  onProceed: (data: ProceedPayload) => void;
+}
+
+interface CardViewProps extends ViewProps {
+  cards: Card[];
+}
+
+const BankTransferView = ({ onClose, onProceed }: ViewProps) => {
   const [formData, setFormData] = useState({ name: "", account: "", code: "" });
 
   return (
@@ -110,17 +148,17 @@ const BankTransferView = ({ onClose, onProceed }: any) => {
         <InputField
           label="Full Name"
           value={formData.name}
-          onChange={(v: string) => setFormData({ ...formData, name: v })}
+          onChange={(v) => setFormData({ ...formData, name: v })}
         />
         <InputField
           label="Account Number"
           value={formData.account}
-          onChange={(v: string) => setFormData({ ...formData, account: v })}
+          onChange={(v) => setFormData({ ...formData, account: v })}
         />
         <InputField
           label="Bank Code"
           value={formData.code}
-          onChange={(v: string) => setFormData({ ...formData, code: v })}
+          onChange={(v) => setFormData({ ...formData, code: v })}
         />
         <button
           onClick={() => onProceed({ type: "bank", ...formData })}
@@ -133,8 +171,8 @@ const BankTransferView = ({ onClose, onProceed }: any) => {
   );
 };
 
-const CardView = ({ cards, onClose, onProceed }: any) => {
-  const [selected, setSelected] = useState(cards[0]?.id);
+const CardView = ({ cards, onClose, onProceed }: CardViewProps) => {
+  const [selected, setSelected] = useState<string | undefined>(cards[0]?.id);
 
   return (
     <motion.div>
@@ -194,7 +232,9 @@ const CardView = ({ cards, onClose, onProceed }: any) => {
         </div>
 
         <button
-          onClick={() => onProceed({ type: "card", cardId: selected })}
+          onClick={() =>
+            selected && onProceed({ type: "card", cardId: selected })
+          }
           className={primaryButton}
         >
           Proceed
@@ -204,7 +244,7 @@ const CardView = ({ cards, onClose, onProceed }: any) => {
   );
 };
 
-const WalletView = ({ onClose, onProceed }: any) => {
+const WalletView = ({ onClose, onProceed }: ViewProps) => {
   const [amount, setAmount] = useState("");
 
   return (

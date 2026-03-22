@@ -105,24 +105,31 @@ export const CommandSearch: FC<Props> = ({ items = DEFAULT_ITEMS }) => {
   }, [isOpen]);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: globalThis.KeyboardEvent) => {
+      const activeEl = document.activeElement as HTMLElement | null;
+
       if (
         e.key.toLowerCase() === "f" &&
         !isOpen &&
-        document.activeElement?.tagName !== "INPUT" &&
-        document.activeElement?.tagName !== "TEXTAREA"
+        activeEl?.tagName !== "INPUT" &&
+        activeEl?.tagName !== "TEXTAREA"
       ) {
         e.preventDefault();
         setIsOpen(true);
       }
+
       if (e.key === "Escape" && isOpen) {
         e.preventDefault();
         e.stopPropagation();
         setIsOpen(false);
       }
     };
-    window.addEventListener("keydown", handleKeyDown, true);
-    return () => window.removeEventListener("keydown", handleKeyDown, true);
+
+    window.addEventListener("keydown", handleKeyDown, { capture: true });
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown, { capture: true });
+    };
   }, [isOpen]);
 
   const filteredItems = useMemo(() => {
