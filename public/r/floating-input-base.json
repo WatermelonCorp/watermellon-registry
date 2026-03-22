@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "floating-input-base",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/floating-input-base.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\r\nimport { useState } from \"react\";\r\n\r\ninterface FloatingInputProps extends React.InputHTMLAttributes<HTMLInputElement> {\r\n  label: string;\r\n}\r\n\r\nexport function FloatingInput({\r\n  label,\r\n  className,\r\n  ...props\r\n}: FloatingInputProps) {\r\n  const [focused, setFocused] = useState(false);\r\n  const [hasValue, setHasValue] = useState(false);\r\n\r\n  return (\r\n    <div className=\"relative\">\r\n      <input\r\n        className={cn(\r\n          \"peer w-full px-4 py-3 border rounded-lg bg-input outline-none\",\r\n          \"border-border focus:border-primary transition-colors\",\r\n          className\r\n        )}\r\n        placeholder=\" \"\r\n        onFocus={() => setFocused(true)}\r\n        onBlur={(e) => {\r\n          setFocused(false);\r\n          setHasValue(e.target.value !== \"\");\r\n        }}\r\n        onChange={(e) => setHasValue(e.target.value !== \"\")}\r\n        {...props}\r\n      />\r\n      <label\r\n        className={cn(\r\n          \"absolute left-4 top-3 text-muted-foreground transition-all duration-200 pointer-events-none\",\r\n          \"peer-focus:-top-2.5 peer-focus:left-3 peer-focus:text-xs peer-focus:bg-background peer-focus:px-1\",\r\n          \"peer-focus:text-primary\",\r\n          (focused || hasValue) && \"-top-2.5 left-3 text-xs bg-background px-1\"\r\n        )}\r\n      >\r\n        {label}\r\n      </label>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/floating-input-base.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
