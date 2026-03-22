@@ -1136,6 +1136,18 @@
       ]
     },
     {
+      "name": "changeable-pricing-section-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/changeable-pricing-section-base.tsx",
+          "target": "components/ui/changeable-pricing-section-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "chart",
       "type": "registry:ui",
       "dependencies": ["recharts"],
@@ -1275,6 +1287,18 @@
       ]
     },
     {
+      "name": "command-search-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/command-search-base.tsx",
+          "target": "components/ui/command-search-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "compose-email-card",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -1306,6 +1330,18 @@
         {
           "path": "src/components/watermelon-ui/continuous-pagination.tsx",
           "target": "components/ui/continuous-pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "continuous-pagination-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/continuous-pagination-base.tsx",
+          "target": "components/ui/continuous-pagination-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1539,6 +1575,18 @@
         {
           "path": "src/components/watermelon-ui/draw-signature.tsx",
           "target": "components/ui/draw-signature.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "draw-signature-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/draw-signature-base.tsx",
+          "target": "components/ui/draw-signature-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2097,6 +2145,18 @@
       ]
     },
     {
+      "name": "floating-disclosure-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/floating-disclosure-base.tsx",
+          "target": "components/ui/floating-disclosure-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "floating-input",
       "type": "registry:ui",
       "dependencies": [],
@@ -2104,6 +2164,18 @@
         {
           "path": "src/components/watermelon-ui/floating-input.tsx",
           "target": "components/ui/floating-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "floating-input-base",
+      "type": "registry:ui",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/floating-input-base.tsx",
+          "target": "components/ui/floating-input-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3125,6 +3197,18 @@
       ]
     },
     {
+      "name": "journal-navigation-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/journal-navigation-base.tsx",
+          "target": "components/ui/journal-navigation-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "knob-slider",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -3320,6 +3404,18 @@
         {
           "path": "src/components/watermelon-ui/macos-sidebar.tsx",
           "target": "components/ui/macos-sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "macos-sidebar-base",
+      "type": "registry:ui",
+      "dependencies": ["motion/react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/macos-sidebar-base.tsx",
+          "target": "components/ui/macos-sidebar-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3723,6 +3819,19 @@
       "registryDependencies": ["button"]
     },
     {
+      "name": "pagination-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/pagination-base.tsx",
+          "target": "components/ui/pagination-base.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
       "name": "pagination-animated",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -3742,6 +3851,18 @@
         {
           "path": "src/components/watermelon-ui/pin-item.tsx",
           "target": "components/ui/pin-item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pin-item-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/pin-item-base.tsx",
+          "target": "components/ui/pin-item-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4122,6 +4243,42 @@
       ]
     },
     {
+      "name": "quick-option-picker-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/quick-option-picker-base.tsx",
+          "target": "components/ui/quick-option-picker-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "quick-paste-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/quick-paste-base.tsx",
+          "target": "components/ui/quick-paste-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "quick-switcher-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/quick-switcher-base.tsx",
+          "target": "components/ui/quick-switcher-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "quick-switcher",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -4225,6 +4382,18 @@
         {
           "path": "src/components/watermelon-ui/reveal-copy.tsx",
           "target": "components/ui/reveal-copy.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "reveal-copy-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/reveal-copy-base.tsx",
+          "target": "components/ui/reveal-copy-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4587,6 +4756,18 @@
       ]
     },
     {
+      "name": "scroll-island-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/scroll-island-base.tsx",
+          "target": "components/ui/scroll-island-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "scrub-slider",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -4594,6 +4775,18 @@
         {
           "path": "src/components/watermelon-ui/scrub-slider.tsx",
           "target": "components/ui/scrub-slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scrub-slider-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/scrub-slider-base.tsx",
+          "target": "components/ui/scrub-slider-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4628,6 +4821,23 @@
       ]
     },
     {
+      "name": "select-ai-agent-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/select-ai-agent-base.tsx",
+          "target": "components/ui/select-ai-agent-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "send-money",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -4635,6 +4845,18 @@
         {
           "path": "src/components/watermelon-ui/send-money.tsx",
           "target": "components/ui/send-money.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "send-money-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/send-money-base.tsx",
+          "target": "components/ui/send-money-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4869,6 +5091,18 @@
       ]
     },
     {
+      "name": "split-to-edit-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/split-to-edit-base.tsx",
+          "target": "components/ui/split-to-edit-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "status-indicator",
       "type": "registry:ui",
       "dependencies": [],
@@ -4893,6 +5127,18 @@
       ]
     },
     {
+      "name": "status-picker-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/status-picker-base.tsx",
+          "target": "components/ui/status-picker-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "step-indicator",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -4912,6 +5158,30 @@
         {
           "path": "src/components/watermelon-ui/step-pager.tsx",
           "target": "components/ui/step-pager.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "step-indicator-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/step-indicator-base.tsx",
+          "target": "components/ui/step-indicator-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "step-pager-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/step-pager-base.tsx",
+          "target": "components/ui/step-pager-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -5425,6 +5695,18 @@
       ]
     },
     {
+      "name": "transaction-list-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/transaction-list-base.tsx",
+          "target": "components/ui/transaction-list-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "transcribe-voice-message",
       "type": "registry:ui",
       "dependencies": ["motion"],
@@ -5444,6 +5726,18 @@
         {
           "path": "src/components/watermelon-ui/tree-menu.tsx",
           "target": "components/ui/tree-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tree-menu-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/tree-menu-base.tsx",
+          "target": "components/ui/tree-menu-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -5594,6 +5888,18 @@
       ]
     },
     {
+      "name": "view-on-map-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/view-on-map-base.tsx",
+          "target": "components/ui/view-on-map-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "view-on-map",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -5647,6 +5953,30 @@
       ]
     },
     {
+      "name": "voice-note-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/voice-note-base.tsx",
+          "target": "components/ui/voice-note-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "voice-transcribe-base",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/voice-transcribe-base.tsx",
+          "target": "components/ui/voice-transcribe-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "waveform-scrub",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -5654,6 +5984,18 @@
         {
           "path": "src/components/watermelon-ui/waveform-scrub.tsx",
           "target": "components/ui/waveform-scrub.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "waveform-scrub-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/waveform-scrub-base.tsx",
+          "target": "components/ui/waveform-scrub-base.tsx",
           "type": "registry:ui"
         }
       ]

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "split-button-base",
+  "dependencies": [
+    "motion/react"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/split-button-base.tsx",
+      "content": "\"use client\";\r\n\r\nimport { type JSX, useState } from \"react\";\r\nimport { motion, type Transition } from \"motion/react\";\r\nimport { ArrowLeft01Icon } from \"@hugeicons/core-free-icons\";\r\nimport { HugeiconsIcon } from \"@hugeicons/react\";\r\n\r\nconst SPRING: Transition = {\r\n  type: \"spring\",\r\n  bounce: 0.55,\r\n  duration: 1,\r\n};\r\n\r\nexport interface SplitButtonProps {\r\n  mainButton?: string;\r\n  buttons?: string[];\r\n}\r\n\r\nexport default function SplitButton({\r\n  mainButton = \"New Project\",\r\n  buttons = [\"iOS\", \"macOS\", \"tvOS\"],\r\n}: SplitButtonProps = {}): JSX.Element {\r\n  const [open, setOpen] = useState<boolean>(false);\r\n\r\n  return (\r\n    <div className=\"relative flex min-h-[60px] w-full items-center justify-center font-semibold\">\r\n      <motion.button\r\n        layout\r\n        transition={SPRING}\r\n        onClick={() => setOpen(true)}\r\n        className=\"bg-muted text-muted-foreground border border-border absolute z-10 rounded-lg px-8 py-3 tracking-tight whitespace-nowrap\"\r\n        initial={false}\r\n        animate={{\r\n          scaleX: open ? 1.5 : 1,\r\n          scaleY: open ? 0.9 : 1,\r\n          opacity: open ? 0 : 1,\r\n          filter: open ? \"blur(8px)\" : \"blur(0px)\",\r\n          pointerEvents: open ? \"none\" : \"auto\",\r\n        }}\r\n        whileHover={{ scale: 1 }}\r\n        whileTap={{ scale: 1.15 }}\r\n      >\r\n        {mainButton}\r\n      </motion.button>\r\n\r\n      <motion.div\r\n        layout\r\n        transition={SPRING}\r\n        className=\"absolute z-0 flex items-center justify-center gap-2\"\r\n        initial={false}\r\n        animate={{\r\n          scaleX: open ? 1 : 0.2,\r\n          scaleY: open ? 1 : 0.9,\r\n          opacity: open ? 1 : 0,\r\n          filter: open ? \"blur(0px)\" : \"blur(8px)\",\r\n          pointerEvents: open ? \"auto\" : \"none\",\r\n        }}\r\n      >\r\n        <motion.button\r\n          onClick={() => setOpen(false)}\r\n          className=\"bg-muted text-muted-foreground border border-border flex items-center justify-center rounded-lg p-3 tracking-tight\"\r\n          whileHover={{ scale: 1 }}\r\n          whileTap={{ scale: 1.15 }}\r\n        >\r\n          <HugeiconsIcon icon={ArrowLeft01Icon} />\r\n        </motion.button>\r\n\r\n        {buttons.map((name, index) => {\r\n          return (\r\n            <motion.button\r\n              key={index}\r\n              onClick={() => {\r\n                setOpen(false);\r\n              }}\r\n              className=\"bg-muted text-muted-foreground border border-border rounded-lg px-6 py-3 tracking-tight\"\r\n              whileHover={{ scale: 1 }}\r\n              whileTap={{ scale: 1.05 }}\r\n            >\r\n              {name}\r\n            </motion.button>\r\n          );\r\n        })}\r\n      </motion.div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/split-button-base.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
