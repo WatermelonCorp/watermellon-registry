@@ -95,18 +95,6 @@
       ]
     },
     {
-      "name": "activities-card-base",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/activities-card-base.tsx",
-          "target": "components/ui/activities-card-base.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "adaptive-slider",
       "type": "registry:ui",
       "dependencies": ["motion"],
@@ -126,18 +114,6 @@
         {
           "path": "src/components/watermelon-ui/add-cash-disclosure.tsx",
           "target": "components/ui/add-cash-disclosure.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "add-cash-disclosure-base",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/add-cash-disclosure-base.tsx",
-          "target": "components/ui/add-cash-disclosure-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -752,6 +728,18 @@
       ]
     },
     {
+      "name": "budget-card-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/budget-card-base.tsx",
+          "target": "components/ui/budget-card-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "business-management",
       "type": "registry:block",
       "dependencies": [
@@ -1275,6 +1263,18 @@
       ]
     },
     {
+      "name": "compose-email-card-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/compose-email-card-base.tsx",
+          "target": "components/ui/compose-email-card-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "contextual-ai-bar",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -1364,23 +1364,6 @@
       ]
     },
     {
-      "name": "create-new-disclosure-base",
-      "type": "registry:ui",
-      "dependencies": [
-        "@hugeicons/core-free-icons",
-        "@hugeicons/react",
-        "lucide-react",
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/create-new-disclosure-base.tsx",
-          "target": "components/ui/create-new-disclosure-base.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "credit-usage-card",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -1388,6 +1371,18 @@
         {
           "path": "src/components/watermelon-ui/credit-usage-card.tsx",
           "target": "components/ui/credit-usage-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "credit-usage-card-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/credit-usage-card-base.tsx",
+          "target": "components/ui/credit-usage-card-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1443,6 +1438,18 @@
         {
           "path": "src/components/watermelon-ui/deployment-card.tsx",
           "target": "components/ui/deployment-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "deployment-card-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/deployment-card-base.tsx",
+          "target": "components/ui/deployment-card-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1741,18 +1748,6 @@
         {
           "path": "src/components/watermelon-ui/emoji-spree-choice-chips.tsx",
           "target": "components/ui/emoji-spree-choice-chips.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "emoji-spree-choice-chips-base",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/emoji-spree-choice-chips-base.tsx",
-          "target": "components/ui/emoji-spree-choice-chips-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2669,18 +2664,6 @@
       ]
     },
     {
-      "name": "inline-overflow-base",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/inline-overflow-base.tsx",
-          "target": "components/ui/inline-overflow-base.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "inline-table-control",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -2729,6 +2712,18 @@
       ]
     },
     {
+      "name": "integration-card-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/integration-card-base.tsx",
+          "target": "components/ui/integration-card-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "invite-disclosure",
       "type": "registry:ui",
       "dependencies": ["motion"],
@@ -2736,18 +2731,6 @@
         {
           "path": "src/components/watermelon-ui/invite-disclosure.tsx",
           "target": "components/ui/invite-disclosure.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "invite-disclosure-base",
-      "type": "registry:ui",
-      "dependencies": ["motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/invite-disclosure-base.tsx",
-          "target": "components/ui/invite-disclosure-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3475,6 +3458,18 @@
       ]
     },
     {
+      "name": "meeting-card-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/meeting-card-base.tsx",
+          "target": "components/ui/meeting-card-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "minimal-carousel",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -3584,6 +3579,18 @@
       ]
     },
     {
+      "name": "onboarding-checklist-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/onboarding-checklist-base.tsx",
+          "target": "components/ui/onboarding-checklist-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "onboarding-screen",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -3591,6 +3598,18 @@
         {
           "path": "src/components/watermelon-ui/onboarding-screen.tsx",
           "target": "components/ui/onboarding-screen.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "onboarding-screen-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/onboarding-screen-base.tsx",
+          "target": "components/ui/onboarding-screen-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4833,18 +4852,6 @@
       ]
     },
     {
-      "name": "switch-disclosure-base",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/switch-disclosure-base.tsx",
-          "target": "components/ui/switch-disclosure-base.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "switch-mode",
       "type": "registry:ui",
       "dependencies": ["motion"],
@@ -5042,23 +5049,6 @@
         {
           "path": "src/components/watermelon-ui/task-widget-disclosure.tsx",
           "target": "components/ui/task-widget-disclosure.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "task-widget-disclosure-base",
-      "type": "registry:ui",
-      "dependencies": [
-        "@hugeicons/core-free-icons",
-        "@hugeicons/react",
-        "lucide-react",
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/task-widget-disclosure-base.tsx",
-          "target": "components/ui/task-widget-disclosure-base.tsx",
           "type": "registry:ui"
         }
       ]
