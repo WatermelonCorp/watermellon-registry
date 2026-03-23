@@ -1881,47 +1881,47 @@
       "files": [
         {
           "path": "src/components/dashboards/erp-dashboard/DashboardPageView.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/DashboardPageView.tsx",
+          "target": "components/watermelon/erp-dashboard/DashboardPageView.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/erp-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/erp-dashboard/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/erp-dashboard/components/mode-toggle.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/mode-toggle.tsx",
+          "target": "components/watermelon/erp-dashboard/components/mode-toggle.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/erp-dashboard/components/overview-tab-content.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/overview-tab-content.tsx",
+          "target": "components/watermelon/erp-dashboard/components/overview-tab-content.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/erp-dashboard/components/search-form.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/search-form.tsx",
+          "target": "components/watermelon/erp-dashboard/components/search-form.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/erp-dashboard/components/site-header.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/site-header.tsx",
+          "target": "components/watermelon/erp-dashboard/components/site-header.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/erp-dashboard/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/erp-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/erp-dashboard/data.ts",
-          "target": "components/watermelon/dashboards/erp-dashboard/data.ts",
+          "target": "components/watermelon/erp-dashboard/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/erp-dashboard/demo.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/demo.tsx",
+          "target": "components/watermelon/erp-dashboard/demo.tsx",
           "type": "registry:component"
         }
       ],
@@ -2485,156 +2485,60 @@
       "files": [
         {
           "path": "src/components/dashboards/incident-management/activeStreamViews.tsx",
-          "target": "components/watermelon/dashboards/incident-management/activeStreamViews.tsx",
+          "target": "components/watermelon/incident-management/activeStreamViews.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/incident-management/components/active-streams/constants.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/active-streams/constants.tsx",
+          "target": "components/watermelon/incident-management/components/active-streams/constants.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/incident-management/components/active-streams/kanban-column.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/active-streams/kanban-column.tsx",
+          "target": "components/watermelon/incident-management/components/active-streams/kanban-column.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/incident-management/components/active-streams/stream-card.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/active-streams/stream-card.tsx",
+          "target": "components/watermelon/incident-management/components/active-streams/stream-card.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/incident-management/components/active-streams/types.ts",
-          "target": "components/watermelon/dashboards/incident-management/components/active-streams/types.ts",
+          "target": "components/watermelon/incident-management/components/active-streams/types.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/incident-management/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/app-sidebar.tsx",
+          "target": "components/watermelon/incident-management/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/incident-management/components/search-form.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/search-form.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/chart.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/chart.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/checkbox.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/checkbox.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/collapsible.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/collapsible.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/dialog.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/dialog.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/label.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/label.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/table.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/tabs.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/tabs.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/incident-management/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/incident-management/components/ui/tooltip.tsx",
+          "target": "components/watermelon/incident-management/components/search-form.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/incident-management/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/incident-management/dashboardLayout.tsx",
+          "target": "components/watermelon/incident-management/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/incident-management/demo.tsx",
-          "target": "components/watermelon/dashboards/incident-management/demo.tsx",
+          "target": "components/watermelon/incident-management/demo.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "avatar",
         "badge",
+        "breadcrumb",
         "button",
         "card",
+        "chart",
+        "checkbox",
         "collapsible",
+        "dialog",
         "dropdown-menu",
         "input",
         "label",
@@ -2643,6 +2547,7 @@
         "sheet",
         "sidebar",
         "skeleton",
+        "table",
         "tabs",
         "tooltip"
       ]

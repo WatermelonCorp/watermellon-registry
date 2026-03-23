@@ -10,9 +10,9 @@ import {
     IconMessage,
     IconClock
 } from "@tabler/icons-react"
-import { Card, CardContent, CardFooter, CardHeader } from "../ui/card"
-import { Badge } from "../ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { cn } from "@/lib/utils"
 import type { StreamCardProps } from "./types"
 
