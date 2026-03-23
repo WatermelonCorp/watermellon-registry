@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -142,7 +143,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
     );
 };
 
-const DataRow = ({ icon, label, children }: { icon: any, label: string, children: React.ReactNode }) => (
+const DataRow = ({ icon, label, children }: { icon: React.ReactNode; label: string; children: React.ReactNode }) => (
     <div className="flex items-center justify-between gap-4 py-0.5">
         <div className="flex items-center gap-3 text-muted-foreground shrink-0">
             {icon}

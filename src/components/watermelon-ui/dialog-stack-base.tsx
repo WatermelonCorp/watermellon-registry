@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -5,11 +6,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowRight, ThumbsUp } from 'lucide-react';
 import { HugeiconsIcon } from '@hugeicons/react';
 
+type HugeIconType = React.ComponentProps<typeof HugeiconsIcon>['icon'];
+
 export interface StackItem {
   id: string;
   title: string;
   type: 'form' | 'steps';
-  steps?: { icon: any; text: string }[];
+  steps?: { icon: HugeIconType; text: string }[];
   buttonText?: string;
 }
 
@@ -17,7 +20,7 @@ interface DialogStackProps {
   stack: StackItem[];
   trigger: {
     label: string;
-    icon: any;
+    icon: HugeIconType;
   };
 }
 

@@ -1,3 +1,4 @@
+
 import React, { useState, type ReactNode } from 'react';
 import {
   AnimatePresence,
@@ -10,6 +11,10 @@ import { FaFolderClosed } from 'react-icons/fa6';
 import { LuDraftingCompass } from 'react-icons/lu';
 import { BiSolidZap } from 'react-icons/bi';
 import { PiScrewdriverBold } from 'react-icons/pi';
+
+type InviteIconProps = {
+  className?: string;
+};
 
 export interface InviteItem {
   id: string;
@@ -147,13 +152,12 @@ export const InviteDisclosure: React.FC<InviteDisclosureProps> = ({
                   >
                     <div className="relative">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted/60">
-                        {invite.icon && React.isValidElement(invite.icon)
-                          ? React.cloneElement(
-                              invite.icon as React.ReactElement<any>,
-                              {
-                                className: `${(invite.icon as React.ReactElement<any>).props.className} text-muted-foreground`,
-                              },
-                            )
+                        {invite.icon &&
+                        React.isValidElement<InviteIconProps>(invite.icon)
+                          ? React.cloneElement(invite.icon, {
+                              className:
+                                `${invite.icon.props.className ?? ''} text-muted-foreground`.trim(),
+                            })
                           : invite.icon}
                       </div>
                       {invite.hasUpdate && (
