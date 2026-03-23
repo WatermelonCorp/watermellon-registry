@@ -2398,117 +2398,32 @@
       "files": [
         {
           "path": "src/components/dashboards/hrm/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/app-sidebar.tsx",
+          "target": "components/watermelon/hrm/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/hrm/components/employee-table.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/employee-table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/chart.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/chart.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/collapsible.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/collapsible.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/scroll-area.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/scroll-area.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/table.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/tabs.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/tabs.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/hrm/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/hrm/components/ui/tooltip.tsx",
+          "target": "components/watermelon/hrm/components/employee-table.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/hrm/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/hrm/dashboardLayout.tsx",
+          "target": "components/watermelon/hrm/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/hrm/dashboardView.tsx",
-          "target": "components/watermelon/dashboards/hrm/dashboardView.tsx",
+          "target": "components/watermelon/hrm/dashboardView.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/hrm/data.ts",
-          "target": "components/watermelon/dashboards/hrm/data.ts",
+          "target": "components/watermelon/hrm/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/hrm/demo.tsx",
-          "target": "components/watermelon/dashboards/hrm/demo.tsx",
+          "target": "components/watermelon/hrm/demo.tsx",
           "type": "registry:component"
         }
       ],
@@ -2516,12 +2431,18 @@
         "avatar",
         "badge",
         "button",
+        "card",
         "chart",
         "collapsible",
+        "dropdown-menu",
         "input",
+        "label",
+        "popover",
+        "scroll-area",
         "select",
         "separator",
         "sheet",
+        "sidebar",
         "skeleton",
         "table",
         "tabs",

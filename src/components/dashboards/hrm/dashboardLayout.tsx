@@ -1,7 +1,7 @@
 import { IconRail, SecondarySidebar } from "./components/app-sidebar"
-import { TooltipProvider } from "./components/ui/tooltip";
-import { Button } from "./components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "./components/ui/sheet";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { Menu, User, Settings, LogOut } from "lucide-react";
 import { useState } from "react";
 

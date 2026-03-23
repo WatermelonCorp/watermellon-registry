@@ -11,7 +11,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "./components/ui/chart";
+} from "@/components/ui/chart";
 import {
   Area,
   AreaChart,
@@ -24,8 +24,8 @@ import {
   Label as RechartsLabel,
 } from "recharts";
 import { Filter, List, LayoutGrid } from "lucide-react";
-import { Button } from "./components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { EmployeeTable } from "./components/employee-table";
 import {
   employees,
@@ -44,14 +44,14 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./components/ui/select";
+} from "@/components/ui/select";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "./components/ui/popover";
-import { Label } from "./components/ui/label";
-import { Input } from "./components/ui/input";
+} from "@/components/ui/popover";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export const DashboardView = () => {
   return (
