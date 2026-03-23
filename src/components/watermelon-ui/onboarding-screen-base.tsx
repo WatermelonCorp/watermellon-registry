@@ -5,6 +5,11 @@ import { motion } from 'motion/react';
 import { ChevronLeft, Info, ImagePlus } from 'lucide-react';
 import { HiBadgeCheck } from 'react-icons/hi';
 
+interface OnboardingData {
+    businessName: string;
+    legalName: string;
+}
+
 interface OnboardingProps {
     title?: string;
     subtitle?: string;
@@ -17,7 +22,7 @@ interface OnboardingProps {
     tooltipMainText?: string;
     tooltipSubText?: string;
     rightSectionDescription?: string;
-    onComplete?: (data: any) => void;
+    onComplete?: (data: OnboardingData) => void;
 }
 
 export const OnboardingScreen: React.FC<OnboardingProps> = ({

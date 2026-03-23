@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, AnimatePresence } from 'motion/react';
+import {
+    motion,
+    useMotionValue,
+    AnimatePresence,
+} from 'motion/react';
 import { X, Clock, Calendar, Settings, Bell, ExternalLink, BookOpen, AlignRight } from 'lucide-react';
 
 interface DraggableToolbarProps {
@@ -76,7 +80,7 @@ export const DraggableToolbar: React.FC<DraggableToolbarProps> = ({
         return () => unsubscribe();
     }, [isDragging, x, y, containerRef, closeZoneRef]);
 
-    const handleDragEnd = (_event: any, _info: any) => {
+    const handleDragEnd = () => {
         setIsDragging(false);
         if (isOverTarget) {
             setIsVisible(false);

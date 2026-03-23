@@ -5,6 +5,7 @@ import {
   motion,
   AnimatePresence,
   type Variants,
+  type MotionValue,
   useMotionValue,
   useSpring,
   useTransform,
@@ -166,7 +167,7 @@ interface ItemProps {
   baseAngle: number;
   radius: number;
   thumbnailSize: number;
-  rotation: any;
+  rotation: MotionValue<number>;
   onClick: () => void;
 }
 

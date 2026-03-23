@@ -19,7 +19,11 @@ export interface Slide {
   img: string;
 }
 
-type IconRenderer = (props?: any) => React.ReactNode;
+type IconRendererProps = {
+  className?: string;
+};
+
+type IconRenderer = (props?: IconRendererProps) => React.ReactNode;
 
 interface CarouselSliderProps {
   slides?: Slide[];
@@ -104,7 +108,10 @@ export const CarouselSlider: React.FC<CarouselSliderProps> = ({
     setIndex((prev) => (prev + newDirection + slides.length) % slides.length);
   };
 
-  const handleDragEnd = (_: any, info: PanInfo) => {
+  const handleDragEnd = (
+    _event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+  ) => {
     if (info.offset.x < -120) paginate(1);
     else if (info.offset.x > 120) paginate(-1);
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue } from "motion/react";
+import { motion, useMotionValue, type MotionValue } from "motion/react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +12,14 @@ interface InteractiveDebugPanelProps {
   enableMouseTracking?: boolean;
   enableKeyTracking?: boolean;
   className?: string;
+}
+
+interface DebugValuesProps {
+  className?: string;
+  count?: number;
+  mouseX?: MotionValue<number>;
+  mouseY?: MotionValue<number>;
+  keyPressed?: string;
 }
 
 /*  MAIN COMPONENT  */
@@ -78,7 +86,7 @@ export const DebugPanel = ({
 export const InteractiveDebugPanel = ({
   className,
   ...props
-}: Record<string, any> & { className?: string }) => {
+}: DebugValuesProps) => {
   return (
     <div
       className={cn(
