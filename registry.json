@@ -1910,91 +1910,6 @@
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/card.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/chart.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/chart.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/checkbox.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/checkbox.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/collapsible.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/collapsible.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/label.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/label.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/table.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/tabs.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/tabs.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/erp-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/erp-dashboard/components/ui/tooltip.tsx",
-          "type": "registry:component"
-        },
-        {
           "path": "src/components/dashboards/erp-dashboard/dashboardLayout.tsx",
           "target": "components/watermelon/dashboards/erp-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
@@ -2018,6 +1933,8 @@
         "chart",
         "checkbox",
         "collapsible",
+        "dialog",
+        "dropdown-menu",
         "input",
         "label",
         "select",

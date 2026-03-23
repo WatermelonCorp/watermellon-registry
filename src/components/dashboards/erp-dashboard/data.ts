@@ -1,6 +1,6 @@
 import {
     type ChartConfig,
-} from "./components/ui/chart"
+} from "@/components/ui/chart"
 import { Activity, Layers, Calendar, CalendarDays, Settings, Bell, CircleHelp, BarChart3, CircleDollarSign, FileText, Users2, UserPlus2 } from "lucide-react"
 
 export const salesData = [

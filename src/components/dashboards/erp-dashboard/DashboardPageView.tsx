@@ -1,5 +1,5 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs"
-import { Button } from "./components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button"
 import { Mail, RefreshCcw, Calendar, Download } from "lucide-react"
 import {
     Select,
@@ -7,13 +7,13 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./components/ui/select"
+} from "@/components/ui/select"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import OverviewTabContent from "./components/overview-tab-content"
 
 export default function DashboardPageView() {

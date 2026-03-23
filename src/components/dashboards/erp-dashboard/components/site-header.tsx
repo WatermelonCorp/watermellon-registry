@@ -3,9 +3,9 @@ import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbList,
-} from "./ui/breadcrumb"
-import { Separator } from "./ui/separator"
-import { Button } from "./ui/button"
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
+import { Button } from "@/components/ui/button"
 import { Mail, Bell, UserPlus } from "lucide-react"
 import {
     Select,
@@ -14,8 +14,8 @@ import {
     SelectTrigger,
     SelectSeparator,
     SelectValue,
-} from "./ui/select"
-import { SidebarTrigger } from "./ui/sidebar"
+} from "@/components/ui/select"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 import { ModeToggle } from "./mode-toggle"
 import {
     Dialog,
@@ -25,9 +25,9 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "./ui/dialog"
-import { Input } from "./ui/input"
-import { Label } from "./ui/label"
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 export default function SiteHeader() {
     return (

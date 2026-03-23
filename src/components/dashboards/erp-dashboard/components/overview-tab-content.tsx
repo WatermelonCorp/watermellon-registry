@@ -1,8 +1,8 @@
 "use client"
 
 import { salesData, emailData, salesConfig, emailConfig, employees, stats } from "../data"
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
-import { Badge } from "./ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { ArrowUp, ArrowDown, Search, Download, ChevronsUpDown, EyeIcon, EllipsisVertical } from "lucide-react"
 import {
     Select,
@@ -10,13 +10,13 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./ui/select"
+} from "@/components/ui/select"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "./ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
     Dialog,
     DialogContent,
@@ -24,7 +24,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "./ui/dialog"
+} from "@/components/ui/dialog"
 import {
     Bar,
     BarChart,
@@ -38,9 +38,9 @@ import {
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
-} from "./ui/chart"
-import { Input } from "./ui/input"
-import { Separator } from "./ui/separator"
+} from "@/components/ui/chart"
+import { Input } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator"
 import {
     Table,
     TableBody,
@@ -48,9 +48,9 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "./ui/table"
-import { Button } from './ui/button'
-import { Checkbox } from "./ui/checkbox"
+} from "@/components/ui/table"
+import { Button } from '@/components/ui/button'
+import { Checkbox } from "@/components/ui/checkbox"
 
 const OverviewTabContent = () => {
     const cardBorderStyles = "relative before:absolute before:inset-0 before:rounded-[inherit] dark:before:border dark:before:border-neutral-800/70 dark:before:[mask-image:linear-gradient(to_bottom,black_20%,transparent_60%)] before:pointer-events-none"
