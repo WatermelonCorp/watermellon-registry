@@ -2729,116 +2729,64 @@
       "files": [
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/invoice-generator-dashboard/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/components/mode-toggle.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/mode-toggle.tsx",
+          "target": "components/watermelon/invoice-generator-dashboard/components/mode-toggle.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/components/search-form.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/search-form.tsx",
+          "target": "components/watermelon/invoice-generator-dashboard/components/search-form.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/components/site-header.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/site-header.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/label.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/label.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-generator-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/invoice-generator-dashboard/components/site-header.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/components/version-switcher.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/components/version-switcher.tsx",
+          "target": "components/watermelon/invoice-generator-dashboard/components/version-switcher.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/invoice-generator-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/data.ts",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/data.ts",
+          "target": "components/watermelon/invoice-generator-dashboard/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/demo.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/demo.tsx",
+          "target": "components/watermelon/invoice-generator-dashboard/demo.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-generator-dashboard/invoicePageView.tsx",
-          "target": "components/watermelon/dashboards/invoice-generator-dashboard/invoicePageView.tsx",
+          "target": "components/watermelon/invoice-generator-dashboard/invoicePageView.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "breadcrumb",
         "button",
+        "dialog",
         "dropdown-menu",
         "input",
         "label",
+        "popover",
         "select",
         "separator",
         "sheet",
         "sidebar",
         "skeleton",
+        "textarea",
         "tooltip"
       ]
     },
