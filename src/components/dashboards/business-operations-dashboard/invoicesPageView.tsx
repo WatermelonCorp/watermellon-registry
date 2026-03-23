@@ -13,16 +13,16 @@ import {
     IconCircleCheckFilled,
     IconFileStarFilled,
 } from "@tabler/icons-react"
-import { Button } from "./components/ui/button"
-import { Input } from "./components/ui/input"
-import { Label } from "./components/ui/label"
-import { Textarea } from "./components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import {
     Tabs,
     TabsContent,
     TabsList,
     TabsTrigger,
-} from "./components/ui/tabs"
+} from "@/components/ui/tabs"
 import {
     Dialog,
     DialogContent,
@@ -31,12 +31,12 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "./components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "./components/ui/popover"
+} from "@/components/ui/popover"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -44,10 +44,10 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu"
-import { SidebarTrigger, useSidebar } from "./components/ui/sidebar"
+} from "@/components/ui/dropdown-menu"
+import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar"
 import { InvoiceCard } from "./components/invoice-card"
-import { Separator } from './components/ui/separator'
+import { Separator } from '@/components/ui/separator'
 import { invoices } from "./data"
 
 export default function InvoicesPageView() {

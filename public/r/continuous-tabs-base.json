@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "continuous-tabs-base",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/continuous-tabs-base.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, useEffect, type FC } from \"react\";\r\nimport { motion, LayoutGroup } from \"motion/react\";\r\n\r\ninterface TabItem {\r\n  id: string;\r\n  label: string;\r\n}\r\n\r\ninterface ContinuousTabsProps {\r\n  tabs?: TabItem[];\r\n  defaultActiveId?: string;\r\n  onChange?: (id: string) => void;\r\n}\r\n\r\nconst DEFAULT_TABS: TabItem[] = [\r\n  { id: \"home\", label: \"Home\" },\r\n  { id: \"interactions\", label: \"Interactions\" },\r\n  { id: \"resources\", label: \"Resources\" },\r\n  { id: \"docs\", label: \"Docs\" },\r\n];\r\n\r\nexport const ContinuousTabs: FC<ContinuousTabsProps> = ({\r\n  tabs = DEFAULT_TABS,\r\n  defaultActiveId = \"home\",\r\n  onChange,\r\n}) => {\r\n  const [active, setActive] = useState<string>(defaultActiveId);\r\n  const [isMounted, setIsMounted] = useState<boolean>(false);\r\n\r\n  useEffect(() => {\r\n    requestAnimationFrame(() => setIsMounted(true));\r\n  }, []);\r\n\r\n  const handleChange = (id: string) => {\r\n    setActive(id);\r\n    onChange?.(id);\r\n  };\r\n\r\n  if (!isMounted) return null;\r\n\r\n  return (\r\n    <LayoutGroup>\r\n      <nav className=\"theme-injected border-2 border-border bg-background shadow-[inset_0_-2px_4px_hsl(var(--foreground)/0.08), inset_0_1px_0_hsl(var(--background)/0.9), 0_4px_12px_hsl(var(--foreground)/0.03)] relative flex items-center gap-0.5 rounded-lg border p-1 transition-all duration-300 sm:gap-1 sm:p-1.5\">\r\n        {tabs.map((tab) => {\r\n          const isActive = active === tab.id;\r\n\r\n          return (\r\n            <button\r\n              key={tab.id}\r\n              onClick={() => handleChange(tab.id)}\r\n              className=\"relative rounded-lg px-4 py-2 outline-none sm:px-6 sm:py-3\"\r\n            >\r\n              {isActive && (\r\n                <motion.div\r\n                  layoutId=\"active-pill\"\r\n                  transition={{\r\n                    type: \"spring\",\r\n                    stiffness: 380,\r\n                    damping: 30,\r\n                    mass: 0.9,\r\n                  }}\r\n                  className=\"bg-foreground absolute inset-0 rounded-lg shadow-xs\"\r\n                />\r\n              )}\r\n\r\n              <motion.span\r\n                layout=\"position\"\r\n                className={`relative z-10 text-sm font-semibold transition-colors duration-200 sm:text-base ${\r\n                  isActive\r\n                    ? \"text-background\"\r\n                    : \"text-muted-foreground hover:text-foreground\"\r\n                } `}\r\n              >\r\n                {tab.label}\r\n              </motion.span>\r\n            </button>\r\n          );\r\n        })}\r\n      </nav>\r\n    </LayoutGroup>\r\n  );\r\n};\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/continuous-tabs-base.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

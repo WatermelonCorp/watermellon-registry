@@ -10,8 +10,8 @@
   ],
   "files": [
     {
-      "path": "src/components/ui/alert-03.tsx",
-      "content": "import { CircleCheck } from \"@aliimam/icons\";\nimport { Button } from \"@/components/ui/button\"; // or your existing Button\nimport { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\n\nexport default function Alert03() {\n  return (\n    <Alert className=\"border-green-500/30 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200\">\n      <CircleCheck size={18} />\n      <div className=\"flex flex-col gap-2\">\n        <AlertTitle>Operation completed!</AlertTitle>\n        <AlertDescription>\n          Your account settings have been updated successfully.\n        </AlertDescription>\n        <Button variant=\"outline\" size=\"sm\" className=\"mt-1 w-fit\">\n          View details\n        </Button>\n      </div>\n    </Alert>\n  );\n}\n",
+      "path": "src/components/watermelon-ui/alert-03.tsx",
+      "content": "import { CircleCheck } from \"@aliimam/icons\";\r\nimport { Button } from \"@/components/ui/button\"; // or your existing Button\r\nimport { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nexport default function Alert03() {\r\n  return (\r\n    <Alert className=\"border-green-500/30 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200\">\r\n      <CircleCheck size={18} />\r\n      <div className=\"flex flex-col gap-2\">\r\n        <AlertTitle>Operation completed!</AlertTitle>\r\n        <AlertDescription>\r\n          Your account settings have been updated successfully.\r\n        </AlertDescription>\r\n        <Button variant=\"outline\" size=\"sm\" className=\"mt-1 w-fit\">\r\n          View details\r\n        </Button>\r\n      </div>\r\n    </Alert>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/alert-03.tsx"
     }

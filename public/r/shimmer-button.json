@@ -4,8 +4,8 @@
   "dependencies": [],
   "files": [
     {
-      "path": "src/components/ui/shimmer-button.tsx",
-      "content": "import { cn } from \"@/lib/utils\";\n\ninterface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  children: React.ReactNode;\n}\n\nexport function ShimmerButton({ children, className, ...props }: ShimmerButtonProps) {\n  return (\n    <button\n      className={cn(\n        \"relative overflow-hidden px-6 py-3 rounded-lg font-medium\",\n        \"bg-primary text-primary-foreground\",\n        \"hover:shadow-lg transition-shadow duration-300\",\n        \"group\",\n        className\n      )}\n      {...props}\n    >\n      <span className=\"relative z-10\">{children}</span>\n      <div\n        className={cn(\n          \"absolute inset-0 -translate-x-full\",\n          \"bg-linear-to-r from-transparent via-white/20 to-transparent\",\n          \"group-hover:translate-x-full transition-transform duration-700\"\n        )}\n      />\n    </button>\n  );\n}\n",
+      "path": "src/components/watermelon-ui/shimmer-button.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\r\n\r\ninterface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\r\n  children: React.ReactNode;\r\n}\r\n\r\nexport function ShimmerButton({ children, className, ...props }: ShimmerButtonProps) {\r\n  return (\r\n    <button\r\n      className={cn(\r\n        \"relative overflow-hidden px-6 py-3 rounded-lg font-medium\",\r\n        \"bg-primary text-primary-foreground\",\r\n        \"hover:shadow-lg transition-shadow duration-300\",\r\n        \"group\",\r\n        className\r\n      )}\r\n      {...props}\r\n    >\r\n      <span className=\"relative z-10\">{children}</span>\r\n      <div\r\n        className={cn(\r\n          \"absolute inset-0 -translate-x-full\",\r\n          \"bg-linear-to-r from-transparent via-white/20 to-transparent\",\r\n          \"group-hover:translate-x-full transition-transform duration-700\"\r\n        )}\r\n      />\r\n    </button>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/shimmer-button.tsx"
     }

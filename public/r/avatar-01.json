@@ -9,8 +9,8 @@
   ],
   "files": [
     {
-      "path": "src/components/ui/avatar-01.tsx",
-      "content": "import {\n  Avatar,\n  AvatarImage,\n  AvatarFallback,\n} from \"@/components/ui/avatar\";\nimport { UserRound } from \"@aliimam/icons\";\n\nexport default function Avatar01() {\n  return (\n    <div className=\"flex gap-6\">\n      <Avatar>\n        <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n        <AvatarFallback>AI</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"rounded-lg\">\n        <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n        <AvatarFallback>AI</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"rounded-lg\">\n        <AvatarFallback>\n          <UserRound />\n        </AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>AI</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}\n",
+      "path": "src/components/watermelon-ui/avatar-01.tsx",
+      "content": "import {\r\n  Avatar,\r\n  AvatarImage,\r\n  AvatarFallback,\r\n} from \"@/components/ui/avatar\";\r\nimport { UserRound } from \"@aliimam/icons\";\r\n\r\nexport default function Avatar01() {\r\n  return (\r\n    <div className=\"flex gap-6\">\r\n      <Avatar>\r\n        <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\r\n        <AvatarFallback>AI</AvatarFallback>\r\n      </Avatar>\r\n      <Avatar className=\"rounded-lg\">\r\n        <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\r\n        <AvatarFallback>AI</AvatarFallback>\r\n      </Avatar>\r\n      <Avatar className=\"rounded-lg\">\r\n        <AvatarFallback>\r\n          <UserRound />\r\n        </AvatarFallback>\r\n      </Avatar>\r\n      <Avatar>\r\n        <AvatarFallback>AI</AvatarFallback>\r\n      </Avatar>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/avatar-01.tsx"
     }

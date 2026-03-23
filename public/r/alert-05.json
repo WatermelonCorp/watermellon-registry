@@ -10,8 +10,8 @@
   ],
   "files": [
     {
-      "path": "src/components/ui/alert-05.tsx",
-      "content": "import { CircleX } from \"@aliimam/icons\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Alert,\n  AlertDescription,\n  AlertTitle,\n} from \"@/components/ui/alert\";\n\nexport default function Alert05() {\n  return (\n    <Alert variant=\"destructive\">\n      <CircleX size={16} />\n      <div className=\"flex flex-col gap-2\">\n        <AlertTitle>Something went wrong!</AlertTitle>\n        <AlertDescription>\n          The server could not process your request. Please try again later.\n        </AlertDescription>\n        <Button variant=\"destructive\" size=\"sm\" className=\"w-fit\">\n          Retry\n        </Button>\n      </div>\n    </Alert>\n  );\n}\n",
+      "path": "src/components/watermelon-ui/alert-05.tsx",
+      "content": "import { CircleX } from \"@aliimam/icons\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Alert,\r\n  AlertDescription,\r\n  AlertTitle,\r\n} from \"@/components/ui/alert\";\r\n\r\nexport default function Alert05() {\r\n  return (\r\n    <Alert variant=\"destructive\">\r\n      <CircleX size={16} />\r\n      <div className=\"flex flex-col gap-2\">\r\n        <AlertTitle>Something went wrong!</AlertTitle>\r\n        <AlertDescription>\r\n          The server could not process your request. Please try again later.\r\n        </AlertDescription>\r\n        <Button variant=\"destructive\" size=\"sm\" className=\"w-fit\">\r\n          Retry\r\n        </Button>\r\n      </div>\r\n    </Alert>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/alert-05.tsx"
     }

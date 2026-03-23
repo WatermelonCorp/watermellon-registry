@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shimmer-button-base",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/shimmer-button-base.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\r\n\r\ninterface ShimmerButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\r\n  children: React.ReactNode;\r\n}\r\n\r\nexport function ShimmerButton({\r\n  children,\r\n  className,\r\n  ...props\r\n}: ShimmerButtonProps) {\r\n  return (\r\n    <button\r\n      className={cn(\r\n        \"relative overflow-hidden px-6 py-3 rounded-lg font-medium\",\r\n        \"bg-primary text-primary-foreground\",\r\n        \"hover:shadow-lg transition-shadow duration-300\",\r\n        \"group\",\r\n        className\r\n      )}\r\n      {...props}\r\n    >\r\n      <span className=\"relative z-10\">{children}</span>\r\n      <div\r\n        className={cn(\r\n          \"absolute inset-0 -translate-x-full\",\r\n          \"bg-linear-to-r from-transparent via-white/20 to-transparent\",\r\n          \"group-hover:translate-x-full transition-transform duration-700\"\r\n        )}\r\n      />\r\n    </button>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/shimmer-button-base.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

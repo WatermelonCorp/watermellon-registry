@@ -11,7 +11,7 @@ import {
 import { NavMain } from "./nav-main"
 import { NavProjects } from "./nav-projects"
 import { NavUser } from "./nav-user"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Sidebar,
   SidebarContent,
@@ -21,15 +21,15 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
-} from "./ui/sidebar"
+} from "@/components/ui/sidebar"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu"
+  DropdownMenuTrigger,  
+} from "@/components/ui/dropdown-menu"
 import { data } from "../data"
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
