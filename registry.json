@@ -2048,6 +2048,18 @@
       ]
     },
     {
+      "name": "feedback-action-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/feedback-action-base.tsx",
+          "target": "components/ui/feedback-action-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "file-upload",
       "type": "registry:ui",
       "dependencies": ["sonner"],
@@ -2212,6 +2224,18 @@
         {
           "path": "src/components/watermelon-ui/fractional-picker.tsx",
           "target": "components/ui/fractional-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "fractional-picker-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/fractional-picker-base.tsx",
+          "target": "components/ui/fractional-picker-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2801,6 +2825,23 @@
       ]
     },
     {
+      "name": "inline-edit-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "@hugeicons/core-free-icons/index",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/inline-edit-base.tsx",
+          "target": "components/ui/inline-edit-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "inline-overflow",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -2825,6 +2866,18 @@
       ]
     },
     {
+      "name": "inline-table-control-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/inline-table-control-base.tsx",
+          "target": "components/ui/inline-table-control-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "inline-toast",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -2832,6 +2885,18 @@
         {
           "path": "src/components/watermelon-ui/inline-toast.tsx",
           "target": "components/ui/inline-toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inline-toast-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/inline-toast-base.tsx",
+          "target": "components/ui/inline-toast-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3272,6 +3337,18 @@
       ]
     },
     {
+      "name": "labeled-progress-indicator-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/labeled-progress-indicator-base.tsx",
+          "target": "components/ui/labeled-progress-indicator-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "layered-progressive-disclosure",
       "type": "registry:ui",
       "dependencies": ["motion/react"],
@@ -3303,6 +3380,18 @@
         {
           "path": "src/components/watermelon-ui/list-stack.tsx",
           "target": "components/ui/list-stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "list-stack-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion", "react-icons"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/list-stack-base.tsx",
+          "target": "components/ui/list-stack-base.tsx",
           "type": "registry:ui"
         }
       ]
@@ -3929,6 +4018,18 @@
       ]
     },
     {
+      "name": "predictive-text-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/predictive-text-base.tsx",
+          "target": "components/ui/predictive-text-base.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "preview-link-card",
       "type": "registry:ui",
       "dependencies": ["motion", "radix-ui"],
@@ -4204,6 +4305,18 @@
         "skeleton",
         "tabs",
         "tooltip"
+      ]
+    },
+    {
+      "name": "quick-feedback-base",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/quick-feedback-base.tsx",
+          "target": "components/ui/quick-feedback-base.tsx",
+          "type": "registry:ui"
+        }
       ]
     },
     {
