@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "./components/ui/button"
-import { Checkbox } from "./components/ui/checkbox"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
     Table,
     TableBody,
@@ -10,20 +10,20 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "./components/ui/table"
+} from "@/components/ui/table"
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./components/ui/select"
+} from "@/components/ui/select"
 import {
     Pagination,
     PaginationContent,
     PaginationItem,
     PaginationLink,
-} from "./components/ui/pagination"
+} from "@/components/ui/pagination"
 import {
     Dialog,
     DialogContent,
@@ -32,21 +32,21 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "./components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "./components/ui/popover"
+} from "@/components/ui/popover"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
     DropdownMenuSeparator,
-} from "./components/ui/dropdown-menu"
-import { Input } from "./components/ui/input"
-import { Label } from "./components/ui/label"
+} from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import {
     ChevronLeft,
     ChevronRight,

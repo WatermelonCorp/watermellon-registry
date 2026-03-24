@@ -2875,147 +2875,207 @@
       "files": [
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/nav-Tertiary.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/nav-Tertiary.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/nav-Tertiary.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/nav-footer.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/nav-footer.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/nav-footer.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/nav-main.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/nav-main.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/nav-main.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/nav-secondary.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/nav-secondary.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/nav-secondary.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/search-form.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/search-form.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/search-form.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/site-header.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/site-header.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/site-header.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/team-switcher.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/team-switcher.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/avatar.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/badge.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/breadcrumb.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/breadcrumb.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/checkbox.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/checkbox.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/collapsible.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/collapsible.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/dialog.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/dialog.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/label.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/label.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/pagination.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/pagination.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/select.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/select.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/table.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/team-switcher.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/demo.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/demo.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/demo.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/invoiceManagerView.tsx",
-          "target": "components/watermelon/dashboards/invoice-manager-dashboard/invoiceManagerView.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/invoiceManagerView.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "breadcrumb",
+        "button",
+        "checkbox",
+        "collapsible",
+        "dialog",
+        "dropdown-menu",
+        "input",
+        "label",
+        "pagination",
+        "popover",
+        "select",
+        "separator",
+        "sheet",
+        "sidebar",
+        "skeleton",
+        "table",
+        "tooltip"
+      ]
+    },
+    {
+      "name": "issue-tracking",
+      "type": "registry:block",
+      "dependencies": [
+        "@radix-ui/react-avatar",
+        "@radix-ui/react-collapsible",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-dropdown-menu",
+        "@radix-ui/react-label",
+        "@radix-ui/react-popover",
+        "@radix-ui/react-scroll-area",
+        "@radix-ui/react-select",
+        "@radix-ui/react-separator",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-tabs",
+        "@radix-ui/react-tooltip",
+        "@tabler/icons-react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/issue-tracking/components/app-sidebar.tsx",
+          "target": "components/watermelon/issue-tracking/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/issue-tracking/dashboardLayout.tsx",
+          "target": "components/watermelon/issue-tracking/dashboardLayout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/issue-tracking/demo.tsx",
+          "target": "components/watermelon/issue-tracking/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/issue-tracking/queue-view.tsx",
+          "target": "components/watermelon/issue-tracking/queue-view.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "breadcrumb",
+        "button",
+        "card",
+        "collapsible",
+        "dialog",
+        "dropdown-menu",
+        "input",
+        "label",
+        "popover",
+        "scroll-area",
+        "select",
+        "separator",
+        "sheet",
+        "sidebar",
+        "skeleton",
+        "tabs",
+        "tooltip"
+      ]
+    },
+    {
+      "name": "lead-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "@radix-ui/react-avatar",
+        "@radix-ui/react-collapsible",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-dropdown-menu",
+        "@radix-ui/react-label",
+        "@radix-ui/react-popover",
+        "@radix-ui/react-select",
+        "@radix-ui/react-separator",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-tabs",
+        "@radix-ui/react-tooltip",
+        "@tabler/icons-react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/lead-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/lead-dashboard/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/lead-dashboard/components/data.ts",
+          "target": "components/watermelon/lead-dashboard/components/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/lead-dashboard/components/kanban/KanbanCard.tsx",
+          "target": "components/watermelon/lead-dashboard/components/kanban/KanbanCard.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/lead-dashboard/components/kanban/KanbanColumn.tsx",
+          "target": "components/watermelon/lead-dashboard/components/kanban/KanbanColumn.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/lead-dashboard/components/site-header.tsx",
+          "target": "components/watermelon/lead-dashboard/components/site-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/lead-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/lead-dashboard/dashboardLayout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/lead-dashboard/demo.tsx",
+          "target": "components/watermelon/lead-dashboard/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/lead-dashboard/kanbanBoardView.tsx",
+          "target": "components/watermelon/lead-dashboard/kanbanBoardView.tsx",
           "type": "registry:component"
         }
       ],
@@ -3023,16 +3083,19 @@
         "avatar",
         "breadcrumb",
         "button",
-        "checkbox",
+        "card",
         "collapsible",
+        "dialog",
+        "dropdown-menu",
         "input",
         "label",
+        "popover",
         "select",
         "separator",
         "sheet",
         "sidebar",
         "skeleton",
-        "table",
+        "tabs",
         "tooltip"
       ]
     },

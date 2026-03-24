@@ -19,7 +19,7 @@ import {
   Terminal,
   Settings,
 } from "lucide-react"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 
 import { TeamSwitcher } from "./team-switcher"
 import {
@@ -27,7 +27,7 @@ import {
   SidebarContent,
   SidebarHeader,
   SidebarRail,
-} from "./ui/sidebar"
+} from "@/components/ui/sidebar"
 import { NavTertiary } from "./nav-Tertiary"
 import { NavMain } from "./nav-main"
 import { NavSecondary } from "./nav-secondary"
