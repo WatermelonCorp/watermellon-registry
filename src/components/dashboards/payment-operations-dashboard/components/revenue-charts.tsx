@@ -8,13 +8,13 @@ import {
 
   CardHeader,
 
-} from "./ui/card";
+} from "@/components/ui/card";
 import {
   type ChartConfig,
   ChartContainer,
   ChartTooltip,
-} from "./ui/chart";
-import { Badge } from "./ui/badge";
+} from "@/components/ui/chart";
+import { Badge } from "@/components/ui/badge";
 
 const chartData = [
   { date: "Jan 01", net: 45000, gross: 52000 },

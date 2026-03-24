@@ -1,11 +1,11 @@
 import React from "react"
 import { IconChevronDown } from "@tabler/icons-react"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
-} from "./ui/collapsible"
+} from "@/components/ui/collapsible"
 
 export const FilterSection = ({ title, children, defaultOpen = false }: { title: string, children: React.ReactNode, defaultOpen?: boolean }) => {
     const [isOpen, setIsOpen] = React.useState(defaultOpen)

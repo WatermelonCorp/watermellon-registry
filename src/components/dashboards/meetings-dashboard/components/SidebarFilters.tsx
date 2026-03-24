@@ -9,11 +9,11 @@ import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger
-} from "./ui/collapsible"
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group"
-import { Label } from "./ui/label"
-import { Input } from "./ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
+} from "@/components/ui/collapsible"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Calendar, CalendarClock, CalendarDays, CircleCheckBig, CircleUserRound, MapPinned, Video } from "lucide-react"
 import { FilterSection } from "./FilterSection"
 

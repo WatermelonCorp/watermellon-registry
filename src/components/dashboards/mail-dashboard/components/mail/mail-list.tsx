@@ -1,12 +1,12 @@
 "use client"
 
 import { IconBrandSlack, IconClockFilled, IconMailFilled, IconPlus, IconSearch } from "@tabler/icons-react"
-import { SidebarInput, SidebarTrigger } from "../../components/ui/sidebar"
-import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { SidebarInput, SidebarTrigger } from "@/components/ui/sidebar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { mails as mailData, pinnedUsers, type Mail } from "../../data"
 import { cn } from "@/lib/utils"
-import { Button } from "../../components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -15,10 +15,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../components/ui/dialog"
-import { Input } from "../../components/ui/input"
-import { Textarea } from "../../components/ui/textarea"
-import { Label } from "../../components/ui/label"
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 
 export function MailList({
   mails = mailData,
