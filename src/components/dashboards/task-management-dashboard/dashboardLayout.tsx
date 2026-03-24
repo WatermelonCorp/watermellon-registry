@@ -2,7 +2,7 @@ import { AppSidebar } from "./components/app-sidebar"
 import {
   SidebarInset,
   SidebarProvider,
-} from "./components/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 export const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (

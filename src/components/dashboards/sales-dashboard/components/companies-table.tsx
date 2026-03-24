@@ -8,11 +8,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from './ui/table';
-import { Badge } from './ui/badge';
-import { Checkbox } from './ui/checkbox';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { Separator } from './ui/separator';
+} from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Separator } from '@/components/ui/separator';
 import { Calendar, Plus } from 'lucide-react';
 import { companiesData, segmentColors } from '../data';
 import {
@@ -24,9 +24,9 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from './ui/dialog';
-import { Input } from './ui/input';
-import { Button } from './ui/button';
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 function WinProbabilityBar({ value }: { value: number }) {
   const filledBars = Math.round((value / 100) * 20);
@@ -198,13 +198,11 @@ export function CompaniesTable() {
           <span>Avg win probability</span>
         </div>
         <Dialog>
-          <DialogTrigger
-            render={
-              <div className="group flex flex-1 cursor-pointer items-center justify-start gap-2 py-2.5 transition-colors hover:text-neutral-900 md:pl-3 dark:hover:text-neutral-200" />
-            }
-          >
-            <Plus className="size-3.5" />
-            <span>Add Calculation</span>
+          <DialogTrigger asChild>
+            <div className="group flex flex-1 cursor-pointer items-center justify-start gap-2 py-2.5 transition-colors hover:text-neutral-900 md:pl-3 dark:hover:text-neutral-200">
+              <Plus className="size-3.5" />
+              <span>Add Calculation</span>
+            </div>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -228,10 +226,10 @@ export function CompaniesTable() {
               </div>
             </div>
             <DialogFooter>
-              <DialogClose
-                render={<Button variant="outline" className="rounded-full" />}
-              >
-                Cancel
+              <DialogClose asChild>
+                <Button variant="outline" className="rounded-full">
+                  Cancel
+                </Button>
               </DialogClose>
               <Button className="rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
                 Add Calculation

@@ -1,5 +1,5 @@
 import DealCard from './components/deal-card';
-import { Button } from './components/ui/button';
+import { Button } from '@/components/ui/button';
 import type { DealStage } from './types';
 import { Download, Plus } from 'lucide-react';
 import { deals, DEAL_STAGES } from './data';
@@ -12,8 +12,8 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from './components/ui/dialog';
-import { Input } from './components/ui/input';
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
 
 export const DealsBoardView = () => {
   const getDealsInStage = (stage: DealStage) =>
@@ -29,13 +29,11 @@ export const DealsBoardView = () => {
       <div className="flex justify-end px-3 py-3">
         <div className="flex w-full flex-wrap justify-end gap-2">
           <Dialog>
-            <DialogTrigger
-              render={
-                <button className="flex cursor-pointer items-center gap-2 rounded-full border-y border-neutral-200 bg-neutral-100 px-3 py-2 text-xs text-nowrap text-neutral-600 shadow-none transition-colors hover:bg-neutral-200/50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700/50" />
-              }
-            >
-              <Download className="size-3.5" />
-              <span className="hidden sm:inline">Export</span>
+            <DialogTrigger asChild>
+              <button className="flex cursor-pointer items-center gap-2 rounded-full border-y border-neutral-200 bg-neutral-100 px-3 py-2 text-xs text-nowrap text-neutral-600 shadow-none transition-colors hover:bg-neutral-200/50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700/50">
+                <Download className="size-3.5" />
+                <span className="hidden sm:inline">Export</span>
+              </button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
@@ -45,10 +43,10 @@ export const DealsBoardView = () => {
                 </DialogDescription>
               </DialogHeader>
               <DialogFooter>
-                <DialogClose
-                  render={<Button variant="outline" className="rounded-full" />}
-                >
-                  Cancel
+                <DialogClose asChild>
+                  <Button variant="outline" className="rounded-full">
+                    Cancel
+                  </Button>
                 </DialogClose>
                 <Button className="rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
                   Download CSV
@@ -58,16 +56,14 @@ export const DealsBoardView = () => {
           </Dialog>
 
           <Dialog>
-            <DialogTrigger
-              render={
-                <Button
-                  size="sm"
-                  className="cursor-pointer rounded-full border-[1.5px] border-indigo-600 bg-linear-to-r from-indigo-700 to-indigo-800 text-xs font-semibold text-nowrap text-white inset-shadow-sm"
-                />
-              }
-            >
-              <Plus className="size-3.5" />
-              <span>New Deal</span>
+            <DialogTrigger asChild>
+              <Button
+                size="sm"
+                className="cursor-pointer rounded-full border-[1.5px] border-indigo-600 bg-linear-to-r from-indigo-700 to-indigo-800 text-xs font-semibold text-nowrap text-white inset-shadow-sm"
+              >
+                <Plus className="size-3.5" />
+                <span>New Deal</span>
+              </Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
@@ -89,10 +85,10 @@ export const DealsBoardView = () => {
                 </div>
               </div>
               <DialogFooter>
-                <DialogClose
-                  render={<Button variant="outline" className="rounded-full" />}
-                >
-                  Cancel
+                <DialogClose asChild>
+                  <Button variant="outline" className="rounded-full">
+                    Cancel
+                  </Button>
                 </DialogClose>
                 <Button className="rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
                   Save Deal
@@ -141,12 +137,10 @@ export const DealsBoardView = () => {
                     )}
 
                     <Dialog>
-                      <DialogTrigger
-                        render={
-                          <button className="w-full cursor-pointer rounded-lg border border-dashed border-neutral-200 py-2 text-[11px] font-bold text-neutral-500 transition-colors hover:border-neutral-400 hover:text-neutral-600 dark:border-neutral-700 dark:text-neutral-500 dark:hover:border-neutral-500 dark:hover:text-neutral-400" />
-                        }
-                      >
-                        + Add Deal
+                      <DialogTrigger asChild>
+                        <button className="w-full cursor-pointer rounded-lg border border-dashed border-neutral-200 py-2 text-[11px] font-bold text-neutral-500 transition-colors hover:border-neutral-400 hover:text-neutral-600 dark:border-neutral-700 dark:text-neutral-500 dark:hover:border-neutral-500 dark:hover:text-neutral-400">
+                          + Add Deal
+                        </button>
                       </DialogTrigger>
                       <DialogContent>
                         <DialogHeader>
@@ -172,15 +166,13 @@ export const DealsBoardView = () => {
                           </div>
                         </div>
                         <DialogFooter>
-                          <DialogClose
-                            render={
-                              <Button
-                                variant="outline"
-                                className="rounded-full"
-                              />
-                            }
-                          >
-                            Cancel
+                          <DialogClose asChild>
+                            <Button
+                              variant="outline"
+                              className="rounded-full"
+                            >
+                              Cancel
+                            </Button>
                           </DialogClose>
                           <Button className="rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
                             Quick Add

@@ -1,9 +1,9 @@
 import { Settings } from "lucide-react";
-import { Separator } from "./ui/separator";
-import { SidebarTrigger } from "./ui/sidebar";
-import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
+import { Separator } from "@/components/ui/separator";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ModeToggle } from "./theme-toggle";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -11,8 +11,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
-import { Label } from "./ui/label";
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
 export default function Header() {

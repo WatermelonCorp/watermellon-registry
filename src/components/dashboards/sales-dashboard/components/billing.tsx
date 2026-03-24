@@ -2,8 +2,8 @@
 
 import { Wallet } from 'lucide-react';
 
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from './ui/sidebar';
-import { Button } from './ui/button';
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -13,8 +13,8 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from './ui/dialog';
-import { Input } from './ui/input';
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
 
 export function Billing() {
   return (
@@ -33,15 +33,13 @@ export function Billing() {
               </span>
             </div>
             <Dialog>
-              <DialogTrigger
-                render={
-                  <Button className="h-7 cursor-pointer rounded-full border-y border-neutral-200 bg-neutral-100 text-neutral-900 transition-colors group-data-[collapsible=icon]:px-2 hover:bg-neutral-200/50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700/50" />
-                }
-              >
-                <Wallet />
-                <span className="text-xs group-data-[collapsible=icon]:hidden">
-                  Add Billings
-                </span>
+              <DialogTrigger asChild>
+                <Button className="h-7 cursor-pointer rounded-full border-y border-neutral-200 bg-neutral-100 text-neutral-900 transition-colors group-data-[collapsible=icon]:px-2 hover:bg-neutral-200/50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700/50">
+                  <Wallet />
+                  <span className="text-xs group-data-[collapsible=icon]:hidden">
+                    Add Billings
+                  </span>
+                </Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
@@ -64,12 +62,10 @@ export function Billing() {
                   </div>
                 </div>
                 <DialogFooter>
-                  <DialogClose
-                    render={
-                      <Button variant="outline" className="rounded-full" />
-                    }
-                  >
-                    Cancel
+                  <DialogClose asChild>
+                    <Button variant="outline" className="rounded-full">
+                      Cancel
+                    </Button>
                   </DialogClose>
                   <Button className="rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
                     Save Details
