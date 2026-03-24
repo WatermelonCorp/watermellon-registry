@@ -5,7 +5,7 @@ import {
   LogIn,
   Clock,
 } from "lucide-react";
-import { type ChartConfig } from "./components/ui/chart";
+import { type ChartConfig } from "@/components/ui/chart";
 
 export interface Employee {
   id: string;

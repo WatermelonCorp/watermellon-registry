@@ -2,7 +2,7 @@ import { AppSidebar } from "./components/app-sidebar"
 import {
     SidebarInset,
     SidebarProvider,
-} from "./components/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 
 export const DashboardLayout = ({ children, onNavigate, currentView }: { children: React.ReactNode; onNavigate?: (view: string) => void; currentView?: string }) => {

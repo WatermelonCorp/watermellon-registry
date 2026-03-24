@@ -20,8 +20,8 @@ import {
   ChevronDown
 } from "lucide-react"
 import { useLocation } from "react-router-dom"
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
-import { DropdownMenu, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import {
   Sidebar,
   SidebarContent,
@@ -38,13 +38,13 @@ import {
   SidebarMenuSubItem,
   SidebarRail,
   SidebarTrigger,
-} from "./ui/sidebar"
+} from "@/components/ui/sidebar"
 import { SearchForm } from "./search-form"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "./ui/collapsible"
+} from "@/components/ui/collapsible"
 
 const data = {
   user: {

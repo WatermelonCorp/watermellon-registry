@@ -5,10 +5,10 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-} from "./ui/breadcrumb";
-import { Button } from "./ui/button";
-import { Separator } from "./ui/separator";
-import { SidebarTrigger } from "./ui/sidebar";
+} from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Eye, EyeOff, Save, Send } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import {
@@ -18,14 +18,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
+} from "@/components/ui/dialog";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "./ui/popover";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
+} from "@/components/ui/popover";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export const SiteHeader = ({
   currentView,

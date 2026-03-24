@@ -7,7 +7,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "./ui/collapsible"
+} from "@/components/ui/collapsible"
 import {
   Dialog,
   DialogContent,
@@ -16,7 +16,7 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogFooter
-} from "./ui/dialog"
+} from "@/components/ui/dialog"
 import {
   Sidebar,
   SidebarContent,
@@ -30,11 +30,11 @@ import {
   SidebarMenuItem,
   SidebarRail,
   SidebarTrigger,
-} from "./ui/sidebar"
+} from "@/components/ui/sidebar"
 import { sidebarData } from "../data"
-import { Button } from "./ui/button"
-import { Input } from "./ui/input"
-import { Label } from "./ui/label"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   onNavigate?: (view: string) => void;

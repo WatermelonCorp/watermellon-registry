@@ -10,17 +10,17 @@ import {
     IconClock,
     IconHourglass,
 } from "@tabler/icons-react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue
-} from "./components/ui/select"
-import { Badge } from "./components/ui/badge"
-import { Button } from "./components/ui/button"
-import { SidebarTrigger } from "./components/ui/sidebar"
+} from "@/components/ui/select"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 import { KanbanColumn } from "./components/active-streams/kanban-column"
 import { detectedCards, acknowledgedCards, investigatingCards, resolvedCards } from "./components/active-streams/constants"
 
