@@ -2,12 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner",
   "dependencies": [
-    "class-variance-authority"
+    "lucide-react"
   ],
   "files": [
     {
-      "path": "src/components/watermelon-ui/spinner.tsx",
-      "content": "import * as React from \"react\"\r\nimport { cva, type VariantProps } from \"class-variance-authority\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst spinnerVariants = cva(\"animate-spin\", {\r\n  variants: {\r\n    size: {\r\n      sm: \"size-4\",\r\n      default: \"size-6\",\r\n      lg: \"size-8\",\r\n      xl: \"size-12\",\r\n    },\r\n    speed: {\r\n      slow: \"[animation-duration:1200ms]\",\r\n      default: \"[animation-duration:900ms]\",\r\n      fast: \"[animation-duration:600ms]\",\r\n    },\r\n  },\r\n  defaultVariants: {\r\n    size: \"default\",\r\n    speed: \"default\",\r\n  },\r\n})\r\n\r\nexport interface SpinnerProps\r\n  extends Omit<React.ComponentProps<\"svg\">, \"size\" | \"speed\">,\r\n  VariantProps<typeof spinnerVariants> {\r\n  /**\r\n   * Stroke width of the spinner arc\r\n   * @default 3\r\n   */\r\n  strokeWidth?: number\r\n  /**\r\n   * CSS class for the background circle\r\n   * @default \"stroke-muted-foreground/20\"\r\n   */\r\n  bgClassName?: string\r\n}\r\n\r\nconst Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(\r\n  ({ className, size, speed, strokeWidth = 3, bgClassName = \"stroke-muted-foreground/20\", ...props }, ref) => {\r\n    return (\r\n      <svg\r\n        ref={ref}\r\n        className={cn(spinnerVariants({ size, speed }), \"text-foreground\", className)}\r\n        viewBox=\"0 0 42 42\"\r\n        {...props}\r\n      >\r\n        <g fill=\"none\" transform=\"translate(3 3)\" strokeWidth={strokeWidth}>\r\n          <circle className={bgClassName} cx=\"18\" cy=\"18\" r=\"18\" />\r\n          <path\r\n            className=\"stroke-current\"\r\n            stroke=\"currentColor\"\r\n            d=\"M36 18c0-9.94-8.06-18-18-18\"\r\n            strokeLinecap=\"round\"\r\n            strokeLinejoin=\"round\"\r\n          />\r\n        </g>\r\n      </svg>\r\n    )\r\n  },\r\n)\r\n\r\nSpinner.displayName = \"Spinner\"\r\n\r\nexport { Spinner, spinnerVariants }",
+      "path": "src/components/ui/spinner.tsx",
+      "content": "import { Loader2Icon } from \"lucide-react\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\r\n  return (\r\n    <Loader2Icon\r\n      role=\"status\"\r\n      aria-label=\"Loading\"\r\n      className={cn(\"size-4 animate-spin\", className)}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Spinner }\r\n",
       "type": "registry:ui",
       "target": "components/ui/spinner.tsx"
     }
