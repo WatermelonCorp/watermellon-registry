@@ -20,23 +20,23 @@ import {
     Ban,
 } from 'lucide-react'
 import { useState } from 'react'
-import { Badge } from "./components/ui/badge"
-import { Button } from "./components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./components/ui/card"
-import { ScrollArea } from "./components/ui/scroll-area"
-import { SidebarTrigger } from "./components/ui/sidebar"
-import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar"
-import { Input } from "./components/ui/input"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { SidebarTrigger } from "@/components/ui/sidebar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Input } from "@/components/ui/input"
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
-} from "./components/ui/collapsible"
+} from "@/components/ui/collapsible"
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "./components/ui/popover"
+} from "@/components/ui/popover"
 import {
     Dialog,
     DialogContent,
@@ -44,10 +44,10 @@ import {
     DialogTitle,
     DialogDescription,
     DialogFooter,
-} from "./components/ui/dialog"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select"
-import { Separator } from "./components/ui/separator"
-import { Label } from "./components/ui/label"
+} from "@/components/ui/dialog"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Separator } from "@/components/ui/separator"
+import { Label } from "@/components/ui/label"
 import { IconAlertCircleFilled, IconAlertHexagon, IconCalendarTime, IconCircleDashed, IconDeviceVisionProFilled, IconPennant, IconSettingsFilled, IconStarFilled, IconTriangleFilled } from '@tabler/icons-react'
 
 const STATUSES = [

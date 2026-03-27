@@ -38,19 +38,19 @@ import {
     IconFlagFilled,
     IconAlertTriangleFilled,
 } from "@tabler/icons-react"
-import { Button } from "./components/ui/button"
-import { Input } from "./components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
     Tabs,
     TabsContent,
     TabsList,
     TabsTrigger,
-} from "./components/ui/tabs"
-import { SidebarTrigger, useSidebar } from "./components/ui/sidebar"
-import { Badge } from "./components/ui/badge"
-import { Card, CardContent, CardHeader } from "./components/ui/card"
+} from "@/components/ui/tabs"
+import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
-import { Separator } from "./components/ui/separator"
+import { Separator } from "@/components/ui/separator"
 import {
     Dialog,
     DialogContent,
@@ -59,7 +59,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "./components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -67,14 +67,14 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "./components/ui/popover"
-import { Label } from "./components/ui/label"
-import { Textarea } from "./components/ui/textarea"
+} from "@/components/ui/popover"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { amsGroups, visualizeGroups, type Task, type Group } from "./data"
 
 function ProjectCard({ title, logo, count, groups, isPrivate }: { title: string, logo: React.ReactNode, count: number, groups: Group[], isPrivate?: boolean }) {

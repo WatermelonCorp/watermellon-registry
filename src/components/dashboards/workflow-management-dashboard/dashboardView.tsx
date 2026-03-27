@@ -5,7 +5,7 @@ import { TaskDetail } from "./components/task-detail";
 import TaskDetailHeader from "./components/task-detail-header";
 import { TaskList } from "./components/task-list";
 import TaskListHeader from "./components/task-list-header";
-import { Drawer, DrawerContent } from "./components/ui/drawer";
+import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTaskStore } from "./components/store/task-store";
 import { useEffect, useState, useRef } from "react";

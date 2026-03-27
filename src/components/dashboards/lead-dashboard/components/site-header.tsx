@@ -1,7 +1,7 @@
 import {
     SidebarTrigger,
     useSidebar,
-} from "./ui/sidebar"
+} from "@/components/ui/sidebar"
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -9,14 +9,14 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
-} from "./ui/breadcrumb"
-import { Separator } from "./ui/separator"
-import { Input } from "./ui/input"
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
+import { Input } from "@/components/ui/input"
 import {
     Avatar,
     AvatarFallback,
     AvatarImage,
-} from "./ui/avatar"
+} from "@/components/ui/avatar"
 import {
     IconSearch,
     IconBell,
@@ -28,7 +28,7 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "./ui/popover"
+} from "@/components/ui/popover"
 
 export function SiteHeader() {
     const { isMobile, state } = useSidebar()

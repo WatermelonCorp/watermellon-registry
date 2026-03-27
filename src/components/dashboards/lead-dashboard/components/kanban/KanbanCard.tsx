@@ -1,13 +1,13 @@
 import { useSortable } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 import { IconAlertCircle, IconCircleCheck, IconMail, IconFileText, IconCalendarPlus, IconMessageCircle } from '@tabler/icons-react'
-import { Card, CardContent } from "../ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
+import { Card, CardContent } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "../ui/popover"
+} from "@/components/ui/popover"
 import { IconUser, IconMailForward } from '@tabler/icons-react'
 
 export const StatusMarker = ({ type }: { type: string }) => {

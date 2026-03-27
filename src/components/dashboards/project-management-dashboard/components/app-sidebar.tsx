@@ -16,7 +16,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "./ui/sidebar";
+} from "@/components/ui/sidebar";
 import { SearchForm } from "./search-form";
 import { NavSupport } from "./nav-support";
 import { NavApps } from "./nav-apps";

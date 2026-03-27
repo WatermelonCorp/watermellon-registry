@@ -27,7 +27,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
+} from "@/components/ui/dialog";
 import {
   Sidebar,
   SidebarContent,
@@ -39,14 +39,14 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "./ui/sidebar";
+} from "@/components/ui/sidebar";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "./ui/collapsible";
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
+} from "@/components/ui/collapsible";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const data = {
   user: {

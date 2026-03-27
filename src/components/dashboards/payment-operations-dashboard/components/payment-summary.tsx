@@ -3,14 +3,14 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "@/components/ui/card";
 import { BanknoteX, ArrowUpRight } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "./ui/popover";
+} from "@/components/ui/popover";
 
 export function PaymentsSummary() {
   const data = [

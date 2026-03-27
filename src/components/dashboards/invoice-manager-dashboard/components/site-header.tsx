@@ -7,9 +7,9 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
-} from "./ui/breadcrumb"
-import { Button } from "./ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
+} from "@/components/ui/breadcrumb"
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
     ArrowLeft,
     Grid3X3,
@@ -21,7 +21,7 @@ import {
     LogOut,
 } from "lucide-react"
 import React from "react"
-import { SidebarTrigger } from "./ui/sidebar"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 import {
     Popover,
     PopoverContent,
@@ -29,14 +29,14 @@ import {
     PopoverHeader,
     PopoverTitle,
     PopoverDescription,
-} from "./ui/popover"
+} from "@/components/ui/popover"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
     DropdownMenuSeparator,
-} from "./ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 
 
 // Convert kebab-case to Title Case (e.g., "financial-center" -> "Financial Center")

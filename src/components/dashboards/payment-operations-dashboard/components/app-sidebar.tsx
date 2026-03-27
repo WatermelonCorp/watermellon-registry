@@ -28,7 +28,7 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
   useSidebar,
-} from "./ui/sidebar";
+} from "@/components/ui/sidebar";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-footer";
 import { NavSecondary } from "./nav-options";

@@ -1,15 +1,15 @@
 "use client";
 import { Search, Plus } from "lucide-react";
-import { Input } from "./ui/input";
-import { Switch } from "./ui/switch";
-import { Button } from "./ui/button";
+import { Input } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from "@/components/ui/select";
 import { ModeToggle } from "./theme-toggle";
 import {
   Dialog,
@@ -18,7 +18,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
+} from "@/components/ui/dialog";
 
 export function DashboardHeader() {
   return (

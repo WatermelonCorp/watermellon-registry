@@ -1,6 +1,6 @@
 import { CompanyFilters } from './components/company-filters';
 import { CompaniesTable } from './components/companies-table';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export const CompanyView = () => {
   return (

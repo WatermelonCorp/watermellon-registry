@@ -24,14 +24,14 @@ import {
     sortableKeyboardCoordinates,
     verticalListSortingStrategy,
 } from "@dnd-kit/sortable"
-import { Button } from "./components/ui/button"
-import { Input } from "./components/ui/input"
-import { Label } from "./components/ui/label"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "./components/ui/popover"
+} from "@/components/ui/popover"
 import {
     Dialog,
     DialogContent,
@@ -40,19 +40,19 @@ import {
     DialogTitle,
     DialogTrigger,
     DialogFooter
-} from "./components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./components/ui/select"
+} from "@/components/ui/select"
 import {
     Tabs,
     TabsList,
     TabsTrigger,
-} from "./components/ui/tabs"
+} from "@/components/ui/tabs"
 import { boardData as initialBoardData } from "./components/data"
 import { KanbanCard } from "./components/kanban/KanbanCard"
 import { BoardColumn } from "./components/kanban/KanbanColumn"
