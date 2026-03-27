@@ -29,22 +29,22 @@ function PerformanceCard() {
     <motion.div
       initial="initial"
       whileHover="hover"
-      className="col-span-12 sm:col-span-6 lg:col-span-3"
+      className="col-span-12 lg:col-span-3"
     >
-      <Card className="bg-white rounded-2xl p-6 flex flex-col justify-between border border-neutral-200 min-h-[420px] h-full gap-0 ring-0 shadow-none">
-        <CardContent className="h-[250px] flex items-center justify-center relative p-0">
-          <svg viewBox="0 0 200 120" className="mt-4">
+      <Card className="bg-white rounded-2xl p-6 flex flex-col justify-end border border-neutral-200 min-h-[360px] md:min-h-[380px] lg:min-h-[420px] h-full gap-6 ring-0 shadow-none">
+        <CardContent className="h-[120px] md:h-[140px] lg:h-[200px] flex items-center justify-center relative p-0 mb-4">
+          <svg viewBox="0 0 200 120" className="w-full h-full">
             <rect x="40" y="70" width="20" height="150" fill="#9DB4E0" />
             <rect x="70" y="55" width="20" height="145" fill="#9DB4E0" />
             <rect x="100" y="40" width="20" height="160" fill="#9DB4E0" />
             <rect x="130" y="25" width="20" height="175" fill="#9DB4E0" />
           </svg>
 
-          <ArrowPathIcon className="  scale-140 absolute -translate-y-9 text-[#9DB4E0]" />
+          <ArrowPathIcon className="scale-140 absolute -translate-y-9 text-[#9DB4E0]" />
         </CardContent>
 
-        <CardFooter className="text-center p-0 w-full flex-col items-center gap-1 bg-transparent border-none">
-          <CardTitle className="text-2xl font-semibold text-neutral-800">
+        <CardFooter className="text-center pb-2 w-full flex-col items-center gap-3 bg-transparent border-none">
+          <CardTitle className="text-the xl font-semibold text-neutral-800">
             Build for performance
           </CardTitle>
           <CardDescription className="text-sm text-neutral-500 mt-1">
@@ -147,7 +147,7 @@ function ProjectQualificationCard() {
       animate="show"
       className="col-span-12 lg:col-span-3"
     >
-      <Card className="h-[420px] rounded-xl p-6 flex flex-col overflow-hidden border border-white/20 bg-gradient-to-b from-[#9fb2d9] to-[#8ea4cf] gap-0 ring-0 shadow-none">
+      <Card className="h-[420px] group rounded-xl p-6 flex flex-col overflow-hidden border border-white/20 bg-gradient-to-b from-[#9fb2d9] to-[#8ea4cf] gap-0 ring-0 shadow-none">
         <CardHeader className="space-y-2 p-0">
           <CardTitle className="text-2xl font-medium text-neutral-900 leading-tight">
             Project qualification and verification
@@ -158,7 +158,7 @@ function ProjectQualificationCard() {
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="flex items-end justify-center mt-6 p-0">
+        <CardContent className="flex items-end justify-center mt-6 p-0 group-hover:scale-110 transition-transform duration-300">
           <motion.div
             className="relative w-[200px] z-0 h-[260px] rounded-lg bg-white/60  p-4 flex flex-col gap-3 [mask-image:linear-gradient(to_bottom,#000000,transparent)]"
             variants={card}
@@ -180,67 +180,80 @@ function ProjectQualificationCard() {
   );
 }
 
-function GraphBar({ className, delay = 0, origin = "left" }:{className:string, delay?:number, origin?:"left"|"right"}) {
+function GraphBar({ className, delay = 0, width }:{className:string, delay?:number, width:string|number}) {
   return (
     <motion.div
-      initial={{ scaleX: 0 }}
-      animate={{ scaleX: 1 }}
+      initial={{ width: 0 }}
+      animate={{ width }}
       transition={{ duration: 0.45, delay, ease: "easeOut" }}
-      className={`${className} ${
-        origin === "left" ? "origin-left" : "origin-right"
-      }`}
+      className={className}
     />
   );
 }
 
 function Card5() {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <motion.div
       variants={item}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
       className="col-span-12 lg:col-span-6"
     >
-      <Card className="bg-neutral-100 rounded-xl p-8 flex flex-col gap-10 min-h-[420px] ring-0 shadow-none border-0">
+      <Card className="bg-neutral-100 rounded-xl p-6 flex flex-col gap-10 min-h-[420px] ring-0 shadow-none border-0">
         <CardHeader className="p-0">
           <CardTitle className="text-lg text-neutral-800 font-normal">
             Tax liability optimize
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="p-0 flex flex-col gap-10">
-          <div className="flex items-center gap-6">
-            <GraphBar
-              className="flex-1 h-16 bg-slate-700 rounded-lg"
-              delay={0}
-              origin="left"
-            />
-            <div className="text-md font-semibold text-neutral-700 leading-tight">
-              <div>Tax credit</div>
-              <div>$100000</div>
+        <CardContent className="p-0 flex flex-col gap-10 w-full overflow-hidden">
+          <div className="flex items-center gap-6 w-full flex-row-reverse">
+            <div className="text-md flex flex-1 font-semibold text-neutral-700 leading-tight whitespace-nowrap min-w-[80px]">
+              <div>
+                <div>Tax credit</div>
+                <div>$100000</div>
+              </div>
+            </div>
+            <div className="flex-[3] flex justify-end">
+              <GraphBar
+                className="h-16 bg-slate-700 rounded-lg origin-right"
+                delay={0}
+                width={hovered ? "70%" : "100%"}
+              />
             </div>
           </div>
 
-          <div className="flex items-center flex-row-reverse">
-            <div className="text-center text-md font-semibold">
-              <div className="text-neutral-700">Tax saving</div>
-              <div className="text-neutral-700">$1200000</div>
+          <div className="flex items-center gap-6 w-full flex-row-reverse">
+            <div className="text-md flex flex-1 font-semibold text-neutral-700 leading-tight whitespace-nowrap min-w-[80px]">
+              <div>
+                <div>Tax saving</div>
+                <div>$1200000</div>
+              </div>
             </div>
-
-            <GraphBar
-              className="w-16 h-16 bg-blue-300 rounded-xl mr-4"
-              delay={0.2}
-              origin="right"
-            />
+            <div className="flex-[3] flex justify-end">
+              <GraphBar
+                className="h-16 bg-blue-300 rounded-xl origin-right"
+                delay={0.2}
+                width={hovered ? "80%" : "30%"}
+              />
+            </div>
           </div>
 
-          <div className="flex items-center justify-end gap-6">
-            <GraphBar
-              className="w-48 md:w-72 h-16 bg-blue-200 rounded-xl"
-              delay={0.4}
-              origin="left"
-            />
-            <div className="text-md font-semibold text-neutral-700 leading-tight">
-              <div>Paid</div>
-              <div>$500000</div>
+          <div className="flex items-center gap-6 w-full flex-row-reverse">
+            <div className="text-md flex flex-1 font-semibold text-neutral-700 leading-tight whitespace-nowrap min-w-[80px]">
+              <div>
+                <div>Paid</div>
+                <div>$500000</div>
+              </div>
+            </div>
+            <div className="flex-[3] flex justify-end">
+              <GraphBar
+                className="h-16 bg-blue-200 rounded-xl origin-right"
+                delay={0.4}
+                width={hovered ? "50%" : "70%"}
+              />
             </div>
           </div>
         </CardContent>
@@ -249,17 +262,17 @@ function Card5() {
   );
 }
 
-export default function Bento16() {
-  return (
-    <motion.div className="grid grid-cols-12 gap-4 p-6 md:p-10 lg:p-20 min-h-screen font-sans">
-      <EarthDots />
-      <ProjectQualificationCard />
+function OngoingSupportCard() {
+  const [hovered, setHovered] = useState(false);
 
-      <motion.div
+  return (
+    <motion.div
         variants={item}
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
         className="col-span-12 md:col-span-6 lg:col-span-3"
       >
-        <Card className="bg-[#2f3d59] text-white rounded-2xl p-6 flex flex-col justify-between h-[420px] gap-0 ring-0 shadow-none border-0">
+        <Card className="bg-[#2f3d59] group text-white rounded-2xl p-6 flex flex-col justify-between h-[420px] gap-0 ring-0 shadow-none border-0">
           <CardHeader className="space-y-2 p-0">
             <CardTitle className="text-lg font-semibold text-white">Ongoing support</CardTitle>
             <CardDescription className="text-sm text-white/70 leading-relaxed">
@@ -267,34 +280,34 @@ export default function Bento16() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex items-center justify-center w-full h-full p-0">
-            <div className="relative w-[200px] h-[200px] md:w-[250px] md:h-[250px] flex items-center justify-center">
+          <CardContent className="flex items-center justify-center w-full p-0 py-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="relative w-full max-w-[240px] aspect-square flex items-center justify-center">
               <div className="absolute w-[80%] h-[80%] rounded-full bg-white/5" />
               <div className="absolute w-[65%] h-[65%] rounded-full bg-white/10" />
               <div className="absolute w-[50%] h-[50%] rounded-full bg-white/15" />
 
-              <motion.div
-                animate={{ rotate: [0, 90, 180, 270, 360] }}
-                transition={{
-                  duration: 8,
-                  ease: "linear",
-                  repeat: Infinity,
+              <div
+                className="absolute w-full h-full rounded-full pointer-events-none z-0"
+                style={{
+                  animation: `spin ${hovered ? '2s' : '8s'} linear infinite`,
+                  background:
+                    "conic-gradient(from 0deg, rgba(255,255,255,0.18) 0deg 90deg, transparent 60deg 360deg)",
                 }}
-                className="absolute w-full h-full rounded-full pointer-events-none z-0 will-change-transform"
-              >
-                <div
-                  className="w-full h-full rounded-full z-0"
-                  style={{
-                    background:
-                      "conic-gradient(from 0deg, rgba(255,255,255,0.18) 0deg 90deg, transparent 60deg 360deg)",
-                  }}
-                />
-              </motion.div>
+              />
               <div className="absolute w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full bg-[#2f3e5a] border border-white/20 z-10" />
             </div>
           </CardContent>
         </Card>
       </motion.div>
+  );
+}
+
+export default function Bento16() {
+  return (
+    <motion.div className="grid grid-cols-12 gap-4 p-6 md:p-10 lg:p-20 min-h-screen font-sans">
+      <EarthDots />
+      <ProjectQualificationCard />
+      <OngoingSupportCard />
       <PerformanceCard />
 
       <motion.div
@@ -309,8 +322,8 @@ export default function Bento16() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex items-center justify-center p-0">
-            <div className="relative w-[180px] h-[180px] md:w-[200px] md:h-[200px] flex items-center justify-center">
+          <CardContent className="flex items-center justify-center w-full p-0 py-6">
+            <div className="relative w-full max-w-[200px] aspect-square flex items-center justify-center">
               <motion.div
                 animate={{ scale: [1, 1.08, 1] }}
                 transition={{

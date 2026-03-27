@@ -7,6 +7,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { MdDesignServices, MdDeveloperMode } from "react-icons/md";
 
 const MotionCard = motion(Card);
 
@@ -36,7 +37,6 @@ const Bento1 = () => {
 
   return (
     <div className="min-h-screen bg-[#0E0E0E] relative flex items-center justify-center px-4 py-8 sm:p-8 font-['Sansation',sans-serif]">
-
       <div className="max-w-[1100px] w-full flex flex-col gap-6 mx-auto">
         {/* Row 1 - 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -157,7 +157,9 @@ const Bento1 = () => {
                   transition={{ ease: "easeInOut", duration: 0.4 }}
                   className="absolute top-0 w-full bg-[#151515] rounded-[2rem] p-4 flex items-center gap-4 h-fit z-10 border border-white/5"
                 >
-                  <div className="min-w-[90px] h-[70px] rounded-2xl bg-black shadow-inner shadow-white/5"></div>
+                  <div className="min-w-[90px] h-[70px] rounded-2xl bg-black shadow-inner shadow-white/5">
+                    <MdDeveloperMode className="size-6 md:size-9 text-[#FFDC17]" />
+                  </div>
                   <div className="flex flex-col mt-0.5 gap-1">
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#6C6B68]"></div>
@@ -194,7 +196,9 @@ const Bento1 = () => {
                   className="absolute top-7 w-full bg-[#151515] rounded-[2rem] p-4 flex gap-4 h-fit z-20 border border-white/5"
                 >
                   <div className="min-w-[90px] h-[70px] rounded-2xl bg-black flex items-center justify-center relative shadow-inner shadow-white/5">
+                    <MdDesignServices className="size-6 md:size-9 text-[#FFDC17]" />
                   </div>
+
                   <div className="flex flex-col justify-center gap-1.5">
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#FFDC17]"></div>

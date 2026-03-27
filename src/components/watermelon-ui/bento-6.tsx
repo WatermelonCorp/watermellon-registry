@@ -98,7 +98,11 @@ const Card1 = () => {
   const [activeTab, setActiveTab] = useState<"doc" | "api">("doc");
 
   return (
-    <div className="w-[92%] md:w-[85%] h-full mask-b-from-90% bg-[#0E1419] border-x border-t border-[#A09B9B]/20 rounded-tl-xl rounded-tr-xl overflow-hidden transform translate-y-6">
+    <div
+      className="w-[92%] md:w-[85%] h-full mask-b-from-90% bg-[#0E1419] border-x border-t border-[#A09B9B]/20 rounded-tl-xl rounded-tr-xl overflow-hidden transform translate-y-6"
+      onMouseEnter={() => setActiveTab("api")}
+      onMouseLeave={() => setActiveTab("doc")}
+    >
       <div className="w-full h-10 border-b border-[#A09B9B]/20 flex items-center justify-start gap-2 pl-4">
         <span className="size-2 rounded-full bg-[#A09B9B]/20" />
         <span className="size-2 rounded-full bg-[#A09B9B]/20" />
@@ -132,7 +136,7 @@ const Card1 = () => {
           Documentation
         </button>
         <button
-          onClick={() => setActiveTab("api")}
+          // onClick removed for API Reference
           className={`text-xs md:text-sm font-semibold py-1 border-b-2 transition-all duration-300 ${
             activeTab === "api"
               ? "text-white border-[#1145AA]"

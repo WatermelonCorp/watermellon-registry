@@ -124,9 +124,9 @@ function UploadCard() {
       className="md:col-span-5"
     >
       <Card
-        className="bg-neutral-900 rounded-md flex flex-col justify-between border border-white/5 relative overflow-hidden h-[340px] p-6 gap-0 ring-0 shadow-none"
+        className="bg-neutral-900 rounded-md flex flex-col justify-between border border-white/5 relative overflow-hidden h-[340px] p-0 gap-0 ring-0 shadow-none"
       >
-      <CardContent className="relative flex items-center justify-center w-full h-full p-0">
+      <CardContent className="flex-1 relative flex items-center justify-center w-full h-full p-0">
         <div className="flex justify-center items-center w-full h-full overflow-hidden relative pt-8 z-0 [mask-image:linear-gradient(to_bottom,black,transparent)]">
           <div className="absolute bg-white/10 size-80 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl" />
 
@@ -166,9 +166,9 @@ function UploadCard() {
           </motion.div>
         </div>
       </CardContent>
-      <CardFooter className="text-md text-neutral-400 leading-relaxed p-0 w-full flex-col bg-transparent border-none">
+      <CardFooter className="text-md text-neutral-400 leading-relaxed p-6 w-full flex-col items-start bg-transparent border-none">
         <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">Add Your File</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-left w-full text-xs">
           Powerful capabilities, simplified. Our advanced features are integrated
           with remarkably easy and seamless to master.
         </CardDescription>
@@ -358,8 +358,8 @@ function Card2() {
   const speakerRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   return (
-    <Card className="md:col-span-5 bg-neutral-900 rounded-md p-6 flex flex-col justify-between border border-white/5 relative overflow-hidden min-h-[340px] gap-0 ring-0 shadow-none">
-      <CardContent className="flex-1 flex justify-center items-center h-full relative p-0">
+    <Card className="md:col-span-5 bg-neutral-900 rounded-md p-0 flex flex-col justify-between border border-white/5 relative overflow-hidden min-h-[340px] gap-0 ring-0 shadow-none">
+      <CardContent className="flex-1 flex justify-center items-center h-full w-full relative p-0">
         <div
           ref={containerRef}
           className="flex items-center gap-12 relative z-10"
@@ -376,8 +376,16 @@ function Card2() {
             className="relative w-16 h-16 flex items-center justify-center z-20"
           >
             <motion.div
-              initial={{ scale: 1, opacity: 0 }}
-              className="absolute w-16 h-16 rounded-full border border-white/25"
+              animate={{ 
+                scale: [1, 1.5, 2],
+                opacity: [0.5, 0.2, 0]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeOut"
+              }}
+              className="absolute w-16 h-16 rounded-full border border-white/50"
             />
 
             <div className="w-16 h-16 bg-[#333] rounded-full flex items-center justify-center border border-white/10">
@@ -416,9 +424,9 @@ function Card2() {
         </div>
       </CardContent>
 
-      <CardFooter className="text-md text-neutral-400 leading-relaxed p-0 flex-col bg-transparent border-none">
+      <CardFooter className="text-md text-neutral-400 leading-relaxed p-6 flex-col items-start bg-transparent border-none">
         <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">Connected Hub</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-left w-full text-xs">
           A dedicated platform engineered to empower your creative vision, and
           global distribution.
         </CardDescription>
