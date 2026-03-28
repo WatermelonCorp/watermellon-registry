@@ -16,6 +16,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import { AiOutlineDollarCircle } from "react-icons/ai";
+import { FaLock } from "react-icons/fa6";
+
 type AnimatedNumberProps = {
   value: number;
   className?: string;
@@ -111,6 +114,15 @@ const barVariants: Variants = {
     },
   },
 };
+
+const images = [
+  "https://randomuser.me/api/portraits/men/32.jpg",
+  "https://randomuser.me/api/portraits/women/44.jpg",
+  "https://randomuser.me/api/portraits/men/78.jpg",
+  "https://randomuser.me/api/portraits/women/40.jpg",
+  "https://randomuser.me/api/portraits/men/13.jpg",
+  "https://randomuser.me/api/portraits/women/17.jpg",
+];
 
 const FinancialWellnessCard = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -371,6 +383,20 @@ const barVariants2: Variants = {
     scaleY: 1,
   },
 };
+const trophyVariants: Variants = {
+  hover: {
+    rotate: [0, -12, 12, -10, 10, -6, 6, 0],
+    scale: 1.15,
+    transition: {
+      scale: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+      duration: 0.7,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const InvestmentGrowthCard = () => {
   const data = [140, 230, 205, 290, 245, 220, 170];
@@ -438,48 +464,54 @@ const InvestmentGrowthCard = () => {
 
 const BentoGrid13 = () => {
   const [value, setValue] = useState(0);
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
+    hidden: {},
+    visible: {},
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setValue(250);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
+  const TrophyItemVariants = {
+    hidden: {},
+    visible: {},
+    hoveer: {},
+  };
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] p-4 font-sans text-white md:p-8">
-      <motion.div
-        className="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-6"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-      >
+      <motion.div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-6">
         <FinancialWellnessCard />
 
         <InvestmentGrowthCard />
 
         <motion.div
-          variants={itemVariants}
-          className="col-span-1 flex min-h-[200px] flex-col items-center justify-center rounded-3xl border border-white/5 bg-[#1a1a1a] p-8 text-center md:col-span-3"
+          variants={TrophyItemVariants}
+          whileHover="hover"
+          className="col-span-1 flex min-h-[200px] flex-col items-center justify-center rounded-3xl border border-white/5 bg-[#1a1a1a] text-center md:col-span-3"
         >
-          <Card className="h-full w-full gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 ring-0">
-            <CardHeader className="w-full flex-1 items-center gap-0 text-center">
-              <CardTitle className="text-3xl font-semibold text-neutral-100">
+          <Card className="relative h-full w-full gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 ring-0">
+            <img
+              src={"https://assets.watermelon.sh/bento-13-bg.png"}
+              alt="watermelon-logo"
+              className="absolute"
+            />
+            <CardContent className="flex h-[150px] items-center justify-center p-2">
+              <motion.div
+                variants={trophyVariants}
+                className="origin-bottom"
+                transition={{ duration: 0.2 }}
+              >
+                <img
+                  src="https://assets.watermelon.sh/winner-cup.png"
+                  alt="trophy"
+                  className="rotate-22"
+                />
+              </motion.div>
+            </CardContent>
+            <CardHeader className="z-10 w-full flex-1 items-center gap-0 text-center">
+              <CardTitle className="text-2xl font-semibold text-neutral-100">
                 Financial Planning
               </CardTitle>
-              <CardDescription className="mb-4 text-lg text-neutral-400">
+              <CardDescription className="mb-4 text-lg text-neutral-500">
                 Set goals and receive strategies for a secure future.
               </CardDescription>
             </CardHeader>
@@ -488,22 +520,29 @@ const BentoGrid13 = () => {
 
         <motion.div
           variants={itemVariants}
-          className="col-span-1 flex flex-col items-center rounded-3xl border border-white/5 bg-[#1a1a1a] p-8 text-center md:col-span-3"
+          className="col-span-1 flex flex-col items-center rounded-3xl border border-white/5 bg-[#1a1a1a] p-0 text-center md:col-span-3"
         >
-          <Card className="h-full w-full items-center gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 ring-0">
-            <CardContent className="mb-6 flex items-center -space-x-3 overflow-hidden">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div
+          <Card className="flex h-full w-full items-center justify-center gap-0 rounded-none border-0 bg-transparent p-0 ring-0">
+            <CardContent className="flex h-[150px] items-center -space-x-3 p-2">
+              {images.map((i) => (
+                <motion.div
                   key={i}
-                  className="size-12 rounded-full border-4 border-[#1a1a1a] bg-indigo-300 md:size-16"
-                ></div>
+                  whileHover={{ scale: 1.05, zIndex: 50 }}
+                  className="relative size-12 rounded-full border-4 border-indigo-300 bg-indigo-300 p-4 md:size-16"
+                >
+                  <img
+                    src={i}
+                    alt="avatar"
+                    className="absolute inset-0 size-full rounded-full object-cover"
+                  />
+                </motion.div>
               ))}
             </CardContent>
             <CardHeader className="w-full flex-1 items-center gap-0 text-center">
-              <CardTitle className="text-3xl font-semibold text-neutral-100">
+              <CardTitle className="text-2xl font-semibold text-neutral-100">
                 Community Support
               </CardTitle>
-              <CardDescription className="text-lg text-neutral-500">
+              <CardDescription className="mb-4 text-lg text-neutral-500">
                 Visit and share money to your friends instantly!
               </CardDescription>
             </CardHeader>
@@ -512,10 +551,15 @@ const BentoGrid13 = () => {
 
         <motion.div
           variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
           className="col-span-1 flex flex-col items-center rounded-3xl border border-white/5 bg-[#1a1a1a] p-8 text-center md:col-span-2"
         >
           <Card className="h-full w-full items-center gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 ring-0">
-            <CardContent className="mb-6 size-16 rounded-xl bg-indigo-400 shadow-[0_0_20px_rgba(139,147,255,0.3)]"></CardContent>
+            <CardContent className="mb-6 flex items-center justify-center rounded-xl bg-indigo-400 p-2 shadow-[0_0_20px_rgba(139,147,255,0.3)]">
+              <AiOutlineDollarCircle className="size-12 text-white" />
+            </CardContent>
             <CardHeader className="w-full flex-1 items-center gap-0 text-center">
               <CardTitle className="text-3xl font-semibold text-neutral-100">
                 Expand & Save
@@ -528,13 +572,17 @@ const BentoGrid13 = () => {
         </motion.div>
 
         <motion.div
-          viewport={{ once: true }}
           variants={itemVariants}
-          className="col-span-1 flex flex-col items-center justify-center gap-1 rounded-3xl border border-white/5 bg-[#1a1a1a] p-8 text-center md:col-span-2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          onViewportEnter={() => setValue(250)}
+          className="col-span-1 flex flex-col items-center relative justify-center gap-1 rounded-3xl border border-white/5 bg-[#1a1a1a] p-8 text-center md:col-span-2 "
         >
-          <Card className="h-full w-full items-center gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 ring-0">
-            <CardContent className="flex w-full items-center justify-between">
-              <span className="mx-auto flex  text-center text-5xl font-bold text-indigo-400 tabular-nums md:text-7xl">
+          <FaLock className="absolute md:size-50 size-30 text-neutral-950 opacity-60" />
+          <Card className="relative flex h-full w-full items-center justify-center gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 ring-0">
+            <CardContent className="flex w-full items-center  justify-center text-center borde border-red-500">
+              <span className="flex text-center text-5xl font-bold text-indigo-400 tabular-nums md:text-7xl">
                 $
                 <AnimatedNumber
                   value={value}
@@ -543,13 +591,10 @@ const BentoGrid13 = () => {
                 K
               </span>
             </CardContent>
-            <CardHeader className="w-full flex-1 items-center gap-0 text-center">
-              <CardTitle className="text-3xl font-semibold text-neutral-100">
-                Expert Advice
+            <CardHeader className="w-full items-center gap-0 text-center">
+              <CardTitle className="text-xl font-semibold text-neutral-500">
+                Secure Transaction
               </CardTitle>
-              <CardDescription className="text-lg text-neutral-500">
-                Access tailored financial recommendations!
-              </CardDescription>
             </CardHeader>
           </Card>
         </motion.div>
@@ -559,7 +604,7 @@ const BentoGrid13 = () => {
           className="col-span-1 flex flex-col items-center rounded-3xl border border-white/5 bg-[#1a1a1a] p-8 text-center md:col-span-2"
         >
           <Card className="h-full w-full items-center gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 ring-0">
-            <CardContent className="mb-6 flex size-16 items-center justify-center rounded-xl bg-[#8b93ff] shadow-[0_0_20px_rgba(139,147,255,0.3)]">
+            <CardContent className="mb-6 flex items-center justify-center rounded-xl bg-[#8b93ff] p-2 shadow-[0_0_20px_rgba(139,147,255,0.3)]">
               <svg
                 className="size-12 text-white"
                 fill="currentColor"

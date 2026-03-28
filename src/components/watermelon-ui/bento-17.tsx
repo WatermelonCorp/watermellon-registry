@@ -9,6 +9,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { IoIosSearch } from "react-icons/io";
+import { TbBellRingingFilled } from "react-icons/tb";
+import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
 
 import type { SVGProps } from "react";
 
@@ -123,7 +126,9 @@ function ChartsCard() {
         <CardHeader className="flex flex-col gap-4 p-6 md:p-8">
           <CardDescription className="m-0">
             <div className="flex items-center gap-2">
-              <div className="h-10 w-10 rounded-lg bg-black" />
+              <div className="h-10 w-10 rounded-lg bg-black">
+                <PatternIcon className="size-10" />
+              </div>
               <span className="text-md text-neutral-400">
                 Monthly Growth Report
               </span>
@@ -218,7 +223,9 @@ function NewsletterCard({ itemVariants }: { itemVariants: Variants }) {
         <CardHeader className="flex flex-col p-6">
           <CardDescription className="m-0">
             <div className="mb-4 flex items-center gap-3">
-              <div className="h-8 w-8 rounded-lg bg-black" />
+              <div className="h-8 w-8 rounded-lg bg-black">
+                <PatternIcon4 className="size-10" />
+              </div>
               <span className="text-md text-neutral-400">
                 Customize Newsletter
               </span>
@@ -252,14 +259,14 @@ function NewsletterCard({ itemVariants }: { itemVariants: Variants }) {
 
             <div className="mt-6 flex h-full flex-col gap-4 rounded-3xl border border-white/10 p-4 md:mt-10">
               <div className="relative inline-block self-start">
-                <span className="px-3 py-2 text-[10px] text-purple-500">
+                <span className="text-md px-3 py-2 text-purple-500">
                   Monthly updates
                 </span>
 
                 <motion.div
                   initial={{ width: 0, height: 0 }}
                   animate={controls}
-                  className="pointer-events-none absolute inset-0 origin-top-left border border-purple-600"
+                  className="pointer-events-none absolute inset-0 origin-top-left border border-purple-600 p-2"
                 />
 
                 {[
@@ -276,13 +283,17 @@ function NewsletterCard({ itemVariants }: { itemVariants: Variants }) {
                   />
                 ))}
               </div>
-              <div className="h-full flex items-center justify-start">
-                <div className="mt-2 flex  max-w-[300px] items-center gap-4 rounded-lg bg-[#241d30] p-2 md:mt-16 ">
+              <div className="flex h-full items-center justify-start">
+                <div className="mt-2 flex max-w-[320px] items-center gap-4 rounded-lg bg-[#241d30] p-2 md:mt-16">
                   <span className="text-[9px] text-neutral-400">
                     Font: Plus Jakarta Sans
                   </span>
-                  <div className="h-4 w-4 rounded bg-purple-600" />
-                  <div className="h-4 w-24 rounded bg-black/10 md:w-32" />
+                  <div className="size-6 rounded bg-purple-600" />
+                  <div className="py-2 w-24 rounded bg-black/20 md:w-32  gap-2 text-neutral-400 flex items-center justify-center">
+                    <IoIosSearch className="size-6" />
+                    <TbBellRingingFilled className="size-6" />
+                    <IoChatbubbleEllipsesSharp className="size-6" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -329,7 +340,9 @@ function IntegrationCard({ itemVariants }: { itemVariants: Variants }) {
         <CardHeader className="p-6">
           <CardDescription className="m-0">
             <div className="mb-4 flex items-center gap-3">
-              <div className="h-8 w-8 rounded-lg bg-black" />
+              <div className="h-8 w-8 rounded-lg bg-black">
+                <PatternIcon2 className="size-10" />
+              </div>
               <span className="text-md text-neutral-200">
                 Awesome Integration
               </span>
@@ -392,9 +405,9 @@ const BentoGrid17 = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#0f0c14]  text-white md:p-8">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#0f0c14] text-white md:p-8">
       <motion.div
-        className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:p-10 p-4 font-sans md:auto-rows-[minmax(200px,_auto)] md:grid-cols-8"
+        className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 p-4 font-sans sm:p-10 md:auto-rows-[minmax(200px,_auto)] md:grid-cols-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -413,7 +426,9 @@ const BentoGrid17 = () => {
             <CardHeader className="p-6">
               <CardDescription className="m-0">
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-lg bg-black" />
+                  <div className="h-8 w-8 rounded-lg bg-black">
+                    <PatternIcon3 className="size-10" />
+                  </div>
                   <span className="text-md text-neutral-400">
                     Community Support
                   </span>
@@ -424,8 +439,14 @@ const BentoGrid17 = () => {
               </CardTitle>
             </CardHeader>
 
-            <CardFooter className="relative flex items-end justify-end gap-1 p-6 pt-0 bg-transparent border-none">
-              <div className="h-10 w-10 flex-shrink-0 rounded-full bg-neutral-200" />
+            <CardFooter className="relative flex items-end justify-end gap-1 border-none bg-transparent p-6 pt-0">
+              <div className="h-10 w-10 flex-shrink-0 rounded-full bg-neutral-200 flex items-center justify-center">
+                <img
+                  src="https://assets.watermelon.sh/avatar-17.png"
+                  alt="watermelon-logo"
+                  className="size-8"
+                />
+              </div>
               <div className="md:text-md rounded-t-2xl rounded-br-2xl border border-white/5 bg-neutral-800/20 px-4 py-2 text-sm">
                 Hey! there i am here to help. 👋
               </div>
@@ -437,6 +458,133 @@ const BentoGrid17 = () => {
         <IntegrationCard itemVariants={itemVariants} />
       </motion.div>
     </div>
+  );
+};
+type IconProps = {
+  className?: string;
+};
+
+const PatternIcon = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 45 45"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="45" height="45" rx="8" fill="black" />
+      <rect x="9" y="9" width="28" height="28" fill="url(#pattern0)" />
+      <defs>
+        <pattern
+          id="pattern0"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use href="#image0" transform="scale(0.02)" />
+        </pattern>
+        <image
+          id="image0"
+          width="50"
+          height="50"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADgUlEQVR4nO2ab2hOURzHz/ZsYq3F8k7xDpFNyKI2KbEkkj/FmwlvFIU3S01IEQot/wrRQkakFGFJ8y9/ly3Nn0XtjbCm5M9YfHTa7+Z0ep77nPs8d3d39XzrefPcc37nfO4553fO7/yuUjnllFNkAhLAVGANsAc4DVwEGoFDwA5gLTBexbTz1cBZ4Avu+gCcAariALAaeJOkkz1AK3AduABcBpqBl/LM1gtgFZAfNUQF0GJ1ph2ok2cJn7rDgFnANuCtZeM+MDEKgHxgC9BrNN4EzM7C3nzgtmHvN7Au/N7/b3QIcN5osBNYFKL9lcBHsf04LLvJIPR893QVKO2HdkqBzUB52La94TdH4nDkizIMyZrwdFQNRtHngXqN6RTpSAAzgWVpfguAQj8jBYaL7eyPNZEGYgbu2u5nSG92nkLzTq4Cxsju76Ljfru2t2M3qRiJPs/2zBVEn508ZbTZRQTxNR3IOSnQruILsRG4lRJEplW3FKhTMYVQff/7guh4wlPFQHTcBcIFRAdFWj+1C1YxhXAB0ZGdVquKMYQLiA5Pta6pGENoyWlDq17ZAi7Jw0YVYwgtoAzYD4xWcQIBhgNPDIjabIwNyNSSkXjuMhKuBveKobaA9YqByUBJCBCbUpQbAUxwNeq53x5X9wtsAH5IvV8Sw+SFDFEIvAP+OEWQwLQgG6I+QpNcB9PBuEJo6TOfUW6KSifriLI1AMRdYLoV26eECQKhJd4J6VvK66bAh8YkEMXy/1AL5oANkwFEnnEH1uAEIRXnGY2UuUIYz1PCBIXQAhYa5auVq2R63QA6gJFBIHxg6vUtYgYQecBTKf8qlHsDVwgfGIJAaAFLjDo1KmoIC+aUUfebTi041h0FfJZ6LVmPhvZemUAkuUyo0seQANP7jnEfnN7lpjFYAvzNBiKDNhPWKNaGZXgXcCIiiALD/SPJIKdTQmxE35q4aUEksjFYo72Kz658TGKG5WG9LUkrdBsQJ7Na3JZ3KktR5pNR5h4wJ5NG5aZ/qc6HGPa+A+uzekGSDvPUnOpyWG5aHlr7wnt5CZVAkU8bRcBcYF+S1NsDYGzGANJAeRAXKzvuCuC11RnPXbaJ+9QR5xXJD3bIMd+WfimLw9q1dZj5SBp19k4CVCmRZRfu6pI6A5ue9oEaJ6nmncARSU/rjwYagN3ywcCkQZn1yiknNXj1D9NJpB6QK5wiAAAAAElFTkSuQmCC"
+        />
+      </defs>
+    </svg>
+  );
+};
+
+const PatternIcon2 = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 45 45"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="45" height="45" rx="8" fill="black" />
+      <rect x="8.5" y="9" width="28" height="28" fill="url(#pattern1)" />
+      <defs>
+        <pattern
+          id="pattern1"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use href="#image1" transform="scale(0.02)" />
+        </pattern>
+        <image
+          id="image1"
+          width="50"
+          height="50"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAByUlEQVR4nO2ZPUsDMRyHswlqq6IovkJFxw4K6tDRryHoN3B0E8HFVXRxUXASBxcHXRz9HLrVoVrf34o+EvofpBKaXq65O8kDhdIm+efXHHlyPaUCgUDABWAa2Afu5KXfT6usAEwAe0CNv3wBx8CUSivAGLANvNOcT+AQKKi0AAwAW8ArrfMhqzecZIB+YAN4wJ0XWc0hnwFywBpwT/w8yer2tTNAlwTQO1C7eZRAPXEG6ARWgRv8U5HLN+caYgkokzxlPZeoIRZIH/P/Jchc1FVZAW6Tnj31OSxHCvErTLfH3cq0e/U6hfDoj0aeffgkTqOnwvADDmes5M5cQIfh8xFg1/LU28i79B1ppaar2bWULoFFQ7vxCMf4ScNYJeDCh9l1kZKhTwE4MNxY1eS7QpMA3s1+brJtK7e6egwZK3GznwIzEWrMSl8vZq9YFvkGToCixbhFaav72FCJw+x5YB2oWhbVfzAc6V/bsAJH0saGqtTOO4VomEQfsCnHBluugDO5/q9b6PcotTJr9udg9pjMvuNgdt03mN2KYHYVzN6MYHYVzF4nmF35IrNmNwEMSqA3hwCjKi0Qo9lTQeYfhv67x9OBQEClkh9/wdGsjKfDJwAAAABJRU5ErkJggg=="
+        />
+      </defs>
+    </svg>
+  );
+};
+
+const PatternIcon3 = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 45 45"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="45" height="45" rx="8" fill="black" />
+      <rect x="9" y="9" width="28" height="28" fill="url(#pattern2)" />
+      <defs>
+        <pattern
+          id="pattern2"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use href="#image2" transform="scale(0.02)" />
+        </pattern>
+        <image
+          id="image2"
+          width="50"
+          height="50"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEuUlEQVR4nO2Za4hVVRTHT2kqKJWPgmaI6UNQI+VoUUFFRVSUfQjpQUmY04PKJqovWR9KC4oeM4FFZAhZUmEGNowG9qSPFUUQTRZBIEWWpaWOaZn3Fyv/R1dn9h7Pvfvcuh/uHw6Oe63z33udvV573yxro4022igL4GZgLTAMbAP+0LNNY28ADwEXABOzVgXwG+XxK7AcmJO1GoCzgGuAHmAacISeqcAs4CpgAPjMGVQD3jT5f7nQM4D3gd3ARuDcBK6TgSeAHTJor4ycVO2qR098h/zdw3y/I5F3qgwwQ9BunVjdyg9OdLgmyt3gKeBYYL3G1lU0T4922bDFdr8K3pz8MOBFkdtuzHeyDu2IYUFF800BBsW5ozJj9PVz0gsD8gVVuZjjHOc+3pZkNwN6RbYnZITTG5LeUNKEo40ZdDHTeAIAvhdR7yH0OlQT8K5XkZttFO9ACtGISKbUsXs/WyJoeNLRvLOVzfY2XGfc1zipZFJ4S/qrC7KjgOeBnxRLa0LxZO4DvA18AtwaiNP1jRoyWI+7AF3ATqXoE9z4Khlwmy0Q2GpFNfD+w8B3wF/AUjc+TcnGeGc3YsidMuSVkvq2K5v1zgE3AN4D7nb/f1KLHefGupXe5+nfpQXufvE+14ghx2vC34HpJfRtEShJjI/oWN/1MfBp4QN8kGe9iCEzxW27OaERY/LUuvgQehOAb6S7KKJjC14JbAdOdeMLlVi6YoYYgM/Ff15WL4CL9fIvFrRj6N0jveExdsOC9k/gUjc2Q5nuXjcWMyQP+iV1G+J83PBIRD7dtSqXRXQekxHzCuNz9d52ceQ8u4GXC7p2PDCsTWndayLvDsgXuRoyKZKNDK8CV7vnaOC4wpg9hteBswNNpeGLhgwRyQqRfOizjWSTga8lXx541+pHCD2RuQwh15qRf7AUQ44ENonovoD8NO1YNNhTAUwU/55UoovkYhaM5wTk10m+z/5OmiwAVf5/4idLhTtgWeHrDMgflNwCe27yhA6KJ8MPWSostQLviPCjSHA/LfmulDN9Ebq8SAv2QLr9VqQvWaGLFD50PVSJMcD14lxTBZ//Onmb3x85GK12O5PsZhwsiKOSTSrxJe5W5YGIMStdzEQTgHqwWb5rLgL4SlznZ1UDuFKNpaEvIDc3e0byfcXUrJjrswCWjmW914qHM+AUyX8s1rEqjel1aXdhRGeJdNAhy1Lp5e7wlnfNO/Oix79vbJZp/NmmGBFoGmuhnZHOta5oWhOaw7qCK7R7XTol5hhSa7JLH2pmUw1xxtRiMSOdOc7X7Wxxl8VHQccMukWNJDKg8WYxwc3ymBkopmbXm91uR9gSB7sNB/YG3rWi2FQDAgkgz2arUu6k2L87N7rrpq3FrripUGoecR1AZyJfp7trHq5upeUm73EdwOZQo1kn3zHiGqlulfW1M+bbyN3ujx2FS3AtE8+G6ldabgHjFfg152rddXLc4O6hT2/easufZ/LDmdWTR8e60ChcgFiLg7+B/F+hk+YKtztWGBfH7s3Yb3xe7R/PWg3AmfotErdDdjkxX78tTgZukisZXgjVpJaB0vQ6V0RD6G9pIwJVvE8X51/qmnZTVT/ptdFGlo6/AQUBkIF0jlKtAAAAAElFTkSuQmCC"
+        />
+      </defs>
+    </svg>
+  );
+};
+
+const PatternIcon4 = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 45 45"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="45" height="45" rx="8" fill="black" />
+      <rect x="9" y="9" width="28" height="28" fill="url(#pattern3)" />
+      <defs>
+        <pattern
+          id="pattern3"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use href="#image3" transform="scale(0.02)" />
+        </pattern>
+        <image
+          id="image3"
+          width="50"
+          height="50"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACD0lEQVR4nO2aTS/EQBiAJyE4SLgRIvgN4uSEvbA+E/9AcBEkjvgR9i9IVlwQBweRECSWuPn4Eb5uEhK7j4y+TcZa1V1tt5V5kjm0m3dnnr7vtJNOlUoQwCBwAzwB60CdShrAEPDKV/aBBpUUgDHgTQa/CYwCL3K8l4jM8F2iRs4PGDIZlUQJF8mM5kl5AdQDc8AucAlcRdzePCRqgKz8fuMl0Q3cUX02f5HQsoNemXAl7oFVIA2kImgZQyLrQ2LMKxtzhkSbqs6cyP5JQgL0nNCshD340CQ0QE4CxlVSJTRyh9KkVcgAw8YTewuoLSGxYUj4v7hRichDzc2EXj81BZKJKogcFt1qT4DGQCSiEgFagXegAEwCj9LnGdBcVE4TlXYShci89HEuxz3As1Fm3zIhK+D2uImcSh9Lxrkpo8yKJfrk/EFsRIAOKak80AssSkkVfionWVloLuMksiz/n5fm8i43gP4SMbEUOTIGn5cy03OmxSMmliILwLFkpsNnTDp2IpWAFXGwIkGDFXGwIkGDFXGwIkGDFXGwIkGDFXGwIkGDFfknIrkoX2L7ARiXMeXKCdqRoFUVE4A1GdN2OUGzxkaP/zd7IQG0Aw8ypulyAvXW260EPsjVGIlo6y1ltBHp25W4LntPHeiSzyXiwjXQWUFCP2XqgBmZMxdV2J6+0HNCl1Mivm6wWCwqdD4AIhpKEe3DGpkAAAAASUVORK5CYII="
+        />
+      </defs>
+    </svg>
   );
 };
 

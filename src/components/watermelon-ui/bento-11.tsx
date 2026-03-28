@@ -366,7 +366,7 @@ function CardTable() {
       whileHover="hover"
       className="col-span-1 h-full"
     >
-      <BentoCard className="relative h-full p-4">
+      <BentoCard className="relative h-full max-h-[350px] p-4">
         <CardHeader className="p-0 text-lg leading-tight">
           <h3 className="mb-6">
             <span className="font-semibold">Multi-users.</span>{" "}
@@ -376,7 +376,7 @@ function CardTable() {
           </h3>
         </CardHeader>
 
-        <CardContent className="text-md overflow-hidden rounded-lg border border-neutral-800 bg-neutral-800 p-0">
+        <CardContent className="text-md flex items-center overflow-hidden rounded-lg border border-neutral-800 bg-neutral-800 p-0">
           <table className="w-full border-collapse">
             <thead>
               <tr className="border-b border-neutral-800 bg-neutral-900 text-neutral-300">
@@ -408,6 +408,7 @@ function CardTable() {
 
         <motion.div
           variants={user2}
+          transition={transition}
           className="absolute top-1/2 right-2 rounded-full border border-purple-800/80 bg-purple-600 px-2 py-0.5 text-sm text-white"
         >
           User 2
@@ -415,6 +416,7 @@ function CardTable() {
 
         <motion.div
           variants={user1}
+          transition={transition}
           className="absolute bottom-1/4 left-1 rounded-full border border-orange-800/80 bg-orange-600 px-2 py-0.5 text-sm text-white"
         >
           User 1
@@ -434,7 +436,7 @@ const data = [
 
 function DatasetCard() {
   return (
-    <BentoCard className="col-span-1 min-h-[400px] md:col-span-2">
+    <BentoCard className="col-span-1 md:h-[350px] h-[450px]  md:col-span-2">
       <CardHeader className="p-4 text-lg leading-tight">
         <h3 className="mb-8 text-lg leading-tight">
           <span className="font-semibold text-neutral-200">
@@ -447,7 +449,7 @@ function DatasetCard() {
         </h3>
       </CardHeader>
 
-      <CardContent className="relative flex flex-col items-center gap-6 pl-4 md:flex-row md:gap-20">
+      <CardContent className="relative flex flex-col items-center gap-6  pl-4 md:flex-row">
         <div className="w-full rounded-lg border border-neutral-700 bg-neutral-800 p-3 shadow-xl md:w-48">
           <p className="mb-2 text-sm text-neutral-500">
             Enter your prompt here
@@ -531,7 +533,7 @@ const BentoGrid11 = () => {
 
         <CardTable />
 
-        <BentoCard className="col-span-1 flex min-h-[400px] flex-col">
+        <BentoCard className="col-span-1 flex h-[350px] flex-col">
           <CardHeader className="p-4 text-lg leading-tight">
             <h3 className="mb-12 text-lg leading-tight">
               <span className="font-semibold">Long jobs.</span>{" "}
@@ -541,7 +543,7 @@ const BentoGrid11 = () => {
               </span>
             </h3>
           </CardHeader>
-          <CardContent className="flex items-center justify-center p-4  h-full">
+          <CardContent className="flex items-center justify-center p-4  ">
             <Button className="cursor-pointer rounded-full border border-purple-600 bg-purple-600/20 px-10 py-6 text-xl text-white hover:bg-purple-600/40">
               Run the task
             </Button>

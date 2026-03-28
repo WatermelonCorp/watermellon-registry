@@ -3,6 +3,221 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
+import { FaHeart } from "react-icons/fa6";
+import { IoSearch } from "react-icons/io5";
+import { FaUserAlt } from "react-icons/fa";
+import { FaGift } from "react-icons/fa";
+import { RiMessage2Fill } from "react-icons/ri";
+
+type IconProps = {
+  className?: string;
+};
+
+const PatternIconLarge = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 41 41"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="40.5" height="40.5" fill="url(#pattern5)" />
+      <defs>
+        <pattern
+          id="pattern5"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use href="#image5" transform="scale(0.01)" />
+        </pattern>
+        <image
+          id="image5"
+          width="100"
+          height="100"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,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"
+        />
+      </defs>
+    </svg>
+  );
+};
+const PatternIconWide = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 37 35"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="37" height="35" fill="url(#pattern0)" />
+      <defs>
+        <pattern
+          id="pattern0"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use
+            href="#image0"
+            transform="matrix(0.00945946 0 0 0.01 0.027027 0)"
+          />
+        </pattern>
+        <image
+          id="image0"
+          width="100"
+          height="100"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFOUlEQVR4nO2dS4hcRRRAO36I4Ac0/l0JLhQRP7gQEX+JZKGiC0UXLnQhupvgyuzUleLCz0ZU4vhL1MxKxIWgjF8wOtP3vk73vT1NTNftjJEoiJiJmUj0SfX84kxnXvdMv6rb/e6BWs1i7n2nb7169arqlUqGYRjGydi3Dy9sTcFlUqmc61uaphtix1RI0vHx04RgTBjTTs0xHHYEBxzDXkfwjTB8IgxvCsMzwvCEI7zHUXKDlxg7l6FAauUtJ5PRcyM45Bi/FMbXhfCpFuPWRuP7c2LnOFA0Kbmpb0K4Q4URHheGshC84jh54KdK5aLYOatHCLc7wr/yFCOLguAfIfxWOBn5uT5xfuzc1SI8eakwvtG+YAHEyFwXd1QIdrSqk1fEzl97FwbBpLBvcEwYX2g0Ghtj56+SNN19qu9SHMNMUDGE39k9ZhVcHS/3F0mCSoG6o4lLYueulomJidN9d+II/g0opmaVkoEw3iuEfwSsFG5WqxfHzls1zanJqxxjI5QUR1A52ChfEDtv1bSq1fMcw9cBpST2vJJBo9HY6Bg+DNd9IZqUDNI0PcURvBZMCkPZV2fsvFWTpukGP0cVTgrCNO3ZFDtv1aTBpUDZRl/dSXk13D3FhsRdSsGdoaQ4hik/IZodWYFpNptnzL1VNClqmKY9m+YulHVfapAaXO0Yj1ilKEIYnwxWJVYp3d3k5xc8BJNilZKB8OSNQatkTspeZj47K7bC4hi+Ci3FPxPFzlstwslIhCqZ8UPw2LmrxNWSzcErhDFtVuG62LmrRGr4UBQhNbw+du46p1MYPw3eZREeP1StnhU7f3UIwYsxqsMx7IqduzqE4dkYMuYaPBc7f43T8WPxhLSHvttiXwd9qx8p3HR8Zyn4dKnIpMt2XWVtBgpyPyEcbRE+PD/ae94xVoXxoF9YPtTv6IVgm7/4fqWjukop2tyXeBlLffeYr4wT/25SYslgk6JPBpsUfTJ4QQruNilaZLBJ0SeDF6Xs9BK0DYkH/nWwrEXGkpT3B0mKI/xR9Z5HWY+MJSnv9SqlfZIEw+E4YpKR0tDK4N6ltEXU8RbfYkhxhD+UhloGLzR4N0vKgozFOCJI8f+vNPwycCHZd/wek05S2ovsqHzX8niaDLcHPdiA4fdSEWTIohR8u5OUFifXrBLXF+EqBD8rFUWGLCRNOLpcymp4iaFia9Xg/lKRZMiSlLe6lSIMn4f6oeR/tRXKEN8Iju6fKl/bzcp6Yfw7/3hWzi4UScasP5WumxhbVL4tQDwrJkULVRktxq3dxtmsV67MMx6/1dtk9Igj+DgnGbuKLGPWEdy9lph/QTxTCMf7KoPwI5OxDvoppejd1Ox6ZfRTismg/sjohxTH8IHJyIG1SGnLWDa5WRgZzh8/WytvyTO3XqT0MiswnDJo5axtHvjtB5nneBHsKLaMWr6VsRy/jW3+IJz/T68Q/OmPPo/+gYEiyTgRfyyg1OFB/7EAf1akil25RZWhEpOhCJOhiGgyGI+YDEUyXC3ZHDt/VZgMRZgMRZgMRZgMRUSVUcc7Y+evCpOhCFeHR+LIgBm/rjZ2/qrwm9yDflDFZKyOI3jcZCgi6NnqJiMbR/ByOBl2A89EGB4NJaPJcEd2RAXHv/VyhL/l3U35Bc2xcx0YpF6+L68tXW0ZteTW2DkOHC2Gx/otxbopRVJMhiIpJkORlPnnDJOhQYo99CmSYjIUSTEZMabnCWY7yiD81XH55tAxFZ72J7YJRx3htDAcE4L9jvGlgTiQyzAMwzAMwygVi/8A+4m5KedfBksAAAAASUVORK5CYII="
+        />
+      </defs>
+    </svg>
+  );
+};
+const PatternIconWide2 = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 37 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="37" height="36" fill="url(#pattern1)" />
+      <defs>
+        <pattern
+          id="pattern1"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use
+            href="#image1"
+            transform="matrix(0.00972973 0 0 0.01 0.0135135 0)"
+          />
+        </pattern>
+        <image
+          id="image1"
+          width="100"
+          height="100"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE0UlEQVR4nO2cS4gcVRSGSzdZ+CDLiLgSBd1kMbgRgi8GX8SdYBDEhS5UxIWoC11kpyIuBBdZCIkSIj7wQdwrbiIY65ye6T6npxfWPZ0hMT4CDj7GaFJyq5uMlzh0dU91n1tV54cfBnru1Dn/13Vv3amuThKTyWQymVqgwWCwa8h4rzAcFMZPhKAvBGeFYHNs/3O/eI3hoP9dP0a77sZJep19juF9IdgQxnwqE2wUY3udfdp91F5C6bIj/HZqCNu4+FuULmv3VTutr67e4Ag/qwrEZWAYP/XH0O6zFnK9zj3C8MO8YGxBgZ+zXvqAdr9RK2N83hFcnDeMrSkMLvpjavcdpYTgpUWB+B+/pt1/VBpS+rQijLxwH59KmiZmvsYRPOjfccJwfLQngHPCeN4x/i6EmTCccAzHHOOzwitLGcNd/nV1IIznR7WsLPnafI2+Vl9zUXtRI5wb93Tc9+jXIN9zEpPyPL9SGPePN2qbEQSbL9SjDenHPgOfhSaIKxzDo0JI6qFwNO4NqXPAZ7NQGK6b3uoYvo4ggDxGO8avsrXvblkIDCF8zDH8pt20RG5H+Idw57m5gfCnoRC8od2o1M0Eb1W+tvg/6BiPqDfH9bQjPFzpuuIY3tRuSurvt6uBQZ0nImgmb4bh8QqupopNUQTNYO3ts5z56mu0iOOX2k1Iw+y3CzOtJ8WmL4IGpIEeEj4y9dnhGLvahUtTTUhTXQoLdx5SL5ob7/1TAPGf2lAvOG+0CT4qBWMw+ObaVv7XlhcOZPNst3v1RCDj+xn6BXPzPezjfWWmq9e1C5WW2DG8WgbIF9qFSkvsCD6fPGUxrGkXKm0xAZcB8ot6odwOO8KfSkxZ8Jd2odIWE2xOPkOKO10RFMvNt7/zWgIInNIuVNpjV2LKQoig0LwdhpNlgNhlLy/G/lP4k6cshle0C5WW2DG8MBHI+KOd6sVKC+w4vX0ikDOIVwnBn9rFStNNsFH6+UchPKpeMDfbjvBQUlZDSu/QLlga75Wl0kDsFi7O2XCiNIytaStd1i8cG+fikb1ZH9EeP5ii3oQ0yYRHZ4JRABms3iiEv6o3wc2wI/xxuAbXJzuR/3oKR/iPdjNSczvGvzOGO3cE49KZwvCydkNSc/vnFiuBEcljy3mdF3HXgxeTecgRPOMILmg3KTWxn+odwZPJPJX1O/c7wnXtZiV+O9fHu+cK4xIUgN2O4d0Ims5j8+irQeAd/4HDZNH6fi3dKwzv2VUYehAX/L5t2E9vS7S1TnjzzhvCD7Jud4+3EH4Y67jtfKqX3pTEpJ025INJxipCinTcdk5iU9UNSaTjDAjHNc6AcFzjDAjHNc6AcFzjDAjHNa41QP57Gero5HXzDnbW47UGiN+cZd3uniKcKTZqM9cx4/HaA2TBZ5ZU7CQ2aQUhFb/TDUhDnMQm7UDEgITSDkQMSCjtQMSAhNIORAxIKO1AxICE0g5EDEgo7UDEgITSDkQMSCjtQMSAhNIORAxIKO1AxICE0g5EDEgo7UDEgITSDkQMSCjtQMSAmEwmk8lUjbQXVbFFPZR2IGJAQmkHIgYklHYgYkBCaQciBiSUdiBiQEJpByIGJJR2IGJAQmkHIgYklHYgYkBCaQciBiSUdiBiQEJpByIGJJR2IGJAQgnDGe1QRM+nk9gkfXi4pVBO+9618zeZTCZT0nr9CywZ5VMuFK+pAAAAAElFTkSuQmCC"
+        />
+      </defs>
+    </svg>
+  );
+};
+const PatternIconWide3 = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 37 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="37" height="36" fill="url(#pattern2)" />
+      <defs>
+        <pattern
+          id="pattern2"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use
+            href="#image2"
+            transform="matrix(0.00972973 0 0 0.01 0.0135135 0)"
+          />
+        </pattern>
+        <image
+          id="image2"
+          width="100"
+          height="100"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,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"
+        />
+      </defs>
+    </svg>
+  );
+};
+
+export const PatternIconWide4 = ({ className }: IconProps) => {
+  return (
+    <svg
+      viewBox="0 0 37 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect width="37" height="36" fill="url(#pattern3)" />
+      <defs>
+        <pattern
+          id="pattern3"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use
+            href="#image3"
+            transform="matrix(0.00972973 0 0 0.01 0.0135135 0)"
+          />
+        </pattern>
+        <image
+          id="image3"
+          width="100"
+          height="100"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,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"
+        />
+      </defs>
+    </svg>
+  );
+};
+
+// type Props = {
+//   className?: string;
+// };
+
+//  const PatternIcon = ({ className }: Props) => {
+//   return (
+//     <svg
+//       viewBox="0 0 37 36"
+//       xmlns="http://www.w3.org/2000/svg"
+//       className={className}
+//     >
+//       <defs>
+//         <pattern
+//           id="pattern0"
+//           patternContentUnits="objectBoundingBox"
+//           width="1"
+//           height="1"
+//         >
+//           <use
+//             href="#image0"
+//             transform="matrix(0.00972973 0 0 0.01 0.0135135 0)"
+//           />
+//         </pattern>
+
+//         <image
+//           id="image0"
+//           width="100"
+//           height="100"
+//           preserveAspectRatio="none"
+//           href="data:image/png;base64,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"
+//         />
+//       </defs>
+
+//       <rect width="37" height="36" fill="url(#pattern0)" />
+//     </svg>
+//   );
+// };
+const icons = [
+  FaHeart,
+  IoSearch,
+  FaUserAlt,
+  FaGift,
+  RiMessage2Fill,
+  PatternIconLarge,
+];
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -31,7 +246,7 @@ export default function BentoGrid10() {
         />
       </BentoItem>
 
-      <BentoItem className="col-span-1 row-span-2 flex md:h-[170px] items-center justify-center bg-[#F08E8E] md:row-span-1">
+      <BentoItem className="col-span-1 row-span-2 flex items-center justify-center bg-[#F08E8E] md:row-span-1 md:h-[170px]">
         <div className="rounded-full bg-[#D9D9D9] px-4 py-2 text-sm font-bold text-[#4A4A4A] md:px-8 md:py-4 md:text-lg">
           Got a task in mind?
         </div>
@@ -39,9 +254,24 @@ export default function BentoGrid10() {
 
       <BentoItem className="col-span-1 row-span-3 bg-[#171C27] p-4 sm:col-span-2 md:p-6">
         <div className="flex h-full flex-col gap-4 sm:flex-row">
-          <WorkerCard name="Alex" rating="4.7" job="Handyman" />
-          <WorkerCard name="Sam" rating="4.2" job="Cook" />
-          <WorkerCard name="Kate" rating="4.7" job="Mechanic" />
+          <WorkerCard
+            name="Alex"
+            rating="4.7"
+            job="Handyman"
+            src="https://assets.watermelon.sh/alex.png"
+          />
+          <WorkerCard
+            name="Sam"
+            rating="4.2"
+            job="Cook"
+            src="https://assets.watermelon.sh/sam.png"
+          />
+          <WorkerCard
+            name="Kate"
+            rating="4.7"
+            job="Mechanic"
+            src="https://assets.watermelon.sh/kate.png"
+          />
         </div>
       </BentoItem>
 
@@ -49,7 +279,13 @@ export default function BentoGrid10() {
         <CalendarIcon className="h-24 w-24 md:h-[143px] md:w-[143px]" />
       </BentoItem>
 
-      <BentoItem className="col-span-1 row-span-2 md:h-[170px] bg-[#F08E8E] md:row-span-1" />
+      <BentoItem className="col-span-1 row-span-2 bg-[#F08E8E] p-8 md:row-span-1 md:h-[170px]">
+        <div className="mx-auto mb-2 grid h-full grid-cols-3 place-items-center gap-2">
+          {icons.map((Icon, i) => (
+            <Icon className="size-10 text-neutral-900" key={i} />
+          ))}
+        </div>
+      </BentoItem>
 
       <BentoItem className="row-span-3 flex flex-col justify-center bg-[#3D410E] p-6 md:p-8">
         <div className="mb-4 flex items-start justify-center text-6xl font-black text-zinc-100/90">
@@ -67,11 +303,11 @@ export default function BentoGrid10() {
         </div>
       </BentoItem>
 
-      <BentoItem className="row-span-3 flex flex-col justify-around gap-1 bg-[#1149AD] p-4 md:p-6">
-        <TaskTag label="Mover" count="13" />
-        <TaskTag label="Gardener" count="13" />
-        <TaskTag label="Chef" count="13" />
-        <TaskTag label="Handyman" count="13" />
+      <BentoItem className="row-span-3 flex flex-col gap-1 bg-[#1149AD] p-4 ">
+        <TaskTag label="Mover" count="13" Icon={PatternIconWide4} />
+        <TaskTag label="Gardener" count="13" Icon={PatternIconWide2} />
+        <TaskTag label="Chef" count="13" Icon={PatternIconWide3} />
+        <TaskTag label="Handyman" count="13" Icon={PatternIconWide} />
       </BentoItem>
 
       <BentoItem className="col-span-1 row-span-3 flex flex-col items-center justify-center bg-[#E5AF1F] p-6 text-center sm:col-span-2 md:p-12">
@@ -120,13 +356,18 @@ function WorkerCard({
   name,
   rating,
   job,
+  src,
 }: {
   name: string;
   rating: string;
   job: string;
+  src: string;
 }) {
   return (
-    <div className="flex min-h-[150px] flex-1 flex-col justify-end rounded-xl bg-[#D9D9D9] p-3 sm:min-h-0 md:p-4">
+    <div className="flex min-h-[150px] flex-1 flex-col items-center justify-end rounded-xl bg-[#D9D9D9] p-3 sm:min-h-0 md:p-4">
+      <div>
+        <img src={src} alt="avatar" className=" size-40 rounded-md" />
+      </div>
       <div className="mb-3 md:mb-5">
         <h4 className="text-3xl leading-none font-black text-[#171C27] md:text-6xl">
           {name}
@@ -142,11 +383,24 @@ function WorkerCard({
   );
 }
 
-function TaskTag({ label, count }: { label: string; count: string }) {
+type IconType = React.ComponentType<{ className?: string }>;
+
+function TaskTag({
+  label,
+  count,
+  Icon,
+}: {
+  label: string;
+  count: string;
+  Icon: IconType;
+}) {
   return (
     <div className="flex items-center justify-between rounded-lg border border-white/10 bg-[#171C27]/70 p-2">
-      <span className="ml-2 text-xl font-bold text-white md:ml-8">{label}</span>
-      <span className="rounded-md bg-[#E5AF1F] p-3 text-xl font-bold text-[#171C27] md:p-2">
+      <div className="flex-1 flex items-center gap-1 ">
+        <Icon className="size-8 shrink-0 text-white" />
+        <span className="text-xl font-bold text-white">{label}</span>
+      </div>
+      <span className="rounded-md bg-[#E5AF1F] p-2 text-xl font-bold text-[#171C27]">
         {count}
       </span>
     </div>

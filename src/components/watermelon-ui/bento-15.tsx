@@ -548,9 +548,12 @@ const BentoGrid15 = () => {
           className="col-span-12 md:col-span-6"
         >
           <Card className="group flex h-full min-h-[320px] w-full flex-col justify-between rounded-none border border-white/5 bg-neutral-900 p-0 shadow-none ring-0">
-            <CardContent className="flex flex-1 items-center justify-center gap-6 p-6 opacity-80 transition-colors duration-300 ease-out group-hover:opacity-100">
+            <CardContent className="flex flex-1 items-center justify-center gap-6 p-6">
               {COMPANIES.map((Logo, i) => (
-                <Logo key={i} className="text-neutral-600" />
+                <Logo
+                  key={i}
+                  className="cursor-pointer text-neutral-600 duration-500 ease-out hover:text-neutral-100"
+                />
               ))}
             </CardContent>
             <CardFooter className="w-full flex-col items-start gap-2 border-none bg-transparent p-6 pt-0">
@@ -570,9 +573,12 @@ const BentoGrid15 = () => {
           className="col-span-12 md:col-span-6"
         >
           <Card className="group flex h-full min-h-[320px] w-full flex-col justify-between rounded-none border border-white/5 bg-neutral-900 p-0 shadow-none ring-0">
-            <CardContent className="flex flex-1 items-center justify-center gap-6 p-6 opacity-50 transition-colors duration-300 ease-out group-hover:opacity-100">
+            <CardContent className="flex flex-1 items-center justify-center gap-6 p-6 ">
               {LOGOS.map((Logo, i) => (
-                <Logo key={i} className="text-neutral-600" />
+                <Logo
+                  key={i}
+                  className="cursor-pointer text-neutral-600 duration-500 ease-out hover:text-neutral-100"
+                />
               ))}
             </CardContent>
             <CardFooter className="w-full flex-col items-start gap-2 border-none bg-transparent p-6 pt-0">
