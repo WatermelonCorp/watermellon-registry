@@ -268,7 +268,7 @@ export const Card4_IncidentsMock = () => {
       <div className="flex flex-col justify-center gap-1">
         <div className="flex items-center gap-4">
           <div
-            className={`relative size-7 shrink-0 flex rounded ${colors.statusDown}`}
+            className={`relative flex size-7 shrink-0 rounded ${colors.statusDown}`}
           >
             <DoubleCheck className="m-auto" />
             <div className="absolute left-1/2 h-8 w-0.5 -translate-x-1/2 -translate-y-[120%] bg-slate-600" />
@@ -323,8 +323,8 @@ export const Card4_IncidentsMock = () => {
                       ease: "easeOut",
                     }}
                   />
-                  <div className="size-6 rounded-full bg-red-600 flex items-center justify-center">
-                    <FaLongArrowAltDown className="size-4 z-20" />
+                  <div className="flex size-6 items-center justify-center rounded-full bg-red-600">
+                    <FaLongArrowAltDown className="z-20 size-4" />
                   </div>
                 </div>
 
@@ -521,15 +521,13 @@ const Row = ({
             key={i}
             className="flex aspect-square w-20 items-center justify-center rounded-lg bg-[#303847] text-xs text-white/70"
           >
-            <Icon className="size-8 text-white md:size-10 grayscale-90" />
+            <Icon className="size-8 text-white grayscale-90 md:size-10" />
           </div>
         ))}
       </motion.div>
     </div>
   );
 };
-
-
 
 const backups = [
   { id: "1", label: "managed database backup" },
@@ -552,9 +550,9 @@ export const BackupList = ({ items }: BackupListProps) => {
 
   const loop = [...items, ...items, ...items];
 
-  const [index, setIndex] = useState(items.length);
+  const [index, setIndex] = useState(0);
 
-  const y = useMotionValue(-index * ITEM_HEIGHT);
+  const y = useMotionValue(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -565,19 +563,13 @@ export const BackupList = ({ items }: BackupListProps) => {
   }, []);
 
   useEffect(() => {
-    const controls = animate(y, -index * ITEM_HEIGHT, {
+    const normalizedIndex = index % items.length;
+
+    animate(y, -normalizedIndex * ITEM_HEIGHT, {
       type: "spring",
       bounce: 0,
       duration: 1,
-      onComplete: () => {
-        if (index >= items.length * 2) {
-          setIndex(items.length);
-          y.set(-items.length * ITEM_HEIGHT);
-        }
-      },
     });
-
-    return () => controls.stop();
   }, [index, items.length, y]);
 
   const centerOffset = Math.floor(VISIBLE / 2);
@@ -658,7 +650,7 @@ function IncidentsCard1() {
 
       <div className="flex items-center gap-3">
         <div
-          className={` shrink-0  items-center justify-center p-2 rounded ${colors.statusUp}`}
+          className={`shrink-0 items-center justify-center rounded p-2 ${colors.statusUp}`}
         >
           <FaCircleChevronDown className="size-6" />
         </div>
@@ -678,7 +670,7 @@ function IncidentsCard1() {
           {tabs.map((tab, i) => (
             <div
               key={tab}
-              className="relative flex-1 p-2 text-center text-xs text-neutral-400 flex items-center justify-center "
+              className="relative flex flex-1 items-center justify-center p-2 text-center text-xs text-neutral-400"
             >
               {active === i && (
                 <motion.div
@@ -688,7 +680,7 @@ function IncidentsCard1() {
                     stiffness: 300,
                     damping: 25,
                   }}
-                  className="absolute inset-0  rounded-md bg-slate-400/10"
+                  className="absolute inset-0 rounded-md bg-slate-400/10"
                 />
               )}
 
