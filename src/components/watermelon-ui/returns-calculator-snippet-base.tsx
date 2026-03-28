@@ -41,9 +41,9 @@ const AnimatedValue: FC<{
       suffix={suffix}
       transformTiming={{
         easing: 'ease-out',
-        duration: 500
+        duration: 500,
       }}
-      className={`font-bold text-foreground ${className || 'xs:text-lg text-base sm:text-xl lg:text-2xl'}`}
+      className={`text-foreground font-bold ${className || 'xs:text-lg text-base sm:text-xl lg:text-2xl'}`}
     />
   );
 };
@@ -51,14 +51,14 @@ const AnimatedValue: FC<{
 const Slider: FC<SliderProps> = ({ value, min, max, onChange }) => {
   const percent = ((value - min) / (max - min)) * 100;
   return (
-    <div className="relative h-12 rounded-full border-b border-border bg-background px-4 sm:h-14">
-      <div className="absolute inset-y-1/2 left-1/2 h-1.5 w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-muted" />
+    <div className="border-border bg-background relative h-12 rounded-full border-b px-4 sm:h-14">
+      <div className="bg-muted absolute inset-y-1/2 left-1/2 h-1.5 w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full" />
       <motion.div
-        className="absolute inset-y-1/2 h-1.5 -translate-y-1/2 rounded-full bg-foreground"
+        className="bg-foreground absolute inset-y-1/2 h-1.5 -translate-y-1/2 rounded-full"
         style={{ width: `${percent * 0.9}%`, left: '5%' }}
       />
       <motion.div
-        className="absolute top-1/2 z-10 h-6 w-6 -translate-y-1/2 rounded-full border border-border bg-background shadow-xl sm:h-7 sm:w-7"
+        className="border-border bg-background absolute top-1/2 z-10 h-6 w-6 -translate-y-1/2 rounded-full border shadow-xl sm:h-7 sm:w-7"
         style={{ left: `calc(${5 + percent * 0.9}% - 12px)` }}
         transition={{ type: 'spring', bounce: 0.2, duration: 0.3 }}
       />
@@ -155,108 +155,105 @@ export const ReturnsCalculator: FC<ReturnsCalculatorProps> = ({
   }, [monthly, rate, years, invested]);
 
   return (
-    <div className="theme-injected font-sans mt-28 flex h-full w-full items-center justify-center bg-transparent px-0 py-6 md:py-0 lg:px-6">
-      {/* Main Card  */}
-      <div className="w-full max-w-lg space-y-8 rounded-3xl border border-border bg-card p-6 shadow-xl sm:rounded-[2.5rem] md:p-8 lg:py-10 xl:p-10">
-        {/* Top Section */}
-        <div className="flex flex-col items-center gap-8 lg:items-start lg:gap-12 xl:flex-row xl:items-center">
-          <Donut invested={invested} returns={returns} />
+    <div className="theme-injected border-border bg-card w-full max-w-lg space-y-8 rounded-3xl border p-6 shadow-xl sm:rounded-[2.5rem] md:p-8 lg:py-10 xl:p-10">
+      {/* Top Section */}
+      <div className="flex flex-col items-center gap-8 lg:items-start lg:gap-12 xl:flex-row xl:items-center">
+        <Donut invested={invested} returns={returns} />
 
-          {/* Stats Section*/}
-          <div className="xs:grid-cols-2 grid w-full grid-cols-1 gap-6 lg:grid-cols-1">
-            <div className="flex items-start gap-3 sm:gap-4">
-              <span className="mt-1.5 h-3.5 w-3.5 shrink-0 rounded-full bg-muted" />
-              <div className="flex flex-col gap-1">
-                <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase sm:text-sm">
-                  Invested
-                </p>
-                <AnimatedValue value={invested} prefix="₹" />
-              </div>
+        {/* Stats Section*/}
+        <div className="xs:grid-cols-2 grid w-full grid-cols-1 gap-6 lg:grid-cols-1">
+          <div className="flex items-start gap-3 sm:gap-4">
+            <span className="bg-muted mt-1.5 h-3.5 w-3.5 shrink-0 rounded-full" />
+            <div className="flex flex-col gap-1">
+              <p className="text-muted-foreground text-xs font-semibold tracking-wider uppercase sm:text-sm">
+                Invested
+              </p>
+              <AnimatedValue value={invested} prefix="₹" />
             </div>
-            <div className="flex items-start gap-3 sm:gap-4">
-              <span className="mt-1.5 h-3.5 w-3.5 shrink-0 rounded-full bg-foreground" />
-              <div className="flex flex-col gap-1">
-                <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase sm:text-sm">
-                  Returns
-                </p>
-                <AnimatedValue value={returns} prefix="₹" />
-              </div>
+          </div>
+          <div className="flex items-start gap-3 sm:gap-4">
+            <span className="bg-foreground mt-1.5 h-3.5 w-3.5 shrink-0 rounded-full" />
+            <div className="flex flex-col gap-1">
+              <p className="text-muted-foreground text-xs font-semibold tracking-wider uppercase sm:text-sm">
+                Returns
+              </p>
+              <AnimatedValue value={returns} prefix="₹" />
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Sliders Section */}
-        <div className="grid grid-cols-1 gap-4">
-          {[
-            {
-              label: 'Monthly Investment',
-              val: (
-                <AnimatedValue
-                  value={monthly}
-                  prefix="₹"
-                  className="text-sm sm:text-base"
-                />
-              ),
-              slider: (
-                <Slider
-                  min={monthlyRange.min}
-                  max={monthlyRange.max}
-                  value={monthly}
-                  onChange={setMonthly}
-                />
-              ),
-            },
-            {
-              label: 'Return Rate',
-              val: (
-                <AnimatedValue
-                  value={rate}
-                  suffix="%"
-                  className="text-sm sm:text-base"
-                />
-              ),
-              slider: (
-                <Slider
-                  min={rateRange.min}
-                  max={rateRange.max}
-                  value={rate}
-                  onChange={setRate}
-                />
-              ),
-            },
-            {
-              label: 'Time Period',
-              val: (
-                <AnimatedValue
-                  value={years}
-                  suffix=" Years"
-                  className="text-sm sm:text-base"
-                />
-              ),
-              slider: (
-                <Slider
-                  min={yearsRange.min}
-                  max={yearsRange.max}
-                  value={years}
-                  onChange={setYears}
-                />
-              ),
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl border border-border bg-muted/50 transition-all hover:border-input sm:rounded-3xl"
-            >
-              {item.slider}
-              <div className="flex items-center justify-between px-4 py-4">
-                <span className="text-[10px] font-bold tracking-tight text-muted-foreground uppercase sm:text-xs">
-                  {item.label}
-                </span>
-                {item.val}
-              </div>
+      {/* Sliders Section */}
+      <div className="grid grid-cols-1 gap-4">
+        {[
+          {
+            label: 'Monthly Investment',
+            val: (
+              <AnimatedValue
+                value={monthly}
+                prefix="₹"
+                className="text-sm sm:text-base"
+              />
+            ),
+            slider: (
+              <Slider
+                min={monthlyRange.min}
+                max={monthlyRange.max}
+                value={monthly}
+                onChange={setMonthly}
+              />
+            ),
+          },
+          {
+            label: 'Return Rate',
+            val: (
+              <AnimatedValue
+                value={rate}
+                suffix="%"
+                className="text-sm sm:text-base"
+              />
+            ),
+            slider: (
+              <Slider
+                min={rateRange.min}
+                max={rateRange.max}
+                value={rate}
+                onChange={setRate}
+              />
+            ),
+          },
+          {
+            label: 'Time Period',
+            val: (
+              <AnimatedValue
+                value={years}
+                suffix=" Years"
+                className="text-sm sm:text-base"
+              />
+            ),
+            slider: (
+              <Slider
+                min={yearsRange.min}
+                max={yearsRange.max}
+                value={years}
+                onChange={setYears}
+              />
+            ),
+          },
+        ].map((item, idx) => (
+          <div
+            key={idx}
+            className="border-border bg-muted/50 hover:border-input rounded-2xl border transition-all sm:rounded-4xl"
+          >
+            {item.slider}
+            <div className="flex items-center justify-between px-4 py-4">
+              <span className="text-muted-foreground text-[10px] font-bold tracking-tight uppercase sm:text-xs">
+                {item.label}
+              </span>
+              {item.val}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

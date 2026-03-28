@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
+    "registry:build": "shadcn build",
     "lint": "eslint .",
     "preview": "vite preview",
     "sitemap": "bun run scripts/generate-sitemap.ts",
@@ -63,7 +64,7 @@
     "react-syntax-highlighter": "^16.1.0",
     "react-use-measure": "^2.1.7",
     "recharts": "2.15.4",
-    "shadcn": "^3.8.5",
+    "shadcn": "^4.1.1",
     "shiki": "^4.0.2",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.1",
