@@ -1,2 +1,3 @@
 bun run lint
 bun run build
+bun registry:build
