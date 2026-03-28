@@ -294,7 +294,13 @@ function OngoingSupportCard() {
                     "conic-gradient(from 0deg, rgba(255,255,255,0.18) 0deg 90deg, transparent 60deg 360deg)",
                 }}
               />
-              <div className="absolute w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full bg-[#2f3e5a] border border-white/20 z-10" />
+              <div className="absolute w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full bg-[#2f3e5a] border border-white/20 z-10 flex justify-center items-center">
+                 <img
+                  src="https://assets.watermelon.sh/Headset.png"
+                  alt="Support Agent"
+                  className="w-6 h-6 md:w-10 md:h-10 opacity-90 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                />
+              </div>
             </div>
           </CardContent>
         </Card>

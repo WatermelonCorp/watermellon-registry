@@ -50,7 +50,7 @@ const Bento4 = () => {
           </Card>
 
           {/* Card 2 */}
-          <Card className="hidden xl:block sm:col-span-2 xl:[grid-column:2/4] xl:[grid-row:1/3] bg-transparent border-0 ring-0 shadow-none p-0 gap-0">
+          <Card className="hidden xl:block sm:col-span-2 xl:[grid-column:2/4] xl:[grid-row:1/3] bg-transparent border-0 ring-0 shadow-none p-0 gap-0 relative">
             <div className="w-full max-w-[590px] mx-auto aspect-[556/396] relative">
               <CardHeader className="absolute inset-0 flex flex-col gap-3 sm:gap-4 items-center mt-8 sm:mt-12 px-4">
                 <div className="flex items-center justify-center gap-1">
@@ -64,6 +64,12 @@ const Bento4 = () => {
               <MainCurvedCard />
             </div>
           </Card>
+
+           <img 
+            src="https://assets.watermelon.sh/fireball.png"
+            alt="Decorative"
+            className="hidden xl:block absolute top-[38.5%] left-[50%] -translate-x-1/2 w-[320px] pointer-events-none"
+          />
 
           {/* Card 3 */}
           <Card
@@ -113,16 +119,28 @@ const Bento4 = () => {
               <CardTitle className="text-[52px] sm:text-[70px] font-bold tracking-tight leading-none text-transparent bg-clip-text bg-linear-to-r from-[#FFB266] via-[#E9766F] to-[#C04350]">
                 21K
               </CardTitle>
-              <CardDescription className="text-md font-thin text-[#CF7A58]/80">
+              <CardDescription className="text-md font-thin text-[#CF7A58]/80 text-center">
                 satisfied users
               </CardDescription>
             </CardHeader>
             <CardContent className="flex items-center justify-center px-0">
-              <div className="size-12 sm:size-16 bg-[#EB642E]/80 rounded-full border-3 border-[#352B28]"></div>
-              <div className="size-12 sm:size-16 bg-white rounded-full border-3 border-[#352B28] -ml-3 sm:-ml-4 flex items-center justify-center">
+              <div className="size-12 sm:size-16 bg-[#EB642E]/80 rounded-full border-3 border-[#352B28] relative overflow-hidden z-10">
+                <img
+                  src="https://assets.watermelon.sh/profile-1.png"
+                  alt="Profile-1"
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="size-12 sm:size-16 bg-white rounded-full border-3 border-[#352B28] -ml-3 sm:-ml-4 flex items-center justify-center relative z-20">
                 <Star className="mt-2 sm:mt-3" />
               </div>
-              <div className="size-12 sm:size-16 bg-[#E58C5D] rounded-full border-3 border-[#352B28] -ml-3 sm:-ml-4"></div>
+              <div className="size-12 sm:size-16 bg-[#E58C5D] rounded-full border-3 border-[#352B28] -ml-3 sm:-ml-4 relative z-30 overflow-hidden">
+                <img
+                  src="https://assets.watermelon.sh/profile-2.png"
+                  alt="Profile-2"
+                  className="w-full h-full"
+                />
+              </div>
             </CardContent>
           </Card>
 

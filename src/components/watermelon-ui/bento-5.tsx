@@ -38,6 +38,11 @@ const Bento5 = () => {
             </CardContent>
             <div className="w-90 h-10 rounded-full bg-[#1779BF]/50 blur-2xl absolute left-1/2 -translate-x-1/2 top-40" />
             <div className="w-90 h-10 rounded-full bg-[#1779BF] blur-2xl absolute left-1/2 -translate-x-1/2 top-40" />
+            <img 
+              src="https://assets.watermelon.sh/Globe.svg"
+              alt="Support Agent"
+              className="size-80 opacity-90 absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 z-20"
+            />
             <CardFooter className="w-full mt-auto p-8 relative z-20 items-start flex-col px-8 bg-transparent border-none">
               <CardTitle className="text-xl font-bold text-white">
                 Connect with Global Experts

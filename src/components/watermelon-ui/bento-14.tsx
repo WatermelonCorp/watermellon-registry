@@ -90,7 +90,9 @@ function MarqueeCard() {
         </div>
       </CardContent>
       <CardFooter className="z-10 relative p-6 flex-col bg-transparent border-none">
-        <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">Tailored Precision</CardTitle>
+        <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">
+          Tailored Precision
+        </CardTitle>
         <CardDescription className="text-md leading-relaxed text-neutral-400 max-w-[90%]">
           Chime offers tailored precision and intelligent insights, adeptly
           managing diverse sophisticated contextual understanding.
@@ -108,7 +110,7 @@ function UploadCard() {
     },
     hover: {
       x: 0,
-      y: -25,
+      y: 0,
       transition: {
         duration: 0.7,
         ease: "easeInOut" as const,
@@ -123,56 +125,62 @@ function UploadCard() {
       animate="rest"
       className="md:col-span-5"
     >
-      <Card
-        className="bg-neutral-900 rounded-md flex flex-col justify-between border border-white/5 relative overflow-hidden h-[340px] p-0 gap-0 ring-0 shadow-none"
-      >
-      <CardContent className="flex-1 relative flex items-center justify-center w-full h-full p-0">
-        <div className="flex justify-center items-center w-full h-full overflow-hidden relative pt-8 z-0 [mask-image:linear-gradient(to_bottom,black,transparent)]">
-          <div className="absolute bg-white/10 size-80 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl" />
+      <Card className="bg-neutral-900 rounded-md flex flex-col justify-between border border-white/5 relative overflow-hidden h-[340px] p-0 gap-0 ring-0 shadow-none">
+        <CardContent className="flex-1 relative flex items-center justify-center w-full h-full p-0">
+          <div className="flex justify-center items-center w-full h-full overflow-hidden relative pt-8 z-0 [mask-image:linear-gradient(to_bottom,black,transparent)]">
+            <div className="absolute bg-white/10 size-80 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl" />
 
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage:
-                "linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-              maskImage: "linear-gradient(to bottom, black, transparent)",
-            }}
-          />
+            <div
+              className="absolute inset-0 opacity-40"
+              style={{
+                backgroundImage:
+                  "linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)",
+                backgroundSize: "40px 40px",
+                maskImage: "linear-gradient(to bottom, black, transparent)",
+              }}
+            />
 
-          <div className="w-[250px] z-10 h-full shadow-3xl bg-neutral-600 flex items-center justify-center pt-3 px-3 rounded-t-[40px]">
-            <div className="bg-neutral-500 flex-1 h-full shadow-3xl pt-3 px-3 rounded-t-[28px]">
-              <div className="bg-neutral-900 flex-1 h-full rounded-t-[16px]" />
+            <div className="w-[250px] z-10 h-full shadow-3xl bg-neutral-600 flex items-center justify-center pt-3 px-3 rounded-t-[40px]">
+              <div className="bg-neutral-500 flex-1 h-full shadow-3xl pt-3 px-3 rounded-t-[28px]">
+                <div className="bg-neutral-900 flex-1 h-full rounded-t-[16px]" />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20">
-          <span className="text-md text-neutral-500 tracking-wide">
-            Add your file
-          </span>
+            <img 
+              src="https://assets.watermelon.sh/Download%20From%20Cloud.svg"
+              alt="Upload Icon"
+              className="w-12 h-12 mb-2 opacity-80 absolute left-1/2 top-38 -translate-x-1/2 z-10 pointer-events-none"
+            />     
 
-          <motion.div
-            variants={dragVariants}
-            transition={{
-              duration: 0.45,
-              ease: [0.65, 0, 0.35, 1],
-            }}
-            className="absolute flex items-center"
-          >
-            <div className="relative flex items-center bg-blue-600 text-white text-md px-3 py-1 rounded-full shadow-lg shadow-blue-600/20 cursor-grabbing ">
-              my_file.mp3
-            </div>
-          </motion.div>
-        </div>
-      </CardContent>
-      <CardFooter className="text-md text-neutral-400 leading-relaxed p-6 w-full flex-col items-start bg-transparent border-none">
-        <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">Add Your File</CardTitle>
-        <CardDescription className="text-left w-full text-xs">
-          Powerful capabilities, simplified. Our advanced features are integrated
-          with remarkably easy and seamless to master.
-        </CardDescription>
-      </CardFooter>
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20">
+            <span className="text-md text-neutral-500 tracking-wide">
+              Add your file
+            </span>
+
+            <motion.div
+              variants={dragVariants}
+              transition={{
+                duration: 0.45,
+                ease: [0.65, 0, 0.35, 1],
+              }}
+              className="absolute flex items-center"
+            >
+              <div className="relative flex items-center bg-blue-600 text-white text-md px-3 py-1 rounded-full shadow-lg shadow-blue-600/20 cursor-grabbing ">
+                my_file.mp3
+              </div>
+            </motion.div>
+          </div>
+        </CardContent>
+        <CardFooter className="text-md text-neutral-400 leading-relaxed p-6 w-full flex-col items-start bg-transparent border-none">
+          <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">
+            Add Your File
+          </CardTitle>
+          <CardDescription className="text-left w-full text-xs">
+            Powerful capabilities, simplified. Our advanced features are
+            integrated with remarkably easy and seamless to master.
+          </CardDescription>
+        </CardFooter>
       </Card>
     </motion.div>
   );
@@ -295,7 +303,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       className={cn(
         "pointer-events-none absolute top-0 left-0 transform-gpu stroke-2",
-        className
+        className,
       )}
       viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
     >
@@ -376,20 +384,26 @@ function Card2() {
             className="relative w-16 h-16 flex items-center justify-center z-20"
           >
             <motion.div
-              animate={{ 
+              animate={{
                 scale: [1, 1.5, 2],
-                opacity: [0.5, 0.2, 0]
+                opacity: [0.5, 0.2, 0],
               }}
               transition={{
                 duration: 2,
                 repeat: Infinity,
-                ease: "easeOut"
+                ease: "easeOut",
               }}
               className="absolute w-16 h-16 rounded-full border border-white/50"
             />
 
             <div className="w-16 h-16 bg-[#333] rounded-full flex items-center justify-center border border-white/10">
-              <div className="w-10 h-10 bg-[#444] rounded-full" />
+              <div className="w-10 h-10 bg-[#444] rounded-full flex items-center justify-center">
+                <img
+                  src="https://assets.watermelon.sh/Music.png"
+                  alt="Audio Waveform"
+                  className="w-6 h-6 opacity-80"
+                />
+              </div>
             </div>
           </div>
 
@@ -425,7 +439,9 @@ function Card2() {
       </CardContent>
 
       <CardFooter className="text-md text-neutral-400 leading-relaxed p-6 flex-col items-start bg-transparent border-none">
-        <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">Connected Hub</CardTitle>
+        <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">
+          Connected Hub
+        </CardTitle>
         <CardDescription className="text-left w-full text-xs">
           A dedicated platform engineered to empower your creative vision, and
           global distribution.
@@ -688,7 +704,9 @@ function PlayerCard() {
       </CardContent>
 
       <CardFooter className="relative text-md leading-relaxed text-neutral-400 max-w-xl p-6 flex-col bg-transparent border-none">
-        <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">Break Free</CardTitle>
+        <CardTitle className="text-neutral-100 text-sm font-semibold mb-2">
+          Break Free
+        </CardTitle>
         <CardDescription className="text-xs">
           Seize full command over your music's journey
         </CardDescription>

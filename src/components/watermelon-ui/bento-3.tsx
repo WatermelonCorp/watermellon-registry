@@ -80,12 +80,12 @@ const Bento3 = () => {
   const [card5CheckedCount, setCard5CheckedCount] = React.useState(0);
 
   const card2Cards = [
-    { id: "think", label: "Think" },
-    { id: "analyze", label: "Analyze" },
-    { id: "record", label: "Record" },
-    { id: "status", label: "Status" },
-    { id: "write", label: "Write" },
-    { id: "host", label: "Host" },
+    { id: "think", label: "Think", img: "https://assets.watermelon.sh/Cube.svg" },
+    { id: "analyze", label: "Analyze", img: "https://assets.watermelon.sh/Compose.svg" },
+    { id: "record", label: "Record", img: "https://assets.watermelon.sh/Closed%20Treasure%20Chest.svg" },
+    { id: "status", label: "Status", img:"https://assets.watermelon.sh/Cube.svg" },
+    { id: "write", label: "Write", img: "https://assets.watermelon.sh/Edit%20Chat%20History.svg" },
+    { id: "host", label: "Host", img: "https://assets.watermelon.sh/Cloud%20Storage.svg" },
   ] as const;
 
   const card2SwapOrder = ["think", "analyze", "write", "host", "status"] as const;
@@ -228,7 +228,7 @@ const Bento3 = () => {
                 return (
                   <motion.div
                     key={card.id}
-                    className="size-25 border border-[#262626] flex items-end justify-center p-2 rounded-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 will-change-transform"
+                    className="size-25 border border-[#262626] flex flex-col gap-2 items-center justify-center p-2 rounded-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 will-change-transform"
                     animate={{
                       x: slot.x,
                       y: slot.y,
@@ -243,6 +243,11 @@ const Bento3 = () => {
                       mass: 0.8,
                     }}
                   >
+                    <img
+                      src={card.img}
+                      alt={`${card.label} Icon`}
+                      className="size-7 mb-1 opacity-80"
+                    />
                     <span className="text-[13px] text-white/60 font-medium whitespace-nowrap">
                       {card.label}
                     </span>
