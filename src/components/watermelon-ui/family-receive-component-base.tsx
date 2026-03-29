@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   motion,
   AnimatePresence,
   LayoutGroup,
   type Transition,
-} from "motion/react";
-import { X, Fingerprint } from "lucide-react";
+} from 'motion/react';
+import { X, Fingerprint } from 'lucide-react';
 
 export interface FamilyReceiveComponentProps {
   triggerLabel?: string;
@@ -20,24 +20,24 @@ export interface FamilyReceiveComponentProps {
 }
 
 const springTransition: Transition = {
-  type: "spring",
+  type: 'spring',
   bounce: 0,
   duration: 0.4,
 };
 
 export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
-  triggerLabel = "Receive",
-  title = "Confirm",
-  description = "Are you sure you want to receive hell load of money?",
-  confirmLabel = "Receive",
-  cancelLabel = "Cancel",
+  triggerLabel = 'Receive',
+  title = 'Confirm',
+  description = 'Are you sure you want to receive hell load of money?',
+  confirmLabel = 'Receive',
+  cancelLabel = 'Cancel',
   onConfirm,
   icon,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="theme-injected relative h-[400px] w-full overflow-hidden">
+    <div className="theme-injected relative flex h-[400px] w-[320px] max-w-full items-center justify-center md:w-[520px]">
       <LayoutGroup>
         <AnimatePresence>
           {!isOpen && (
@@ -45,7 +45,7 @@ export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
               key="trigger"
               layoutId="action-button"
               onClick={() => setIsOpen(true)}
-              className="bg-primary text-primary-foreground absolute bottom-0 left-1/2 h-14 w-96 max-w-full -translate-x-1/2 cursor-pointer  text-xl rounded-lg font-medium"
+              className="bg-primary text-primary-foreground relative h-12 w-64 cursor-pointer rounded-lg text-lg font-medium shadow-lg md:h-14 md:w-96 md:text-xl"
               whileTap={{ scale: 0.95 }}
               transition={springTransition}
             >
@@ -61,14 +61,14 @@ export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 z-50 flex items-end justify-center px-4 backdrop-blur-sm"
+              className="absolute inset-0 z-10 flex items-center justify-center px-4 backdrop-blur-sm"
             >
               <motion.div
                 initial={{ y: 100, opacity: 0, scale: 0.98 }}
                 animate={{ y: 0, opacity: 1, scale: 1 }}
                 exit={{ y: 100, opacity: 0, scale: 0.98 }}
                 transition={springTransition}
-                className="border-border bg-card text-card-foreground relative w-[520px] max-w-full overflow-hidden rounded-sm border p-6 "
+                className="border-border bg-card text-card-foreground relative w-[280px] max-w-full overflow-hidden rounded-sm border p-5 md:w-[520px] md:p-6"
               >
                 <button
                   onClick={() => setIsOpen(false)}
@@ -78,22 +78,22 @@ export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
                 </button>
 
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="bg-primary/10 text-primary rounded-sm flex h-10 w-10 items-center justify-center">
+                  <div className="bg-primary/10 text-primary flex h-8 w-8 items-center justify-center rounded-sm md:h-10 md:w-10">
                     {icon ?? <Fingerprint size={28} />}
                   </div>
-                  <h2 className="text-card-foreground text-2xl font-semibold">
+                  <h2 className="text-card-foreground text-xl font-semibold md:text-2xl">
                     {title}
                   </h2>
                 </div>
 
-                <p className="text-muted-foreground my-6 max-w-xs text-xl font-semibold">
+                <p className="text-muted-foreground my-4 max-w-xs text-lg font-semibold md:my-6 md:text-xl">
                   {description}
                 </p>
 
                 <div className="flex gap-3">
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="bg-muted text-muted-foreground hover:bg-muted/90 h-13 flex-1 text-lg rounded-lg font-medium"
+                    className="bg-muted text-muted-foreground hover:bg-muted/90 h-11 flex-1 rounded-lg text-base font-medium md:h-13 md:text-lg"
                   >
                     {cancelLabel}
                   </button>
@@ -104,7 +104,7 @@ export const FamilyReceiveComponent: React.FC<FamilyReceiveComponentProps> = ({
                       onConfirm?.();
                       setIsOpen(false);
                     }}
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 h-13 flex-1 cursor-pointer rounded-lg  text-lg font-medium"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 flex-1 cursor-pointer rounded-lg text-base font-medium md:h-13 md:text-lg"
                     transition={springTransition}
                   >
                     {confirmLabel}
