@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-27",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-27.tsx",
+      "content": "\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { FaCheckCircle } from \"react-icons/fa\";\r\n\r\nconst Alert27 = () => {\r\n  return (\r\n    <Alert className=\"border-none bg-green-600 text-white dark:bg-green-400\">\r\n      <FaCheckCircle className=\"size-4\" />\r\n      <AlertTitle>Preferences saved</AlertTitle>\r\n      <AlertDescription className=\"text-white/80\">\r\n        Your settings have been updated and applied successfully.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert27;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-27.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

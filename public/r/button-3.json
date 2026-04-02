@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-3",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-3.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst Button3 = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <Button variant=\"secondary\">Discard</Button>\r\n      <Button>Save</Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Button3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

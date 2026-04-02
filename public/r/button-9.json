@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-9",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-9.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button9 = () => {\r\n  return (\r\n    <Button disabled className=\"inline-flex items-center gap-0.5 \">\r\n      <span >Loading</span>\r\n\r\n      <span className=\"flex gap-[2px] translate-y-[4px]\">\r\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:-0.2s]\" />\r\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:-0.1s]\" />\r\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:0s]\" />\r\n      </span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button9;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

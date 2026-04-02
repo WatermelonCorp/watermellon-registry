@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-13",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-13.tsx",
+      "content": "import { IoCopy } from \"react-icons/io5\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button13 = () => {\r\n  return (\r\n    <Button className=\"border-blue-600 text-blue-600!  focus-visible:border-blue-600 focus-visible:ring-blue-600/20 dark:border-blue-400 dark:text-blue-400!  dark:focus-visible:border-blue-400 dark:focus-visible:ring-blue-400/40 bg-blue-600/10 dark:bg-blue-400/10 hover:bg-blue-600/20 dark:hover:bg-blue-400/20\">\r\n      <IoCopy />\r\n      Copy\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button13;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

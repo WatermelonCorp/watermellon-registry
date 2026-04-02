@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-5",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-5.tsx",
+      "content": "import { TbFileAlert } from \"react-icons/tb\";\r\n\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nconst Alert5 = () => {\r\n  return (\r\n    <Alert className=\"flex items-stretch p-0 rounded-none \">\r\n      <div className=\"bg-destructive/20 text-destructive rounded-none flex items-center  border-r p-2  border border-destructive/20 \">\r\n        <TbFileAlert className=\"size-4\" />\r\n      </div>\r\n      <AlertTitle className=\"p-3\">This file may harm your system!</AlertTitle>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

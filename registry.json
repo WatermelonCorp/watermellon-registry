@@ -6050,6 +6050,1075 @@
       "registryDependencies": ["accordion"]
     },
     {
+      "name": "alert-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-1.tsx",
+          "target": "components/ui/alert-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-2.tsx",
+          "target": "components/ui/alert-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-3.tsx",
+          "target": "components/ui/alert-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-4.tsx",
+          "target": "components/ui/alert-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-5.tsx",
+          "target": "components/ui/alert-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-6.tsx",
+          "target": "components/ui/alert-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-7.tsx",
+          "target": "components/ui/alert-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-8.tsx",
+          "target": "components/ui/alert-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-9.tsx",
+          "target": "components/ui/alert-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-10.tsx",
+          "target": "components/ui/alert-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-11",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-11.tsx",
+          "target": "components/ui/alert-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-12",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-12.tsx",
+          "target": "components/ui/alert-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-13",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-13.tsx",
+          "target": "components/ui/alert-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-14",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-14.tsx",
+          "target": "components/ui/alert-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-15",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-15.tsx",
+          "target": "components/ui/alert-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-16",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-16.tsx",
+          "target": "components/ui/alert-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-17",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-17.tsx",
+          "target": "components/ui/alert-17.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-18",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-18.tsx",
+          "target": "components/ui/alert-18.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-19",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-19.tsx",
+          "target": "components/ui/alert-19.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-20",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-20.tsx",
+          "target": "components/ui/alert-20.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-21",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-21.tsx",
+          "target": "components/ui/alert-21.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-22",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-22.tsx",
+          "target": "components/ui/alert-22.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-23",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-23.tsx",
+          "target": "components/ui/alert-23.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-24",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-24.tsx",
+          "target": "components/ui/alert-24.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-25",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-25.tsx",
+          "target": "components/ui/alert-25.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-26",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-26.tsx",
+          "target": "components/ui/alert-26.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-27",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-27.tsx",
+          "target": "components/ui/alert-27.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-28",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-28.tsx",
+          "target": "components/ui/alert-28.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-29",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-29.tsx",
+          "target": "components/ui/alert-29.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+    {
+      "name": "alert-30",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/alerts/alert-30.tsx",
+          "target": "components/ui/alert-30.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert"]
+    },
+
+    {
+      "name": "badge-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-1.tsx",
+          "target": "components/ui/badge-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-2.tsx",
+          "target": "components/ui/badge-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-3.tsx",
+          "target": "components/ui/badge-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-4.tsx",
+          "target": "components/ui/badge-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-5.tsx",
+          "target": "components/ui/badge-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-6.tsx",
+          "target": "components/ui/badge-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-7.tsx",
+          "target": "components/ui/badge-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-8.tsx",
+          "target": "components/ui/badge-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-9.tsx",
+          "target": "components/ui/badge-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-10.tsx",
+          "target": "components/ui/badge-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-11",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-11.tsx",
+          "target": "components/ui/badge-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-12",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-12.tsx",
+          "target": "components/ui/badge-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-13",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-13.tsx",
+          "target": "components/ui/badge-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-14",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-14.tsx",
+          "target": "components/ui/badge-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-15",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-15.tsx",
+          "target": "components/ui/badge-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-16",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-16.tsx",
+          "target": "components/ui/badge-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-17",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-17.tsx",
+          "target": "components/ui/badge-17.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-18",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-18.tsx",
+          "target": "components/ui/badge-18.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-19",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-19.tsx",
+          "target": "components/ui/badge-19.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-20",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-20.tsx",
+          "target": "components/ui/badge-20.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-21",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-21.tsx",
+          "target": "components/ui/badge-21.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+    {
+      "name": "badge-22",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/badge/badge-22.tsx",
+          "target": "components/ui/badge-22.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge"]
+    },
+
+    {
+      "name": "button-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-1.tsx",
+          "target": "components/ui/button-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-2.tsx",
+          "target": "components/ui/button-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-3.tsx",
+          "target": "components/ui/button-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-4.tsx",
+          "target": "components/ui/button-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-5.tsx",
+          "target": "components/ui/button-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-6.tsx",
+          "target": "components/ui/button-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-7.tsx",
+          "target": "components/ui/button-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-8.tsx",
+          "target": "components/ui/button-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-9.tsx",
+          "target": "components/ui/button-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-10.tsx",
+          "target": "components/ui/button-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-11",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-11.tsx",
+          "target": "components/ui/button-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-12",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-12.tsx",
+          "target": "components/ui/button-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-13",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-13.tsx",
+          "target": "components/ui/button-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-14",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-14.tsx",
+          "target": "components/ui/button-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-15",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-15.tsx",
+          "target": "components/ui/button-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-16",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-16.tsx",
+          "target": "components/ui/button-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-17",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-17.tsx",
+          "target": "components/ui/button-17.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-18",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-18.tsx",
+          "target": "components/ui/button-18.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-19",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-19.tsx",
+          "target": "components/ui/button-19.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-20",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-20.tsx",
+          "target": "components/ui/button-20.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-21",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-21.tsx",
+          "target": "components/ui/button-21.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-22",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-22.tsx",
+          "target": "components/ui/button-22.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-23",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-23.tsx",
+          "target": "components/ui/button-23.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-24",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-24.tsx",
+          "target": "components/ui/button-24.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-25",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-25.tsx",
+          "target": "components/ui/button-25.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-26",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-26.tsx",
+          "target": "components/ui/button-26.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-27",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-27.tsx",
+          "target": "components/ui/button-27.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-28",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-28.tsx",
+          "target": "components/ui/button-28.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-29",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-29.tsx",
+          "target": "components/ui/button-29.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-30",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-30.tsx",
+          "target": "components/ui/button-30.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+
+    {
       "name": "workflow-management-dashboard",
       "type": "registry:block",
       "dependencies": [

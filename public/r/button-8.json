@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-8",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-8.tsx",
+      "content": "\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button8 = () => {\r\n  return <Button className=\"h-6 px-2 py-0.5 text-xs\">Size Extra Small</Button>;\r\n};\r\n\r\nexport default Button8;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

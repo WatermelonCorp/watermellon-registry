@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-22",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-22.tsx",
+      "content": "import { FcGoogle } from \"react-icons/fc\";\r\nimport { FaXTwitter, FaGithub, FaFacebook } from \"react-icons/fa6\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button22 = () => {\r\n  return (\r\n    <div className=\"flex w-full max-w-56 flex-col justify-center gap-4\">\r\n      <Button\r\n        variant=\"outline\"\r\n        className=\"!border-red-500 !text-red-600 bg-red-600/5 flex items-center gap-2\"\r\n      >\r\n        <FcGoogle className=\"size-5\" />\r\n        <span className=\"flex flex-1 justify-center\">Continue with Google</span>\r\n      </Button>\r\n\r\n      <Button\r\n        variant=\"outline\"\r\n        className=\"border-black text-black bg-black/5 dark:border-white dark:text-white flex items-center gap-2\"\r\n      >\r\n        <FaXTwitter className=\"size-5\" />\r\n        <span className=\"flex flex-1 justify-center\">Continue with X</span>\r\n      </Button>\r\n\r\n      <Button\r\n        variant=\"outline\"\r\n        className=\"!border-blue-600 !text-blue-600 bg-blue-600/5 flex items-center gap-2\"\r\n      >\r\n        <FaFacebook className=\"size-5 text-[#0866fe]\" />\r\n        <span className=\"flex flex-1 justify-center\">\r\n          Continue with Facebook\r\n        </span>\r\n      </Button>\r\n\r\n      <Button\r\n        variant=\"outline\"\r\n        className=\"border-black text-black bg-black/5 dark:border-white dark:text-white flex items-center gap-2\"\r\n      >\r\n        <FaGithub className=\"size-5\" />\r\n        <span className=\"flex flex-1 justify-center\">Continue with GitHub</span>\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Button22;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-22.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

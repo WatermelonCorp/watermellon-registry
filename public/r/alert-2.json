@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-2",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-2.tsx",
+      "content": "import { MdError } from \"react-icons/md\";\r\n\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nconst Alert2 = () => {\r\n  return (\r\n    <Alert className=\"flex items-center justify-between\">\r\n      <Avatar className=\"rounded-full\">\r\n        <AvatarImage\r\n          src=\"https://github.com/shadcn.png\"\r\n          alt=\"Hallie Richards\"\r\n          className=\"rounded-full\"\r\n        />\r\n        <AvatarFallback className=\"text-xs\">VP</AvatarFallback>\r\n      </Avatar>\r\n      <div className=\"flex-1 flex-col justify-center gap-1 leading-tight\">\r\n        <AlertTitle className=\"flex-1\">\r\n          Vansh has replied on the mesasge.\r\n        </AlertTitle>\r\n        <AlertDescription>5 unread messages waiting for you.</AlertDescription>\r\n      </div>\r\n      <MdError />\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

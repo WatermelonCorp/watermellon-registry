@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-18",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/badge/badge-18.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { GoCheckCircleFill } from \"react-icons/go\";\r\n\r\nconst Badge18 = () => {\r\n  return (\r\n    <Badge\r\n      variant=\"outline\"\r\n      className=\"rounded-sm border-green-600 text-green-600 dark:border-green-400 dark:text-green-400 bg-green-600/10 dark:bg-green-400/10\"\r\n    >\r\n      <GoCheckCircleFill className=\"size-3\" />\r\n      Done\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge18;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/badge-18.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
