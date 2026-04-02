@@ -19,7 +19,7 @@ const Bento4 = () => {
     >
 
       {/* Bento Grid Container */}
-      <div className="w-full max-w-[1200px] mx-auto pt-16 md:pt-0 relative">
+      <div className="w-full max-w-[1200px] mx-auto md:pt-0 relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 [grid-auto-rows:minmax(140px,auto)] xl:[grid-template-rows:160px_230px_220px_160px] gap-4 sm:gap-5 lg:gap-6 xl:gap-7 relative">
           {/* Card 1 */}
           <Card
