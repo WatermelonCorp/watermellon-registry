@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-12",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button-group/button-group-12.tsx",
+      "content": "import type { LucideIcon } from 'lucide-react'\r\nimport { FolderKanbanIcon, SlidersHorizontalIcon, SparklesIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\n\r\ntype ActionButton = {\r\n  icon: LucideIcon\r\n  label: string\r\n}\r\n\r\nconst actions: readonly ActionButton[] = [\r\n  { icon: SlidersHorizontalIcon, label: 'Controls' },\r\n  { icon: FolderKanbanIcon, label: 'Projects' },\r\n  { icon: SparklesIcon, label: 'Insights' }\r\n] as const\r\n\r\nconst ButtonGroup12 = () => {\r\n  return (\r\n    <div className='inline-flex w-fit rounded-md bg-muted/20 p-1 rtl:space-x-reverse'>\r\n      {actions.map((action, index) => {\r\n        const Icon = action.icon\r\n        const isFirst = index === 0\r\n        const isLast = index === actions.length - 1\r\n\r\n        return (\r\n          <Button\r\n            key={action.label}\r\n            variant='ghost'\r\n            className={[\r\n              'gap-2 rounded-none px-3 text-muted-foreground hover:bg-background hover:text-foreground focus-visible:z-10',\r\n              isFirst ? 'rounded-l-md' : '',\r\n              isLast ? 'rounded-r-md' : ''\r\n            ].join(' ')}\r\n          >\r\n            <Icon className='size-4' />\r\n            {action.label}\r\n          </Button>\r\n        )\r\n      })}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default ButtonGroup12\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-group-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-4",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/card/card-4.tsx",
+      "content": "import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'\r\n\r\ntype MediaCard = {\r\n  description: string\r\n  imageAlt: string\r\n  imageSrc: string\r\n  title: string\r\n}\r\n\r\nconst mediaCard: MediaCard = {\r\n  description: 'A still-life composition with geometric forms and warm neutral tones for a quieter editorial feel.',\r\n  imageAlt: 'Wooden hand and geometric shapes on beige background',\r\n  imageSrc: 'https://unsplash.com/photos/-De5IOMxxPM/download?force=true&w=1200',\r\n  title: 'Still Life Study'\r\n}\r\n\r\nconst Card4 = () => {\r\n  return (\r\n    <Card className='max-w-md border-border/60 bg-muted/10 p-2 shadow-sm'>\r\n      <CardHeader className='space-y-1 px-4 pb-2 pt-3'>\r\n        <CardTitle className='text-lg'>{mediaCard.title}</CardTitle>\r\n        <CardDescription className='max-w-sm text-sm leading-6'>{mediaCard.description}</CardDescription>\r\n      </CardHeader>\r\n      <CardContent className='px-2 pb-2'>\r\n        <img src={mediaCard.imageSrc} alt={mediaCard.imageAlt} className='aspect-4/3 w-full rounded-xl object-cover' />\r\n      </CardContent>\r\n    </Card>\r\n  )\r\n}\r\n\r\nexport default Card4\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/card-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

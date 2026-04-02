@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-5",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/accordion/accordion-5.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from '@/components/ui/accordion'\r\n\r\nconst items = [\r\n  {\r\n    value: \"item-1\",\r\n    title: \"How secure is my data?\",\r\n    content:\r\n      \"We use industry-standard encryption and secure infrastructure to protect your data at every step. Your information is never shared without your consent.\",\r\n  },\r\n  {\r\n    value: \"item-2\",\r\n    title: \"How do transactions work?\",\r\n    content:\r\n      \"Transactions are processed instantly and reflected in your account in real time. You can view detailed history and insights anytime.\",\r\n  },\r\n  {\r\n    value: \"item-3\",\r\n    title: \"Can I manage everything in one place?\",\r\n    content:\r\n      \"Yes - track activity, manage settings, and control your account from a single, unified dashboard designed for clarity and speed.\",\r\n  },\r\n] as const\r\n\r\nconst Accordion5 = () => {\r\n  return (\r\n    <Accordion className='w-full' type=\"multiple\" defaultValue={[items[0].value]}>\r\n      {items.map((item) => (\r\n        <AccordionItem\r\n          key={item.value}\r\n          value={item.value}\r\n          className='has-[button[aria-expanded=true]]:border-blue-600 not-last:has-[button[aria-expanded=true]]:border-b-2 dark:has-[button[aria-expanded=true]]:border-blue-400'\r\n        >\r\n          <AccordionTrigger className='hover:no-underline aria-expanded:text-blue-600 dark:aria-expanded:text-blue-400 [&[aria-expanded=true]>svg]:text-blue-600 dark:[&[aria-expanded=true]>svg]:text-blue-400'>\r\n            {item.title}\r\n          </AccordionTrigger>\r\n          <AccordionContent className='text-muted-foreground'>\r\n            {item.content}\r\n          </AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  )\r\n}\r\n\r\nexport default Accordion5\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

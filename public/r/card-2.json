@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-2",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/card/card-2.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\nimport { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'\r\nimport { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'\r\n\r\ntype Collaborator = {\r\n  fallback: string\r\n  name: string\r\n  src: string\r\n}\r\n\r\ntype NoteCardContent = {\r\n  description: string\r\n  items: readonly string[]\r\n  summary: string\r\n  title: string\r\n}\r\n\r\nconst collaborators: readonly Collaborator[] = [\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=28',\r\n    fallback: 'MC',\r\n    name: 'Maya Chen'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=41',\r\n    fallback: 'NG',\r\n    name: 'Noah Grant'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=60',\r\n    fallback: 'AL',\r\n    name: 'Amara Lewis'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=66',\r\n    fallback: 'CP',\r\n    name: 'Clara Patel'\r\n  }\r\n] as const\r\n\r\nconst noteCard: NoteCardContent = {\r\n  description: 'Key points from the weekly planning review.',\r\n  items: [\r\n    'Finalize onboarding checklist before Friday.',\r\n    'Reduce the number of steps in the setup flow.',\r\n    'Prepare a lighter mobile navigation pattern.',\r\n    'Share updated mockups with the product team.',\r\n    'Review launch risks in the Monday standup.'\r\n  ],\r\n  summary: 'The team aligned on simplification, mobile polish, and a tighter launch checklist.',\r\n  title: 'Planning Recap'\r\n}\r\n\r\nconst Card2 = () => {\r\n  return (\r\n    <Card className='max-w-md border-border/70 shadow-sm'>\r\n      <CardHeader className='space-y-1'>\r\n        <CardTitle>{noteCard.title}</CardTitle>\r\n        <CardDescription>{noteCard.description}</CardDescription>\r\n      </CardHeader>\r\n      <CardContent className='space-y-4 text-sm'>\r\n        <p className='leading-6 text-muted-foreground'>{noteCard.summary}</p>\r\n        <ol className='flex list-decimal flex-col gap-2 pl-5 text-foreground'>\r\n          {noteCard.items.map((item) => (\r\n            <li key={item}>{item}</li>\r\n          ))}\r\n        </ol>\r\n      </CardContent>\r\n      <CardFooter className='flex items-center justify-between gap-4 border-t border-border/60 pt-5'>\r\n        <span className='text-sm text-muted-foreground'>Reviewed by the project team</span>\r\n        <TooltipProvider>\r\n          <div className='flex -space-x-2'>\r\n            {collaborators.map((collaborator) => (\r\n              <Tooltip key={collaborator.name}>\r\n                <TooltipTrigger>\r\n                  <Avatar className='ring-background ring-2 transition-all duration-300 ease-in-out'>\r\n                    <AvatarImage src={collaborator.src} alt={collaborator.name} />\r\n                    <AvatarFallback className='text-xs'>{collaborator.fallback}</AvatarFallback>\r\n                  </Avatar>\r\n                </TooltipTrigger>\r\n                <TooltipContent className='px-2 py-1 text-xs'>{collaborator.name}</TooltipContent>\r\n              </Tooltip>\r\n            ))}\r\n          </div>\r\n        </TooltipProvider>\r\n      </CardFooter>\r\n    </Card>\r\n  )\r\n}\r\n\r\nexport default Card2\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/card-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
