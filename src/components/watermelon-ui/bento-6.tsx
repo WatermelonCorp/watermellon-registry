@@ -1,81 +1,82 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+"use client";
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { GithubIcon } from 'lucide-react';
 
 const Bento6 = () => {
   return (
     <div
-      className="min-h-screen flex items-center justify-center bg-[#08080A] text-white p-6 md:p-10 lg:p-12 font-sans selection:bg-blue-500/30 overflow-x-hidden"
+      className="flex min-h-screen items-center justify-center overflow-x-hidden bg-[#08080A] p-6 font-sans text-white selection:bg-blue-500/30 md:p-10 lg:p-12"
       style={{ fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif' }}
     >
-
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <Card className="md:col-span-12 lg:col-span-7 bg-[#0F1117] border border-white/5 rounded-2xl md:lg:rounded-tl-[40px] overflow-hidden flex flex-col group transition-all duration-300 hover:border-white/10 shadow-2xl p-0 gap-0 ring-0 text-white h-full">
-            <CardContent className="flex-1 p-0 flex flex-col items-center justify-center relative md:max-h-[320px] w-full">
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
+          <Card className="group flex h-full flex-col gap-0 overflow-hidden rounded-2xl border border-white/5 bg-[#0F1117] p-0 text-white shadow-2xl ring-0 transition-all duration-300 hover:border-white/10 md:col-span-12 lg:col-span-7 md:lg:rounded-tl-[40px]">
+            <CardContent className="relative flex w-full flex-1 flex-col items-center justify-center p-0 md:max-h-[320px]">
               <Card1 />
             </CardContent>
 
-            <CardFooter className="p-6 pb-8 text-center relative z-10 bg-gradient-to-t from-[#0F1117] via-[#0F1117] to-transparent flex flex-col w-full bg-transparent border-none">
-              <h3 className="text-2xl font-bold mb-2">
+            <CardFooter className="relative z-10 flex w-full flex-col border-none bg-transparent bg-gradient-to-t from-[#0F1117] via-[#0F1117] to-transparent p-6 pt-12 pb-8 text-center sm:p-6 sm:pt-0">
+              <h3 className="mb-2 text-2xl font-bold">
                 Gorgeous out of the box
               </h3>
-              <p className="text-zinc-500 text-sm max-w-sm mx-auto">
+              <p className="mx-auto max-w-sm text-sm text-zinc-500">
                 Everything you need to start building fast.
               </p>
             </CardFooter>
           </Card>
 
           {/* Card 2: Developer forward */}
-          <Card className="md:col-span-12 lg:col-span-5 bg-[#0F1117] border border-white/5 rounded-2xl md:lg:rounded-tr-[40px] overflow-hidden flex flex-col group transition-all duration-300 hover:border-white/10 shadow-2xl p-0 gap-0 ring-0 text-white h-full">
-            <CardContent className="flex-1 p-0 flex flex-col items-center justify-center relative min-h-[300px] md:min-h-[320px] w-full">
+          <Card className="group flex h-full flex-col gap-0 overflow-hidden rounded-2xl border border-white/5 bg-[#0F1117] p-0 text-white shadow-2xl ring-0 transition-all duration-300 hover:border-white/10 md:col-span-12 lg:col-span-5 md:lg:rounded-tr-[40px]">
+            <CardContent className="relative flex min-h-[300px] w-full flex-1 flex-col items-center justify-center p-0 md:min-h-[320px]">
               <Card2 />
             </CardContent>
 
-            <CardFooter className="p-6 pb-8 text-center relative z-10 bg-gradient-to-t from-[#0F1117] via-[#0F1117] to-transparent flex flex-col w-full border-none">
-              <h3 className="text-2xl font-bold mb-2">Developer forward</h3>
-              <p className="text-zinc-500 text-sm max-w-sm mx-auto">
+            <CardFooter className="relative z-10 flex w-full flex-col border-none bg-gradient-to-t from-[#0F1117] via-[#0F1117] to-transparent p-6 pb-8 text-center">
+              <h3 className="mb-2 text-2xl font-bold">Developer forward</h3>
+              <p className="mx-auto max-w-sm text-sm text-zinc-500">
                 Built for developers with clean and flexible tools.
               </p>
             </CardFooter>
           </Card>
 
           {/* Card 3: Build for performance */}
-          <Card className="md:col-span-6 lg:col-span-4 bg-[#0F1117] border border-white/5 rounded-2xl md:lg:rounded-bl-[40px] overflow-hidden flex flex-col group transition-all duration-300 hover:border-white/10 shadow-xl p-0 gap-0 ring-0 text-white h-full">
-            <CardContent className="flex-1 flex flex-col items-center justify-center py-6 min-h-[240px] md:min-h-[280px] w-full">
+          <Card className="group flex h-full flex-col gap-0 overflow-hidden rounded-2xl border border-white/5 bg-[#0F1117] p-0 text-white shadow-xl ring-0 transition-all duration-300 hover:border-white/10 md:col-span-6 lg:col-span-4 md:lg:rounded-bl-[40px]">
+            <CardContent className="flex min-h-[240px] w-full flex-1 flex-col items-center justify-center py-6 md:min-h-[280px]">
               <Card3 />
             </CardContent>
-            <CardFooter className="p-6 pb-8 text-center mt-auto flex flex-col w-full bg-transparent border-none">
-              <h3 className="text-xl font-bold mb-2">Build for performance</h3>
-              <p className="text-zinc-500 text-sm max-w-[200px] mx-auto">
+            <CardFooter className="mt-auto flex w-full flex-col border-none bg-transparent p-6 pb-8 text-center">
+              <h3 className="mb-2 text-xl font-bold">Build for performance</h3>
+              <p className="mx-auto max-w-[200px] text-sm text-zinc-500">
                 Fast, efficient, and optimized for scale and reliability.
               </p>
             </CardFooter>
           </Card>
 
           {/* Card 4: Conversion as a priority */}
-          <Card className="md:col-span-6 lg:col-span-4 bg-[#0F1117] border border-white/5 rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:border-white/10 shadow-xl p-0 gap-0 ring-0 text-white h-full">
-            <CardContent className="flex-1 p-0 flex flex-col items-center justify-center relative min-h-[240px] md:min-h-[280px] w-full">
+          <Card className="group flex h-full flex-col gap-0 overflow-hidden rounded-2xl border border-white/5 bg-[#0F1117] p-0 text-white shadow-xl ring-0 transition-all duration-300 hover:border-white/10 md:col-span-6 lg:col-span-4">
+            <CardContent className="relative flex min-h-[240px] w-full flex-1 flex-col items-center justify-center p-0 md:min-h-[280px]">
               <Card4 />
             </CardContent>
-            <CardFooter className="p-6 pb-8 text-center mt-auto flex flex-col w-full bg-transparent border-none">
-              <h3 className="text-xl font-bold mb-2">
+            <CardFooter className="mt-auto flex w-full flex-col border-none bg-transparent p-6 pb-8 text-center">
+              <h3 className="mb-2 text-xl font-bold">
                 Conversion as a priority
               </h3>
-              <p className="text-zinc-500 text-sm max-w-[200px] mx-auto">
+              <p className="mx-auto max-w-[200px] text-sm text-zinc-500">
                 Designed to turn visitors into loyal customers.
               </p>
             </CardFooter>
           </Card>
 
           {/* Card 5: Effortless funding */}
-          <Card className="md:col-span-12 lg:col-span-4 bg-[#0F1117] border border-white/5 rounded-2xl md:lg:rounded-br-[40px] overflow-hidden flex flex-col group transition-all duration-300 hover:border-white/10 shadow-xl p-0 gap-0 ring-0 text-white h-full">
-            <CardContent className="flex-1 p-8 py-6 flex flex-col items-center justify-center relative min-h-[240px] md:min-h-[280px] w-full">
+          <Card className="group flex h-full flex-col gap-0 overflow-hidden rounded-2xl border border-white/5 bg-[#0F1117] p-0 text-white shadow-xl ring-0 transition-all duration-300 hover:border-white/10 md:col-span-12 lg:col-span-4 md:lg:rounded-br-[40px]">
+            <CardContent className="relative flex min-h-[240px] w-full flex-1 flex-col items-center justify-center p-8 py-6 md:min-h-[280px]">
               <Card5 />
             </CardContent>
-            <CardFooter className="p-6 pb-8 text-center flex flex-col w-full bg-transparent border-none">
-              <h3 className="text-xl font-bold mb-2">Effortless funding</h3>
-              <p className="text-zinc-500 text-sm max-w-[260px] mx-auto">
+            <CardFooter className="flex w-full flex-col border-none bg-transparent p-6 pb-8 text-center">
+              <h3 className="mb-2 text-xl font-bold">Effortless funding</h3>
+              <p className="mx-auto max-w-[260px] text-sm text-zinc-500">
                 Simple payments and subscription management for your business.
               </p>
             </CardFooter>
@@ -84,9 +85,9 @@ const Bento6 = () => {
       </div>
 
       {/* Background Subtle Effects */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-blue-600/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[20%] right-[10%] w-[350px] h-[350px] bg-blue-600/5 blur-[120px] rounded-full" />
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[20%] left-[10%] h-[400px] w-[400px] rounded-full bg-blue-600/5 blur-[120px]" />
+        <div className="absolute right-[10%] bottom-[20%] h-[350px] w-[350px] rounded-full bg-blue-600/5 blur-[120px]" />
       </div>
     </div>
   );
@@ -95,24 +96,24 @@ const Bento6 = () => {
 export default Bento6;
 
 const Card1 = () => {
-  const [activeTab, setActiveTab] = useState<"doc" | "api">("doc");
+  const [activeTab, setActiveTab] = useState<'doc' | 'api'>('doc');
 
   return (
     <div
-      className="w-[92%] md:w-[85%] h-full mask-b-from-90% bg-[#0E1419] border-x border-t border-[#A09B9B]/20 rounded-tl-xl rounded-tr-xl overflow-hidden transform translate-y-6"
-      onMouseEnter={() => setActiveTab("api")}
-      onMouseLeave={() => setActiveTab("doc")}
+      className="h-full w-[92%] translate-y-6 transform overflow-hidden rounded-tl-xl rounded-tr-xl border-x border-t border-[#A09B9B]/20 bg-[#0E1419] mask-b-from-90% md:w-[85%]"
+      onMouseEnter={() => setActiveTab('api')}
+      onMouseLeave={() => setActiveTab('doc')}
     >
-      <div className="w-full h-10 border-b border-[#A09B9B]/20 flex items-center justify-start gap-2 pl-4">
+      <div className="flex h-10 w-full items-center justify-start gap-2 border-b border-[#A09B9B]/20 pl-4">
         <span className="size-2 rounded-full bg-[#A09B9B]/20" />
         <span className="size-2 rounded-full bg-[#A09B9B]/20" />
         <span className="size-2 rounded-full bg-[#A09B9B]/20" />
       </div>
 
-      <div className="w-full h-12 border-b border-[#A09B9B]/20 flex items-center justify-between gap-2 px-4 md:px-6">
-        <div className="flex items-center gap-2 justify-center shrink-0">
-          <Icon className="size-6 md:size-8 text-[#155EEF]" />
-          <p className="text-base md:text-xl font-semibold text-[#1145AA]">
+      <div className="flex h-12 w-full items-center justify-between gap-2 border-b border-[#A09B9B]/20 px-4 md:px-6">
+        <div className="flex shrink-0 items-center justify-center gap-2">
+          <Icon className="size-6 text-[#155EEF] md:size-8" />
+          <p className="text-base font-semibold text-[#1145AA] md:text-xl">
             Starter Kit
           </p>
         </div>
@@ -120,81 +121,81 @@ const Card1 = () => {
         <input
           type="text"
           placeholder="Search"
-          className="outline-none border border-[#A09B9B]/20 bg-transparent rounded-lg py-1 px-3 text-[10px] w-24 sm:w-40 md:w-56 transition-all focus:border-[#155EEF]/50"
+          className="w-24 rounded-lg border border-[#A09B9B]/20 bg-transparent px-3 py-1 text-[10px] transition-all outline-none focus:border-[#155EEF]/50 sm:w-40 md:w-56"
         />
       </div>
 
-      <div className="flex items-center gap-2 md:gap-5 px-4 md:px-6 py-2">
+      <div className="flex items-center gap-2 px-4 py-2 md:gap-5 md:px-6">
         <button
-          onClick={() => setActiveTab("doc")}
-          className={`text-xs md:text-sm font-semibold py-1 border-b-2 transition-all duration-300 ${
-            activeTab === "doc"
-              ? "text-white border-[#1145AA]"
-              : "text-[#838883] border-transparent hover:text-white/80"
+          onClick={() => setActiveTab('doc')}
+          className={`border-b-2 py-1 text-xs font-semibold transition-all duration-300 md:text-sm ${
+            activeTab === 'doc'
+              ? 'border-[#1145AA] text-white'
+              : 'border-transparent text-[#838883] hover:text-white/80'
           }`}
         >
           Documentation
         </button>
         <button
           // onClick removed for API Reference
-          className={`text-xs md:text-sm font-semibold py-1 border-b-2 transition-all duration-300 ${
-            activeTab === "api"
-              ? "text-white border-[#1145AA]"
-              : "text-[#838883] border-transparent hover:text-white/80"
+          className={`border-b-2 py-1 text-xs font-semibold transition-all duration-300 md:text-sm ${
+            activeTab === 'api'
+              ? 'border-[#1145AA] text-white'
+              : 'border-transparent text-[#838883] hover:text-white/80'
           }`}
         >
           API Reference
         </button>
       </div>
 
-      <div className="w-full px-4 md:px-6 pt-2  h-[150px] md:h-[180px] pb-4 flex flex-col">
+      <div className="flex h-[150px] w-full flex-col px-4 pt-2 pb-4 md:h-[180px] md:px-6">
         <AnimatePresence mode="wait">
-          {activeTab === "doc" ? (
+          {activeTab === 'doc' ? (
             <motion.div
               key="doc"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="flex flex-col sm:flex-row items-start justify-center gap-6 sm:gap-4"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="flex flex-col items-start justify-center gap-6 sm:flex-row sm:gap-4"
             >
-              <div className="w-full sm:w-1/2 flex flex-col items-start gap-3 text-[#838883]">
-                <div className="flex gap-2 items-center">
-                  <div className="p-0.5 rounded-md border-2 border-[#1145AA]">
+              <div className="flex w-full flex-col items-start gap-3 text-[#838883] sm:w-1/2">
+                <div className="flex items-center gap-2">
+                  <div className="rounded-md border-2 border-[#1145AA] p-0.5">
                     <Folder className="size-4 md:size-5" />
                   </div>
-                  <p className="text-xs md:text-sm font-semibold">
+                  <p className="text-xs font-semibold md:text-sm">
                     Getting Started
                   </p>
                 </div>
-                <div className="flex gap-2 items-center">
-                  <div className="p-0.5 rounded-md border-2 border-[#1145AA]">
-                    <API className="size-4 md:size-5 text-[#1145AA]" />
+                <div className="flex items-center gap-2">
+                  <div className="rounded-md border-2 border-[#1145AA] p-0.5">
+                    <API className="size-4 text-[#1145AA] md:size-5" />
                   </div>
-                  <p className="text-xs md:text-sm font-semibold">
+                  <p className="text-xs font-semibold md:text-sm">
                     API Reference
                   </p>
                 </div>
-                <div className="flex gap-2 items-center">
-                  <div className="p-0.5 rounded-md border-2 border-[#1145AA]">
-                    <Profile className="size-4 md:size-5 text-[#1145AA]" />
+                <div className="flex items-center gap-2">
+                  <div className="rounded-md border-2 border-[#1145AA] p-0.5">
+                    <Profile className="size-4 text-[#1145AA] md:size-5" />
                   </div>
-                  <p className="text-xs md:text-sm font-semibold">
+                  <p className="text-xs font-semibold md:text-sm">
                     User Guides
                   </p>
                 </div>
               </div>
 
-              <div className="w-full sm:w-1/2 flex flex-col items-start gap-2 md:gap-3">
+              <div className="flex w-full flex-col items-start gap-2 sm:w-1/2 md:gap-3">
                 <div className="flex flex-col gap-1 md:gap-2">
-                  <h3 className="text-[#1145AA]/80 font-bold text-[9px] md:text-[10px] uppercase tracking-wider">
+                  <h3 className="text-[9px] font-bold tracking-wider text-[#1145AA]/80 uppercase md:text-[10px]">
                     Get Started
                   </h3>
                   <div className="flex flex-col">
-                    <h1 className="text-white text-sm md:text-base font-semibold">
+                    <h1 className="text-sm font-semibold text-white md:text-base">
                       Introduction
                     </h1>
-                    <p className="text-[10px] md:text-xs text-[#838883] leading-tight">
+                    <p className="text-[10px] leading-tight text-[#838883] md:text-xs">
                       Gain control of your spending with intuitive tracking.
                     </p>
                   </div>
@@ -207,64 +208,64 @@ const Card1 = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="flex flex-col sm:flex-row items-start justify-center gap-6 sm:gap-4"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="flex flex-col items-start justify-center gap-6 sm:flex-row sm:gap-4"
             >
-              <div className="w-full sm:w-1/2 flex flex-col items-start gap-3 text-[#838883]">
-                <div className="flex gap-2 items-center">
-                  <div className="px-1 py-0.5 rounded bg-blue-500/10 text-blue-400 text-[9px] md:text-[10px] font-mono border border-blue-500/20">
+              <div className="flex w-full flex-col items-start gap-3 text-[#838883] sm:w-1/2">
+                <div className="flex items-center gap-2">
+                  <div className="rounded border border-blue-500/20 bg-blue-500/10 px-1 py-0.5 font-mono text-[9px] text-blue-400 md:text-[10px]">
                     GET
                   </div>
-                  <p className="text-[10px] md:text-xs font-mono">
+                  <p className="font-mono text-[10px] md:text-xs">
                     /v1/user/profile
                   </p>
                 </div>
-                <div className="flex gap-2 items-center">
-                  <div className="px-1 py-0.5 rounded bg-green-500/10 text-green-400 text-[9px] md:text-[10px] font-mono border border-blue-500/20">
+                <div className="flex items-center gap-2">
+                  <div className="rounded border border-blue-500/20 bg-green-500/10 px-1 py-0.5 font-mono text-[9px] text-green-400 md:text-[10px]">
                     POST
                   </div>
-                  <p className="text-[10px] md:text-xs font-mono">
+                  <p className="font-mono text-[10px] md:text-xs">
                     /v1/user/auth
                   </p>
                 </div>
-                <div className="flex gap-2 items-center">
-                  <div className="px-1 py-0.5 rounded bg-purple-500/10 text-purple-400 text-[9px] md:text-[10px] font-mono border border-blue-500/20">
+                <div className="flex items-center gap-2">
+                  <div className="rounded border border-blue-500/20 bg-purple-500/10 px-1 py-0.5 font-mono text-[9px] text-purple-400 md:text-[10px]">
                     PUT
                   </div>
-                  <p className="text-[10px] md:text-xs font-mono">
+                  <p className="font-mono text-[10px] md:text-xs">
                     /v1/user/update
                   </p>
                 </div>
               </div>
 
-              <div className="w-full sm:w-1/2 flex flex-col items-start gap-1 bg-[#08080A]/80 p-2 md:p-3 rounded-lg border border-white/5 font-mono text-[9px] md:text-[10px] shadow-inner shrink-0">
-                <div className="w-full flex justify-between items-center mb-0.5 pb-0.5 border-b border-white/5">
+              <div className="flex w-full shrink-0 flex-col items-start gap-1 rounded-lg border border-white/5 bg-[#08080A]/80 p-2 font-mono text-[9px] shadow-inner sm:w-1/2 md:p-3 md:text-[10px]">
+                <div className="mb-0.5 flex w-full items-center justify-between border-b border-white/5 pb-0.5">
                   <span className="text-zinc-500">Response</span>
                   <span className="text-blue-500">200 OK</span>
                 </div>
-                <div className="text-zinc-400 leading-tight">
-                  {"{"}
+                <div className="leading-tight text-zinc-400">
+                  {'{'}
                   <div className="pl-3">
-                    <span className="text-blue-400">"status"</span>:{" "}
+                    <span className="text-blue-400">"status"</span>:{' '}
                     <span className="text-amber-400">"success"</span>,
                   </div>
                   <div className="pl-3">
-                    <span className="text-blue-400">"data"</span>: {"{"}
+                    <span className="text-blue-400">"data"</span>: {'{'}
                     <div className="pl-3">
-                      <span className="text-blue-400">"id"</span>:{" "}
+                      <span className="text-blue-400">"id"</span>:{' '}
                       <span className="text-amber-400">"usr_928"</span>,
                     </div>
-                    <div className="pl-3 hidden sm:block">
-                      <span className="text-blue-400">"email"</span>:{" "}
+                    <div className="hidden pl-3 sm:block">
+                      <span className="text-blue-400">"email"</span>:{' '}
                       <span className="text-amber-400">"malay@patel.com"</span>,
                     </div>
-                    <div className="pl-3 hidden md:block">
-                      <span className="text-blue-400">"role"</span>:{" "}
+                    <div className="hidden pl-3 md:block">
+                      <span className="text-blue-400">"role"</span>:{' '}
                       <span className="text-amber-400">"premium"</span>
                     </div>
-                    <div className="pl-0">{"}"}</div>
+                    <div className="pl-0">{'}'}</div>
                   </div>
-                  {"}"}
+                  {'}'}
                 </div>
               </div>
             </motion.div>
@@ -352,127 +353,93 @@ const Profile = ({ className }: { className?: string }) => {
 };
 
 const Card2 = () => {
-  const [sessionKey, setSessionKey] = useState(0);
+  const lines = [
+  "## Setting up",
+  "",
+  "Description...",
+  "",
+  "<CardGroup cols={12} />",
+  "<Card />"
+];
 
-  const terminalTemplates = [
-    [
-      { text: "➜ ~ pkg install @motion/core", color: "text-zinc-100" },
-      { text: "added 124 packages in 2.1s", color: "text-zinc-500" },
-      { text: "➜ ~ npx ui-pro@latest init", color: "text-zinc-100" },
-      {
-        text: "✔ Configuration synced successfully",
-        color: "text-emerald-400",
-      },
-      { text: "➜ ~ npm run dev:motion", color: "text-zinc-100" },
-      { text: "▲ Ready - listening on port 3000", color: "text-sky-400" },
-    ],
-    [
-      { text: "λ /motion-app: git branch", color: "text-violet-400" },
-      { text: "* main", color: "text-zinc-100" },
-      { text: "λ /motion-app: motion deploy --prod", color: "text-violet-400" },
-      { text: "⠋ Uploading assets to edge...", color: "text-zinc-500" },
-      { text: "✔ Deployment successful (2.4s)", color: "text-amber-400" },
-      {
-        text: "➜ https://motion.dev/prod-v42",
-        color: "text-zinc-100 underline decoration-amber-500/50",
-      },
-    ],
-  ];
+const typingSpeed = 40; // ms per char
+const lineDelay = 600;  // delay before next line
+const restartDelay = 1500;
 
-  const currentLines = terminalTemplates[sessionKey % terminalTemplates.length];
-  const isTemplateOne = sessionKey % 2 === 0;
+const [displayedLines, setDisplayedLines] = useState([""]);
+  const [currentLine, setCurrentLine] = useState(0);
+  const [currentChar, setCurrentChar] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setSessionKey((prev) => prev + 1);
-    }, 3000); // 6s loop for readability
-    return () => clearInterval(timer);
-  }, []);
+    if (currentLine >= lines.length) {
+      // restart loop
+      const timeout = setTimeout(() => {
+        setDisplayedLines([""]);
+        setCurrentLine(0);
+        setCurrentChar(0);
+      }, restartDelay);
+      return () => clearTimeout(timeout);
+    }
 
-  const containerVariants = {
-    animate: {
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.4,
-      },
-    },
-  } as const;
+    if (currentChar < lines[currentLine].length) {
+      const timeout = setTimeout(() => {
+        setDisplayedLines((prev) => {
+          const updated = [...prev];
+          updated[currentLine] =
+            (updated[currentLine] || "") +
+            lines[currentLine][currentChar];
+          return updated;
+        });
+        setCurrentChar((c) => c + 1);
+      }, typingSpeed);
 
-  const lineVariants = {
-    initial: { opacity: 0, y: 4 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.25,
-      },
-    },
-  } as const;
+      return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => {
+        setDisplayedLines((prev) => [...prev, ""]);
+        setCurrentLine((l) => l + 1);
+        setCurrentChar(0);
+      }, lineDelay);
 
-  const cursorVariants = {
-    animate: {
-      opacity: [0, 1, 0],
-      transition: {
-        duration: 0.8,
-        repeat: Infinity,
-        ease: "linear" as const,
-      },
-    },
-  };
+      return () => clearTimeout(timeout);
+    }
+  }, [currentChar, currentLine]);
 
   return (
-    <div className="w-[92%] md:w-[85%] h-[92%] bg-[#08080A] border border-white/10 rounded-xl overflow-hidden shadow-2xl transform translate-y-6 group">
+    <div className="flex h-60 sm:h-70 w-80 md:w-110 flex-col rounded-t-xl border-x border-t border-[#A09B9B]/20 bg-[#0E1419] mask-b-from-90%">
+      
       {/* Header */}
-      <div className="h-10 border-b border-white/5 flex items-center px-3 md:px-4 justify-between bg-zinc-900/40 backdrop-blur-sm">
-        <div className="flex items-center gap-1.5 md:gap-2">
-          <div className="flex gap-1 md:gap-1.5 mr-1 md:mr-2">
-            <div
-              className={`size-2 md:size-2.5 rounded-full border transition-colors ${isTemplateOne ? "bg-red-500/20 border-red-500/30" : "bg-violet-500/20 border-violet-500/30"}`}
-            />
-            <div
-              className={`size-2 md:size-2.5 rounded-full border transition-colors ${isTemplateOne ? "bg-amber-500/20 border-amber-500/30" : "bg-amber-500/20 border-amber-500/30"}`}
-            />
-            <div
-              className={`size-2 md:size-2.5 rounded-full border transition-colors ${isTemplateOne ? "bg-emerald-500/20 border-emerald-500/30" : "bg-green-500/20 border-green-500/30"}`}
-            />
-          </div>
-          <span className="text-[9px] md:text-[10px] text-zinc-600 font-mono tracking-tighter truncate max-w-[100px] md:max-w-none">
-            {isTemplateOne ? "bash — setup" : "zsh — production"}
+      <div className="flex w-full items-center justify-between px-8 border-b border-[#A09B9B]/20 py-1">
+        <div className="flex items-center gap-2 py-2">
+          <GithubIcon className="size-5 text-zinc-200" />
+          <span className="font-mono text-xs text-zinc-500">
+            quickstart.jsx
           </span>
         </div>
-        <div className="text-[9px] md:text-[10px] text-zinc-700 font-mono italic">
-          Card 2
-        </div>
+        <span className="text-zinc-500">Quick Start</span>
       </div>
 
-      {/* Terminal Content */}
-      <div className="p-6 font-mono text-[13px] leading-relaxed h-full overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={sessionKey}
-            variants={containerVariants}
-            initial="initial"
-            animate="animate"
-            exit={{ opacity: 0, transition: { duration: 0.4 } }}
-            className="space-y-1"
-          >
-            {currentLines.map((line, i) => (
-              <motion.div
-                key={i}
-                variants={lineVariants}
-                className="flex items-center flex-wrap"
-              >
-                <span className={line.color}>{line.text}</span>
-                {i === currentLines.length - 1 && (
-                  <motion.div
-                    variants={cursorVariants}
-                    className="ml-2 w-1.5 h-4 bg-blue-500/90 shadow-[0_0_8px_rgba(59,130,246,0.4)]"
-                  />
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+      {/* Terminal */}
+      <div className="w-full flex flex-col gap-1 sm:gap-2 p-6 font-mono text-sm">
+        {displayedLines.map((line, index) => (
+          <div key={index} className="flex gap-6">
+            <span className="text-blue-200">{index + 1}</span>
+            <p className="text-blue-200">
+              {line}
+              {/* Cursor */}
+              {index === displayedLines.length - 1 && (
+                <motion.span
+                  className="inline-block w-2 h-4 bg-blue-200 ml-1"
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity,
+                  }}
+                />
+              )}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -480,44 +447,39 @@ const Card2 = () => {
 
 const Card3 = () => {
   return (
-    <Icon className="size-40 text-[#98A5BE] hover:size-45 transition-all ease-out duration-300 hover:text-[#155EEF]" />
+    <Icon className="size-40 text-[#98A5BE] transition-all duration-300 ease-out hover:size-45 hover:text-[#155EEF]" />
   );
 };
 
 const Card5 = () => {
   const items = [
-    { title: "Developer forward", desc: "with intuitive tracking and tools." },
-    { title: "Designer creative", desc: "enhanced user experience design." },
-    { title: "Product strategic", desc: "seamless and rapid integration." },
+    { title: 'Developer forward', desc: 'with intuitive tracking and tools.' },
+    { title: 'Designer creative', desc: 'enhanced user experience design.' },
+    { title: 'Product strategic', desc: 'seamless and rapid integration.' },
   ];
 
   return (
-    <div className="w-full max-w-[280px] relative px-4">
+    <div className="relative w-full max-w-[280px] px-4">
       {/* Background Vertical Line */}
-      <div className="absolute left-[24px] top-4 bottom-4 w-px bg-white/5" />
+      <div className="absolute top-4 bottom-4 left-[24px] w-px bg-white/5" />
 
       {/* Moving Spark on the line */}
       <motion.div
-        className="absolute left-[24px] w-px h-16 bg-linear-to-b from-transparent via-blue-500 to-transparent z-0"
+        className="absolute left-[24px] z-0 h-16 w-px bg-linear-to-b from-transparent via-blue-500 to-transparent"
         animate={{
-          top: ["-5%", "85%"],
+          top: ['-5%', '85%'],
           opacity: [0, 1, 1, 0],
         }}
         transition={{
           duration: 4,
           repeat: Infinity,
-          ease: "linear",
+          ease: 'linear',
         }}
       />
 
       <div className="space-y-4">
         {items.map((item, i) => (
-          <TimelineItem
-            key={i}
-            index={i}
-            title={item.title}
-            desc={item.desc}
-          />
+          <TimelineItem key={i} index={i} title={item.title} desc={item.desc} />
         ))}
       </div>
     </div>
@@ -537,24 +499,24 @@ const TimelineItem = ({
   const syncDuration = 2.5;
 
   return (
-    <div className="flex gap-6 items-center group relative">
+    <div className="group relative flex items-center gap-6">
       {/* Node (Dot) */}
       <div className="relative shrink-0">
         <motion.div
-          className="size-4 rounded-full bg-blue-600 z-10 relative"
+          className="relative z-10 size-4 rounded-full bg-blue-600"
           animate={{
             scale: [1, 1.2, 1],
             boxShadow: [
-              "0 0 10px rgba(37, 99, 235, 0.4)",
-              "0 0 30px rgba(37, 99, 235, 0.8)",
-              "0 0 10px rgba(37, 99, 235, 0.4)",
+              '0 0 10px rgba(37, 99, 235, 0.4)',
+              '0 0 30px rgba(37, 99, 235, 0.8)',
+              '0 0 10px rgba(37, 99, 235, 0.4)',
             ],
           }}
           transition={{
             duration: syncDuration,
             repeat: Infinity,
             delay: syncDelay,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
         />
 
@@ -566,18 +528,18 @@ const TimelineItem = ({
             duration: syncDuration,
             repeat: Infinity,
             delay: syncDelay,
-            ease: "easeOut",
+            ease: 'easeOut',
           }}
         />
       </div>
 
       {/* Content Card */}
-      <div className="border border-white/5 rounded-xl p-3 flex-1 flex flex-col bg-[#0F1117]/50 backdrop-blur-xs relative overflow-hidden group">
-        <div className="absolute inset-0 bg-blue-500/2 pointer-events-none" />
-        <span className="text-sm font-bold text-zinc-100 mb-1 z-10">
+      <div className="group relative flex flex-1 flex-col overflow-hidden rounded-xl border border-white/5 bg-[#0F1117]/50 p-3 backdrop-blur-xs">
+        <div className="pointer-events-none absolute inset-0 bg-blue-500/2" />
+        <span className="z-10 mb-1 text-sm font-bold text-zinc-100">
           {title}
         </span>
-        <span className="text-[11px] text-zinc-500 font-medium leading-relaxed z-10">
+        <span className="z-10 text-[11px] leading-relaxed font-medium text-zinc-500">
           {desc}
         </span>
       </div>
@@ -702,17 +664,17 @@ const LumaIcon = ({ className }: { className?: string }) => {
         <path
           fill="url(#d)"
           d="M8.333 24.996 51.633 0v100l-43.3-25z"
-          style={{ mixBlendMode: "screen" }}
+          style={{ mixBlendMode: 'screen' }}
         />
         <path
           fill="url(#e)"
           d="m51.633 100-43.3-25 43.3-25 43.305 25z"
-          style={{ mixBlendMode: "overlay" }}
+          style={{ mixBlendMode: 'overlay' }}
         />
         <path
           fill="url(#f)"
           d="M8.333 24.996 51.633 0v100l-43.3-25z"
-          style={{ mixBlendMode: "overlay" }}
+          style={{ mixBlendMode: 'overlay' }}
         />
       </g>
       <defs>
@@ -797,23 +759,23 @@ const MoleculerIcon = ({ className }: { className?: string }) => {
 
 const Card4 = () => {
   const icons = [
-    { component: GoogleCloudIcon, color: "#4285F4" },
-    { component: ClineIcon, color: "#FFFFFF" },
-    { component: LumaIcon, color: "#FFFFFF" },
-    { component: MoleculerIcon, color: "#3cafce" },
-    { component: CloudfareIcon, color: "#F4811F" },
-    { component: FeatherlessIcon, color: "#ffe184" },
+    { component: GoogleCloudIcon, color: '#4285F4' },
+    { component: ClineIcon, color: '#FFFFFF' },
+    { component: LumaIcon, color: '#FFFFFF' },
+    { component: MoleculerIcon, color: '#3cafce' },
+    { component: CloudfareIcon, color: '#F4811F' },
+    { component: FeatherlessIcon, color: '#ffe184' },
   ];
 
   return (
-    <div className="relative w-full h-[260px] flex items-center justify-center select-none overflow-hidden">
+    <div className="relative flex h-[260px] w-full items-center justify-center overflow-hidden select-none">
       {/* Background Orbit Paths */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="size-[180px] rounded-full border border-white/5" />
-        <div className="size-[110px] rounded-full border border-white/3 absolute" />
+        <div className="absolute size-[110px] rounded-full border border-white/3" />
 
         {/* Decorative Glow */}
-        <div className="absolute size-40 bg-blue-600/10 blur-[60px] rounded-full" />
+        <div className="absolute size-40 rounded-full bg-blue-600/10 blur-[60px]" />
       </div>
 
       {/* Main Center Icon with Pulsing Effect */}
@@ -822,9 +784,9 @@ const Card4 = () => {
         animate={{
           scale: [1, 1.05, 1],
         }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <Icon className="size-16 md:size-20 text-[#155EEF] drop-shadow-[0_0_15px_rgba(21,94,239,0.4)]" />
+        <Icon className="size-16 text-[#155EEF] drop-shadow-[0_0_15px_rgba(21,94,239,0.4)] md:size-20" />
       </motion.div>
 
       {/* Orbiting Icons */}
@@ -862,8 +824,8 @@ const OrbitingElement = ({
       setRadius(window.innerWidth < 640 ? 70 : 90);
     };
     updateRadius();
-    window.addEventListener("resize", updateRadius);
-    return () => window.removeEventListener("resize", updateRadius);
+    window.addEventListener('resize', updateRadius);
+    return () => window.removeEventListener('resize', updateRadius);
   }, []);
 
   const initialAngle = (index / total) * 360;
@@ -878,7 +840,7 @@ const OrbitingElement = ({
       transition={{
         duration,
         repeat: Infinity,
-        ease: "linear",
+        ease: 'linear',
       }}
       style={{
         width: 0,
@@ -886,14 +848,14 @@ const OrbitingElement = ({
       }}
     >
       <motion.div
-        className="p-3 rounded-full bg-[#1a1f2e] border border-white/10 shadow-lg flex items-center justify-center cursor-pointer absolute z-20"
+        className="absolute z-20 flex cursor-pointer items-center justify-center rounded-full border border-white/10 bg-[#1a1f2e] p-3 shadow-lg"
         animate={{
           rotate: [-initialAngle, -(initialAngle + 360)],
         }}
         transition={{
           duration,
           repeat: Infinity,
-          ease: "linear",
+          ease: 'linear',
         }}
         style={{
           x: radius,

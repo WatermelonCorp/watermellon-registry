@@ -351,7 +351,7 @@ const Bento1 = () => {
               {circleRows.map((row, rowIdx) => (
                 <div
                   key={rowIdx}
-                  className={`flex gap-4${rowIdx === 1 ? " ml-12" : ""}`}
+                  className={`flex gap-4 ${rowIdx === 1 ? " ml-12" : ""}`}
                 >
                   {row.map(({ From, To, delay }, i) => (
                     <div

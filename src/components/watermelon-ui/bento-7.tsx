@@ -1,113 +1,213 @@
-"use client";
-import React from "react";
-import { motion } from "motion/react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+'use client';
+import React from 'react';
+import { motion } from 'motion/react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 const Bento7 = () => {
-  const [status, setStatus] = React.useState<"loading" | "complete">("loading");
+  const [status, setStatus] = React.useState<'loading' | 'complete'>('loading');
 
   React.useEffect(() => {
     const cycle = setInterval(() => {
-      setStatus((prev) => (prev === "loading" ? "complete" : "loading"));
+      setStatus((prev) => (prev === 'loading' ? 'complete' : 'loading'));
     }, 3000);
     return () => clearInterval(cycle);
   }, []);
 
   return (
     <div
-      className={`flex items-center justify-center min-h-screen bg-[#1B1B1B] relative p-8`}
+      className={`relative flex min-h-screen items-center justify-center bg-[#1B1B1B] p-8`}
     >
-    
-
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
         {/* card 1 */}
-        <Card className="w-full max-w-[340px] h-120 rounded-3xl bg-linear-to-br from-[#304043] via-[#454C4D] to-[#273334] flex flex-col relative overflow-hidden p-0 gap-0 ring-0 shadow-none text-white">
-          <CardContent className="w-full h-full flex flex-col items-center justify-center relative p-0">
-            <div className="w-40 h-25 flex relative bg-linear-to-br from-[#273439] to-[#2C3D42] rounded-[30px] shadow-[inset_3px_2px_4px_1px_rgba(255,255,255,0.25),0px_22px_28px_-4px_rgba(0,0,0,0.3)] border-3 border-[#1B2526]">
-              <Wires className="absolute top-1/2 -translate-y-1/2 -right-25" />
-              <Wires className="absolute top-1/2 -translate-y-1/2 -left-22 -scale-x-100" />
+        <Card className="relative flex h-120 w-full max-w-[340px] flex-col gap-0 overflow-hidden rounded-3xl bg-linear-to-br from-[#304043] via-[#454C4D] to-[#273334] p-0 text-white shadow-none ring-0">
+          <CardContent className="relative flex h-full w-full flex-col items-center justify-center p-0">
+            <div className="relative flex h-25 w-40 rounded-[30px] border-3 border-[#1B2526] bg-linear-to-br from-[#273439] to-[#2C3D42] shadow-[inset_3px_2px_4px_1px_rgba(255,255,255,0.25),0px_22px_28px_-4px_rgba(0,0,0,0.3)]">
+              <Wires className="absolute top-1/2 -right-25 -translate-y-1/2" />
+              <Wires className="absolute top-1/2 -left-22 -translate-y-1/2 -scale-x-100" />
 
-              <div className="p-px rounded-full bg-linear-to-br from-[#69797F] to-[#27353A] w-fit my-auto ml-6">
-                <div className="size-10 rounded-full bg-linear-to-br from-[#535E61] to-[#313E40] flex items-center justify-center">
+              <div className="my-auto ml-6 w-fit rounded-full bg-linear-to-br from-[#69797F] to-[#27353A] p-px">
+                <div className="flex size-10 items-center justify-center rounded-full bg-linear-to-br from-[#535E61] to-[#313E40]">
                   <CheckIcon className="size-8" status={status} />
                 </div>
               </div>
 
-              <div className="absolute top-1/2 -translate-y-1/2 -right-6 p-1 flex items-center justify-center h-fit bg-linear-to-br from-[#273439] to-[#2C3D42] border border-[#58696F] rounded-2xl  shadow-[0px_22px_28px_-4px_rgba(0,0,0,0.3),inset_-1px_0px_12.6px_1px_rgba(0,0,0,0.3)]">
-                <div className="relative w-full h-full flex items-center justify-center">
+              <div className="absolute top-1/2 -right-6 flex h-fit -translate-y-1/2 items-center justify-center rounded-2xl border border-[#58696F] bg-linear-to-br from-[#273439] to-[#2C3D42] p-1 shadow-[0px_22px_28px_-4px_rgba(0,0,0,0.3),inset_-1px_0px_12.6px_1px_rgba(0,0,0,0.3)]">
+                <div className="relative flex h-full w-full items-center justify-center">
                   <motion.div
-                    animate={{ x: status === "loading" ? -43 : 0 }}
-                    transition={{ type: "spring", bounce: 0.3, duration: 1 }}
-                    className="absolute px-[22px] py-7 top-1/2 -translate-y-1/2 right-0 bg-[#273439] shadow-[0px_22px_28px_-4px_rgba(0,0,0,0.3),inset_-1px_0px_12.6px_1px_rgba(0,0,0,0.3)] rounded-xl border border-[#A7B5BA]"
+                    animate={{ x: status === 'loading' ? -43 : 0 }}
+                    transition={{ type: 'spring', bounce: 0.3, duration: 1 }}
+                    className="absolute top-1/2 right-0 -translate-y-1/2 rounded-xl border border-[#A7B5BA] bg-[#273439] px-[22px] py-7 shadow-[0px_22px_28px_-4px_rgba(0,0,0,0.3),inset_-1px_0px_12.6px_1px_rgba(0,0,0,0.3)]"
                   />
-                  <div className="text-white text-xl px-4 py-4 relative z-40">
+                  <div className="relative z-40 px-4 py-4 text-xl text-white">
                     A
                   </div>
-                  <div className="text-white text-xl px-4 py-4 relative z-40">
+                  <div className="relative z-40 px-4 py-4 text-xl text-white">
                     B
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-15 h-8 bg-linear-to-b from-[#131617] to-[#283133]"></div>
+            <div className="h-8 w-15 bg-linear-to-b from-[#131617] to-[#283133]"></div>
           </CardContent>
 
           <CardHeader className="mt-auto w-full p-8">
-            <CardTitle className="text-white text-lg font-medium">AI Driven Assist</CardTitle>
-            <CardDescription className="text-md text-white font-thin">
+            <CardTitle className="text-lg font-medium text-white">
+              AI Driven Assist
+            </CardTitle>
+            <CardDescription className="text-md font-thin text-white">
               Enhance your design projects with AI tools for creativity and
-              efficiency.{" "}
+              efficiency.{' '}
             </CardDescription>
           </CardHeader>
         </Card>
 
         {/* Card 2 */}
-        <Card className="w-full max-w-[340px] h-120 rounded-3xl bg-linear-to-br from-[#304043] via-[#454C4D] to-[#273334] flex flex-col relative p-0 gap-0 ring-0 shadow-none text-white">
-          <CardContent className="w-full h-full flex items-center justify-center absolute left-1/2 -translate-x-1/2 -top-16 p-0">
+        <Card className="relative flex h-120 w-full max-w-[340px] flex-col gap-0 rounded-3xl bg-linear-to-br from-[#304043] via-[#454C4D] to-[#273334] p-0 text-white shadow-none ring-0">
+          <CardContent className="absolute -top-16 left-1/2 flex h-full w-full -translate-x-1/2 items-center justify-center p-0">
             <Cognito />
           </CardContent>
           <CardHeader className="mt-auto w-full p-8">
-            <CardTitle className="text-white text-lg font-medium">Cognito Core</CardTitle>
-            <CardDescription className="text-md text-white font-thin">
+            <CardTitle className="text-lg font-medium text-white">
+              Cognito Core
+            </CardTitle>
+            <CardDescription className="text-md font-thin text-white">
               The intelligent hub that unifies, monitors, and autonomously
-              tunes.{" "}
+              tunes.{' '}
             </CardDescription>
           </CardHeader>
         </Card>
 
         {/* Card 3 */}
-        <Card className="w-full max-w-[340px] h-120 rounded-3xl bg-linear-to-br from-[#304043] via-[#454C4D] to-[#273334] flex flex-col md:col-span-2 lg:col-span-1 p-0 gap-0 ring-0 shadow-none text-white">
-          <CardContent className="w-full h-full flex items-center justify-center relative p-0">
+        <Card className="flex h-120 w-full max-w-[340px] flex-col gap-0 rounded-3xl bg-linear-to-br from-[#304043] via-[#454C4D] to-[#273334] p-0 text-white shadow-none ring-0 md:col-span-2 lg:col-span-1">
+          <CardContent className="relative flex h-full w-full items-center justify-center p-0">
             <Star />
 
             <div className="absolute flex flex-col items-center gap-8">
-              <div className="px-8 py-2 border border-[#69797F] bg-linear-to-br from-[#535E61] to-[#313E40] shadow-[0px_18px_14px_-3px_rgba(0,0,0,0.4)] rounded-full">
+              {/* Top pill */}
+              <div className="rounded-full border border-[#69797F] bg-linear-to-br from-[#535E61] to-[#313E40] px-8 py-2 shadow-[0px_18px_14px_-3px_rgba(0,0,0,0.4)]">
                 <StarIcon className="size-4" />
               </div>
-              <div className="w-40 h-35 flex items-center justify-between p-4 bg-linear-to-br from-[#273439] to-[#2C3D42] rounded-[36px] shadow-[inset_3px_2px_4px_1px_rgba(255,255,255,0.25),0px_22px_28px_-4px_rgba(0,0,0,0.3)] border-3 border-[#1B2526] ">
-                <div className="w-15 h-18 rounded-xl bg-linear-to-br from-[#535E61] to-[#313E40] border border-[#69797F] shadow-[0px_18px_14px_-3px_rgba(0,0,0,0.4)]"></div>
 
-                <div className="flex flex-col gap-1 items-center">
-                  <div className="w-8 h-1 bg-[#80949A] rounded-full"></div>
-                  <div className="w-12 h-1 bg-[#535E61] rounded-full"></div>
-                  <div className="w-12 h-1 bg-[#535E61] rounded-full"></div>
-                  <div className="w-12 h-1 bg-[#535E61] rounded-full"></div>
+              {/* Center Card */}
+              <div className="relative flex h-35 w-40 items-center justify-between rounded-[36px] border-3 border-[#1B2526] bg-linear-to-br from-[#273439] to-[#2C3D42] p-4 shadow-[inset_3px_2px_4px_1px_rgba(255,255,255,0.25),0px_22px_28px_-4px_rgba(0,0,0,0.3)]">
+                {/* LEFT BOX */}
+                <div className="relative h-18 w-15 rounded-xl border border-[#69797F] bg-linear-to-br from-[#535E61] to-[#313E40] shadow-[0px_18px_14px_-3px_rgba(0,0,0,0.4)]">
+                  <div className="pointer-events-none absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+                    <motion.svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-sparkles-icon lucide-sparkles size-8"
+                    >
+                      <motion.path
+                        d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"
+                        stroke="#fff"
+                        initial={false}
+                        animate={{
+                          pathLength: [0, 1, 0],
+                          fill: [
+                            'rgba(255,255,255,0)',
+                            'rgba(255,255,255,0.35)',
+                            'rgba(255,255,255,0)',
+                          ],
+                        }}
+                        transition={{
+                          duration: 2.2,
+                          ease: 'easeInOut',
+                          repeat: Infinity,
+                          repeatType: 'loop',
+                        }}
+                      />
+                      {/* Animate plus sign */}
+                      <motion.path
+                        d="M20 2v4"
+                        stroke="#fff"
+                        initial={false}
+                        animate={{ pathLength: [0, 1, 0] }}
+                        transition={{
+                          duration: 1.2,
+                          ease: 'easeInOut',
+                          repeat: Infinity,
+                          repeatType: 'loop',
+                          delay: 0.2,
+                        }}
+                      />
+                      <motion.path
+                        d="M22 4h-4"
+                        stroke="#fff"
+                        initial={false}
+                        animate={{ pathLength: [0, 1, 0] }}
+                        transition={{
+                          duration: 1.2,
+                          ease: 'easeInOut',
+                          repeat: Infinity,
+                          repeatType: 'loop',
+                          delay: 0.2,
+                        }}
+                      />
+                      {/* Animate circle */}
+                      <motion.circle
+                        cx="4"
+                        cy="20"
+                        r="2"
+                        stroke="#fff"
+                        fill="#fff"
+                        initial={false}
+                        animate={{
+                          r: [0, 2, 0],
+                          fill: [
+                            'rgba(255,255,255,0)',
+                            'rgba(255,255,255,0.35)',
+                            'rgba(255,255,255,0)',
+                          ],
+                        }}
+                        transition={{
+                          duration: 1.6,
+                          ease: 'easeInOut',
+                          repeat: Infinity,
+                          repeatType: 'loop',
+                          delay: 0.5,
+                        }}
+                      />
+                    </motion.svg>
+                  </div>
+                </div>
+
+                {/* RIGHT TEXT */}
+                <div className="flex flex-col items-center gap-1">
+                  <div className="h-1 w-8 rounded-full bg-[#80949A]"></div>
+                  <div className="h-1 w-12 rounded-full bg-[#535E61]"></div>
+                  <div className="h-1 w-12 rounded-full bg-[#535E61]"></div>
+                  <div className="h-1 w-12 rounded-full bg-[#535E61]"></div>
                 </div>
               </div>
 
-              <div className="px-8 py-2 border border-[#69797F] flex flex-col items-center gap-0.5 bg-linear-to-br from-[#535E61] to-[#313E40] shadow-[0px_18px_14px_-3px_rgba(0,0,0,0.4)] rounded-full">
-                <div className="w-8 h-1 bg-[#80949A] rounded-full"></div>
-                <div className="w-12 h-1 bg-[#535E61] rounded-full"></div>
+              {/* Bottom pill */}
+              <div className="flex flex-col items-center gap-0.5 rounded-full border border-[#69797F] bg-linear-to-br from-[#535E61] to-[#313E40] px-8 py-2 shadow-[0px_18px_14px_-3px_rgba(0,0,0,0.4)]">
+                <div className="h-1 w-8 rounded-full bg-[#80949A]"></div>
+                <div className="h-1 w-12 rounded-full bg-[#535E61]"></div>
               </div>
             </div>
           </CardContent>
           <CardHeader className="mt-auto w-full p-8">
-            <CardTitle className="text-white text-lg font-medium">
+            <CardTitle className="text-lg font-medium text-white">
               System Synergy Engine
             </CardTitle>
-            <CardDescription className="text-md text-white font-thin">
+            <CardDescription className="text-md font-thin text-white">
               A proactive AI unit that maximizes efficiency and resource
-            distribution.{" "}
+              distribution.{' '}
             </CardDescription>
           </CardHeader>
         </Card>
@@ -123,7 +223,7 @@ const CheckIcon = ({
   status,
 }: {
   className?: string;
-  status: "loading" | "complete";
+  status: 'loading' | 'complete';
 }) => {
   return (
     <svg
@@ -134,10 +234,10 @@ const CheckIcon = ({
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {status === "loading" ? (
+      {status === 'loading' ? (
         <motion.g
           animate={{ rotate: 360 }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
         >
           <motion.path
             d="M20 6 A 14 14 0 1 1 19.99 6"
@@ -146,7 +246,7 @@ const CheckIcon = ({
             strokeLinecap="round"
             initial={{ pathLength: 0.2 }}
             animate={{ pathLength: [0.1, 0.4, 0.1] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
           />
           <motion.path
             d="M20 6 A 14 14 0 1 1 19.99 6"
@@ -159,7 +259,7 @@ const CheckIcon = ({
             transition={{
               duration: 1.5,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: 'easeInOut',
               delay: 0.2,
             }}
           />
@@ -173,7 +273,7 @@ const CheckIcon = ({
           strokeLinejoin="round"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
         />
       )}
     </svg>
@@ -201,9 +301,9 @@ const Wires = ({ className }: { className?: string }) => {
         strokeLinecap="round"
       />
       {[
-        "M5.88318 39.5H57.0234L71.3923 24.5H92.8077",
-        "M96.5 62H83.9462L69.9154 45.5H0.948601",
-        "M95.0231 64.5H54.4077L40.3769 49.5L0.500003 50",
+        'M5.88318 39.5H57.0234L71.3923 24.5H92.8077',
+        'M96.5 62H83.9462L69.9154 45.5H0.948601',
+        'M95.0231 64.5H54.4077L40.3769 49.5L0.500003 50',
       ].map((d, i) => (
         <React.Fragment key={i}>
           <motion.path
@@ -211,13 +311,13 @@ const Wires = ({ className }: { className?: string }) => {
             stroke="#FFFFFF"
             strokeWidth="1.5"
             strokeLinecap="round"
-            style={{ filter: "url(#pill-glow)" }}
+            style={{ filter: 'url(#pill-glow)' }}
             initial={{ pathLength: 0.1, pathOffset: 0 }}
             animate={{ pathOffset: 1 }}
             transition={{
               duration: 2.5 + i * 0.5,
               repeat: Infinity,
-              ease: "linear",
+              ease: 'linear',
               delay: i * 0.8,
             }}
           />
@@ -226,13 +326,13 @@ const Wires = ({ className }: { className?: string }) => {
             stroke="#FFFFFF"
             strokeWidth="1.5"
             strokeLinecap="round"
-            style={{ filter: "url(#pill-glow)" }}
+            style={{ filter: 'url(#pill-glow)' }}
             initial={{ pathLength: 0.1, pathOffset: 0 }}
             animate={{ pathOffset: 1 }}
             transition={{
               duration: 2.5 + i * 0.5,
               repeat: Infinity,
-              ease: "linear",
+              ease: 'linear',
               delay: i * 0.8 + 1.5,
             }}
           />
@@ -353,9 +453,9 @@ const Cognito = ({ className }: { className?: string }) => {
         strokeLinecap="round"
       />
       {[
-        "M173.017 117L173.017 60.0005L188.017 43.9851L188.017 20.1159",
-        "M150.517 16.0005L150.517 29.9928L167.017 45.6313L167.017 122.5",
-        "M148.017 17.6466L148.017 62.9159L163.017 78.5543L162.517 123",
+        'M173.017 117L173.017 60.0005L188.017 43.9851L188.017 20.1159',
+        'M150.517 16.0005L150.517 29.9928L167.017 45.6313L167.017 122.5',
+        'M148.017 17.6466L148.017 62.9159L163.017 78.5543L162.517 123',
       ].map((d, i) => (
         <motion.path
           key={i}
@@ -363,13 +463,13 @@ const Cognito = ({ className }: { className?: string }) => {
           stroke="#FFFFFF"
           strokeWidth="2"
           strokeLinecap="round"
-          style={{ filter: "url(#pill-glow-cognito)" }}
+          style={{ filter: 'url(#pill-glow-cognito)' }}
           initial={{ pathLength: 0.15, pathOffset: 0 }}
           animate={{ pathOffset: 1 }}
           transition={{
             duration: 2 + i * 0.5,
             repeat: Infinity,
-            ease: "linear",
+            ease: 'linear',
             delay: i * 0.4,
           }}
         />
@@ -380,9 +480,9 @@ const Cognito = ({ className }: { className?: string }) => {
         strokeLinecap="round"
       />
       {[
-        "M163.019 265L163.019 322L148.019 338.016L148.019 361.885",
-        "M185.519 366L185.519 352.008L169.019 336.37L169.019 259.5",
-        "M188.019 364.354L188.019 319.085L173.019 303.447L173.519 259",
+        'M163.019 265L163.019 322L148.019 338.016L148.019 361.885',
+        'M185.519 366L185.519 352.008L169.019 336.37L169.019 259.5',
+        'M188.019 364.354L188.019 319.085L173.019 303.447L173.519 259',
       ].map((d, i) => (
         <motion.path
           key={i}
@@ -390,13 +490,13 @@ const Cognito = ({ className }: { className?: string }) => {
           stroke="#FFFFFF"
           strokeWidth="2"
           strokeLinecap="round"
-          style={{ filter: "url(#pill-glow-cognito)" }}
+          style={{ filter: 'url(#pill-glow-cognito)' }}
           initial={{ pathLength: 0.15, pathOffset: 0 }}
           animate={{ pathOffset: 1 }}
           transition={{
             duration: 2 + i * 0.5,
             repeat: Infinity,
-            ease: "linear",
+            ease: 'linear',
             delay: i * 0.4,
           }}
         />

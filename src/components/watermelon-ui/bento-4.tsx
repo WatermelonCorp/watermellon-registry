@@ -19,8 +19,8 @@ const Bento4 = () => {
     >
 
       {/* Bento Grid Container */}
-      <div className="w-full max-w-[1200px] mx-auto pt-16 md:pt-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 [grid-auto-rows:minmax(140px,auto)] xl:[grid-template-rows:160px_230px_220px_160px] gap-4 sm:gap-5 lg:gap-6 xl:gap-7">
+      <div className="w-full max-w-[1200px] mx-auto pt-16 md:pt-0 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 [grid-auto-rows:minmax(140px,auto)] xl:[grid-template-rows:160px_230px_220px_160px] gap-4 sm:gap-5 lg:gap-6 xl:gap-7 relative">
           {/* Card 1 */}
           <Card
             className="rounded-2xl border border-white/5 p-6 sm:p-8 flex flex-col justify-between min-h-[280px] sm:min-h-[330px] xl:min-h-0 xl:[grid-column:1/2] xl:[grid-row:1/3]"
@@ -65,11 +65,14 @@ const Bento4 = () => {
             </div>
           </Card>
 
-           <img 
-            src="https://assets.watermelon.sh/fireball.png"
-            alt="Decorative"
-            className="hidden xl:block absolute top-[38.5%] left-[50%] -translate-x-1/2 w-[320px] pointer-events-none"
-          />
+          {/* Fireball image - perfectly centered in grid space */}
+          <div className="hidden xl:block pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-[48%]">
+            <img 
+              src="https://assets.watermelon.sh/fireball.png"
+              alt="Decorative"
+              className="w-[320px] max-w-full"
+            />
+          </div>
 
           {/* Card 3 */}
           <Card
