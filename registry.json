@@ -143,6 +143,110 @@
       ]
     },
     {
+      "name": "bento-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-8.tsx",
+          "target": "components/ui/bento-8.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-9.tsx",
+          "target": "components/ui/bento-9.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-10.tsx",
+          "target": "components/ui/bento-10.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-11.tsx",
+          "target": "components/ui/bento-11.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-12.tsx",
+          "target": "components/ui/bento-12.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-13.tsx",
+          "target": "components/ui/bento-13.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-15",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-15.tsx",
+          "target": "components/ui/bento-15.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-17",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-17.tsx",
+          "target": "components/ui/bento-17.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "ai-input-002",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -186,6 +290,123 @@
         {
           "path": "src/components/watermelon-ui/ai-input-005.tsx",
           "target": "components/ui/ai-input-005.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-1.tsx",
+          "target": "components/ui/bento-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-2.tsx",
+          "target": "components/ui/bento-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-3.tsx",
+          "target": "components/ui/bento-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion", "matter-js"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-4.tsx",
+          "target": "components/ui/bento-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-5.tsx",
+          "target": "components/ui/bento-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-6",
+      "type": "registry:ui",
+      "registryDependencies": ["card"],
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-6.tsx",
+          "target": "components/ui/bento-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-7.tsx",
+          "target": "components/ui/bento-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-14",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-14.tsx",
+          "target": "components/ui/bento-14.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-16",
+      "type": "registry:ui",
+      "registryDependencies": ["card"],
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-16.tsx",
+          "target": "components/ui/bento-16.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1502,18 +1723,7 @@
         }
       ]
     },
-    {
-      "name": "debug-panel",
-      "type": "registry:ui",
-      "dependencies": ["motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/debug-panel.tsx",
-          "target": "components/ui/debug-panel.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
+
     {
       "name": "deployment-card",
       "type": "registry:ui",
@@ -1627,18 +1837,7 @@
         }
       ]
     },
-    {
-      "name": "draggable-toolbar",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/draggable-toolbar.tsx",
-          "target": "components/ui/draggable-toolbar.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
+
     {
       "name": "draw-signature",
       "type": "registry:ui",
@@ -3242,18 +3441,6 @@
         {
           "path": "src/components/watermelon-ui/list-stack-base.tsx",
           "target": "components/ui/list-stack-base.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "loop-hook",
-      "type": "registry:ui",
-      "dependencies": ["motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/loop-hook.tsx",
-          "target": "components/ui/loop-hook.tsx",
           "type": "registry:ui"
         }
       ]
@@ -5847,30 +6034,6 @@
         {
           "path": "src/components/watermelon-ui/vertical-tooltip-navbar-base.tsx",
           "target": "components/ui/vertical-tooltip-navbar-base.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "video-player",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/video-player.tsx",
-          "target": "components/ui/video-player.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "video-player-02",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/video-player-02.tsx",
-          "target": "components/ui/video-player-02.tsx",
           "type": "registry:ui"
         }
       ]

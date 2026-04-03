@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -46,10 +46,10 @@ export default function ChangeablePricingSection({
   onContinue,
 }: ChangeablePricingSectionProps) {
   const [selectedPlan, setSelectedPlan] = useState<PlanId>(
-    defaultPlanId || (plans.length > 0 ? plans[0].id : "")
+    defaultPlanId || (plans.length > 0 ? plans[0].id : ""),
   );
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
-    defaultBillingCycle
+    defaultBillingCycle,
   );
 
   return (
@@ -111,7 +111,7 @@ export default function ChangeablePricingSection({
               >
                 <div className="px-4 py-3.5 sm:px-5 sm:py-4">
                   <div className="flex justify-between items-start gap-3">
-                    <div className="flex gap-3">
+                    <div className="flex flex-1 gap-3">
                       <div className="mt-0.5 shrink-0">
                         <div
                           className={`w-[18px] h-[18px] rounded-lg flex items-center justify-center border transition-colors ${
@@ -130,8 +130,8 @@ export default function ChangeablePricingSection({
                         </div>
                       </div>
 
-                      <div className="flex flex-col">
-                        <div className="flex items-center gap-2">
+                      <div className="flex flex-1 flex-col">
+                        <div className="flex flex-wrap items-center gap-2">
                           <span className="text-[16px] font-medium text-foreground leading-none">
                             {plan.name}
                           </span>
@@ -141,13 +141,13 @@ export default function ChangeablePricingSection({
                             </span>
                           )}
                         </div>
-                        <span className="text-[11px] text-muted-foreground mt-1.5 leading-none">
+                        <span className="text-[11px] text-muted-foreground mt-1.5 leading-snug sm:leading-none">
                           {plan.description}
                         </span>
                       </div>
                     </div>
 
-                    <div className="flex flex-col items-end">
+                    <div className="flex flex-col items-end shrink-0">
                       <div className="flex items-center justify-end text-[15px] sm:text-[16px] font-medium text-foreground leading-none overflow-hidden h-[18px]">
                         <AnimatePresence mode="popLayout" initial={false}>
                           <motion.span
@@ -235,13 +235,13 @@ export default function ChangeablePricingSection({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between mt-5 px-1 pb-1">
-          <span className="jet text-[10px] text-muted-foreground uppercase tracking-[0.05em] max-w-[190px] leading-relaxed whitespace-nowrap">
+        <div className="flex flex-col gap-4 items-center sm:flex-row sm:justify-between mt-5 px-3 pb-2">
+          <span className="jet text-[10px] text-muted-foreground uppercase tracking-[0.05em] leading-relaxed text-center sm:text-left">
             {footerText}
           </span>
           <button
             onClick={() => onContinue?.(selectedPlan, billingCycle)}
-            className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-[13px] font-medium active:scale-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="w-full sm:w-auto bg-primary text-primary-foreground px-8 py-2.5 rounded-lg text-[13px] font-medium active:scale-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {buttonText}
           </button>
