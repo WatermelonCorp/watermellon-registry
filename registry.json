@@ -146,6 +146,7 @@
       "name": "bento-8",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-8.tsx",
@@ -158,6 +159,7 @@
       "name": "bento-9",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-9.tsx",
@@ -170,6 +172,7 @@
       "name": "bento-10",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-10.tsx",
@@ -182,6 +185,7 @@
       "name": "bento-11",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-11.tsx",
@@ -194,6 +198,7 @@
       "name": "bento-12",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-12.tsx",
@@ -206,6 +211,7 @@
       "name": "bento-13",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-13.tsx",
@@ -218,6 +224,7 @@
       "name": "bento-15",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-15.tsx",
@@ -230,6 +237,7 @@
       "name": "bento-17",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-17.tsx",
