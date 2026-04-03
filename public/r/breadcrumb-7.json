@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-7",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/breadcrumb/breadcrumb-7.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport type { LucideIcon } from 'lucide-react'\r\nimport { ChevronRightIcon, FolderIcon, FolderOpenIcon, HomeIcon } from 'lucide-react'\r\n\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator\r\n} from '@/components/ui/breadcrumb'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuTrigger\r\n} from '@/components/ui/dropdown-menu'\r\n\r\ntype RootSegment = {\r\n  label: string\r\n  href: string\r\n  icon: LucideIcon\r\n}\r\n\r\nconst rootSegment: RootSegment = {\r\n  label: 'Home',\r\n  href: '#',\r\n  icon: HomeIcon\r\n}\r\n\r\nconst currentLabel = 'Release Notes'\r\n\r\nconst menuOptions = ['Updates', 'Changelog', 'Archive'] as const\r\n\r\nconst Breadcrumb7 = () => {\r\n  const [open, setOpen] = useState(false)\r\n  const RootIcon = rootSegment.icon\r\n\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList className='gap-1.5 text-sm'>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink\r\n            href={rootSegment.href}\r\n            className='flex items-center gap-1.5 rounded-sm px-1 py-0.5 hover:text-foreground'\r\n          >\r\n            <RootIcon className='size-3.5 text-muted-foreground' />\r\n            <span className='sr-only'>{rootSegment.label}</span>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator className='text-muted-foreground/60'>\r\n          <ChevronRightIcon className='size-3.5' />\r\n        </BreadcrumbSeparator>\r\n        <BreadcrumbItem className='flex items-center'>\r\n          <DropdownMenu open={open} onOpenChange={setOpen}>\r\n            <DropdownMenuTrigger className='inline-flex cursor-pointer items-center gap-1 rounded-sm px-1 py-0.5 text-muted-foreground outline-none hover:text-foreground'>\r\n              {open ? <FolderOpenIcon className='size-3.5' /> : <FolderIcon className='size-3.5' />}\r\n              <span className='sr-only'>{open ? 'Open section menu' : 'Open section menu'}</span>\r\n            </DropdownMenuTrigger>\r\n            <DropdownMenuContent align='start'>\r\n              {menuOptions.map((option) => (\r\n                <DropdownMenuItem key={option}>{option}</DropdownMenuItem>\r\n              ))}\r\n            </DropdownMenuContent>\r\n          </DropdownMenu>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator className='text-muted-foreground/60'>\r\n          <ChevronRightIcon className='size-3.5' />\r\n        </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage className='rounded-sm px-1 py-0.5 font-medium'>{currentLabel}</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n\r\nexport default Breadcrumb7\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

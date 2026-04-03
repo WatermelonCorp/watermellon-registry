@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-4",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/avatar/avatar-4.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\n\r\ntype Profile = {\r\n  name: string\r\n  avatar: string\r\n}\r\n\r\nconst profile: Profile = {\r\n  name: 'Nina Alvarez',\r\n  avatar: 'https://i.pravatar.cc/160?img=28'\r\n}\r\n\r\nconst getInitials = (name: string) =>\r\n  name\r\n    .split(/\\s+/)\r\n    .map((word) => word.slice(0, 1))\r\n    .join('')\r\n\r\nconst Avatar4 = () => {\r\n  return (\r\n    <Avatar className='size-12'>\r\n      <AvatarImage src={profile.avatar} alt={profile.name} />\r\n      <AvatarFallback className='text-xs'>{getInitials(profile.name)}</AvatarFallback>\r\n    </Avatar>\r\n  )\r\n}\r\n\r\nexport default Avatar4\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

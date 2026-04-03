@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-8",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button-group/button-group-8.tsx",
+      "content": "import type { LucideIcon } from 'lucide-react'\r\nimport { ArrowUpRightIcon } from 'lucide-react'\r\n\r\nimport { buttonVariants } from '@/components/ui/button'\r\nimport { cn } from '@/lib/utils'\r\n\r\ntype ButtonGroupLink = {\r\n  href: string\r\n  icon: LucideIcon\r\n  iconLabel: string\r\n  primaryLabel: string\r\n}\r\n\r\nconst buttonGroup: ButtonGroupLink = {\r\n  href: '#',\r\n  icon: ArrowUpRightIcon,\r\n  iconLabel: 'Open external preview',\r\n  primaryLabel: 'Open preview'\r\n}\r\n\r\nconst ButtonGroup8 = () => {\r\n  const Icon = buttonGroup.icon\r\n\r\n  return (\r\n    <div className='inline-flex w-fit -space-x-px rounded-md shadow-xs rtl:space-x-reverse'>\r\n      <a\r\n        href={buttonGroup.href}\r\n        className={cn(\r\n          buttonVariants({ variant: 'outline' }),\r\n          'rounded-none rounded-l-md border-border/70 shadow-none focus-visible:z-10'\r\n        )}\r\n      >\r\n        {buttonGroup.primaryLabel}\r\n      </a>\r\n      <a\r\n        href={buttonGroup.href}\r\n        target='_blank'\r\n        rel='noopener noreferrer'\r\n        className={cn(\r\n          buttonVariants({ variant: 'outline', size: 'icon' }),\r\n          'rounded-none rounded-r-md border-border/70 shadow-none focus-visible:z-10'\r\n        )}\r\n      >\r\n        <Icon className='size-4' />\r\n        <span className='sr-only'>{buttonGroup.iconLabel}</span>\r\n      </a>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default ButtonGroup8\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-group-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

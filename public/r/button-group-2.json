@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-2",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button-group/button-group-2.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport type { LucideIcon } from 'lucide-react'\r\nimport { BookmarkIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\n\r\nimport { cn } from '@/lib/utils'\r\n\r\ntype ButtonGroupData = {\r\n  activeCount: number\r\n  inactiveCount: number\r\n  actionLabel: string\r\n  icon: LucideIcon\r\n}\r\n\r\nconst buttonGroup: ButtonGroupData = {\r\n  activeCount: 19,\r\n  inactiveCount: 18,\r\n  actionLabel: 'Save',\r\n  icon: BookmarkIcon\r\n}\r\n\r\nconst ButtonGroup2 = () => {\r\n  const [isSaved, setIsSaved] = useState(true)\r\n  const Icon = buttonGroup.icon\r\n\r\n  return (\r\n    <div className='inline-flex w-fit -space-x-px rounded-md shadow-xs rtl:space-x-reverse'>\r\n      <Button\r\n        variant='outline'\r\n        className='gap-2 rounded-none rounded-l-md border-border/70 shadow-none focus-visible:z-10'\r\n        onClick={() => setIsSaved((current) => !current)}\r\n      >\r\n        <Icon className={cn('size-4', { 'fill-foreground stroke-foreground': isSaved })} />\r\n        {buttonGroup.actionLabel}\r\n      </Button>\r\n      <span className='flex items-center rounded-r-md border border-border/70 bg-muted/20 px-3 text-sm font-medium text-muted-foreground'>\r\n        {isSaved ? buttonGroup.activeCount : buttonGroup.inactiveCount}\r\n      </span>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default ButtonGroup2\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-group-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

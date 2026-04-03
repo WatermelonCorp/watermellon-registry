@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-8",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/accordion/accordion-8.tsx",
+      "content": "import * as AccordionPrimitive from '@radix-ui/react-accordion'\r\nimport type { LucideIcon } from 'lucide-react'\r\nimport { GraduationCapIcon, LibraryBigIcon, PlusIcon, UsersIcon } from 'lucide-react'\r\n\r\nimport { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion'\r\n\r\ntype AccordionItemData = {\r\n  value: string\r\n  icon: LucideIcon\r\n  title: string\r\n  subtitle: string\r\n  content: string\r\n}\r\n\r\nconst items: readonly AccordionItemData[] = [\r\n  {\r\n    value: 'item-1',\r\n    icon: GraduationCapIcon,\r\n    title: 'Why do students struggle to stay on track?',\r\n    subtitle: 'Learning Journey',\r\n    content:\r\n      'Students usually lose momentum when lessons, deadlines, and progress signals are scattered across too many places. A stronger learning experience makes the next step visible and keeps milestones easy to review.'\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    icon: LibraryBigIcon,\r\n    title: 'How should course materials be organized?',\r\n    subtitle: 'Curriculum Structure',\r\n    content:\r\n      'Course content works better when readings, assignments, and supporting resources are grouped by topic instead of being added as a long list. Clear structure helps learners spend more time studying and less time searching.'\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    icon: UsersIcon,\r\n    title: 'What improves collaboration in cohort programs?',\r\n    subtitle: 'Community Experience',\r\n    content:\r\n      'Cohort learning becomes stronger when discussion spaces, peer feedback, and live session notes are connected to the same workflow. Students engage more when collaboration feels like part of the course instead of an extra step.'\r\n  }\r\n] as const\r\n\r\nconst Accordion8 = () => {\r\n  return (\r\n    <Accordion className='w-full' type=\"multiple\" defaultValue={[items[0].value]}>\r\n      {items.map((item) => {\r\n        const Icon = item.icon\r\n\r\n        return (\r\n          <AccordionItem key={item.value} value={item.value}>\r\n            <AccordionPrimitive.Header className='flex'>\r\n              <AccordionPrimitive.Trigger\r\n                data-slot='accordion-trigger'\r\n                className='group/accordion-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 rounded-md py-4 text-left text-sm font-medium outline-none transition-all focus-visible:ring-[3px] aria-disabled:pointer-events-none aria-disabled:opacity-50'\r\n              >\r\n                <span className='flex items-center gap-4'>\r\n                  <span\r\n                    className='flex size-10 shrink-0 items-center justify-center rounded-md border'\r\n                    aria-hidden='true'\r\n                  >\r\n                    <Icon className='size-4' />\r\n                  </span>\r\n                  <span className='flex flex-col space-y-0.5'>\r\n                    <span>{item.title}</span>\r\n                    <span className='font-normal text-muted-foreground'>{item.subtitle}</span>\r\n                  </span>\r\n                </span>\r\n                <PlusIcon className='pointer-events-none size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-aria-expanded/accordion-trigger:rotate-45' />\r\n              </AccordionPrimitive.Trigger>\r\n            </AccordionPrimitive.Header>\r\n            <AccordionContent className='text-muted-foreground'>\r\n              {item.content}\r\n            </AccordionContent>\r\n          </AccordionItem>\r\n        )\r\n      })}\r\n    </Accordion>\r\n  )\r\n}\r\n\r\nexport default Accordion8\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

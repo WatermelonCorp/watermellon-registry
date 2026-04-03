@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-20",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/avatar/avatar-20.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\nimport { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'\r\n\r\ntype Profile = {\r\n  name: string\r\n  src: string\r\n}\r\n\r\nconst avatars: readonly Profile[] = [\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=18',\r\n    name: 'Maya Chen'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=41',\r\n    name: 'Jade Morris'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=47',\r\n    name: 'Elena Park'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=56',\r\n    name: 'Clara Hughes'\r\n  }\r\n] as const\r\n\r\nconst overflowCount = 3\r\n\r\nconst getInitials = (name: string) =>\r\n  name\r\n    .split(/\\s+/)\r\n    .map((word) => word.slice(0, 1))\r\n    .join('')\r\n\r\nconst Avatar20 = () => {\r\n  return (\r\n    <TooltipProvider>\r\n      <div className='bg-background flex items-center rounded-full border border-border/70 px-1.5 py-1 shadow-md'>\r\n        <div className='flex -space-x-2.5'>\r\n          {avatars.map((avatar) => (\r\n            <Tooltip key={avatar.name}>\r\n              <TooltipTrigger>\r\n                <Avatar className='ring-background ring-2 shadow-sm'>\r\n                  <AvatarImage src={avatar.src} alt={avatar.name} />\r\n                  <AvatarFallback className='text-xs'>{getInitials(avatar.name)}</AvatarFallback>\r\n                </Avatar>\r\n              </TooltipTrigger>\r\n              <TooltipContent className='px-2 py-1 text-[11px]'>{avatar.name}</TooltipContent>\r\n            </Tooltip>\r\n          ))}\r\n        </div>\r\n        <Tooltip>\r\n          <TooltipTrigger>\r\n            <span className='text-muted-foreground flex items-center justify-center rounded-full bg-muted/50 px-2.5 py-1 text-xs shadow-none'>\r\n              +{overflowCount}\r\n            </span>\r\n          </TooltipTrigger>\r\n          <TooltipContent className='px-2 py-1 text-[11px]'>More teammates</TooltipContent>\r\n        </Tooltip>\r\n      </div>\r\n    </TooltipProvider>\r\n  )\r\n}\r\n\r\nexport default Avatar20\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-20.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

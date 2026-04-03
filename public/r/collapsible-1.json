@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-1",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/collapsible/collapsible-1.tsx",
+      "content": "import { ChevronsUpDownIcon } from 'lucide-react';\n\nimport { Button } from '@/components/ui/button';\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from '@/components/ui/collapsible';\n\ntype CollapsibleItem = {\n  label: string;\n};\n\ntype CollapsibleGroup = {\n  hiddenItems: readonly CollapsibleItem[];\n  leadItem: CollapsibleItem;\n  title: string;\n};\n\nconst group: CollapsibleGroup = {\n  hiddenItems: [{ label: 'project-brief.md' }, { label: 'brand-notes.md' }],\n  leadItem: { label: 'launch-plan.md' },\n  title: 'Studio team shared 3 notes',\n};\n\nconst Collapsible1 = () => {\n  return (\n    <Collapsible className=\"flex w-full max-w-[350px] flex-col gap-2 p-2\">\n      <div className=\"flex items-center justify-between gap-4 px-2 py-1\">\n        <div className=\"text-sm font-semibold\">{group.title}</div>\n        <CollapsibleTrigger>\n          <Button variant=\"ghost\" size=\"icon-sm\">\n            <ChevronsUpDownIcon className=\"size-4\" />\n            <span className=\"sr-only\">Toggle notes</span>\n          </Button>\n        </CollapsibleTrigger>\n      </div>\n      <div className=\"border-border/70 rounded-md border px-4 py-2 font-mono text-sm\">\n        {group.leadItem.label}\n      </div>\n      <CollapsibleContent className=\"flex flex-col gap-2\">\n        {group.hiddenItems.map((item) => (\n          <div\n            key={item.label}\n            className=\"border-border/70 rounded-md border px-4 py-2 font-mono text-sm\"\n          >\n            {item.label}\n          </div>\n        ))}\n      </CollapsibleContent>\n    </Collapsible>\n  );\n};\n\nexport default Collapsible1;\n",
+      "type": "registry:ui",
+      "target": "components/ui/collapsible-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
