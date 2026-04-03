@@ -191,6 +191,123 @@
       ]
     },
     {
+      "name": "bento-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-1.tsx",
+          "target": "components/ui/bento-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-2.tsx",
+          "target": "components/ui/bento-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-3.tsx",
+          "target": "components/ui/bento-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion", "matter-js"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-4.tsx",
+          "target": "components/ui/bento-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-5.tsx",
+          "target": "components/ui/bento-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-6",
+      "type": "registry:ui",
+      "registryDependencies": ["card"],
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-6.tsx",
+          "target": "components/ui/bento-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-7.tsx",
+          "target": "components/ui/bento-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-14",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-14.tsx",
+          "target": "components/ui/bento-14.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bento-16",
+      "type": "registry:ui",
+      "registryDependencies": ["card"],
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/bento-16.tsx",
+          "target": "components/ui/bento-16.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "alert",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority"],
