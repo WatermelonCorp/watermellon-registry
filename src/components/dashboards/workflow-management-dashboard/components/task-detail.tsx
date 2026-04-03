@@ -1,12 +1,12 @@
 import { useTaskStore, type Task, type SubTask, type TimelineEvent } from "./store/task-store";
-import { ScrollArea } from "./ui/scroll-area";
-import { Separator } from "./ui/separator";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 import { Send } from "lucide-react";
-import { Avatar, AvatarFallback } from "./ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
-import { Checkbox } from "./ui/checkbox";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 export function TaskDetail() {
   const { tasks, selectedTaskId, toggleSubTask } = useTaskStore();

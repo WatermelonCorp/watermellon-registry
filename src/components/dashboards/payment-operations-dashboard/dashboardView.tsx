@@ -4,7 +4,7 @@ import { DashboardHeader } from "./components/header";
 import { PaymentsSummary } from "./components/payment-summary";
 import { RevenueChart } from "./components/revenue-charts";
 import { TransactionsTable } from "./components/transaction-table";
-import { SidebarTrigger, useSidebar } from "./components/ui/sidebar";
+import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 
 export default function DashboardView() {
   const { isMobile } = useSidebar();

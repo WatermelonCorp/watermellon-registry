@@ -10,7 +10,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "./ui/sidebar";
+} from "@/components/ui/sidebar";
 import { NavMain } from "./nav-main";
 import { NavApps } from "./nav-products";
 import { NavSecondary } from "./nav-options";
@@ -33,7 +33,7 @@ import {
 } from "@tabler/icons-react";
 import { TeamSwitcher } from "./team-switcher";
 import { BellIcon, Search, User, Settings, CreditCard, CheckCircle2, MessageSquare, AlertCircle } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -49,16 +49,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from "./ui/dialog";
+} from "@/components/ui/dialog";
 import {
   Popover,
   PopoverContent,
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "./ui/popover";
-import { Badge } from "./ui/badge";
-import { ScrollArea } from "./ui/scroll-area";
+} from "@/components/ui/popover";
+import { Badge } from "@/components/ui/badge";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const data = {
   teams: [

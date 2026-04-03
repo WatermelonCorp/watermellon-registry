@@ -19,14 +19,14 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "./ui/collapsible"
+} from "@/components/ui/collapsible"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./ui/card"
+} from "@/components/ui/card"
 import {
   Sidebar,
   SidebarContent,
@@ -41,16 +41,16 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "./ui/sidebar"
+} from "@/components/ui/sidebar"
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from "./ui/dialog"
-import { Separator } from "./ui/separator"
-import { Button } from "./ui/button"
+} from "@/components/ui/dialog"
+import { Separator } from "@/components/ui/separator"
+import { Button } from "@/components/ui/button"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { resolvedTheme } = useTheme()

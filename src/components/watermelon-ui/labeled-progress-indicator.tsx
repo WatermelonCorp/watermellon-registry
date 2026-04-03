@@ -1,39 +1,23 @@
-"use client";
+'use client';
 
-import { useEffect, useState, type FC } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Sun, Moon } from "lucide-react";
+import { motion, AnimatePresence } from 'motion/react';
 
-/* ---------- TYPES ---------- */
+import { useState, useEffect, type FC } from 'react';
 
 export interface LabeledProgressIndicatorProps {
   labels: string[];
-  progress?: string; // ex: "55%"
+  progress?: string;
   intervalMs?: number;
   showThemeToggle?: boolean;
 }
 
-/* ---------- MAIN COMPONENT ---------- */
-
 export const LabeledProgressIndicator: FC<LabeledProgressIndicatorProps> = ({
   labels,
-  progress = "55%",
-  intervalMs = 1300,
-  showThemeToggle = true,
+  progress = '55%',
+  intervalMs = 2000,
 }) => {
   const [labelIndex, setLabelIndex] = useState(0);
-  const [isDark, setIsDark] = useState(false);
 
-  // Theme sync
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDark]);
-
-  // Label rotation
   useEffect(() => {
     const interval = setInterval(() => {
       setLabelIndex((prev) => (prev + 1) % labels.length);
@@ -43,69 +27,62 @@ export const LabeledProgressIndicator: FC<LabeledProgressIndicatorProps> = ({
   }, [labels.length, intervalMs]);
 
   return (
-    <div className="flex flex-col justify-center items-center gap-8 bg-white dark:bg-zinc-950 h-screen w-full transition-colors duration-500">
-      {/* THEME TOGGLE */}
-      {showThemeToggle && (
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="p-3 rounded-full bg-zinc-100 dark:bg-zinc-900
-                     border border-zinc-200 dark:border-zinc-800
-                     transition-all active:scale-90 shadow-sm"
-        >
-          {isDark ? (
-            <Sun className="text-yellow-400" size={20} />
-          ) : (
-            <Moon className="text-zinc-500" size={20} />
-          )}
-        </button>
-      )}
-
-      <div className="flex flex-col items-center gap-5">
-        {/* LABEL */}
-        <div className="h-10 flex items-center justify-center">
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={labelIndex}
-              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
-              transition={{ type: "spring", stiffness: 300, damping: 22 }}
-              className="text-3xl font-bold tracking-wide
-                         text-[#B5B5B5] dark:text-zinc-500"
-            >
-              {labels[labelIndex]}
-            </motion.span>
-          </AnimatePresence>
-        </div>
-
-        {/* PROGRESS BAR */}
-        <div className="relative h-4 w-[320px] rounded-full
-                        bg-[#F0F0F0] dark:bg-zinc-900 overflow-hidden
-                        border border-black/5 dark:border-white/5 shadow-inner">
-          <motion.div
-            initial={{ width: "0%" }}
-            animate={{ width: progress }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative h-full overflow-hidden rounded-full
-                       bg-[#016FFE] dark:bg-blue-600"
+    <div className="flex flex-col items-center gap-5">
+      <div className="relative flex w-full items-center justify-center perspective-[800px] transform-3d">
+        <AnimatePresence mode="popLayout">
+          <motion.span
+            key={labelIndex}
+            initial={{
+              opacity: 0,
+              y: 10,
+              scale: 2,
+              filter: 'blur(4px)',
+              rotateX: -60,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              filter: 'blur(0px)',
+              rotateX: 0,
+            }}
+            exit={{
+              opacity: 0,
+              filter: 'blur(4px)',
+              rotateX: 90,
+              scale: 0.9,
+            }}
+            transition={{
+              type: 'spring',
+              stiffness: 600,
+              damping: 100,
+              mass: 10,
+            }}
+            className="origon-bottom flex w-full items-center justify-center text-3xl font-bold text-[#B5B5B5] will-change-transform transform-3d dark:text-zinc-400"
           >
-            {/* SHIMMER */}
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: "200%" }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute inset-y-0 w-full
-                         bg-gradient-to-r
-                         from-transparent
-                         via-white/30 dark:via-cyan-300/40
-                         to-transparent"
-            />
-          </motion.div>
-        </div>
+            {labels[labelIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </div>
+
+      <div className="h-4 w-[320px] overflow-hidden rounded-full border border-black/5 bg-[#F0F0F0] shadow-inner dark:border-white/5 dark:bg-zinc-900">
+        <motion.div
+          initial={{ width: '0%' }}
+          animate={{ width: progress }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="relative h-full overflow-hidden rounded-full bg-[#016FFE] dark:bg-blue-600"
+        >
+          <motion.div
+            initial={{ x: '-100%' }}
+            animate={{ x: '200%' }}
+            transition={{
+              duration: intervalMs / 1000,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+            className="absolute inset-y-0 w-full bg-linear-to-r from-zinc-900/10 via-sky-300 to-zinc-900/10"
+          />
+        </motion.div>
       </div>
     </div>
   );

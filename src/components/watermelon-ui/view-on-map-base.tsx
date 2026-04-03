@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { X, Loader2 } from "lucide-react";
-import { FaMap } from "react-icons/fa6";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { X, Loader2 } from 'lucide-react';
+import { FaMap } from 'react-icons/fa6';
 
 interface ViewOnMapProps {
   locationName?: string;
@@ -13,9 +13,9 @@ interface ViewOnMapProps {
 }
 
 export const ViewOnMap: React.FC<ViewOnMapProps> = ({
-  address = "Boston Public Garden",
-  mapImageUrl = "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop",
-  className = "",
+  address = 'Boston Public Garden',
+  mapImageUrl = 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop',
+  className = '',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMapLoaded, setIsMapLoaded] = useState(false);
@@ -27,7 +27,7 @@ export const ViewOnMap: React.FC<ViewOnMapProps> = ({
   };
 
   const springConfig = {
-    type: "spring" as const,
+    type: 'spring' as const,
     stiffness: 400,
     damping: 30,
     mass: 0.8,
@@ -37,7 +37,7 @@ export const ViewOnMap: React.FC<ViewOnMapProps> = ({
 
   return (
     <div className="theme-injected transition-colors duration-500">
-      <div className=" flex min-h-full w-full flex-col items-center justify-center px-4">
+      <div className="flex min-h-full w-full flex-col items-center justify-center px-4">
         <div
           className={`relative flex w-full items-center justify-center ${className}`}
         >
@@ -61,8 +61,8 @@ export const ViewOnMap: React.FC<ViewOnMapProps> = ({
                   className="absolute inset-0 opacity-20 brightness-110 grayscale transition-opacity"
                   style={{
                     backgroundImage: `url(${mapImageUrl})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                   }}
                 />
 
@@ -77,8 +77,8 @@ export const ViewOnMap: React.FC<ViewOnMapProps> = ({
               <motion.div
                 key="map"
                 layoutId="map-container"
-                className="bg-muted relative aspect-square w-[92vw] max-w-95 overflow-hidden shadow-lg transition-colors duration-300"
-                style={{ borderRadius: 8 }}
+                className="bg-muted relative aspect-square w-[calc(100vw-64px)] overflow-hidden shadow-lg transition-colors duration-300 sm:w-[380px]"
+                style={{ borderRadius: 32 }}
                 transition={springConfig}
               >
                 <motion.div
@@ -94,13 +94,13 @@ export const ViewOnMap: React.FC<ViewOnMapProps> = ({
                     style={{
                       border: 0,
                       filter: isDark
-                        ? "invert(90%) hue-rotate(180deg)"
-                        : "invert(15%) hue-rotate(180deg)",
+                        ? 'invert(90%) hue-rotate(180deg)'
+                        : 'invert(15%) hue-rotate(180deg)',
                     }}
                     src={publicMapUrl}
                     allowFullScreen
                     onLoad={() => setIsMapLoaded(true)}
-                    className={`transition-opacity duration-700 ${isMapLoaded ? "opacity-100" : "opacity-0"}`}
+                    className={`transition-opacity duration-700 ${isMapLoaded ? 'opacity-100' : 'opacity-0'}`}
                   />
                 </motion.div>
 

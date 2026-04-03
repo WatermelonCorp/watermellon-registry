@@ -13,17 +13,17 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
   DropdownMenuLabel,
-} from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "./ui/popover";
-import { Label } from "./ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+} from "@/components/ui/popover";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function TaskListHeader() {
   return (

@@ -1,7 +1,7 @@
 import { useTaskStore, type Task, type SubTask } from "./store/task-store";
-import { ScrollArea } from "./ui/scroll-area";
-import { Badge } from "./ui/badge";
-import { Checkbox } from "./ui/checkbox";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   CornerDownRight,
   Calendar,
@@ -17,14 +17,10 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
+} from "@/components/ui/tooltip";
 
 export function TaskList() {
   const { tasks, selectedTaskId, selectTask, toggleSubTask } = useTaskStore();
-
-
-
-
   return (
     <div className="flex flex-col h-full bg-foreground/5 dark:bg-black overflow-hidden">
       <TooltipProvider delayDuration={300}>

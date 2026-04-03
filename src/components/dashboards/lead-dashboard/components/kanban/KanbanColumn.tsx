@@ -1,10 +1,10 @@
 import { IconDots, IconEdit, IconTrash, IconSettings } from '@tabler/icons-react'
-import { Button } from '../ui/button'
+import { Button } from "@/components/ui/button"
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "../ui/popover"
+} from "@/components/ui/popover"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const BoardColumn = ({ column, children }: { column: any, children: React.ReactNode }) => {

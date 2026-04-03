@@ -1,9 +1,9 @@
 'use client';
 import { useState, useMemo } from 'react';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from './ui/breadcrumb';
-import { Separator } from './ui/separator';
-import { SidebarTrigger } from './ui/sidebar';
-import { Badge } from './ui/badge';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@/components/ui/breadcrumb';
+import { Separator } from '@/components/ui/separator';
+import { SidebarTrigger } from '@/components/ui/sidebar';
+import { Badge } from '@/components/ui/badge';
 import {
   Bell,
   Search,
@@ -17,7 +17,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import { Dialog, DialogContent } from './ui/dialog';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,8 +25,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu';
-import { Input } from './ui/input';
+} from '@/components/ui/dropdown-menu';
+import { Input } from '@/components/ui/input';
 import { companiesData, deals } from '../data';
 
 const NOTIFICATIONS = [

@@ -75,7 +75,7 @@ export const DialogStack: React.FC<DialogStackProps> = ({ stack, trigger }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={resetAndClose}
-              className="absolute inset-0 backdrop-blur-[2px] bg-white/10 dark:bg-black/40"
+              className="absolute inset-0 backdrop-blur-[2px]"
             />
 
             <div className="relative w-xs sm:w-sm flex items-center justify-center min-h-[450px] sm:min-h-[500px]">

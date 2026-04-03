@@ -15,6 +15,85 @@ export interface Reminder {
   unit: TimeUnit;
 }
 
+const NumberRoller = ({ value }: { value: number }) => {
+  const [prevValue, setPrevValue] = React.useState(value);
+  const direction = value >= prevValue ? 1 : -1;
+
+  React.useEffect(() => {
+    setPrevValue(value);
+  }, [value]);
+
+  const variants = {
+    initial: (d: number) => ({
+      y: d * 5,
+      opacity: 0,
+      scale: 0,
+      filter: 'blur(2px)',
+    }),
+    animate: { y: 0, opacity: 1, scale: 1, filter: 'blur(0px)' },
+    exit: (d: number) => ({
+      y: d * -5,
+      opacity: 0,
+      scale: 0,
+      filter: 'blur(2px)',
+    }),
+  };
+
+  const strValue = value.toString().padStart(2, '0');
+
+  return (
+    <div className="flex items-center justify-center overflow-hidden">
+      {strValue.split('').map((char, i) => (
+        <div key={i} className="relative flex items-center justify-center">
+          <span className="invisible text-lg font-bold tabular-nums">
+            {char}
+          </span>
+          <AnimatePresence custom={direction} initial={false}>
+            <motion.span
+              key={char}
+              custom={direction}
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ type: 'spring', bounce: 0, duration: 0.3 }}
+              className="absolute text-lg font-bold text-neutral-900 tabular-nums dark:text-white"
+            >
+              {char}
+            </motion.span>
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const AnimatedWord = ({ word }: { word: string }) => {
+  return (
+    <div className="relative flex items-center overflow-hidden">
+      <AnimatePresence mode="popLayout" initial={false}>
+        {word.split('').map((char, i) => (
+          <motion.span
+            key={`${char}-${i}`}
+            initial={{ y: 5, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -5, opacity: 0 }}
+            transition={{
+              type: 'spring',
+              bounce: 0,
+              duration: 0.3,
+              delay: i * 0.0175,
+            }}
+            className="inline-block font-semibold text-neutral-800 dark:text-neutral-200"
+          >
+            {i === 0 ? char.toUpperCase() : char}
+          </motion.span>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 interface EventRemindersProps {
   title: string;
   date: string;
@@ -25,17 +104,17 @@ interface EventRemindersProps {
 export const EventReminders: React.FC<EventRemindersProps> = ({
   title,
   date: initialDate,
-  initialReminders = []
+  initialReminders = [],
 }) => {
   const [reminders, setReminders] = useState<Reminder[]>(initialReminders);
   const [date, setDate] = useState(initialDate);
   const [isEditingDate, setIsEditingDate] = useState(false);
 
   const basePill =
-    "border-[1.6px] rounded-full transition-colors bg-white border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800";
+    'border-[1.6px] rounded-full transition-colors bg-white border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800';
 
   const softBtn =
-    "p-2 rounded-full transition-colors bg-neutral-100 text-neutral-500 hover:text-neutral-900 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-white";
+    'p-2 rounded-full transition-colors bg-neutral-100 text-neutral-500 hover:text-neutral-900 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-white';
 
   const addReminder = () => {
     setReminders([
@@ -45,15 +124,17 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
         type: 'Notification',
         value: 5,
         unit: 'minutes',
-      }
+      },
     ]);
   };
 
   const removeReminder = (id: string) =>
-    setReminders(reminders.filter(r => r.id !== id));
+    setReminders(reminders.filter((r) => r.id !== id));
 
   const updateReminder = (id: string, updates: Partial<Reminder>) =>
-    setReminders(reminders.map(r => r.id === id ? { ...r, ...updates } : r));
+    setReminders(
+      reminders.map((r) => (r.id === id ? { ...r, ...updates } : r)),
+    );
 
   const toggleUnit = (id: string, current: TimeUnit) => {
     const units: TimeUnit[] = ['minutes', 'hours', 'days'];
@@ -62,16 +143,20 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-full p-4 antialiased bg-transparent">
-
+    <div className="flex min-h-full flex-col items-center justify-center bg-transparent p-4 antialiased">
       <motion.div
         layout
-        className="w-full max-w-100 rounded-[32px] p-6 shadow-lg border-2 transition-colors bg-white border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800"
+        transition={{
+          type: 'spring',
+          bounce: 0.2,
+          duration: 0.5,
+        }}
+        className="w-full max-w-100 rounded-[32px] border-2 border-neutral-200 bg-white p-6 shadow-lg transition-colors dark:border-neutral-800 dark:bg-neutral-900"
       >
         {/* Header */}
-        <div className="flex justify-between items-start mb-6 gap-3">
-          <div className="flex-1 min-w-0">
-            <h2 className="font-bold text-lg sm:text-xl text-neutral-900 dark:text-white truncate">
+        <div className="mb-6 flex items-start justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            <h2 className="leading-tight text-lg font-bold text-neutral-900 sm:text-xl dark:text-white">
               {title}
             </h2>
 
@@ -84,9 +169,11 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
                   exit={{ opacity: 0 }}
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && setIsEditingDate(false)}
+                  onKeyDown={(e) =>
+                    e.key === 'Enter' && setIsEditingDate(false)
+                  }
                   autoFocus
-                  className="mt-2 w-full font-semibold text-neutral-600 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded border-b-2 border-neutral-300 dark:border-neutral-700 outline-none"
+                  className="mt-2 w-full rounded border-b-2 border-neutral-300 bg-neutral-100 px-2 py-1 font-semibold text-neutral-600 outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
                 />
               ) : (
                 <motion.p
@@ -104,16 +191,20 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
 
           <button
             onClick={() => setIsEditingDate(!isEditingDate)}
-            className="p-2 rounded-lg border-2 transition-colors bg-white text-neutral-600 hover:bg-neutral-100 border-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:border-neutral-700"
+            className="rounded-lg border-2 border-neutral-200 bg-white p-2 text-neutral-600 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
           >
-            {isEditingDate ? <FaCheck size={20} /> : <BiSolidPencil size={20} />}
+            {isEditingDate ? (
+              <FaCheck size={20} />
+            ) : (
+              <BiSolidPencil size={20} />
+            )}
           </button>
         </div>
 
         {/* List */}
-        <div className="border-t border-dashed border-neutral-200 dark:border-neutral-800 pt-2">
+        <div className="border-t border-dashed border-neutral-200 pt-2 dark:border-neutral-800">
           <LayoutGroup>
-            <AnimatePresence>
+            <AnimatePresence mode="popLayout">
               {reminders.map((reminder) => (
                 <motion.div
                   key={reminder.id}
@@ -121,51 +212,77 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="py-4 border-b border-dashed border-neutral-200 dark:border-neutral-800 space-y-3"
+                  transition={{
+                    type: 'spring',
+                    bounce: 0.2,
+                    duration: 0.5,
+                  }}
+                  className="space-y-3 border-b border-dashed border-neutral-200 py-4 dark:border-neutral-800"
                 >
                   {/* Type */}
                   <motion.div
                     layout
                     onClick={() =>
                       updateReminder(reminder.id, {
-                        type: reminder.type === "Notification" ? "Email" : "Notification"
+                        type:
+                          reminder.type === 'Notification'
+                            ? 'Email'
+                            : 'Notification',
                       })
                     }
-                    className={`${basePill} px-4 py-2 flex items-center justify-between cursor-pointer`}
+                    className={`${basePill} flex cursor-pointer items-center justify-between px-4 py-2`}
                   >
                     <div className="flex items-center gap-3">
-                      {reminder.type === "Notification"
-                        ? <FaBell size={18} className="text-neutral-400" />
-                        : <MdEmail size={18} className="text-neutral-400" />}
-                      <span className="font-semibold text-neutral-800 dark:text-neutral-200">
-                        {reminder.type}
-                      </span>
+                      <AnimatePresence mode="popLayout" initial={false}>
+                        <motion.div
+                          key={reminder.type}
+                          initial={{ y: 5, opacity: 0, filter: 'blur(4px)' }}
+                          animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                          exit={{ y: -5, opacity: 0, filter: 'blur(4px)' }}
+                          transition={{
+                            type: 'spring',
+                            bounce: 0,
+                            duration: 0.5,
+                          }}
+                        >
+                          {reminder.type === 'Notification' ? (
+                            <FaBell size={18} className="text-neutral-400" />
+                          ) : (
+                            <MdEmail size={18} className="text-neutral-400" />
+                          )}
+                        </motion.div>
+                      </AnimatePresence>
+                      <AnimatedWord word={reminder.type} />
                     </div>
-                    <div className="flex flex-col text-neutral-400 -space-y-1">
+                    <div className="flex flex-col -space-y-1 text-neutral-400">
                       <ChevronUp size={14} strokeWidth={3} />
                       <ChevronDown size={14} strokeWidth={3} />
                     </div>
                   </motion.div>
 
                   {/* Value + Unit */}
-                  <div className="flex gap-2">
-                    <div className={`${basePill} flex-1 flex items-center justify-between px-2 py-1`}>
+                  <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 relative">
+                    <div
+                      className={`${basePill} flex flex-1 min-w-[120px] items-center justify-between px-2 py-1`}
+                    >
                       <button
                         onClick={() =>
-                          updateReminder(reminder.id, { value: Math.max(1, reminder.value - 1) })
+                          updateReminder(reminder.id, {
+                            value: Math.max(1, reminder.value - 1),
+                          })
                         }
                         className={softBtn}
                       >
                         <Minus size={16} />
                       </button>
 
-                      <span className="font-bold text-lg text-neutral-900 dark:text-white tabular-nums">
-                        {reminder.value.toString().padStart(2, "0")}
-                      </span>
+                      <NumberRoller value={reminder.value} />
 
                       <button
                         onClick={() =>
-                          updateReminder(reminder.id, { value: reminder.value + 1 })
+                          updateReminder(reminder.id, {
+                            value: reminder.value + 1,
+                          })
                         }
                         className={softBtn}
                       >
@@ -176,12 +293,10 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
                     <motion.div
                       layout
                       onClick={() => toggleUnit(reminder.id, reminder.unit)}
-                      className={`${basePill} flex-[1.2] px-4 py-2 flex items-center justify-between cursor-pointer`}
+                      className={`${basePill} flex flex-[1.4] min-w-[120px] cursor-pointer items-center justify-between px-4 py-2`}
                     >
-                      <span className="font-semibold text-neutral-800 dark:text-neutral-200 capitalize">
-                        {reminder.unit}
-                      </span>
-                      <div className="flex flex-col text-neutral-400 -space-y-1">
+                      <AnimatedWord word={reminder.unit} />
+                      <div className="flex flex-col -space-y-1 text-neutral-400">
                         <ChevronUp size={14} strokeWidth={3} />
                         <ChevronDown size={14} strokeWidth={3} />
                       </div>
@@ -189,7 +304,7 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
 
                     <button
                       onClick={() => removeReminder(reminder.id)}
-                      className="p-2 rounded-full border border-neutral-200 text-neutral-500 hover:text-red-500 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800 transition-colors"
+                      className="shrink-0 rounded-full border border-neutral-200 p-2.5 sm:p-3 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-red-500 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800"
                     >
                       <X size={18} strokeWidth={2.5} />
                     </button>
@@ -202,9 +317,8 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
 
         {/* Add Button */}
         <motion.button
-          layout
           onClick={addReminder}
-          className="w-full mt-6 py-3 flex items-center justify-center gap-2 rounded-2xl font-semibold transition-colors bg-neutral-100 text-neutral-800 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-neutral-100 py-3 font-semibold text-neutral-800 transition-colors hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
         >
           <Plus size={18} strokeWidth={2.5} />
           Add Reminder

@@ -1,5 +1,5 @@
 import { mails } from "../../data"
-import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   IconChevronDown,
   IconPlus,
@@ -16,21 +16,21 @@ import {
   IconTrash,
   IconArchive
 } from "@tabler/icons-react"
-import { Textarea } from "../../components/ui/textarea"
-import { Field, FieldContent } from "../../components/ui/field"
-import { Button } from "../../components/ui/button"
+import { Textarea } from "@/components/ui/textarea"
+import { Field, FieldContent } from "@/components/ui/field"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../../components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../../components/ui/tooltip"
+} from "@/components/ui/tooltip"
 
 export function MailViewer({ id }: { id: string }) {
   const mail = mails.find((m) => m.id === id)

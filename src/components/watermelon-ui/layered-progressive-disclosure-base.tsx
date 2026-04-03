@@ -53,7 +53,7 @@ export default function LayeredProgressiveDisclosure({
   };
 
   return (
-    <div className="theme-injected flex min-w-87.5 flex-col gap-3 rounded-3xl border border-border bg-card p-3 font-sans transition-colors duration-300">
+    <div className="theme-injected flex min-w-[300px] flex-col gap-3 rounded-3xl border border-border bg-card p-3 font-sans transition-colors duration-300">
       <p className="ml-2 font-sans font-semibold tracking-tight text-muted-foreground">
         {title}
       </p>

@@ -1,13 +1,13 @@
 'use client';
 
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from './ui/select';
+} from '@/components/ui/select';
 import {
   Dialog,
   DialogContent,
@@ -17,8 +17,8 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from './ui/dialog';
-import { Input } from './ui/input';
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
 import { Download, Plus } from 'lucide-react';
 
 export function CompanyFilters() {
@@ -98,13 +98,11 @@ export function CompanyFilters() {
       <div className="flex-1" />
 
       <Dialog>
-        <DialogTrigger
-          render={
-            <button className="flex cursor-pointer items-center gap-2 rounded-full border-y border-neutral-200 bg-neutral-100 px-3 py-2 text-xs text-neutral-600 shadow-none transition-colors hover:bg-neutral-200/50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700/50" />
-          }
-        >
-          <Download className="size-3.5" />
-          Export
+        <DialogTrigger asChild>
+          <button className="flex cursor-pointer items-center gap-2 rounded-full border-y border-neutral-200 bg-neutral-100 px-3 py-2 text-xs text-neutral-600 shadow-none transition-colors hover:bg-neutral-200/50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700/50">
+            <Download className="size-3.5" />
+            Export
+          </button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
@@ -129,10 +127,10 @@ export function CompanyFilters() {
             </div>
           </div>
           <DialogFooter>
-            <DialogClose
-              render={<Button variant="outline" className="rounded-full" />}
-            >
-              Cancel
+            <DialogClose asChild>
+              <Button variant="outline" className="rounded-full">
+                Cancel
+              </Button>
             </DialogClose>
             <Button className="rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
               Export
@@ -142,16 +140,14 @@ export function CompanyFilters() {
       </Dialog>
 
       <Dialog>
-        <DialogTrigger
-          render={
-            <Button
-              size="sm"
-              className="cursor-pointer rounded-full border-[1.5px] border-indigo-600 bg-gradient-to-r from-indigo-700 to-indigo-800 text-xs font-semibold text-white inset-shadow-sm"
-            />
-          }
-        >
-          <Plus className="size-3.5" />
-          New Company
+        <DialogTrigger asChild>
+          <Button
+            size="sm"
+            className="cursor-pointer rounded-full border-[1.5px] border-indigo-600 bg-gradient-to-r from-indigo-700 to-indigo-800 text-xs font-semibold text-white inset-shadow-sm"
+          >
+            <Plus className="size-3.5" />
+            New Company
+          </Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
@@ -181,10 +177,10 @@ export function CompanyFilters() {
             </div>
           </div>
           <DialogFooter>
-            <DialogClose
-              render={<Button variant="outline" className="rounded-full" />}
-            >
-              Cancel
+            <DialogClose asChild>
+              <Button variant="outline" className="rounded-full">
+                Cancel
+              </Button>
             </DialogClose>
             <Button className="rounded-full bg-indigo-600 text-white hover:bg-indigo-700">
               Save Company

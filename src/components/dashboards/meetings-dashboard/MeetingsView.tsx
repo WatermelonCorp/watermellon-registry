@@ -10,20 +10,20 @@ import {
     IconUpload,
     IconCalendarEvent,
 } from "@tabler/icons-react"
-import { Button } from "./components/ui/button"
-import { Input } from "./components/ui/input"
-import { Badge } from "./components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "./components/ui/select"
+} from "@/components/ui/select"
 import {
     Tabs, TabsList, TabsTrigger
-} from "./components/ui/tabs"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./components/ui/sheet"
+} from "@/components/ui/tabs"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import {
     Dialog,
     DialogContent,
@@ -32,7 +32,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "./components/ui/dialog"
+} from "@/components/ui/dialog"
 import { Command, Maximize2, Plus } from "lucide-react"
 
 import { MEETING_COLUMNS, MEETINGS } from "./data"

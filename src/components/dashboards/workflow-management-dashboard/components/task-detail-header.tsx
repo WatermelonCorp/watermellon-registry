@@ -1,8 +1,8 @@
 import { useTaskStore, type Task } from "./store/task-store";
 
 import { AlertCircle, Check, Ellipsis, X, Share2, Trash2, Copy } from "lucide-react";
-import { Separator } from "./ui/separator";
-import { Button } from "./ui/button";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -11,15 +11,15 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogFooter,
-} from "./ui/dialog";
+} from "@/components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from "./ui/dropdown-menu";
-import { Badge } from "./ui/badge";
+} from "@/components/ui/dropdown-menu";
+import { Badge } from "@/components/ui/badge";
 
 export default function TaskDetailHeader() {
   const { tasks, selectedTaskId, selectTask } = useTaskStore();

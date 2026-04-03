@@ -1,5 +1,5 @@
 import { AppSidebar } from "./components/app-sidebar";
-import { SidebarInset, SidebarProvider, SidebarTrigger, useSidebar } from "./components/ui/sidebar";
+import { SidebarInset, SidebarProvider, SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 
 const DashboardHeader = () => {
   const { open, isMobile, openMobile } = useSidebar();

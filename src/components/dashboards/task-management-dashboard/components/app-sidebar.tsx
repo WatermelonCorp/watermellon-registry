@@ -16,7 +16,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
-} from "./ui/sidebar"
+} from "@/components/ui/sidebar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +24,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import { data } from "../data"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
