@@ -1619,18 +1619,7 @@
         }
       ]
     },
-    {
-      "name": "debug-panel",
-      "type": "registry:ui",
-      "dependencies": ["motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/debug-panel.tsx",
-          "target": "components/ui/debug-panel.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
+
     {
       "name": "deployment-card",
       "type": "registry:ui",
@@ -1744,18 +1733,7 @@
         }
       ]
     },
-    {
-      "name": "draggable-toolbar",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/draggable-toolbar.tsx",
-          "target": "components/ui/draggable-toolbar.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
+
     {
       "name": "draw-signature",
       "type": "registry:ui",
@@ -3359,18 +3337,6 @@
         {
           "path": "src/components/watermelon-ui/list-stack-base.tsx",
           "target": "components/ui/list-stack-base.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "loop-hook",
-      "type": "registry:ui",
-      "dependencies": ["motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/loop-hook.tsx",
-          "target": "components/ui/loop-hook.tsx",
           "type": "registry:ui"
         }
       ]
@@ -5964,30 +5930,6 @@
         {
           "path": "src/components/watermelon-ui/vertical-tooltip-navbar-base.tsx",
           "target": "components/ui/vertical-tooltip-navbar-base.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "video-player",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/video-player.tsx",
-          "target": "components/ui/video-player.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "video-player-02",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/video-player-02.tsx",
-          "target": "components/ui/video-player-02.tsx",
           "type": "registry:ui"
         }
       ]
