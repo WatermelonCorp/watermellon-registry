@@ -32,11 +32,11 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
     <motion.div
       layout
       transition={spring}
-      className="theme-injected relative flex items-center justify-between overflow-hidden rounded-4xl border border-border bg-card p-1 font-sans shadow-sm"
+      className="theme-injected relative flex w-full max-w-[calc(100vw-32px)] sm:max-w-md items-center justify-between overflow-hidden rounded-4xl border border-border bg-card p-1 font-sans shadow-sm"
     >
       <motion.div
         layout
-        className="flex items-center gap-1 rounded-4xl bg-background p-1 shadow-md"
+        className="flex shrink-0 items-center gap-1 rounded-4xl bg-background p-1 shadow-md"
       >
         <motion.button
           onClick={() => setIsExpanded(false)}
@@ -79,7 +79,7 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
             animate={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
             exit={{ opacity: 0, filter: 'blur(4px)', x: 30 }}
             transition={spring}
-            className="flex items-center gap-5 px-4"
+            className="flex flex-1 items-center justify-end gap-3 sm:gap-5 px-4"
           >
             {tools.map((tool, index) => (
               <ToolIcon key={index}>{tool}</ToolIcon>
@@ -92,22 +92,22 @@ export const ContextualAIBar: React.FC<ContextualAIBarProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={spring}
-            className="flex items-center gap-2 sm:pl-4"
+            className="flex flex-1 items-center gap-1 sm:gap-2 pl-2 sm:pl-4"
           >
             <input
               autoFocus
               type="text"
               placeholder={placeholder}
-              className="w-33.75 border-none bg-transparent font-sans text-xl text-foreground placeholder:text-muted-foreground outline-none sm:w-50"
+              className="w-full flex-1 border-none bg-transparent font-sans text-lg sm:text-xl text-foreground placeholder:text-muted-foreground outline-none"
             />
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.92 }}
               transition={spring}
-              className="rounded-4xl border border-border bg-background p-3 text-foreground shadow-md transition-colors hover:bg-muted"
+              className="shrink-0 rounded-4xl border border-border bg-background p-2.5 sm:p-3 text-foreground shadow-md transition-colors hover:bg-muted"
             >
-              <ArrowRight size={22} strokeWidth={2.5} />
+              <ArrowRight size={20} className="sm:w-[22px] sm:h-[22px]" strokeWidth={2.5} />
             </motion.button>
           </motion.div>
         )}

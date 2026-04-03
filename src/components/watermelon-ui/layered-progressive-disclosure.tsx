@@ -53,7 +53,7 @@ export default function LayeredProgressiveDisclosure({
   };
 
   return (
-    <div className="flex min-w-[350px] flex-col gap-3 rounded-3xl bg-neutral-100 p-3 transition-colors duration-300 dark:bg-neutral-900/50">
+    <div className="flex min-w-[300px] flex-col gap-3 rounded-3xl bg-neutral-100 p-3 transition-colors duration-300 dark:bg-neutral-900/50">
       <p className="ml-2 font-semibold tracking-tight text-neutral-500 dark:text-neutral-400">
         {title}
       </p>

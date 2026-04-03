@@ -1,17 +1,16 @@
+"use client";
 
-'use client';
-
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from "react";
 import {
   motion,
   AnimatePresence,
   type Variants,
-  type MotionValue,
   useMotionValue,
   useSpring,
   useTransform,
-} from 'motion/react';
-import { X } from 'lucide-react';
+  type MotionValue,
+} from "motion/react";
+import { X } from "lucide-react";
 
 export interface GalleryItem {
   id: string | number;
@@ -35,6 +34,7 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const [isPanning, setIsPanning] = useState(false);
   const [responsiveSizes, setResponsiveSizes] = useState({
     radius,
     thumbnailSize,
@@ -45,11 +45,17 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
     const updateSizes = () => {
       const width = window.innerWidth;
 
-      if (width < 640) {
+      if (width < 400) {
+        setResponsiveSizes({
+          radius: Math.min(radius, 110),
+          thumbnailSize: Math.min(thumbnailSize, 70),
+          centerSize: Math.min(centerSize, 260),
+        });
+      } else if (width < 640) {
         setResponsiveSizes({
           radius: Math.min(radius, 140),
           thumbnailSize: Math.min(thumbnailSize, 80),
-          centerSize: Math.min(centerSize, 280),
+          centerSize: Math.min(centerSize, 300),
         });
       } else if (width < 1024) {
         setResponsiveSizes({
@@ -63,15 +69,15 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
     };
 
     updateSizes();
-    window.addEventListener('resize', updateSizes);
-    return () => window.removeEventListener('resize', updateSizes);
+    window.addEventListener("resize", updateSizes);
+    return () => window.removeEventListener("resize", updateSizes);
   }, [radius, thumbnailSize, centerSize]);
 
   const rotation = useMotionValue(0);
 
   const smoothRotation = useSpring(rotation, {
-    bounce: 0.3,
-    duration: 0.2
+    bounce: 0.15,
+    duration: 0.1,
   });
 
   const toggleExpand = useCallback(() => {
@@ -89,13 +95,13 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
   };
 
   return (
-    <div className="relative flex h-[350px] w-full touch-none items-center justify-center overflow-visible select-none bg-transparent theme-injected font-sans sm:h-[450px]">
+    <div className="theme-injected relative flex h-[350px] w-full touch-pan-y items-center justify-center overflow-visible bg-transparent font-sans select-none sm:h-[450px]">
       <AnimatePresence mode="popLayout">
         {!isExpanded ? (
           <motion.div
             key="center-view"
             layout
-            transition={{ type: 'spring', bounce: 0.15, duration: 0.15 }}
+            transition={{ type: "spring", bounce: 0.15, duration: 0.15 }}
             className="relative z-10"
           >
             <motion.div
@@ -104,7 +110,7 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
                 width: responsiveSizes.centerSize,
                 height: responsiveSizes.centerSize,
               }}
-              className="relative overflow-hidden rounded-2xl border-2 border-border bg-card p-3 shadow-xl transition-colors duration-300 sm:rounded-3xl sm:p-4"
+              className="border-border bg-card relative overflow-hidden rounded-2xl border-2 p-3 shadow-xl transition-colors duration-300 sm:rounded-3xl sm:p-4"
             >
               <motion.img
                 layoutId={`img-${items[activeIndex].id}`}
@@ -116,15 +122,12 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
 
               <button
                 onClick={toggleExpand}
-                className="absolute top-6 right-6 flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted shadow-lg backdrop-blur-xl transition-all duration-200 hover:scale-105 hover:bg-secondary active:scale-95 sm:top-8 sm:right-8 sm:h-10 sm:w-10"
+                className="border-border bg-muted hover:bg-secondary absolute top-6 right-6 flex h-8 w-8 items-center justify-center rounded-full border shadow-lg backdrop-blur-xl transition-all duration-200 hover:scale-105 active:scale-95 sm:top-8 sm:right-8 sm:h-10 sm:w-10"
               >
-                <X
-                  size={20}
-                  className="text-muted-foreground sm:hidden"
-                />
+                <X size={20} className="text-muted-foreground sm:hidden" />
                 <X
                   size={28}
-                  className="hidden text-muted-foreground sm:block"
+                  className="text-muted-foreground hidden sm:block"
                 />
               </button>
             </motion.div>
@@ -136,7 +139,11 @@ export const RadialCarousel: React.FC<RadialCarouselProps> = ({
             initial="collapsed"
             animate="expanded"
             exit="collapsed"
-            className="relative flex h-full w-full cursor-grab items-center justify-center active:cursor-grabbing"
+            className={`relative flex h-full w-full cursor-grab items-center justify-center active:cursor-grabbing ${
+              isPanning ? "touch-none" : "touch-pan-y"
+            }`}
+            onPanStart={() => setIsPanning(true)}
+            onPanEnd={() => setIsPanning(false)}
             onPan={(_, info) => {
               rotation.set(rotation.get() + info.delta.x * 0.5);
             }}
@@ -199,12 +206,12 @@ const Item: React.FC<ItemProps> = ({
     collapsed: {
       opacity: 0,
       scale: 0.8,
-      transition: { type: 'spring', bounce: 0.4, duration: 0.5 },
+      transition: { type: "spring", bounce: 0.4, duration: 0.5 },
     },
     expanded: {
       scale: 1,
       opacity: 1,
-      transition: { type: 'spring', bounce: 0.4, duration: 0.5 },
+      transition: { type: "spring", bounce: 0.4, duration: 0.5 },
     },
   };
 
@@ -218,7 +225,7 @@ const Item: React.FC<ItemProps> = ({
       <motion.div
         layoutId={`card-${item.id}`}
         style={{ width: thumbnailSize, height: thumbnailSize }}
-        className="overflow-hidden rounded-lg border-2 border-border bg-card p-1 shadow-lg ring-1 ring-border/40 transition-colors duration-300 sm:rounded-xl"
+        className="border-border bg-card ring-border/40 overflow-hidden rounded-lg border-2 p-1 shadow-lg ring-1 transition-colors duration-300 sm:rounded-xl"
       >
         <motion.img
           layoutId={`img-${item.id}`}

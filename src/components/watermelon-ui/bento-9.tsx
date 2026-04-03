@@ -1,0 +1,794 @@
+"use client";
+import { useEffect, useState, type ReactElement, type SVGProps } from "react";
+import {
+  animate,
+  AnimatePresence,
+  motion,
+  stagger,
+  useAnimate,
+  useMotionValue,
+} from "framer-motion";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { FaLongArrowAltDown } from "react-icons/fa";
+import { FaCircleChevronDown } from "react-icons/fa6";
+import { MdOutlineBarChart } from "react-icons/md";
+import { IoMdGlobe } from "react-icons/io";
+const DoubleCheck = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <rect opacity="0.44" x="4" width="20" height="20" fill="url(#pattern0)" />
+      <rect y="4" width="20" height="20" fill="url(#pattern1)" />
+
+      <defs>
+        <pattern
+          id="pattern0"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use href="#image0" transform="scale(0.0111111)" />
+        </pattern>
+
+        <pattern
+          id="pattern1"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use href="#image0" transform="scale(0.0111111)" />
+        </pattern>
+
+        <image
+          id="image0"
+          width="90"
+          height="90"
+          preserveAspectRatio="none"
+          href="data:image/png;base64,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"
+        />
+      </defs>
+    </svg>
+  );
+};
+const colors = {
+  bg: "bg-zinc-950",
+  cardBg: "bg-zinc-900",
+  border: "border-zinc-800",
+  textMain: "text-zinc-100",
+  textSub: "text-zinc-400",
+  textMuted: "text-zinc-500",
+  statusUp: "bg-sky-500",
+  statusDown: "bg-rose-500",
+  accent: "text-sky-400",
+  highlightBg: "bg-zinc-800",
+  faintBg: "bg-zinc-800/50",
+  outline: "border-zinc-700",
+  faintOutline: "border-zinc-800",
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+type Incident = {
+  id: string;
+  message: string;
+  region: string;
+};
+
+type ChatIncidentProps = {
+  text: string;
+  incidents: Incident[];
+};
+
+export const ChatIncident = ({ text, incidents }: ChatIncidentProps) => {
+  const [typed, setTyped] = useState("");
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const run = async () => {
+      while (isMounted) {
+        // reset
+        setTyped("");
+
+        for (let i = 0; i <= text.length; i++) {
+          await new Promise((r) => setTimeout(r, 40));
+          if (!isMounted) return;
+          setTyped(text.slice(0, i));
+        }
+
+        await new Promise((r) => setTimeout(r, 500));
+
+        await animate(
+          "[data-item]",
+          { opacity: [0, 1], y: [-20, 0], filter: ["blur(4px)", "blur(0px)"] },
+          {
+            duration: 0.3,
+            delay: stagger(0.15),
+          }
+        );
+
+        await new Promise((r) => setTimeout(r, 5000));
+
+        await animate(
+          "[data-item]",
+          { opacity: [1, 0], filter: ["blur(0px)", "blur(4px)"] },
+          {
+            duration: 0.3,
+            delay: stagger(0.15, { from: "last" }),
+          }
+        );
+
+        setTyped("");
+
+        await new Promise((r) => setTimeout(r, 500));
+      }
+    };
+
+    run();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [text, animate]);
+
+  return (
+    <div
+      ref={scope}
+      className="mt-2 flex flex-col [mask-image:linear-gradient(to_bottom,black_0%,transparent),linear-gradient(to_right,black_0%,transparent)] p-4"
+    >
+      <div className="flex gap-1">
+        <div className="ml-0.5 flex size-10 shrink-0 items-center justify-center rounded-full border border-slate-600/40 bg-slate-800/50 shadow-[inset_0_-1px_4px_0_rgba(0,0,0,0.5),inset_0_1px_4px_0_rgba(255,255,255,0.2)]">
+          <img
+            src={"https://assets.watermelon.sh/monkey-face.png"}
+            alt="monkey-face-avatar"
+            height={32}
+            width={32}
+          />
+        </div>
+
+        <div className="flex w-full items-center rounded-lg bg-gradient-to-r from-slate-800/70 to-slate-800/20 px-3 py-2 text-sm text-slate-200 shadow-[inset_0_-1px_4px_0_rgba(0,0,0,0.5),inset_2px_1px_4px_0_rgba(255,255,255,0.07)]">
+          {typed}
+
+          {typed.length < text.length && (
+            <motion.span
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1, repeat: Infinity }}
+              className="ml-0.5"
+            >
+              |
+            </motion.span>
+          )}
+        </div>
+      </div>
+
+      <div className="relative mt-1 gap-y-1 pl-4">
+        {incidents.map((item) => (
+          <div
+            key={item.id}
+            data-item
+            className="relative flex flex-col items-center opacity-0"
+          >
+            <div className="h-4 w-[2px] translate-x-[5px] self-start bg-slate-600/60" />
+
+            <div className="flex w-full items-center gap-2 self-start">
+              <div className="z-10 size-3 shrink-0 rounded-full bg-red-400" />
+
+              <p className="truncate text-sm text-slate-200">{item.message}</p>
+
+              <span className="ml-auto flex items-center gap-1 rounded-full bg-slate-700/20 px-2 py-1 text-[10px] whitespace-nowrap text-slate-400 shadow-[inset_0_-1px_4px_0_rgba(0,0,0,0.5),inset_2px_1px_4px_0_rgba(255,255,255,0.07)]">
+                <IoMdGlobe className="size-4" />
+                {item.region}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+const Card3_BrowserMock = () => (
+  <motion.div
+    initial={{ y: 60 }}
+    whileHover={{ y: 40 }}
+    transition={{ type: "spring", stiffness: 120, damping: 14 }}
+    className="h-full translate-x-[10%] overflow-clip rounded-t-xl [mask-image:linear-gradient(to_top,transparent,black_100%)] p-2"
+  >
+    <div
+      className={`flex items-center gap-1.5 rounded-t-lg bg-neutral-900 p-1.5`}
+    >
+      <div className="h-1.5 w-1.5 rounded-full bg-red-600" />
+      <div className="h-1.5 w-1.5 rounded-full bg-yellow-600" />
+      <div className="h-1.5 w-1.5 rounded-full bg-green-600" />
+      <span className={`text-[8px] ${colors.textMuted} ml-auto font-mono`}>
+        allpine.com
+      </span>
+      <span className={`text-[10px] ${colors.textMuted} mx-1`}>+</span>
+    </div>
+
+    <div
+      className={`h-full border-t bg-gradient-to-b from-slate-800 to-transparent p-3`}
+    >
+      <div className="mb-2 flex items-center gap-2">
+        <span className={`text-[10px] ${colors.textMain}`}>←</span>
+        <span className={`text-[10px] ${colors.textMuted}`}>→</span>
+        <span className={`text-[10px] ${colors.textMuted}`}>↻</span>
+        <span
+          className={`text-[10px] ${colors.textMuted} border font-mono ${colors.outline} truncate rounded px-2`}
+        >
+          www.corestack.com
+        </span>
+      </div>
+
+      <div className={`rounded bg-slate-400/20 p-2 text-[10px]`}>
+        <span className="text-green-400">connection is secure</span>
+        <p className={colors.textMuted}>
+          Your information is private when
+          <br /> it is seen on this site
+        </p>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const data = [
+  { name: "tesla.com", type: "Peer certificate cannot be authenticated" },
+  { name: "around.co", type: "Peer certificate cannot be authenticated" },
+];
+
+export const Card4_IncidentsMock = () => {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => setVisible(true), 1200);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className={`h-full space-y-4 rounded-md py-6 pl-6`}>
+      <div className="flex flex-col justify-center gap-1">
+        <div className="flex items-center gap-4">
+          <div
+            className={`relative flex size-7 shrink-0 rounded ${colors.statusDown}`}
+          >
+            <DoubleCheck className="m-auto" />
+            <div className="absolute left-1/2 h-8 w-0.5 -translate-x-1/2 -translate-y-[120%] bg-slate-600" />
+            <div className="absolute left-1/2 h-3 w-0.5 -translate-x-1/2 translate-y-[250%] bg-slate-600" />
+          </div>
+          <div className="flex flex-col leading-tight">
+            <p className={`text-md ${colors.textMain} font-semibold`}>
+              10 similar incidents
+            </p>
+            <p className={`text-[9px] font-semibold ${colors.textMuted}`}>
+              15 may 2025 at 06:04am
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`flex h-full flex-col border ${colors.faintOutline} relative overflow-clip rounded-l-md bg-gradient-to-br from-[#1B202B] to-transparent [mask-image:linear-gradient(to_top,transparent,black_60%)]`}
+      >
+        <AnimatePresence>
+          {visible &&
+            data.map((item, i) => (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{
+                  opacity: 0,
+                  x: -100,
+                  transition: {
+                    duration: 0.4,
+                    delay: (data.length - 1 - i) * 0.15,
+                  },
+                }}
+                transition={{
+                  delay: i * 0.15,
+                  duration: 0.4,
+                }}
+                className="flex items-center gap-2 p-2 first:border-b first:border-slate-700/80"
+              >
+                <div className="relative flex size-8 shrink-0 items-center justify-center rounded-full bg-red-400/30">
+                  <motion.div
+                    className="absolute size-8 rounded-full bg-red-600/40"
+                    whileInView={{
+                      scale: [1, 0.8, 1],
+                      opacity: [1, 0, 1],
+                    }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      delay: i * 0.1,
+                      ease: "easeOut",
+                    }}
+                  />
+                  <div className="flex size-6 items-center justify-center rounded-full bg-red-600">
+                    <FaLongArrowAltDown className="z-20 size-4" />
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <p className={`text-xs ${colors.textMain} truncate`}>
+                    {item.name}
+                  </p>
+                  <p className={`text-[10px] ${colors.textMuted} truncate`}>
+                    {item.type}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+        </AnimatePresence>
+
+        <div className="absolute top-0 size-90 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-slate-500 to-transparent opacity-60 blur-3xl"></div>
+      </div>
+    </div>
+  );
+};
+
+const Notion = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 256 268">
+    <path
+      fill="#FFF"
+      d="M16.092 11.538 164.09.608c18.179-1.56 22.85-.508 34.28 7.801l47.243 33.282C253.406 47.414 256 48.975 256 55.207v182.527c0 11.439-4.155 18.205-18.696 19.24L65.44 267.378c-10.913.517-16.11-1.043-21.825-8.327L8.826 213.814C2.586 205.487 0 199.254 0 191.97V29.726c0-9.352 4.155-17.153 16.092-18.188Z"
+    />
+    <path d="M164.09.608 16.092 11.538C4.155 12.573 0 20.374 0 29.726v162.245c0 7.284 2.585 13.516 8.826 21.843l34.789 45.237c5.715 7.284 10.912 8.844 21.825 8.327l171.864-10.404c14.532-1.035 18.696-7.801 18.696-19.24V55.207c0-5.911-2.336-7.614-9.21-12.66l-1.185-.856L198.37 8.409C186.94.1 182.27-.952 164.09.608ZM69.327 52.22c-14.033.945-17.216 1.159-25.186-5.323L23.876 30.778c-2.06-2.086-1.026-4.69 4.163-5.207l142.274-10.395c11.947-1.043 18.17 3.12 22.842 6.758l24.401 17.68c1.043.525 3.638 3.637.517 3.637L71.146 52.095l-1.819.125Zm-16.36 183.954V81.222c0-6.767 2.077-9.887 8.3-10.413L230.02 60.93c5.724-.517 8.31 3.12 8.31 9.879v153.917c0 6.767-1.044 12.49-10.387 13.008l-161.487 9.361c-9.343.517-13.489-2.594-13.489-10.921ZM212.377 89.53c1.034 4.681 0 9.362-4.681 9.897l-7.783 1.542v114.404c-6.758 3.637-12.981 5.715-18.18 5.715-8.308 0-10.386-2.604-16.609-10.396l-50.898-80.079v77.476l16.1 3.646s0 9.362-12.989 9.362l-35.814 2.077c-1.043-2.086 0-7.284 3.63-8.318l9.351-2.595V109.823l-12.98-1.052c-1.044-4.68 1.55-11.439 8.826-11.965l38.426-2.585 52.958 81.113v-71.76l-13.498-1.552c-1.043-5.733 3.111-9.896 8.3-10.404l35.84-2.087Z" />
+  </svg>
+);
+
+const Figma = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 54 80" fill="none">
+    <g clipPath="url(#figma__clip0_912_3)">
+      <path
+        d="M13.3333 80.0002C20.6933 80.0002 26.6667 74.0268 26.6667 66.6668V53.3335H13.3333C5.97333 53.3335 0 59.3068 0 66.6668C0 74.0268 5.97333 80.0002 13.3333 80.0002Z"
+        fill="#0ACF83"
+      />
+      <path
+        d="M0 39.9998C0 32.6398 5.97333 26.6665 13.3333 26.6665H26.6667V53.3332H13.3333C5.97333 53.3332 0 47.3598 0 39.9998Z"
+        fill="#A259FF"
+      />
+      <path
+        d="M0 13.3333C0 5.97333 5.97333 0 13.3333 0H26.6667V26.6667H13.3333C5.97333 26.6667 0 20.6933 0 13.3333Z"
+        fill="#F24E1E"
+      />
+      <path
+        d="M26.6667 0H40.0001C47.3601 0 53.3334 5.97333 53.3334 13.3333C53.3334 20.6933 47.3601 26.6667 40.0001 26.6667H26.6667V0Z"
+        fill="#FF7262"
+      />
+      <path
+        d="M53.3334 39.9998C53.3334 47.3598 47.3601 53.3332 40.0001 53.3332C32.6401 53.3332 26.6667 47.3598 26.6667 39.9998C26.6667 32.6398 32.6401 26.6665 40.0001 26.6665C47.3601 26.6665 53.3334 32.6398 53.3334 39.9998Z"
+        fill="#1ABCFE"
+      />
+    </g>
+    <defs>
+      <clipPath id="figma__clip0_912_3">
+        <rect width="53.3333" height="80" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+const Slack = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 2447.6 2452.5">
+    <g clipRule="evenodd" fillRule="evenodd">
+      <path
+        d="m897.4 0c-135.3.1-244.8 109.9-244.7 245.2-.1 135.3 109.5 245.1 244.8 245.2h244.8v-245.1c.1-135.3-109.5-245.1-244.9-245.3.1 0 .1 0 0 0m0 654h-652.6c-135.3.1-244.9 109.9-244.8 245.2-.2 135.3 109.4 245.1 244.7 245.3h652.7c135.3-.1 244.9-109.9 244.8-245.2.1-135.4-109.5-245.2-244.8-245.3z"
+        fill="#36c5f0"
+      />
+      <path
+        d="m2447.6 899.2c.1-135.3-109.5-245.1-244.8-245.2-135.3.1-244.9 109.9-244.8 245.2v245.3h244.8c135.3-.1 244.9-109.9 244.8-245.3zm-652.7 0v-654c.1-135.2-109.4-245-244.7-245.2-135.3.1-244.9 109.9-244.8 245.2v654c-.2 135.3 109.4 245.1 244.7 245.3 135.3-.1 244.9-109.9 244.8-245.3z"
+        fill="#2eb67d"
+      />
+      <path
+        d="m1550.1 2452.5c135.3-.1 244.9-109.9 244.8-245.2.1-135.3-109.5-245.1-244.8-245.2h-244.8v245.2c-.1 135.2 109.5 245 244.8 245.2zm0-654.1h652.7c135.3-.1 244.9-109.9 244.8-245.2.2-135.3-109.4-245.1-244.7-245.3h-652.7c-135.3.1-244.9 109.9-244.8 245.2-.1 135.4 109.4 245.2 244.7 245.3z"
+        fill="#ecb22e"
+      />
+      <path
+        d="m0 1553.2c-.1 135.3 109.5 245.1 244.8 245.2 135.3-.1 244.9-109.9 244.8-245.2v-245.2h-244.8c-135.3.1-244.9 109.9-244.8 245.2zm652.7 0v654c-.2 135.3 109.4 245.1 244.7 245.3 135.3-.1 244.9-109.9 244.8-245.2v-653.9c.2-135.3-109.4-245.1-244.7-245.3-135.4 0-244.9 109.8-244.8 245.1 0 0 0 .1 0 0"
+        fill="#e01e5a"
+      />
+    </g>
+  </svg>
+);
+
+const Paper = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 39 39" fill="none">
+    <path d="M39 24H24V6H6V24H24V39H0V6H6V0H39V24Z" fill="#81ADEC" />
+  </svg>
+);
+
+const React = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    {...props}
+    viewBox="0 0 569 512"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+  >
+    <g fill="none" fillRule="evenodd">
+      <g transform="translate(-227, -256)" fill="#58C4DC" fillRule="nonzero">
+        <g transform="translate(227, 256)">
+          <path
+            d="M285.5,201 C255.400481,201 231,225.400481 231,255.5 C231,285.599519 255.400481,310 285.5,310 C315.599519,310 340,285.599519 340,255.5 C340,225.400481 315.599519,201 285.5,201"
+            id="react_dark__Path"
+          />
+          <path
+            d="M568.959856,255.99437 C568.959856,213.207656 529.337802,175.68144 466.251623,150.985214 C467.094645,145.423543 467.85738,139.922107 468.399323,134.521063 C474.621631,73.0415145 459.808523,28.6686204 426.709856,9.5541429 C389.677085,-11.8291748 337.36955,3.69129898 284.479928,46.0162134 C231.590306,3.69129898 179.282771,-11.8291748 142.25,9.5541429 C109.151333,28.6686204 94.3382249,73.0415145 100.560533,134.521063 C101.102476,139.922107 101.845139,145.443621 102.708233,151.02537 C97.4493791,153.033193 92.2908847,155.161486 87.3331099,157.39017 C31.0111824,182.708821 0,217.765415 0,255.99437 C0,298.781084 39.6220545,336.307301 102.708233,361.003527 C101.845139,366.565197 101.102476,372.066633 100.560533,377.467678 C94.3382249,438.947226 109.151333,483.32012 142.25,502.434597 C153.629683,508.887578 166.52439,512.186771 179.603923,511.991836 C210.956328,511.991836 247.567589,495.487529 284.479928,465.972527 C321.372196,495.487529 358.003528,511.991836 389.396077,511.991836 C402.475265,512.183856 415.36922,508.884856 426.75,502.434597 C459.848667,483.32012 474.661775,438.947226 468.439467,377.467678 C467.897524,372.066633 467.134789,366.565197 466.291767,361.003527 C529.377946,336.347457 569,298.761006 569,255.99437 M389.155214,27.1025182 C397.565154,26.899606 405.877839,28.9368502 413.241569,33.0055186 C436.223966,46.2772304 446.540955,82.2775015 441.522965,131.770345 C441.181741,135.143488 440.780302,138.556788 440.298575,141.990165 C414.066922,134.08804 387.205771,128.452154 360.010724,125.144528 C343.525021,103.224055 325.192524,82.7564475 305.214266,63.9661533 C336.586743,39.7116483 366.032313,27.1025182 389.135142,27.1025182 M378.356498,310.205598 C368.204912,327.830733 357.150626,344.919965 345.237759,361.405091 C325.045049,363.479997 304.758818,364.51205 284.459856,364.497299 C264.167589,364.51136 243.888075,363.479308 223.702025,361.405091 C211.820914,344.919381 200.80007,327.83006 190.683646,310.205598 C180.532593,292.629285 171.306974,274.534187 163.044553,255.99437 C171.306974,237.454554 180.532593,219.359455 190.683646,201.783142 C200.784121,184.229367 211.770999,167.201087 223.601665,150.764353 C243.824636,148.63809 264.145559,147.579168 284.479928,147.591877 C304.772146,147.579725 325.051559,148.611772 345.237759,150.68404 C357.109048,167.14607 368.136094,184.201112 378.27621,201.783142 C388.419418,219.363718 397.644825,237.458403 405.915303,255.99437 C397.644825,274.530337 388.419418,292.625022 378.27621,310.205598 M419.724813,290.127366 C426.09516,307.503536 431.324985,325.277083 435.380944,343.334682 C417.779633,348.823635 399.836793,353.149774 381.668372,356.285142 C388.573127,345.871232 395.263781,335.035679 401.740334,323.778483 C408.143291,312.655143 414.144807,301.431411 419.805101,290.207679 M246.363271,390.377981 C258.848032,391.140954 271.593728,391.582675 284.5,391.582675 C297.406272,391.582675 310.232256,391.140954 322.737089,390.377981 C310.880643,404.583418 298.10766,417.997563 284.5,430.534446 C270.921643,417.999548 258.18192,404.585125 246.363271,390.377981 Z M187.311556,356.244986 C169.137286,353.123646 151.187726,348.810918 133.578912,343.334682 C137.618549,325.305649 142.828222,307.559058 149.174827,290.207679 C154.754833,301.431411 160.736278,312.655143 167.239594,323.778483 C173.74291,334.901824 180.467017,345.864539 187.311556,356.285142 M149.174827,221.760984 C142.850954,204.473938 137.654787,186.794745 133.619056,168.834762 C151.18418,163.352378 169.085653,159.013101 187.211197,155.844146 C180.346585,166.224592 173.622478,176.986525 167.139234,188.210257 C160.65599,199.433989 154.734761,210.517173 149.074467,221.760984 M322.616657,121.590681 C310.131896,120.827708 297.3862,120.385987 284.379568,120.385987 C271.479987,120.385987 258.767744,120.787552 246.242839,121.590681 C258.061488,107.383537 270.801211,93.9691137 284.379568,81.4342157 C297.99241,93.9658277 310.765727,107.380324 322.616657,121.590681 Z M401.70019,188.210257 C395.196875,176.939676 388.472767,166.09743 381.527868,155.68352 C399.744224,158.819049 417.734224,163.151949 435.380944,168.654058 C431.331963,186.680673 426.122466,204.426664 419.785029,221.781062 C414.205023,210.55733 408.203506,199.333598 401.720262,188.230335 M127.517179,131.790423 C122.438973,82.3176579 132.816178,46.2973086 155.778503,33.0255968 C163.144699,28.9632474 171.455651,26.9264282 179.864858,27.1225964 C202.967687,27.1225964 232.413257,39.7317265 263.785734,63.9862316 C243.794133,82.7898734 225.448298,103.270812 208.949132,125.204763 C181.761691,128.528025 154.90355,134.14313 128.661281,141.990165 C128.199626,138.556788 127.778115,135.163566 127.456963,131.790423 M98.4529773,182.106474 C101.54406,180.767925 104.695358,179.429376 107.906872,178.090828 C114.220532,204.735668 122.781793,230.7969 133.498624,255.99437 C122.761529,281.241316 114.193296,307.357063 107.8868,334.058539 C56.7434387,313.076786 27.0971497,284.003505 27.0971497,255.99437 C27.0971497,229.450947 53.1907013,202.526037 98.4529773,182.106474 Z M155.778503,478.963143 C132.816178,465.691432 122.438973,429.671082 127.517179,380.198317 C127.838331,376.825174 128.259842,373.431953 128.721497,369.978497 C154.953686,377.878517 181.814655,383.514365 209.009348,386.824134 C225.500295,408.752719 243.832321,429.233234 263.805806,448.042665 C220.069,481.834331 180.105722,492.97775 155.838719,478.963143 M441.502893,380.198317 C446.520883,429.691161 436.203894,465.691432 413.221497,478.963143 C388.974566,493.017906 348.991216,481.834331 305.274481,448.042665 C325.241364,429.232737 343.566681,408.752215 360.050868,386.824134 C387.245915,383.516508 414.107066,377.880622 440.338719,369.978497 C440.820446,373.431953 441.221885,376.825174 441.563109,380.198317 M461.193488,334.018382 C454.869166,307.332523 446.294494,281.231049 435.561592,255.99437 C446.289797,230.744081 454.857778,204.629101 461.173416,177.930202 C512.216417,198.911955 541.942994,227.985236 541.942994,255.99437 C541.942994,284.003505 512.296705,313.076786 461.153344,334.058539"
+            id="react_dark__Shape"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+);
+
+const Vercel = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 222" preserveAspectRatio="xMidYMid">
+    <path fill="#fff" d="m128 0 128 221.705H0z" />
+  </svg>
+);
+
+const GitHub = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 1024 1024" fill="none">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"
+      transform="scale(64)"
+      fill="#ffff"
+    />
+  </svg>
+);
+
+const Cursor = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    {...props}
+    id="cursor_dark__Ebene_1"
+    version="1.1"
+    viewBox="0 0 466.73 532.09"
+  >
+    <path d="M457.43,125.94L244.42,2.96c-6.84-3.95-15.28-3.95-22.12,0L9.3,125.94c-5.75,3.32-9.3,9.46-9.3,16.11v247.99c0,6.65,3.55,12.79,9.3,16.11l213.01,122.98c6.84,3.95,15.28,3.95,22.12,0l213.01-122.98c5.75-3.32,9.3-9.46,9.3-16.11v-247.99c0-6.65-3.55-12.79-9.3-16.11h-.01ZM444.05,151.99l-205.63,356.16c-1.39,2.4-5.06,1.42-5.06-1.36v-233.21c0-4.66-2.49-8.97-6.53-11.31L24.87,145.67c-2.4-1.39-1.42-5.06,1.36-5.06h411.26c5.84,0,9.49,6.33,6.57,11.39h-.01Z" />
+  </svg>
+);
+
+type IconType = (props: SVGProps<SVGSVGElement>) => ReactElement;
+
+const stacks1: IconType[] = [Figma, Vercel, Slack, Paper];
+const stacks2: IconType[] = [GitHub, React, Notion, Cursor];
+export const Card5_StackMock = () => {
+  return (
+    <div
+      className={`relative h-full w-full overflow-hidden border py-4 ${colors.faintOutline} rounded-md ${colors.faintBg} [mask-image:radial-gradient(ellipse_50%_50%_at_center,black_50%,transparent_100%)]`}
+    >
+      <div
+        className="space-y-6"
+        style={{
+          maskImage:
+            "radial-gradient(ellipse 60% 80% at 50% 50%, black 40%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 60% 80% at 50% 50%, black 40%, transparent 100%)",
+        }}
+      >
+        <Row items={stacks1} />
+        <Row reverse items={stacks2} />
+      </div>
+    </div>
+  );
+};
+
+const Row = ({
+  items,
+  reverse = false,
+}: {
+  items: IconType[];
+  reverse?: boolean;
+}) => {
+  const loop = [...items, ...items];
+
+  return (
+    <div className="overflow-hidden">
+      <motion.div
+        animate={{
+          x: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
+        }}
+        transition={{
+          duration: 20,
+          ease: "linear",
+          repeat: Infinity,
+        }}
+        className="flex w-max gap-6"
+      >
+        {loop.map((Icon, i) => (
+          <div
+            key={i}
+            className="flex aspect-square w-20 items-center justify-center rounded-lg bg-[#303847] text-xs text-white/70"
+          >
+            <Icon className="size-8 text-white grayscale-90 md:size-10" />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
+const backups = [
+  { id: "1", label: "managed database backup" },
+  { id: "2", label: "new database backup" },
+  { id: "3", label: "core database backup" },
+];
+
+type Item = {
+  id: string;
+  label: string;
+};
+
+type BackupListProps = {
+  items: Item[];
+};
+
+export const BackupList = ({ items }: BackupListProps) => {
+  const ITEM_HEIGHT = 60;
+  const VISIBLE = 3;
+
+  const loop = [...items, ...items, ...items];
+
+  const [index, setIndex] = useState(0);
+
+  const y = useMotionValue(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => prev + 1);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const normalizedIndex = index % items.length;
+
+    animate(y, -normalizedIndex * ITEM_HEIGHT, {
+      type: "spring",
+      bounce: 0,
+      duration: 1,
+    });
+  }, [index, items.length, y]);
+
+  const centerOffset = Math.floor(VISIBLE / 2);
+  const centerIndex = (index + centerOffset) % items.length;
+
+  return (
+    <div
+      className="relative overflow-hidden mask-t-from-20% mask-b-from-20%"
+      style={{ height: ITEM_HEIGHT * VISIBLE }}
+    >
+      <div className="pointer-events-none absolute inset-0 z-10 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" />
+
+      <motion.div style={{ y }} className="mt-4 flex flex-col gap-2 py-2 pl-6">
+        {loop.map((item, i) => {
+          const realIndex = i % items.length;
+          const active = realIndex === centerIndex;
+
+          return (
+            <motion.div
+              key={i}
+              animate={{
+                x: active ? 16 : 40,
+                scale: active ? 1.02 : 1,
+              }}
+              transition={{
+                type: "spring",
+                duration: 1,
+              }}
+              className={`flex w-full items-center gap-3 rounded-lg p-2 ${
+                active
+                  ? "bg-gradient-to-r from-slate-700/60 to-slate-800/20"
+                  : "border border-white/5 bg-slate-800/60"
+              }`}
+            >
+              <div
+                className={`flex size-8 shrink-0 items-center justify-center rounded-sm transition-colors duration-500 ease-out ${
+                  active
+                    ? "bg-blue-400 text-white"
+                    : "border border-slate-600 bg-slate-600 text-slate-400"
+                }`}
+              >
+                <MdOutlineBarChart className="size-6" />
+              </div>
+
+              <span
+                className={`truncate text-xs ${
+                  active ? "text-slate-100" : "text-slate-400"
+                }`}
+              >
+                {item.label}
+              </span>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </div>
+  );
+};
+
+const tabs = ["Response", "Screenshot", "Monitor"];
+
+function IncidentsCard1() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % tabs.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative flex h-full flex-col gap-2 p-6">
+      <div className="absolute top-0 left-0 size-40 rounded-lg border border-red-500 bg-gradient-to-br from-slate-500 to-transparent opacity-40 blur-3xl" />
+
+      <span className={`text-sm ${colors.textMuted}`}>Incidents</span>
+
+      <div className="flex items-center gap-3">
+        <div
+          className={`shrink-0 items-center justify-center rounded p-2 ${colors.statusUp}`}
+        >
+          <FaCircleChevronDown className="size-6" />
+        </div>
+        <div className="flex min-w-0 flex-col">
+          <span className={`text-sm ${colors.textMain} truncate`}>
+            allpine.com/status
+          </span>
+          <p className={`flex gap-3 text-xs ${colors.textMuted}`}>
+            <span className={colors.accent}>Up.</span>Checked every 25 sec
+          </p>
+        </div>
+      </div>
+
+      {/* tabs */}
+      <div className="mt-2">
+        <div className="relative flex items-center justify-between gap-2 text-sm font-normal">
+          {tabs.map((tab, i) => (
+            <div
+              key={tab}
+              className="relative flex flex-1 items-center justify-center p-2 text-center text-xs text-neutral-400"
+            >
+              {active === i && (
+                <motion.div
+                  layoutId="pill"
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 25,
+                  }}
+                  className="absolute inset-0 rounded-md bg-slate-400/10"
+                />
+              )}
+
+              <span className="relative z-10">{tab}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const BentoGrid9 = () => {
+  return (
+    <div
+      className={`min-h-screen ${colors.bg} flex items-center justify-center px-4 py-12 font-sans sm:px-8`}
+    >
+      <motion.div
+        className="grid max-w-7xl grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <BentoCard
+          title="Stop Guessing, Start Seeing"
+          description="Don't just get an alert. Get the exact screenshot and error log at the moment of failure for instant diagnosis."
+        >
+          <IncidentsCard1 />
+        </BentoCard>
+
+        <BentoCard
+          title="The Complete Post-Mortem"
+          description="Instantly see who was alerted and what actions were taken with a second-by-second timeline for every incident."
+        >
+          <ChatIncident
+            text="Could you check this out, Mike?"
+            incidents={[
+              {
+                id: "1",
+                message: "Monitor recovered.",
+                region: "North America",
+              },
+              {
+                id: "2",
+                message: "Monitor recovered.",
+                region: "North America",
+              },
+              {
+                id: "3",
+                message: "Monitor recovered.",
+                region: "North America",
+              },
+            ]}
+          />
+        </BentoCard>
+
+        <BentoCard
+          title="Prevent the Obvious Outages"
+          description="We monitor more than just uptime. Get proactive alerts on SSL/TLD expirations before your users see an error."
+        >
+          <Card3_BrowserMock />
+        </BentoCard>
+
+        <BentoCard
+          title="Silence the Alert Storm"
+          description="When a core service fails, get one smart alert, not fifty. Acknowledge once and fix the root cause without the noise."
+        >
+          <Card4_IncidentsMock />
+        </BentoCard>
+
+        <BentoCard
+          title="Your Entire Stack in One Place"
+          description="Connect to AWS, Vercel, Slack, and more in minutes. Get total visibility without changing your workflow."
+        >
+          <Card5_StackMock />
+        </BentoCard>
+
+        <BentoCard
+          title="Find Your Silent Failures"
+          description="Know instantly when a critical backup or background job fails. Don't let your silent workers let you down."
+        >
+          <BackupList items={backups} />
+        </BentoCard>
+      </motion.div>
+    </div>
+  );
+};
+
+function BentoCard({
+  title,
+  description,
+  children,
+}: {
+  title: string;
+  description: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Card className="flex max-w-[350px] flex-col gap-0 overflow-clip rounded-lg border border-slate-800 bg-[#171C27] p-0">
+      <CardContent className="relative h-[200px] overflow-hidden p-0">
+        {children}
+      </CardContent>
+      <CardFooter className="z-10 flex flex-col items-start space-y-2 border-none bg-transparent p-6 pt-2">
+        <h3 className="text-lg leading-tight font-bold text-white">{title}</h3>
+        <p className="text-xs font-semibold text-gray-400">{description}</p>
+      </CardFooter>
+    </Card>
+  );
+}
+
+export default BentoGrid9;

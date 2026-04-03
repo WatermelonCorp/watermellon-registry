@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
 import { Minus, Plus, X, ChevronUp, ChevronDown } from 'lucide-react';
@@ -151,12 +152,12 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
           bounce: 0.2,
           duration: 0.5,
         }}
-        className="w-full max-w-100 rounded-[32px] border-2 border-border bg-card p-6 shadow-lg transition-colors"
+        className="relative w-full max-w-100 rounded-[32px] border-2 border-border bg-card p-6 shadow-lg transition-colors"
       >
         {/* Header */}
-        <div className="mb-6 flex items-start justify-between gap-3">
+        <div className="mb-6 flex items-start justify-between gap-3 px-1">
           <div className="min-w-0 flex-1">
-            <h2 className="truncate font-sans text-lg font-bold text-foreground sm:text-xl">
+            <h2 className="leading-tight text-lg font-bold text-foreground sm:text-xl">
               {title}
             </h2>
 
@@ -261,9 +262,9 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
                   </motion.div>
 
                   {/* Value + Unit */}
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 relative">
                     <div
-                      className={`${basePill} flex flex-1 items-center justify-between px-2 py-1`}
+                      className={`${basePill} flex flex-1 min-w-[120px] items-center justify-between px-2 py-1`}
                     >
                       <button
                         onClick={() =>
@@ -293,7 +294,7 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
                     <motion.div
                       layout
                       onClick={() => toggleUnit(reminder.id, reminder.unit)}
-                      className={`${basePill} flex flex-[1.2] cursor-pointer items-center justify-between px-4 py-2`}
+                      className={`${basePill} flex flex-[1.4] min-w-[120px] cursor-pointer items-center justify-between px-4 py-2`}
                     >
                       <AnimatedWord word={reminder.unit} />
                       <div className="flex flex-col -space-y-1 text-muted-foreground">
@@ -304,7 +305,7 @@ export const EventReminders: React.FC<EventRemindersProps> = ({
 
                     <button
                       onClick={() => removeReminder(reminder.id)}
-                      className="rounded-4xl border border-border bg-card p-3 text-muted-foreground transition-colors hover:bg-muted hover:text-destructive"
+                      className="shrink-0 bg-background text-muted-foreground hover:bg-accent hover:text-accent-foreground border border-border rounded-full p-2.5 sm:p-3 transition-colors active:scale-95"
                     >
                       <X size={18} strokeWidth={2.5} />
                     </button>
