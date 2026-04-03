@@ -194,6 +194,7 @@
       "name": "bento-1",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-1.tsx",
@@ -206,6 +207,7 @@
       "name": "bento-2",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-2.tsx",
@@ -218,6 +220,7 @@
       "name": "bento-3",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-3.tsx",
@@ -230,6 +233,7 @@
       "name": "bento-4",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion", "matter-js"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-4.tsx",
@@ -242,6 +246,7 @@
       "name": "bento-5",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-5.tsx",
@@ -253,6 +258,7 @@
     {
       "name": "bento-6",
       "type": "registry:ui",
+      "registryDependencies": ["card"],
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
@@ -266,6 +272,7 @@
       "name": "bento-7",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-7.tsx",
@@ -278,6 +285,7 @@
       "name": "bento-14",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["card"],
       "files": [
         {
           "path": "src/components/watermelon-ui/bento-14.tsx",
@@ -289,6 +297,7 @@
     {
       "name": "bento-16",
       "type": "registry:ui",
+      "registryDependencies": ["card"],
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
