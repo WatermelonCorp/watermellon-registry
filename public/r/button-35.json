@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-35",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-35.tsx",
+      "content": "import { IoTrashOutline } from \"react-icons/io5\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button35 = () => {\r\n  return (\r\n    <Button className=\"from-destructive via-destructive/60 to-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 bg-transparent bg-gradient-to-r [background-size:200%_auto] text-white hover:bg-transparent hover:bg-[99%_center]\">\r\n      <IoTrashOutline />\r\n      Delete\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button35;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-35.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

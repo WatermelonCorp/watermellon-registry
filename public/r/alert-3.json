@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-3",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-3.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { MdError } from \"react-icons/md\";\r\nimport { RxCross2 } from \"react-icons/rx\";\r\nimport { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nconst Alert3 = () => {\r\n  const [isActive, setIsActive] = useState(true);\r\n\r\n  if (!isActive) return null;\r\n\r\n  return (\r\n    <Alert className=\"flex justify-between\">\r\n      <MdError />\r\n      <div className=\"flex-1 flex-col justify-center gap-1\">\r\n        <AlertTitle>You have a new message!</AlertTitle>\r\n        <AlertDescription>12 unread messages waiting for you.</AlertDescription>\r\n      </div>\r\n      <button className=\"cursor-pointer self-start\" onClick={() => setIsActive(false)}>\r\n        <RxCross2 className=\"size-4\" />\r\n        <span className=\"sr-only\">Close</span>\r\n      </button>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

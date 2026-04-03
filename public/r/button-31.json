@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-31",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-31.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst Button31 = () => {\r\n  return (\r\n    <Button className=\"from-primary via-primary/60 to-primary bg-transparent bg-gradient-to-r [background-size:200%_auto] hover:bg-transparent hover:bg-[99%_center]\">\r\n      Get Started\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button31;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-31.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

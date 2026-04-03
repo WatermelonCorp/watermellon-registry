@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-11",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-11.tsx",
+      "content": "import { FaTrashAlt } from \"react-icons/fa\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button11 = () => {\r\n  return (\r\n    <Button className=\"text-destructive! border-destructive! bg-destructive/10 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\">\r\n      <FaTrashAlt />\r\n      Delete\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button11;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

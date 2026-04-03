@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-21",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-21.tsx",
+      "content": "import { FcGoogle } from \"react-icons/fc\";\r\nimport { FaXTwitter, FaGithub, FaFacebook } from \"react-icons/fa6\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button21 = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\r\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Continue with Google\">\r\n        <FcGoogle className=\"size-5\" />\r\n      </Button>\r\n\r\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Continue with X\">\r\n        <FaXTwitter className=\"size-5 text-black dark:text-white\" />\r\n      </Button>\r\n\r\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Continue with Facebook\">\r\n        <FaFacebook className=\"size-5 text-[#1877F2]\" />\r\n      </Button>\r\n\r\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Continue with GitHub\">\r\n        <FaGithub className=\"size-5 text-black dark:text-white\" />\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Button21;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-21.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

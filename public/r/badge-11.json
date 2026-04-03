@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-11",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/badge/badge-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { RxCross2 } from \"react-icons/rx\";\r\n\r\nconst Badge11 = () => {\r\n  const [isActive, setIsActive] = useState(true);\r\n\r\n  if (!isActive) return null;\r\n\r\n  return (\r\n    <Badge>\r\n      Closable\r\n      <button\r\n        className=\"focus-visible:border-ring focus-visible:ring-ring/50 text-primary-foreground/60 hover:text-primary-foreground -my-px -ms-px -me-1 inline-flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-lg p-0 transition-[color,box-shadow] outline-none focus-visible:ring-[3px]\"\r\n        aria-label=\"Close\"\r\n        onClick={() => setIsActive(false)}\r\n      >\r\n        <RxCross2 className=\"size-3\" aria-hidden=\"true\" />\r\n      </button>\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge11;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/badge-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

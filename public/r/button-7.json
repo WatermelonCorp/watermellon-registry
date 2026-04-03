@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-7",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-7.tsx",
+      "content": "\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button7 = () => {\r\n  return <Button size=\"lg\">Size Large</Button>;\r\n};\r\n\r\nexport default Button7;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

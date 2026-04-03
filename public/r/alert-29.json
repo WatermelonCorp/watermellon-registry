@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-29",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-29.tsx",
+      "content": "\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { MdError } from \"react-icons/md\";\r\n\r\nconst Alert29 = () => {\r\n  return (\r\n    <Alert className=\"border-none bg-blue-600 text-white dark:bg-blue-400\">\r\n      <MdError className=\"size-4\" />\r\n      <AlertTitle>Profile visibility enabled</AlertTitle>\r\n      <AlertDescription className=\"text-white/80\">\r\n        Your profile can be seen by others, including your basic details and\r\n        activity.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert29;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-29.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

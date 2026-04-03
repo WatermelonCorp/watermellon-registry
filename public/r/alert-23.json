@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-23",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-23.tsx",
+      "content": ";\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { FaCheckCircle } from \"react-icons/fa\";\r\n\r\nconst Alert23 = () => {\r\n  return (\r\n    <Alert className=\"border-none bg-green-600/10 text-green-600 dark:bg-green-400/10 dark:text-green-400\">\r\n      <FaCheckCircle className=\"size-4\" />\r\n      <AlertTitle>Upload completed</AlertTitle>\r\n      <AlertDescription className=\"text-green-600/80 dark:text-green-400/80\">\r\n        Your file has been added successfully and is ready to use.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert23;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-23.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

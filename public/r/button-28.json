@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-28",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-28.tsx",
+      "content": "import { FiPlus } from \"react-icons/fi\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst Button28 = () => {\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger asChild>\r\n        <Button variant=\"secondary\" size=\"icon\" className=\"rounded-full\">\r\n          <FiPlus className=\"size-5\" />\r\n          <span className=\"sr-only\">Add new item</span>\r\n        </Button>\r\n      </TooltipTrigger>\r\n      <TooltipContent className=\"px-2 py-1 text-xs\">\r\n        Add new item\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n};\r\n\r\nexport default Button28;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-28.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

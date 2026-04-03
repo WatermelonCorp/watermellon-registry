@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-25",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-25.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { ImSpinner2 } from \"react-icons/im\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst Button25 = () => {\r\n  const [isLoading, setIsLoading] = useState(false);\r\n  const [status, setStatus] = useState<undefined | string>(undefined);\r\n\r\n  const handleClick = async () => {\r\n    setIsLoading(true);\r\n    setStatus(undefined);\r\n\r\n    try {\r\n      await new Promise((resolve) => setTimeout(resolve, 1000));\r\n      setStatus(Math.random() > 0.5 ? \"Submitted!\" : \"Rejected!\");\r\n    } catch (error) {\r\n      setStatus(\"Rejected!\");\r\n      console.error(error);\r\n    } finally {\r\n      setIsLoading(false);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <Button\r\n      variant=\"link\"\r\n      onClick={handleClick}\r\n      disabled={isLoading}\r\n      className={cn(\r\n        \"cursor-pointer hover:no-underline flex items-center gap-2\",\r\n        {\r\n          \"text-green-600 dark:text-green-400\": status === \"Submitted!\",\r\n          \"text-destructive\": status === \"Rejected!\",\r\n        }\r\n      )}\r\n    >\r\n      {isLoading ? (\r\n        <>\r\n          <ImSpinner2 className=\"animate-spin\" />\r\n          Loading\r\n        </>\r\n      ) : status ? (\r\n        status\r\n      ) : (\r\n        \"Click me\"\r\n      )}\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button25;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-25.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

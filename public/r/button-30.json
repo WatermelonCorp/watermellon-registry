@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-30",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-30.tsx",
+      "content": "import { FiAlertTriangle } from \"react-icons/fi\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button30 = () => {\r\n  return (\r\n    <Button\r\n      size=\"icon\"\r\n      className=\"from-destructive via-destructive/60 to-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 bg-transparent bg-gradient-to-r [background-size:200%_auto] text-white hover:bg-transparent hover:bg-[99%_center]\"\r\n    >\r\n      <FiAlertTriangle className=\"size-5\" />\r\n      <span className=\"sr-only\">Error</span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button30;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-30.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

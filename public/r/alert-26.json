@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-26",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-26.tsx",
+      "content": "\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { MdError } from \"react-icons/md\";\r\n\r\nconst Alert26 = () => {\r\n  return (\r\n    <Alert className=\"bg-primary text-primary-foreground border-none\">\r\n      <MdError className=\"size-4\" />\r\n      <AlertTitle>Updating your settings</AlertTitle>\r\n      <AlertDescription className=\"text-primary-foreground/80\">\r\n        Your changes will only take effect once you click \"Save changes.\"\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert26;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-26.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

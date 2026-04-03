@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-4",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-4.tsx",
+      "content": "import { FiArrowRight } from \"react-icons/fi\";\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nimport { MdError } from \"react-icons/md\";\r\nimport { buttonVariants } from \"@/components/ui/button\";\r\n\r\nconst Alert4 = () => {\r\n  return (\r\n    <Alert className=\"flex items-center justify-between border-teal-600 text-teal-600 dark:border-teal-400 dark:text-teal-400 [&>svg]:translate-y-0\">\r\n      <MdError />\r\n      <AlertTitle className=\"flex-1\">You have a new message!</AlertTitle>\r\n      <a\r\n        href=\"#\"\r\n        className={buttonVariants({\r\n          variant: \"link\",\r\n          size: \"sm\",\r\n          className:\r\n            \"group h-7 rounded-lg  text-teal-600 hover:bg-teal-600/10 dark:text-teal-400 dark:hover:bg-teal-400/10\",\r\n        })}\r\n      >\r\n        Link\r\n        <FiArrowRight className=\" h-4 w-4 transition-transform duration-200 group-hover:translate-x-1\" />\r\n      </a>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert4;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
