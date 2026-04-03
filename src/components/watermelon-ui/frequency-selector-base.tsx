@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "motion/react";
-import { Check, ChevronRight } from "lucide-react";
+import React, { useState } from 'react';
+import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
+import { Check, ChevronRight } from 'lucide-react';
 
-export type FrequencyType = "Daily" | "Weekly" | "Monthly" | "Yearly";
+export type FrequencyType = 'Daily' | 'Weekly' | 'Monthly' | 'Yearly';
 
 export interface FrequencyData {
   type: FrequencyType;
@@ -18,42 +18,42 @@ interface FrequencySelectorProps {
 }
 
 const smoothSpring = {
-  type: "spring",
+  type: 'spring',
   bounce: 0.3,
   duration: 0.7,
 } as const;
 
-const FREQUENCIES: FrequencyType[] = ["Daily", "Weekly", "Monthly", "Yearly"];
+const FREQUENCIES: FrequencyType[] = ['Daily', 'Weekly', 'Monthly', 'Yearly'];
 
 const SUB_OPTIONS: Record<FrequencyType, string[]> = {
   Daily: [],
-  Weekly: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  Weekly: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
   Monthly: Array.from({ length: 31 }, (_, i) => (i + 1).toString()),
   Yearly: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
   ],
 };
 
 export const FrequencySelector: React.FC<FrequencySelectorProps> = ({
   value,
   onChange,
-  className = "",
+  className = '',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [tempType, setTempType] = useState<FrequencyType>(value.type);
   const [tempSubValue, setTempSubValue] = useState<string | undefined>(
-    value.subValue
+    value.subValue,
   );
 
   const handleOpen = () => {
@@ -65,7 +65,7 @@ export const FrequencySelector: React.FC<FrequencySelectorProps> = ({
   const handleConfirm = () => {
     onChange({
       type: tempType,
-      subValue: tempType === "Daily" ? undefined : tempSubValue,
+      subValue: tempType === 'Daily' ? undefined : tempSubValue,
     });
     setIsOpen(false);
   };
@@ -79,16 +79,16 @@ export const FrequencySelector: React.FC<FrequencySelectorProps> = ({
           {!isOpen ? (
             <motion.div
               layoutId="container"
-              initial={{ filter: "blur(4px)", opacity: 0 }}
-              animate={{ filter: "blur(0px)", opacity: 1 }}
-              exit={{ filter: "blur(4px)", opacity: 0 }}
+              initial={{ filter: 'blur(4px)', opacity: 0 }}
+              animate={{ filter: 'blur(0px)', opacity: 1 }}
+              exit={{ filter: 'blur(4px)', opacity: 0 }}
               onClick={handleOpen}
               transition={smoothSpring}
-              className="bg-muted border-border flex h-14 w-full max-w-md cursor-pointer items-center justify-between rounded-lg border p-1 pl-6"
+              className="bg-muted border-border flex min-h-14 w-full max-w-md cursor-pointer items-center justify-between rounded-lg border p-1 pl-4 sm:pl-6"
             >
               <motion.span
                 layout
-                className="text-muted-foreground text-lg font-bold"
+                className="text-muted-foreground text-base font-bold sm:text-lg"
               >
                 Frequency
               </motion.span>
@@ -96,22 +96,22 @@ export const FrequencySelector: React.FC<FrequencySelectorProps> = ({
               <motion.div
                 layoutId="trigger-pill"
                 transition={smoothSpring}
-                className="border-border bg-background flex h-12 items-center gap-3 rounded-lg border px-4 shadow-sm"
+                className="border-border bg-background flex min-h-12 flex-1 items-center justify-between gap-2 rounded-lg border px-3 py-1.5 shadow-sm sm:flex-initial sm:gap-3 sm:px-4"
               >
-                <span className="text-foreground text-lg font-bold">
+                <span className="text-foreground text-base font-bold sm:text-lg">
                   {value.type}
-                  {value.subValue ? `, ${value.subValue}` : ""}
+                  {value.subValue ? `, ${value.subValue}` : ''}
                 </span>
 
-                <ChevronRight size={20} className="text-muted-foreground" />
+                <ChevronRight size={18} className="text-muted-foreground shrink-0" />
               </motion.div>
             </motion.div>
           ) : (
             <motion.div
               layoutId="container"
-              initial={{ filter: "blur(4px)", opacity: 0 }}
-              animate={{ filter: "blur(0px)", opacity: 1 }}
-              exit={{ filter: "blur(4px)", opacity: 0 }}
+              initial={{ filter: 'blur(4px)', opacity: 0 }}
+              animate={{ filter: 'blur(0px)', opacity: 1 }}
+              exit={{ filter: 'blur(4px)', opacity: 0 }}
               transition={smoothSpring}
               className="border-border bg-muted flex w-full max-w-lg flex-col gap-3 rounded-lg border p-2 shadow-xl"
             >
@@ -119,7 +119,7 @@ export const FrequencySelector: React.FC<FrequencySelectorProps> = ({
                 <motion.div
                   layoutId="trigger-pill"
                   transition={smoothSpring}
-                  className="bg-background relative flex h-13 flex-1 items-center overflow-hidden rounded-lg p-1 shadow-inner"
+                  className="custom-scrollbar bg-background relative flex h-11 flex-1 items-center gap-2 overflow-x-auto rounded-lg p-1 shadow-inner sm:h-13 sm:gap-2"
                 >
                   {FREQUENCIES.map((type) => (
                     <button
@@ -128,7 +128,7 @@ export const FrequencySelector: React.FC<FrequencySelectorProps> = ({
                         setTempType(type);
                         setTempSubValue(SUB_OPTIONS[type][0]);
                       }}
-                      className="text-foreground relative flex h-full flex-1 items-center justify-center text-[15px] font-bold"
+                      className="text-foreground relative flex h-full flex-none items-center justify-center px-4 text-xs font-bold sm:flex-1 sm:min-w-fit sm:px-6 sm:text-[15px]"
                     >
                       {tempType === type && (
                         <motion.div
@@ -146,9 +146,9 @@ export const FrequencySelector: React.FC<FrequencySelectorProps> = ({
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   onClick={handleConfirm}
-                  className="bg-foreground text-background flex h-12 w-12 items-center justify-center rounded-lg"
+                  className="bg-foreground text-background flex h-10 w-10 items-center justify-center rounded-lg sm:h-12 sm:w-12"
                 >
-                  <Check size={20} />
+                  <Check size={18} />
                 </motion.button>
               </div>
 
@@ -164,18 +164,18 @@ export const FrequencySelector: React.FC<FrequencySelectorProps> = ({
                       layout
                       transition={smoothSpring}
                       className={`bg-background grid gap-2 rounded-lg p-3 shadow-inner ${
-                        tempType === "Monthly"
-                          ? "grid-cols-7"
-                          : tempType === "Yearly"
-                            ? "grid-cols-4"
-                            : "grid-cols-7"
+                        tempType === 'Monthly'
+                          ? 'grid-cols-7'
+                          : tempType === 'Yearly'
+                            ? 'grid-cols-4'
+                            : 'grid-cols-7'
                       }`}
                     >
                       {SUB_OPTIONS[tempType].map((option) => (
                         <button
                           key={option}
                           onClick={() => setTempSubValue(option)}
-                          className="text-foreground relative flex h-9 items-center justify-center rounded-lg text-sm font-bold"
+                          className="text-foreground relative flex h-8 items-center justify-center rounded-lg text-[10px] font-bold sm:h-9 sm:text-sm"
                         >
                           {tempSubValue === option && (
                             <motion.div

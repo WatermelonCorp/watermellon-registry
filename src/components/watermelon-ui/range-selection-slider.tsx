@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { type FC, useState, useRef, useCallback } from "react";
-import { motion, useMotionValue, useTransform } from "motion/react";
+import React, { type FC, useState, useRef, useCallback } from 'react';
+import { motion, useMotionValue, useTransform } from 'motion/react';
 
 interface DigitColumnProps {
   digit: number;
@@ -32,22 +32,22 @@ export interface PriceRangeCardProps {
   onCancel?: (range: [number, number]) => void;
 }
 
-type DragType = "min" | "max" | null;
+type DragType = 'min' | 'max' | null;
 
 function cn(...classes: Array<string | false | undefined>) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 const DigitColumn: FC<DigitColumnProps> = ({ digit, height }) => {
   return (
     <div
       className="relative overflow-hidden"
-      style={{ height: height, width: "0.65em" }}
+      style={{ height: height, width: '0.65em' }}
     >
       <motion.div
         animate={{ y: -digit * height }}
         transition={{
-          type: "spring",
+          type: 'spring',
           stiffness: 140,
           damping: 22,
           mass: 0.6,
@@ -70,20 +70,20 @@ const DigitColumn: FC<DigitColumnProps> = ({ digit, height }) => {
 
 export const RollingNumber: FC<RollingNumberProps> = ({
   value,
-  prefix = "",
+  prefix = '',
 }) => {
   const formatted = prefix + value.toLocaleString();
   const height =
-    typeof window !== "undefined" && window.innerWidth < 640 ? 24 : 32;
+    typeof window !== 'undefined' && window.innerWidth < 640 ? 24 : 32;
 
   return (
     <div
       className={cn(
-        "flex items-center leading-none font-bold text-[#010103] tabular-nums dark:text-neutral-100",
-        "h-[24px] sm:h-[32px]"
+        'flex items-center leading-none font-bold text-[#010103] tabular-nums dark:text-neutral-100',
+        'h-[24px] sm:h-[32px]',
       )}
     >
-      {formatted.split("").map((char, index) => {
+      {formatted.split('').map((char, index) => {
         const isNumber = !isNaN(parseInt(char, 10));
 
         if (!isNumber) {
@@ -112,7 +112,7 @@ const RangeSlider: FC<RangeSliderProps> = ({
 
   const percentFromValue = useCallback(
     (v: number) => ((v - min) / (max - min)) * 100,
-    [min, max]
+    [min, max],
   );
 
   const valueFromX = useCallback(
@@ -123,7 +123,7 @@ const RangeSlider: FC<RangeSliderProps> = ({
       const raw = min + percent * (max - min);
       return Math.round(raw / step) * step;
     },
-    [min, max, step]
+    [min, max, step],
   );
 
   const minPercent = useMotionValue(0);
@@ -155,7 +155,7 @@ const RangeSlider: FC<RangeSliderProps> = ({
 
     const newValue = valueFromX(e.clientX);
 
-    if (dragging.current === "min") {
+    if (dragging.current === 'min') {
       const clamped = Math.min(newValue, value[1] - step);
       onChange([clamped, value[1]]);
     } else {
@@ -191,7 +191,7 @@ const RangeSlider: FC<RangeSliderProps> = ({
       <motion.div
         onPointerDown={(e) => {
           (e.target as HTMLElement).setPointerCapture(e.pointerId);
-          dragging.current = "min";
+          dragging.current = 'min';
         }}
         className="absolute h-8 w-8 cursor-grab rounded-full border-[6px] border-[#010103] bg-[#FEFEFE] shadow-2xl active:cursor-grabbing dark:border-neutral-300 dark:bg-neutral-800"
         style={{ left: thumbMinLeft }}
@@ -200,7 +200,7 @@ const RangeSlider: FC<RangeSliderProps> = ({
       <motion.div
         onPointerDown={(e) => {
           (e.target as HTMLElement).setPointerCapture(e.pointerId);
-          dragging.current = "max";
+          dragging.current = 'max';
         }}
         className="absolute h-8 w-8 cursor-grab rounded-full border-[6px] border-[#010103] bg-[#FEFEFE] shadow-2xl active:cursor-grabbing dark:border-neutral-300 dark:bg-neutral-800"
         style={{ left: thumbMaxLeft }}
@@ -214,63 +214,61 @@ export const PriceRangeCard: FC<PriceRangeCardProps> = ({
   min = 0,
   max = 5000,
   step = 20,
-  prefix = "$",
+  prefix = '$',
   onApply,
   onCancel,
 }) => {
   const [range, setRange] = useState<[number, number]>(defaultRange);
 
   return (
-    <div className="flex w-full items-center justify-center bg-transparent py-6 lg:px-4">
-      <div className="w-full max-w-88 overflow-hidden rounded-[2rem] border border-[#F0F0F0] bg-[#FEFEFE] shadow-xl sm:max-w-sm dark:border-neutral-800 dark:bg-neutral-900">
-        <div className="flex flex-col gap-4 p-5 sm:p-6">
-          <h2 className="text-xl font-extrabold tracking-tight text-[#010103] dark:text-neutral-100">
-            Price Range
-          </h2>
+    <div className="w-full w-xs overflow-hidden rounded-[2rem] border border-[#F0F0F0] bg-[#FEFEFE] shadow-xl sm:w-sm sm:max-w-sm dark:border-neutral-800 dark:bg-neutral-900">
+      <div className="flex flex-col gap-4 p-5 sm:p-6">
+        <h2 className="text-xl font-extrabold tracking-tight text-[#010103] dark:text-neutral-100">
+          Price Range
+        </h2>
 
-          <RangeSlider
-            min={min}
-            max={max}
-            step={step}
-            value={range}
-            onChange={setRange}
-          />
+        <RangeSlider
+          min={min}
+          max={max}
+          step={step}
+          value={range}
+          onChange={setRange}
+        />
 
-          <div className="mt-2 flex flex-col gap-3 sm:gap-4">
-            {(["From", "To"] as const).map((label, i) => (
-              <div
-                key={label}
-                className="flex flex-col gap-1 rounded-2xl bg-[#F4F4FB] p-4 dark:bg-neutral-800/50"
-              >
-                <span className="text-[10px] font-bold tracking-wider text-[#76767D] uppercase sm:text-xs dark:text-neutral-500">
-                  {label}
-                </span>
-                <div className="text-xl font-bold sm:text-2xl">
-                  <RollingNumber value={range[i]} prefix={prefix} />
-                </div>
+        <div className="mt-2 flex flex-col gap-3 sm:gap-4">
+          {(['From', 'To'] as const).map((label, i) => (
+            <div
+              key={label}
+              className="flex flex-col gap-1 rounded-2xl bg-[#F4F4FB] p-4 dark:bg-neutral-800/50"
+            >
+              <span className="text-[10px] font-bold tracking-wider text-[#76767D] uppercase sm:text-xs dark:text-neutral-500">
+                {label}
+              </span>
+              <div className="text-xl font-bold sm:text-2xl">
+                <RollingNumber value={range[i]} prefix={prefix} />
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div className="flex gap-3 px-5 pt-2 pb-6 sm:gap-4 sm:px-6">
-          <button
-            className="flex-1 rounded-full bg-[#000002] py-2.5 text-sm text-[#FEFEFE] active:scale-95 sm:text-base dark:bg-neutral-100 dark:text-neutral-950"
-            onClick={() => onApply?.(range)}
-          >
-            Apply
-          </button>
+      <div className="flex gap-3 px-5 pt-2 pb-6 sm:gap-4 sm:px-6">
+        <button
+          className="flex-1 rounded-full bg-[#000002] py-2.5 text-sm text-[#FEFEFE] active:scale-95 sm:text-base dark:bg-neutral-100 dark:text-neutral-950"
+          onClick={() => onApply?.(range)}
+        >
+          Apply
+        </button>
 
-          <button
-            onClick={() => {
-              setRange(defaultRange);
-              onCancel?.(defaultRange);
-            }}
-            className="flex-1 rounded-full border border-[#E4E4E9] py-2.5 text-sm font-bold text-[#69686F] hover:bg-gray-50 active:scale-95 sm:text-base dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800"
-          >
-            Cancel
-          </button>
-        </div>
+        <button
+          onClick={() => {
+            setRange(defaultRange);
+            onCancel?.(defaultRange);
+          }}
+          className="flex-1 rounded-full border border-[#E4E4E9] py-2.5 text-sm font-bold text-[#69686F] hover:bg-gray-50 active:scale-95 sm:text-base dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800"
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );

@@ -3,11 +3,11 @@ import {
   motion,
   MotionConfig,
   type Transition,
-} from "motion/react";
+} from 'motion/react';
 
-import { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
-import useMeasure from "react-use-measure";
+import { useState } from 'react';
+import { ArrowRight, X } from 'lucide-react';
+import useMeasure from 'react-use-measure';
 
 export interface Transaction {
   id: string;
@@ -24,7 +24,7 @@ export interface Transaction {
 }
 
 const springConfig: Transition = {
-  type: "spring",
+  type: 'spring',
   bounce: 0,
   duration: 0.6,
 };
@@ -49,7 +49,7 @@ export function TransactionList({
     <MotionConfig transition={springConfig}>
       <motion.div
         className="theme-injected bg-muted border-border flex items-center justify-center overflow-hidden rounded-lg border shadow-sm"
-        animate={{ height: bounds.height > 0 ? bounds.height : "auto" }}
+        animate={{ height: bounds.height > 0 ? bounds.height : 'auto' }}
       >
         <div className="p-3" ref={ref}>
           <AnimatePresence mode="popLayout">
@@ -83,7 +83,7 @@ export function TransactionList({
           </AnimatePresence>
           <AnimatePresence mode="popLayout">
             {selected && (
-              <motion.div exit={{ opacity: 0, transition: { duration: 0.1 } }}>
+              <motion.div exit={{ opacity: 0,transition:{duration:0.1} }}>
                 <TransactionItemExpanded
                   data={selected}
                   onClose={() => setOpen(null)}
@@ -107,14 +107,16 @@ function TransactionItem({
   return (
     <div className="flex w-64 cursor-pointer gap-2" onClick={onClick}>
       <motion.div
-        className="bg-foreground rounded-lg p-1"
+        className="bg-foreground flex size-10 shrink-0 items-center justify-center rounded-lg"
         layoutId={`icon-${data.id}`}
         layout="position"
       >
-        {data.icon}
+        <div className="flex items-center justify-center">
+          {data.icon}
+        </div>
       </motion.div>
 
-      <div className="flex flex-1 flex-col text-xs">
+      <div className="flex flex-1 flex-col justify-center text-xs">
         <motion.p
           className="text-foreground font-semibold"
           layoutId={`name-${data.id}`}
@@ -133,7 +135,7 @@ function TransactionItem({
       </div>
 
       <motion.p
-        className="text-muted-foreground text-xs"
+        className="text-muted-foreground flex items-center text-xs"
         layoutId={`amount-${data.id}`}
         layout="position"
       >
@@ -154,7 +156,7 @@ function TransactionItemExpanded({
     <div className="flex w-64 flex-col gap-2">
       <div className="flex justify-between">
         <motion.div
-          className="bg-foreground rounded-lg p-2"
+          className="bg-foreground flex size-10 items-center justify-center rounded-lg"
           layoutId={`icon-${data.id}`}
           layout="position"
         >
@@ -220,7 +222,7 @@ function TransactionItemExpanded({
         <p className="text-muted-foreground">Paid Via {data.paymentMethod}</p>
 
         <p className="text-muted-foreground">
-          XXXX {data.cardNumber}{" "}
+          XXXX {data.cardNumber}{' '}
           <span className="text-foreground font-bold uppercase italic">
             {data.cardType}
           </span>
