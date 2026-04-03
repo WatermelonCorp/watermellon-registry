@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useRef, useState, useEffect, useCallback, type FC } from "react";
+import { useRef, useState, useEffect, useCallback, type FC } from 'react';
 import {
   motion,
   useMotionValue,
   useSpring,
   animate,
   type Transition,
-} from "motion/react";
+} from 'motion/react';
 
 interface ScrubSliderProps {
   initialValue?: number;
@@ -95,7 +95,7 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({
       setValue(snappedIndex);
       x.set(snappedX + padding);
     },
-    [step, sliderLeft, sliderWidth, x]
+    [step, sliderLeft, sliderWidth, x],
   );
 
   useEffect(() => {
@@ -106,12 +106,12 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({
 
     const up = () => setIsDragging(false);
 
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mouseup", up);
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
 
     return () => {
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("mouseup", up);
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
     };
   }, [isDragging, updateValue]);
 
@@ -123,68 +123,66 @@ export const ScrubSlider: FC<ScrubSliderProps> = ({
 
     const end = () => setIsDragging(false);
 
-    window.addEventListener("touchmove", move);
-    window.addEventListener("touchend", end);
+    window.addEventListener('touchmove', move);
+    window.addEventListener('touchend', end);
 
     return () => {
-      window.removeEventListener("touchmove", move);
-      window.removeEventListener("touchend", end);
+      window.removeEventListener('touchmove', move);
+      window.removeEventListener('touchend', end);
     };
   }, [isDragging, updateValue]);
 
   return (
-    <div className="theme-injected h-[500px] flex w-full flex-col items-center justify-center">
-      <div className="relative w-full max-w-md select-none">
+    <div className="theme-injected relative w-full max-w-md select-none">
+      <motion.div
+        style={{ left: smoothX }}
+        className="pointer-events-none absolute -top-12 z-30 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{
+            y: isDragging ? -4 : 0,
+            scale: isDragging ? 1.05 : 1,
+          }}
+          transition={SPRING}
+          className="bg-foreground text-background rounded-lg px-3 py-1.5 text-2xl font-semibold shadow-sm"
+        >
+          <AnimatedNumber value={value} />
+          °C
+        </motion.div>
+      </motion.div>
+
+      <div
+        ref={sliderRef}
+        onMouseDown={(e) => {
+          setIsDragging(true);
+          updateValue(e.clientX);
+        }}
+        onTouchStart={(e) => {
+          setIsDragging(true);
+          updateValue(e.touches[0].clientX);
+        }}
+        className="border-border bg-background relative h-24 cursor-pointer touch-none overflow-hidden rounded-lg border shadow-md"
+      >
+        <div className="absolute inset-4">
+          {Array.from({ length: tickCount }).map((_, i) => (
+            <div
+              key={i}
+              className="bg-muted-foreground/50 absolute top-0 bottom-0 w-1 -translate-x-1/2 rounded-lg"
+              style={{
+                left: i * step,
+              }}
+            />
+          ))}
+        </div>
+
         <motion.div
           style={{ left: smoothX }}
-          className="pointer-events-none absolute -top-12 z-30 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{
-              y: isDragging ? -4 : 0,
-              scale: isDragging ? 1.05 : 1,
-            }}
-            transition={SPRING}
-            className="bg-foreground text-background rounded-lg px-3 py-1.5 text-2xl font-semibold shadow-sm"
-          >
-            <AnimatedNumber value={value} />
-            °C
-          </motion.div>
-        </motion.div>
-
-        <div
-          ref={sliderRef}
-          onMouseDown={(e) => {
-            setIsDragging(true);
-            updateValue(e.clientX);
+          animate={{
+            scaleY: isDragging ? 1.15 : 1,
           }}
-          onTouchStart={(e) => {
-            setIsDragging(true);
-            updateValue(e.touches[0].clientX);
-          }}
-          className="border-border bg-background relative h-24 cursor-pointer touch-none overflow-hidden rounded-lg border shadow-md"
-        >
-          <div className="absolute inset-4">
-            {Array.from({ length: tickCount }).map((_, i) => (
-              <div
-                key={i}
-                className="bg-muted-foreground/50 absolute top-0 bottom-0 w-1 -translate-x-1/2 rounded-lg"
-                style={{
-                  left: i * step,
-                }}
-              />
-            ))}
-          </div>
-
-          <motion.div
-            style={{ left: smoothX }}
-            animate={{
-              scaleY: isDragging ? 1.15 : 1,
-            }}
-            transition={SPRING}
-            className="bg-foreground absolute top-4 bottom-4 w-1 -translate-x-1/2 rounded-lg"
-          />
-        </div>
+          transition={SPRING}
+          className="bg-foreground absolute top-4 bottom-4 w-1 -translate-x-1/2 rounded-lg"
+        />
       </div>
     </div>
   );

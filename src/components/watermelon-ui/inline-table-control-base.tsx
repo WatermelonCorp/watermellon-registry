@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "motion/react";
-import { Pencil, X, Check } from "lucide-react";
-import { GoStack } from "react-icons/go";
-import { BsArrowUpRightSquare } from "react-icons/bs";
-import { FaRegCreditCard } from "react-icons/fa6";
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, LayoutGroup } from 'motion/react';
+import { Pencil, X, Check } from 'lucide-react';
+import { GoStack } from 'react-icons/go';
+import { BsArrowUpRightSquare } from 'react-icons/bs';
+import { FaRegCreditCard } from 'react-icons/fa6';
 
 export interface TableItem {
   id: string;
@@ -21,11 +21,11 @@ interface InlineTableControlProps {
 }
 
 const getIcon = (field: string) => {
-  const iconClass = "text-muted-foreground";
-  if (field === "expense")
+  const iconClass = 'text-muted-foreground';
+  if (field === 'expense')
     return <FaRegCreditCard size={18} className={iconClass} />;
-  if (field === "method") return <GoStack size={18} className={iconClass} />;
-  if (field === "amount")
+  if (field === 'method') return <GoStack size={18} className={iconClass} />;
+  if (field === 'amount')
     return <BsArrowUpRightSquare size={18} className={iconClass} />;
   return null;
 };
@@ -33,7 +33,7 @@ const getIcon = (field: string) => {
 export const InlineTableControl: React.FC<InlineTableControlProps> = ({
   data,
   onUpdate,
-  className = "",
+  className = '',
 }) => {
   const [items, setItems] = useState<TableItem[]>(data);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -46,7 +46,7 @@ export const InlineTableControl: React.FC<InlineTableControlProps> = ({
   const handleDone = () => {
     if (editValues) {
       const updatedItems = items.map((item) =>
-        item.id === editValues.id ? editValues : item
+        item.id === editValues.id ? editValues : item,
       );
       setItems(updatedItems);
       onUpdate?.(editValues);
@@ -56,7 +56,7 @@ export const InlineTableControl: React.FC<InlineTableControlProps> = ({
   };
 
   const layoutTransition = {
-    type: "spring" as const,
+    type: 'spring' as const,
     bounce: 0,
     duration: 0.7,
   };
@@ -69,7 +69,7 @@ export const InlineTableControl: React.FC<InlineTableControlProps> = ({
         <motion.div
           layout
           transition={layoutTransition}
-          className={`hidden grid-cols-[1.2fr_1fr_0.8fr_40px] px-6 py-4 text-sm font-semibold tracking-wider capitalize transition-all duration-300 sm:grid ${editingId ? "opacity-20 blur-[1px]" : "opacity-100"} text-muted-foreground`}
+          className={`hidden grid-cols-[1.2fr_1fr_0.8fr_40px] px-6 py-4 text-sm font-semibold tracking-wider capitalize transition-all duration-300 sm:grid ${editingId ? 'opacity-20 blur-[1px]' : 'opacity-100'} text-muted-foreground`}
         >
           <motion.div layout className="flex items-center gap-2">
             <FaRegCreditCard size={18} /> Expense
@@ -101,7 +101,7 @@ export const InlineTableControl: React.FC<InlineTableControlProps> = ({
                       className="border-border bg-card relative z-20 my-2 rounded-lg border p-4 shadow-xl sm:my-4 sm:rounded-none sm:p-8 sm:py-4 sm:shadow-none"
                     >
                       <motion.div className="space-y-4 sm:space-y-5">
-                        {(["expense", "method", "amount"] as const).map(
+                        {(['expense', 'method', 'amount'] as const).map(
                           (field) => (
                             <div
                               key={field}
@@ -125,20 +125,20 @@ export const InlineTableControl: React.FC<InlineTableControlProps> = ({
                                   layout="position"
                                   title="edit text"
                                   type="text"
-                                  value={editValues ? editValues[field] : ""}
+                                  value={editValues ? editValues[field] : ''}
                                   transition={layoutTransition}
                                   onChange={(e) =>
                                     setEditValues((prev) =>
                                       prev
                                         ? { ...prev, [field]: e.target.value }
-                                        : null
+                                        : null,
                                     )
                                   }
                                   className="text-foreground relative z-999 w-full bg-transparent text-base font-bold outline-none sm:text-sm"
                                 />
                               </motion.div>
                             </div>
-                          )
+                          ),
                         )}
                       </motion.div>
 
@@ -167,12 +167,12 @@ export const InlineTableControl: React.FC<InlineTableControlProps> = ({
                       transition={layoutTransition}
                       animate={{
                         opacity: editingId ? 0.35 : 1,
-                        filter: editingId ? "blur(1px)" : "blur(0px)",
+                        filter: editingId ? 'blur(1px)' : 'blur(0px)',
                       }}
                       className={`group grid cursor-default grid-cols-[1fr_auto_40px] items-center rounded-lg px-4 py-4 transition-all duration-300 sm:grid-cols-[1.2fr_1fr_0.8fr_40px] sm:rounded-none sm:px-6 sm:py-5 ${
                         editingId
-                          ? ""
-                          : "border-border bg-muted/50 hover:bg-muted border opacity-100 sm:border-none sm:bg-transparent"
+                          ? ''
+                          : 'border-border bg-muted/50 hover:bg-muted border opacity-100 sm:border-none sm:bg-transparent dark:border-white/[0.03] dark:bg-zinc-900/40 dark:hover:bg-zinc-800/60'
                       }`}
                     >
                       <motion.div className="flex flex-col">

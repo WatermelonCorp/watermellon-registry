@@ -1,42 +1,21 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Building2, CreditCard, Wallet, X } from "lucide-react";
-import { MdOutlineAddCard } from "react-icons/md";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Building2, CreditCard, Wallet, X } from 'lucide-react';
+import { MdOutlineAddCard } from 'react-icons/md';
 
-export type PaymentType = "bank" | "card" | "wallet" | null;
+export type PaymentType = 'bank' | 'card' | 'wallet' | null;
 
 export interface Card {
   id: string;
   last4: string;
-  brand: "visa" | "mastercard" | "other";
+  brand: 'visa' | 'mastercard' | 'other';
 }
-
-/* ---------------- Payload Types ---------------- */
-
-type BankPayload = {
-  type: "bank";
-  name: string;
-  account: string;
-  code: string;
-};
-
-type CardPayload = {
-  type: "card";
-  cardId: string;
-};
-
-type WalletPayload = {
-  type: "wallet";
-  amount: string;
-};
-
-type ProceedPayload = BankPayload | CardPayload | WalletPayload;
 
 interface SendMoneyProps {
   cards?: Card[];
-  onProceed?: (data: ProceedPayload) => void;
+  onProceed?: (data: unknown) => void;
 }
 
 /* ---------------- Brand Icons ---------------- */
@@ -55,10 +34,10 @@ const MasterCardIcon = () => (
 /* ---------------- Shared UI ---------------- */
 
 const cardContainer =
-  "rounded-2xl border transition-colors bg-muted border-border";
+  'rounded-2xl border transition-colors bg-muted border-border';
 
 const primaryButton =
-  "h-11 w-28 rounded-2xl font-medium bg-primary text-primary-foreground";
+  'h-11 w-full rounded-2xl font-medium bg-primary text-primary-foreground';
 
 const Header = ({
   title,
@@ -71,19 +50,19 @@ const Header = ({
   onClose: () => void;
   id: string;
 }) => (
-  <div className="mb-6 flex items-center justify-between">
-    <div className="flex items-center gap-3">
+  <div className="mb-6 flex items-center justify-between gap-3">
+    <div className="flex min-w-0 items-center gap-3">
       <motion.div
         layoutId={`icon-${id}`}
-        transition={{ type: "spring", bounce: 0.3, duration: 0.7 }}
-        className="border-border bg-muted text-muted-foreground flex h-11 w-11 items-center justify-center rounded-lg border"
+        transition={{ type: 'spring', bounce: 0.3, duration: 0.7 }}
+        className="border-border bg-muted text-muted-foreground flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border"
       >
         <Icon size={22} strokeWidth={1.4} />
       </motion.div>
       <motion.h2
         layoutId={`title-${id}`}
-        transition={{ type: "spring", bounce: 0.3, duration: 0.7 }}
-        className="text-muted-foreground text-base font-medium"
+        transition={{ type: 'spring', bounce: 0.3, duration: 0.7 }}
+        className="truncate text-base font-medium"
       >
         {title}
       </motion.h2>
@@ -91,22 +70,14 @@ const Header = ({
 
     <button
       onClick={onClose}
-      className="bg-muted text-muted-foreground flex h-9 w-9 items-center justify-center rounded-lg"
+      className="bg-muted text-muted-foreground flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
     >
       <X size={20} strokeWidth={3} />
     </button>
   </div>
 );
 
-/* ---------------- Input ---------------- */
-
-interface InputFieldProps {
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-}
-
-const InputField = ({ label, value, onChange }: InputFieldProps) => (
+const InputField = ({ label, value, onChange }: { label: string; value: string; onChange: (val: string) => void }) => (
   <div className="mb-4">
     <label className="text-muted-foreground mb-1 block text-sm">{label}</label>
     <input
@@ -119,17 +90,8 @@ const InputField = ({ label, value, onChange }: InputFieldProps) => (
 
 /* ---------------- Views ---------------- */
 
-interface ViewProps {
-  onClose: () => void;
-  onProceed: (data: ProceedPayload) => void;
-}
-
-interface CardViewProps extends ViewProps {
-  cards: Card[];
-}
-
-const BankTransferView = ({ onClose, onProceed }: ViewProps) => {
-  const [formData, setFormData] = useState({ name: "", account: "", code: "" });
+const BankTransferView = ({ onClose, onProceed }: { onClose: () => void; onProceed: (data: unknown) => void }) => {
+  const [formData, setFormData] = useState({ name: '', account: '', code: '' });
 
   return (
     <motion.div layout>
@@ -140,28 +102,28 @@ const BankTransferView = ({ onClose, onProceed }: ViewProps) => {
         id="bank"
       />
       <motion.div
-        initial={{ opacity: 0, filter: "blur(4px)", y: 20 }}
-        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        exit={{ opacity: 0, filter: "blur(4px)", y: -20 }}
-        transition={{ type: "spring", bounce: 0.4, duration: 0.7 }}
+        initial={{ opacity: 0, filter: 'blur(4px)', y: 20 }}
+        animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+        exit={{ opacity: 0, filter: 'blur(4px)', y: -20 }}
+        transition={{ type: 'spring', bounce: 0.4, duration: 0.7 }}
       >
         <InputField
           label="Full Name"
           value={formData.name}
-          onChange={(v) => setFormData({ ...formData, name: v })}
+          onChange={(v: string) => setFormData({ ...formData, name: v })}
         />
         <InputField
           label="Account Number"
           value={formData.account}
-          onChange={(v) => setFormData({ ...formData, account: v })}
+          onChange={(v: string) => setFormData({ ...formData, account: v })}
         />
         <InputField
           label="Bank Code"
           value={formData.code}
-          onChange={(v) => setFormData({ ...formData, code: v })}
+          onChange={(v: string) => setFormData({ ...formData, code: v })}
         />
         <button
-          onClick={() => onProceed({ type: "bank", ...formData })}
+          onClick={() => onProceed({ type: 'bank', ...formData })}
           className={`mt-5 ${primaryButton}`}
         >
           Proceed
@@ -171,8 +133,8 @@ const BankTransferView = ({ onClose, onProceed }: ViewProps) => {
   );
 };
 
-const CardView = ({ cards, onClose, onProceed }: CardViewProps) => {
-  const [selected, setSelected] = useState<string | undefined>(cards[0]?.id);
+const CardView = ({ cards, onClose, onProceed }: { cards: Card[]; onClose: () => void; onProceed: (data: unknown) => void }) => {
+  const [selected, setSelected] = useState(cards[0]?.id);
 
   return (
     <motion.div>
@@ -184,12 +146,12 @@ const CardView = ({ cards, onClose, onProceed }: CardViewProps) => {
       />
 
       <motion.div
-        initial={{ opacity: 0, filter: "blur(4px)", y: 20 }}
-        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        exit={{ opacity: 0, filter: "blur(4px)", y: -20 }}
-        transition={{ type: "spring", bounce: 0.4, duration: 0.7 }}
+        initial={{ opacity: 0, filter: 'blur(4px)', y: 20 }}
+        animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+        exit={{ opacity: 0, filter: 'blur(4px)', y: -20 }}
+        transition={{ type: 'spring', bounce: 0.4, duration: 0.7 }}
       >
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           <span className="text-muted-foreground text-sm">Available Cards</span>
           <button className="border-border text-muted-foreground flex items-center gap-2 rounded-lg border px-3 py-1 text-sm">
             <MdOutlineAddCard size={18} />
@@ -204,7 +166,7 @@ const CardView = ({ cards, onClose, onProceed }: CardViewProps) => {
               onClick={() => setSelected(card.id)}
               className={`flex h-14 cursor-pointer items-center justify-between rounded-lg border px-4 transition ${
                 selected === card.id
-                  ? "border-primary bg-accent"
+                  ? 'border-primary bg-accent'
                   : cardContainer
               }`}
             >
@@ -212,8 +174,8 @@ const CardView = ({ cards, onClose, onProceed }: CardViewProps) => {
                 <div
                   className={`flex h-5 w-5 items-center justify-center rounded-lg border-2 ${
                     selected === card.id
-                      ? "border-primary"
-                      : "border-muted-foreground"
+                      ? 'border-primary'
+                      : 'border-muted-foreground'
                   }`}
                 >
                   {selected === card.id && (
@@ -226,15 +188,13 @@ const CardView = ({ cards, onClose, onProceed }: CardViewProps) => {
                 </span>
               </div>
 
-              {card.brand === "visa" ? <VisaIcon /> : <MasterCardIcon />}
+              {card.brand === 'visa' ? <VisaIcon /> : <MasterCardIcon />}
             </label>
           ))}
         </div>
 
         <button
-          onClick={() =>
-            selected && onProceed({ type: "card", cardId: selected })
-          }
+          onClick={() => onProceed({ type: 'card', cardId: selected })}
           className={primaryButton}
         >
           Proceed
@@ -244,18 +204,18 @@ const CardView = ({ cards, onClose, onProceed }: CardViewProps) => {
   );
 };
 
-const WalletView = ({ onClose, onProceed }: ViewProps) => {
-  const [amount, setAmount] = useState("");
+const WalletView = ({ onClose, onProceed }: { onClose: () => void; onProceed: (data: unknown) => void }) => {
+  const [amount, setAmount] = useState('');
 
   return (
     <motion.div>
       <Header title="Wallet" icon={Wallet} onClose={onClose} id="wallet" />
 
       <motion.div
-        initial={{ opacity: 0, filter: "blur(4px)", y: 20 }}
-        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        exit={{ opacity: 0, filter: "blur(4px)", y: -20 }}
-        transition={{ type: "spring", bounce: 0.4, duration: 0.7 }}
+        initial={{ opacity: 0, filter: 'blur(4px)', y: 20 }}
+        animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+        exit={{ opacity: 0, filter: 'blur(4px)', y: -20 }}
+        transition={{ type: 'spring', bounce: 0.4, duration: 0.7 }}
       >
         <div className="border-border bg-muted mb-5 rounded-2xl border p-4">
           <p className="text-muted-foreground mb-1 text-sm">Total Balance</p>
@@ -269,7 +229,7 @@ const WalletView = ({ onClose, onProceed }: ViewProps) => {
         />
 
         <button
-          onClick={() => onProceed({ type: "wallet", amount })}
+          onClick={() => onProceed({ type: 'wallet', amount })}
           className={primaryButton}
         >
           Proceed
@@ -283,8 +243,8 @@ const WalletView = ({ onClose, onProceed }: ViewProps) => {
 
 export const SendMoney: React.FC<SendMoneyProps> = ({
   cards = [
-    { id: "1", last4: "6756", brand: "visa" },
-    { id: "2", last4: "4632", brand: "mastercard" },
+    { id: '1', last4: '6756', brand: 'visa' },
+    { id: '2', last4: '4632', brand: 'mastercard' },
   ],
   onProceed = () => {},
 }) => {
@@ -294,16 +254,16 @@ export const SendMoney: React.FC<SendMoneyProps> = ({
     <div className="theme-injected flex min-h-[60vh] w-full items-center justify-center bg-transparent p-4">
       <motion.div
         layout
-        className="border-border bg-background w-full max-w-96 rounded-lg border p-6 shadow-lg"
+        className="border-border bg-background w-full max-w-[400px] rounded-lg border p-5 shadow-lg transition-all sm:p-6"
       >
         <AnimatePresence mode="wait">
           {!view ? (
             <motion.div>
               <motion.h1
-                initial={{ opacity: 0, filter: "blur(4px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, filter: "blur(4px)" }}
-                transition={{ type: "spring", bounce: 0.3, duration: 0.7 }}
+                initial={{ opacity: 0, filter: 'blur(4px)' }}
+                animate={{ opacity: 1, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, filter: 'blur(4px)' }}
+                transition={{ type: 'spring', bounce: 0.3, duration: 0.7 }}
                 className="text-muted-foreground mb-6 text-base"
               >
                 Send Money
@@ -312,34 +272,34 @@ export const SendMoney: React.FC<SendMoneyProps> = ({
               <div className="space-y-2">
                 {[
                   {
-                    id: "bank",
-                    title: "Bank Transfer",
-                    sub: "Transfer to bank account",
+                    id: 'bank',
+                    title: 'Bank Transfer',
+                    sub: 'Transfer to bank account',
                     icon: Building2,
                   },
                   {
-                    id: "card",
-                    title: "Debit/Credit Card",
-                    sub: "Send money from your card",
+                    id: 'card',
+                    title: 'Debit/Credit Card',
+                    sub: 'Send money from your card',
                     icon: CreditCard,
                   },
                   {
-                    id: "wallet",
-                    title: "Wallet",
-                    sub: "Transfer from your wallet",
+                    id: 'wallet',
+                    title: 'Wallet',
+                    sub: 'Transfer from your wallet',
                     icon: Wallet,
                   },
                 ].map((opt) => (
                   <button
                     key={opt.id}
                     onClick={() => setView(opt.id as PaymentType)}
-                    className="hover:bg-accent/5 flex w-full items-center gap-4 rounded-lg p-4 transition"
+                    className="hover:bg-accent/5 flex w-full items-center gap-3 rounded-lg p-3 transition sm:gap-4 sm:p-4"
                   >
                     <motion.div
                       layoutId={`icon-${opt.id}`}
-                      className="border-border bg-muted text-muted-foreground flex h-12 w-12 items-center justify-center rounded-lg border"
+                      className="border-border bg-muted text-muted-foreground flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border sm:h-12 sm:w-12"
                     >
-                      <opt.icon size={24} />
+                      <opt.icon size={22} className="sm:size-6" />
                     </motion.div>
                     <div className="text-left">
                       <motion.p
@@ -356,20 +316,20 @@ export const SendMoney: React.FC<SendMoneyProps> = ({
             </motion.div>
           ) : (
             <>
-              {view === "bank" && (
+              {view === 'bank' && (
                 <BankTransferView
                   onClose={() => setView(null)}
                   onProceed={onProceed}
                 />
               )}
-              {view === "card" && (
+              {view === 'card' && (
                 <CardView
                   cards={cards}
                   onClose={() => setView(null)}
                   onProceed={onProceed}
                 />
               )}
-              {view === "wallet" && (
+              {view === 'wallet' && (
                 <WalletView
                   onClose={() => setView(null)}
                   onProceed={onProceed}
