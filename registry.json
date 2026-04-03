@@ -7117,7 +7117,110 @@
       ],
       "registryDependencies": ["button"]
     },
-
+    {
+      "name": "button-31",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-31.tsx",
+          "target": "components/ui/button-31.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-32",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-32.tsx",
+          "target": "components/ui/button-32.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-33",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-33.tsx",
+          "target": "components/ui/button-33.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-34",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-34.tsx",
+          "target": "components/ui/button-34.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-35",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-35.tsx",
+          "target": "components/ui/button-35.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-36",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-36.tsx",
+          "target": "components/ui/button-36.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-37",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-37.tsx",
+          "target": "components/ui/button-37.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "button-38",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button/button-38.tsx",
+          "target": "components/ui/button-38.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
     {
       "name": "workflow-management-dashboard",
       "type": "registry:block",

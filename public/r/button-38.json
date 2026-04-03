@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-38",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-38.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { FaBell } from \"react-icons/fa6\";\r\n\r\nconst Button38 = () => {\r\n  return (\r\n    <Button variant=\"outline\" size=\"icon\" className=\"relative\">\r\n      <FaBell />\r\n      <span className=\"absolute -top-0.5 -right-0.5 size-2 animate-bounce rounded-full bg-sky-600 dark:bg-sky-400\" />\r\n      <span className=\"sr-only\">Notifications</span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button38;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-38.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

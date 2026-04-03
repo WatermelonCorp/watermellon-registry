@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-34",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-34.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { IoCheckmarkOutline, IoCopyOutline } from \"react-icons/io5\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst Button34 = () => {\r\n  const [copied, setCopied] = useState<boolean>(false);\r\n\r\n  const handleCopy = async () => {\r\n    try {\r\n      await navigator.clipboard.writeText(\"Thank you for using Watermelon UI!\");\r\n      setCopied(true);\r\n      setTimeout(() => setCopied(false), 2000);\r\n    } catch (err) {\r\n      console.error(\"Failed to copy text: \", err);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <Button\r\n      variant=\"outline\"\r\n      className=\"relative disabled:opacity-100\"\r\n      onClick={handleCopy}\r\n      disabled={copied}\r\n    >\r\n      <span\r\n        className={cn(\r\n          \"transition-all\",\r\n          copied ? \"scale-100 opacity-100\" : \"scale-0 opacity-0\"\r\n        )}\r\n      >\r\n        <IoCheckmarkOutline className=\"stroke-green-600 dark:stroke-green-400\" />\r\n      </span>\r\n      <span\r\n        className={cn(\r\n          \"absolute left-3 transition-all\",\r\n          copied ? \"scale-0 opacity-0\" : \"scale-100 opacity-100\"\r\n        )}\r\n      >\r\n        <IoCopyOutline />\r\n      </span>\r\n      {copied ? \"Copied!\" : \"Copy\"}\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button34;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-34.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -11,7 +11,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-15.tsx",
-      "content": ";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { IoCopy } from \"react-icons/io5\";\r\n\r\nconst Button15 = () => {\r\n  return (\r\n    <div className=\"flex h-12 items-center overflow-hidden rounded-lg border px-1\">\r\n      <p className=\"text-muted-foreground max-w-56 truncate overflow-hidden px-2.5 text-sm\">\r\n        https://watermelon-ui.com/\r\n      </p>\r\n      <Button\r\n        size=\"icon\"\r\n        className=\"rounded-lg bg-blue-600 text-white hover:bg-blue-600/90 focus-visible:ring-blue-600/20 dark:bg-blue-400/60 dark:focus-visible:ring-blue-400/40\"\r\n      >\r\n        <IoCopy />\r\n        <span className=\"sr-only\">Copy</span>\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Button15;\r\n",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { IoCopy } from \"react-icons/io5\";\r\n\r\nconst Button15 = () => {\r\n  return (\r\n    <div className=\"flex h-12  items-center overflow-hidden rounded-lg border px-1\">\r\n      <p className=\"text-muted-foreground max-w-56 truncate overflow-hidden px-1 text-sm\">\r\n        https://watermelon-base-ui.com/\r\n      </p>\r\n      <Button\r\n        size=\"icon\"\r\n        className=\"rounded-lg bg-blue-600 text-white hover:bg-blue-600/90 focus-visible:ring-blue-600/20 dark:bg-blue-400/60 dark:focus-visible:ring-blue-400/40\"\r\n      >\r\n        <IoCopy />\r\n        <span className=\"sr-only\">Copy</span>\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Button15;\r\n",
       "type": "registry:ui",
       "target": "components/ui/button-15.tsx"
     }
