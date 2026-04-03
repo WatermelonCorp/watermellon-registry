@@ -12,9 +12,10 @@ export const ScheduleButton = () => {
 
   return (
     <MotionConfig transition={{ type: 'spring', bounce: 0.25, duration: 0.7 }}>
-      <div className="relative theme-injected font-sans">
-        <div
-          className="relative z-10 w-80 border border-border bg-card rounded-3xl"
+      <div className="relative flex flex-col items-center theme-injected font-sans">
+        <motion.div
+          layout
+          className="relative z-10 w-80 border border-border bg-card rounded-3xl shadow-sm"
           // style={{ borderRadius: 25 }}
         >
           <div className="p-2">
@@ -34,23 +35,30 @@ export const ScheduleButton = () => {
                   exit={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
                 >
                   <div className="relative flex h-10 items-center justify-between overflow-hidden rounded-3xl border border-border bg-muted">
-                    <div className="flex w-[90%] items-center justify-between rounded-3xl bg-card">
-                      <div className="flex h-10 w-full items-center justify-between border-r border-border p-2 font-sans text-sm text-muted-foreground">
-                        <span>25, Dec 2024</span>
-                        <FaAngleDown size={14} className="text-muted-foreground" />
+                    <div className="flex flex-1 items-center justify-between overflow-hidden rounded-3xl bg-card">
+                      <div className="flex h-10 w-full items-center justify-between border-r border-border p-2 px-3 font-sans text-sm text-muted-foreground">
+                        <span className="truncate">25, Dec 2024</span>
+                        <FaAngleDown
+                          size={12}
+                          className="shrink-0 text-muted-foreground"
+                        />
                       </div>
-                      <div className="flex h-10 w-full items-center justify-between p-2 font-sans text-sm text-muted-foreground">
-                        <span>9:30 AM</span>
-                        <FaAngleDown size={14} className="text-muted-foreground" />
+                      <div className="flex h-10 w-full items-center justify-between p-2 px-3 font-sans text-sm text-muted-foreground">
+                        <span className="truncate">9:30 AM</span>
+                        <FaAngleDown
+                          size={12}
+                          className="shrink-0 text-muted-foreground"
+                        />
                       </div>
                     </div>
                     <button
-                      className="flex h-10 w-10 items-center justify-center text-muted-foreground hover:text-foreground"
+                      title="close"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center text-muted-foreground hover:text-foreground"
                       onClick={() => setIsOpen(false)}
                     >
                       <HugeiconsIcon
                         icon={Cancel01Icon}
-                        size={20}
+                        size={18}
                         strokeWidth={2}
                       />
                     </button>
@@ -59,7 +67,7 @@ export const ScheduleButton = () => {
               )}
             </AnimatePresence>
 
-            <div className="relative flex items-center justify-end gap-2 p-2">
+            <div className="relative flex items-center justify-end gap-2 p-2 px-3">
               <motion.button
                 layoutId="container"
                 className="flex size-10 items-center justify-center border border-border bg-muted text-muted-foreground"
@@ -109,7 +117,7 @@ export const ScheduleButton = () => {
 
               <AnimatePresence>
                 {isOpen && (
-                  <div className="absolute inset-0 z-20 flex size-full items-center justify-center p-2">
+                  <div className="absolute inset-0 z-20 flex size-full items-center justify-center p-2 px-3">
                     <motion.button
                       layoutId="container"
                       className="h-10 w-full font-sans font-semibold bg-primary px-8 py-2 text-primary-foreground"
@@ -141,17 +149,24 @@ export const ScheduleButton = () => {
               </AnimatePresence>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -62 }}
+              layout
+              initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -62 }}
-              className="absolute -bottom-10 flex w-full items-center justify-center rounded-3xl rounded-tl-none rounded-tr-none border border-border bg-muted p-3 pt-8"
+              exit={{ opacity: 0, y: -40 }}
+              transition={{
+                type: 'spring',
+                bounce: 0,
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              className="relative z-0 mt-[-25px] flex w-80 items-center justify-center rounded-b-3xl border border-border border-t-0 bg-muted p-3 pt-8 pb-3"
             >
-              <p className="font-sans text-xs font-medium text-muted-foreground">
+              <p className="font-sans text-[11px] font-medium text-muted-foreground text-center">
                 Will be posted on 25 Dec 2024 at 9:30 AM
               </p>
             </motion.div>

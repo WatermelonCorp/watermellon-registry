@@ -6037,6 +6037,19 @@
       ]
     },
     {
+      "name": "accordion-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordian/accordian-1.tsx",
+          "target": "components/ui/accordion-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
       "name": "workflow-management-dashboard",
       "type": "registry:block",
       "dependencies": [

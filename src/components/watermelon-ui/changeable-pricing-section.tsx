@@ -60,7 +60,6 @@ export default function ChangeablePricingSection({
   );
 
   return (
-    <div className="flex items-center justify-center min-h-[600px] p-4 inter dark:bg-neutral-950">
       <div className="w-full max-w-[460px] bg-neutral-100 dark:bg-neutral-950 rounded-[24px] p-1.5 shadow-sm ring-1 ring-neutral-200/50 dark:ring-neutral-800/50">
         {/* Header */}
         <div className="flex items-center justify-between px-3 py-4">
@@ -111,7 +110,7 @@ export default function ChangeablePricingSection({
                 <div className="px-4 py-3.5 sm:px-5 sm:py-4">
                   {/* Top row */}
                   <div className="flex justify-between items-start gap-3">
-                    <div className="flex gap-3">
+                    <div className="flex flex-1 gap-3">
                       {/* Radio button */}
                       <div className="mt-0.5 shrink-0">
                         <div
@@ -132,8 +131,8 @@ export default function ChangeablePricingSection({
                       </div>
 
                       {/* Plan Info */}
-                      <div className="flex flex-col">
-                        <div className="flex items-center gap-2">
+                      <div className="flex flex-1 flex-col">
+                        <div className="flex flex-wrap items-center gap-2">
                           <span className="text-[16px] font-medium text-neutral-800 dark:text-neutral-100 leading-none">
                             {plan.name}
                           </span>
@@ -143,14 +142,14 @@ export default function ChangeablePricingSection({
                             </span>
                           )}
                         </div>
-                        <span className="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1.5 leading-none">
+                        <span className="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1.5 leading-snug sm:leading-none">
                           {plan.description}
                         </span>
                       </div>
                     </div>
 
                     {/* Price Info */}
-                    <div className="flex flex-col items-end">
+                    <div className="flex flex-col items-end shrink-0">
                       <div className="flex items-center justify-end text-[15px] sm:text-[16px] font-medium text-neutral-800 dark:text-neutral-100 leading-none overflow-hidden h-[18px]">
                         <AnimatePresence mode="popLayout" initial={false}>
                           <motion.span
@@ -239,18 +238,17 @@ export default function ChangeablePricingSection({
         </div>
 
         {/* Footer info & CTA */}
-        <div className="flex items-center justify-between mt-5 px-1 pb-1">
-          <span className="jet text-[10px] text-neutral-400 uppercase tracking-[0.05em] max-w-[190px] leading-relaxed whitespace-nowrap">
+        <div className="flex flex-col gap-4 items-center sm:flex-row sm:justify-between mt-5 px-3 pb-2">
+          <span className="jet text-[10px] text-neutral-400 uppercase tracking-[0.05em] leading-relaxed text-center sm:text-left">
             {footerText}
           </span>
           <button
             onClick={() => onContinue?.(selectedPlan, billingCycle)}
-            className="bg-orange-500 text-white px-5 py-2 rounded-full text-[13px] font-medium hover:bg-orange-600 active:scale-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500"
+            className="w-full sm:w-auto bg-orange-500 text-white px-8 py-2.5 rounded-full text-[13px] font-medium hover:bg-orange-600 active:scale-95 transition-all outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500"
           >
             {buttonText}
           </button>
         </div>
       </div>
-    </div>
   );
 }

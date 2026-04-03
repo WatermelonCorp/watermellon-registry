@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaCopy } from "react-icons/fa";
-import { BsEyeFill } from "react-icons/bs";
-import { FaCheck } from "react-icons/fa6";
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { FaCopy } from 'react-icons/fa';
+import { BsEyeFill } from 'react-icons/bs';
+import { FaCheck } from 'react-icons/fa6';
 
 type RevealAndCopyProps = {
   cardNumber: string;
@@ -21,20 +21,26 @@ export const RevealAndCopy = ({
   const [copied, setCopied] = useState(false);
   const [timerActive, setTimerActive] = useState(false);
 
-  const parts = cardNumber.split(" ");
+  const parts = cardNumber.split(' ');
+
+  const resetAll = useCallback(() => {
+    setRevealed(false);
+    setCopied(false);
+    setTimerActive(false);
+  }, []);
 
   useEffect(() => {
     if (!revealed) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTimerActive(true);
 
     const timer = setTimeout(() => {
-      // eslint-disable-next-line react-hooks/immutability
       if (!copied) resetAll();
     }, revealDuration);
 
     return () => clearTimeout(timer);
-  }, [revealed, copied, revealDuration]);
+  }, [revealed, copied, revealDuration, resetAll]);
 
   useEffect(() => {
     if (!copied) return;
@@ -44,13 +50,7 @@ export const RevealAndCopy = ({
     }, copiedDuration);
 
     return () => clearTimeout(timer);
-  }, [copied, copiedDuration]);
-
-  const resetAll = () => {
-    setRevealed(false);
-    setCopied(false);
-    setTimerActive(false);
-  };
+  }, [copied, copiedDuration, resetAll]);
 
   const handleCopy = async () => {
     if (copied) return;
@@ -63,22 +63,22 @@ export const RevealAndCopy = ({
 
   return (
     <div className="flex flex-col items-center justify-center gap-8 bg-white transition-colors duration-500 dark:bg-zinc-950">
-      <div className="flex h-[70px] min-w-[420px] items-center rounded-[20px] border-2 border-[#E5E4ED] bg-white px-2 shadow-sm transition-colors duration-500 dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="relative flex flex-1 gap-0 overflow-hidden text-[22px] tracking-[0.18em]">
+      <div className="flex h-[70px] w-full max-w-[420px] items-center rounded-[20px] border-2 border-[#E5E4ED] bg-white px-3 shadow-sm transition-colors duration-500 dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="relative flex flex-1 items-center justify-between overflow-hidden text-[16px] tracking-[0.08em] sm:text-[22px] sm:tracking-[0.18em]">
           <AnimatePresence>
             {revealed && (
               <motion.div
                 key="shine"
-                initial={{ left: "-60%" }}
-                animate={{ left: "160%" }}
+                initial={{ left: '-60%' }}
+                animate={{ left: '160%' }}
                 transition={{
                   delay: 0.35,
                   duration: 1,
-                  ease: "linear",
+                  ease: 'linear',
                 }}
                 className="pointer-events-none absolute inset-y-0 z-30 w-[60%] mix-blend-overlay dark:mix-blend-screen"
                 style={{
-                  transform: "skewX(-20deg)",
+                  transform: 'skewX(-20deg)',
                   background: `
                     linear-gradient(
                       90deg,
@@ -89,7 +89,7 @@ export const RevealAndCopy = ({
                       transparent 100%
                     )
                   `,
-                  filter: "blur(6px)",
+                  filter: 'blur(6px)',
                 }}
               />
             )}
@@ -97,31 +97,31 @@ export const RevealAndCopy = ({
 
           {parts.map((part, idx) => {
             const isMasked = !revealed && hiddenIndexes.includes(idx);
-            const display = isMasked ? "xxxx" : part;
+            const display = isMasked ? 'xxxx' : part;
 
             return (
               <div
                 key={idx}
-                className="relative flex w-[85px] justify-center overflow-hidden font-bold"
+                className="relative flex flex-1 min-w-0 justify-center overflow-hidden font-bold"
               >
                 <div className="relative flex items-center">
                   <AnimatePresence mode="popLayout" initial={false}>
-                    {display.split("").map((char, i) => (
+                    {display.split('').map((char, i) => (
                       <motion.span
                         key={`${display}-${i}`}
                         initial={{
                           opacity: 0,
                           y: 12,
                           scale: 0.5,
-                          filter: "blur(4px)",
+                          filter: 'blur(4px)',
                         }}
                         animate={{
                           opacity: 1,
                           y: 0,
                           scale: 1,
-                          filter: "blur(0px)",
+                          filter: 'blur(0px)',
                           transition: {
-                            type: "spring",
+                            type: 'spring',
                             stiffness: 200,
                             damping: 14,
                             delay: i * 0.06,
@@ -131,7 +131,7 @@ export const RevealAndCopy = ({
                           opacity: 0,
                           y: -12,
                           scale: 0.5,
-                          filter: "blur(4px)",
+                          filter: 'blur(4px)',
                           transition: {
                             delay: i * 0.06,
                             duration: 0.18,
@@ -149,7 +149,7 @@ export const RevealAndCopy = ({
           })}
         </div>
 
-        <div className="relative ml-4 h-12 w-12">
+        <div className="relative ml-2 shrink-0 sm:ml-4 h-12 w-12">
           <AnimatePresence mode="popLayout" initial={false}>
             {!revealed && (
               <motion.button
@@ -171,11 +171,10 @@ export const RevealAndCopy = ({
                 initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.85, opacity: 0 }}
-                className={`relative flex h-full w-full items-center justify-center rounded-2xl transition-colors duration-300 ${
-                  copied
-                    ? "bg-[#2DBE50] text-white"
-                    : "bg-[#CAF9D5] text-[#2DBE50] dark:bg-emerald-900/30 dark:text-emerald-400"
-                }`}
+                className={`relative flex h-full w-full items-center justify-center rounded-2xl transition-colors duration-300 ${copied
+                  ? 'bg-[#2DBE50] text-white'
+                  : 'bg-[#CAF9D5] text-[#2DBE50] dark:bg-emerald-900/30 dark:text-emerald-400'
+                  }`}
               >
                 {timerActive && !copied && (
                   <svg
@@ -197,7 +196,7 @@ export const RevealAndCopy = ({
                       animate={{ strokeDashoffset: 0 }}
                       transition={{
                         duration: revealDuration / 1000,
-                        ease: "linear",
+                        ease: 'linear',
                       }}
                     />
                   </svg>
