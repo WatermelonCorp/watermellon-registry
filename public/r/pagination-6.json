@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-6",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-6.tsx",
+      "content": "import {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from '@/components/ui/pagination';\r\n\r\nconst pages = [1, 2, 3];\r\n\r\nconst Pagination6 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent>\r\n        <PaginationItem>\r\n          <PaginationPrevious\r\n            href=\"#\"\r\n            className=\"rounded-xl border border-neutral-200 bg-neutral-50 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800\"\r\n          >\r\n            Prev\r\n          </PaginationPrevious>\r\n        </PaginationItem>\r\n        {pages.map((page) => (\r\n          <PaginationItem key={page}>\r\n            <PaginationLink\r\n              href={`#${page}`}\r\n              isActive={page === 2}\r\n              className=\"rounded-xl shadow-sm transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n            >\r\n              {page}\r\n            </PaginationLink>\r\n          </PaginationItem>\r\n        ))}\r\n        <PaginationItem>\r\n          <PaginationNext\r\n            href=\"#\"\r\n            className=\"rounded-xl border border-neutral-200 bg-neutral-50 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800\"\r\n          >\r\n            Next\r\n          </PaginationNext>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination6;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

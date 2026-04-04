@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-7",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "popover",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/popover/popover-7.tsx",
+      "content": "import { FileWarningIcon, AlertTriangleIcon } from 'lucide-react';\r\n\r\nimport { Button } from '@/components/ui/button';\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from '@/components/ui/popover';\r\n\r\nconst Popover7 = () => {\r\n  return (\r\n    <Popover>\r\n      <PopoverTrigger asChild backdrop-blur-sm>\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"icon\"\r\n          className=\"group rounded-xl border-red-200 transition-all hover:bg-red-50 active:scale-95 dark:border-red-500/20 dark:bg-transparent dark:hover:bg-red-500/20\"\r\n        >\r\n          <FileWarningIcon className=\"size-4 text-red-500 transition-transform group-hover:scale-110\" />\r\n          <span className=\"sr-only\">Delete File</span>\r\n        </Button>\r\n      </PopoverTrigger>\r\n      <PopoverContent className=\"shadow-3xl w-72 rounded-3xl border-neutral-100 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950\">\r\n        <div className=\"flex flex-col items-center gap-6 text-center\">\r\n          <div className=\"relative flex size-12 items-center justify-center rounded-xl border border-red-100 bg-red-50 dark:border-red-500/20 dark:bg-red-500/10\">\r\n            <AlertTriangleIcon className=\"size-5 text-red-600 dark:text-red-500\" />\r\n          </div>\r\n\r\n          <div className=\"flex flex-col gap-1.5\">\r\n            <div className=\"text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100\">\r\n              Reset Session?\r\n            </div>\r\n            <p className=\"mx-auto max-w-[200px] text-xs leading-relaxed font-medium text-neutral-500 dark:text-neutral-400\">\r\n              This will clear all active session cookies and tracking data. This\r\n              action is irreversible.\r\n            </p>\r\n          </div>\r\n\r\n          <div className=\"grid w-full grid-cols-2 gap-3\">\r\n            <Button\r\n              variant=\"outline\"\r\n              className=\"h-10 rounded-xl border-neutral-200 text-xs font-bold text-neutral-600 dark:border-neutral-800 dark:text-neutral-400\"\r\n            >\r\n              Go Back\r\n            </Button>\r\n            <Button\r\n              variant=\"secondary\"\r\n              className=\"h-10 rounded-xl border-none bg-red-600 text-xs font-bold text-white shadow-lg shadow-red-500/20 hover:bg-red-700 dark:bg-red-600 dark:hover:bg-red-700\"\r\n            >\r\n              Reset\r\n            </Button>\r\n          </div>\r\n        </div>\r\n      </PopoverContent>\r\n    </Popover>\r\n  );\r\n};\r\n\r\nexport default Popover7;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/popover-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-10",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-10.tsx",
+      "content": "import {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from '@/components/ui/pagination';\r\n\r\nconst Pagination10 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"gap-2 rounded-2xl border border-neutral-200 bg-white/80 p-2 shadow-xl backdrop-blur-sm transition-all hover:shadow-2xl dark:border-neutral-800 dark:bg-neutral-950\">\r\n        <PaginationItem>\r\n          <PaginationPrevious\r\n            href=\"#\"\r\n            className=\"rounded-xl px-4 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            Back\r\n          </PaginationPrevious>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"rounded-xl transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            1\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            isActive\r\n            className=\"rounded-xl border-none font-bold shadow-lg transition-all\"\r\n          >\r\n            2\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"rounded-xl transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            3\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationNext href=\"#\" />\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination10;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
