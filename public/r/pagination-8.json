@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-8",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-8.tsx",
+      "content": "import {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationEllipsis,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from '@/components/ui/pagination';\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from '@/components/ui/tooltip';\r\n\r\nconst Pagination8 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent>\r\n        <PaginationItem>\r\n          <PaginationPrevious\r\n            href=\"#\"\r\n            className=\"rounded-lg px-3 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          />\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"rounded-xl transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            1\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            isActive\r\n            className=\"rounded-xl border-none shadow-lg\"\r\n          >\r\n            2\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <Tooltip>\r\n            <TooltipTrigger\r\n              asChild\r\n              className=\"flex size-9 cursor-pointer items-center justify-center rounded-xl transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n            >\r\n              <PaginationEllipsis />\r\n            </TooltipTrigger>\r\n            <TooltipContent className=\"rounded-lg border-none bg-indigo-600 px-3 py-1.5 text-white shadow-lg\">\r\n              <p className=\"text-xs font-bold tracking-wider uppercase\">\r\n                Search 10+ more\r\n              </p>\r\n            </TooltipContent>\r\n          </Tooltip>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationNext\r\n            href=\"#\"\r\n            className=\"rounded-lg px-3 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          />\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination8;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

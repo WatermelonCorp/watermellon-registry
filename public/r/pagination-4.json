@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-4",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-4.tsx",
+      "content": "import { buttonVariants } from '@/components/ui/button';\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from '@/components/ui/pagination';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\nconst Pagination4 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent>\r\n        <PaginationItem>\r\n          <PaginationPrevious\r\n            href=\"#\"\r\n            className=\"rounded-lg px-4 text-emerald-700 transition-all hover:text-emerald-500 dark:text-emerald-400\"\r\n          >\r\n            Back\r\n          </PaginationPrevious>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"rounded-xl transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            1\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            isActive\r\n            className={cn(\r\n              'rounded-xl !border-none bg-emerald-100 font-bold text-emerald-800 !shadow-sm transition-all hover:bg-emerald-200 active:scale-95 dark:bg-emerald-900/50 dark:text-emerald-100 dark:hover:bg-emerald-900',\r\n              buttonVariants({\r\n                variant: 'secondary',\r\n                size: 'icon',\r\n              }),\r\n            )}\r\n          >\r\n            2\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"rounded-xl transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            3\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationNext\r\n            href=\"#\"\r\n            className=\"rounded-lg px-4 text-emerald-700 transition-all hover:text-emerald-500 dark:text-emerald-400\"\r\n          >\r\n            Forward\r\n          </PaginationNext>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination4;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

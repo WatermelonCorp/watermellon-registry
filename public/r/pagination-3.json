@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-3",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-3.tsx",
+      "content": "import { buttonVariants } from '@/components/ui/button';\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from '@/components/ui/pagination';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\nconst Pagination3 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent>\r\n        <PaginationItem>\r\n          <PaginationPrevious\r\n            href=\"#\"\r\n            className=\"transition-colors hover:text-orange-600\"\r\n          >\r\n            Prev\r\n          </PaginationPrevious>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"rounded-xl transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            1\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            isActive\r\n            className={cn(\r\n              buttonVariants({\r\n                variant: 'default',\r\n                size: 'icon',\r\n              }),\r\n              'scale-110 rounded-xl border-none text-white shadow-lg shadow-orange-200 transition-all duration-300 hover:text-white dark:bg-orange-600 dark:hover:bg-orange-700',\r\n            )}\r\n          >\r\n            2\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"rounded-xl transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            3\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationNext\r\n            href=\"#\"\r\n            className=\"rounded-lg transition-all hover:bg-neutral-50 hover:text-orange-600 dark:hover:bg-neutral-900/50\"\r\n          >\r\n            Next\r\n          </PaginationNext>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

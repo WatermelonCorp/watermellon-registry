@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-4",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "popover",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/popover/popover-4.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { Volume2Icon, VolumeXIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'\r\nimport { Slider } from '@/components/ui/slider'\r\n\r\nconst Popover4 = () => {\r\n  const [value, setValue] = useState([45])\r\n\r\n  return (\r\n    <Popover>\r\n      <PopoverTrigger asChild backdrop-blur-sm>\r\n        <Button variant='outline' size='icon' className='rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all active:scale-95'>\r\n          <Volume2Icon className=\"size-4\" />\r\n          <span className='sr-only'>Volume control</span>\r\n        </Button>\r\n      </PopoverTrigger>\r\n      <PopoverContent className='w-80 rounded-2xl shadow-2xl border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 p-6'>\r\n        <div className='flex flex-col gap-6'>\r\n          <div className='flex items-center justify-between gap-4'>\r\n            <div className=\"flex flex-col gap-1\">\r\n               <Label className='text-sm font-bold text-neutral-900 dark:text-neutral-100'>Audio Output</Label>\r\n               <p className=\"text-[11px] text-neutral-500 font-medium\">Master session volume</p>\r\n            </div>\r\n            <output className='text-xl font-bold text-orange-500 tabular-nums'>{value[0]}%</output>\r\n          </div>\r\n          <div className='flex items-center gap-4 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-3'>\r\n            <VolumeXIcon className='size-4 shrink-0 text-neutral-400 opacity-60' />\r\n            <Slider \r\n              value={value} \r\n              onValueChange={setValue} \r\n              aria-label='Volume' \r\n              className=\"[&>[data-slot=slider-range]]:bg-orange-500 [&>[data-slot=slider-track]]:bg-neutral-200 dark:[&>[data-slot=slider-track]]:bg-neutral-800\" \r\n            />\r\n            <Volume2Icon className='size-4 shrink-0 text-neutral-400 opacity-60' />\r\n          </div>\r\n          <div className=\"grid grid-cols-2 gap-3\">\r\n             <Button variant=\"outline\" size=\"sm\" className=\"rounded-xl text-xs font-bold border-neutral-200 dark:border-neutral-800\" onClick={() => setValue([0])}>Mute</Button>\r\n             <Button variant=\"outline\" size=\"sm\" className=\"rounded-xl text-xs font-bold border-neutral-200 dark:border-neutral-800\" onClick={() => setValue([100])}>Maximum</Button>\r\n          </div>\r\n        </div>\r\n      </PopoverContent>\r\n    </Popover>\r\n  )\r\n}\r\n\r\nexport default Popover4\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/popover-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

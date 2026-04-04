@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-7",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-7.tsx",
+      "content": "import {\r\n  IconChevronLeft,\r\n  IconChevronRight,\r\n  IconChevronsLeft,\r\n  IconChevronsRight,\r\n} from '@tabler/icons-react';\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n} from '@/components/ui/pagination';\r\nimport { cn } from '@/lib/utils';\r\n\r\nconst pages = [1, 2, 3];\r\n\r\nconst Pagination7 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"mx-auto w-fit gap-1.5 rounded-2xl bg-neutral-100/50 p-1 dark:bg-neutral-900/50\">\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            aria-label=\"First page\"\r\n            size=\"icon\"\r\n            className=\"rounded-xl border-none bg-white shadow-sm transition-all hover:shadow-md dark:bg-neutral-950\"\r\n          >\r\n            <IconChevronsLeft className=\"size-4 text-neutral-900 dark:text-neutral-100\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            aria-label=\"Previous\"\r\n            size=\"icon\"\r\n            className=\"rounded-xl border-none transition-all hover:bg-white dark:hover:bg-neutral-800\"\r\n          >\r\n            <IconChevronLeft className=\"size-4\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        {pages.map((page) => (\r\n          <PaginationItem key={page}>\r\n            <PaginationLink\r\n              href={`#${page}`}\r\n              isActive={page === 2}\r\n              className={cn(\r\n                'rounded-xl font-semibold transition-all',\r\n                page === 2\r\n                  ? 'scale-105 transform shadow-md'\r\n                  : 'hover:bg-white dark:hover:bg-neutral-800',\r\n              )}\r\n            >\r\n              {page}\r\n            </PaginationLink>\r\n          </PaginationItem>\r\n        ))}\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            aria-label=\"Next\"\r\n            size=\"icon\"\r\n            className=\"rounded-xl border-none transition-all hover:bg-white dark:hover:bg-neutral-800\"\r\n          >\r\n            <IconChevronRight className=\"size-4\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            aria-label=\"Last page\"\r\n            size=\"icon\"\r\n            className=\"rounded-xl border-none bg-white shadow-sm transition-all hover:shadow-md dark:bg-neutral-950\"\r\n          >\r\n            <IconChevronsRight className=\"size-4 text-neutral-900 dark:text-neutral-100\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination7;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
