@@ -6403,7 +6403,6 @@
         }
       ],
       "registryDependencies": ["accordion"]
-<<<<<<< HEAD
     },
     {
       "name": "calendar-1",
@@ -7431,8 +7430,6 @@
         }
       ],
       "registryDependencies": ["date-picker"]
-=======
->>>>>>> b486fb0906d686d64078e498001f57d8e06bcea8
     },
     {
       "name": "avatar-1",
@@ -8278,8 +8275,6 @@
         }
       ],
       "registryDependencies": ["collapsible"]
-<<<<<<< HEAD
-=======
     },
     {
       "name": "alert-1",
@@ -9666,7 +9661,6 @@
         "progress",
         "separator"
       ]
->>>>>>> b486fb0906d686d64078e498001f57d8e06bcea8
     },
     {
       "name": "popover-2",
