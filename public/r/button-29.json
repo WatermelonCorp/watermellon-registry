@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-29",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-29.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { FiBookmark } from \"react-icons/fi\";\r\nimport { FaBookmark } from \"react-icons/fa\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button29 = () => {\r\n  const [bookmarked, setBookmarked] = useState(false);\r\n\r\n  return (\r\n    <Button\r\n      variant=\"outline\"\r\n      size=\"icon\"\r\n      onClick={() => setBookmarked(!bookmarked)}\r\n    >\r\n      {bookmarked ? (\r\n        <FaBookmark className=\"size-5 text-blue-600\" />\r\n      ) : (\r\n        <FiBookmark className=\"size-5\" />\r\n      )}\r\n      <span className=\"sr-only\">Bookmark</span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button29;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-29.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

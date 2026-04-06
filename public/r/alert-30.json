@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-30",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-30.tsx",
+      "content": "\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { MdError } from \"react-icons/md\";\r\n\r\nconst Alert30 = () => {\r\n  return (\r\n    <Alert className=\"bg-destructive dark:bg-destructive/80 border-none text-white\">\r\n      <MdError className=\"size-4\" />\r\n      <AlertTitle>Failed to apply updates</AlertTitle>\r\n      <AlertDescription className=\"text-white/80\">\r\n        We couldn’t process your changes. Please refresh and try again.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert30;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-30.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

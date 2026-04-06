@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-24",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-24.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button24 = () => {\r\n  return (\r\n    <Button className=\"rounded-lg pl-1\">\r\n      <Avatar className=\"size-6\">\r\n        <AvatarImage\r\n          src=\"https://github.com/VanshPatel.png\"\r\n          alt=\"Hallie Richards\"\r\n          className=\"rounded-md\"\r\n        />\r\n        <AvatarFallback className=\"text-foreground text-xs\">VP</AvatarFallback>\r\n      </Avatar>\r\n      @VanshPatel\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button24;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-24.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-32",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-32.tsx",
+      "content": "import { IoShareOutline } from \"react-icons/io5\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button32 = () => {\r\n  return (\r\n    <Button variant=\"outline\" className=\"   rounded-md px-2 h-10.5\">\r\n      <span className=\"bg-primary text-primary-foreground flex size-7 items-center justify-center rounded-md\">\r\n        <IoShareOutline />\r\n      </span>\r\n      Post\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button32;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-32.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

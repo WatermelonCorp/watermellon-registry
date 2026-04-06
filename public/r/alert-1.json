@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-1",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-1.tsx",
+      "content": "import { MdError } from \"react-icons/md\";\r\n\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nconst Alert1 = () => {\r\n  return (\r\n    <Alert>\r\n      <MdError />\r\n      <AlertTitle className=\"flex-1\">You have a new message!</AlertTitle>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

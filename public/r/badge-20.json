@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-20",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/badge/badge-20.tsx",
+      "content": "\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge20 = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center rounded-full bg-gradient-to-r from-orange-400 via-rose-500 to-fuchsia-600 p-0.5\">\r\n      <Badge className=\"bg-background hover:bg-background text-foreground border-none\">\r\n        Outline Gradient\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Badge20;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/badge-20.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

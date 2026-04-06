@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-28",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-28.tsx",
+      "content": "\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { GoAlertFill } from \"react-icons/go\";\r\n\r\nconst Alert28 = () => {\r\n  return (\r\n    <Alert className=\"border-none bg-yellow-600 text-white dark:bg-yellow-400\">\r\n      <GoAlertFill className=\"size-4\" />\r\n      <AlertTitle>Incomplete setup</AlertTitle>\r\n      <AlertDescription className=\"text-white/80\">\r\n        A few required fields are still empty. Fill them in to continue\r\n        smoothly.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert28;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-28.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

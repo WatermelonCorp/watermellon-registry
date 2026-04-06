@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-10",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/badge/badge-10.tsx",
+      "content": "import { FaRegStar } from \"react-icons/fa\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge10 = () => {\r\n  return (\r\n    <Badge>\r\n      <FaRegStar className=\"size-4\" />\r\n      Github\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge10;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/badge-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

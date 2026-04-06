@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-2",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-2.tsx",
+      "content": "\"use client\";\r\n\r\nimport { FiArrowLeft, FiArrowRight } from \"react-icons/fi\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button2 = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <Button variant=\"outline\" className=\"inline-flex items-center gap-2\">\r\n        <FiArrowLeft className=\"size-4\" />\r\n        Prev\r\n      </Button>\r\n\r\n      <Button variant=\"outline\" className=\"inline-flex items-center gap-2\">\r\n        Next\r\n        <FiArrowRight className=\"size-4\" />\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Button2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

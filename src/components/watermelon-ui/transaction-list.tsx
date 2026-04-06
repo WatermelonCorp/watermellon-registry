@@ -3,11 +3,11 @@ import {
   motion,
   MotionConfig,
   type Transition,
-} from "motion/react";
+} from 'motion/react';
 
-import { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
-import useMeasure from "react-use-measure";
+import { useState } from 'react';
+import { ArrowRight, X } from 'lucide-react';
+import useMeasure from 'react-use-measure';
 
 export interface Transaction {
   id: string;
@@ -24,7 +24,7 @@ export interface Transaction {
 }
 
 const springConfig: Transition = {
-  type: "spring",
+  type: 'spring',
   bounce: 0,
   duration: 0.6,
 };
@@ -48,8 +48,8 @@ export function TransactionList({
   return (
     <MotionConfig transition={springConfig}>
       <motion.div
-        className="flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-200 dark:bg-zinc-900 dark:border-white/10 shadow-sm"
-        animate={{ height: bounds.height > 0 ? bounds.height : "auto" }}
+        className="flex items-center justify-center overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 shadow-sm dark:border-white/10 dark:bg-zinc-900"
+        animate={{ height: bounds.height > 0 ? bounds.height : 'auto' }}
       >
         <div className="p-3" ref={ref}>
           <AnimatePresence mode="popLayout">
@@ -74,8 +74,8 @@ export function TransactionList({
                   />
                 ))}
 
-                <button className="flex items-center justify-center gap-1 rounded-sm text-zinc-700 dark:text-zinc-200  py-1">
-                  <p className="text-sm ">All transactions</p>
+                <button className="flex items-center justify-center gap-1 rounded-sm py-1 text-zinc-700 dark:text-zinc-200">
+                  <p className="text-sm">All transactions</p>
                   <ArrowRight size={14} />
                 </button>
               </motion.div>
@@ -106,15 +106,15 @@ function TransactionItem({
   return (
     <div className="flex w-64 cursor-pointer gap-2" onClick={onClick}>
       <motion.div
-        className="rounded-full bg-zinc-800 p-1"
+        className="flex size-10 shrink-0 items-center justify-center rounded-full bg-zinc-800"
         layoutId={`icon-${data.id}`}
       >
-        {data.icon}
+        <div className="flex items-center justify-center">{data.icon}</div>
       </motion.div>
 
-      <div className="flex flex-1 flex-col text-xs">
+      <div className="flex flex-1 flex-col justify-center text-xs">
         <motion.p
-          className="font-semibold text-zinc-700dark:text-zinc-100"
+          className="font-semibold text-zinc-700 dark:text-zinc-100"
           layoutId={`name-${data.id}`}
         >
           {data.name}
@@ -129,7 +129,7 @@ function TransactionItem({
       </div>
 
       <motion.p
-        className="text-xs text-zinc-500 dark:text-zinc-400"
+        className="flex items-center text-xs text-zinc-500 dark:text-zinc-400"
         layoutId={`amount-${data.id}`}
       >
         {data.amount}
@@ -146,17 +146,17 @@ function TransactionItemExpanded({
   onClose: () => void;
 }) {
   return (
-    <div className="flex w-64 flex-col gap-2 ">
+    <div className="flex w-64 flex-col gap-2">
       <div className="flex justify-between">
         <motion.div
-          className="rounded-md bg-zinc-800 p-2"
+          className="flex size-10 items-center justify-center rounded-md bg-zinc-800"
           layoutId={`icon-${data.id}`}
         >
           {data.icon}
         </motion.div>
 
         <div
-          className="cursor-pointer rounded-full bg-zinc-300 dark:bg-zinc-700 p-2 flex items-center justify-center self-start"
+          className="flex cursor-pointer items-center justify-center self-start rounded-full bg-zinc-300 p-2 dark:bg-zinc-700"
           onClick={onClose}
         >
           <X className="size-4" />
@@ -208,8 +208,8 @@ function TransactionItemExpanded({
         <p className="text-zinc-500">Paid Via {data.paymentMethod}</p>
 
         <p className="text-zinc-500 dark:text-zinc-400">
-          XXXX {data.cardNumber}{" "}
-          <span className="font-bold text-black dark:text-zinc-100 uppercase italic">
+          XXXX {data.cardNumber}{' '}
+          <span className="font-bold text-black uppercase italic dark:text-zinc-100">
             {data.cardType}
           </span>
         </p>

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-8",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-8.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { MdError } from \"react-icons/md\";\r\nimport { RxCross2 } from \"react-icons/rx\";\r\n\r\nimport {\r\n  Alert,\r\n  AlertDescription,\r\n  AlertTitle,\r\n} from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Alert8 = () => {\r\n  const [isActive, setIsActive] = useState(true);\r\n\r\n  if (!isActive) return null;\r\n\r\n  return (\r\n    <Alert className=\"bg-primary text-primary-foreground flex flex-col gap-3 border-none sm:flex-row sm:items-start\">\r\n      <div className=\"flex w-full items-start gap-3\">\r\n        <MdError className=\"size-4 shrink-0\" />\r\n\r\n        <div className=\"flex min-w-0 flex-1 flex-col gap-4\">\r\n          <div className=\"flex flex-col gap-1\">\r\n            <AlertTitle>Update ready to install</AlertTitle>\r\n            <AlertDescription className=\"text-primary-foreground/70 text-wrap!\">\r\n              A new version is available with performance improvements and a\r\n              refreshed dashboard experience.\r\n            </AlertDescription>\r\n          </div>\r\n\r\n          <div className=\"flex shrink-0 items-center gap-3\">\r\n            <Button className=\"bg-secondary/10 hover:bg-secondary/20 focus-visible:bg-secondary/20 h-7 rounded-lg px-2\">\r\n              Later\r\n            </Button>\r\n            <Button variant=\"secondary\" className=\"h-7 rounded-lg px-2\">\r\n              Update now\r\n            </Button>\r\n          </div>\r\n        </div>\r\n\r\n        <button\r\n          className=\"size-5 shrink-0 cursor-pointer\"\r\n          onClick={() => setIsActive(false)}\r\n        >\r\n          <RxCross2 className=\"size-5\" />\r\n          <span className=\"sr-only\">Close</span>\r\n        </button>\r\n      </div>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert8;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

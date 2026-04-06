@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-5",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-5.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { FaBan } from \"react-icons/fa\";\r\n\r\nconst Button5 = () => {\r\n  return (\r\n    <Button disabled>\r\n      <FaBan className=\"size-4\" />\r\n      Disabed\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

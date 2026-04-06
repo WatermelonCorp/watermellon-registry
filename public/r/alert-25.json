@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-25",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/alerts/alert-25.tsx",
+      "content": "\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { MdError } from \"react-icons/md\";\r\n\r\nconst Alert25 = () => {\r\n  return (\r\n    <Alert className=\"bg-destructive/10 text-destructive border-none\">\r\n      <MdError className=\"size-4\" />\r\n      <AlertTitle>Action could not be completed</AlertTitle>\r\n      <AlertDescription className=\"text-destructive/80\">\r\n        We ran into an issue while processing your request. Please try again\r\n        shortly.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert25;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-25.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

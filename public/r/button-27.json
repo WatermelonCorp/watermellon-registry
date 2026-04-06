@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-27",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-27.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { FiMenu, FiX } from \"react-icons/fi\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button27 = () => {\r\n  const [isOpen, setIsOpen] = useState(false);\r\n\r\n  return (\r\n    <Button\r\n      variant=\"ghost\"\r\n      size=\"icon\"\r\n      onClick={() => setIsOpen(!isOpen)}\r\n      aria-label=\"Toggle menu\"\r\n    >\r\n      {isOpen ? <FiX className=\"size-5\" /> : <FiMenu className=\"size-5\" />}\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button27;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-27.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

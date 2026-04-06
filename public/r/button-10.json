@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-10",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-10.tsx",
+      "content": "\r\nimport { BiSolidZap } from \"react-icons/bi\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button10 = () => {\r\n  return (\r\n    <Button className=\"bg-transparent bg-gradient-to-r from-sky-600 via-sky-500 to-sky-600 [background-size:200%_auto] [background-position:0%_center] text-white hover:bg-transparent hover:[background-position:100%_center] transition-[background-position] duration-500 ease-out focus-visible:ring-sky-600/20 dark:from-sky-400 dark:via-sky-300 dark:to-sky-400 dark:focus-visible:ring-sky-400/40\">\r\n      Upgrade <BiSolidZap />\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button10;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

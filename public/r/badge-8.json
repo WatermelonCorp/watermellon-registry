@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-8",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/badge/badge-8.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge8 = () => {\r\n  return <Badge variant=\"destructive\">Destructive</Badge>;\r\n};\r\n\r\nexport default Badge8\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/badge-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

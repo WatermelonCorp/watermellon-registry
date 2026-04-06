@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-12",
+  "dependencies": [
+    "react-icons",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button/button-12.tsx",
+      "content": "import { FaRegStar } from \"react-icons/fa\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button12 = () => {\r\n  return (\r\n    <Button className=\"rounded-full\">\r\n      <FaRegStar />\r\n      Favorite\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button12;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

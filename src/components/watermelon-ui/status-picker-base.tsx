@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { CircleDashed, EllipsisIcon, X } from "lucide-react";
-import React from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { CircleDashed, EllipsisIcon, X } from 'lucide-react';
+import React from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 
 export interface StatusPickerItem {
   id: number;
@@ -47,7 +47,7 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
             setOpen(!open);
           }}
           transition={{
-            type: "spring",
+            type: 'spring',
             stiffness: 300,
             damping: 18,
           }}
@@ -60,9 +60,9 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                     <motion.div
                       key="default"
                       className="relative"
-                      initial={{ scale: 0.5, filter: "blur(4px)", opacity: 0 }}
-                      animate={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
-                      exit={{ scale: 0.5, filter: "blur(4px)", opacity: 0 }}
+                      initial={{ scale: 0.5, filter: 'blur(4px)', opacity: 0 }}
+                      animate={{ scale: 1, filter: 'blur(0px)', opacity: 1 }}
+                      exit={{ scale: 0.5, filter: 'blur(4px)', opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
                       <CircleDashed className="text-muted-foreground size-4" />
@@ -74,9 +74,9 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                     <motion.div
                       key={`${status}-${activeItem?.emoji}`}
                       className="flex size-6 items-center justify-center"
-                      initial={{ scale: 0.5, filter: "blur(2px)", opacity: 0 }}
-                      animate={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
-                      exit={{ scale: 0.5, filter: "blur(2px)", opacity: 0 }}
+                      initial={{ scale: 0.5, filter: 'blur(2px)', opacity: 0 }}
+                      animate={{ scale: 1, filter: 'blur(0px)', opacity: 1 }}
+                      exit={{ scale: 0.5, filter: 'blur(2px)', opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
                       <span>{activeItem?.emoji}</span>
@@ -87,10 +87,10 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                 <span className="text-foreground flex items-center justify-center text-sm font-medium">
                   <AnimatePresence mode="popLayout" initial={false}>
                     {(status !== 0
-                      ? (activeItem?.name.split("") ?? [])
-                      : "Status".split("")
+                      ? (activeItem?.name.split('') ?? [])
+                      : 'Status'.split('')
                     ).map((item, index) => {
-                      if (item === " ") {
+                      if (item === ' ') {
                         return (
                           <motion.span
                             key={`${index}-${status}-space`}
@@ -107,16 +107,16 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                           initial={{
                             opacity: 0,
                             y: 5,
-                            filter: "blur(2px)",
+                            filter: 'blur(2px)',
                             scale: 0.8,
                           }}
                           animate={{
                             opacity: 1,
                             y: 0,
                             scale: 1,
-                            filter: "blur(0px)",
+                            filter: 'blur(0px)',
                             transition: {
-                              type: "spring",
+                              type: 'spring',
                               stiffness: 300,
                               damping: 25,
                               delay: index * 0.04,
@@ -126,9 +126,9 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                             y: -8,
                             opacity: 0,
                             scale: 0.8,
-                            filter: "blur(2px)",
+                            filter: 'blur(2px)',
                             transition: {
-                              type: "spring",
+                              type: 'spring',
                               stiffness: 300,
                               damping: 25,
                               delay: index * 0.03,
@@ -145,17 +145,17 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                   <AnimatePresence mode="popLayout">
                     {status !== 0 && (
                       <motion.span
-                        className="bg-muted text-muted-foreground mt-[2px] ml-1 flex items-center justify-center rounded-lg p-[4px] text-sm font-medium"
+                        className="bg-muted text-muted-foreground ml-2 flex items-center justify-center rounded-lg p-[4px] text-sm font-medium dark:bg-muted-foreground/15"
                         key={`${status}-space`}
                         initial={{
                           opacity: 0,
-                          filter: "blur(2px)",
+                          filter: 'blur(2px)',
                           scale: 0.8,
                         }}
                         animate={{
                           opacity: 1,
                           scale: 1,
-                          filter: "blur(0px)",
+                          filter: 'blur(0px)',
                           transition: {
                             duration: 0.2,
                           },
@@ -163,7 +163,7 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                         exit={{
                           opacity: 0,
                           scale: 0.8,
-                          filter: "blur(4px)",
+                          filter: 'blur(4px)',
                           transition: {
                             duration: 0.1,
                           },
@@ -189,20 +189,20 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                 initial={{
                   opacity: 0,
                   scale: 0.5,
-                  filter: "blur(2px)",
+                  filter: 'blur(2px)',
                 }}
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  filter: "blur(0px)",
+                  filter: 'blur(0px)',
                 }}
                 exit={{
                   opacity: 0,
                   scale: 0.5,
-                  filter: "blur(4px)",
+                  filter: 'blur(4px)',
                 }}
                 transition={{
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 300,
                   damping: 18,
                 }}
@@ -220,7 +220,7 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                       className="group bg-muted relative flex cursor-pointer items-center justify-center gap-1 rounded-lg p-2"
                       whileHover={{ y: -2 }}
                       transition={{
-                        type: "spring",
+                        type: 'spring',
                         stiffness: 300,
                         damping: 18,
                       }}
@@ -232,20 +232,20 @@ export const StatusPicker: React.FC<StatusPickerProps> = ({
                             initial={{
                               opacity: 0,
                               scale: 0.5,
-                              filter: "blur(4px)",
+                              filter: 'blur(4px)',
                             }}
                             animate={{
                               opacity: 1,
                               scale: 1,
-                              filter: "blur(0px)",
+                              filter: 'blur(0px)',
                             }}
                             exit={{
                               opacity: 0,
                               scale: 0.5,
-                              filter: "blur(4px)",
+                              filter: 'blur(4px)',
                             }}
                             transition={{
-                              type: "spring",
+                              type: 'spring',
                               stiffness: 300,
                               damping: 23,
                             }}
