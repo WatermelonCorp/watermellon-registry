@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-1",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-1.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui/calendar'\n\n\nconst Calendar1: React.FC = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());\n\n  return (\n    <section className=\"flex flex-col items-center p-6 bg-transparent rounded-2xl max-w-xs mx-auto\">\n      <Calendar\n        mode=\"single\"\n        defaultMonth={selectedDate}\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        className=\"rounded-lg border border-border/60 shadow-md transition-all focus:ring-2 focus:ring-primary/50\"\n      />\n      <p className=\"mt-4 text-center text-xs text-muted-foreground font-light tracking-wide\" role=\"region\">\n        Monthly date picker\n      </p>\n    </section>\n  );\n}\n\nexport default Calendar1\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

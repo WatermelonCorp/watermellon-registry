@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-17",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-17.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui/calendar'\n\nconst initialSelectedDate: Date = new Date()\n\nconst Calendar17 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(\n    initialSelectedDate\n  )\n\n  return (\n    <div>\n      <Calendar\n        mode='single'\n        defaultMonth={selectedDate}\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        className='rounded-[1.75rem] border border-border/60 bg-muted/10 p-3 shadow-sm'\n        showWeekNumber\n      />\n      <p\n        className='text-muted-foreground mt-4 text-center text-[11px] tracking-wide uppercase'\n        role='region'\n      >\n        Calendar with week numbers\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar17\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-17.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

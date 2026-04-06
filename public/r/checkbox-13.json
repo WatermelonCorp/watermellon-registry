@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-13",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-13.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { Label } from '@/components/ui/label'\n\nconst settingOptions = [\n  {\n    id: 'auto-start',\n    label: 'Auto Start',\n    description: 'Starting with your OS.'\n  },\n  {\n    id: 'auto-update',\n    label: 'Auto update',\n    description: 'Download and install new version'\n  }\n] as const\n\ntype SettingOption = (typeof settingOptions)[number]\ntype SettingOptionId = SettingOption['id']\n\nconst initialCheckedSettings: Record<SettingOptionId, boolean> = {\n  'auto-start': true,\n  'auto-update': false\n}\n\nconst Checkbox13 = () => {\n  const [checkedSettings, setCheckedSettings] = useState<\n    Record<SettingOptionId, boolean>\n  >(\n    initialCheckedSettings\n  )\n\n  const handleCheckedChange = (id: SettingOptionId, checked: boolean) => {\n    setCheckedSettings((previousCheckedSettings) => ({\n      ...previousCheckedSettings,\n      [id]: checked\n    }))\n  }\n\n  return (\n    <div className='space-y-2.5'>\n      {settingOptions.map((option) => (\n        <Label\n          key={option.id}\n          htmlFor={option.id}\n          className={`hover:bg-accent/40 flex items-start gap-3 rounded-2xl border p-3.5 shadow-xs transition-colors ${\n            checkedSettings[option.id]\n              ? 'border-sky-600/70 bg-sky-50/80 dark:border-sky-900 dark:bg-sky-950'\n              : 'border-border/70 bg-background'\n          }`}\n        >\n          <Checkbox\n            id={option.id}\n            checked={checkedSettings[option.id]}\n            onCheckedChange={(checked) =>\n              handleCheckedChange(option.id, checked === true)\n            }\n            className='mt-0.5 data-checked:border-sky-600 data-checked:bg-sky-600 data-checked:text-white dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500'\n          />\n          <div className='grid gap-1 font-normal'>\n            <p className='text-sm leading-none font-medium'>{option.label}</p>\n            <p className='text-muted-foreground text-[13px] leading-5'>\n              {option.description}\n            </p>\n          </div>\n        </Label>\n      ))}\n    </div>\n  )\n}\n\nexport default Checkbox13\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

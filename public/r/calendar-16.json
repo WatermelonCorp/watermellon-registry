@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-16",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-16.tsx",
+      "content": "'use client'\n\nimport type { ComponentProps } from 'react'\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui/calendar'\n\ntype CalendarClassNames = NonNullable<ComponentProps<typeof Calendar>['classNames']>\n\nconst initialSelectedDate: Date = new Date()\n\nconst calendarClassNames = {\n  month_caption: 'flex h-8 items-center justify-end px-1',\n  nav: 'absolute inset-x-0 top-0 flex w-full items-center justify-start'\n} satisfies CalendarClassNames\n\nconst Calendar16 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialSelectedDate)\n\n  return (\n    <div>\n      <Calendar\n        mode='single'\n        selected={selectedDate}\n        defaultMonth={selectedDate}\n        onSelect={setSelectedDate}\n        className='rounded-2xl border border-border/60 p-3 shadow-sm'\n        classNames={calendarClassNames}\n      />\n      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>\n        Left-aligned month navigation\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar16\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-16.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

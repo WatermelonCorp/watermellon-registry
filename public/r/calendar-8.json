@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-8",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-8.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { type DateRange } from 'react-day-picker'\nimport { enUS, hi } from 'react-day-picker/locale'\n\nimport { Calendar } from '@/components/ui/calendar'\nimport { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'\n\ntype CalendarLocale = 'en' | 'hi'\n\ntype LocalizedCopy = {\n  description: string\n  title: string\n}\n\nconst localizedStrings: Record<CalendarLocale, LocalizedCopy> = {\n  en: {\n    title: 'Book an appointment',\n    description: 'Select the dates for your appointment'\n  },\n  hi: {\n    title: '\\u0905\\u092A\\u0949\\u0907\\u0902\\u091F\\u092E\\u0947\\u0902\\u091F \\u092C\\u0941\\u0915 \\u0915\\u0930\\u0947\\u0902',\n    description:\n      '\\u0905\\u092A\\u0928\\u0940 \\u0905\\u092A\\u0949\\u0907\\u0902\\u091F\\u092E\\u0947\\u0902\\u091F \\u0915\\u0947 \\u0932\\u093F\\u090F \\u0924\\u093E\\u0930\\u0940\\u0916\\u0947\\u0902 \\u091A\\u0941\\u0928\\u0947\\u0902'\n  }\n}\n\nconst localeMap = {\n  en: enUS,\n  hi\n} as const\n\nconst numeralMap = {\n  en: 'latn',\n  hi: 'deva'\n} as const\n\nconst isCalendarLocale = (value: string | null): value is CalendarLocale => value === 'en' || value === 'hi'\n\nconst initialDateRange: DateRange = {\n  from: new Date(2025, 8, 9),\n  to: new Date(2025, 8, 17)\n}\n\nconst Calendar8 = () => {\n  const [selectedLocale, setSelectedLocale] = useState<CalendarLocale>('en')\n  const [selectedDateRange, setSelectedDateRange] = useState<DateRange | undefined>(initialDateRange)\n\n  return (\n    <div>\n      <Card className='w-2xs rounded-2xl border-border/60 shadow-sm'>\n        <CardHeader className='border-b border-border/60 pb-4'>\n          <CardTitle>{localizedStrings[selectedLocale].title}</CardTitle>\n          <CardDescription>{localizedStrings[selectedLocale].description}</CardDescription>\n          <CardAction>\n            <Select\n              value={selectedLocale}\n              onValueChange={(value) => {\n                if (!isCalendarLocale(value)) return\n                setSelectedLocale(value)\n              }}\n            >\n              <SelectTrigger className='h-9 w-[104px] rounded-full border-border/60' aria-label='Select language'>\n                <SelectValue placeholder='Language' />\n              </SelectTrigger>\n              <SelectContent align='end'>\n                <SelectItem value='hi'>Hindi</SelectItem>\n                <SelectItem value='en'>English</SelectItem>\n              </SelectContent>\n            </Select>\n          </CardAction>\n        </CardHeader>\n        <CardContent>\n          <Calendar\n            mode='range'\n            selected={selectedDateRange}\n            onSelect={setSelectedDateRange}\n            defaultMonth={selectedDateRange?.from}\n            locale={localeMap[selectedLocale]}\n            numerals={numeralMap[selectedLocale]}\n            className='w-full bg-transparent p-0'\n            buttonVariant='outline'\n          />\n        </CardContent>\n      </Card>\n      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>\n        Localized range picker\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar8\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

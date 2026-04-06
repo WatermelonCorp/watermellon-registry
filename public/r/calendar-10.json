@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-10",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-10.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui/calendar'\n\nconst initialSelectedDate = new Date()\n\nconst Calendar10 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialSelectedDate)\n\n  return (\n    <div>\n      <Calendar\n        mode='single'\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        className='rounded-2xl border border-border/60 p-2 shadow-sm [--cell-size:--spacing(11)] md:[--cell-size:--spacing(13)]'\n      />\n      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>\n        Large cell calendar\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar10\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

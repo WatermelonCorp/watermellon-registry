@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-6",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-6.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui/calendar'\n\nconst initialSelectedDate = new Date(2025, 5, 18)\nconst minimumAvailableDate = new Date(2025, 5, 12)\n\nconst Calendar6 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialSelectedDate)\n\n  return (\n    <div>\n      <Calendar\n        mode='single'\n        defaultMonth={selectedDate}\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        disabled={{\n          before: minimumAvailableDate\n        }}\n        className='rounded-2xl border border-border/60 p-3 shadow-sm'\n      />\n      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>\n        Past dates disabled\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar6\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

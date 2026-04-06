@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-6",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-6.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Badge } from '@/components/ui/badge'\nimport { Checkbox } from '@/components/ui/checkbox'\n\nconst snacks = ['Burger', 'Pizza', 'Drinks'] as const\n\ntype Snack = (typeof snacks)[number]\n\nconst Checkbox6 = () => {\n  const [selectedSnacks, setSelectedSnacks] = useState<Snack[]>([\n    'Burger',\n    'Pizza'\n  ])\n\n  const handleCheckedChange = (snack: Snack, checked: boolean) => {\n    setSelectedSnacks((previousSelectedSnacks) =>\n      checked\n        ? previousSelectedSnacks.includes(snack)\n          ? previousSelectedSnacks\n          : [...previousSelectedSnacks, snack]\n        : previousSelectedSnacks.filter((selectedSnack) => selectedSnack !== snack)\n    )\n  }\n\n  return (\n    <div className='flex items-center gap-2.5'>\n      {snacks.map((snack) => (\n        <Badge\n          key={snack}\n          variant='secondary'\n          className='relative rounded-lg px-3 py-4'\n        >\n          <Checkbox\n            id={snack}\n            checked={selectedSnacks.includes(snack)}\n            onCheckedChange={(checked) => handleCheckedChange(snack, checked === true)}\n            className={`pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 data-checked:border-sky-600 data-checked:bg-sky-600 dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500 ${\n              selectedSnacks.includes(snack)\n                ? 'opacity-100'\n                : 'opacity-0'\n            }`}\n          />\n          <label\n            htmlFor={snack}\n            className={`cursor-pointer select-none text-sm after:absolute after:inset-0 ${\n              selectedSnacks.includes(snack) ? 'pl-5' : ''\n            }`}\n          >\n            {snack}\n          </label>\n        </Badge>\n      ))}\n    </div>\n  )\n}\n\nexport default Checkbox6\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

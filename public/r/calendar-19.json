@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-19",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-19.tsx",
+      "content": "'use client'\n\nimport { type ChangeEvent, useId, useState } from 'react'\n\nimport { format } from 'date-fns'\nimport { CalendarIcon } from 'lucide-react'\n\nimport { Calendar } from '@/components/ui/calendar'\nimport { Card, CardContent, CardHeader } from '@/components/ui/card'\nimport { Input } from '@/components/ui/input'\nimport { Label } from '@/components/ui/label'\n\nconst initialSelectedDate: Date = new Date()\nconst initialDateInputValue: string = format(initialSelectedDate, 'yyyy-MM-dd')\n\nconst isValidDate = (value: Date): boolean => !Number.isNaN(value.getTime())\n\nconst Calendar19 = () => {\n  const id = useId()\n  const [visibleMonth, setVisibleMonth] = useState<Date>(initialSelectedDate)\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(\n    initialSelectedDate\n  )\n  const [inputValue, setInputValue] = useState<string>(initialDateInputValue)\n\n  const handleDayPickerSelect = (nextDate: Date | undefined) => {\n    if (!nextDate) {\n      setInputValue('')\n      setSelectedDate(undefined)\n    } else {\n      setSelectedDate(nextDate)\n      setVisibleMonth(nextDate)\n      setInputValue(format(nextDate, 'yyyy-MM-dd'))\n    }\n  }\n\n  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {\n    const value = e.target.value\n\n    setInputValue(value)\n\n    if (value) {\n      const parsedDate = new Date(value)\n\n      if (!isValidDate(parsedDate)) {\n        setSelectedDate(undefined)\n        return\n      }\n\n      setSelectedDate(parsedDate)\n      setVisibleMonth(parsedDate)\n    } else {\n      setSelectedDate(undefined)\n    }\n  }\n\n  return (\n    <div>\n      <Card className='gap-5 rounded-[1.75rem] border-border/60 bg-muted/10 py-5 shadow-sm'>\n        <CardHeader className='flex items-center border-b border-dashed border-border/60 px-4 !pb-3'>\n          <Label\n            htmlFor={id}\n            className='shrink-0 text-[11px] font-medium uppercase tracking-wide text-muted-foreground'\n          >\n            Enter date\n          </Label>\n          <div className='relative grow'>\n            <Input\n              id={id}\n              type='date'\n              value={inputValue}\n              onChange={handleInputChange}\n              className='peer h-9 appearance-none rounded-full border-border/60 bg-background pl-9 text-sm shadow-xs [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none'\n              aria-label='Select date'\n            />\n            <div className='text-muted-foreground/80 pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 peer-disabled:opacity-50'>\n              <CalendarIcon size={16} aria-hidden='true' />\n            </div>\n          </div>\n        </CardHeader>\n        <CardContent className='px-5'>\n          <Calendar\n            mode='single'\n            selected={selectedDate}\n            onSelect={handleDayPickerSelect}\n            month={visibleMonth}\n            onMonthChange={setVisibleMonth}\n            className='bg-transparent p-0'\n          />\n        </CardContent>\n      </Card>\n      <p className='text-muted-foreground mt-4 text-center text-xs' role='region'>\n        Calendar with date input\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar19\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-19.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

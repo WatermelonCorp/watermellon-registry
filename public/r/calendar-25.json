@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-25",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-25.tsx",
+      "content": "'use client'\n\nimport { type ComponentProps, useState } from 'react'\n\nimport { Calendar, CalendarDayButton } from '@/components/ui/calendar'\n\ntype CalendarComponents = NonNullable<ComponentProps<typeof Calendar>['components']>\ntype CalendarDayButtonProps = ComponentProps<typeof CalendarDayButton>\n\nconst initialSelectedDate: Date = new Date()\nconst minimumAvailableDate: Date = new Date()\n\nfunction getPriceForDate(date: Date): number {\n  const seed = date.getFullYear() * 10000 + (date.getMonth() + 1) * 100 + date.getDate()\n  const randomValue = (seed * 9301 + 49297) % 233280\n\n  return Math.floor(50 + (randomValue / 233280) * 200)\n}\n\nconst calendarComponents = {\n  DayButton: ({ children, modifiers, day, ...props }: CalendarDayButtonProps) => {\n    const price = getPriceForDate(day.date)\n    const isLowPrice = price < 100\n\n    return (\n      <CalendarDayButton day={day} modifiers={modifiers} {...props}>\n        {children}\n        {!modifiers.outside && (\n          <span\n            className={\n              isLowPrice\n                ? 'font-medium text-emerald-600 dark:text-emerald-400'\n                : 'text-muted-foreground'\n            }\n          >\n            ${price}\n          </span>\n        )}\n      </CalendarDayButton>\n    )\n  }\n} satisfies CalendarComponents\n\nconst Calendar25 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(\n    initialSelectedDate\n  )\n\n  return (\n    <div>\n      <Calendar\n        mode='single'\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        showOutsideDays={false}\n        className='rounded-[1.75rem] border border-border/60 bg-muted/10 p-3 shadow-sm [--cell-size:--spacing(12)]'\n        components={calendarComponents}\n        disabled={{ before: minimumAvailableDate }}\n      />\n      <p\n        className='text-muted-foreground mt-4 text-center text-[11px] uppercase tracking-wide'\n        role='region'\n      >\n        Calendar with pricing\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar25\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-25.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-1",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-1.tsx",
+      "content": "'use client'\n\nimport { useId, useState } from 'react'\n\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { Label } from '@/components/ui/label'\n\ntype CheckboxCopy = {\n  label: string\n}\n\nconst checkboxCopy: CheckboxCopy = {\n  label: 'Accept terms and conditions'\n}\n\nconst Checkbox1 = () => {\n  const id = useId()\n  const [isChecked, setIsChecked] = useState<boolean>(false)\n\n  return (\n    <div className='flex max-w-sm items-center gap-2.5'>\n      <Checkbox\n        id={id}\n        checked={isChecked}\n        onCheckedChange={(checked) => setIsChecked(checked === true)}\n        className='data-checked:border-sky-600 data-checked:bg-sky-600 dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500'\n      />\n      <Label htmlFor={id} className='text-sm leading-none font-medium'>\n        {checkboxCopy.label}\n      </Label>\n    </div>\n  )\n}\n\nexport default Checkbox1\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

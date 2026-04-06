@@ -6,10 +6,7 @@
     {
       "name": "aave-swap-component",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/aave-swap-component.tsx",
@@ -21,10 +18,7 @@
     {
       "name": "accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-accordion",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/accordion.tsx",
@@ -37,10 +31,7 @@
       "name": "accordion-03",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "accordion",
-        "primary-button"
-      ],
+      "registryDependencies": ["accordion", "primary-button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/accordion-03.tsx",
@@ -52,9 +43,7 @@
     {
       "name": "accordion-04",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/accordion-04.tsx",
@@ -62,9 +51,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-05",
@@ -77,9 +64,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-multiselect",
@@ -100,10 +85,7 @@
     {
       "name": "activities-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/activities-card.tsx",
@@ -115,9 +97,7 @@
     {
       "name": "adaptive-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/adaptive-slider.tsx",
@@ -129,9 +109,7 @@
     {
       "name": "adaptive-slider-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/adaptive-slider-base.tsx",
@@ -143,10 +121,7 @@
     {
       "name": "add-cash-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/add-cash-disclosure.tsx",
@@ -158,10 +133,7 @@
     {
       "name": "ai-input-001",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/ai-input-001.tsx",
@@ -277,10 +249,7 @@
     {
       "name": "ai-input-002",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/ai-input-002.tsx",
@@ -292,10 +261,7 @@
     {
       "name": "ai-input-003",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/ai-input-003.tsx",
@@ -307,10 +273,7 @@
     {
       "name": "ai-input-004",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/ai-input-004.tsx",
@@ -322,10 +285,7 @@
     {
       "name": "ai-input-005",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/ai-input-005.tsx",
@@ -454,9 +414,7 @@
     {
       "name": "alert",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert.tsx",
@@ -468,12 +426,8 @@
     {
       "name": "alert-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-01.tsx",
@@ -485,12 +439,8 @@
     {
       "name": "alert-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-02.tsx",
@@ -502,13 +452,8 @@
     {
       "name": "alert-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert", "button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-03.tsx",
@@ -520,12 +465,8 @@
     {
       "name": "alert-04",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-04.tsx",
@@ -537,13 +478,8 @@
     {
       "name": "alert-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert", "button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-05.tsx",
@@ -555,12 +491,8 @@
     {
       "name": "alert-06",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-06.tsx",
@@ -572,11 +504,7 @@
     {
       "name": "alert-dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-dialog.tsx",
@@ -588,13 +516,8 @@
     {
       "name": "alert-dialog-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-dialog-01.tsx",
@@ -606,13 +529,8 @@
     {
       "name": "alert-dialog-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-dialog-02.tsx",
@@ -624,13 +542,8 @@
     {
       "name": "alert-dialog-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "alert-dialog",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["alert-dialog", "button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alert-dialog-03.tsx",
@@ -642,11 +555,7 @@
     {
       "name": "alphine-booking-form",
       "type": "registry:ui",
-      "dependencies": [
-        "date-fns",
-        "lucide-react",
-        "react-day-picker"
-      ],
+      "dependencies": ["date-fns", "lucide-react", "react-day-picker"],
       "registryDependencies": [
         "button",
         "calendar",
@@ -666,12 +575,7 @@
       "name": "alphine-login-form",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "button",
-        "card",
-        "input",
-        "label"
-      ],
+      "registryDependencies": ["button", "card", "input", "label"],
       "files": [
         {
           "path": "src/components/watermelon-ui/alphine-login-form.tsx",
@@ -683,10 +587,7 @@
     {
       "name": "animate-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/animate-button.tsx",
@@ -698,11 +599,7 @@
     {
       "name": "animated-accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/animated-accordion.tsx",
@@ -714,10 +611,7 @@
     {
       "name": "animated-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/animated-button.tsx",
@@ -729,9 +623,7 @@
     {
       "name": "audio-player",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/audio-player.tsx",
@@ -748,9 +640,7 @@
     {
       "name": "audio-player-with-waveform",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/audio-player-with-waveform.tsx",
@@ -763,19 +653,12 @@
           "type": "registry:hook"
         }
       ],
-      "registryDependencies": [
-        "select"
-      ]
+      "registryDependencies": ["select"]
     },
     {
       "name": "availability",
       "type": "registry:ui",
-      "dependencies": [
-        "@dnd-kit/core",
-        "lucide-react",
-        "nanoid",
-        "tunnel-rat"
-      ],
+      "dependencies": ["@dnd-kit/core", "lucide-react", "nanoid", "tunnel-rat"],
       "files": [
         {
           "path": "src/components/watermelon-ui/availability.tsx",
@@ -783,16 +666,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "avatar",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-avatar"
-      ],
+      "dependencies": ["@radix-ui/react-avatar"],
       "files": [
         {
           "path": "src/components/watermelon-ui/avatar.tsx",
@@ -804,9 +683,7 @@
     {
       "name": "avatar-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
+      "dependencies": ["@aliimam/icons"],
       "files": [
         {
           "path": "src/components/watermelon-ui/avatar-01.tsx",
@@ -814,17 +691,13 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-02",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "files": [
         {
           "path": "src/components/watermelon-ui/avatar-02.tsx",
@@ -844,17 +717,13 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-04",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar"
-      ],
+      "registryDependencies": ["avatar"],
       "files": [
         {
           "path": "src/components/watermelon-ui/avatar-04.tsx",
@@ -867,10 +736,7 @@
       "name": "avatar-05",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "avatar",
-        "badge"
-      ],
+      "registryDependencies": ["avatar", "badge"],
       "files": [
         {
           "path": "src/components/watermelon-ui/avatar-05.tsx",
@@ -890,17 +756,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-group",
       "type": "registry:ui",
-      "dependencies": [
-        "@floating-ui/react",
-        "motion"
-      ],
+      "dependencies": ["@floating-ui/react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/avatar-group.tsx",
@@ -912,9 +773,7 @@
     {
       "name": "award",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/award.tsx",
@@ -926,10 +785,7 @@
     {
       "name": "badge",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "src/components/watermelon-ui/badge.tsx",
@@ -942,9 +798,7 @@
       "name": "badge-01",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/watermelon-ui/badge-01.tsx",
@@ -956,12 +810,8 @@
     {
       "name": "badge-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "badge"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/watermelon-ui/badge-02.tsx",
@@ -974,9 +824,7 @@
       "name": "badge-03",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/watermelon-ui/badge-03.tsx",
@@ -989,9 +837,7 @@
       "name": "badge-04",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": [
-        "badge"
-      ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/watermelon-ui/badge-04.tsx",
@@ -1003,12 +849,8 @@
     {
       "name": "badge-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "badge"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/components/watermelon-ui/badge-05.tsx",
@@ -1032,10 +874,7 @@
     {
       "name": "breadcrumb",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/breadcrumb.tsx",
@@ -1055,9 +894,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-02",
@@ -1070,16 +907,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-03",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
+      "dependencies": ["@aliimam/icons"],
       "files": [
         {
           "path": "src/components/watermelon-ui/breadcrumb-03.tsx",
@@ -1087,9 +920,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-04",
@@ -1102,16 +933,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "browser",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/browser.tsx",
@@ -1119,20 +946,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "input",
-        "separator"
-      ]
+      "registryDependencies": ["badge", "button", "card", "input", "separator"]
     },
     {
       "name": "budget-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/budget-card.tsx",
@@ -1144,9 +963,7 @@
     {
       "name": "budget-card-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/budget-card-base.tsx",
@@ -1307,10 +1124,7 @@
     {
       "name": "button",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button.tsx",
@@ -1322,12 +1136,8 @@
     {
       "name": "button-01",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button-01.tsx",
@@ -1339,14 +1149,8 @@
     {
       "name": "button-02",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons",
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons", "lucide-react"],
+      "registryDependencies": ["badge", "button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button-02.tsx",
@@ -1358,12 +1162,8 @@
     {
       "name": "button-03",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button-03.tsx",
@@ -1375,12 +1175,8 @@
     {
       "name": "button-04",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button-04.tsx",
@@ -1392,12 +1188,8 @@
     {
       "name": "button-05",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button-05.tsx",
@@ -1409,12 +1201,8 @@
     {
       "name": "button-06",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button-06.tsx",
@@ -1426,12 +1214,8 @@
     {
       "name": "button-07",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button-07.tsx",
@@ -1443,13 +1227,8 @@
     {
       "name": "button-08",
       "type": "registry:ui",
-      "dependencies": [
-        "@aliimam/icons",
-        "motion"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["@aliimam/icons", "motion"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/button-08.tsx",
@@ -1461,13 +1240,8 @@
     {
       "name": "calendar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "react-day-picker"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react", "react-day-picker"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/calendar.tsx",
@@ -1479,9 +1253,7 @@
     {
       "name": "calendar-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/calendar-widget.tsx",
@@ -1493,9 +1265,7 @@
     {
       "name": "calendar-widget-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/calendar-widget-base.tsx",
@@ -1519,10 +1289,7 @@
     {
       "name": "card-split-accordion",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/card-split-accordion.tsx",
@@ -1534,10 +1301,7 @@
     {
       "name": "card-split-accordion-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/card-split-accordion-base.tsx",
@@ -1566,10 +1330,7 @@
     {
       "name": "carousel-navigator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/carousel-navigator.tsx",
@@ -1598,9 +1359,7 @@
     {
       "name": "changeable-pricing-section",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/changeable-pricing-section.tsx",
@@ -1612,9 +1371,7 @@
     {
       "name": "changeable-pricing-section-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/changeable-pricing-section-base.tsx",
@@ -1626,9 +1383,7 @@
     {
       "name": "chart",
       "type": "registry:ui",
-      "dependencies": [
-        "recharts"
-      ],
+      "dependencies": ["recharts"],
       "files": [
         {
           "path": "src/components/watermelon-ui/chart.tsx",
@@ -1640,10 +1395,7 @@
     {
       "name": "chart-2",
       "type": "registry:ui",
-      "dependencies": [
-        "recharts",
-        "zod"
-      ],
+      "dependencies": ["recharts", "zod"],
       "files": [
         {
           "path": "src/components/watermelon-ui/chart-2.tsx",
@@ -1656,10 +1408,7 @@
     {
       "name": "checkbox",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/checkbox.tsx",
@@ -1684,9 +1433,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "code-block",
@@ -1727,9 +1474,7 @@
     {
       "name": "collapsible",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-collapsible"
-      ],
+      "dependencies": ["@radix-ui/react-collapsible"],
       "files": [
         {
           "path": "src/components/watermelon-ui/collapsible.tsx",
@@ -1741,10 +1486,7 @@
     {
       "name": "collection-grid-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/collection-grid-disclosure.tsx",
@@ -1756,9 +1498,7 @@
     {
       "name": "color-watch-selector",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-radio-group"
-      ],
+      "dependencies": ["@radix-ui/react-radio-group"],
       "files": [
         {
           "path": "src/components/watermelon-ui/color-watch-selector.tsx",
@@ -1770,10 +1510,7 @@
     {
       "name": "command-search",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/command-search.tsx",
@@ -1785,10 +1522,7 @@
     {
       "name": "command-search-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/command-search-base.tsx",
@@ -1800,10 +1534,7 @@
     {
       "name": "compose-email-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/compose-email-card.tsx",
@@ -1815,10 +1546,7 @@
     {
       "name": "compose-email-card-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/compose-email-card-base.tsx",
@@ -1830,10 +1558,7 @@
     {
       "name": "contextual-ai-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/contextual-ai-bar.tsx",
@@ -1845,10 +1570,7 @@
     {
       "name": "continuous-pagination",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/continuous-pagination.tsx",
@@ -1860,10 +1582,7 @@
     {
       "name": "continuous-pagination-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/continuous-pagination-base.tsx",
@@ -1875,10 +1594,7 @@
     {
       "name": "continuous-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/continuous-tabs.tsx",
@@ -1890,10 +1606,7 @@
     {
       "name": "continuous-tabs-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/continuous-tabs-base.tsx",
@@ -1905,11 +1618,7 @@
     {
       "name": "copy",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/copy.tsx",
@@ -1921,9 +1630,7 @@
     {
       "name": "create-community",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/create-community.tsx",
@@ -1935,9 +1642,7 @@
     {
       "name": "create-community-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/create-community-base.tsx",
@@ -1966,10 +1671,7 @@
     {
       "name": "credit-usage-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/credit-usage-card.tsx",
@@ -1981,10 +1683,7 @@
     {
       "name": "credit-usage-card-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/credit-usage-card-base.tsx",
@@ -1996,9 +1695,7 @@
     {
       "name": "cursor",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/cursor.tsx",
@@ -2029,10 +1726,7 @@
     {
       "name": "deployment-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/deployment-card.tsx",
@@ -2044,10 +1738,7 @@
     {
       "name": "deployment-card-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/deployment-card-base.tsx",
@@ -2071,11 +1762,7 @@
     {
       "name": "dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/dialog.tsx",
@@ -2087,11 +1774,7 @@
     {
       "name": "dialog-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "@hugeicons/react",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["@hugeicons/react", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/dialog-stack.tsx",
@@ -2103,11 +1786,7 @@
     {
       "name": "dialog-stack-base",
       "type": "registry:ui",
-      "dependencies": [
-        "@hugeicons/react",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["@hugeicons/react", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/dialog-stack-base.tsx",
@@ -2119,9 +1798,7 @@
     {
       "name": "discrete-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/discrete-tabs.tsx",
@@ -2133,9 +1810,7 @@
     {
       "name": "discrete-tabs-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/discrete-tabs-base.tsx",
@@ -2164,10 +1839,7 @@
     {
       "name": "draw-signature",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/draw-signature.tsx",
@@ -2179,10 +1851,7 @@
     {
       "name": "draw-signature-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/draw-signature-base.tsx",
@@ -2223,11 +1892,7 @@
     {
       "name": "dropdown-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/dropdown-menu.tsx",
@@ -2335,10 +2000,7 @@
     {
       "name": "edit-badge",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/edit-badge.tsx",
@@ -2350,9 +2012,7 @@
     {
       "name": "edit-profile",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/edit-profile.tsx",
@@ -2364,9 +2024,7 @@
     {
       "name": "edit-profile-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/edit-profile-base.tsx",
@@ -2378,10 +2036,7 @@
     {
       "name": "editable-chip",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/editable-chip.tsx",
@@ -2393,10 +2048,7 @@
     {
       "name": "emoji-spree-choice-chips",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/emoji-spree-choice-chips.tsx",
@@ -2495,10 +2147,7 @@
     {
       "name": "event-reminders",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/event-reminders.tsx",
@@ -2510,11 +2159,7 @@
     {
       "name": "extended-toolbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/watermelon-ui/extended-toolbar.tsx",
@@ -2526,10 +2171,7 @@
     {
       "name": "family-receive-component",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/family-receive-component.tsx",
@@ -2541,10 +2183,7 @@
     {
       "name": "family-receive-component-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/family-receive-component-base.tsx",
@@ -2556,10 +2195,7 @@
     {
       "name": "family-wallet",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/family-wallet.tsx",
@@ -2571,10 +2207,7 @@
     {
       "name": "feature-tour",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/feature-tour.tsx",
@@ -2603,10 +2236,7 @@
     {
       "name": "feedback-action",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/feedback-action.tsx",
@@ -2618,10 +2248,7 @@
     {
       "name": "feedback-action-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/feedback-action-base.tsx",
@@ -2633,9 +2260,7 @@
     {
       "name": "file-upload",
       "type": "registry:ui",
-      "dependencies": [
-        "sonner"
-      ],
+      "dependencies": ["sonner"],
       "files": [
         {
           "path": "src/components/watermelon-ui/file-upload.tsx",
@@ -2647,11 +2272,7 @@
     {
       "name": "files",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/files.tsx",
@@ -2663,11 +2284,7 @@
     {
       "name": "filter-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/watermelon-ui/filter-disclosure.tsx",
@@ -2679,11 +2296,7 @@
     {
       "name": "filter-disclosure-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/watermelon-ui/filter-disclosure-base.tsx",
@@ -2695,10 +2308,7 @@
     {
       "name": "flip",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/flip.tsx",
@@ -2710,13 +2320,8 @@
     {
       "name": "flip-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
-      "registryDependencies": [
-        "button"
-      ],
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/flip-card.tsx",
@@ -2728,9 +2333,7 @@
     {
       "name": "flip-clock",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
           "path": "src/components/watermelon-ui/flip-clock.tsx",
@@ -2742,10 +2345,7 @@
     {
       "name": "floating-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/floating-disclosure.tsx",
@@ -2757,10 +2357,7 @@
     {
       "name": "floating-disclosure-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/floating-disclosure-base.tsx",
@@ -2796,10 +2393,7 @@
     {
       "name": "fluid-tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/fluid-tabs.tsx",
@@ -2811,10 +2405,7 @@
     {
       "name": "fluid-tabs-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/fluid-tabs-base.tsx",
@@ -2826,10 +2417,7 @@
     {
       "name": "fractional-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/fractional-picker.tsx",
@@ -2841,10 +2429,7 @@
     {
       "name": "fractional-picker-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/fractional-picker-base.tsx",
@@ -2856,10 +2441,7 @@
     {
       "name": "frequency-selector",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/frequency-selector.tsx",
@@ -2871,10 +2453,7 @@
     {
       "name": "frequency-selector-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/frequency-selector-base.tsx",
@@ -2886,9 +2465,7 @@
     {
       "name": "fund-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/fund-widget.tsx",
@@ -2900,9 +2477,7 @@
     {
       "name": "fund-widget-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/fund-widget-base.tsx",
@@ -2914,9 +2489,7 @@
     {
       "name": "gauge",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/gauge.tsx",
@@ -2957,10 +2530,7 @@
     {
       "name": "github-stars-wheel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/github-stars-wheel.tsx",
@@ -2972,9 +2542,7 @@
     {
       "name": "gooey-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/gooey-menu.tsx",
@@ -2986,9 +2554,7 @@
     {
       "name": "gooey-menu-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/gooey-menu-base.tsx",
@@ -3000,10 +2566,7 @@
     {
       "name": "hero1",
       "type": "registry:block",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/blocks/sfHerodemo/Hero1.tsx",
@@ -3025,10 +2588,7 @@
     {
       "name": "hover-card",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/hover-card.tsx",
@@ -3113,10 +2673,7 @@
     {
       "name": "icon",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/icon.tsx",
@@ -3219,10 +2776,7 @@
     {
       "name": "inline-action",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion/react"
-      ],
+      "dependencies": ["lucide-react", "motion/react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/inline-action.tsx",
@@ -3234,10 +2788,7 @@
     {
       "name": "inline-action-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion/react"
-      ],
+      "dependencies": ["lucide-react", "motion/react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/inline-action-base.tsx",
@@ -3317,10 +2868,7 @@
     {
       "name": "inline-overflow",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/inline-overflow.tsx",
@@ -3332,10 +2880,7 @@
     {
       "name": "inline-table-control",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/inline-table-control.tsx",
@@ -3347,10 +2892,7 @@
     {
       "name": "inline-table-control-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/inline-table-control-base.tsx",
@@ -3362,10 +2904,7 @@
     {
       "name": "inline-toast",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/inline-toast.tsx",
@@ -3377,10 +2916,7 @@
     {
       "name": "inline-toast-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/inline-toast-base.tsx",
@@ -3404,10 +2940,7 @@
     {
       "name": "integration-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/integration-card.tsx",
@@ -3419,10 +2952,7 @@
     {
       "name": "integration-card-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/integration-card-base.tsx",
@@ -3434,9 +2964,7 @@
     {
       "name": "invite-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/invite-disclosure.tsx",
@@ -3771,10 +3299,7 @@
     {
       "name": "journal-navigation",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/journal-navigation.tsx",
@@ -3786,10 +3311,7 @@
     {
       "name": "journal-navigation-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/journal-navigation-base.tsx",
@@ -3801,10 +3323,7 @@
     {
       "name": "knob-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/knob-slider.tsx",
@@ -3816,10 +3335,7 @@
     {
       "name": "knob-slider-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/knob-slider-base.tsx",
@@ -3831,9 +3347,7 @@
     {
       "name": "label",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-label"
-      ],
+      "dependencies": ["@radix-ui/react-label"],
       "files": [
         {
           "path": "src/components/watermelon-ui/label.tsx",
@@ -3860,10 +3374,7 @@
     {
       "name": "labeled-progress-indicator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/labeled-progress-indicator.tsx",
@@ -3875,10 +3386,7 @@
     {
       "name": "labeled-progress-indicator-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/labeled-progress-indicator-base.tsx",
@@ -3890,9 +3398,7 @@
     {
       "name": "layered-progressive-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "motion/react"
-      ],
+      "dependencies": ["motion/react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/layered-progressive-disclosure.tsx",
@@ -3904,10 +3410,7 @@
     {
       "name": "liquid",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/liquid.tsx",
@@ -3919,11 +3422,7 @@
     {
       "name": "list-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/watermelon-ui/list-stack.tsx",
@@ -3935,11 +3434,7 @@
     {
       "name": "list-stack-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/watermelon-ui/list-stack-base.tsx",
@@ -3951,11 +3446,7 @@
     {
       "name": "luminia-luxe-realestate",
       "type": "registry:page",
-      "dependencies": [
-        "lucide-react",
-        "react-slick",
-        "slick-carousel"
-      ],
+      "dependencies": ["lucide-react", "react-slick", "slick-carousel"],
       "files": [
         {
           "path": "src/components/pages/luminia-luxe-realestate/Index.tsx",
@@ -4032,9 +3523,7 @@
     {
       "name": "macos-sidebar",
       "type": "registry:ui",
-      "dependencies": [
-        "motion/react"
-      ],
+      "dependencies": ["motion/react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/macos-sidebar.tsx",
@@ -4046,9 +3535,7 @@
     {
       "name": "macos-sidebar-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion/react"
-      ],
+      "dependencies": ["motion/react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/macos-sidebar-base.tsx",
@@ -4244,11 +3731,7 @@
     {
       "name": "management-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-use-measure"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-use-measure"],
       "files": [
         {
           "path": "src/components/watermelon-ui/management-bar.tsx",
@@ -4272,10 +3755,7 @@
     {
       "name": "meeting-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/meeting-card.tsx",
@@ -4287,10 +3767,7 @@
     {
       "name": "meeting-card-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/meeting-card-base.tsx",
@@ -4302,10 +3779,7 @@
     {
       "name": "minimal-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/minimal-carousel.tsx",
@@ -4317,10 +3791,7 @@
     {
       "name": "minimal-carousel-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/minimal-carousel-base.tsx",
@@ -4332,10 +3803,7 @@
     {
       "name": "mobile-video-player",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/mobile-video-player.tsx",
@@ -4347,10 +3815,7 @@
     {
       "name": "morphing-button",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/morphing-button.tsx",
@@ -4362,10 +3827,7 @@
     {
       "name": "morphing-button-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/morphing-button-base.tsx",
@@ -4377,10 +3839,7 @@
     {
       "name": "morphing-discovery-bar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/morphing-discovery-bar.tsx",
@@ -4392,10 +3851,7 @@
     {
       "name": "morphing-discovery-bar-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/morphing-discovery-bar-base.tsx",
@@ -4407,9 +3863,7 @@
     {
       "name": "morphing-sidebar-controls",
       "type": "registry:ui",
-      "dependencies": [
-        "motion/react"
-      ],
+      "dependencies": ["motion/react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/morphing-sidebar-controls.tsx",
@@ -4421,11 +3875,7 @@
     {
       "name": "motion-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "embla-carousel-react",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["embla-carousel-react", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/motion-carousel.tsx",
@@ -4433,17 +3883,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "notification-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/notification-list.tsx",
@@ -4455,10 +3900,7 @@
     {
       "name": "onboarding-checklist",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/onboarding-checklist.tsx",
@@ -4470,10 +3912,7 @@
     {
       "name": "onboarding-checklist-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/onboarding-checklist-base.tsx",
@@ -4485,10 +3924,7 @@
     {
       "name": "onboarding-screen",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/onboarding-screen.tsx",
@@ -4500,10 +3936,7 @@
     {
       "name": "onboarding-screen-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/onboarding-screen-base.tsx",
@@ -4515,10 +3948,7 @@
     {
       "name": "onboarding-setup",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/onboarding-setup.tsx",
@@ -4530,10 +3960,7 @@
     {
       "name": "onboarding-setup-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/onboarding-setup-base.tsx",
@@ -4563,11 +3990,7 @@
     {
       "name": "option-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "react-icons"
-      ],
+      "dependencies": ["lucide-react", "motion", "react-icons"],
       "files": [
         {
           "path": "src/components/watermelon-ui/option-picker.tsx",
@@ -4579,9 +4002,7 @@
     {
       "name": "pagination",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/pagination.tsx",
@@ -4589,16 +4010,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "pagination-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/pagination-base.tsx",
@@ -4606,17 +4023,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"]
     },
     {
       "name": "pagination-animated",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/pagination-animated.tsx",
@@ -4739,10 +4151,7 @@
     {
       "name": "pin-item",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/pin-item.tsx",
@@ -4754,10 +4163,7 @@
     {
       "name": "pin-item-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/pin-item-base.tsx",
@@ -4769,10 +4175,7 @@
     {
       "name": "pin-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/pin-list.tsx",
@@ -4784,13 +4187,8 @@
     {
       "name": "playful-todolist",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "motion"
-      ],
-      "registryDependencies": [
-        "label"
-      ],
+      "dependencies": ["@radix-ui/react-checkbox", "motion"],
+      "registryDependencies": ["label"],
       "files": [
         {
           "path": "src/components/watermelon-ui/playful-todolist.tsx",
@@ -4802,10 +4200,7 @@
     {
       "name": "popover",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/popover.tsx",
@@ -4817,11 +4212,7 @@
     {
       "name": "portfolio-dashboard",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "recharts"
-      ],
+      "dependencies": ["lucide-react", "motion", "recharts"],
       "files": [
         {
           "path": "src/components/watermelon-ui/portfolio-dashboard.tsx",
@@ -4833,10 +4224,7 @@
     {
       "name": "predictive-text",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/predictive-text.tsx",
@@ -4848,10 +4236,7 @@
     {
       "name": "predictive-text-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/predictive-text-base.tsx",
@@ -4863,10 +4248,7 @@
     {
       "name": "preview-link-card",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/preview-link-card.tsx",
@@ -4878,10 +4260,7 @@
     {
       "name": "pricing-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/pricing-widget.tsx",
@@ -4893,10 +4272,7 @@
     {
       "name": "pricing-widget-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/pricing-widget-base.tsx",
@@ -4920,10 +4296,7 @@
     {
       "name": "profile-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/profile-card.tsx",
@@ -4935,10 +4308,7 @@
     {
       "name": "profile-card-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/profile-card-base.tsx",
@@ -4950,10 +4320,7 @@
     {
       "name": "progress",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/progress.tsx",
@@ -4965,10 +4332,7 @@
     {
       "name": "progressive-input-stack",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/progressive-input-stack.tsx",
@@ -4980,10 +4344,7 @@
     {
       "name": "progressive-input-stack-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/progressive-input-stack-base.tsx",
@@ -5091,10 +4452,7 @@
     {
       "name": "quick-feedback-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/quick-feedback-base.tsx",
@@ -5106,10 +4464,7 @@
     {
       "name": "quick-feedback",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/quick-feedback.tsx",
@@ -5121,9 +4476,7 @@
     {
       "name": "quick-option-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/quick-option-picker.tsx",
@@ -5135,10 +4488,7 @@
     {
       "name": "quick-paste",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/quick-paste.tsx",
@@ -5150,9 +4500,7 @@
     {
       "name": "quick-option-picker-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/quick-option-picker-base.tsx",
@@ -5164,10 +4512,7 @@
     {
       "name": "quick-paste-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/quick-paste-base.tsx",
@@ -5179,10 +4524,7 @@
     {
       "name": "quick-switcher-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/quick-switcher-base.tsx",
@@ -5194,10 +4536,7 @@
     {
       "name": "quick-switcher",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/quick-switcher.tsx",
@@ -5209,10 +4548,7 @@
     {
       "name": "radial-carousel",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/radial-carousel.tsx",
@@ -5224,10 +4560,7 @@
     {
       "name": "radial-carousel-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/radial-carousel-base.tsx",
@@ -5239,9 +4572,7 @@
     {
       "name": "radial-intro",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/radial-intro.tsx",
@@ -5253,10 +4584,7 @@
     {
       "name": "radial-nav",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/radial-nav.tsx",
@@ -5268,11 +4596,7 @@
     {
       "name": "radio-group",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/radio-group.tsx",
@@ -5284,10 +4608,7 @@
     {
       "name": "range-selection-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/range-selection-slider.tsx",
@@ -5299,10 +4620,7 @@
     {
       "name": "range-selection-slider-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/range-selection-slider-base.tsx",
@@ -5314,10 +4632,7 @@
     {
       "name": "returns-calculator-snippet",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/returns-calculator-snippet.tsx",
@@ -5329,10 +4644,7 @@
     {
       "name": "returns-calculator-snippet-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/returns-calculator-snippet-base.tsx",
@@ -5344,10 +4656,7 @@
     {
       "name": "reveal-copy",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/reveal-copy.tsx",
@@ -5359,10 +4668,7 @@
     {
       "name": "reveal-copy-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/reveal-copy-base.tsx",
@@ -5374,10 +4680,7 @@
     {
       "name": "ripple",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/ripple.tsx",
@@ -5389,10 +4692,7 @@
     {
       "name": "run-action-button",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/run-action-button.tsx",
@@ -5404,10 +4704,7 @@
     {
       "name": "run-action-button-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/run-action-button-base.tsx",
@@ -5419,9 +4716,7 @@
     {
       "name": "run-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/run-widget.tsx",
@@ -5433,9 +4728,7 @@
     {
       "name": "run-widget-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/run-widget-base.tsx",
@@ -5577,10 +4870,7 @@
     {
       "name": "save-toggle",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/save-toggle.tsx",
@@ -5592,10 +4882,7 @@
     {
       "name": "save-toggle-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/save-toggle-base.tsx",
@@ -5624,9 +4911,7 @@
     {
       "name": "schedule-date",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/schedule-date.tsx",
@@ -5638,9 +4923,7 @@
     {
       "name": "schedule-date-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react"
-      ],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/schedule-date-base.tsx",
@@ -5664,10 +4947,7 @@
     {
       "name": "scroll-island",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/scroll-island.tsx",
@@ -5679,10 +4959,7 @@
     {
       "name": "scroll-island-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/scroll-island-base.tsx",
@@ -5694,10 +4971,7 @@
     {
       "name": "scrub-slider",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/scrub-slider.tsx",
@@ -5709,10 +4983,7 @@
     {
       "name": "scrub-slider-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/scrub-slider-base.tsx",
@@ -5724,10 +4995,7 @@
     {
       "name": "select",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-select",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/select.tsx",
@@ -5773,10 +5041,7 @@
     {
       "name": "send-money",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/send-money.tsx",
@@ -5788,10 +5053,7 @@
     {
       "name": "send-money-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/send-money-base.tsx",
@@ -5803,9 +5065,7 @@
     {
       "name": "separator",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-separator"
-      ],
+      "dependencies": ["@radix-ui/react-separator"],
       "files": [
         {
           "path": "src/components/watermelon-ui/separator.tsx",
@@ -5817,11 +5077,7 @@
     {
       "name": "share-button",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["class-variance-authority", "lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/share-button.tsx",
@@ -5833,9 +5089,7 @@
     {
       "name": "share-sheet",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/share-sheet.tsx",
@@ -5847,9 +5101,7 @@
     {
       "name": "share-sheet-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/share-sheet-base.tsx",
@@ -5861,11 +5113,7 @@
     {
       "name": "sheet",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["lucide-react", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/sheet.tsx",
@@ -5901,11 +5149,7 @@
     {
       "name": "show-qr",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "qrcode.react"
-      ],
+      "dependencies": ["lucide-react", "motion", "qrcode.react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/show-qr.tsx",
@@ -5917,11 +5161,7 @@
     {
       "name": "show-qr-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "qrcode.react"
-      ],
+      "dependencies": ["lucide-react", "motion", "qrcode.react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/show-qr-base.tsx",
@@ -5933,10 +5173,7 @@
     {
       "name": "shuffle-pinned-item",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/shuffle-pinned-item.tsx",
@@ -5948,10 +5185,7 @@
     {
       "name": "shuffle-pinned-item-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/shuffle-pinned-item-base.tsx",
@@ -6000,10 +5234,7 @@
     {
       "name": "slot-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/slot-picker.tsx",
@@ -6015,9 +5246,7 @@
     {
       "name": "spinner",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
           "path": "src/components/watermelon-ui/spinner.tsx",
@@ -6029,9 +5258,7 @@
     {
       "name": "split-button",
       "type": "registry:ui",
-      "dependencies": [
-        "motion/react"
-      ],
+      "dependencies": ["motion/react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/split-button.tsx",
@@ -6043,9 +5270,7 @@
     {
       "name": "split-button-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion/react"
-      ],
+      "dependencies": ["motion/react"],
       "files": [
         {
           "path": "src/components/watermelon-ui/split-button-base.tsx",
@@ -6057,10 +5282,7 @@
     {
       "name": "split-to-edit",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/split-to-edit.tsx",
@@ -6072,10 +5294,7 @@
     {
       "name": "split-to-edit-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/split-to-edit-base.tsx",
@@ -6099,10 +5318,7 @@
     {
       "name": "status-picker",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/status-picker.tsx",
@@ -6114,10 +5330,7 @@
     {
       "name": "status-picker-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/status-picker-base.tsx",
@@ -6129,10 +5342,7 @@
     {
       "name": "step-indicator",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/step-indicator.tsx",
@@ -6144,10 +5354,7 @@
     {
       "name": "step-pager",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/step-pager.tsx",
@@ -6159,10 +5366,7 @@
     {
       "name": "step-indicator-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/step-indicator-base.tsx",
@@ -6174,10 +5378,7 @@
     {
       "name": "step-pager-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/step-pager-base.tsx",
@@ -6189,10 +5390,7 @@
     {
       "name": "stepper",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/stepper.tsx",
@@ -6204,10 +5402,7 @@
     {
       "name": "stepper-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/stepper-base.tsx",
@@ -6219,10 +5414,7 @@
     {
       "name": "subscription-calendar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/subscription-calendar.tsx",
@@ -6234,10 +5426,7 @@
     {
       "name": "subscription-calendar-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/subscription-calendar-base.tsx",
@@ -6249,10 +5438,7 @@
     {
       "name": "swap-currency-card",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/swap-currency-card.tsx",
@@ -6264,10 +5450,7 @@
     {
       "name": "swap-currency-card-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/swap-currency-card-base.tsx",
@@ -6279,10 +5462,7 @@
     {
       "name": "swap-form",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/swap-form.tsx",
@@ -6294,9 +5474,7 @@
     {
       "name": "switch",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-switch"
-      ],
+      "dependencies": ["@radix-ui/react-switch"],
       "files": [
         {
           "path": "src/components/watermelon-ui/switch.tsx",
@@ -6308,10 +5486,7 @@
     {
       "name": "switch-disclosure",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/switch-disclosure.tsx",
@@ -6323,9 +5498,7 @@
     {
       "name": "switch-mode",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/switch-mode.tsx",
@@ -6337,9 +5510,7 @@
     {
       "name": "switch-mode-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/switch-mode-base.tsx",
@@ -6363,9 +5534,7 @@
     {
       "name": "tabs",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/tabs.tsx",
@@ -6377,10 +5546,7 @@
     {
       "name": "tags",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/tags.tsx",
@@ -6487,9 +5653,7 @@
         "lucide-react",
         "zod"
       ],
-      "registryDependencies": [
-        "button"
-      ],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/components/watermelon-ui/terminal.tsx",
@@ -6525,11 +5689,7 @@
     {
       "name": "theme-toggler",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/theme-toggler.tsx",
@@ -6541,9 +5701,7 @@
     {
       "name": "timed-undo-action",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/timed-undo-action.tsx",
@@ -6555,9 +5713,7 @@
     {
       "name": "timed-undo-action-base",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/time-undo-action-base.tsx",
@@ -6569,11 +5725,7 @@
     {
       "name": "timeline",
       "type": "registry:ui",
-      "dependencies": [
-        "@dnd-kit/core",
-        "@radix-ui/react-slot",
-        "tunnel-rat"
-      ],
+      "dependencies": ["@dnd-kit/core", "@radix-ui/react-slot", "tunnel-rat"],
       "files": [
         {
           "path": "src/components/watermelon-ui/timeline.tsx",
@@ -6585,10 +5737,7 @@
     {
       "name": "toggle",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-toggle",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
       "files": [
         {
           "path": "src/components/watermelon-ui/toggle.tsx",
@@ -6600,11 +5749,7 @@
     {
       "name": "toggle-group",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["class-variance-authority", "motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/toggle-group.tsx",
@@ -6616,9 +5761,7 @@
     {
       "name": "tooltip",
       "type": "registry:ui",
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
+      "dependencies": ["@radix-ui/react-tooltip"],
       "files": [
         {
           "path": "src/components/watermelon-ui/tooltip.tsx",
@@ -6637,18 +5780,12 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": [
-        "@floating-ui/react",
-        "motion"
-      ]
+      "dependencies": ["@floating-ui/react", "motion"]
     },
     {
       "name": "tooltip-navbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/tooltip-navbar.tsx",
@@ -6660,10 +5797,7 @@
     {
       "name": "tooltip-navbar-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/tooltip-navbar-base.tsx",
@@ -6675,10 +5809,7 @@
     {
       "name": "tooltip-radix",
       "type": "registry:ui",
-      "dependencies": [
-        "motion",
-        "radix-ui"
-      ],
+      "dependencies": ["motion", "radix-ui"],
       "files": [
         {
           "path": "src/components/watermelon-ui/tooltip-radix.tsx",
@@ -6690,10 +5821,7 @@
     {
       "name": "trade-summary",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/trade-summary.tsx",
@@ -6705,10 +5833,7 @@
     {
       "name": "trade-summary-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/trade-summary-base.tsx",
@@ -6720,10 +5845,7 @@
     {
       "name": "transaction-list",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/transaction-list.tsx",
@@ -6735,10 +5857,7 @@
     {
       "name": "transaction-list-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/transaction-list-base.tsx",
@@ -6750,9 +5869,7 @@
     {
       "name": "transcribe-voice-message",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/transcribe-voice-message.tsx",
@@ -6764,10 +5881,7 @@
     {
       "name": "tree-menu",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/tree-menu.tsx",
@@ -6779,10 +5893,7 @@
     {
       "name": "tree-menu-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/tree-menu-base.tsx",
@@ -6794,12 +5905,7 @@
     {
       "name": "uniswap-dialog",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "motion",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "motion", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/watermelon-ui/uniswap-dialog.tsx",
@@ -6811,12 +5917,7 @@
     {
       "name": "uniswap-dialog-base",
       "type": "registry:ui",
-      "dependencies": [
-        "clsx",
-        "lucide-react",
-        "motion",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "lucide-react", "motion", "tailwind-merge"],
       "files": [
         {
           "path": "src/components/watermelon-ui/uniswap-dialog-base.tsx",
@@ -6888,9 +5989,7 @@
     {
       "name": "user-presence-avatar",
       "type": "registry:ui",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/user-presence-avatar.tsx",
@@ -6898,18 +5997,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar",
-        "tooltip"
-      ]
+      "registryDependencies": ["avatar", "tooltip"]
     },
     {
       "name": "utils",
       "type": "registry:lib",
-      "dependencies": [
-        "clsx",
-        "tailwind-merge"
-      ],
+      "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
           "path": "src/lib/utils.ts",
@@ -6921,10 +6014,7 @@
     {
       "name": "vertical-tooltip-navbar",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/vertical-tooltip-navbar.tsx",
@@ -6936,10 +6026,7 @@
     {
       "name": "vertical-tooltip-navbar-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/vertical-tooltip-navbar-base.tsx",
@@ -6951,10 +6038,7 @@
     {
       "name": "view-on-map-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/view-on-map-base.tsx",
@@ -6966,10 +6050,7 @@
     {
       "name": "view-on-map",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/view-on-map.tsx",
@@ -6998,10 +6079,7 @@
     {
       "name": "voice-note",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/voice-note.tsx",
@@ -7013,10 +6091,7 @@
     {
       "name": "voice-transcribe",
       "type": "registry:ui",
-      "dependencies": [
-        "react-icons",
-        "motion"
-      ],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/voice-transcribe.tsx",
@@ -7028,10 +6103,7 @@
     {
       "name": "voice-note-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/voice-note-base.tsx",
@@ -7043,10 +6115,7 @@
     {
       "name": "voice-transcribe-base",
       "type": "registry:ui",
-      "dependencies": [
-        "react-icons",
-        "motion"
-      ],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/voice-transcribe-base.tsx",
@@ -7058,10 +6127,7 @@
     {
       "name": "waveform-scrub",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/waveform-scrub.tsx",
@@ -7073,10 +6139,7 @@
     {
       "name": "waveform-scrub-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/waveform-scrub-base.tsx",
@@ -7088,10 +6151,7 @@
     {
       "name": "weight-widget",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/weight-widget.tsx",
@@ -7103,10 +6163,7 @@
     {
       "name": "weight-widget-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/weight-widget-base.tsx",
@@ -7118,10 +6175,7 @@
     {
       "name": "wiggling-cards",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/wiggling-cards.tsx",
@@ -7133,10 +6187,7 @@
     {
       "name": "wiggling-cards-base",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/watermelon-ui/wiggling-cards-base.tsx",
@@ -7148,10 +6199,7 @@
     {
       "name": "accordion-1",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-1.tsx",
@@ -7159,17 +6207,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-2",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-2.tsx",
@@ -7177,17 +6220,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-3",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-3.tsx",
@@ -7195,17 +6233,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-4",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-4.tsx",
@@ -7213,17 +6246,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-5",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-5.tsx",
@@ -7231,17 +6259,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-6",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-6.tsx",
@@ -7249,17 +6272,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-7",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-7.tsx",
@@ -7267,17 +6285,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-8",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-8.tsx",
@@ -7285,17 +6298,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-9",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-9.tsx",
@@ -7303,17 +6311,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-10",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-10.tsx",
@@ -7321,17 +6324,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-11",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-11.tsx",
@@ -7339,17 +6337,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-12",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-12.tsx",
@@ -7357,17 +6350,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-13",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-13.tsx",
@@ -7375,17 +6363,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-14",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-14.tsx",
@@ -7393,17 +6376,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-15",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-15.tsx",
@@ -7411,17 +6389,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
     },
     {
       "name": "accordion-16",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/accordion/accordion-16.tsx",
@@ -7429,17 +6402,1039 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "accordion"
-      ]
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "calendar-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-1.tsx",
+          "target": "components/ui/calendar-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-2.tsx",
+          "target": "components/ui/calendar-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "little-date"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-3.tsx",
+          "target": "components/ui/calendar-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-4.tsx",
+          "target": "components/ui/calendar-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-5.tsx",
+          "target": "components/ui/calendar-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-6.tsx",
+          "target": "components/ui/calendar-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-7.tsx",
+          "target": "components/ui/calendar-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-8.tsx",
+          "target": "components/ui/calendar-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-9.tsx",
+          "target": "components/ui/calendar-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-10.tsx",
+          "target": "components/ui/calendar-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-11.tsx",
+          "target": "components/ui/calendar-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-12.tsx",
+          "target": "components/ui/calendar-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-13.tsx",
+          "target": "components/ui/calendar-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-14",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-14.tsx",
+          "target": "components/ui/calendar-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-15",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-15.tsx",
+          "target": "components/ui/calendar-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-16",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-16.tsx",
+          "target": "components/ui/calendar-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-17",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-17.tsx",
+          "target": "components/ui/calendar-17.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-18",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-18.tsx",
+          "target": "components/ui/calendar-18.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-19",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-19.tsx",
+          "target": "components/ui/calendar-19.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-20",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-20.tsx",
+          "target": "components/ui/calendar-20.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-21",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-21.tsx",
+          "target": "components/ui/calendar-21.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-22",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-22.tsx",
+          "target": "components/ui/calendar-22.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-23",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-23.tsx",
+          "target": "components/ui/calendar-23.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-24",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-24.tsx",
+          "target": "components/ui/calendar-24.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-25",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-25.tsx",
+          "target": "components/ui/calendar-25.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "checkbox-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-1.tsx",
+          "target": "components/ui/checkbox-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-2.tsx",
+          "target": "components/ui/checkbox-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-3.tsx",
+          "target": "components/ui/checkbox-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-4.tsx",
+          "target": "components/ui/checkbox-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-5.tsx",
+          "target": "components/ui/checkbox-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-6.tsx",
+          "target": "components/ui/checkbox-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-7.tsx",
+          "target": "components/ui/checkbox-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-8.tsx",
+          "target": "components/ui/checkbox-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-9.tsx",
+          "target": "components/ui/checkbox-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-10.tsx",
+          "target": "components/ui/checkbox-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-11.tsx",
+          "target": "components/ui/checkbox-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-12.tsx",
+          "target": "components/ui/checkbox-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-13.tsx",
+          "target": "components/ui/checkbox-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-14",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-14.tsx",
+          "target": "components/ui/checkbox-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-15",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-15.tsx",
+          "target": "components/ui/checkbox-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-16",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-16.tsx",
+          "target": "components/ui/checkbox-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "combobox-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-1.tsx",
+          "target": "components/ui/combobox-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-2.tsx",
+          "target": "components/ui/combobox-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-3.tsx",
+          "target": "components/ui/combobox-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-4.tsx",
+          "target": "components/ui/combobox-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-5.tsx",
+          "target": "components/ui/combobox-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-6.tsx",
+          "target": "components/ui/combobox-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-7.tsx",
+          "target": "components/ui/combobox-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-8.tsx",
+          "target": "components/ui/combobox-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-9.tsx",
+          "target": "components/ui/combobox-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-10.tsx",
+          "target": "components/ui/combobox-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-11.tsx",
+          "target": "components/ui/combobox-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-12.tsx",
+          "target": "components/ui/combobox-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "data-table-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-1.tsx",
+          "target": "components/ui/data-table-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-2.tsx",
+          "target": "components/ui/data-table-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-3.tsx",
+          "target": "components/ui/data-table-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-4.tsx",
+          "target": "components/ui/data-table-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-5.tsx",
+          "target": "components/ui/data-table-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-6.tsx",
+          "target": "components/ui/data-table-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-7.tsx",
+          "target": "components/ui/data-table-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-8.tsx",
+          "target": "components/ui/data-table-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-9.tsx",
+          "target": "components/ui/data-table-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-10.tsx",
+          "target": "components/ui/data-table-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-11.tsx",
+          "target": "components/ui/data-table-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "papaparse", "xlsx"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-12.tsx",
+          "target": "components/ui/data-table-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-13.tsx",
+          "target": "components/ui/data-table-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "date-picker-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-1.tsx",
+          "target": "components/ui/date-picker-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-2.tsx",
+          "target": "components/ui/date-picker-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-3.tsx",
+          "target": "components/ui/date-picker-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-4.tsx",
+          "target": "components/ui/date-picker-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "chrono-node"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-5.tsx",
+          "target": "components/ui/date-picker-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-6.tsx",
+          "target": "components/ui/date-picker-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-7.tsx",
+          "target": "components/ui/date-picker-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-8.tsx",
+          "target": "components/ui/date-picker-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-9.tsx",
+          "target": "components/ui/date-picker-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-10.tsx",
+          "target": "components/ui/date-picker-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-11.tsx",
+          "target": "components/ui/date-picker-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-12.tsx",
+          "target": "components/ui/date-picker-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-13.tsx",
+          "target": "components/ui/date-picker-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
     },
     {
       "name": "avatar-1",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-1.tsx",
@@ -7447,17 +7442,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-2",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-2.tsx",
@@ -7465,17 +7455,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-3",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-3.tsx",
@@ -7483,17 +7468,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-4",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-4.tsx",
@@ -7501,17 +7481,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-5",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-5.tsx",
@@ -7519,17 +7494,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-6",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-6.tsx",
@@ -7537,17 +7507,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-7",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-7.tsx",
@@ -7555,17 +7520,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-8",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-8.tsx",
@@ -7573,17 +7533,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-9",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-9.tsx",
@@ -7591,17 +7546,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-10",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-10.tsx",
@@ -7609,17 +7559,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-11",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-11.tsx",
@@ -7627,17 +7572,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-12",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-12.tsx",
@@ -7645,17 +7585,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-13",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-13.tsx",
@@ -7663,17 +7598,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-14",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-14.tsx",
@@ -7681,17 +7611,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-15",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-15.tsx",
@@ -7699,17 +7624,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-16",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-16.tsx",
@@ -7717,17 +7637,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-17",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-17.tsx",
@@ -7735,17 +7650,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-18",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-18.tsx",
@@ -7753,17 +7663,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-19",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-19.tsx",
@@ -7771,17 +7676,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-20",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-20.tsx",
@@ -7789,17 +7689,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "avatar-21",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-21.tsx",
@@ -7807,17 +7702,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "avatar"
-      ]
+      "registryDependencies": ["avatar"]
     },
     {
       "name": "breadcrumb-1",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/breadcrumb/breadcrumb-1.tsx",
@@ -7825,17 +7715,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-2",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/breadcrumb/breadcrumb-2.tsx",
@@ -7843,17 +7728,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-3",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/breadcrumb/breadcrumb-3.tsx",
@@ -7861,17 +7741,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-4",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/breadcrumb/breadcrumb-4.tsx",
@@ -7879,17 +7754,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-5",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/breadcrumb/breadcrumb-5.tsx",
@@ -7897,17 +7767,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-6",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/breadcrumb/breadcrumb-6.tsx",
@@ -7915,17 +7780,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-7",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/breadcrumb/breadcrumb-7.tsx",
@@ -7933,17 +7793,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "breadcrumb-8",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/breadcrumb/breadcrumb-8.tsx",
@@ -7951,17 +7806,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "breadcrumb"
-      ]
+      "registryDependencies": ["breadcrumb"]
     },
     {
       "name": "button-group-1",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-1.tsx",
@@ -7969,17 +7819,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-2",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-2.tsx",
@@ -7987,17 +7832,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-3",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-3.tsx",
@@ -8005,17 +7845,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-4",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-4.tsx",
@@ -8023,17 +7858,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-5",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-5.tsx",
@@ -8041,17 +7871,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-6",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-6.tsx",
@@ -8059,17 +7884,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-7",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-7.tsx",
@@ -8077,17 +7897,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-8",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-8.tsx",
@@ -8095,17 +7910,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-9",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-9.tsx",
@@ -8113,17 +7923,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-10",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-10.tsx",
@@ -8131,17 +7936,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-11",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-11.tsx",
@@ -8149,17 +7949,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "button-group-12",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/button-group/button-group-12.tsx",
@@ -8167,17 +7962,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "button-group"
-      ]
+      "registryDependencies": ["button-group"]
     },
     {
       "name": "card-1",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-1.tsx",
@@ -8185,17 +7975,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-2",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-2.tsx",
@@ -8203,17 +7988,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-3",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-3.tsx",
@@ -8221,17 +8001,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-4",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-4.tsx",
@@ -8239,17 +8014,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-5",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-5.tsx",
@@ -8257,17 +8027,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-6",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-6.tsx",
@@ -8275,17 +8040,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-7",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-7.tsx",
@@ -8293,17 +8053,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-8",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-8.tsx",
@@ -8311,17 +8066,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-9",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-9.tsx",
@@ -8329,17 +8079,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-10",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-10.tsx",
@@ -8347,17 +8092,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-11",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-11.tsx",
@@ -8365,17 +8105,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-12",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-12.tsx",
@@ -8383,17 +8118,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-13",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-13.tsx",
@@ -8401,17 +8131,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-14",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-14.tsx",
@@ -8419,17 +8144,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "card-15",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/card/card-15.tsx",
@@ -8437,17 +8157,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "card"
-      ]
+      "registryDependencies": ["card"]
     },
     {
       "name": "collapsible-1",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-1.tsx",
@@ -8455,17 +8170,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-2",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-2.tsx",
@@ -8473,17 +8183,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-3",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-3.tsx",
@@ -8491,17 +8196,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-4",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-4.tsx",
@@ -8509,17 +8209,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-5",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-5.tsx",
@@ -8527,17 +8222,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-6",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-6.tsx",
@@ -8545,17 +8235,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-7",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-7.tsx",
@@ -8563,17 +8248,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-8",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-8.tsx",
@@ -8581,17 +8261,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "collapsible-9",
       "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion"
-      ],
+      "dependencies": ["lucide-react", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/collapsible/collapsible-9.tsx",
@@ -8599,9 +8274,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": [
-        "collapsible"
-      ]
+      "registryDependencies": ["collapsible"]
     },
     {
       "name": "workflow-management-dashboard",
