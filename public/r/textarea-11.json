@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-11",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-11.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea11 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"group relative w-full max-w-sm space-y-2\">\r\n      <label\r\n        htmlFor={id}\r\n        className=\"origin-start text-muted-foreground/70 group-focus-within:text-foreground absolute top-0 block translate-y-2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:-translate-y-1/2 group-focus-within:scale-95 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+textarea:not(:placeholder-shown)]:pointer-events-none has-[+textarea:not(:placeholder-shown)]:-translate-y-1/2 has-[+textarea:not(:placeholder-shown)]:cursor-default has-[+textarea:not(:placeholder-shown)]:text-xs has-[+textarea:not(:placeholder-shown)]:font-medium\"\r\n      >\r\n        <span className=\"bg-background inline-flex px-1\">Project summary</span>\r\n      </label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\" \"\r\n        className=\"!bg-background focus-visible:ring-primary focus-visible:border-primary/50 rounded-sm shadow-sm\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea11;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

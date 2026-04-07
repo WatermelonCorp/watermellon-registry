@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-4",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tooltip/tooltip-4.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst Tooltip4 = () => {\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger asChild>\r\n        <Button variant=\"outline\" size=\"sm\">\r\n          Badge\r\n        </Button>\r\n      </TooltipTrigger>\r\n      <TooltipContent>\r\n        <div className=\"flex items-center gap-2 whitespace-nowrap\">\r\n          <span className=\"text-xs\">$99/month per user</span>\r\n          <Badge\r\n            variant=\"secondary\"\r\n            className=\"rounded-full px-2 py-0.5 text-xs\"\r\n          >\r\n            Popular\r\n          </Badge>\r\n        </div>\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n};\r\n\r\nexport default Tooltip4;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

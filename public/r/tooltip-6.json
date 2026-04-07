@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-6",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tooltip/tooltip-6.tsx",
+      "content": "import { MdInfo } from \"react-icons/md\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst Tooltip6 = () => {\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger asChild>\r\n        <Button variant=\"outline\" size=\"sm\">\r\n          Learn More\r\n        </Button>\r\n      </TooltipTrigger>\r\n      <TooltipContent className=\"max-w-64 py-3 text-pretty\">\r\n        <div className=\"space-y-1\">\r\n          <div className=\"flex items-center gap-2\">\r\n            <MdInfo className=\"size-4\" />\r\n            <p className=\"text-sm font-medium\">Helpful Information</p>\r\n          </div>\r\n          <p className=\"text-background/80\">\r\n            This section provides additional context to help you better\r\n            understand the feature. Use it as a quick guide while navigating.\r\n          </p>\r\n        </div>\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n};\r\n\r\nexport default Tooltip6;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

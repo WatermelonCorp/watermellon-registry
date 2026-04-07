@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radiogroup-2",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/radiogroup/radiogroup-2.tsx",
+      "content": "import { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\n\r\nconst RadioGroup2 = () => {\r\n  return (\r\n    <RadioGroup defaultValue=\"monthly\">\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem\r\n          value=\"monthly\"\r\n          id=\"monthly\"\r\n          className=\"border-primary focus-visible:border-primary border-dashed\"\r\n        />\r\n        <Label htmlFor=\"monthly\">Monthly Plan</Label>\r\n      </div>\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem\r\n          value=\"quarterly\"\r\n          id=\"quarterly\"\r\n          className=\"border-primary focus-visible:border-primary border-dashed\"\r\n        />\r\n        <Label htmlFor=\"quarterly\">Quarterly Plan</Label>\r\n      </div>\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem\r\n          value=\"yearly\"\r\n          id=\"yearly\"\r\n          className=\"border-primary focus-visible:border-primary border-dashed\"\r\n        />\r\n        <Label htmlFor=\"yearly\">Yearly Plan</Label>\r\n      </div>\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroup2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/radiogroup-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

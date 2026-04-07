@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-11",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/switch/switch-11.tsx",
+      "content": "import { useState } from \"react\";\r\n\r\nimport { FiRefreshCw } from \"react-icons/fi\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch11 = () => {\r\n  const [checked, setChecked] = useState(true);\r\n\r\n  return (\r\n    <div\r\n      data-state={checked ? \"checked\" : \"unchecked\"}\r\n      className=\"group border-input has-data-[state=checked]:border-primary/50 relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none\"\r\n    >\r\n      <Switch\r\n        id=\"auto-sync\"\r\n        checked={checked}\r\n        onCheckedChange={setChecked}\r\n        className=\"order-1 after:absolute after:inset-0 data-[size=default]:h-4 data-[size=default]:w-6 [&_span]:group-data-[size=default]/switch:size-3 data-[state=checked]:[&_span]:translate-x-2.5 data-[state=checked]:[&_span]:rtl:-translate-x-2.5\"\r\n        aria-describedby=\"auto-sync-description\"\r\n      />\r\n\r\n      <div className=\"flex grow items-center gap-3\">\r\n        <FiRefreshCw className=\"text-muted-foreground rotate-0 self-start transition-transform duration-700 ease-in-out group-data-[state=checked]:rotate-[360deg]\" />\r\n\r\n        <div className=\"grid grow gap-2\">\r\n          <Label htmlFor=\"auto-sync\">Auto Sync</Label>\r\n          <p\r\n            id=\"auto-sync-description\"\r\n            className=\"text-muted-foreground text-xs\"\r\n          >\r\n            Automatically sync your data across devices.\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Switch11;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/switch-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

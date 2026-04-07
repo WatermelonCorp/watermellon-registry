@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-5",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-5.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea5 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>Styled textarea</Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"Start typing...\"\r\n        className=\"focus-visible:border-emerald-500 focus-visible:ring-emerald-500/20 dark:focus-visible:ring-emerald-500/40\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

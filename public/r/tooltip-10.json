@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-10",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tooltip/tooltip-10.tsx",
+      "content": "import {\r\n  MdChevronLeft,\r\n  MdKeyboardArrowUp,\r\n  MdKeyboardArrowDown,\r\n  MdChevronRight,\r\n} from \"react-icons/md\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst Tooltip10 = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-2\">\r\n      <Tooltip>\r\n        <TooltipTrigger asChild>\r\n          <Button variant=\"outline\" size=\"sm\">\r\n            <MdChevronLeft className=\"size-4\" />\r\n          </Button>\r\n        </TooltipTrigger>\r\n        <TooltipContent side=\"left\">Tooltip on left</TooltipContent>\r\n      </Tooltip>\r\n\r\n      <Tooltip>\r\n        <TooltipTrigger asChild>\r\n          <Button variant=\"outline\" size=\"sm\">\r\n            <MdKeyboardArrowUp className=\"size-4\" />\r\n          </Button>\r\n        </TooltipTrigger>\r\n        <TooltipContent side=\"top\">Tooltip on top</TooltipContent>\r\n      </Tooltip>\r\n\r\n      <Tooltip>\r\n        <TooltipTrigger asChild>\r\n          <Button variant=\"outline\" size=\"sm\">\r\n            <MdKeyboardArrowDown className=\"size-4\" />\r\n          </Button>\r\n        </TooltipTrigger>\r\n        <TooltipContent side=\"bottom\">Tooltip on bottom</TooltipContent>\r\n      </Tooltip>\r\n\r\n      <Tooltip>\r\n        <TooltipTrigger asChild>\r\n          <Button variant=\"outline\" size=\"sm\">\r\n            <MdChevronRight className=\"size-4\" />\r\n          </Button>\r\n        </TooltipTrigger>\r\n        <TooltipContent side=\"right\">Tooltip on right</TooltipContent>\r\n      </Tooltip>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Tooltip10;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

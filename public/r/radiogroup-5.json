@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radiogroup-5",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/radiogroup/radiogroup-5.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\nimport { FaUser, FaUsers, FaBuilding } from \"react-icons/fa6\";\r\n\r\nconst RadioGroup5 = () => {\r\n  const id = useId();\r\n\r\n  const items = [\r\n    { value: \"1\", label: \"Individual\", price: \"Free\", icon: FaUser },\r\n    { value: \"2\", label: \"Team Workspace\", price: \"₹999/mo\", icon: FaUsers },\r\n    { value: \"3\", label: \"Organization\", price: \"Custom\", icon: FaBuilding },\r\n  ];\r\n\r\n  return (\r\n    <RadioGroup\r\n      className=\"w-full max-w-96 gap-0 -space-y-px rounded-md shadow-xs\"\r\n      defaultValue=\"2\"\r\n    >\r\n      {items.map((item) => (\r\n        <div\r\n          key={`${id}-${item.value}`}\r\n          className=\"border-input has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-accent dark:has-data-[state=checked]:bg-card relative flex flex-col gap-4 border p-4 outline-none first:rounded-t-md last:rounded-b-md has-data-[state=checked]:z-10 has-data-[state=checked]:shadow-[inset_0_2px_4px_rgba(0,0,0,0.15),inset_0_-1px_2px_rgba(255,255,255,0.1)]\"\r\n        >\r\n          <div className=\"flex items-center justify-between\">\r\n            <div className=\"flex items-center gap-2\">\r\n              <RadioGroupItem\r\n                id={`${id}-${item.value}`}\r\n                value={item.value}\r\n                className=\"after:absolute after:inset-0\"\r\n                aria-label={`plan-radio-${item.value}`}\r\n                aria-describedby={`${`${id}-${item.value}`}-price`}\r\n              />\r\n              <Label\r\n                className=\"inline-flex items-center\"\r\n                htmlFor={`${id}-${item.value}`}\r\n              >\r\n                <item.icon className=\"text-muted-foreground shrink-0\" />\r\n                {item.label}\r\n                {item.value === \"2\" && (\r\n                  <Badge className=\"rounded-sm px-1.5 py-px text-xs hidden sm:block\">\r\n                    Best Seller\r\n                  </Badge>\r\n                )}\r\n              </Label>\r\n            </div>\r\n            <div\r\n              id={`${`${id}-${item.value}`}-price`}\r\n              className=\"text-muted-foreground text-xs leading-[inherit]\"\r\n            >\r\n              {item.price}\r\n            </div>\r\n          </div>\r\n        </div>\r\n      ))}\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroup5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/radiogroup-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

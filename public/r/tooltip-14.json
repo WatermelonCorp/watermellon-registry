@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-14",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tooltip/tooltip-14.tsx",
+      "content": "import { FaCalendarAlt } from \"react-icons/fa\";\r\n\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  HoverCard,\r\n  HoverCardContent,\r\n  HoverCardTrigger,\r\n} from \"@/components/ui/hover-card\";\r\nimport { Progress } from \"@/components/ui/progress\";\r\n\r\nconst members = [\r\n  {\r\n    src: \"https://github.com/emilkowalski.png\",\r\n    fallback: \"EK\",\r\n    name: \"Emil Kowalski\",\r\n  },\r\n  {\r\n    image: \"https://github.com/raphaelsalaja.png\",\r\n    fallback: \"RS\",\r\n    name: \"Raphael Salaja\",\r\n  },\r\n  {\r\n    src: \"https://github.com/raunofreiberg.png\",\r\n    fallback: \"RF\",\r\n    name: \"Rauno Freiberg\",\r\n  },\r\n];\r\n\r\nconst Tooltip14 = () => {\r\n  return (\r\n    <HoverCard openDelay={0} closeDelay={0}>\r\n      <HoverCardTrigger asChild>\r\n        <Button variant=\"link\">View Build Status</Button>\r\n      </HoverCardTrigger>\r\n\r\n      <HoverCardContent className=\"w-80\">\r\n        <div className=\"space-y-4\">\r\n          <div className=\"flex items-start justify-between\">\r\n            <div>\r\n              <p className=\"text-sm font-medium\">ui System Upgrade</p>\r\n              <p className=\"text-muted-foreground text-xs\">\r\n                Improving consistency across components\r\n              </p>\r\n            </div>\r\n            <span className=\"text-sm font-semibold\">68%</span>\r\n          </div>\r\n\r\n          <Progress value={68} />\r\n\r\n          <div className=\"text-muted-foreground flex items-center justify-between text-xs\">\r\n            <div className=\"flex items-center gap-1.5\">\r\n              <FaCalendarAlt className=\"size-4\" />\r\n              <span>Started Feb 2025</span>\r\n            </div>\r\n            <span>ETA: 2 weeks</span>\r\n          </div>\r\n\r\n          <div className=\"flex items-center justify-between\">\r\n            <div className=\"flex -space-x-2\">\r\n              {members.map((member, i) => (\r\n                <Avatar key={i} className=\"ring-background size-8 ring-2\">\r\n                  <AvatarImage src={member.src} alt={member.name} />\r\n                  <AvatarFallback className=\"text-xs\">\r\n                    {member.fallback}\r\n                  </AvatarFallback>\r\n                </Avatar>\r\n              ))}\r\n              <Avatar className=\"ring-background size-8 ring-2\">\r\n                <AvatarFallback className=\"text-xs\">+3</AvatarFallback>\r\n              </Avatar>\r\n            </div>\r\n\r\n            <span className=\"text-muted-foreground text-xs\">\r\n              Active contributors\r\n            </span>\r\n          </div>\r\n        </div>\r\n      </HoverCardContent>\r\n    </HoverCard>\r\n  );\r\n};\r\n\r\nexport default Tooltip14;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip-14.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

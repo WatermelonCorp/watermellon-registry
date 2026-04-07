@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-5",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tooltip/tooltip-5.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst Tooltip5 = () => {\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger asChild>\r\n        <Button variant=\"outline\" size=\"sm\">\r\n          Avatar\r\n        </Button>\r\n      </TooltipTrigger>\r\n      <TooltipContent>\r\n        <div className=\"flex items-center gap-2\">\r\n          <Avatar className=\"size-5\">\r\n            <AvatarImage\r\n              src=\"https://github.com/vanshpatel.png\"\r\n              alt=\"Vansh Patel\"\r\n            />\r\n            <AvatarFallback className=\"text-xs\">VP</AvatarFallback>\r\n          </Avatar>\r\n          <p className=\"text-sm font-medium\">Vansh Patel</p>\r\n        </div>\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n};\r\n\r\nexport default Tooltip5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

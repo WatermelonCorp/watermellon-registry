@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-4",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-4.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea4 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>\r\n        Issue description <span className=\"text-destructive\">*</span>\r\n      </Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"Describe the issue you're facing...\"\r\n        required\r\n        className=\"\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea4;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-4",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/switch/switch-4.tsx",
+      "content": "import { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch4 = () => {\r\n  return (\r\n    <Switch\r\n      aria-label=\"Destructive Switch\"\r\n      className=\"focus-visible:border-destructive to-destructive/60 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 border-none bg-linear-to-r from-yellow-600 data-[size=default]:h-6 data-[size=default]:w-10 data-[state=checked]:from-blue-600 data-[state=checked]:to-indigo-700 [&_span]:!translate-x-0.25 [&_span]:group-data-[size=default]/switch:size-5 data-[state=checked]:[&_span]:!translate-x-4.75 data-[state=checked]:[&_span]:rtl:!-translate-x-4.75\"\r\n    />\r\n  );\r\n};\r\n\r\nexport default Switch4;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/switch-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

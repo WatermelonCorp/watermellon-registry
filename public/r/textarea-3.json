@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-3",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-3.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea3 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>Add details</Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"Write your response...\"\r\n        className=\"rounded-sm shadow-sm\"\r\n      />\r\n      <p className=\"text-muted-foreground text-right text-xs\">\r\n        This helps us understand your input better.\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radiogroup-6",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/radiogroup/radiogroup-6.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\n\r\nconst RadioGroup6 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <RadioGroup className=\"w-full max-w-96 gap-2\" defaultValue=\"starter\">\r\n      <div className=\"border-input has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 relative flex w-full items-center gap-2 rounded-md border p-4 shadow-xs outline-none\">\r\n        <RadioGroupItem\r\n          value=\"starter\"\r\n          id={`${id}-starter`}\r\n          aria-describedby={`${id}-starter-description`}\r\n          className=\"size-5 after:absolute after:inset-0 [&_svg]:size-3\"\r\n        />\r\n        <div className=\"grid grow gap-2\">\r\n          <Label htmlFor={`${id}-starter`} className=\"justify-between\">\r\n            Starter{\" \"}\r\n            <span className=\"text-muted-foreground text-xs leading-[inherit] font-normal\">\r\n              Free\r\n            </span>\r\n          </Label>\r\n          <p\r\n            id={`${id}-starter-description`}\r\n            className=\"text-muted-foreground text-xs\"\r\n          >\r\n            Good for personal projects and basic usage.\r\n          </p>\r\n        </div>\r\n      </div>\r\n\r\n      <div className=\"border-input has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 relative flex w-full items-center gap-2 rounded-md border p-4 shadow-xs outline-none\">\r\n        <RadioGroupItem\r\n          value=\"pro\"\r\n          id={`${id}-pro`}\r\n          aria-describedby={`${id}-pro-description`}\r\n          className=\"size-5 after:absolute after:inset-0 [&_svg]:size-3\"\r\n        />\r\n        <div className=\"grid grow gap-2\">\r\n          <Label htmlFor={`${id}-pro`} className=\"justify-between\">\r\n            Pro{\" \"}\r\n            <span className=\"text-muted-foreground text-xs leading-[inherit] font-normal\">\r\n              $10/mo\r\n            </span>\r\n          </Label>\r\n          <p\r\n            id={`${id}-pro-description`}\r\n            className=\"text-muted-foreground text-xs\"\r\n          >\r\n            Best for teams with more features and flexibility.\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroup6;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/radiogroup-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
