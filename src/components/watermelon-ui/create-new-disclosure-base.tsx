@@ -31,11 +31,11 @@ interface GridItemProps {
 
 const GridItem: FC<GridItemProps> = ({ icon, label }) => {
   return (
-    <motion.button className="group flex flex-col items-center justify-center gap-2 rounded-xl px-2 py-4 transition-all duration-200 hover:bg-accent/40">
-      <div className="text-muted-foreground transition-colors group-hover:text-foreground">
+    <motion.button className="group flex flex-col items-center justify-center gap-1 sm:gap-2 rounded-xl px-1 py-3 sm:py-4 transition-all duration-200 hover:bg-accent/40">
+      <div className="text-muted-foreground transition-colors group-hover:text-foreground [&>svg]:size-5 sm:[&>svg]:size-7">
         {icon}
       </div>
-      <span className="text-sm font-medium tracking-tight text-foreground">
+      <span className="text-[12px] sm:text-sm font-medium tracking-tight text-foreground">
         {label}
       </span>
     </motion.button>
@@ -50,27 +50,27 @@ export const CreateNewDisclosure: FC<CreateNewDisclosureProps> = ({
 
   const defaultItems: DisclosureItem[] = [
     {
-      icon: <HugeiconsIcon icon={Folder01Icon} size={28} strokeWidth={1.5} />,
+      icon: <HugeiconsIcon icon={Folder01Icon} strokeWidth={1.5} />,
       label: 'Project',
     },
     {
-      icon: <HugeiconsIcon icon={TaskEdit01Icon} size={28} strokeWidth={1.5} />,
+      icon: <HugeiconsIcon icon={TaskEdit01Icon} strokeWidth={1.5} />,
       label: 'Task',
     },
     {
-      icon: <HugeiconsIcon icon={NoteIcon} size={28} strokeWidth={1.5} />,
+      icon: <HugeiconsIcon icon={NoteIcon} strokeWidth={1.5} />,
       label: 'Note',
     },
     {
-      icon: <HugeiconsIcon icon={Award01Icon} size={28} strokeWidth={1.5} />,
+      icon: <HugeiconsIcon icon={Award01Icon} strokeWidth={1.5} />,
       label: 'Goal',
     },
     {
-      icon: <HugeiconsIcon icon={Flag02Icon} size={28} strokeWidth={1.5} />,
+      icon: <HugeiconsIcon icon={Flag02Icon} strokeWidth={1.5} />,
       label: 'Milestone',
     },
     {
-      icon: <HugeiconsIcon icon={Calendar04Icon} size={28} strokeWidth={1.5} />,
+      icon: <HugeiconsIcon icon={Calendar04Icon} strokeWidth={1.5} />,
       label: 'Reminder',
     },
   ];
@@ -79,7 +79,7 @@ export const CreateNewDisclosure: FC<CreateNewDisclosureProps> = ({
 
   return (
     <div
-      className="theme-injected bg-transparent text-foreground font-sans"
+      className="theme-injected bg-transparent text-foreground font-sans px-4 sm:px-0"
       style={{ fontFamily: 'var(--font-sans)' }}
     >
       <AnimatePresence mode="popLayout" initial={false}>
@@ -93,13 +93,13 @@ export const CreateNewDisclosure: FC<CreateNewDisclosureProps> = ({
             style={{
               borderRadius:32,
             }}
-            className="flex cursor-pointer items-center gap-2 border border-border bg-card px-8 py-4 text-lg font-medium whitespace-nowrap text-foreground shadow-sm"
+            className="flex cursor-pointer items-center gap-2 border border-border bg-card px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium whitespace-nowrap text-foreground shadow-sm"
           >
             <motion.div layoutId="label" className="flex items-center gap-2">
               <HugeiconsIcon
                 icon={Add01Icon}
-                size={26}
-                className="text-muted-foreground"
+                size={24}
+                className="text-muted-foreground sm:size-[26px]"
                 strokeWidth={1.5}
               />
               Create New
@@ -119,12 +119,12 @@ export const CreateNewDisclosure: FC<CreateNewDisclosureProps> = ({
               borderRadius:32, 
             }}
             transition={{ type: 'spring', bounce: 0.1, duration: 0.4 }}
-            className="h-full w-80 sm:w-96 rounded-2xl border border-border bg-muted/40 p-1"
+            className="h-full w-[calc(100vw-32px)] sm:w-96 rounded-2xl border border-border bg-muted/40 p-1"
           >
             <div className="flex items-center justify-between px-4 py-3">
               <motion.p
                 layoutId="label"
-                className="text-base font-semibold text-foreground"
+                className="text-sm sm:text-base font-semibold text-foreground"
               >
                 Create New
               </motion.p>
@@ -142,7 +142,7 @@ export const CreateNewDisclosure: FC<CreateNewDisclosureProps> = ({
               </motion.button>
             </div>
 
-            <div className="grid grid-cols-3 gap-x-2 gap-y-4 rounded-4xl bg-card p-4 shadow-sm">
+            <div className="grid grid-cols-3 gap-1 rounded-4xl bg-card p-3 sm:p-4 shadow-sm">
               {disclosureItems.map((item, index) => (
                 <GridItem key={index} icon={item.icon} label={item.label} />
               ))}

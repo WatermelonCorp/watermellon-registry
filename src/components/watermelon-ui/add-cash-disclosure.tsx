@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, MotionConfig } from "motion/react";
-import { Plus, X, Wallet, Check } from "lucide-react";
-import { MdOutlineAddCard } from "react-icons/md";
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, MotionConfig } from 'motion/react';
+import { Plus, X, Wallet, Check } from 'lucide-react';
+import { MdOutlineAddCard } from 'react-icons/md';
 
 export interface PaymentCard {
   id: string;
   last4: string;
-  brand: "VISA" | "MASTERCARD";
+  brand: 'VISA' | 'MASTERCARD';
   isDefault?: boolean;
   hasToggle?: boolean;
 }
@@ -25,15 +25,16 @@ export const AddCashDisclosure: React.FC<CashDisclosureProps> = ({
   onConfirm,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState<string>(cards[0]?.id || "");
+  const [selectedCard, setSelectedCard] = useState<string>(cards[0]?.id || '');
   const [selectedAmount, setSelectedAmount] = useState<number>(presets[1]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isDone, setIsDone] = useState(false);
   const [displayBalance, setDisplayBalance] = useState(initialBalance);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (!isProcessing && !isDone) setDisplayBalance(initialBalance);
+    if (!isProcessing && !isDone) {
+      setTimeout(() => setDisplayBalance(initialBalance), 0);
+    }
   }, [initialBalance, isProcessing, isDone]);
 
   const handleOpen = () => setIsOpen(true);
@@ -51,15 +52,15 @@ export const AddCashDisclosure: React.FC<CashDisclosureProps> = ({
   };
 
   const formatCurrency = (val: number) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
     }).format(val);
   };
 
   return (
     <div className="flex min-h-full w-full flex-col items-center justify-center bg-transparent p-2 transition-colors duration-500 sm:p-4">
-      <MotionConfig transition={{ type: "spring", bounce: 0, duration: 0.6 }}>
+      <MotionConfig transition={{ type: 'spring', bounce: 0, duration: 0.6 }}>
         <AnimatePresence mode="popLayout" initial={false}>
           {!isOpen ? (
             <motion.div
@@ -74,7 +75,7 @@ export const AddCashDisclosure: React.FC<CashDisclosureProps> = ({
               style={{
                 borderRadius: 24,
               }}
-              className="flex w-100 max-w-100 items-center justify-between gap-10 border border-[#ECECEC] bg-white p-3 dark:border-white/5 dark:bg-[#1C1C1E] overflow-hidden"
+              className="flex w-xs sm:w-sm items-center justify-between gap-4 sm:gap-10 border border-[#ECECEC] bg-white p-3 dark:border-white/5 dark:bg-[#1C1C1E] overflow-hidden"
             >
               <div className="flex items-center gap-2 sm:gap-3">
                 <motion.div
@@ -121,7 +122,7 @@ export const AddCashDisclosure: React.FC<CashDisclosureProps> = ({
               transition={{
                 opacity: { duration: 0.3 },
               }}
-              className="flex w-100 max-w-100 flex-col border border-[#ECECEC] bg-white py-3 dark:border-white/5 dark:bg-[#1C1C1E] overflow-hidden"
+              className="flex w-xs sm:w-sm flex-col border border-[#ECECEC] bg-white py-3 dark:border-white/5 dark:bg-[#1C1C1E] overflow-hidden"
               style={{
                 borderRadius: 24,
               }}
@@ -183,19 +184,17 @@ export const AddCashDisclosure: React.FC<CashDisclosureProps> = ({
                         <div
                           key={card.id}
                           onClick={() => setSelectedCard(card.id)}
-                          className={`flex cursor-pointer items-center justify-between rounded-xl border-[1.5px] p-3 transition-all sm:p-4 ${
-                            isSelected
-                              ? "border-[#010103] ring-1 ring-[#010103] dark:border-white dark:bg-white/5 dark:ring-white"
-                              : "border-[#ECECEC] bg-[#F6F5FA] hover:border-gray-300 dark:border-white/5 dark:bg-white/2 dark:hover:border-white/20"
-                          }`}
+                          className={`flex cursor-pointer items-center justify-between rounded-xl border-[1.5px] p-3 transition-all sm:p-4 ${isSelected
+                              ? 'border-[#010103] ring-1 ring-[#010103] dark:border-white dark:bg-white/5 dark:ring-white'
+                              : 'border-[#ECECEC] bg-[#F6F5FA] hover:border-gray-300 dark:border-white/5 dark:bg-white/2 dark:hover:border-white/20'
+                            }`}
                         >
                           <div className="flex items-center gap-2 sm:gap-3">
                             <div
-                              className={`flex h-4 w-4 items-center justify-center rounded-full border-2 transition-colors sm:h-5 sm:w-5 ${
-                                isSelected
-                                  ? "border-[#010103] dark:border-white"
-                                  : "border-[#ECECEC] dark:border-white/10"
-                              }`}
+                              className={`flex h-4 w-4 items-center justify-center rounded-full border-2 transition-colors sm:h-5 sm:w-5 ${isSelected
+                                  ? 'border-[#010103] dark:border-white'
+                                  : 'border-[#ECECEC] dark:border-white/10'
+                                }`}
                             >
                               {isSelected && (
                                 <div className="h-2 w-2 rounded-full bg-[#010103] sm:h-2.5 sm:w-2.5 dark:bg-white" />
@@ -227,11 +226,10 @@ export const AddCashDisclosure: React.FC<CashDisclosureProps> = ({
                         <button
                           key={amount}
                           onClick={() => setSelectedAmount(amount)}
-                          className={`flex-1 rounded-lg border-[1.5px] py-2 text-[11px] font-semibold transition-all sm:text-sm ${
-                            isSelected
-                              ? "border-[#000000] bg-[#fefefe] text-[#000000] ring-1 ring-[#000000] dark:border-white dark:bg-white dark:text-black"
-                              : "border-[#ECECEC] bg-[#F6F5FA] text-[#000000] hover:border-[#dedbdb] dark:border-white/10 dark:bg-white/5 dark:text-gray-400 dark:hover:border-white/20"
-                          }`}
+                          className={`flex-1 rounded-lg border-[1.5px] py-2 text-[11px] font-semibold transition-all sm:text-sm ${isSelected
+                              ? 'border-[#000000] bg-[#fefefe] text-[#000000] ring-1 ring-[#000000] dark:border-white dark:bg-white dark:text-black'
+                              : 'border-[#ECECEC] bg-[#F6F5FA] text-[#000000] hover:border-[#dedbdb] dark:border-white/10 dark:bg-white/5 dark:text-gray-400 dark:hover:border-white/20'
+                            }`}
                         >
                           ${amount}
                         </button>
@@ -269,9 +267,9 @@ export const AddCashDisclosure: React.FC<CashDisclosureProps> = ({
                         >
                           <motion.div
                             className="h-full bg-[#FEFEFE] dark:bg-white"
-                            initial={{ width: "0%" }}
-                            animate={{ width: "100%" }}
-                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            initial={{ width: '0%' }}
+                            animate={{ width: '100%' }}
+                            transition={{ duration: 1.5, ease: 'easeInOut' }}
                           />
                         </motion.div>
                       ) : (
