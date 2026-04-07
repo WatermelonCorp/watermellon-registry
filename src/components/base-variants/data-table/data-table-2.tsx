@@ -127,7 +127,7 @@ const DataTable2 = () => {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
       <div className='py-4'>
         <Select value={density} onValueChange={(value) => setDensity(value as Density)}>
           <SelectTrigger
@@ -157,7 +157,12 @@ const DataTable2 = () => {
       </div>
 
       <div className='overflow-hidden rounded-lg border border-border/60 bg-background'>
-        <Table className={cn(densityClasses[density])}>
+        <Table
+          className={cn(
+            'mx-auto w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220',
+            densityClasses[density]
+          )}
+        >
           <TableHeader>
             <TableRow>
               <TableHead className='w-10 bg-muted/20 font-medium'>

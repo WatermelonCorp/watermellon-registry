@@ -219,9 +219,9 @@ const DataTable7 = () => {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-240 mx-auto'>
       <div className='overflow-hidden rounded-xl border border-border/60 bg-background shadow-sm'>
-        <Table className='border-separate border-spacing-0 table-fixed'>
+        <Table className='border-separate border-spacing-0 table-fixed w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-240 mx-auto'>
           <TableHeader>
             <TableRow className='[&>th]:border-b [&>th]:border-border/60'>
               {columns.map((column) => {

@@ -135,10 +135,10 @@ const DataTable3 = () => {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
       <div className='py-4'>
         <DropdownMenu>
-          <DropdownMenuTrigger className='inline-flex w-full max-w-44 items-center justify-between gap-2 rounded-full border border-border/60 bg-background px-4 py-2 text-sm font-medium text-foreground outline-none transition-colors hover:bg-muted/20'>
+          <DropdownMenuTrigger className='inline-flex w-full max-w-44 items-center justify-between gap-2 rounded-lg border border-border/60 bg-background px-4 py-2 text-sm font-medium text-foreground outline-none transition-colors hover:bg-muted/20'>
             <span className='flex items-center gap-2'>
               <Columns3Icon className='size-4 text-muted-foreground' />
               Columns
@@ -146,11 +146,11 @@ const DataTable3 = () => {
             <ChevronDownIcon className='size-4 text-muted-foreground' />
           </DropdownMenuTrigger>
           <DropdownMenuContent align='start' className='w-56 rounded-lg border border-border/60 bg-background p-1 shadow-sm'>
-            <div className='relative px-1 pt-1'>
+            <div className='relative px-0.5 py-0.5'>
               <Input
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className='rounded-full border-border/60 bg-background pl-8'
+                className='rounded-md border-border/60 bg-background pl-8'
                 placeholder='Search columns'
                 onKeyDown={(e) => e.stopPropagation()}
               />
@@ -180,8 +180,8 @@ const DataTable3 = () => {
         </DropdownMenu>
       </div>
 
-      <div className='overflow-hidden rounded-none border border-border/60 bg-background'>
-        <Table>
+      <div className='overflow-hidden rounded-xl border border-border/60 bg-background'>
+        <Table className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
           <TableHeader>
             <TableRow>
               <TableHead className='h-12 w-10 border-b border-border/60 bg-transparent text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase'>

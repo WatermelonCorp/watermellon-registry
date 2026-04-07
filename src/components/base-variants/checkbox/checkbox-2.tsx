@@ -21,7 +21,7 @@ type IndeterminateCheckboxProps = CheckboxRootProps & {
 }
 
 const checkboxCopy: CheckboxCopy = {
-  label: 'Indeterminate checkbox',
+  label: 'Enable beta features',
   description: 'This state is useful when only part of a selection is complete.'
 }
 

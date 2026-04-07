@@ -2,7 +2,7 @@
 
 import { useState, type ComponentType, type SVGProps } from 'react'
 
-import { ChartPieIcon, CodeIcon, PaletteIcon } from 'lucide-react'
+import { BadgeCheckIcon, BriefcaseBusinessIcon, PenToolIcon } from 'lucide-react'
 
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
@@ -14,9 +14,9 @@ type SkillOption = {
 }
 
 const skills = [
-  { label: 'Web Development', icon: CodeIcon },
-  { label: 'Data Analysis', icon: ChartPieIcon },
-  { label: 'Graphic Design', icon: PaletteIcon }
+  { label: 'Frontend Engineering', icon: PenToolIcon },
+  { label: 'Business Insights', icon: BriefcaseBusinessIcon },
+  { label: 'Visual Branding', icon: BadgeCheckIcon }
 ] as const satisfies readonly Omit<SkillOption, 'id'>[]
 
 const skillOptions: readonly SkillOption[] = skills.map((skill) => ({

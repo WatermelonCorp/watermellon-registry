@@ -10,14 +10,14 @@ const Calendar10 = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialSelectedDate)
 
   return (
-    <div>
+    <div className='@container mx-auto w-full max-w-md px-2 sm:px-0'>
       <Calendar
         mode='single'
         selected={selectedDate}
         onSelect={setSelectedDate}
-        className='rounded-2xl border border-border/60 p-2 shadow-sm [--cell-size:--spacing(11)] md:[--cell-size:--spacing(13)]'
+        className='w-full rounded-2xl border border-border/60 p-2 shadow-sm [--cell-size:clamp(--spacing(8),10cqw,--spacing(13))]'
       />
-      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>
+      <p className='mt-3 text-center text-xs text-muted-foreground sm:text-[11px]' role='region'>
         Large cell calendar
       </p>
     </div>

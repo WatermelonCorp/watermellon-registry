@@ -23,7 +23,6 @@ import {
 } from '@/components/ui/command'
 import { Label } from '@/components/ui/label'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-
 type IndustryOption = {
   icon: ComponentType<SVGProps<SVGSVGElement>>
   label: string
@@ -106,7 +105,7 @@ const Combobox4 = () => {
           id={id}
           role='combobox'
           aria-expanded={open}
-          className='flex h-10 w-full items-center justify-between rounded-[1rem] border border-border/60 bg-background px-3.5 text-sm font-normal shadow-xs outline-offset-0 outline-none transition-colors hover:bg-accent/20 focus-visible:ring-[3px] focus-visible:ring-ring/50'
+          className='flex h-10 w-full items-center justify-between rounded-3xl border border-border/60 bg-background px-3.5 text-sm font-normal shadow-xs outline-offset-0 outline-none transition-colors hover:bg-accent/20 focus-visible:ring-[3px] focus-visible:ring-ring/50'
         >
           {selectedIndustryOption ? (
             <span className='flex min-w-0 items-center gap-2'>
@@ -124,10 +123,10 @@ const Combobox4 = () => {
           />
         </PopoverTrigger>
         <PopoverContent
-          className='w-full min-w-[var(--radix-popper-anchor-width)] rounded-[1rem] border-border/60 p-0 shadow-sm'
+          className='w-full min-w-(--radix-popper-anchor-width) overflow-hidden rounded-3xl border border-border/60 p-0 shadow-sm'
           align='start'
         >
-          <Command>
+          <Command className='rounded-3xl!'>
             <CommandInput placeholder='Search team areas...' className='h-9 px-1' />
             <CommandList>
               <CommandEmpty>No team area found.</CommandEmpty>

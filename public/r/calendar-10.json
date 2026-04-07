@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/calendar/calendar-10.tsx",
-      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui/calendar'\n\nconst initialSelectedDate = new Date()\n\nconst Calendar10 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialSelectedDate)\n\n  return (\n    <div>\n      <Calendar\n        mode='single'\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        className='rounded-2xl border border-border/60 p-2 shadow-sm [--cell-size:--spacing(11)] md:[--cell-size:--spacing(13)]'\n      />\n      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>\n        Large cell calendar\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar10\n",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui/calendar'\n\nconst initialSelectedDate = new Date()\n\nconst Calendar10 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialSelectedDate)\n\n  return (\n    <div className='@container mx-auto w-full max-w-md px-2 sm:px-0'>\n      <Calendar\n        mode='single'\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        className='w-full rounded-2xl border border-border/60 p-2 shadow-sm [--cell-size:clamp(--spacing(8),10cqw,--spacing(13))]'\n      />\n      <p className='mt-3 text-center text-xs text-muted-foreground sm:text-[11px]' role='region'>\n        Large cell calendar\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar10\n",
       "type": "registry:ui",
       "target": "components/ui/calendar-10.tsx"
     }

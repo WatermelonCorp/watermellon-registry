@@ -67,7 +67,7 @@ const Combobox6 = () => {
           id={id}
           role='combobox'
           aria-expanded={open}
-          className='flex h-10 w-full items-center justify-between rounded-[1rem] border border-border/60 bg-background px-3.5 text-sm font-normal shadow-xs outline-offset-0 outline-none transition-colors hover:bg-accent/20 focus-visible:ring-[3px] focus-visible:ring-ring/50'
+          className='flex h-10 w-full items-center justify-between rounded-3xl border border-border/60 bg-background px-3.5 text-sm font-normal shadow-xs outline-offset-0 outline-none transition-colors hover:bg-accent/20 focus-visible:ring-[3px] focus-visible:ring-ring/50'
         >
           <span
             className={cn(
@@ -87,10 +87,10 @@ const Combobox6 = () => {
           />
         </PopoverTrigger>
         <PopoverContent
-          className='w-full min-w-[var(--radix-popper-anchor-width)] rounded-[1rem] border-border/60 p-0 shadow-sm'
+          className='w-full min-w-(--radix-popper-anchor-width) overflow-hidden rounded-3xl border border-border/60 p-0 shadow-sm'
           align='start'
         >
-          <Command>
+          <Command className='rounded-3xl!'>
             <CommandInput placeholder='Find workspace' className='h-9 px-1' />
             <CommandList>
               <CommandEmpty>No workspace found.</CommandEmpty>

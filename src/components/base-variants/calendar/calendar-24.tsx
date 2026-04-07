@@ -66,11 +66,11 @@ const Calendar24 = () => {
   return (
     <div>
       <Card className='gap-0 rounded-[1.75rem] border-border/60 bg-muted/10 p-0 shadow-sm'>
-        <CardHeader className='flex h-max justify-center border-b border-dashed border-border/60 !p-4'>
+        <CardHeader className='flex h-max justify-center border-b border-dashed border-border/60 p-4!'>
           <CardTitle className='text-[1rem]'>Book your appointment</CardTitle>
         </CardHeader>
-        <CardContent className='relative p-0 md:pr-48'>
-          <div className='p-6'>
+        <CardContent className='relative flex flex-col p-0 max-[1439px]:items-center max-[1439px]:flex-col min-[1440px]:flex-row min-[1440px]:pr-48'>
+          <div className='p-3 sm:p-4 min-[1440px]:flex-1 min-[1440px]:p-6'>
             <Calendar
               mode='single'
               selected={selectedDate}
@@ -84,9 +84,9 @@ const Calendar24 = () => {
               formatters={calendarFormatters}
             />
           </div>
-          <div className='inset-y-0 right-0 flex w-full flex-col gap-4 border-t border-dashed border-border/60 max-md:h-60 md:absolute md:w-48 md:border-t-0 md:border-l'>
+          <div className='flex w-full flex-col gap-4 border-t border-dashed border-border/60 max-[1439px]:h-60 min-[1440px]:absolute min-[1440px]:inset-y-0 min-[1440px]:right-0 min-[1440px]:w-48 min-[1440px]:border-t-0 min-[1440px]:border-l'>
             <ScrollArea className='h-full'>
-              <div className='flex flex-col gap-2 p-6'>
+              <div className='flex flex-col gap-2 p-3 sm:p-4 min-[1440px]:p-6'>
                 {timeSlots.map(time => (
                   <Button
                     key={time}
@@ -105,7 +105,7 @@ const Calendar24 = () => {
             </ScrollArea>
           </div>
         </CardContent>
-        <CardFooter className='flex flex-col gap-4 border-t border-dashed border-border/60 px-6 !py-5 md:flex-row'>
+        <CardFooter className='flex flex-col gap-4 border-t border-dashed border-border/60 px-6 py-5! md:flex-row'>
           <div className='flex items-center gap-2 text-sm'>
             {selectedDate && selectedTime ? (
               <>

@@ -114,7 +114,7 @@ const Combobox8 = () => {
           id={id}
           role='combobox'
           aria-expanded={open}
-          className='flex h-10 w-full items-center justify-between rounded-[1rem] border border-border/60 bg-background px-3.5 text-sm shadow-xs outline-none transition-colors hover:bg-accent/20 focus-visible:ring-[3px] focus-visible:ring-ring/50'
+          className='flex h-10 w-full items-center justify-between rounded-3xl border border-border/60 bg-background px-3.5 text-sm shadow-xs outline-none transition-colors hover:bg-accent/20 focus-visible:ring-[3px] focus-visible:ring-ring/50'
         >
           {selectedUser ? (
             <span className='flex min-w-0 items-center gap-2'>
@@ -132,8 +132,8 @@ const Combobox8 = () => {
             aria-hidden='true'
           />
         </PopoverTrigger>
-        <PopoverContent className='w-[300px] rounded-[1rem] border-border/60 p-0 shadow-sm'>
-          <Command>
+        <PopoverContent className='w-75 overflow-hidden rounded-3xl border border-border/60 p-0 shadow-sm'>
+          <Command className='rounded-3xl!'>
             <CommandInput placeholder='Search assignee...' className='h-9 px-1' />
             <CommandList>
               <CommandEmpty>No assignee found.</CommandEmpty>

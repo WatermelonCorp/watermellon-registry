@@ -10,7 +10,7 @@ type CheckboxCopy = {
 }
 
 const checkboxCopy: CheckboxCopy = {
-  label: 'Simple todo list item'
+  label: 'Review weekly tasks'
 }
 
 const Checkbox4 = () => {

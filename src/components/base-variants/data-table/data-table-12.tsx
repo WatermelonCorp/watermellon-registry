@@ -176,14 +176,14 @@ const DataTable12 = () => {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
       <div className='flex justify-between gap-2 pb-4 max-sm:flex-col sm:items-center'>
         <div className='flex items-center space-x-2'>
           <Input
             placeholder='Search all columns...'
             value={searchQuery}
             onChange={(event) => setSearchQuery(event.target.value)}
-            className='h-10 max-w-sm rounded-full border-border/60 bg-muted/20 px-4'
+            className='h-10 max-w-sm rounded-lg border-border/60 bg-muted/20 px-4'
           />
         </div>
         <div className='flex items-center space-x-2'>
@@ -218,7 +218,7 @@ const DataTable12 = () => {
         </div>
       </div>
       <div className='overflow-hidden rounded-xl border border-border/60 bg-background shadow-sm'>
-        <Table>
+        <Table className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
           <TableHeader>
             <TableRow>
               <TableHead className='h-12 w-10 bg-muted/20 font-medium'>

@@ -82,8 +82,8 @@ const Combobox12 = () => {
             aria-hidden='true'
           />
         </PopoverTrigger>
-        <PopoverContent className='w-(--radix-popper-anchor-width) rounded-2xl border-border/60 p-0 shadow-sm'>
-          <Command>
+        <PopoverContent className='w-(--radix-popper-anchor-width) overflow-hidden rounded-2xl border border-border/60 p-0 shadow-sm'>
+          <Command className='rounded-2xl!'>
             <CommandInput placeholder='Search workflow tags...' className='h-10 px-2' />
             <CommandList>
               <CommandEmpty>No workflow tag found.</CommandEmpty>

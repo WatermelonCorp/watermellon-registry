@@ -250,7 +250,7 @@ const DataTable8 = () => {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
       <div className='overflow-hidden rounded-xl border border-border/60 bg-background shadow-sm'>
         <DndContext
           collisionDetection={closestCenter}

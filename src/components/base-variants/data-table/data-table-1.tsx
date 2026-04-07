@@ -80,9 +80,9 @@ const DataTable1 = () => {
   }
 
   return (
-    <div className='w-full'>
-      <div className='overflow-hidden rounded-lg border border-border/60 bg-background'>
-        <Table>
+    <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
+      <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 rounded-lg border border-border/60 bg-background overflow-x-auto'>
+        <Table className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220'>
           <TableHeader>
             <TableRow>
               <TableHead className='h-11 w-10 bg-muted/20 font-medium'>

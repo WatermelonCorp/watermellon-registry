@@ -86,21 +86,21 @@ const Combobox11 = () => {
           id={id}
           role='combobox'
           aria-expanded={open}
-          className='flex min-h-11 w-full items-start justify-between rounded-2xl border border-border/60 bg-background px-3.5 py-2.5 text-sm shadow-xs outline-none transition-colors hover:bg-accent/10 focus-visible:ring-[3px] focus-visible:ring-ring/50'
+          className='flex min-h-11 w-full items-start justify-between rounded-2xl border border-border/60 bg-background p-2 text-sm shadow-xs outline-none transition-colors hover:bg-accent/10 focus-visible:ring-[3px] focus-visible:ring-ring/50'
         >
-          <div className='flex flex-wrap items-center gap-2 pr-3'>
+          <div className='flex flex-wrap items-center gap-1.5 pr-3'>
             {selectedValues.length > 0 ? (
               <>
                 {visibleItems.map((value) => (
                   <Badge
                     key={value}
                     variant='outline'
-                    className='rounded-lg border-border/60 bg-muted/20 px-2.5 py-1 text-xs'
+                    className='rounded-lg border-border/60 bg-muted/20 px-2.5 py-3 text-xs'
                   >
                     {frameworkByValue[value]}
                     <button
                       type='button'
-                      className='ml-1 inline-flex size-4 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-accent/40 hover:text-foreground'
+                      className='ml-2.5 inline-flex size-4 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-accent/40 hover:text-foreground'
                       onClick={(event) => {
                         event.stopPropagation()
                         removeSelection(value)
@@ -132,8 +132,8 @@ const Combobox11 = () => {
             aria-hidden='true'
           />
         </PopoverTrigger>
-        <PopoverContent className='w-(--radix-popper-anchor-width) rounded-2xl border-border/60 p-0 shadow-sm'>
-          <Command>
+        <PopoverContent className='w-(--radix-popper-anchor-width) overflow-hidden rounded-2xl border border-border/60 p-0 shadow-sm'>
+          <Command className='rounded-2xl!'>
             <CommandInput
               placeholder='Search workflow tags...'
               className='h-10 px-2'

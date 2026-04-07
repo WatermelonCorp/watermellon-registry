@@ -24,20 +24,25 @@ const formatDateRange = (range: DateRange) => {
   return 'Pick a date range'
 }
 
-const calendarClassNames = {
-  range_start: 'rounded-l-full bg-slate-900/10 dark:bg-white/10',
-  range_end: 'rounded-r-full bg-slate-900/10 dark:bg-white/10',
-  day_button:
-    'data-[range-end=true]:rounded-full! data-[range-start=true]:rounded-full! data-[range-start=true]:bg-slate-900! data-[range-start=true]:text-white! data-[range-start=true]:dark:bg-white! data-[range-start=true]:dark:text-slate-950! data-[range-end=true]:bg-slate-900! data-[range-end=true]:text-white! data-[range-end=true]:dark:bg-white! data-[range-end=true]:dark:text-slate-950! data-[range-middle=true]:rounded-none data-[range-middle=true]:bg-slate-900/10 data-[range-middle=true]:dark:bg-white/10 hover:rounded-full',
-  today:
-    'rounded-full bg-muted/60! data-[selected=true]:rounded-l-none! data-[selected=true]:bg-slate-900/10! dark:data-[selected=true]:bg-white/10!'
-} satisfies CalendarClassNames
-
 const DatePicker2 = () => {
   const id = useId()
   const [selectedRange, setSelectedRange] = useState<DateRange | undefined>(
     undefined
   )
+  const hasCompletedRange = Boolean(selectedRange?.from && selectedRange?.to)
+
+  const calendarClassNames = {
+    range_start: hasCompletedRange
+      ? 'relative isolate rounded-l-full bg-transparent before:hidden after:absolute after:inset-y-0 after:right-0 after:w-1/2 after:bg-slate-900/10 dark:after:bg-white/10'
+      : 'rounded-full bg-transparent after:hidden before:hidden',
+    range_end: hasCompletedRange
+      ? 'relative isolate rounded-r-full bg-transparent after:hidden before:absolute before:inset-y-0 before:left-0 before:w-1/2 before:bg-slate-900/10 dark:before:bg-white/10'
+      : 'rounded-full bg-transparent after:hidden before:hidden',
+    day_button:
+      'data-[range-end=true]:rounded-full! data-[range-start=true]:rounded-full! data-[range-start=true]:bg-slate-900! data-[range-start=true]:text-white! data-[range-start=true]:dark:bg-white! data-[range-start=true]:dark:text-slate-950! data-[range-end=true]:bg-slate-900! data-[range-end=true]:text-white! data-[range-end=true]:dark:bg-white! data-[range-end=true]:dark:text-slate-950! data-[range-middle=true]:rounded-none data-[range-middle=true]:bg-slate-900/10 data-[range-middle=true]:dark:bg-white/10 hover:rounded-full',
+    today:
+      'rounded-full bg-muted/60! data-[selected=true]:rounded-full! data-[range-start=true]:bg-transparent! data-[range-end=true]:bg-transparent! data-[range-middle=true]:bg-transparent!'
+  } satisfies CalendarClassNames
 
   return (
     <div className='w-full max-w-xs space-y-2'>

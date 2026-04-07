@@ -22,7 +22,7 @@ const Calendar20 = () => {
   return (
     <div>
       <Card className='gap-5 rounded-[1.75rem] border-border/60 bg-muted/10 py-5 shadow-sm'>
-        <CardHeader className='flex items-center border-b border-dashed border-border/60 px-4 !pb-3'>
+        <CardHeader className='flex flex-col items-start gap-3 border-b border-dashed border-border/60 px-4 pb-3!'>
           <Label
             htmlFor={id}
             className='text-[11px] font-medium uppercase tracking-wide text-muted-foreground'

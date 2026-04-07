@@ -9,7 +9,7 @@ import { Checkbox as CheckboxPrimitive } from '@base-ui/react/checkbox'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
 
-const items = ['Child 1', 'Child 2', 'Child 3'] as const
+const items = ['Module 1', 'Module 2', 'Module 3'] as const
 
 type Item = (typeof items)[number]
 type CheckboxRootProps = CheckboxPrimitive.Root.Props
@@ -47,8 +47,8 @@ const Checkbox = ({
 
 const Checkbox15 = () => {
   const [selectedItems, setSelectedItems] = useState<Item[]>([
-    'Child 1',
-    'Child 2'
+    'Module 1',
+    'Module 2'
   ])
 
   const allChildrenSelected = useMemo(
@@ -88,7 +88,7 @@ const Checkbox15 = () => {
           onCheckedChange={handleParentCheckedChange}
         />
         <Label htmlFor='parent' className='text-sm font-medium'>
-          Parent
+          Select all modules
         </Label>
       </div>
       <div className='flex flex-col gap-2 pl-6'>

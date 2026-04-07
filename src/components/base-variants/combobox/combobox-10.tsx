@@ -73,7 +73,7 @@ const Combobox10 = () => {
           id={id}
           role='combobox'
           aria-expanded={open}
-          className='flex min-h-10 w-full items-start justify-between rounded-xl border border-border/60 bg-background px-3 py-2 text-sm shadow-xs outline-none transition-colors hover:bg-accent/10 focus-visible:ring-[3px] focus-visible:ring-ring/50'
+          className='flex min-h-10 w-full items-start justify-between rounded-xl border border-border/60 bg-background px-2 py-2 text-sm shadow-xs outline-none transition-colors hover:bg-accent/10 focus-visible:ring-[3px] focus-visible:ring-ring/50'
         >
           <div className='flex flex-wrap items-center gap-1.5 pr-2.5'>
             {selectedValues.length > 0 ? (
@@ -81,12 +81,12 @@ const Combobox10 = () => {
                 <Badge
                   key={value}
                   variant='outline'
-                  className='rounded-md border-border/60 bg-background px-2.5 py-1'
+                  className='rounded-md border-border/60 bg-background pl-2.5 pr-2 py-3!'
                 >
                   {frameworkByValue[value]}
                   <button
                     type='button'
-                    className='ml-1 inline-flex size-4 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-accent/40 hover:text-foreground'
+                    className='ml-2.5 inline-flex size-4 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-accent/40 hover:text-foreground'
                     onClick={(event) => {
                       event.stopPropagation()
                       removeSelection(value)
@@ -101,7 +101,7 @@ const Combobox10 = () => {
             )}
           </div>
           <ChevronsUpDownIcon
-            className='text-muted-foreground/80 mt-0.5 size-4 shrink-0'
+            className='text-muted-foreground/80 mt-1 size-4 shrink-0'
             aria-hidden='true'
           />
         </PopoverTrigger>

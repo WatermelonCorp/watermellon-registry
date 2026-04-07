@@ -8,12 +8,12 @@ import { Label } from '@/components/ui/label'
 const settingOptions = [
   {
     id: 'auto-start',
-    label: 'Auto Start',
+    label: 'Launch at startup',
     description: 'Starting with your OS.'
   },
   {
     id: 'auto-update',
-    label: 'Auto update',
+    label: 'Install updates automatically',
     description: 'Download and install new version'
   }
 ] as const

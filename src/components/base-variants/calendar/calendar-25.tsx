@@ -23,14 +23,21 @@ const calendarComponents = {
     const isLowPrice = price < 100
 
     return (
-      <CalendarDayButton day={day} modifiers={modifiers} {...props}>
+      <CalendarDayButton
+        day={day}
+        modifiers={modifiers}
+        {...props}
+        className='flex-col gap-0.5 px-1 py-1 sm:gap-1 sm:px-2 sm:py-2'
+      >
         {children}
         {!modifiers.outside && (
           <span
             className={
-              isLowPrice
-                ? 'font-medium text-emerald-600 dark:text-emerald-400'
-                : 'text-muted-foreground'
+              modifiers.selected
+                ? 'text-[0.6rem] leading-none text-zinc-100 opacity-100 sm:text-xs'
+                : isLowPrice
+                  ? 'text-[0.6rem] leading-none font-medium text-emerald-600 dark:text-emerald-400 sm:text-xs'
+                  : 'text-[0.6rem] leading-none text-muted-foreground sm:text-xs'
             }
           >
             ${price}
@@ -47,18 +54,18 @@ const Calendar25 = () => {
   )
 
   return (
-    <div>
+    <div className='mx-auto w-full max-w-[20rem] px-2 sm:max-w-[24rem] sm:px-0 lg:max-w-104'>
       <Calendar
         mode='single'
         selected={selectedDate}
         onSelect={setSelectedDate}
         showOutsideDays={false}
-        className='rounded-[1.75rem] border border-border/60 bg-muted/10 p-3 shadow-sm [--cell-size:--spacing(12)]'
+        className='w-full rounded-[1.75rem] border border-border/60 bg-muted/10 p-2 shadow-sm [--cell-size:--spacing(8)] sm:p-3 sm:[--cell-size:--spacing(10)] lg:[--cell-size:--spacing(12)]'
         components={calendarComponents}
         disabled={{ before: minimumAvailableDate }}
       />
       <p
-        className='text-muted-foreground mt-4 text-center text-[11px] uppercase tracking-wide'
+        className='text-muted-foreground mt-4 text-center text-[10px] uppercase tracking-wide sm:text-[11px]'
         role='region'
       >
         Calendar with pricing

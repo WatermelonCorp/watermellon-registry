@@ -11,7 +11,7 @@ type CheckboxCopy = {
 }
 
 const checkboxCopy: CheckboxCopy = {
-  label: 'Accept terms and conditions',
+  label: 'Subscribe to updates',
   description: 'By clicking this checkbox, you agree to the terms and conditions.'
 }
 

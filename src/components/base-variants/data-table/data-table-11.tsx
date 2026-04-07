@@ -148,9 +148,9 @@ const DataTable11 = () => {
   }
 
   return (
-    <div className='w-full space-y-4'>
+    <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto space-y-4'>
       <div className='overflow-hidden rounded-xl border border-border/60 bg-background shadow-sm'>
-        <Table>
+        <Table className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
           <TableHeader>
             <TableRow className='hover:bg-transparent'>
               <TableHead className='h-12 w-10 bg-muted/20 font-medium'>

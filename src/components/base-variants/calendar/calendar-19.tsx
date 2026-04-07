@@ -35,7 +35,7 @@ const Calendar19 = () => {
   }
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
+    const { value } = e.target
 
     setInputValue(value)
 
@@ -56,21 +56,21 @@ const Calendar19 = () => {
 
   return (
     <div>
-      <Card className='gap-5 rounded-[1.75rem] border-border/60 bg-muted/10 py-5 shadow-sm'>
-        <CardHeader className='flex items-center border-b border-dashed border-border/60 px-4 !pb-3'>
+      <Card className='w-full max-w-lg gap-5 rounded-[1.75rem] border-border/60 bg-muted/10 py-5 shadow-sm'>
+        <CardHeader className='flex flex-col items-start gap-3 border-b border-dashed border-border/60 px-4 pb-3!'>
           <Label
             htmlFor={id}
             className='shrink-0 text-[11px] font-medium uppercase tracking-wide text-muted-foreground'
           >
             Enter date
           </Label>
-          <div className='relative grow'>
+          <div className='relative w-fit'>
             <Input
               id={id}
               type='date'
               value={inputValue}
               onChange={handleInputChange}
-              className='peer h-9 appearance-none rounded-full border-border/60 bg-background pl-9 text-sm shadow-xs [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none'
+              className='peer h-9 w-full min-w-0 appearance-none rounded-full border-border/60 bg-background pl-9 text-sm shadow-xs [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none'
               aria-label='Select date'
             />
             <div className='text-muted-foreground/80 pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 peer-disabled:opacity-50'>

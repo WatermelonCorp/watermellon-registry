@@ -188,7 +188,7 @@ const DataTable4 = () => {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto'>
       <div className='overflow-hidden rounded-xl border border-border/60 bg-background shadow-sm'>
         <div className='grid gap-3 border-b border-dashed border-border/60 px-4 py-5 md:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))]'>
           <div className='space-y-2'>
@@ -229,12 +229,12 @@ const DataTable4 = () => {
           </div>
 
           <div className='space-y-2'>
-            <Label htmlFor='availability-filter'>Availability</Label>
+            <Label htmlFor='availability-filter' >Availability</Label>
             <Select
               value={filters.availability}
               onValueChange={(value) => updateFilter('availability', value as FilterState['availability'])}
             >
-              <SelectTrigger id='availability-filter' className='h-10 w-full rounded-md border-border/60'>
+              <SelectTrigger id='availability-filter' className='h-10 w-full rounded-lg border-border/60 py-[19px]'>
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -269,7 +269,7 @@ const DataTable4 = () => {
           </div>
         </div>
 
-        <Table className='[&_td]:align-top'>
+        <Table className='w-60 sm:w-100 md:w-120 lg:w-160 2xl:w-220 mx-auto [&_td]:align-top'>
           <TableHeader>
             <TableRow>
               <TableHead className='h-12 w-10 border-b border-dashed border-border/60 bg-transparent font-medium'>

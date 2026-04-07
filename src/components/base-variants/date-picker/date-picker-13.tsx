@@ -142,7 +142,7 @@ const DatePicker13: FC = () => {
             <ChartTooltip
               content={
                 <ChartTooltipContent
-                  className='w-[150px]'
+                  className='w-37.5'
                   nameKey='visitors'
                   labelFormatter={value => {
                     return new Date(value).toLocaleDateString('en-US', {
@@ -157,7 +157,7 @@ const DatePicker13: FC = () => {
             <Bar dataKey='visitors' fill="#3b82f6" radius={8} />
           </BarChart>
         </ChartContainer>
-        <div className='mt-6 text-center text-base text-muted-foreground'>
+        <div className='mt-6 text-center text-sm leading-relaxed text-muted-foreground sm:text-base sm:leading-normal'>
           Analyze your sales trends and adjust your strategy for better results.
         </div>
       </CardContent>

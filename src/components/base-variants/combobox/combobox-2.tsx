@@ -59,7 +59,7 @@ const Combobox2 = () => {
             <span className='text-muted-foreground'>Select option</span>
           )}
           <ChevronsUpDownIcon
-            className='text-muted-foreground/80 shrink-0'
+            className='text-muted-foreground/80 shrink-0 size-4'
             aria-hidden='true'
           />
         </PopoverTrigger>

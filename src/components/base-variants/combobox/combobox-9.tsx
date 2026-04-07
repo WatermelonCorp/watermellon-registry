@@ -106,12 +106,12 @@ const Combobox9 = () => {
           />
         </PopoverTrigger>
         <PopoverContent
-          className='w-full min-w-[var(--radix-popper-anchor-width)] rounded-xl border-border/60 p-0 shadow-sm'
+          className='w-full min-w-(--radix-popper-anchor-width) rounded-xl border-border/60 p-0 shadow-sm'
           align='start'
         >
           <Command>
             <CommandInput placeholder='Search country...' className='h-9 px-1' />
-            <CommandList>
+            <CommandList className='mt-2 rounded-lg px-1 pb-1'>
               <CommandEmpty>No country found.</CommandEmpty>
               {countries.map((country) => (
                 <CommandItem
@@ -131,7 +131,7 @@ const Combobox9 = () => {
                     setSelectedCountry(currentValue)
                     setOpen(false)
                   }}
-                  className='rounded-md'
+                  className='rounded-lg'
                 >
                   <img
                     src={country.flag}

@@ -10,7 +10,7 @@ type CheckboxCopy = {
 }
 
 const checkboxCopy: CheckboxCopy = {
-  label: 'Accept terms and conditions',
+  label: 'Subscribe to product updates',
 }
 
 const Checkbox3 = () => {

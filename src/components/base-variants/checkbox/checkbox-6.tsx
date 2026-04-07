@@ -5,14 +5,14 @@ import { useState } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Checkbox } from '@/components/ui/checkbox'
 
-const snacks = ['Burger', 'Pizza', 'Drinks'] as const
+const snacks = ['Salad', 'Wrap', 'Juice'] as const
 
 type Snack = (typeof snacks)[number]
 
 const Checkbox6 = () => {
   const [selectedSnacks, setSelectedSnacks] = useState<Snack[]>([
-    'Burger',
-    'Pizza'
+    'Salad',
+    'Wrap'
   ])
 
   const handleCheckedChange = (snack: Snack, checked: boolean) => {

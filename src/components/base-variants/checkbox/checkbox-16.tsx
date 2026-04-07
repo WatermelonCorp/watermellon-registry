@@ -12,7 +12,7 @@ type CheckboxCopy = {
 }
 
 const checkboxCopy: CheckboxCopy = {
-  label: 'Agree to the usage policy',
+  label: 'Receive email notifications',
   description: 'You confirm that you have read and accepted the current usage guidelines.'
 }
 
