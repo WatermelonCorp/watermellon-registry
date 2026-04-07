@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-8",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/card/card-8.tsx",
+      "content": "import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'\r\n\r\ntype TextCard = {\r\n  body: string\r\n  title: string\r\n}\r\n\r\nconst textCard: TextCard = {\r\n  body: 'A focused sprint for concepts, critique, and quick iterations. Bring one strong direction and refine it through shared feedback.',\r\n  title: 'Studio Review'\r\n}\r\n\r\nconst Card8 = () => {\r\n  return (\r\n    <Card className='max-w-md gap-0 border-border/70 bg-sky-50/70 shadow-sm dark:bg-neutral-950/20'>\r\n      <CardHeader className='pb-3'>\r\n        <CardTitle>{textCard.title}</CardTitle>\r\n      </CardHeader>\r\n      <CardContent className='text-sm leading-6 text-muted-foreground'>{textCard.body}</CardContent>\r\n    </Card>\r\n  )\r\n}\r\n\r\nexport default Card8\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/card-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-2",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/collapsible/collapsible-2.tsx",
+      "content": "'use client';\r\n\r\nimport { useState } from 'react';\r\n\r\nimport {\r\n  ChevronRightIcon,\r\n  FileIcon,\r\n  FolderIcon,\r\n  FolderOpenIcon,\r\n} from 'lucide-react';\r\n\r\nimport {\r\n  Collapsible,\r\n  CollapsibleContent,\r\n  CollapsibleTrigger,\r\n} from '@/components/ui/collapsible';\r\n\r\ntype FileTreeItem =\r\n  | {\r\n      name: string;\r\n      type: 'file';\r\n      children?: never;\r\n    }\r\n  | {\r\n      children: readonly FileTreeItem[];\r\n      name: string;\r\n      type: 'folder';\r\n    };\r\n\r\nconst fileTree: readonly FileTreeItem[] = [\r\n  {\r\n    name: 'src',\r\n    type: 'folder',\r\n    children: [\r\n      {\r\n        name: 'sections',\r\n        type: 'folder',\r\n        children: [\r\n          { name: 'hero.tsx', type: 'file' },\r\n          { name: 'features.tsx', type: 'file' },\r\n          { name: 'pricing.tsx', type: 'file' },\r\n        ],\r\n      },\r\n      { name: 'layout.tsx', type: 'file' },\r\n    ],\r\n  },\r\n  {\r\n    name: 'content',\r\n    type: 'folder',\r\n    children: [{ name: 'copy.md', type: 'file' }],\r\n  },\r\n  {\r\n    name: 'styles',\r\n    type: 'folder',\r\n    children: [{ name: 'tokens.css', type: 'file' }],\r\n  },\r\n  {\r\n    name: 'site.config.ts',\r\n    type: 'file',\r\n  },\r\n] as const;\r\n\r\ntype FileTreeProps = {\r\n  item: FileTreeItem;\r\n  level: number;\r\n};\r\n\r\nconst FileTree = ({ item, level }: FileTreeProps) => {\r\n  if (item.type === 'file') {\r\n    return (\r\n      <div\r\n        className=\"text-muted-foreground flex items-center gap-2 rounded-md px-2 py-1 text-sm outline-none\"\r\n        style={{ paddingLeft: `${level === 0 ? 1.75 : 3.25}rem` }}\r\n      >\r\n        <FileIcon className=\"size-4 shrink-0\" />\r\n        <span>{item.name}</span>\r\n      </div>\r\n    );\r\n  }\r\n\r\n  return <FolderTree item={item} level={level} />;\r\n};\r\n\r\ntype FolderTreeProps = {\r\n  item: Extract<FileTreeItem, { type: 'folder' }>;\r\n  level: number;\r\n};\r\n\r\nconst FolderTree = ({ item, level }: FolderTreeProps) => {\r\n  const [open, setOpen] = useState<boolean>(false);\r\n\r\n  return (\r\n    <Collapsible\r\n      open={open}\r\n      onOpenChange={setOpen}\r\n      className=\"flex flex-col gap-1\"\r\n      style={{ paddingLeft: `${level === 0 ? 0 : 1.5}rem` }}\r\n    >\r\n      <CollapsibleTrigger className=\"hover:bg-muted/40 flex items-center gap-2 rounded-md px-2 py-1 text-sm outline-none\">\r\n        <ChevronRightIcon\r\n          className={`size-4 shrink-0 transition-transform ${open ? 'rotate-90' : ''}`}\r\n        />\r\n        {open ? (\r\n          <FolderOpenIcon className=\"text-muted-foreground size-4 shrink-0\" />\r\n        ) : (\r\n          <FolderIcon className=\"text-muted-foreground size-4 shrink-0\" />\r\n        )}\r\n        <span>{item.name}</span>\r\n      </CollapsibleTrigger>\r\n      <CollapsibleContent className=\"flex flex-col gap-1\">\r\n        {item.children.map((child) => (\r\n          <FileTree\r\n            key={`${item.name}-${child.name}`}\r\n            item={child}\r\n            level={level + 1}\r\n          />\r\n        ))}\r\n      </CollapsibleContent>\r\n    </Collapsible>\r\n  );\r\n};\r\n\r\nconst Collapsible2 = () => {\r\n  return (\r\n    <div className=\"flex w-full max-w-56 flex-col gap-2 p-2\">\r\n      {fileTree.map((item) => (\r\n        <FileTree key={item.name} item={item} level={0} />\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Collapsible2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/collapsible-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

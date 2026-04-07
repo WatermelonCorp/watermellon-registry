@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-14",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/accordion/accordion-14.tsx",
+      "content": "import * as AccordionPrimitive from '@radix-ui/react-accordion'\r\nimport { PlusIcon, XIcon } from 'lucide-react'\r\n\r\nimport { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion'\r\n\r\ntype AccordionItemData = {\r\n  value: string\r\n  title: string\r\n  content: string\r\n}\r\n\r\nconst items: readonly AccordionItemData[] = [\r\n  {\r\n    value: 'item-1',\r\n    title: 'Why do support queues grow unexpectedly in SaaS products?',\r\n    content:\r\n      'Support queues usually spike when billing issues, onboarding blockers, and product questions all land in the same channel. Clearer triage and self-serve guidance help teams resolve simple requests before they become backlog.'\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    title: 'How can onboarding flows reduce early drop-off?',\r\n    content:\r\n      'Early drop-off often happens when users are asked to do too much before they see value. Simpler setup, clearer progress states, and fewer decisions in the first session help new users stay engaged longer.'\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    title: 'What makes feature discovery feel more natural?',\r\n    content:\r\n      'Feature discovery works best when guidance appears at the right moment instead of being packed into one tour. Small, contextual prompts help users learn the product without interrupting the task they came to complete.'\r\n  }\r\n] as const\r\n\r\nconst Accordion14 = () => {\r\n  return (\r\n    <Accordion className='w-full space-y-1.5' type=\"multiple\" defaultValue={[items[0].value]}>\r\n      {items.map((item) => (\r\n        <AccordionItem\r\n          key={item.value}\r\n          value={item.value}\r\n          className='rounded-md border border-border/80 bg-background px-4'\r\n        >\r\n          <AccordionPrimitive.Header className='flex'>\r\n            <AccordionPrimitive.Trigger\r\n              data-slot='accordion-trigger'\r\n              className='group/accordion-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 py-4 text-left text-sm font-medium outline-none transition-all hover:no-underline focus-visible:ring-[3px] aria-disabled:pointer-events-none aria-disabled:opacity-50'\r\n            >\r\n              <span className='pr-4'>{item.title}</span>\r\n\r\n              <span className='relative flex size-8 shrink-0 items-center justify-center rounded-full border border-border/70 text-muted-foreground transition-colors group-aria-expanded/accordion-trigger:bg-muted'>\r\n                <PlusIcon className='absolute inset-0 m-auto size-4 group-aria-expanded/accordion-trigger:hidden' />\r\n                <XIcon className='absolute inset-0 m-auto hidden size-4 group-aria-expanded/accordion-trigger:block' />\r\n              </span>\r\n            </AccordionPrimitive.Trigger>\r\n          </AccordionPrimitive.Header>\r\n\r\n          <AccordionContent className='pb-4 text-sm leading-6 text-muted-foreground'>\r\n            {item.content}\r\n          </AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  )\r\n}\r\n\r\nexport default Accordion14\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-14.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

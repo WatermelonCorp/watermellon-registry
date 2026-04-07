@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-10",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/accordion/accordion-10.tsx",
+      "content": "import * as AccordionPrimitive from '@radix-ui/react-accordion'\r\nimport { MinusIcon, PlusIcon } from 'lucide-react'\r\n\r\nimport { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion'\r\n\r\ntype AccordionItemData = {\r\n  value: string\r\n  title: string\r\n  content: string\r\n}\r\n\r\nconst items: readonly AccordionItemData[] = [\r\n  {\r\n    value: 'item-1',\r\n    title: 'Why do itinerary changes create so much confusion?',\r\n    content:\r\n      'Travel plans usually break down when flight updates, hotel changes, and local transfers are shown in different places. A better trip experience keeps every change in one timeline so travelers understand what changed and what action is needed.'\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    title: 'How can booking support feel less reactive?',\r\n    content:\r\n      'Support works better when travelers can see booking status, policy details, and next-step guidance before they contact an agent. That context reduces repeat questions and helps teams focus on the cases that actually need intervention.'\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    title: 'What makes multi-city planning harder than expected?',\r\n    content:\r\n      'Multi-city trips become difficult when reservations, check-in windows, and local logistics are managed separately. Stronger coordination tools help people compare timing, spot conflicts, and move through the journey with less friction.'\r\n  }\r\n] as const\r\n\r\nconst Accordion10 = () => {\r\n  return (\r\n    <Accordion className='w-full rounded-xl border' type=\"multiple\" defaultValue={[items[0].value]}>\r\n      {items.map((item) => (\r\n        <AccordionItem key={item.value} value={item.value}>\r\n          <AccordionPrimitive.Header className='flex'>\r\n            <AccordionPrimitive.Trigger\r\n              data-slot='accordion-trigger'\r\n              className='group/accordion-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium outline-none transition-all focus-visible:ring-[3px] aria-expanded:text-blue-600 dark:aria-expanded:text-blue-400 aria-disabled:pointer-events-none aria-disabled:opacity-50'\r\n            >\r\n              <span>{item.title}</span>\r\n              <span className='relative size-4 shrink-0 text-muted-foreground'>\r\n                <PlusIcon className='absolute inset-0 size-4 group-aria-expanded/accordion-trigger:hidden' />\r\n                <MinusIcon className='absolute inset-0 hidden size-4 group-aria-expanded/accordion-trigger:block' />\r\n              </span>\r\n            </AccordionPrimitive.Trigger>\r\n          </AccordionPrimitive.Header>\r\n\r\n          <AccordionContent className='px-5 text-muted-foreground'>\r\n            {item.content}\r\n          </AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  )\r\n}\r\n\r\nexport default Accordion10\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

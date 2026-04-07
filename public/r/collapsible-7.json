@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-7",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/collapsible/collapsible-7.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { ChevronUpIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { Card, CardAction, CardContent, CardTitle } from '@/components/ui/card'\r\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'\r\n\r\ntype HelpCard = {\r\n  answer: string\r\n  imageAlt: string\r\n  imageSrc: string\r\n  question: string\r\n}\r\n\r\nconst helpCard: HelpCard = {\r\n  answer:\r\n    'Once your shipment is packed, we will send a delivery link by email. You can open it any time to see the courier status and the latest package movement.',\r\n  imageAlt: 'Package ready for shipment on a desk',\r\n  imageSrc: 'https://images.pexels.com/photos/6169132/pexels-photo-6169132.jpeg?auto=compress&cs=tinysrgb&w=1200',\r\n  question: 'How can I follow a shipment update?'\r\n}\r\n\r\nconst Collapsible7 = () => {\r\n  const [open, setOpen] = useState<boolean>(false)\r\n\r\n  return (\r\n    <Card className='w-full max-w-md overflow-hidden border-border/70 p-0  shadow-xl rounded-none'>\r\n      <Collapsible open={open} onOpenChange={setOpen}>\r\n        <div className='flex items-center justify-between px-6 py-5'>\r\n          <CardTitle className='text-base'>{helpCard.question}</CardTitle>\r\n          <CardAction>\r\n            <CollapsibleTrigger>\r\n              <Button variant='outline' size='sm' className='border-border/70'>\r\n                <span>{open ? 'Hide' : 'Show'}</span>\r\n                <ChevronUpIcon className={`size-4 transition-transform ${open ? '' : 'rotate-180'}`} />\r\n              </Button>\r\n            </CollapsibleTrigger>\r\n          </CardAction>\r\n        </div>\r\n        <CollapsibleContent>\r\n          <CardContent className='space-y-3 px-0 pb-0'>\r\n            <p className='px-6 text-sm leading-6 text-muted-foreground'>{helpCard.answer}</p>\r\n            <img src={helpCard.imageSrc} alt={helpCard.imageAlt} className='aspect-video h-70 w-full object-cover' />\r\n          </CardContent>\r\n        </CollapsibleContent>\r\n      </Collapsible>\r\n    </Card>\r\n  )\r\n}\r\n\r\nexport default Collapsible7\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/collapsible-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

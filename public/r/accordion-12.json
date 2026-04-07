@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-12",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/accordion/accordion-12.tsx",
+      "content": "import * as AccordionPrimitive from '@radix-ui/react-accordion'\r\nimport { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'\r\n\r\nimport { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion'\r\n\r\ntype AccordionItemData = {\r\n  value: string\r\n  title: string\r\n  content: string\r\n}\r\n\r\nconst items: readonly AccordionItemData[] = [\r\n  {\r\n    value: 'item-1',\r\n    title: 'Why do onboarding tasks get missed so often?',\r\n    content:\r\n      'HR onboarding usually breaks down when training, paperwork, and access setup live in separate tools. A stronger onboarding flow helps new hires see what is pending, who owns each step, and what needs to happen next.'\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    title: 'How can managers keep performance reviews more consistent?',\r\n    content:\r\n      'Performance reviews become inconsistent when expectations, feedback notes, and historical context are scattered. Better review systems make goals visible, track feedback over time, and reduce bias introduced by missing context.'\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    title: 'What makes time-off coordination harder for growing teams?',\r\n    content:\r\n      'Time-off planning gets messy when approvals, team coverage, and policy rules are not connected. A clearer HR workflow helps employees request leave confidently while giving managers enough visibility to plan around absences.'\r\n  }\r\n] as const\r\n\r\nconst Accordion12 = () => {\r\n  return (\r\n    <Accordion className='w-full space-y-2' type=\"multiple\" defaultValue={[items[0].value]}>\r\n      {items.map((item) => (\r\n        <AccordionItem\r\n          key={item.value}\r\n          value={item.value}\r\n          className='rounded-md border border-transparent bg-background px-5 transition-[border-color,box-shadow] duration-200 has-[button[aria-expanded=true]]:border-border has-[button[aria-expanded=true]]:shadow-md'\r\n        >\r\n          <AccordionPrimitive.Header className='flex'>\r\n            <AccordionPrimitive.Trigger\r\n              data-slot='accordion-trigger'\r\n              className='group/accordion-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 rounded-md py-4 text-left text-sm font-medium outline-none transition-all hover:underline focus-visible:ring-[3px] aria-disabled:pointer-events-none aria-disabled:opacity-50'\r\n            >\r\n              {item.title}\r\n              <span className='relative size-4 shrink-0 text-muted-foreground'>\r\n                <ChevronDownIcon className='absolute inset-0 size-4 group-aria-expanded/accordion-trigger:hidden' />\r\n                <ChevronUpIcon className='absolute inset-0 hidden size-4 group-aria-expanded/accordion-trigger:block' />\r\n              </span>\r\n            </AccordionPrimitive.Trigger>\r\n          </AccordionPrimitive.Header>\r\n          <AccordionContent className='text-muted-foreground'>{item.content}</AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  )\r\n}\r\n\r\nexport default Accordion12\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

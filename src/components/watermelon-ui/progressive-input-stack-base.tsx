@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, ArrowLeft } from "lucide-react";
-import { FaCheck } from "react-icons/fa6";
-import { cn } from "@/lib/utils";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { FaCheck } from 'react-icons/fa6';
+import { cn } from '@/lib/utils';
 
 export interface StepData {
   id: string;
   label: string;
-  type: "text" | "toggle";
+  type: 'text' | 'toggle';
   placeholder?: string;
 }
 
@@ -29,14 +29,14 @@ export const ProgressiveInputStack: React.FC<ProgressiveInputStackProps> = ({
       steps.reduce(
         (acc, step) => ({
           ...acc,
-          [step.id]: step.type === "toggle" ? false : "",
+          [step.id]: step.type === 'toggle' ? false : '',
         }),
-        {}
-      )
+        {},
+      ),
   );
 
   const springTransition = {
-    type: "spring" as const,
+    type: 'spring' as const,
     stiffness: 800,
     damping: 45,
     mass: 2,
@@ -61,141 +61,135 @@ export const ProgressiveInputStack: React.FC<ProgressiveInputStackProps> = ({
   };
 
   return (
-    <div className="theme-injected flex min-h-[200px] w-full flex-col items-center justify-center p-6 transition-colors duration-500">
-      <div className="w-full max-w-[350px]">
-        <div className="relative flex w-full flex-col gap-8">
-          <div className="relative h-[60px] w-full">
-            <AnimatePresence mode="popLayout" initial={false}>
-              {steps.map((step, index) => {
-                if (index > currentStep) return null;
+    <div className="relative flex w-xs flex-col gap-8 sm:w-sm">
+      <div className="relative h-[60px] w-full">
+        <AnimatePresence mode="popLayout" initial={false}>
+          {steps.map((step, index) => {
+            if (index > currentStep) return null;
 
-                const position = currentStep - index;
-                const isTop = index === currentStep;
+            const position = currentStep - index;
+            const isTop = index === currentStep;
 
-                return (
-                  <motion.div
-                    key={step.id}
-                    initial={{ opacity: 0, scale: 1.2, y: 15, z: steps.length }}
-                    animate={{
-                      opacity: 1,
-                      scale: 1 - position * 0.05,
-                      y: -position * 12,
-                      z: steps.length - position,
-                    }}
-                    exit={{
-                      opacity: 0,
-                      scale: 1.2,
-                      y: 15,
-                    }}
-                    transition={springTransition}
-                    className={cn(
-                      "border-border bg-card absolute inset-0 flex h-[60px] items-center rounded-lg border px-4 shadow-sm transition-colors",
-                      !isTop && "pointer-events-none opacity-50"
-                    )}
-                  >
-                    {step.type === "text" && (
-                      <input
-                        autoFocus={isTop}
-                        type="text"
-                        value={formData[step.id] as string}
-                        onChange={(e) => updateField(step.id, e.target.value)}
-                        placeholder={step.placeholder}
-                        className="text-foreground placeholder:text-muted-foreground/70 w-full bg-transparent text-lg font-semibold outline-none"
-                      />
-                    )}
-
-                    {step.type === "toggle" && (
-                      <div className="flex w-full items-center justify-between">
-                        <span className="text-muted-foreground truncate text-lg font-semibold">
-                          {step.label}
-                        </span>
-
-                        <button
-                          onClick={() =>
-                            updateField(step.id, !formData[step.id])
-                          }
-                          className={cn(
-                            "relative flex h-7 w-12 items-center rounded-lg p-1 transition-colors",
-                            formData[step.id]
-                              ? "bg-foreground"
-                              : "bg-foreground/50"
-                          )}
-                        >
-                          <motion.div
-                            animate={{
-                              x: formData[step.id] ? 20 : 0,
-                            }}
-                            transition={springTransition}
-                            className="bg-background h-5 w-5 rounded-lg shadow"
-                          />
-                        </button>
-                      </div>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </AnimatePresence>
-          </div>
-
-          <div className="flex items-center">
-            <AnimatePresence>
-              {currentStep > 0 && (
-                <motion.button
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  onClick={handleBack}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeOut",
-                  }}
-                  className="bg-muted hover:bg-accent flex items-center justify-center rounded-lg p-4 transition"
-                >
-                  <ArrowLeft size={24} />
-                </motion.button>
-              )}
-            </AnimatePresence>
-
-            <motion.button
-              onClick={handleNext}
-              className="bg-primary text-primary-foreground ml-auto flex h-12 items-center gap-2 overflow-hidden rounded-lg px-5 font-semibold transition hover:opacity-90"
-            >
-              <AnimatePresence mode="popLayout" initial={false}>
-                {currentStep === steps.length - 1 ? (
-                  <motion.div
-                    key="done"
-                    initial={{ y: 20, opacity: 0, filter: "blur(4px)" }}
-                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                    exit={{ y: -20, opacity: 0, filter: "blur(4px)" }}
-                    transition={{
-                      duration: 0.2,
-                      ease: "easeOut",
-                    }}
-                    className="flex items-center gap-2"
-                  >
-                    <FaCheck size={18} />
-                    Done
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="next"
-                    initial={{ y: 20, opacity: 0, filter: "blur(4px)" }}
-                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                    exit={{ y: -20, opacity: 0, filter: "blur(4px)" }}
-                    transition={{
-                      duration: 0.2,
-                      ease: "easeOut",
-                    }}
-                    className="flex items-center gap-2"
-                  >
-                    Next
-                    <ArrowRight size={18} />
-                  </motion.div>
+            return (
+              <motion.div
+                key={step.id}
+                initial={{ opacity: 0, scale: 1.2, y: 15, z: steps.length }}
+                animate={{
+                  opacity: 1,
+                  scale: 1 - position * 0.05,
+                  y: -position * 12,
+                  z: steps.length - position,
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 1.2,
+                  y: 15,
+                }}
+                transition={springTransition}
+                className={cn(
+                  'border-border bg-card absolute inset-0 flex h-[60px] items-center rounded-lg border px-4 shadow-sm transition-colors',
+                  !isTop && 'pointer-events-none opacity-50',
                 )}
-              </AnimatePresence>
+              >
+                {step.type === 'text' && (
+                  <input
+                    autoFocus={isTop}
+                    type="text"
+                    value={formData[step.id] as string}
+                    onChange={(e) => updateField(step.id, e.target.value)}
+                    placeholder={step.placeholder}
+                    className="text-foreground placeholder:text-muted-foreground/70 w-full bg-transparent text-lg font-semibold outline-none"
+                  />
+                )}
+
+                {step.type === 'toggle' && (
+                  <div className="flex w-full items-center gap-4">
+                    <span className="text-muted-foreground min-w-0 flex-1 truncate text-lg font-semibold">
+                      {step.label}
+                    </span>
+
+                    <button
+                      onClick={() => updateField(step.id, !formData[step.id])}
+                      className={cn(
+                        'relative flex h-7 w-12 shrink-0 items-center rounded-lg p-1 transition-colors',
+                        formData[step.id]
+                          ? 'bg-foreground'
+                          : 'bg-foreground/50',
+                      )}
+                    >
+                      <motion.div
+                        animate={{
+                          x: formData[step.id] ? 20 : 0,
+                        }}
+                        transition={springTransition}
+                        className="bg-background h-5 w-5 rounded-lg shadow"
+                      />
+                    </button>
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </div>
+
+      <div className="flex items-center">
+        <AnimatePresence>
+          {currentStep > 0 && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              onClick={handleBack}
+              transition={{
+                duration: 0.2,
+                ease: 'easeOut',
+              }}
+              className="bg-muted hover:bg-accent flex items-center justify-center rounded-lg p-4 transition"
+            >
+              <ArrowLeft size={24} />
             </motion.button>
-          </div>
-        </div>
+          )}
+        </AnimatePresence>
+
+        <motion.button
+          onClick={handleNext}
+          className="bg-primary text-primary-foreground ml-auto flex h-12 items-center gap-2 overflow-hidden rounded-lg px-5 font-semibold transition hover:opacity-90"
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+            {currentStep === steps.length - 1 ? (
+              <motion.div
+                key="done"
+                initial={{ y: 20, opacity: 0, filter: 'blur(4px)' }}
+                animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                exit={{ y: -20, opacity: 0, filter: 'blur(4px)' }}
+                transition={{
+                  duration: 0.2,
+                  ease: 'easeOut',
+                }}
+                className="flex items-center gap-2"
+              >
+                <FaCheck size={18} />
+                Done
+              </motion.div>
+            ) : (
+              <motion.div
+                key="next"
+                initial={{ y: 20, opacity: 0, filter: 'blur(4px)' }}
+                animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                exit={{ y: -20, opacity: 0, filter: 'blur(4px)' }}
+                transition={{
+                  duration: 0.2,
+                  ease: 'easeOut',
+                }}
+                className="flex items-center gap-2"
+              >
+                Next
+                <ArrowRight size={18} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.button>
       </div>
     </div>
   );

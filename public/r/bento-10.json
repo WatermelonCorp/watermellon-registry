@@ -5,6 +5,9 @@
     "lucide-react",
     "motion"
   ],
+  "registryDependencies": [
+    "card"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/bento-10.tsx",

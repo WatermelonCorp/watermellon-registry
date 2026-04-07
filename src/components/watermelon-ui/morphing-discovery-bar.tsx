@@ -61,7 +61,7 @@ export const MorphingDiscoveryBar: React.FC<MorphingDiscoveryBarProps> = ({
                 : 'w-12 h-12 sm:w-14 sm:h-14'
                 } bg-white border-neutral-100 dark:bg-neutral-900 dark:border-neutral-800`}
             >
-              <div className="flex items-center w-full px-3 sm:px-4 h-full">
+              <div className="flex items-center justify-center w-full px-3 sm:px-4 h-full">
                 <motion.div layout="position" transition={transition}>
                   <Search
                     size={18}

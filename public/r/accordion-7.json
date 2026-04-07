@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-7",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/accordion/accordion-7.tsx",
+      "content": "import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\n\r\ntype AccordionItemData = {\r\n  value: string\r\n  name: string\r\n  role: string\r\n  avatarImage: string\r\n  content: string\r\n}\r\n\r\nconst items: readonly AccordionItemData[] = [\r\n  {\r\n    value: 'item-1',\r\n    name: 'Maya Chen',\r\n    role: 'Product Designer',\r\n    avatarImage: 'https://i.pravatar.cc/160?img=28',\r\n    content:\r\n      'Maya focuses on simplifying dense workflows into cleaner interfaces. She usually starts by reducing friction in onboarding, navigation, and handoff states before adding any visual polish.'\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    name: 'Owen Brooks',\r\n    role: 'Engineering Lead',\r\n    avatarImage: 'https://i.pravatar.cc/160?img=30',\r\n    content:\r\n      'Owen cares most about predictable systems. His approach is to keep components easy to extend, remove brittle abstractions, and make shared patterns reliable before scaling them across a product.'\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    name: 'Sara Patel',\r\n    role: 'Operations Manager',\r\n    avatarImage: 'https://i.pravatar.cc/160?img=32',\r\n    content:\r\n      'Sara looks for clarity in day-to-day workflows. She prefers interfaces that surface status, ownership, and next steps quickly so teams can move without guessing what needs attention.'\r\n  }\r\n]\r\n\r\nconst getInitials = (name: string) =>\r\n  name\r\n    .split(/\\s+/)\r\n    .map((word) => word.slice(0, 1))\r\n    .join('')\r\n\r\nconst Accordion7 = () => {\r\n  return (\r\n    <Accordion className='w-full rounded-2xl border bg-background px-3' type=\"multiple\" defaultValue={[items[0].value]}>\r\n      {items.map((item) => (\r\n        <AccordionItem key={item.value} value={item.value} className='border-border/80'>\r\n          <AccordionTrigger className='items-center py-4 hover:no-underline'>\r\n            <span className='flex items-center gap-3'>\r\n              <Avatar className='size-10 rounded-full ring-1 ring-border/70'>\r\n                <AvatarImage src={item.avatarImage} alt={item.name} />\r\n                <AvatarFallback className='text-xs'>{getInitials(item.name)}</AvatarFallback>\r\n              </Avatar>\r\n\r\n              <span className='flex flex-col'>\r\n                <span className='text-sm font-medium'>{item.name}</span>\r\n                <span className='text-xs font-normal text-muted-foreground'>{item.role}</span>\r\n              </span>\r\n            </span>\r\n          </AccordionTrigger>\r\n\r\n          <AccordionContent className='pb-4 pl-13 text-sm leading-6 text-muted-foreground'>\r\n            {item.content}\r\n          </AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  )\r\n}\r\n\r\nexport default Accordion7\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

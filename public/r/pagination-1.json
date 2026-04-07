@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-1",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-1.tsx",
+      "content": "import {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from '@/components/ui/pagination';\r\n\r\nconst Pagination1 = () => {\r\n  return (\r\n    <Pagination className=\"py-2\">\r\n      <PaginationContent className=\"gap-3\">\r\n        <PaginationItem>\r\n          <PaginationPrevious\r\n            href=\"#\"\r\n            className=\"px-3 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            Back\r\n          </PaginationPrevious>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"transition-all hover:bg-neutral-50 active:scale-90 dark:hover:bg-neutral-900\"\r\n          >\r\n            1\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            isActive\r\n            className=\"!border-primary/50 scale-110 shadow-md transition-all\"\r\n          >\r\n            2\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"transition-all hover:bg-neutral-50 active:scale-90 dark:hover:bg-neutral-900\"\r\n          >\r\n            3\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationNext\r\n            href=\"#\"\r\n            className=\"px-3 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            Next\r\n          </PaginationNext>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

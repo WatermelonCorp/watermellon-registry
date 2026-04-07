@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-4",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/breadcrumb/breadcrumb-4.tsx",
+      "content": "import { DotIcon } from 'lucide-react'\r\n\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator\r\n} from '@/components/ui/breadcrumb'\r\n\r\ntype BreadcrumbSegment =\r\n  | {\r\n      label: string\r\n      href: string\r\n      current?: false\r\n    }\r\n  | {\r\n      label: string\r\n      current: true\r\n      href?: never\r\n    }\r\n\r\nconst segments: readonly BreadcrumbSegment[] = [\r\n  { label: 'Library', href: '#' },\r\n  { label: 'Resources', href: '#' },\r\n  { label: 'Design Notes', current: true }\r\n] as const\r\n\r\nconst Breadcrumb4 = () => {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList className='gap-1.5 text-sm'>\r\n        {segments.map((segment, index) => (\r\n          <BreadcrumbItem key={segment.label}>\r\n            {'href' in segment ? (\r\n              <BreadcrumbLink href={segment.href} className='rounded-sm px-1.5 py-0.5 hover:text-foreground'>\r\n                {segment.label}\r\n              </BreadcrumbLink>\r\n            ) : (\r\n              <BreadcrumbPage className='rounded-sm bg-muted/40 px-1.5 py-0.5 font-medium'>\r\n                {segment.label}\r\n              </BreadcrumbPage>\r\n            )}\r\n            {index < segments.length - 1 ? (\r\n              <BreadcrumbSeparator className='text-muted-foreground/60'>\r\n                <DotIcon className='size-3.5' />\r\n              </BreadcrumbSeparator>\r\n            ) : null}\r\n          </BreadcrumbItem>\r\n        ))}\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n\r\nexport default Breadcrumb4\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

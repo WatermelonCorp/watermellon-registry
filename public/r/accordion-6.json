@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-6",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/accordion/accordion-6.tsx",
+      "content": "import * as AccordionPrimitive from '@radix-ui/react-accordion'\r\nimport type { LucideIcon } from 'lucide-react'\r\nimport {\r\n  CalendarClockIcon,\r\n  HeartPulseIcon,\r\n  MinusIcon,\r\n  PlusIcon,\r\n  ShieldCheckIcon,\r\n} from 'lucide-react'\r\n\r\nimport { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion'\r\n\r\ntype AccordionItemData = {\r\n  value: string\r\n  icon: LucideIcon\r\n  title: string\r\n  content: string\r\n}\r\n\r\nconst items: readonly AccordionItemData[] = [\r\n  {\r\n    value: 'item-1',\r\n    icon: CalendarClockIcon,\r\n    title: 'Why are appointment slots disappearing so quickly?',\r\n    content:\r\n      'Appointment availability can change fast when multiple patients, staff members, and scheduling rules are interacting at once...'\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    icon: ShieldCheckIcon,\r\n    title: 'How do we keep patient records secure?',\r\n    content:\r\n      'Patient records need strong access controls, encrypted storage, and clear audit trails...'\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    icon: HeartPulseIcon,\r\n    title: 'What causes delays in lab result updates?',\r\n    content:\r\n      'Lab result delays often happen when data has to move between systems...'\r\n  }\r\n]\r\n\r\nconst Accordion6 = () => {\r\n  return (\r\n    <Accordion type=\"multiple\" defaultValue={[items[0].value]} className=\"w-full\">\r\n      {items.map((item) => {\r\n        const Icon = item.icon\r\n\r\n        return (\r\n          <AccordionItem key={item.value} value={item.value}>\r\n            \r\n            {/* ✅ Radix correct structure */}\r\n            <AccordionPrimitive.Header className=\"flex\">\r\n              <AccordionPrimitive.Trigger className=\"group flex flex-1 items-start gap-4 py-4 text-left text-sm font-medium\">\r\n                \r\n                <span className=\"relative mt-0.5 size-4 shrink-0 text-muted-foreground\">\r\n                  <PlusIcon className=\"absolute inset-0 group-data-[state=open]:hidden\" />\r\n                  <MinusIcon className=\"absolute inset-0 hidden group-data-[state=open]:block\" />\r\n                </span>\r\n\r\n                <span className=\"flex items-center gap-4\">\r\n                  <Icon className=\"size-4 shrink-0\" />\r\n                  {item.title}\r\n                </span>\r\n\r\n              </AccordionPrimitive.Trigger>\r\n            </AccordionPrimitive.Header>\r\n\r\n            <AccordionContent className=\"pl-8 text-muted-foreground\">\r\n              {item.content}\r\n            </AccordionContent>\r\n\r\n          </AccordionItem>\r\n        )\r\n      })}\r\n    </Accordion>\r\n  )\r\n}\r\n\r\nexport default Accordion6",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-12",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-12.tsx",
+      "content": "import {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from '@/components/ui/pagination';\r\n\r\nconst Pagination12 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"w-full justify-between\">\r\n        <PaginationItem>\r\n          <PaginationPrevious\r\n            href=\"#\"\r\n            className=\"rounded-lg border border-neutral-200 px-3 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:hover:bg-neutral-800\"\r\n          />\r\n        </PaginationItem>\r\n        <PaginationItem className=\"rounded-full border border-neutral-200 bg-neutral-100 px-4 py-1.5 shadow-inner dark:border-neutral-700 dark:bg-neutral-800\">\r\n          <p\r\n            className=\"text-muted-foreground/80 text-xs font-medium tracking-[0.2em] uppercase\"\r\n            aria-live=\"polite\"\r\n          >\r\n            Page{' '}\r\n            <span className=\"text-foreground font-mono text-sm font-bold tracking-normal\">\r\n              02\r\n            </span>{' '}\r\n            / <span className=\"text-foreground font-mono text-sm\">05</span>\r\n          </p>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationNext\r\n            href=\"#\"\r\n            className=\"rounded-lg border border-neutral-200 px-3 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:hover:bg-neutral-800\"\r\n          />\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination12;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

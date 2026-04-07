@@ -54,10 +54,10 @@ export const ShowQr = ({
       >
         <motion.div
           initial={{
-            width: 170,
+            width: 180,
           }}
           animate={{
-            width: isExpanded ? 250 : 170,
+            width: isExpanded ? 250 : 180,
             height: isExpanded ? bounds.height : 48,
           }}
           className="bg-muted overflow-hidden rounded-lg"

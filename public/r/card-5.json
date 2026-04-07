@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-5",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/card/card-5.tsx",
+      "content": "import { Button } from '@/components/ui/button'\r\nimport { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'\r\n\r\ntype MediaCard = {\r\n  description: string\r\n  imageAlt: string\r\n  imageSrc: string\r\n  primaryAction: string\r\n  secondaryAction: string\r\n  title: string\r\n}\r\n\r\nconst mediaCard: MediaCard = {\r\n  description: 'A high-contrast abstract light painting with a darker palette and a more cinematic surface.',\r\n  imageAlt: 'Red white and blue abstract light painting on black background',\r\n  imageSrc: 'https://unsplash.com/photos/fFVfa7ZDTCc/download?force=true&w=1200',\r\n  primaryAction: 'View Details',\r\n  secondaryAction: 'Save Reference',\r\n  title: 'Afterglow Motion'\r\n}\r\n\r\nconst Card5 = () => {\r\n  return (\r\n    <Card className='max-w-md overflow-hidden border-border/70 bg-muted/10 pt-0 shadow-sm'>\r\n      <CardContent className='px-0'>\r\n        <img src={mediaCard.imageSrc} alt={mediaCard.imageAlt} className='aspect-4/3 h-72 w-full object-cover' />\r\n      </CardContent>\r\n      <CardHeader className='space-y-1 pb-4'>\r\n        <CardTitle className='text-lg'>{mediaCard.title}</CardTitle>\r\n        <CardDescription className='leading-6'>{mediaCard.description}</CardDescription>\r\n      </CardHeader>\r\n      <CardFooter className='gap-3 border-t border-border/60 pt-5 max-sm:flex-col max-sm:items-stretch'>\r\n        <Button className='bg-sky-600 text-white hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-400'>\r\n          {mediaCard.primaryAction}\r\n        </Button>\r\n        <Button variant='outline'>{mediaCard.secondaryAction}</Button>\r\n      </CardFooter>\r\n    </Card>\r\n  )\r\n}\r\n\r\nexport default Card5\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/card-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

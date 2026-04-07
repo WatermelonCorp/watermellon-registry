@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-11",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button-group/button-group-11.tsx",
+      "content": "'use client'\r\n\r\nimport { useMemo, useState } from 'react'\r\n\r\nimport type { LucideIcon } from 'lucide-react'\r\nimport { ChevronDownIcon, SendIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuRadioGroup,\r\n  DropdownMenuRadioItem,\r\n  DropdownMenuTrigger\r\n} from '@/components/ui/dropdown-menu'\r\n\r\ntype ActionOption = {\r\n  description: string\r\n  icon: LucideIcon\r\n  label: string\r\n  value: string\r\n}\r\n\r\nconst options: readonly ActionOption[] = [\r\n  {\r\n    description: 'Send the update to everyone currently assigned to the thread.',\r\n    icon: SendIcon,\r\n    label: 'Send Update',\r\n    value: 'send'\r\n  },\r\n  {\r\n    description: 'Send the message and flag it for follow-up during the next review.',\r\n    icon: SendIcon,\r\n    label: 'Send and Review',\r\n    value: 'review'\r\n  },\r\n  {\r\n    description: 'Queue the message as a draft so the team can check it before sending.',\r\n    icon: SendIcon,\r\n    label: 'Save as Draft',\r\n    value: 'draft'\r\n  }\r\n] as const\r\n\r\nconst ButtonGroup11 = () => {\r\n  const [selectedValue, setSelectedValue] = useState<ActionOption['value']>(options[0].value)\r\n\r\n  const selectedOption = useMemo(\r\n    () => options.find((option) => option.value === selectedValue) ?? options[0],\r\n    [selectedValue]\r\n  )\r\n\r\n  const SelectedIcon = selectedOption.icon\r\n\r\n  return (\r\n    <div className='inline-flex w-fit divide-x divide-primary-foreground/20 overflow-hidden rounded-md shadow-xs'>\r\n      <Button className='gap-2 rounded-none rounded-l-md px-3.5 shadow-none focus-visible:z-10'>\r\n        <SelectedIcon className='size-4' />\r\n        {selectedOption.label}\r\n      </Button>\r\n      <DropdownMenu>\r\n        <DropdownMenuTrigger>\r\n          <Button size='icon' className='rounded-none rounded-r-md shadow-none focus-visible:z-10'>\r\n            <ChevronDownIcon className='size-4' />\r\n            <span className='sr-only'>Select action</span>\r\n          </Button>\r\n        </DropdownMenuTrigger>\r\n        <DropdownMenuContent side='bottom' sideOffset={4} align='end' className='w-80 max-w-[calc(100vw-2rem)]'>\r\n          <DropdownMenuRadioGroup value={selectedValue} onValueChange={(value) => setSelectedValue(value as ActionOption['value'])}>\r\n            {options.map((option) => {\r\n              const Icon = option.icon\r\n\r\n              return (\r\n                <DropdownMenuRadioItem key={option.value} value={option.value} className='items-start [&>span]:pt-1.5'>\r\n                  <div className='flex gap-2'>\r\n                    <Icon className='mt-0.5 size-4 text-muted-foreground' />\r\n                    <div className='flex flex-col gap-1'>\r\n                      <span className='text-sm font-medium'>{option.label}</span>\r\n                      <span className='text-muted-foreground text-xs'>{option.description}</span>\r\n                    </div>\r\n                  </div>\r\n                </DropdownMenuRadioItem>\r\n              )\r\n            })}\r\n          </DropdownMenuRadioGroup>\r\n        </DropdownMenuContent>\r\n      </DropdownMenu>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default ButtonGroup11\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-group-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

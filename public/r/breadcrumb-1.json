@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-1",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/breadcrumb/breadcrumb-1.tsx",
+      "content": "import {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator,\r\n} from '@/components/ui/breadcrumb';\r\n\r\ntype BreadcrumbSegment =\r\n  | {\r\n      label: string;\r\n      href: string;\r\n      current?: false;\r\n    }\r\n  | {\r\n      label: string;\r\n      current: true;\r\n      href?: never;\r\n    };\r\n\r\nconst segments: readonly BreadcrumbSegment[] = [\r\n  { label: 'Dashboard', href: '#' },\r\n  { label: 'Campaigns', href: '#' },\r\n  { label: 'Spring Launch', current: true },\r\n] as const;\r\n\r\nconst Breadcrumb1 = () => {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList className=\"border-border/70 bg-background w-full max-w-full justify-center rounded-2xl border px-2 py-1.5 shadow-sm sm:w-fit sm:justify-start sm:rounded-full sm:px-3\">\r\n        {segments.map((segment, index) => (\r\n          <BreadcrumbItem key={segment.label}>\r\n            {'href' in segment ? (\r\n              <BreadcrumbLink href={segment.href}>\r\n                {segment.label}\r\n              </BreadcrumbLink>\r\n            ) : (\r\n              <BreadcrumbPage>{segment.label}</BreadcrumbPage>\r\n            )}\r\n            {index < segments.length - 1 ? <BreadcrumbSeparator /> : null}\r\n          </BreadcrumbItem>\r\n        ))}\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  );\r\n};\r\n\r\nexport default Breadcrumb1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

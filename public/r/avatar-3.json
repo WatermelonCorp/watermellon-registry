@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-3",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/avatar/avatar-3.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\n\r\ntype Profile = {\r\n  name: string\r\n  avatar: string\r\n}\r\n\r\nconst profile: Profile = {\r\n  name: 'Sara Patel',\r\n  avatar: 'https://i.pravatar.cc/160?img=21'\r\n}\r\n\r\nconst getInitials = (name: string) =>\r\n  name\r\n    .split(/\\s+/)\r\n    .map((word) => word.slice(0, 1))\r\n    .join('')\r\n\r\nconst Avatar3 = () => {\r\n  return (\r\n    <Avatar className='rounded-sm'>\r\n      <AvatarImage\r\n        src={profile.avatar}\r\n        alt={profile.name}\r\n        className='rounded-sm'\r\n      />\r\n      <AvatarFallback className='text-xs'>{getInitials(profile.name)}</AvatarFallback>\r\n    </Avatar>\r\n  )\r\n}\r\n\r\nexport default Avatar3\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

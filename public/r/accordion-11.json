@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-11",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/accordion/accordion-11.tsx",
+      "content": "import * as AccordionPrimitive from '@radix-ui/react-accordion'\r\nimport { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'\r\n\r\nimport { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion'\r\n\r\ntype AccordionItemData = {\r\n  value: string\r\n  title: string\r\n  content: string\r\n}\r\n\r\nconst items: readonly AccordionItemData[] = [\r\n  {\r\n    value: 'item-1',\r\n    title: 'Why do reservation updates create guest confusion?',\r\n    content:\r\n      'Hospitality systems often separate booking details, upgrade notes, and late arrival changes across multiple tools. A clearer reservation flow helps guests understand what changed before they arrive at the property.'\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    title: 'How can hotel staff handle requests more efficiently?',\r\n    content:\r\n      'Service requests move faster when housekeeping, concierge, and front desk teams share the same status view. That visibility reduces repeated check-ins and helps staff resolve requests without extra handoff friction.'\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    title: 'What causes delays during check-in peaks?',\r\n    content:\r\n      'Check-in bottlenecks usually happen when identity checks, payment confirmation, and room readiness are not aligned in one flow. Better pre-arrival coordination helps staff shorten wait times and reduce lobby congestion.'\r\n  }\r\n] as const\r\n\r\nconst Accordion11 = () => {\r\n  return (\r\n    <Accordion className='w-full space-y-2' type=\"multiple\" defaultValue={[items[0].value]}>\r\n      {items.map((item) => (\r\n        <AccordionItem\r\n          key={item.value}\r\n          value={item.value}\r\n          className='rounded-md border border-border/80 bg-background px-5 transition-colors duration-200 has-[button[aria-expanded=true]]:bg-neutral-100 dark:has-[button[aria-expanded=true]]:bg-neutral-950/30'\r\n        >\r\n          <AccordionPrimitive.Header className='flex'>\r\n            <AccordionPrimitive.Trigger\r\n              data-slot='accordion-trigger'\r\n              className='group/accordion-trigger focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 py-4 text-left text-sm font-medium outline-none transition-all focus-visible:ring-[3px] aria-disabled:pointer-events-none aria-disabled:opacity-50'\r\n            >\r\n              <span>{item.title}</span>\r\n\r\n              <span className='relative size-4 shrink-0 text-muted-foreground'>\r\n                <ChevronDownIcon className='absolute inset-0 size-4 group-aria-expanded/accordion-trigger:hidden' />\r\n                <ChevronUpIcon className='absolute inset-0 hidden size-4 group-aria-expanded/accordion-trigger:block' />\r\n              </span>\r\n            </AccordionPrimitive.Trigger>\r\n          </AccordionPrimitive.Header>\r\n\r\n          <AccordionContent className='text-muted-foreground'>\r\n            {item.content}\r\n          </AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  )\r\n}\r\n\r\nexport default Accordion11\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/accordion-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

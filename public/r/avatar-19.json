@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-19",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/avatar/avatar-19.tsx",
+      "content": "import { PlusIcon } from 'lucide-react'\r\n\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuTrigger\r\n} from '@/components/ui/dropdown-menu'\r\nimport { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'\r\n\r\ntype Profile = {\r\n  name: string\r\n  src: string\r\n}\r\n\r\nconst avatars: readonly Profile[] = [\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=12',\r\n    name: 'Leo Grant'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=28',\r\n    name: 'Nina Alvarez'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=36',\r\n    name: 'Amara Lewis'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=41',\r\n    name: 'Jade Morris'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=47',\r\n    name: 'Elena Park'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=52',\r\n    name: 'Noah Bennett'\r\n  }\r\n] as const\r\n\r\nconst getInitials = (name: string) =>\r\n  name\r\n    .split(/\\s+/)\r\n    .map((word) => word.slice(0, 1))\r\n    .join('')\r\n\r\nconst Avatar19 = () => {\r\n  return (\r\n    <TooltipProvider>\r\n      <div className='flex -space-x-2'>\r\n        {avatars.slice(0, 3).map((avatar) => (\r\n          <Tooltip key={avatar.name}>\r\n            <TooltipTrigger>\r\n              <Avatar className='ring-background ring-2'>\r\n                <AvatarImage src={avatar.src} alt={avatar.name} />\r\n                <AvatarFallback className='text-xs'>{getInitials(avatar.name)}</AvatarFallback>\r\n              </Avatar>\r\n            </TooltipTrigger>\r\n            <TooltipContent className='px-2 py-1 text-[11px]'>{avatar.name}</TooltipContent>\r\n          </Tooltip>\r\n        ))}\r\n        <DropdownMenu>\r\n          <Tooltip>\r\n            <TooltipTrigger>\r\n              <DropdownMenuTrigger className='bg-muted has-focus-visible:ring-ring/50 ring-background flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-full ring-2'>\r\n                <PlusIcon className='size-4' />\r\n                <span className='sr-only'>Add</span>\r\n              </DropdownMenuTrigger>\r\n            </TooltipTrigger>\r\n            <TooltipContent className='px-2 py-1 text-[11px]'>More people</TooltipContent>\r\n          </Tooltip>\r\n          <DropdownMenuContent>\r\n            {avatars.slice(3).map((avatar) => (\r\n              <DropdownMenuItem key={avatar.name}>\r\n                <Avatar>\r\n                  <AvatarImage src={avatar.src} alt={avatar.name} />\r\n                  <AvatarFallback className='text-xs'>{getInitials(avatar.name)}</AvatarFallback>\r\n                </Avatar>\r\n                <span>{avatar.name}</span>\r\n              </DropdownMenuItem>\r\n            ))}\r\n          </DropdownMenuContent>\r\n        </DropdownMenu>\r\n      </div>\r\n    </TooltipProvider>\r\n  )\r\n}\r\n\r\nexport default Avatar19\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-19.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-13",
+  "dependencies": [
+    "lucide-react",
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "pagination",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-13.tsx",
+      "content": "import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n} from '@/components/ui/pagination';\r\n\r\nconst Pagination13 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"gap-3 rounded-full border border-neutral-200 bg-neutral-50 p-1 shadow-sm dark:border-neutral-800 dark:bg-neutral-900\">\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            aria-label=\"Previous\"\r\n            size=\"icon\"\r\n            className=\"rounded-full border-none bg-white shadow-sm transition-all hover:scale-110 hover:bg-neutral-50 active:scale-95 dark:bg-neutral-950 dark:hover:bg-neutral-800\"\r\n          >\r\n            <IconChevronLeft className=\"size-4\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem className=\"px-3\">\r\n          <p\r\n            className=\"text-sm font-bold text-neutral-500 dark:text-neutral-400\"\r\n            aria-live=\"polite\"\r\n          >\r\n            <span className=\"text-neutral-900 italic dark:text-neutral-100\">\r\n              2\r\n            </span>{' '}\r\n            <span className=\"px-1 opacity-40\">/</span> 5\r\n          </p>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            aria-label=\"Next\"\r\n            size=\"icon\"\r\n            className=\"rounded-full border-none bg-white shadow-sm transition-all hover:scale-110 hover:bg-neutral-50 active:scale-95 dark:bg-neutral-950 dark:hover:bg-neutral-800\"\r\n          >\r\n            <IconChevronRight className=\"size-4\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination13;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

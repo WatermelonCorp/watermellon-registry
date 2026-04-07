@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-14",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/avatar/avatar-14.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage } from '@/components/ui/avatar'\r\n\r\ntype Profile = {\r\n  name: string\r\n  src: string\r\n}\r\n\r\nconst avatars: readonly Profile[] = [\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=18',\r\n    name: 'Maya Chen'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=28',\r\n    name: 'Nina Alvarez'\r\n  },\r\n  {\r\n    src: 'https://i.pravatar.cc/160?img=36',\r\n    name: 'Amara Lewis'\r\n  }\r\n] as const\r\n\r\nconst overflowCount = 6\r\n\r\nconst getInitials = (name: string) =>\r\n  name\r\n    .split(/\\s+/)\r\n    .map((word) => word.slice(0, 1))\r\n    .join('')\r\n\r\nconst Avatar14 = () => {\r\n  return (\r\n    <AvatarGroup>\r\n      {avatars.map((avatar) => (\r\n        <Avatar key={avatar.name}>\r\n          <AvatarImage src={avatar.src} alt={avatar.name} />\r\n          <AvatarFallback className='text-xs'>{getInitials(avatar.name)}</AvatarFallback>\r\n        </Avatar>\r\n      ))}\r\n      <AvatarGroupCount className='text-xs'>+{overflowCount}</AvatarGroupCount>\r\n    </AvatarGroup>\r\n  )\r\n}\r\n\r\nexport default Avatar14\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-14.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

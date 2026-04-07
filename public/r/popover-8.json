@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-8",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "popover",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/popover/popover-8.tsx",
+      "content": "import { MessageCircleIcon, SendIcon } from 'lucide-react';\r\n\r\nimport { Button } from '@/components/ui/button';\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from '@/components/ui/popover';\r\nimport { Textarea } from '@/components/ui/textarea';\r\nimport { Label } from '@/components/ui/label';\r\n\r\nconst Popover8 = () => {\r\n  return (\r\n    <Popover>\r\n      <PopoverTrigger asChild backdrop-blur-sm>\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"icon\"\r\n          className=\"rounded-xl transition-all hover:bg-neutral-100 active:scale-95 dark:hover:bg-neutral-800\"\r\n        >\r\n          <MessageCircleIcon className=\"size-4\" />\r\n          <span className=\"sr-only\">Feedback</span>\r\n        </Button>\r\n      </PopoverTrigger>\r\n      <PopoverContent className=\"shadow-3xl w-80 rounded-3xl border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950\">\r\n        <div className=\"flex flex-col gap-6\">\r\n          <div className=\"flex flex-col gap-1\">\r\n            <Label className=\"text-base font-bold text-neutral-900 dark:text-neutral-100\">\r\n              Developer Notes\r\n            </Label>\r\n            <p className=\"text-[11px] leading-tight font-medium text-neutral-500 dark:text-neutral-500\">\r\n              Attach a technical note to this asset.\r\n            </p>\r\n          </div>\r\n\r\n          <Textarea\r\n            placeholder=\"Write your architectural notes here...\"\r\n            className=\"min-h-[120px] resize-none rounded-2xl border-neutral-100 bg-neutral-50 p-4 text-xs font-medium transition-none focus-visible:border-neutral-100 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none dark:border-neutral-800 dark:bg-neutral-900 dark:focus-visible:border-neutral-800\"\r\n          />\r\n\r\n          <div className=\"grid w-full grid-cols-2 gap-3 pb-1\">\r\n            <Button\r\n              variant=\"outline\"\r\n              size=\"sm\"\r\n              className=\"h-10 rounded-2xl border-neutral-200 text-xs font-bold text-neutral-500 dark:border-neutral-800\"\r\n            >\r\n              Discard\r\n            </Button>\r\n            <Button\r\n              size=\"sm\"\r\n              className=\"h-10 gap-2 rounded-2xl border-none bg-emerald-600 text-xs font-bold text-white shadow-lg shadow-emerald-500/10 hover:bg-emerald-700\"\r\n            >\r\n              <SendIcon className=\"size-3.5\" />\r\n              Save Note\r\n            </Button>\r\n          </div>\r\n        </div>\r\n      </PopoverContent>\r\n    </Popover>\r\n  );\r\n};\r\n\r\nexport default Popover8;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/popover-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

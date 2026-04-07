@@ -1,9 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useRef, useEffect, type FC } from "react";
-import { motion, AnimatePresence } from "motion/react";
-
-/* --- Types --- */
+import { useState, useRef, useEffect, type FC } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { CalendarDays } from 'lucide-react';
 
 export interface CalendarEvent {
   title: string;
@@ -30,20 +29,14 @@ export interface CalendarWidgetProps {
   currentMonthYear: string;
 }
 
-/* --- Constants --- */
-
-const daysOfWeek: string[] = ["S", "M", "T", "W", "T", "F", "S"];
-
-/* --- Main Component --- */
+const daysOfWeek: string[] = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 export const CalendarWidget: FC<CalendarWidgetProps> = ({
   events,
   initialSelectedDate,
   currentMonthYear,
 }) => {
-  const [selectedDate, setSelectedDate] = useState<string>(
-    initialSelectedDate
-  );
+  const [selectedDate, setSelectedDate] = useState<string>(initialSelectedDate);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const isDragging = useRef<boolean>(false);
@@ -58,17 +51,17 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
       isDragging.current = true;
       startX.current = e.pageX - el.offsetLeft;
       scrollLeftStart.current = el.scrollLeft;
-      el.style.cursor = "grabbing";
+      el.style.cursor = 'grabbing';
     };
 
     const onMouseLeave = () => {
       isDragging.current = false;
-      el.style.cursor = "grab";
+      el.style.cursor = 'grab';
     };
 
     const onMouseUp = () => {
       isDragging.current = false;
-      el.style.cursor = "grab";
+      el.style.cursor = 'grab';
     };
 
     const onMouseMove = (e: MouseEvent) => {
@@ -79,17 +72,17 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
       el.scrollLeft = scrollLeftStart.current - walk;
     };
 
-    el.style.cursor = "grab";
-    el.addEventListener("mousedown", onMouseDown);
-    el.addEventListener("mouseleave", onMouseLeave);
-    el.addEventListener("mouseup", onMouseUp);
-    el.addEventListener("mousemove", onMouseMove);
+    el.style.cursor = 'grab';
+    el.addEventListener('mousedown', onMouseDown);
+    el.addEventListener('mouseleave', onMouseLeave);
+    el.addEventListener('mouseup', onMouseUp);
+    el.addEventListener('mousemove', onMouseMove);
 
     return () => {
-      el.removeEventListener("mousedown", onMouseDown);
-      el.removeEventListener("mouseleave", onMouseLeave);
-      el.removeEventListener("mouseup", onMouseUp);
-      el.removeEventListener("mousemove", onMouseMove);
+      el.removeEventListener('mousedown', onMouseDown);
+      el.removeEventListener('mouseleave', onMouseLeave);
+      el.removeEventListener('mouseup', onMouseUp);
+      el.removeEventListener('mousemove', onMouseMove);
     };
   }, []);
 
@@ -97,7 +90,7 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
     const date = new Date(2024, 8, 1 + i);
     return {
       day: date.getDate(),
-      fullDate: date.toISOString().split("T")[0],
+      fullDate: date.toISOString().split('T')[0],
       month: date.getMonth(),
       year: date.getFullYear(),
       dateObj: date,
@@ -107,26 +100,22 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
   });
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-white dark:bg-zinc-950 transition-colors duration-500 w-full gap-6">
-
-      <div className="w-[340px] rounded-[30px] bg-[#F6F5FA] dark:bg-zinc-900 shadow-lg flex flex-col gap-2 select-none border border-black/10 dark:border-white/5 transition-colors duration-500">
+      <div className="flex w-[340px] flex-col rounded-[30px] border border-black/10 bg-[#F6F5FA] shadow-lg transition-colors duration-500 select-none dark:border-white/5 dark:bg-zinc-900">
         <div className="p-4">
-          {/* Month/Year Header */}
           <motion.div
             key={currentMonthYear}
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-xl pb-4 font-semibold dark:text-white"
+            className="ml-2 text-xl font-semibold dark:text-white"
           >
             {currentMonthYear}
           </motion.div>
 
-          {/* Dates */}
           <div className="relative">
             <div
               ref={scrollRef}
-              className="flex overflow-x-auto scrollbar-hide pb-2 gap-2"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              className="scrollbar-hide flex gap-2 overflow-x-auto px-2"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {dates.map((date) => {
                 const isSelected = selectedDate === date.fullDate;
@@ -135,52 +124,64 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
                 return (
                   <div
                     key={date.fullDate}
-                    className="relative flex flex-col items-center min-w-9 pt-4"
+                    className="relative flex min-w-10 flex-col items-center pt-4"
                   >
                     <div
-                      className={`text-base font-medium mb-1 ${
-                        isSelected
-                          ? "text-black dark:text-white"
-                          : "text-gray-500 dark:text-zinc-500"
-                      }`}
+                      className={`mb-1 text-base font-medium transition-colors duration-300 ${isSelected
+                          ? 'text-black dark:text-white'
+                          : 'text-gray-500 dark:text-zinc-500'
+                        }`}
                     >
                       {date.dayName}
                     </div>
 
                     <motion.div
-                      className="flex flex-col items-center cursor-pointer relative"
+                      className="relative flex cursor-pointer flex-col items-center"
                       whileTap={{ scale: 0.9 }}
                       onClick={() => setSelectedDate(date.fullDate)}
                     >
-                      <div className="relative w-10 h-10 flex items-center justify-center">
+                      <div className="relative flex h-10 w-10 items-center justify-center">
                         {isSelected && (
                           <motion.div
                             layoutId="selected-date-bg"
                             transition={{
-                              type: "spring",
+                              type: 'spring',
                               stiffness: 180,
                               damping: 22,
                             }}
-                            className="absolute inset-0 rounded-full bg-white dark:bg-zinc-800 shadow-sm"
+                            className="absolute inset-0 rounded-full bg-white shadow-sm dark:bg-zinc-800"
                           />
                         )}
                         <span
-                          className={`relative z-10 text-base font-medium ${
-                            isSelected
-                              ? "text-black dark:text-white"
-                              : "text-black/80 dark:text-zinc-400"
-                          }`}
+                          className={`relative z-10 text-base font-medium ${isSelected
+                              ? 'text-black dark:text-white'
+                              : 'text-black/80 dark:text-zinc-400'
+                            }`}
                         >
                           {date.day}
                         </span>
                       </div>
-
-                      {hasEvent && !isSelected && (
-                        <motion.span
-                          layout
-                          className="h-1.5 w-1.5 rounded-full bg-[#cecdd1] dark:bg-zinc-700 mt-1"
-                        />
-                      )}
+                      <AnimatePresence mode="popLayout" initial={false}>
+                        {hasEvent && !isSelected && (
+                          <motion.span
+                            initial={{
+                              opacity: 0,
+                              scale: 0,
+                              filter: 'blur(4px)',
+                            }}
+                            animate={{
+                              opacity: 1,
+                              scale: 1,
+                              filter: 'blur(0px)',
+                            }}
+                            exit={{ opacity: 0, scale: 0, filter: 'blur(4px)' }}
+                            transition={{
+                              duration: 0.3,
+                            }}
+                            className="h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#cecdd1] will-change-transform dark:bg-zinc-700"
+                          />
+                        )}
+                      </AnimatePresence>
                     </motion.div>
                   </div>
                 );
@@ -189,20 +190,24 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
           </div>
         </div>
 
-        {/* Events */}
-        <div className="relative rounded-[28px] px-4 pt-2 bg-white dark:bg-zinc-950 flex flex-col h-52 border-black/10 dark:border-white/5 border overflow-hidden transition-colors duration-500">
-          <motion.div className="relative h-full overflow-y-scroll no-scrollbar">
-            <AnimatePresence mode="wait">
+        <div className="relative flex h-52 flex-col overflow-hidden rounded-[28px] border border-black/10 bg-white px-4 pt-2 transition-colors duration-500 dark:border-white/10 dark:bg-zinc-950">
+          <motion.div className="no-scrollbar relative h-full overflow-y-scroll">
+            <AnimatePresence mode="popLayout" initial={false}>
               {events[selectedDate]?.length ? (
                 <motion.div key="list" className="pb-8">
                   {events[selectedDate].map((event) => (
                     <motion.div
                       key={event.title}
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="flex flex-col border-b border-gray-200 dark:border-zinc-800 py-2 last:border-b-0"
+                      initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                      animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                      exit={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                      transition={{
+                        duration: 0.3,
+                        ease: 'easeOut',
+                      }}
+                      className="flex flex-col border-b border-gray-200 py-2 last:border-b-0 dark:border-zinc-800"
                     >
-                      <span className="font-medium text-black/70 dark:text-zinc-300 text-base">
+                      <span className="text-base font-medium text-black/70 dark:text-zinc-300">
                         {event.title}
                       </span>
                       <span className="text-base text-gray-500 dark:text-zinc-500">
@@ -214,8 +219,18 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
               ) : (
                 <motion.div
                   key="no-events"
-                  className="flex flex-col items-center justify-center h-40 gap-3"
+                  initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                  transition={{
+                    duration: 0.3,
+                    ease: 'easeOut',
+                  }}
+                  className="flex h-40 flex-col items-center justify-center gap-3"
                 >
+                  <div className="rounded- bg-zinc-100 p-5 dark:bg-zinc-800">
+                    <CalendarDays className="size-8 text-zinc-500 dark:text-zinc-300" />
+                  </div>
                   <p className="text-sm text-neutral-500 dark:text-zinc-500">
                     No Events
                   </p>
@@ -224,9 +239,8 @@ export const CalendarWidget: FC<CalendarWidgetProps> = ({
             </AnimatePresence>
           </motion.div>
 
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-zinc-950 via-white/70 dark:via-zinc-950/70 to-transparent pointer-events-none rounded-b-[30px]" />
+          <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-16 rounded-b-[30px] bg-linear-to-t from-white via-white/70 to-transparent dark:from-zinc-950 dark:via-zinc-950/20" />
         </div>
       </div>
-    </div>
   );
 };
