@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-2",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dialog/dialog-2.tsx",
+      "content": "import { InfoIcon } from 'lucide-react'\n\nimport {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger\n} from '@/components/ui//alert-dialog'\nimport { Button } from '@/components/ui//button'\nimport type { FC } from 'react';\n\nconst Dialog2: FC = () => {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger>\n        <Button\n          variant='outline'\n          className='rounded-xl border border-border/40 bg-white text-neutral-800 hover:bg-neutral-50 transition dark:bg-neutral-900 dark:text-neutral-100 dark:border-border/60 dark:hover:bg-neutral-800 shadow-md'\n        >\n          Alert Dialog (With Icon)\n        </Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent\n        className=\"rounded-2xl border border-border/40 bg-white shadow-lg p-6 dark:bg-neutral-900 dark:border-border/60\"\n      >\n        <AlertDialogHeader>\n          <div className='mb-3 flex size-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30'>\n            <InfoIcon className='size-4 text-blue-600 dark:text-blue-400' />\n          </div>\n          <AlertDialogTitle className='text-base font-semibold text-neutral-900 dark:text-neutral-100'>Heads up!</AlertDialogTitle>\n          <AlertDialogDescription className='text-sm text-neutral-600 dark:text-neutral-300'>\n            This is a minimal dialog for simple confirmations or information. Please proceed if you understand.<br />\n            <br />\n            <span className=\"block mt-2\">If you have any questions, feel free to contact support at <a href=\"mailto:support@example.com\" className=\"text-blue-600 dark:text-blue-400 underline\">support@example.com</a>.</span>\n            <span className=\"block mt-2\">Note: Your changes will not be saved unless you confirm this action.</span>\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter className='bg-transparent p-4 pb-2'>\n          <AlertDialogCancel className='rounded-xl border border-border/30 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 transition dark:bg-neutral-800 dark:text-neutral-200 dark:border-border/50 dark:hover:bg-neutral-700'>Cancel</AlertDialogCancel>\n          <AlertDialogAction className='rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition font-semibold px-6 py-2 shadow dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white'>OK</AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n\nexport default Dialog2\n",
+      "type": "registry:ui",
+      "target": "components/ui/dialog-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

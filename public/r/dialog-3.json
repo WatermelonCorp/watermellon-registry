@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-3",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dialog/dialog-3.tsx",
+      "content": "import { TriangleAlertIcon } from 'lucide-react'\n\nimport {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger\n} from '@/components/ui//alert-dialog'\nimport { Button } from '@/components/ui//button'\nimport { Checkbox } from '@/components/ui//checkbox'\nimport { Label } from '@/components/ui//label'\n\nconst Dialog3 = () => {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger>\n        <Button\n          variant='outline'\n          className='rounded-xl border border-border/40 bg-white text-neutral-800 hover:bg-neutral-50 transition dark:bg-neutral-900 dark:text-neutral-100 dark:border-border/60 dark:hover:bg-neutral-800 shadow-md'\n        >\n          Alert Dialog Destructive\n        </Button>\n      </AlertDialogTrigger>\n        <AlertDialogContent className=\"rounded-xl border border-border/40 bg-white shadow-xl p-7 dark:bg-neutral-900 dark:border-border/60\">\n        <AlertDialogHeader className='items-center'>\n          <div className='bg-red-100 dark:bg-red-900/30 mx-auto mb-2 flex size-12 items-center justify-center rounded-full'>\n            <TriangleAlertIcon className='text-red-600 dark:text-red-400 size-6' />\n          </div>\n          <AlertDialogTitle className='text-base font-semibold text-neutral-900 dark:text-neutral-100 text-center'>Are you absolutely sure you want to delete?</AlertDialogTitle>\n          <AlertDialogDescription className='text-center text-sm text-neutral-600 dark:text-neutral-300'>\n            This action cannot be undone. This will permanently delete your account and remove your data from our servers.\n              <span className='mt-5 flex items-center justify-center gap-3'>\n                <Checkbox id='terms' className=\"data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600\" />\n                <Label htmlFor='terms' className='text-neutral-700 dark:text-neutral-200 text-sm'>Don&apos;t ask again next time</Label>\n              </span>\n              {/* Custom style to make the checkmark blue */}\n              <style>{`\n                [data-state=\"checked\"] svg {\n                  color: #2563eb !important; /* Tailwind blue-600 */\n                  stroke: #2563eb !important;\n                }\n              `}</style>\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter className='bg-transparent p-4 pb-2'>\n          <AlertDialogCancel className='rounded-xl border border-border/30 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 transition dark:bg-neutral-800 dark:text-neutral-200 dark:border-border/50 dark:hover:bg-neutral-700'>Cancel</AlertDialogCancel>\n          <AlertDialogAction className='rounded-xl bg-red-600 text-white hover:bg-red-700 transition font-semibold px-6 py-2 shadow dark:bg-red-500 dark:hover:bg-red-600 dark:text-white'>Delete</AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  )\n}\n\nexport default Dialog3\n",
+      "type": "registry:ui",
+      "target": "components/ui/dialog-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

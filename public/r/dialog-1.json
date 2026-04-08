@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-1",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dialog/dialog-1.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger\n} from '@/components/ui//alert-dialog'\nimport { Button } from '@/components/ui//button'\n\n\nimport type { FC } from 'react';\n\nconst Dialog1: FC = () => {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger>\n        <Button\n          variant='outline'\n          className='rounded-2xl shadow-md bg-white/80 text-primary border border-border/40 backdrop-blur-sm dark:bg-neutral-900 dark:text-primary dark:border-border/60 dark:backdrop-blur-md'\n        >\n          Alert Dialog\n        </Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent className=\"rounded-3xl shadow-2xl bg-white/80 border border-border/40 backdrop-blur-md dark:bg-neutral-900 dark:border-border/60 dark:backdrop-blur-md\">\n        <AlertDialogHeader>\n          <AlertDialogTitle className='text-neutral-900 dark:text-neutral-100'>Are you absolutely sure?</AlertDialogTitle>\n          <AlertDialogDescription className='text-neutral-700 dark:text-neutral-300'>\n            This action cannot be undone. This will permanently delete your account and remove your data from our servers.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogCancel className='rounded-2xl shadow bg-white/70 border border-border/30 text-primary dark:bg-neutral-800 dark:text-primary dark:border-border/50'>Cancel</AlertDialogCancel>\n          <AlertDialogAction className='rounded-full bg-blue-600 text-white hover:bg-blue-700 transition font-semibold px-7 py-2.5 shadow dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white'>Continue</AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n\nexport default Dialog1\n",
+      "type": "registry:ui",
+      "target": "components/ui/dialog-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

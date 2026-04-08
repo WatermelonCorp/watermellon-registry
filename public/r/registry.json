@@ -7432,6 +7432,305 @@
       "registryDependencies": ["date-picker"]
     },
     {
+      "name": "dialog-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-1.tsx",
+          "target": "components/ui/dialog-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-2.tsx",
+          "target": "components/ui/dialog-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-3.tsx",
+          "target": "components/ui/dialog-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-4.tsx",
+          "target": "components/ui/dialog-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-5.tsx",
+          "target": "components/ui/dialog-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-6.tsx",
+          "target": "components/ui/dialog-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-7.tsx",
+          "target": "components/ui/dialog-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-8.tsx",
+          "target": "components/ui/dialog-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-9.tsx",
+          "target": "components/ui/dialog-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-10.tsx",
+          "target": "components/ui/dialog-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-11.tsx",
+          "target": "components/ui/dialog-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-12.tsx",
+          "target": "components/ui/dialog-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-13.tsx",
+          "target": "components/ui/dialog-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-14",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-14.tsx",
+          "target": "components/ui/dialog-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-15",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-15.tsx",
+          "target": "components/ui/dialog-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-16",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-16.tsx",
+          "target": "components/ui/dialog-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-17",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-17.tsx",
+          "target": "components/ui/dialog-17.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-18",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-18.tsx",
+          "target": "components/ui/dialog-18.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-19",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-19.tsx",
+          "target": "components/ui/dialog-19.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-20",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-20.tsx",
+          "target": "components/ui/dialog-20.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-21",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-21.tsx",
+          "target": "components/ui/dialog-21.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-22",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-22.tsx",
+          "target": "components/ui/dialog-22.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
+      "name": "dialog-23",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dialog/dialog-23.tsx",
+          "target": "components/ui/dialog-23.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog"]
+    },
+    {
       "name": "avatar-1",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-19",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dialog/dialog-19.tsx",
+      "content": "import { Button } from '@/components/ui//button'\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger\n} from '@/components/ui//dialog'\nimport { Input } from '@/components/ui//input'\nimport { Label } from '@/components/ui//label'\n\nconst Dialog19 = () => {\n  return (\n    <Dialog>\n      <DialogTrigger>\n        <Button variant=\"outline\" className=\"rounded-xl px-6 py-2 font-medium bg-zinc-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all\">\n          Middle left align\n        </Button>\n      </DialogTrigger>\n      <DialogContent className=\"sm:left-0 sm:ml-6 sm:max-w-[425px] sm:translate-x-0 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 shadow-xl\">\n        <DialogHeader>\n          <DialogTitle className=\"text-lg font-semibold text-zinc-900 dark:text-zinc-100\">Profile settings</DialogTitle>\n          <DialogDescription className=\"text-zinc-600 dark:text-zinc-300\">Update your personal information and username below.</DialogDescription>\n        </DialogHeader>\n        <form className=\"grid gap-4 mt-2\" onSubmit={e => { e.preventDefault(); /* handle save */ }}>\n          <div className=\"grid gap-3\">\n            <Label htmlFor=\"profile-fullname\">Full name</Label>\n            <Input id=\"profile-fullname\" name=\"profile-fullname\" placeholder=\"e.g. Jamie Smith\" defaultValue=\"Alex Lee\" />\n          </div>\n          <div className=\"grid gap-3\">\n            <Label htmlFor=\"profile-username\">Username</Label>\n            <Input id=\"profile-username\" name=\"profile-username\" placeholder=\"e.g. jamie_smith\" defaultValue=\"alexlee\" />\n          </div>\n          <DialogFooter className='bg-transparent pb-0' >\n            <DialogClose>\n              <Button variant=\"outline\" className=\"rounded-lg\">Discard</Button>\n            </DialogClose>\n            <Button type=\"submit\" className=\"bg-zinc-800 text-white hover:bg-zinc-700 focus-visible:ring-zinc-800 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:focus-visible:ring-zinc-600 rounded-lg\">Update profile</Button>\n          </DialogFooter>\n        </form>\n      </DialogContent>\n    </Dialog>\n  )\n}\n\nexport default Dialog19\n",
+      "type": "registry:ui",
+      "target": "components/ui/dialog-19.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
