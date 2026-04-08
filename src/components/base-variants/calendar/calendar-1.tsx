@@ -2,20 +2,24 @@
 
 import { useState } from 'react'
 
-import { Calendar } from '@/components/ui/calendar'
+import { Calendar } from '@/components/ui//calendar'
 
 
 const Calendar1: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
 
   return (
-    <section className="flex flex-col items-center p-6 bg-transparent rounded-2xl max-w-xs mx-auto">
+    <section className="flex flex-col items-center max-w-xs mx-auto">
       <Calendar
         mode="single"
         defaultMonth={selectedDate}
         selected={selectedDate}
         onSelect={setSelectedDate}
-        className="rounded-lg border border-border/60 shadow-md transition-all focus:ring-2 focus:ring-primary/50"
+        classNames={{
+          today: "!bg-transparent",
+          day_button: "!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0"
+        }}
+        className="transition-all !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent"
       />
       <p className="mt-4 text-center text-xs text-muted-foreground font-light tracking-wide" role="region">
         Monthly date picker

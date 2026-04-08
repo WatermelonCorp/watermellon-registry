@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 
-import { Button } from '@/components/ui/button'
-import { Calendar } from '@/components/ui/calendar'
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui//button'
+import { Calendar } from '@/components/ui//calendar'
+import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui//card'
 
-const initialSelectedDate: Date = new Date(2025, 5, 15)
+const initialSelectedDate: Date = new Date()
 const currentMonthDate: Date = new Date()
 
 const Calendar18 = () => {
@@ -46,12 +46,16 @@ const Calendar18 = () => {
             onMonthChange={setVisibleMonth}
             selected={selectedDate}
             onSelect={setSelectedDate}
-            className='bg-transparent p-0'
+            classNames={{
+              today: '!bg-transparent',
+              day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'
+            }}
+            className='!bg-transparent p-0 !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent'
           />
         </CardContent>
       </Card>
       <p className='text-muted-foreground mt-4 text-center text-xs' role='region'>
-        Calendar with quick today jump
+        Calendar with qbase-uick today jump
       </p>
     </div>
   )

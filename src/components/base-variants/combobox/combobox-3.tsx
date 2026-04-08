@@ -2,7 +2,7 @@
 
 import { Fragment, useId, useState } from 'react'
 
-import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
+import { ChevronsUpDownIcon } from 'lucide-react'
 
 import {
   Command,
@@ -11,9 +11,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList
-} from '@/components/ui/command'
-import { Label } from '@/components/ui/label'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+} from '@/components/ui//command'
+import { Label } from '@/components/ui//label'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui//popover'
 
 import { cn } from '@/lib/utils'
 
@@ -99,6 +99,7 @@ const Combobox3 = () => {
                       <CommandItem
                         key={item.value}
                         value={item.value}
+                        data-checked={selectedValue === item.value}
                         onSelect={currentValue => {
                           if (item.disabled) {
                             return
@@ -111,13 +112,10 @@ const Combobox3 = () => {
                           setSelectedValue(currentValue)
                           setOpen(false)
                         }}
-                        className={cn(item.disabled && 'cursor-not-allowed opacity-50')}
+                        className={cn('pr-2', item.disabled && 'cursor-not-allowed opacity-50')}
                         disabled={item.disabled ?? false}
                       >
                         {item.value}
-                        {selectedValue === item.value && (
-                          <CheckIcon size={16} className='ml-auto' />
-                        )}
                       </CommandItem>
                     ))}
                   </CommandGroup>

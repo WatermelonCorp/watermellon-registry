@@ -5,10 +5,10 @@ import { type ChangeEvent, useId, useState } from 'react'
 import { format } from 'date-fns'
 import { CalendarIcon } from 'lucide-react'
 
-import { Calendar } from '@/components/ui/calendar'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { Calendar } from '@/components/ui//calendar'
+import { Card, CardContent, CardHeader } from '@/components/ui//card'
+import { Input } from '@/components/ui//input'
+import { Label } from '@/components/ui//label'
 
 const initialSelectedDate: Date = new Date()
 const initialDateInputValue: string = format(initialSelectedDate, 'yyyy-MM-dd')
@@ -85,7 +85,11 @@ const Calendar19 = () => {
             onSelect={handleDayPickerSelect}
             month={visibleMonth}
             onMonthChange={setVisibleMonth}
-            className='bg-transparent p-0'
+            classNames={{
+              today: '!bg-transparent',
+              day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'
+            }}
+            className='!bg-transparent p-0 !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent'
           />
         </CardContent>
       </Card>

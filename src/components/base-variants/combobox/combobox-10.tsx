@@ -2,9 +2,9 @@
 
 import { useId, useState } from 'react'
 
-import { CheckIcon, ChevronsUpDownIcon, XIcon } from 'lucide-react'
+import { ChevronsUpDownIcon, XIcon } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/components/ui//badge'
 import {
   Command,
   CommandEmpty,
@@ -12,9 +12,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList
-} from '@/components/ui/command'
-import { Label } from '@/components/ui/label'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+} from '@/components/ui//command'
+import { Label } from '@/components/ui//label'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui//popover'
 
 const frameworks = [
   { value: 'research', label: 'Research' },
@@ -81,12 +81,12 @@ const Combobox10 = () => {
                 <Badge
                   key={value}
                   variant='outline'
-                  className='rounded-md border-border/60 bg-background pl-2.5 pr-2 py-3!'
+                  className='rounded-md border-border/60 bg-background pl-2.5 pr-1 py-3!'
                 >
                   {frameworkByValue[value]}
                   <button
                     type='button'
-                    className='ml-2.5 inline-flex size-4 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-accent/40 hover:text-foreground'
+                    className='ml-0 inline-flex size-4 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-accent/40 hover:text-foreground'
                     onClick={(event) => {
                       event.stopPropagation()
                       removeSelection(value)
@@ -117,13 +117,11 @@ const Combobox10 = () => {
                   <CommandItem
                     key={framework.value}
                     value={framework.value}
+                    data-checked={selectedValues.includes(framework.value)}
                     onSelect={() => toggleSelection(framework.value)}
-                    className='flex items-center rounded-md'
+                    className='flex items-center rounded-md pr-2'
                   >
                     <span className='min-w-0 flex-1 truncate'>{framework.label}</span>
-                    {selectedValues.includes(framework.value) && (
-                      <CheckIcon size={16} className='ml-auto shrink-0' />
-                    )}
                   </CommandItem>
                 ))}
               </CommandGroup>

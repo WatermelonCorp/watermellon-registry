@@ -7,17 +7,17 @@ import { DownloadIcon, FileSpreadsheetIcon, FileTextIcon } from 'lucide-react'
 import Papa from 'papaparse'
 import * as XLSX from 'xlsx'
 
-import { Badge } from '@/components/ui/badge'
-import { Checkbox } from '@/components/ui/checkbox'
+import { Badge } from '@/components/ui//badge'
+import { Checkbox } from '@/components/ui//checkbox'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { Input } from '@/components/ui/input'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+} from '@/components/ui//dropdown-menu'
+import { Input } from '@/components/ui//input'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui//table'
 
 type PaymentStatus = 'failed' | 'processing' | 'success'
 
@@ -230,16 +230,16 @@ const DataTable12 = () => {
                   className='after:hidden data-checked:border-sky-600 data-checked:bg-sky-600 data-checked:text-white dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500 dark:data-checked:text-white'
                 />
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Name
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Status
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Email
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-right text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-right text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Amount
               </TableHead>
             </TableRow>

@@ -4,9 +4,9 @@ import { useState } from 'react'
 
 import { addDays } from 'date-fns'
 
-import { Button } from '@/components/ui/button'
-import { Calendar } from '@/components/ui/calendar'
-import { Card, CardContent, CardFooter } from '@/components/ui/card'
+import { Button } from '@/components/ui//button'
+import { Calendar } from '@/components/ui//calendar'
+import { Card, CardContent, CardFooter } from '@/components/ui//card'
 
 type DatePreset = {
   label: string
@@ -46,7 +46,11 @@ const Calendar22 = () => {
             selected={selectedDate}
             onSelect={setSelectedDate}
             defaultMonth={selectedDate}
-            className='w-full bg-transparent p-0'
+            classNames={{
+              today: '!bg-transparent',
+              day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'
+            }}
+            className='w-full !bg-transparent p-0 !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent'
           />
         </CardContent>
         <CardFooter className='flex flex-wrap gap-2 border-t border-dashed border-border/60 px-4 !pt-4'>

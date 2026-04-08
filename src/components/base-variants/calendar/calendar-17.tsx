@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { Calendar } from '@/components/ui/calendar'
+import { Calendar } from '@/components/ui//calendar'
 
 const initialSelectedDate: Date = new Date()
 
@@ -18,7 +18,11 @@ const Calendar17 = () => {
         defaultMonth={selectedDate}
         selected={selectedDate}
         onSelect={setSelectedDate}
-        className='rounded-[1.75rem] border border-border/60 bg-muted/10 p-3 shadow-sm'
+        classNames={{
+          today: '!bg-transparent',
+          day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'
+        }}
+        className='!border-0 !bg-transparent transition-all !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent'
         showWeekNumber
       />
       <p

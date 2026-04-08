@@ -4,10 +4,10 @@ import { type ComponentProps, useState } from 'react'
 
 import { CircleCheckIcon } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
-import { Calendar } from '@/components/ui/calendar'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { ScrollArea } from '@/components/ui/scroll-area'
+import { Button } from '@/components/ui//button'
+import { Calendar } from '@/components/ui//calendar'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui//card'
+import { ScrollArea } from '@/components/ui//scroll-area'
 
 type TimeSlot = string
 type CalendarFormatters = NonNullable<
@@ -80,7 +80,12 @@ const Calendar24 = () => {
               showOutsideDays={false}
               modifiers={calendarModifiers}
               modifiersClassNames={calendarModifiersClassNames}
-              className='bg-transparent p-0 [--cell-size:--spacing(10)]'
+              classNames={{
+                today: '!bg-transparent',
+                day_button:
+                  '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'
+              }}
+              className='!bg-transparent p-0 !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent [--cell-size:--spacing(10)]'
               formatters={calendarFormatters}
             />
           </div>

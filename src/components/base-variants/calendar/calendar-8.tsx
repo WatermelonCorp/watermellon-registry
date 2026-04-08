@@ -5,9 +5,9 @@ import { useState } from 'react'
 import { type DateRange } from 'react-day-picker'
 import { enUS, hi } from 'react-day-picker/locale'
 
-import { Calendar } from '@/components/ui/calendar'
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Calendar } from '@/components/ui//calendar'
+import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui//card'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui//select'
 
 type CalendarLocale = 'en' | 'hi'
 
@@ -81,7 +81,11 @@ const Calendar8 = () => {
             defaultMonth={selectedDateRange?.from}
             locale={localeMap[selectedLocale]}
             numerals={numeralMap[selectedLocale]}
-            className='w-full bg-transparent p-0'
+            classNames={{
+              today: '!bg-transparent',
+              day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'
+            }}
+            className='w-full !bg-transparent p-0 !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent'
             buttonVariant='outline'
           />
         </CardContent>

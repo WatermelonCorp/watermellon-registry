@@ -2,7 +2,7 @@
 
 import { useId, useMemo, useState } from 'react'
 
-import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
+import { ChevronsUpDownIcon } from 'lucide-react'
 
 import {
   Command,
@@ -11,9 +11,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList
-} from '@/components/ui/command'
-import { Label } from '@/components/ui/label'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+} from '@/components/ui//command'
+import { Label } from '@/components/ui//label'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui//popover'
 
 import { cn } from '@/lib/utils'
 
@@ -95,18 +95,16 @@ const Combobox7 = () => {
                   <CommandItem
                     key={timezoneValue}
                     value={timezoneValue}
+                    data-checked={selectedTimezone === timezoneValue}
                     onSelect={currentValue => {
                       setSelectedTimezone(
                         currentValue === selectedTimezone ? '' : currentValue
                       )
                       setOpen(false)
                     }}
-                    className='rounded-md'
+                    className='rounded-md pr-2'
                   >
                     <span className='truncate'>{label}</span>
-                    {selectedTimezone === timezoneValue && (
-                      <CheckIcon size={16} className='ml-auto shrink-0' />
-                    )}
                   </CommandItem>
                 ))}
               </CommandGroup>

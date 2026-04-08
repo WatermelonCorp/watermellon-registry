@@ -4,7 +4,6 @@ import { useId, useState, type ComponentType, type SVGProps } from 'react'
 
 import {
   BriefcaseIcon,
-  CheckIcon,
   ChevronsUpDownIcon,
   CodeIcon,
   FolderKanbanIcon,
@@ -20,9 +19,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList
-} from '@/components/ui/command'
-import { Label } from '@/components/ui/label'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+} from '@/components/ui//command'
+import { Label } from '@/components/ui//label'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui//popover'
 type IndustryOption = {
   icon: ComponentType<SVGProps<SVGSVGElement>>
   label: string
@@ -123,7 +122,7 @@ const Combobox4 = () => {
           />
         </PopoverTrigger>
         <PopoverContent
-          className='w-full min-w-(--radix-popper-anchor-width) overflow-hidden rounded-3xl border border-border/60 p-0 shadow-sm'
+          className='w-full min-w-(--radix-popper-anchor-width) overflow-hidden rounded-2xl border border-border/60 p-0 shadow-sm'
           align='start'
         >
           <Command className='rounded-3xl!'>
@@ -138,6 +137,7 @@ const Combobox4 = () => {
                     <CommandItem
                       key={industry.value}
                       value={industry.value}
+                      data-checked={selectedIndustry === industry.value}
                       onSelect={currentValue => {
                         if (currentValue === selectedIndustry) {
                           setSelectedIndustry('')
@@ -152,15 +152,12 @@ const Combobox4 = () => {
                         setSelectedIndustry(currentValue)
                         setOpen(false)
                       }}
-                      className='flex items-center justify-between rounded-md'
+                      className='mt-1 rounded-md pr-2'
                     >
                       <div className='flex items-center gap-2'>
                         <Icon className='text-muted-foreground size-4' />
                         {industry.label}
                       </div>
-                      {selectedIndustry === industry.value && (
-                        <CheckIcon className='text-muted-foreground/80 size-4' />
-                      )}
                     </CommandItem>
                   )
                 })}

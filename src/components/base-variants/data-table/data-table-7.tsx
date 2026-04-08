@@ -10,8 +10,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+} from '@/components/ui//dropdown-menu'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui//table'
 
 type Discontinued = 'no' | 'yes'
 
@@ -230,7 +230,7 @@ const DataTable7 = () => {
                 return (
                   <TableHead
                     key={column.key}
-                    className='relative h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'
+                    className='relative h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'
                     style={getPinnedStyles(column)}
                     data-pinned={pinSide || undefined}
                   >

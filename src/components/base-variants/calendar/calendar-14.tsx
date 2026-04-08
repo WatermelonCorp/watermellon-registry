@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 import { type DateRange } from 'react-day-picker'
 
-import { Calendar } from '@/components/ui/calendar'
+import { Calendar } from '@/components/ui//calendar'
 
 type CalendarClassNames = NonNullable<ComponentProps<typeof Calendar>['classNames']>
 
@@ -18,7 +18,7 @@ const calendarClassNames = {
   range_start: 'rounded-l-full bg-orange-500/20 dark:bg-orange-400/10',
   range_end: 'rounded-r-full bg-orange-500/20 dark:bg-orange-400/10',
   day_button:
-    'data-[range-end=true]:rounded-full! data-[range-start=true]:rounded-full! data-[range-start=true]:bg-orange-500! data-[range-start=true]:text-white! data-[range-start=true]:dark:bg-orange-400! data-[range-start=true]:group-data-[focused=true]/day:ring-orange-500/20 data-[range-start=true]:dark:group-data-[focused=true]/day:ring-orange-400/40 data-[range-end=true]:bg-orange-500! data-[range-end=true]:text-white! data-[range-end=true]:dark:bg-orange-400! data-[range-end=true]:group-data-[focused=true]/day:ring-orange-500/20 data-[range-end=true]:dark:group-data-[focused=true]/day:ring-orange-400/40 data-[range-middle=true]:rounded-none data-[range-middle=true]:bg-orange-500/20 data-[range-middle=true]:dark:bg-orange-400/10 hover:rounded-full',
+    '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0 data-[range-end=true]:rounded-full! data-[range-start=true]:rounded-full! data-[range-start=true]:bg-orange-500! data-[range-start=true]:text-white! data-[range-start=true]:dark:bg-orange-400! data-[range-end=true]:bg-orange-500! data-[range-end=true]:text-white! data-[range-end=true]:dark:bg-orange-400! data-[range-middle=true]:rounded-none data-[range-middle=true]:bg-orange-500/20 data-[range-middle=true]:dark:bg-orange-400/10 hover:rounded-full',
   today:
     'rounded-full bg-muted/60! data-[selected=true]:rounded-l-none! data-[selected=true]:bg-orange-500/20! dark:data-[selected=true]:bg-orange-400/10! [&_button[data-range-middle=true]]:bg-transparent!'
 } satisfies CalendarClassNames

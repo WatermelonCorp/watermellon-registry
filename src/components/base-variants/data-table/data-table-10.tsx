@@ -11,13 +11,13 @@ import {
   ChevronUpIcon
 } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Label } from '@/components/ui/label'
-import { Pagination, PaginationContent, PaginationItem } from '@/components/ui/pagination'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Badge } from '@/components/ui//badge'
+import { Button } from '@/components/ui//button'
+import { Checkbox } from '@/components/ui//checkbox'
+import { Label } from '@/components/ui//label'
+import { Pagination, PaginationContent, PaginationItem } from '@/components/ui//pagination'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui//select'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui//table'
 import { cn } from '@/lib/utils'
 
 type Availability = 'In Stock' | 'Limited' | 'Out of Stock'
@@ -176,7 +176,7 @@ const DataTable10 = () => {
                 return (
                   <TableHead
                     key={column}
-                    className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'
+                    className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'
                   >
                     <button
                       type='button'
@@ -241,13 +241,13 @@ const DataTable10 = () => {
         </Table>
       </div>
 
-      <div className='flex items-center justify-between gap-8 rounded-xl border border-border/60 bg-background px-4 py-3 shadow-sm'>
-        <div className='flex items-center gap-3'>
+      <div className='flex flex-col gap-4 rounded-xl border border-border/60 bg-background px-4 py-3 shadow-sm lg:flex-row lg:items-center lg:justify-between'>
+        <div className='flex items-center justify-center gap-3 lg:justify-start'>
           <Label htmlFor={id} className='max-sm:sr-only'>
             Rows per page
           </Label>
           <Select value={pageSize.toString()} onValueChange={changePageSize}>
-            <SelectTrigger id={id} className='h-9 w-fit whitespace-nowrap border-border/60'>
+            <SelectTrigger id={id} className='h-9 w-fit whitespace-nowrap border-border/60 max-sm:w-full'>
               <SelectValue placeholder='Select number of results' />
             </SelectTrigger>
             <SelectContent className='[&_*[role=option]]:pr-8 [&_*[role=option]]:pl-2 [&_*[role=option]>span]:right-2 [&_*[role=option]>span]:left-auto'>
@@ -260,7 +260,7 @@ const DataTable10 = () => {
           </Select>
         </div>
 
-        <div className='text-muted-foreground flex grow justify-end text-sm whitespace-nowrap'>
+        <div className='text-muted-foreground flex justify-center text-sm whitespace-nowrap lg:flex-1 lg:justify-end'>
           <p className='text-sm whitespace-nowrap' aria-live='polite'>
             <span className='text-foreground'>
               {currentRangeStart}-{currentRangeEnd}
@@ -269,9 +269,9 @@ const DataTable10 = () => {
           </p>
         </div>
 
-        <div>
+        <div className='flex justify-center lg:justify-end'>
           <Pagination>
-            <PaginationContent>
+            <PaginationContent className='flex flex-wrap justify-center gap-1 sm:gap-2'>
               <PaginationItem>
                 <Button
                   size='icon'

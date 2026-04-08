@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Input } from '@/components/ui/input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Button } from '@/components/ui//button'
+import { Checkbox } from '@/components/ui//checkbox'
+import { Input } from '@/components/ui//input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui//select'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui//table'
 
 type PersonStatus = 'active' | 'inactive' | 'pending'
 
@@ -111,19 +111,19 @@ const DataTable13 = () => {
                   className='after:hidden data-checked:border-sky-600 data-checked:bg-sky-600 data-checked:text-white dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500 dark:data-checked:text-white'
                 />
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 First Name
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Last Name
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Email
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Status
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Progress
               </TableHead>
             </TableRow>

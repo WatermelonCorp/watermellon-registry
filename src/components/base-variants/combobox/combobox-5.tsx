@@ -2,7 +2,7 @@
 
 import { useId, useState } from 'react'
 
-import { CircleCheckIcon, ChevronsUpDownIcon } from 'lucide-react'
+import { ChevronsUpDownIcon } from 'lucide-react'
 
 import {
   Command,
@@ -11,11 +11,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList
-} from '@/components/ui/command'
-import { Label } from '@/components/ui/label'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-
-import { cn } from '@/lib/utils'
+} from '@/components/ui//command'
+import { Label } from '@/components/ui//label'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui//popover'
 
 const frameworks = [
   {
@@ -90,6 +88,8 @@ const Combobox5 = () => {
                   <CommandItem
                     key={framework.value}
                     value={framework.value}
+                    className='pr-2'
+                    data-checked={selectedFramework === framework.value}
                     onSelect={currentValue => {
                       if (currentValue === selectedFramework) {
                         setSelectedFramework('')
@@ -106,14 +106,6 @@ const Combobox5 = () => {
                     }}
                   >
                     {framework.label}
-                    <CircleCheckIcon
-                      className={cn(
-                        'ml-auto size-4 fill-sky-500 stroke-white dark:fill-sky-400',
-                        selectedFramework === framework.value
-                          ? 'opacity-100'
-                          : 'opacity-0'
-                      )}
-                    />
                   </CommandItem>
                 ))}
               </CommandGroup>

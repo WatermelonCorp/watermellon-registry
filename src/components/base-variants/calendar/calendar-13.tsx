@@ -3,7 +3,7 @@
 import type { ComponentProps } from 'react'
 import { useState } from 'react'
 
-import { Calendar } from '@/components/ui/calendar'
+import { Calendar } from '@/components/ui//calendar'
 
 type CalendarClassNames = NonNullable<ComponentProps<typeof Calendar>['classNames']>
 
@@ -11,7 +11,7 @@ const initialSelectedDate: Date = new Date()
 
 const calendarClassNames = {
   day_button:
-    'rounded-full! data-[selected-single=true]:bg-orange-500! data-[selected-single=true]:text-white! data-[selected-single=true]:dark:bg-orange-400! data-[selected-single=true]:group-data-[focused=true]/day:ring-orange-500/20 data-[selected-single=true]:dark:group-data-[focused=true]/day:ring-orange-400/40',
+    'rounded-full! !ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0 data-[selected-single=true]:bg-orange-500! data-[selected-single=true]:text-white! data-[selected-single=true]:dark:bg-orange-400!',
   today: 'rounded-full! bg-muted/60!'
 } satisfies CalendarClassNames
 

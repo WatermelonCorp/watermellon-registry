@@ -2,7 +2,7 @@
 
 import { type ComponentProps, useState } from 'react'
 
-import { Calendar, CalendarDayButton } from '@/components/ui/calendar'
+import { Calendar, CalendarDayButton } from '@/components/ui//calendar'
 
 type CalendarComponents = NonNullable<ComponentProps<typeof Calendar>['components']>
 type CalendarDayButtonProps = ComponentProps<typeof CalendarDayButton>
@@ -54,13 +54,17 @@ const Calendar25 = () => {
   )
 
   return (
-    <div className='mx-auto w-full max-w-[20rem] px-2 sm:max-w-[24rem] sm:px-0 lg:max-w-104'>
+    <div className='mx-auto w-full max-w-[20rem] px-2 sm:max-w-[24rem] sm:px-0 md:max-w-[30rem] lg:max-w-[34rem] xl:max-w-[38rem]'>
       <Calendar
         mode='single'
         selected={selectedDate}
         onSelect={setSelectedDate}
         showOutsideDays={false}
-        className='w-full rounded-[1.75rem] border border-border/60 bg-muted/10 p-2 shadow-sm [--cell-size:--spacing(8)] sm:p-3 sm:[--cell-size:--spacing(10)] lg:[--cell-size:--spacing(12)]'
+        classNames={{
+          today: '!bg-transparent',
+          day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'
+        }}
+        className='w-full !border-0 !bg-transparent p-2 transition-all !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent [--cell-size:--spacing(7)] sm:p-3 sm:[--cell-size:--spacing(8)] md:p-3 md:[--cell-size:--spacing(9)] lg:[--cell-size:--spacing(10)] xl:[--cell-size:--spacing(12)]'
         components={calendarComponents}
         disabled={{ before: minimumAvailableDate }}
       />

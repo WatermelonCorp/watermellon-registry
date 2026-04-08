@@ -2,7 +2,7 @@
 
 import { useId, useState } from 'react'
 
-import { CheckIcon, ChevronsUpDownIcon, PlusIcon } from 'lucide-react'
+import { ChevronsUpDownIcon, PlusIcon } from 'lucide-react'
 
 import {
   Command,
@@ -12,9 +12,9 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator
-} from '@/components/ui/command'
-import { Label } from '@/components/ui/label'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+} from '@/components/ui//command'
+import { Label } from '@/components/ui//label'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui//popover'
 
 import { cn } from '@/lib/utils'
 
@@ -87,7 +87,7 @@ const Combobox6 = () => {
           />
         </PopoverTrigger>
         <PopoverContent
-          className='w-full min-w-(--radix-popper-anchor-width) overflow-hidden rounded-3xl border border-border/60 p-0 shadow-sm'
+          className='w-full min-w-(--radix-popper-anchor-width) overflow-hidden rounded-2xl border border-border/60 p-0 shadow-sm'
           align='start'
         >
           <Command className='rounded-3xl!'>
@@ -99,6 +99,7 @@ const Combobox6 = () => {
                   <CommandItem
                     key={university.value}
                     value={university.value}
+                    data-checked={selectedUniversity === university.value}
                     onSelect={currentValue => {
                       if (!isUniversityValue(currentValue)) {
                         return
@@ -107,14 +108,11 @@ const Combobox6 = () => {
                       setSelectedUniversity(currentValue)
                       setOpen(false)
                     }}
-                    className='flex items-center rounded-md'
+                    className='flex items-center rounded-md pr-2'
                   >
                     <span className='min-w-0 flex-1 truncate'>
                       {university.label}
                     </span>
-                    {selectedUniversity === university.value && (
-                      <CheckIcon size={16} className='ml-auto shrink-0' />
-                    )}
                   </CommandItem>
                 ))}
               </CommandGroup>
@@ -122,7 +120,7 @@ const Combobox6 = () => {
               <CommandGroup>
                 <button
                   type='button'
-                  className='hover:bg-accent/30 flex h-9 w-full items-center justify-start gap-2 rounded-md px-2 text-sm font-normal'
+                  className='hover:bg-accent/30 flex h-9 w-full items-center justify-start gap-2 rounded-md px-3 text-sm font-normal'
                 >
                   <PlusIcon className='-ms-2 size-4 opacity-60' aria-hidden='true' />
                   New workspace

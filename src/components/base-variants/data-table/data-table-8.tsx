@@ -18,8 +18,8 @@ import { restrictToHorizontalAxis } from '@dnd-kit/modifiers'
 import { arrayMove, horizontalListSortingStrategy, SortableContext, useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 
-import { Button } from '@/components/ui/button'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Button } from '@/components/ui//button'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui//table'
 
 type Employee = {
   department: string
@@ -140,7 +140,7 @@ const DraggableHeader = ({
   return (
     <TableHead
       ref={setNodeRef}
-      className='relative h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'
+      className='relative h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'
       style={{
         opacity: isDragging ? 0.85 : 1,
         transform: CSS.Transform.toString(transform),

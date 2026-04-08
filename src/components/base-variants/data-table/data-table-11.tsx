@@ -4,12 +4,12 @@ import { useMemo, useState } from 'react'
 
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem } from '@/components/ui/pagination'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Badge } from '@/components/ui//badge'
+import { Button } from '@/components/ui//button'
+import { Checkbox } from '@/components/ui//checkbox'
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem } from '@/components/ui//pagination'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui//select'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui//table'
 import { usePagination } from '@/hooks/use-pagination'
 import { cn } from '@/lib/utils'
 
@@ -173,7 +173,7 @@ const DataTable11 = () => {
                 return (
                   <TableHead
                     key={column}
-                    className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'
+                    className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'
                   >
                     <button
                       type='button'

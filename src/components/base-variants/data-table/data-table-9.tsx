@@ -4,9 +4,9 @@ import { Fragment, useMemo, useState } from 'react'
 
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Button } from '@/components/ui//button'
+import { Checkbox } from '@/components/ui//checkbox'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui//table'
 
 type TeamMember = {
   dob: string
@@ -170,19 +170,19 @@ const DataTable9 = () => {
                   className='after:hidden data-checked:border-sky-600 data-checked:bg-sky-600 data-checked:text-white dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500 dark:data-checked:text-white'
                 />
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Team Name
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Department
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Location
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Next Milestone
               </TableHead>
-              <TableHead className='h-12 bg-muted/20 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+              <TableHead className='h-12 bg-muted/20 text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                 Budget
               </TableHead>
             </TableRow>
@@ -240,19 +240,19 @@ const DataTable9 = () => {
                           <TableHeader className='border-b border-border/60'>
                             <TableRow className='bg-muted/10 hover:bg-muted/10'>
                               <TableHead className='w-20' />
-                              <TableHead className='text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+                              <TableHead className='text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                                 Member Name
                               </TableHead>
-                              <TableHead className='text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+                              <TableHead className='text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                                 Role
                               </TableHead>
-                              <TableHead className='text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+                              <TableHead className='text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                                 Email
                               </TableHead>
-                              <TableHead className='text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+                              <TableHead className='text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                                 Hire Date
                               </TableHead>
-                              <TableHead className='text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+                              <TableHead className='text-[13px] font-medium tracking-[0.08em] text-muted-foreground'>
                                 Date of Birth
                               </TableHead>
                             </TableRow>
