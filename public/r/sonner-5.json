@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-5",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-5.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner5 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-zinc-500/5 text-zinc-600 border-zinc-500/20 hover:bg-zinc-500/10 hover:border-zinc-500/30 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast('Draft Saved Automatically', {\r\n          description: 'You can dismiss this message or wait for it to auto-close.',\r\n          closeButton: true,\r\n          style: {\r\n            borderRadius: '14px',\r\n          },\r\n          className: 'shadow-lg border border-zinc-100',\r\n        })\r\n      }\r\n    >\r\n      Show Dismissible Toast\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner5\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -11347,6 +11347,1146 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "sonner-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-1.tsx",
+          "target": "components/ui/sonner-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-2",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-2.tsx",
+          "target": "components/ui/sonner-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-3",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-3.tsx",
+          "target": "components/ui/sonner-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-4",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "avatar",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-4.tsx",
+          "target": "components/ui/sonner-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-5",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-5.tsx",
+          "target": "components/ui/sonner-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-6",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-6.tsx",
+          "target": "components/ui/sonner-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-7",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-7.tsx",
+          "target": "components/ui/sonner-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-8",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-8.tsx",
+          "target": "components/ui/sonner-8.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-9",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-9.tsx",
+          "target": "components/ui/sonner-9.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-10",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-10.tsx",
+          "target": "components/ui/sonner-10.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-11",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-11.tsx",
+          "target": "components/ui/sonner-11.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-12",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-12.tsx",
+          "target": "components/ui/sonner-12.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-13",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-13.tsx",
+          "target": "components/ui/sonner-13.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-14",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-14.tsx",
+          "target": "components/ui/sonner-14.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-15",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-15.tsx",
+          "target": "components/ui/sonner-15.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-16",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-16.tsx",
+          "target": "components/ui/sonner-16.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-17",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-17.tsx",
+          "target": "components/ui/sonner-17.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-18",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-18.tsx",
+          "target": "components/ui/sonner-18.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-19",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-19.tsx",
+          "target": "components/ui/sonner-19.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner-20",
+      "type": "registry:ui",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "sonner",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/sonner/sonner-20.tsx",
+          "target": "components/ui/sonner-20.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-1",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-1.tsx",
+          "target": "components/ui/input-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-2",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-2.tsx",
+          "target": "components/ui/input-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-3",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-3.tsx",
+          "target": "components/ui/input-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-4",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-4.tsx",
+          "target": "components/ui/input-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-5",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-5.tsx",
+          "target": "components/ui/input-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-6",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-6.tsx",
+          "target": "components/ui/input-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-7",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-7.tsx",
+          "target": "components/ui/input-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-8",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-8.tsx",
+          "target": "components/ui/input-8.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-9",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-9.tsx",
+          "target": "components/ui/input-9.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-10",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-10.tsx",
+          "target": "components/ui/input-10.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-11",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-11.tsx",
+          "target": "components/ui/input-11.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-12",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-12.tsx",
+          "target": "components/ui/input-12.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-13",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-13.tsx",
+          "target": "components/ui/input-13.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-14",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-14.tsx",
+          "target": "components/ui/input-14.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-15",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-15.tsx",
+          "target": "components/ui/input-15.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-16",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-16.tsx",
+          "target": "components/ui/input-16.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-17",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-17.tsx",
+          "target": "components/ui/input-17.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-18",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-18.tsx",
+          "target": "components/ui/input-18.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-19",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-19.tsx",
+          "target": "components/ui/input-19.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-20",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-20.tsx",
+          "target": "components/ui/input-20.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-21",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-21.tsx",
+          "target": "components/ui/input-21.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-22",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-22.tsx",
+          "target": "components/ui/input-22.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-23",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-23.tsx",
+          "target": "components/ui/input-23.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-24",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-24.tsx",
+          "target": "components/ui/input-24.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-25",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-25.tsx",
+          "target": "components/ui/input-25.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-26",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-26.tsx",
+          "target": "components/ui/input-26.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-27",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-27.tsx",
+          "target": "components/ui/input-27.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-28",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-28.tsx",
+          "target": "components/ui/input-28.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-29",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-29.tsx",
+          "target": "components/ui/input-29.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-30",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-30.tsx",
+          "target": "components/ui/input-30.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-31",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-31.tsx",
+          "target": "components/ui/input-31.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-32",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-32.tsx",
+          "target": "components/ui/input-32.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-33",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-33.tsx",
+          "target": "components/ui/input-33.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-34",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-34.tsx",
+          "target": "components/ui/input-34.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-35",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-35.tsx",
+          "target": "components/ui/input-35.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-36",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-36.tsx",
+          "target": "components/ui/input-36.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-37",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-37.tsx",
+          "target": "components/ui/input-37.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-38",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-38.tsx",
+          "target": "components/ui/input-38.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-39",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-39.tsx",
+          "target": "components/ui/input-39.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-40",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-40.tsx",
+          "target": "components/ui/input-40.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-41",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-41.tsx",
+          "target": "components/ui/input-41.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-42",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-42.tsx",
+          "target": "components/ui/input-42.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-43",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-43.tsx",
+          "target": "components/ui/input-43.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-44",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-44.tsx",
+          "target": "components/ui/input-44.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-45",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-45.tsx",
+          "target": "components/ui/input-45.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-46",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/base-variants/input/input-46.tsx",
+          "target": "components/ui/input-46.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

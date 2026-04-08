@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-4",
+  "dependencies": [],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-4.tsx",
+      "content": "import { Badge } from '@/components/ui/badge';\r\nimport {\r\n  Tabs,\r\n  TabsContent,\r\n  TabsList,\r\n  TabsTrigger,\r\n} from '@/components/ui/tabs';\r\n\r\nconst stock = [\r\n  {\r\n    name: 'Inventory',\r\n    value: 'inventory',\r\n    count: 1,\r\n    content: (\r\n      <>\r\n        Keep track of your{' '}\r\n        <span className=\"text-foreground font-semibold\">\r\n          current stock levels\r\n        </span>\r\n        . Manage SKU counts, reorder alerts, and warehouse locations to keep\r\n        your fulfillment center running at peak efficiency.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: 'Pending',\r\n    value: 'pending',\r\n    count: 4,\r\n    content: (\r\n      <>\r\n        Monitor incoming{' '}\r\n        <span className=\"text-foreground font-semibold\">customer orders</span>.\r\n        Review payment statuses, verify addresses, and prepare your pick-lists\r\n        for next-day dispatch.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: 'Shipped',\r\n    value: 'shipped',\r\n    count: 6,\r\n    content: (\r\n      <>\r\n        Access your{' '}\r\n        <span className=\"text-foreground font-semibold\">delivery history</span>.\r\n        Track parcels, manage returns, and analyze shipping performance across\r\n        all your carrier partners.\r\n      </>\r\n    ),\r\n  },\r\n];\r\n\r\nconst Tabs4 = () => {\r\n  return (\r\n    <Tabs defaultValue=\"inventory\" className=\"w-full gap-4 px-1\">\r\n      <div className=\"bg-muted/50 rounded-full p-1 w-fit max-w-full\">\r\n        <div className=\"overflow-x-auto overflow-y-hidden scrollbar-hide sm:py-0\">\r\n          <TabsList className=\"bg-transparent shadow-none border-none flex w-max justify-start gap-1 p-0.5 \">\r\n            {stock.map((tab) => (\r\n              <TabsTrigger\r\n                key={tab.value}\r\n                value={tab.value}\r\n                className=\"h-full rounded-xl px-3 text-sm font-medium transition-all data-[state=active]:bg-background data-[state=active]:text-primary dark:data-[state=active]:text-primary data-[state=active]:shadow-sm dark:data-[state=active]:bg-muted/80\"\r\n              >\r\n                {tab.name}\r\n                <Badge className=\"bg-primary text-primary-foreground flex size-5 items-center justify-center rounded-md p-0 text-[10px] tabular-nums rounded-md ml-1\">\r\n                  {tab.count}\r\n                </Badge>\r\n              </TabsTrigger>\r\n            ))}\r\n          </TabsList>\r\n        </div>\r\n      </div>\r\n\r\n      {stock.map((tab) => (\r\n        <TabsContent key={tab.value} value={tab.value}>\r\n          <p className=\"text-muted-foreground text-[13px] leading-relaxed\">\r\n            {tab.content}\r\n          </p>\r\n        </TabsContent>\r\n      ))}\r\n    </Tabs>\r\n  );\r\n};\r\n\r\nexport default Tabs4;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-27",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-27.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input27 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Upload Asset\n      </Label>\n      <Input\n        id={id}\n        type=\"file\"\n        className=\"text-muted-foreground file:border-input file:text-foreground file:bg-primary/5 focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl border-dashed p-0 pr-3 text-xs italic transition-all file:mr-3 file:h-full file:border-0 file:border-r file:border-solid file:px-4 file:text-sm file:font-semibold file:not-italic focus-visible:ring-3\"\n      />\n    </div>\n  );\n};\n\nexport default Input27;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-27.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

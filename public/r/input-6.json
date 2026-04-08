@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-6",
+  "dependencies": [],
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-6.tsx",
+      "content": "import { Input } from '@/components/ui/input';\n\nconst Input6 = () => {\n  return (\n    <div className=\"w-full max-w-xs space-y-4\">\n      <Input\n        type=\"text\"\n        placeholder=\"Compact size\"\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 h-8 rounded-lg text-xs transition-all placeholder:text-[10px] focus-visible:ring-3\"\n      />\n      <Input\n        type=\"text\"\n        placeholder=\"Standard size\"\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 h-10 rounded-xl transition-all focus-visible:ring-3\"\n      />\n      <Input\n        type=\"text\"\n        placeholder=\"Spacious size\"\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 h-12 rounded-2xl px-4 text-lg transition-all focus-visible:ring-3\"\n      />\n    </div>\n  );\n};\n\nexport default Input6;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

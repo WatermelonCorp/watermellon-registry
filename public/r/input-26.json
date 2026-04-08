@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-26",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-26.tsx",
+      "content": "'use client';\n\nimport { useId, useState } from 'react';\n\nimport { IconEye, IconEyeOff } from '@tabler/icons-react';\n\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input26 = () => {\n  const [isVisible, setIsVisible] = useState(false);\n\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Secure Password\n      </Label>\n      <div className=\"relative\">\n        <Input\n          id={id}\n          type={isVisible ? 'text' : 'password'}\n          placeholder=\"Password\"\n          className=\"focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl pr-10 text-sm transition-all focus-visible:ring-3\"\n        />\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          onClick={() => setIsVisible((prevState) => !prevState)}\n          className=\"text-muted-foreground absolute inset-y-0 right-0 h-full w-10 rounded-l-none hover:bg-transparent focus-visible:bg-transparent\"\n        >\n          {isVisible ? (\n            <IconEyeOff className=\"size-5 stroke-[1.5]\" />\n          ) : (\n            <IconEye className=\"size-5 stroke-[1.5]\" />\n          )}\n          <span className=\"sr-only\">\n            {isVisible ? 'Hide password' : 'Show password'}\n          </span>\n        </Button>\n      </div>\n    </div>\n  );\n};\n\nexport default Input26;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-26.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

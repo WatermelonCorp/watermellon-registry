@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-9",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-9.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input9 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Phone Number\n      </Label>\n      <Input\n        id={id}\n        type=\"tel\"\n        placeholder=\"+1 (555) 000-0000\"\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl transition-all focus-visible:ring-3\"\n      />\n      <p className=\"text-muted-foreground px-1 text-xs italic\">\n        Verification code will be sent to this number.\n      </p>\n    </div>\n  );\n};\n\nexport default Input9;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

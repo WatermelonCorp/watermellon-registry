@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-5",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-5.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input5 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"font-medium\">\n        Secret API Key\n      </Label>\n      <Input\n        id={id}\n        type=\"text\"\n        placeholder=\"API Key\"\n        defaultValue=\"sk_live_51Msz8pS...\"\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl font-mono text-xs transition-all read-only:bg-neutral-50 focus-visible:ring-3 dark:read-only:bg-neutral-900/50\"\n        readOnly\n      />\n    </div>\n  );\n};\n\nexport default Input5;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

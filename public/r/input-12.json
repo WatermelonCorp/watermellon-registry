@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-12",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-12.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input12 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Confirm Password\n      </Label>\n      <Input\n        id={id}\n        type=\"password\"\n        placeholder=\"••••••••\"\n        className=\"peer transition-all focus-visible:border-rose-500 focus-visible:ring-3 focus-visible:ring-rose-500/20\"\n        defaultValue=\"password123\"\n        aria-invalid\n      />\n      <p className=\"px-1 text-[11px] font-medium text-rose-500\">\n        Passwords do not match. Please try again.\n      </p>\n    </div>\n  );\n};\n\nexport default Input12;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

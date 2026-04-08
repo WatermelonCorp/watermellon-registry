@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-14",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-14.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner14 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl border-emerald-500/30 text-emerald-600 hover:text-emerald-700 dark:hover:text-emerald-500 hover:bg-emerald-50 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast.success('Payment Received', {\r\n          description: 'Your invoice #2931 has been marked as paid.',\r\n          style: {\r\n            '--normal-bg': 'var(--background)',\r\n            '--normal-text': 'light-dark(var(--color-green-600), var(--color-green-400))',\r\n            '--normal-border': 'light-dark(var(--color-green-600), var(--color-green-400))',\r\n            borderRadius: '16px',\r\n          } as React.CSSProperties,\r\n          className: 'shadow-lg',\r\n        })\r\n      }\r\n    >\r\n      Show Outline Success Toast\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner14\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-14.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

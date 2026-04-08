@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-9",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-9.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\n\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner9 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-sky-500/5 text-sky-600 hover:text-sky-700 dark:hover:text-sky-500 border-sky-500/20 hover:bg-sky-500/10 hover:border-sky-500/30 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast.info('New System Update Available', {\r\n          description: 'Version 2.4.0 includes performance improvements.',\r\n          style: {\r\n            '--normal-bg':\r\n              'color-mix(in oklab, light-dark(var(--color-sky-600), var(--color-sky-400)) 10%, var(--background))',\r\n            '--normal-text': 'light-dark(var(--color-sky-600), var(--color-sky-400))',\r\n            '--normal-border': 'light-dark(var(--color-sky-600), var(--color-sky-400))',\r\n            borderRadius: '16px',\r\n          } as React.CSSProperties,\r\n          className: 'shadow-xl shadow-sky-500/5',\r\n        })\r\n      }\r\n    >\r\n      Show Soft Info Toast\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner9\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

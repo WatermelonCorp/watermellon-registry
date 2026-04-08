@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-4",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "avatar",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-4.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\n\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner4 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-purple-500/5 text-purple-600 hover:text-purple-700 dark:hover:text-purple-500 border-purple-500/20 hover:bg-purple-500/10 hover:border-purple-500/30 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast(\r\n          <div className='flex items-center gap-3'>\r\n            <Avatar className='size-10'>\r\n              <AvatarImage src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww' alt='Hallie Richards' />\r\n              <AvatarFallback className='text-xs bg-purple-50 text-purple-600'>HR</AvatarFallback>\r\n            </Avatar>\r\n            <div className='flex flex-col gap-0.5'>\r\n              <span className='font-medium text-sm'>Profile Updated</span>\r\n              <p className='text-xs opacity-70'>Settings synced across all devices.</p>\r\n            </div>\r\n          </div>,\r\n          {\r\n            style: { borderRadius: '18px' },\r\n            className: 'border border-purple-100 shadow-xl shadow-purple-500/5',\r\n          }\r\n        )\r\n      }\r\n    >\r\n      Update System Profile\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner4\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

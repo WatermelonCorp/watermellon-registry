@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-2",
+  "dependencies": [],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-2.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'\r\n\r\nconst pipelineTasks = [\r\n  {\r\n    name: 'Deploy',\r\n    value: 'deploy',\r\n    content: (\r\n      <>\r\n        Ship your code with <span className='text-foreground font-semibold'>confidence and speed</span>. Automate your\r\n        delivery pipeline to reach users faster while maintaining high reliability standards.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Builds',\r\n    value: 'builds',\r\n    content: (\r\n      <>\r\n        Monitor your <span className='text-foreground font-semibold'>compilation workflow</span>. Track build times,\r\n        dependencies, and artifacts to ensure every release is optimized and secure.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Infrastructure',\r\n    value: 'infrastructure',\r\n    content: (\r\n      <>\r\n        Control your <span className='text-foreground font-semibold'>cloud assets</span>. Define and manage your scaling\r\n        rules, databases, and network configurations from a single control plane.\r\n      </>\r\n    )\r\n  }\r\n]\r\n\r\nconst Tabs2 = () => {\r\n  return (\r\n      <Tabs defaultValue='deploy' className='gap-4'>\r\n        <TabsList className='border bg-transparent px-1 py-1.5 rounded-2xl'>\r\n          {pipelineTasks.map(tab => (\r\n            <TabsTrigger\r\n              key={tab.value}\r\n              value={tab.value}\r\n             className='rounded-xl px-4 py-3 text-sm font-medium transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground dark:data-[state=active]:text-primary-foreground dark:data-[state=active]:bg-primary'\r\n            >\r\n              {tab.name}\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n\r\n        {pipelineTasks.map(tab => (\r\n          <TabsContent key={tab.value} value={tab.value}>\r\n            <p className='text-muted-foreground/90 text-sm leading-6'>{tab.content}</p>\r\n          </TabsContent>\r\n        ))}\r\n      </Tabs>\r\n  )\r\n}\r\n\r\nexport default Tabs2\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-33",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-33.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input33 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        API Access Token\n      </Label>\n      <div className=\"border-input focus-within:border-primary focus-within:ring-primary/20 flex rounded-xl border transition-all focus-within:ring-3\">\n        <Input\n          id={id}\n          type=\"password\"\n          placeholder=\"••••••••••••••••\"\n          className=\"h-10 flex-1 rounded-l-xl rounded-r-none border-none focus-visible:ring-0\"\n        />\n        <Button className=\"bg-primary text-primary-foreground hover:bg-primary/90 h-[40px] rounded-l-none rounded-r-xl px-4 shadow-none\">\n          Refresh\n        </Button>\n      </div>\n    </div>\n  );\n};\n\nexport default Input33;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-33.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

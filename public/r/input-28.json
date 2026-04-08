@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-28",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-28.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from '@/components/ui/select';\n\nconst Input28 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Server Endpoint\n      </Label>\n      <div className=\"flex rounded-xl\">\n        <Select defaultValue=\"https://\">\n          <SelectTrigger\n            id={id}\n            className=\"bg-muted/30 focus-visible:ring-primary/20 focus-visible:border-primary w-24 rounded-l-xl rounded-r-none border-r-0 text-sm shadow-none transition-all focus-visible:z-10 focus-visible:ring-3\"\n          >\n            <SelectValue />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"https://\" className=\"pr-2 [&_svg]:hidden\">\n              https://\n            </SelectItem>\n            <SelectItem value=\"wss://\" className=\"pr-2 [&_svg]:hidden\">\n              wss://\n            </SelectItem>\n            <SelectItem value=\"grpc://\" className=\"pr-2 [&_svg]:hidden\">\n              grpc://\n            </SelectItem>\n          </SelectContent>\n        </Select>\n        <Input\n          id={id}\n          type=\"text\"\n          placeholder=\"api.watermelon.sh\"\n          className=\"focus-visible:border-primary focus-visible:ring-primary/20 -ms-px rounded-l-none rounded-r-xl text-sm transition-all focus-visible:ring-3\"\n        />\n      </div>\n    </div>\n  );\n};\n\nexport default Input28;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-28.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

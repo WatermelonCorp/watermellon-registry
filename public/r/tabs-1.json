@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-1",
+  "dependencies": [],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-1.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'\r\n\r\nconst tabs = [\r\n  {\r\n    name: 'Overview',\r\n    value: 'overview',\r\n    content: (\r\n      <>\r\n        Get a <span className='text-foreground font-semibold'>birds-eye view</span> of your creative project, from\r\n        milestones to current progress. Keep your vision clear and your team aligned with real-time updates.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Roadmap',\r\n    value: 'roadmap',\r\n    content: (\r\n      <>\r\n        Plan your <span className='text-foreground font-semibold'>future trajectory</span> with a visual roadmap of\r\n        upcoming features and releases. Track your long-term goals and stay ahead of the curve.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Backlog',\r\n    value: 'backlog',\r\n    content: (\r\n      <>\r\n        Manage your <span className='text-foreground font-semibold'>pending tasks</span> and ideas. Prioritize what\r\n        matters most and ensure nothing falls through the cracks as your project grows.\r\n      </>\r\n    )\r\n  }\r\n]\r\n\r\nconst Tabs1 = () => {\r\n  return (\r\n      <Tabs defaultValue='overview' className='gap-4'>\r\n        <TabsList className='bg-muted px-1 py-1.5 rounded-2xl'>\r\n          {tabs.map(tab => (\r\n            <TabsTrigger\r\n              key={tab.value}\r\n              value={tab.value}\r\n              className='rounded-xl px-4 py-3 text-sm font-medium transition-all data-[state=active]:bg-background data-[state=active]:text-primary dark:data-[state=active]:text-primary data-[state=active]:shadow-sm dark:data-[state=active]:bg-muted/80'\r\n            >\r\n              {tab.name}\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n\r\n        {tabs.map(tab => (\r\n          <TabsContent key={tab.value} value={tab.value}>\r\n            <p className='text-muted-foreground leading-relaxed'>{tab.content}</p>\r\n          </TabsContent>\r\n        ))}\r\n      </Tabs>\r\n  )\r\n}\r\n\r\nexport default Tabs1\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

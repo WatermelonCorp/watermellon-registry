@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-1",
+  "dependencies": [],
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-1.tsx",
+      "content": "import { Input } from '@/components/ui/input';\r\n\r\nconst Input1 = () => {\r\n  return (\r\n    <Input\r\n      type=\"search\"\r\n      placeholder=\"Search components...\"\r\n      className=\"focus-visible:border-primary focus-visible:ring-primary/20 max-w-xs rounded-xl transition-all focus-visible:ring-3\"\r\n    />\r\n  );\r\n};\r\n\r\nexport default Input1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

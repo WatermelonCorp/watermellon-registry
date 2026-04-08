@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-8",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-8.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner8 = () => {\r\n  const triggerToast = (\r\n    position:\r\n      | 'top-left'\r\n      | 'top-center'\r\n      | 'top-right'\r\n      | 'bottom-left'\r\n      | 'bottom-center'\r\n      | 'bottom-right'\r\n  ) => {\r\n    toast('Position Updated', {\r\n      description: `Notification now showing at ${position}.`,\r\n      position,\r\n      style: { borderRadius: '12px' },\r\n      className: 'shadow-lg border border-zinc-100',\r\n    });\r\n  };\r\n\r\n  return (\r\n    <div className='grid grid-cols-2 sm:grid-cols-3 gap-3'>\r\n      {([\r\n        'top-left',\r\n        'top-center',\r\n        'top-right',\r\n        'bottom-left',\r\n        'bottom-center',\r\n        'bottom-right',\r\n      ] as const).map((pos) => (\r\n        <Button\r\n          key={pos}\r\n          variant='outline'\r\n          className='rounded-xl bg-zinc-500/5 text-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-500 border-zinc-200 hover:bg-zinc-100 hover:text-zinc-900 transition-all duration-200 capitalize text-xs h-9'\r\n          onClick={() => triggerToast(pos)}\r\n        >\r\n          {pos.replace('-', ' ')}\r\n        </Button>\r\n      ))}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Sonner8\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

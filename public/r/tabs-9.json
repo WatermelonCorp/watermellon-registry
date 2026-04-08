@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-9",
+  "dependencies": [],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-9.tsx",
+      "content": "import {\r\n  Tabs,\r\n  TabsContent,\r\n  TabsList,\r\n  TabsTrigger,\r\n} from '@/components/ui/tabs';\r\n\r\nconst subscriptionTiers = [\r\n  {\r\n    name: 'Standard',\r\n    value: 'standard',\r\n    content: (\r\n      <>\r\n        Everything you need to{' '}\r\n        <span className=\"text-foreground font-semibold\">get started</span>.\r\n        Access core tools, basic support, and 5GB of storage to kickstart your\r\n        personal journey.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: 'Premium',\r\n    value: 'premium',\r\n    content: (\r\n      <>\r\n        Unlock{' '}\r\n        <span className=\"text-foreground font-semibold\">\r\n          advanced capabilities\r\n        </span>\r\n        . Experience high-speed processing, 50GB of storage, and priority access\r\n        to our support team and beta features.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: 'Ultimate',\r\n    value: 'ultimate',\r\n    content: (\r\n      <>\r\n        Scale your{' '}\r\n        <span className=\"text-foreground font-semibold\">\r\n          entire organization\r\n        </span>\r\n        . Get dedicated infrastructure, unlimited storage, and white-glove\r\n        onboarding for your team.\r\n      </>\r\n    ),\r\n  },\r\n];\r\n\r\nconst Tabs9 = () => {\r\n  return (\r\n    <Tabs defaultValue=\"standard\" className=\"gap-4\">\r\n      <TabsList className=\"rounded-2xl bg-transparent\">\r\n        {subscriptionTiers.map((tab) => (\r\n          <TabsTrigger\r\n            key={tab.value}\r\n            value={tab.value}\r\n            className=\"data-[state=active]:bg-primary data-[state=active]:text-primary-foreground flex-1 rounded-full px-4 py-1 text-[11px] uppercase transition-all\"\r\n          >\r\n            {tab.name}\r\n          </TabsTrigger>\r\n        ))}\r\n      </TabsList>\r\n\r\n      {subscriptionTiers.map((tab) => (\r\n        <TabsContent\r\n          key={tab.value}\r\n          value={tab.value}\r\n          className=\"bg-muted/20 mt-0 rounded-3xl border-2 border-dashed p-6\"\r\n        >\r\n          <h5 className=\"mb-4 text-2xl font-black tracking-tight\">\r\n            {tab.name}\r\n          </h5>\r\n          <p className=\"text-muted-foreground/80 border-primary border-l-2 pl-4 text-sm leading-6\">\r\n            {tab.content}\r\n          </p>\r\n        </TabsContent>\r\n      ))}\r\n    </Tabs>\r\n  );\r\n};\r\n\r\nexport default Tabs9;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

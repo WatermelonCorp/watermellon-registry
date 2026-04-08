@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-29",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-29.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from '@/components/ui/select';\n\nconst Input29 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Domain Availability\n      </Label>\n      <div className=\"flex rounded-xl\">\n        <Input\n          id={id}\n          type=\"text\"\n          placeholder=\"my-awesome-app\"\n          className=\"focus-visible:border-primary focus-visible:ring-primary/20 -me-px rounded-l-xl rounded-r-none text-sm transition-all focus-visible:z-10 focus-visible:ring-3\"\n        />\n        <Select defaultValue=\".sh\">\n          <SelectTrigger\n            id={id}\n            className=\"bg-muted/30 focus-visible:ring-primary/20 focus-visible:border-primary w-20 rounded-l-none rounded-r-xl border-l-0 text-sm shadow-none transition-all focus-visible:ring-3\"\n          >\n            <SelectValue />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\".sh\" className=\"pr-2 [&_svg]:hidden\">\n              .sh\n            </SelectItem>\n            <SelectItem value=\".io\" className=\"pr-2 [&_svg]:hidden\">\n              .io\n            </SelectItem>\n            <SelectItem value=\".app\" className=\"pr-2 [&_svg]:hidden\">\n              .app\n            </SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n    </div>\n  );\n};\n\nexport default Input29;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-29.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

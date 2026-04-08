@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-16",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-16.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input16 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        GitHub Repository\n      </Label>\n      <div className=\"relative\">\n        <Input\n          id={id}\n          type=\"text\"\n          placeholder=\"username/repo\"\n          className=\"peer focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl pl-24 transition-all focus-visible:ring-3\"\n        />\n        <span className=\"text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 text-xs font-medium peer-disabled:opacity-50\">\n          github.com/\n        </span>\n      </div>\n    </div>\n  );\n};\n\nexport default Input16;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-16.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

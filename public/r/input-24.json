@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-24",
+  "dependencies": [],
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-24.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\n\nconst Input24 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"group relative w-full max-w-xs\">\n      <label\n        htmlFor={id}\n        className=\"origin-start text-muted-foreground group-focus-within:text-primary has-[+input:not(:placeholder-shown)]:text-primary absolute top-1/2 block -translate-y-1/2 cursor-text px-3 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-[10px] group-focus-within:font-bold has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-[10px] has-[+input:not(:placeholder-shown)]:font-bold\"\n      >\n        <span className=\"bg-background inline-flex px-1 tracking-tight uppercase\">\n          Direct Message\n        </span>\n      </label>\n      <Input\n        id={id}\n        type=\"text\"\n        placeholder=\" \"\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 h-12 rounded-xl bg-transparent text-sm transition-all focus-visible:ring-3 dark:bg-transparent\"\n      />\n    </div>\n  );\n};\n\nexport default Input24;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-24.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

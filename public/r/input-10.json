@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-10",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-10.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input10 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Invite Code\n      </Label>\n      <Input\n        id={id}\n        type=\"text\"\n        placeholder=\"WTR-MELON-2026\"\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl tracking-widest uppercase transition-all focus-visible:ring-3\"\n      />\n      <p className=\"text-muted-foreground px-1 text-end text-[10px] font-medium tracking-tight uppercase\">\n        Code expires in 24 hours\n      </p>\n    </div>\n  );\n};\n\nexport default Input10;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

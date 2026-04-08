@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-6",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-6.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner6 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-teal-500/5 text-teal-600 hover:text-teal-700 dark:hover:text-teal-500 border-teal-500/20 hover:bg-teal-500/10 hover:border-teal-500/30 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast('Message Archived', {\r\n          description: 'Your conversation has been moved to the archive folder.',\r\n          action: {\r\n            label: 'Undo',\r\n            onClick: () => console.log('Undo'),\r\n          },\r\n          style: { borderRadius: '16px' },\r\n          className: 'border border-teal-100 shadow-xl shadow-teal-500/5',\r\n        })\r\n      }\r\n    >\r\n      Archive Conversation\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner6\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

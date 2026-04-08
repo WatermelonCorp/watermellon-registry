@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-12",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-12.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner12 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-destructive/5 text-destructive hover:text-destructive/80 border-destructive/20 hover:bg-destructive/10 hover:border-destructive/30 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast.error('Permanent Deletion Warning', {\r\n          description: 'This action cannot be undone. Please confirm.',\r\n          style: {\r\n            '--normal-bg': 'color-mix(in oklab, var(--destructive) 10%, var(--background))',\r\n            '--normal-text': 'var(--destructive)',\r\n            '--normal-border': 'var(--destructive)',\r\n            borderRadius: '16px',\r\n          } as React.CSSProperties,\r\n          className: 'shadow-xl shadow-destructive/5',\r\n        })\r\n      }\r\n    >\r\n      Show Soft Destructive Toast\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner12\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

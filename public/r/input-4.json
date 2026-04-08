@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-4",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-4.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input4 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-neutral-500\">\n        Organization ID\n      </Label>\n      <Input\n        id={id}\n        type=\"text\"\n        placeholder=\"ORG-001\"\n        disabled\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl transition-all focus-visible:ring-3 disabled:border-neutral-200 disabled:bg-neutral-50 dark:disabled:border-neutral-800 dark:disabled:bg-neutral-900/50\"\n      />\n    </div>\n  );\n};\n\nexport default Input4;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

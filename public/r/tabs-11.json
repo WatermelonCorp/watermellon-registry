@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-11",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-11.tsx",
+      "content": "import { IconActivity, IconCloudLock, IconServer } from '@tabler/icons-react'\r\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'\r\n\r\nconst systems = [\r\n  {\r\n    name: 'Performance',\r\n    value: 'performance',\r\n    icon: IconActivity,\r\n    content: (\r\n      <>\r\n        Monitor your <span className='text-foreground font-semibold'>real-time throughput</span>. Track latency, request\r\n        per second, and hardware utilization across your distributed cluster nodes.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Infrastructure',\r\n    value: 'infra',\r\n    icon: IconServer,\r\n    content: (\r\n      <>\r\n        Scale your <span className='text-foreground font-semibold'>cloud resources</span>. Manage container orchestration,\r\n        provision new instances, and oversee your global network topology from a single interface.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Security',\r\n    value: 'security',\r\n    icon: IconCloudLock,\r\n    content: (\r\n      <>\r\n        Enforce <span className='text-foreground font-semibold'>zero-trust access</span>. Audit firewall logs, manage\r\n        SSL certificates, and investigate potential threats with our advanced anomaly detection engine.\r\n      </>\r\n    )\r\n  }\r\n]\r\n\r\nconst Tabs11 = () => {\r\n  return (\r\n    <Tabs defaultValue='performance' className='w-full gap-6 px-1'>\r\n      <div className='w-fit max-w-full overflow-x-auto overflow-y-hidden scrollbar-hide py-0.5'>\r\n        <TabsList className='h-auto bg-transparent flex w-max justify-start gap-3 border-b p-0'>\r\n          {systems.map(({ icon: Icon, name, value }) => (\r\n            <TabsTrigger\r\n              key={value}\r\n              value={value}\r\n              className='bg-background data-[state=active]:border-primary dark:data-[state=active]:border-primary h-full rounded-none border-0 border-b-2 border-transparent data-[state=active]:shadow-none!'\r\n            >\r\n              <Icon size={24} stroke={1.5} />\r\n              <span className='text-xs font-bold tracking-tight'>{name}</span>\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n      </div>\r\n\r\n      {systems.map(tab => (\r\n        <TabsContent\r\n          key={tab.value}\r\n          value={tab.value}\r\n          className='animate-in fade-in slide-in-from-top-1 duration-500'\r\n        >\r\n          <div className='p-6 rounded-3xl border bg-muted/5 border-dashed'>\r\n            <h4 className='mb-3 text-lg font-bold flex items-start gap-2'>\r\n              <tab.icon size={20} className='text-primary shrink-0 mt-1' />\r\n              {tab.name} Operational Metrics\r\n            </h4>\r\n            <p className='text-muted-foreground text-sm leading-relaxed max-w-lg'>{tab.content}</p>\r\n          </div>\r\n        </TabsContent>\r\n      ))}\r\n    </Tabs>\r\n  )\r\n}\r\n\r\nexport default Tabs11\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

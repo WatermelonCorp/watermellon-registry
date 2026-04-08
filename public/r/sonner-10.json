@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-10",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-10.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner10 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-emerald-500/5 text-emerald-600 hover:text-emerald-700 dark:hover:text-emerald-500 border-emerald-500/20 hover:bg-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast.success('File Uploaded Successfully', {\r\n          description: 'Your document is now available in the dashboard.',\r\n          style: {\r\n            '--normal-bg':\r\n              'color-mix(in oklab, light-dark(var(--color-green-600), var(--color-green-400)) 10%, var(--background))',\r\n            '--normal-text': 'light-dark(var(--color-green-600), var(--color-green-400))',\r\n            '--normal-border': 'light-dark(var(--color-green-600), var(--color-green-400))',\r\n            borderRadius: '16px',\r\n          } as React.CSSProperties,\r\n          className: 'shadow-xl shadow-emerald-500/5',\r\n        })\r\n      }\r\n    >\r\n      Show Soft Success Toast\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner10\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

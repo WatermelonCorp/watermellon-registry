@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-16",
+  "dependencies": [],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-16.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'\r\n\r\nconst cloudServices = [\r\n  {\r\n    name: 'Compute',\r\n    value: 'compute',\r\n    title: 'Elastic Compute Power',\r\n    content:\r\n      'Dynamically scale your application workload with our high-performance compute instances. Optimized for memory-intensive operations and machine learning tasks.'\r\n  },\r\n  {\r\n    name: 'Storage',\r\n    value: 'storage',\r\n    title: 'Scalable Object Storage',\r\n    content:\r\n      'Store and retrieve any amount of data securely. Our distributed storage architecture ensures 99.999% availability and automatic geographic redundancy.'\r\n  },\r\n  {\r\n    name: 'Database',\r\n    value: 'database',\r\n    title: 'Managed Relational DB',\r\n    content:\r\n      'Deploy fully managed databases in seconds. We handle the heavy lifting of provisioning, patching, and backups so you can focus on building.'\r\n  }\r\n]\r\n\r\nconst Tabs16 = () => {\r\n  return (\r\n    <div className='w-full max-w-xl px-1'>\r\n      <Tabs defaultValue='compute' orientation='vertical' className='flex gap-3 sm:gap-8'>\r\n        <TabsList className='h-full flex-col bg-muted p-1 sm:p-2 rounded-2xl gap-2'>\r\n          {cloudServices.map(tab => (\r\n            <TabsTrigger key={tab.value} value={tab.value} className='justify-start px-1.5 sm:px-2 py-1 rounded-xl font-medium text-[11px] sm:text-sm'>\r\n              {tab.name}\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n\r\n        <div className='flex-1'>\r\n          {cloudServices.map(tab => (\r\n            <TabsContent key={tab.value} value={tab.value} className='m-0 animate-in fade-in zoom-in-95 duration-500'>\r\n              <div className='rounded-2xl border border-indigo-100 bg-indigo-50/50 p-3.5 sm:p-6 shadow-sm dark:border-indigo-900/30 dark:bg-indigo-900/10'>\r\n                <h4 className='mb-3 text-sm sm:text-lg font-bold text-indigo-900 dark:text-indigo-400'>\r\n                  {tab.title}\r\n                </h4>\r\n                <p className='text-[12px] sm:text-sm text-indigo-950/70 dark:text-indigo-200/70'>\r\n                  {tab.content}\r\n                </p>\r\n                <button className='mt-5 rounded-lg bg-indigo-600 px-3 py-1.5 text-[10px] sm:px-4 sm:py-2 flex-shrink-0 font-semibold text-white shadow-md transition-colors hover:bg-indigo-700 dark:bg-indigo-500'>\r\n                  Deploy Service\r\n                </button>\r\n              </div>\r\n            </TabsContent>\r\n          ))}\r\n        </div>\r\n      </Tabs>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Tabs16\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-16.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

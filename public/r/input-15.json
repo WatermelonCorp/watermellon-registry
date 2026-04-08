@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-15",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-15.tsx",
+      "content": "import { useId } from 'react';\n\nimport { IconMail } from '@tabler/icons-react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input15 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Business Email\n      </Label>\n      <div className=\"relative\">\n        <Input\n          id={id}\n          type=\"email\"\n          placeholder=\"hello@watermelon.sh\"\n          className=\"peer focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl pr-9 transition-all focus-visible:ring-3\"\n        />\n        <div className=\"text-muted-foreground pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center pr-3 peer-disabled:opacity-50\">\n          <IconMail className=\"size-4 stroke-[1.5]\" />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Input15;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-15.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

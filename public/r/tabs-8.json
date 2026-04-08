@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-8",
+  "dependencies": [],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-8.tsx",
+      "content": "import {\r\n  Tabs,\r\n  TabsContent,\r\n  TabsList,\r\n  TabsTrigger,\r\n} from '@/components/ui/tabs';\r\n\r\nconst creativeStudio = [\r\n  {\r\n    name: 'Illustrate',\r\n    value: 'illustrate',\r\n    content: (\r\n      <>\r\n        Bring your{' '}\r\n        <span className=\"text-foreground font-semibold\">visual stories</span> to\r\n        life. Use advanced vector tools, custom brushes, and layered\r\n        compositions to create stunning artwork from scratch.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: 'Design',\r\n    value: 'design',\r\n    content: (\r\n      <>\r\n        Structure your{' '}\r\n        <span className=\"text-foreground font-semibold\">\r\n          digital interfaces\r\n        </span>\r\n        . Build reusable component libraries, interactive prototypes, and\r\n        scalable layouts for web and mobile platforms.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: 'Animate',\r\n    value: 'animate',\r\n    content: (\r\n      <>\r\n        Master the{' '}\r\n        <span className=\"text-foreground font-semibold\">art of motion</span>.\r\n        Add fluid transitions, physically-driven physics, and keyframe-based\r\n        timelines to captivate your audience.\r\n      </>\r\n    ),\r\n  },\r\n];\r\n\r\nconst Tabs8 = () => {\r\n  return (\r\n    <Tabs defaultValue=\"illustrate\" className=\"w-full gap-4 px-1\">\r\n      <div className=\"w-fit max-w-full overflow-x-auto overflow-y-hidden scrollbar-hide py-0.5\">\r\n        <TabsList className=\"bg-transparent flex w-max justify-start gap-1\">\r\n          {creativeStudio.map((tab) => (\r\n            <TabsTrigger\r\n              key={tab.value}\r\n              value={tab.value}\r\n              className=\"rounded-full px-6 py-3 text-xs uppercase transition-all data-[state=active]:bg-indigo-500 data-[state=active]:text-white data-[state=active]:shadow-lg dark:data-[state=active]:bg-indigo-600\"\r\n            >\r\n              {tab.name}\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n      </div>\r\n\r\n      {creativeStudio.map((tab) => (\r\n        <TabsContent\r\n          key={tab.value}\r\n          value={tab.value}\r\n          className=\"animate-in slide-in-from-bottom-2 fade-in\"\r\n        >\r\n          <h6 className=\"mb-2 text-xl font-black tracking-tighter text-indigo-600 italic dark:text-indigo-400\">\r\n            {tab.name}\r\n          </h6>\r\n          <p className=\"text-muted-foreground/90 text-sm leading-relaxed\">\r\n            {tab.content}\r\n          </p>\r\n        </TabsContent>\r\n      ))}\r\n    </Tabs>\r\n  );\r\n};\r\n\r\nexport default Tabs8;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

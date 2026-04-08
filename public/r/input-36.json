@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-36",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-36.tsx",
+      "content": "'use client';\n\nimport { useId, useRef, useState } from 'react';\n\nimport { IconX } from '@tabler/icons-react';\n\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input36 = () => {\n  const [value, setValue] = useState('Draft document v1');\n\n  const inputRef = useRef<HTMLInputElement>(null);\n\n  const id = useId();\n\n  const handleClearInput = () => {\n    setValue('');\n\n    if (inputRef.current) {\n      inputRef.current.focus();\n    }\n  };\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Document Title\n      </Label>\n      <div className=\"relative\">\n        <Input\n          ref={inputRef}\n          id={id}\n          type=\"text\"\n          placeholder=\"Untitled Document...\"\n          value={value}\n          onChange={(e) => setValue(e.target.value)}\n          className=\"focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl pr-9 transition-all focus-visible:ring-3\"\n        />\n        {value && (\n          <Button\n            variant=\"ghost\"\n            size=\"icon\"\n            onClick={handleClearInput}\n            className=\"text-muted-foreground absolute inset-y-0 right-0 h-full w-9 rounded-l-none hover:bg-transparent focus-visible:ring-0\"\n            aria-label=\"Clear input\"\n          >\n            <IconX className=\"size-4 stroke-[1.5]\" />\n          </Button>\n        )}\n      </div>\n    </div>\n  );\n};\n\nexport default Input36;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-36.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

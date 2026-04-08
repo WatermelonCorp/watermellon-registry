@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-13",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-13.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input13 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Search Projects\n      </Label>\n      <Input\n        id={id}\n        type=\"text\"\n        placeholder=\"Type to search...\"\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl transition-all focus-visible:ring-3\"\n      />\n    </div>\n  );\n};\n\nexport default Input13;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-15",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-15.tsx",
+      "content": "import { IconBuildingFactory, IconBuildingSkyscraper, IconHome2 } from '@tabler/icons-react'\r\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'\r\n\r\nconst properties = [\r\n  {\r\n    name: 'Residential',\r\n    value: 'residential',\r\n    icon: IconHome2,\r\n    content: (\r\n      <>\r\n        Explore luxury <span className='text-foreground font-semibold'>family homes</span>. Browse single-family houses,\r\n        modern apartments, and quiet suburban estates designed for comfortable living and long-term value.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Commercial',\r\n    value: 'commercial',\r\n    icon: IconBuildingSkyscraper,\r\n    content: (\r\n      <>\r\n        Expand your <span className='text-foreground font-semibold'>business footprint</span>. Discover premium office\r\n        spaces, high-traffic retail locations, and versatile mixed-use properties in the heart of the city.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Industrial',\r\n    value: 'industrial',\r\n    icon: IconBuildingFactory,\r\n    content: (\r\n      <>\r\n        Optimize your <span className='text-foreground font-semibold'>logistics network</span>. Find spacious\r\n        warehouses, advanced manufacturing facilities, and strategically located distribution centers.\r\n      </>\r\n    )\r\n  }\r\n]\r\n\r\nconst Tabs15 = () => {\r\n  return (\r\n    <Tabs defaultValue='residential' orientation='vertical' className='flex flex-row w-full max-w-2xl gap-3 sm:gap-8 px-1'>\r\n      <TabsList className='flex flex-col h-auto bg-transparent gap-2 p-0 shrink-0 border-l-2 border-muted/50 rounded-none w-max'>\r\n        {properties.map(({ icon: Icon, name, value }) => (\r\n          <TabsTrigger\r\n            key={value}\r\n            value={value}\r\n            className='group relative flex w-full items-center justify-start gap-1.5 sm:gap-3 rounded-none rounded-r-xl border border-transparent px-1.5 sm:px-3 py-2 sm:py-1 text-[10px] sm:text-sm font-semibold transition-all hover:bg-muted/30 data-[state=active]:bg-primary/5 data-[state=active]:text-primary data-[state=active]:shadow-none! -ml-[2px]'\r\n          >\r\n            <div className='absolute left-0 top-0 bottom-0 w-[2px] bg-primary scale-y-0 opacity-0 transition-all duration-300 group-data-[state=active]:scale-y-100 group-data-[state=active]:opacity-100' />\r\n            <Icon size={16} className='sm:size-[18px]' />\r\n            {name}\r\n          </TabsTrigger>\r\n        ))}\r\n      </TabsList>\r\n\r\n      <div className='flex-1 py-1'>\r\n        {properties.map(tab => (\r\n          <TabsContent\r\n            key={tab.value}\r\n            value={tab.value}\r\n            className='m-0 animate-in fade-in slide-in-from-bottom-2 duration-500'\r\n          >\r\n            <div className='flex items-start sm:items-center gap-1.5 sm:gap-3 mb-4 sm:mb-5'>\r\n              <div className='p-1.5 sm:p-2 rounded-xl bg-primary text-primary-foreground shadow-sm'>\r\n                <tab.icon size={12} className='sm:size-[15px]' stroke={2} />\r\n              </div>\r\n              <h4 className='text-sm sm:text-base tracking-tight'>{tab.name} Real Estate</h4>\r\n            </div>\r\n            <p className='text-muted-foreground leading-relaxed text-[13px] sm:text-sm'>\r\n              {tab.content}\r\n            </p>\r\n          </TabsContent>\r\n        ))}\r\n      </div>\r\n    </Tabs>\r\n  )\r\n}\r\n\r\nexport default Tabs15\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-15.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

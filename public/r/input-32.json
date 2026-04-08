@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-32",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-32.tsx",
+      "content": "import { useId } from 'react';\n\nimport { IconDownload } from '@tabler/icons-react';\n\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input32 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Backup Configuration\n      </Label>\n      <div className=\"border-input focus-within:border-primary focus-within:ring-primary/20 flex rounded-xl border transition-all focus-within:ring-3\">\n        <Input\n          id={id}\n          type=\"text\"\n          placeholder=\"config_v2_stable\"\n          className=\"h-10 flex-1 rounded-none border-none focus-visible:ring-0\"\n        />\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          className=\"bg-muted/20 hover:bg-muted/40 h-10 w-10 shrink-0 rounded-l-none rounded-r-xl border-l\"\n          aria-label=\"Download backup\"\n        >\n          <IconDownload className=\"size-4 stroke-[1.5]\" />\n        </Button>\n      </div>\n    </div>\n  );\n};\n\nexport default Input32;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-32.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

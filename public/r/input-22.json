@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-22",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-22.tsx",
+      "content": "import { useId } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input22 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Recovery Email\n      </Label>\n      <Input\n        id={id}\n        type=\"email\"\n        placeholder=\"backup@example.com\"\n        className=\"bg-primary/5 focus-visible:bg-background focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl border-transparent text-sm shadow-none transition-all focus-visible:ring-3\"\n      />\n    </div>\n  );\n};\n\nexport default Input22;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-22.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

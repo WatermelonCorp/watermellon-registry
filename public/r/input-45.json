@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-45",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-45.tsx",
+      "content": "'use client';\n\nimport { useId, useState } from 'react';\n\nimport { IconChevronDown, IconChevronUp } from '@tabler/icons-react';\n\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input45 = () => {\n  const id = useId();\n  const [value, setValue] = useState(1024);\n\n  const increment = () => setValue((prev) => prev + 1);\n  const decrement = () => setValue((prev) => Math.max(0, prev - 1));\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        System CPU Priority\n      </Label>\n      <div className=\"border-input focus-within:border-primary focus-within:ring-primary/20 flex overflow-hidden rounded-xl border transition-all focus-within:ring-3\">\n        <Input\n          id={id}\n          type=\"number\"\n          value={value}\n          onChange={(e) => setValue(Number(e.target.value))}\n          className=\"h-10 flex-1 [appearance:textfield] rounded-none border-none text-center tabular-nums focus-visible:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none\"\n        />\n        <div className=\"flex flex-col border-l\">\n          <Button\n            variant=\"ghost\"\n            className=\"hover:bg-muted h-5 w-8 rounded-none border-b p-0\"\n            onClick={increment}\n            aria-label=\"Increment\"\n          >\n            <IconChevronUp className=\"size-3\" />\n          </Button>\n          <Button\n            variant=\"ghost\"\n            className=\"hover:bg-muted h-5 w-8 rounded-none p-0\"\n            onClick={decrement}\n            aria-label=\"Decrement\"\n          >\n            <IconChevronDown className=\"size-3\" />\n          </Button>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Input45;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-45.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-7",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-7.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner7 = () => {\r\n  const promise = () =>\r\n    new Promise((resolve, reject) =>\r\n      setTimeout(() => {\r\n        if (Math.random() < 0.5) {\r\n          resolve('Sync Complete')\r\n        } else {\r\n          reject('Connection Failed')\r\n        }\r\n      }, 2000)\r\n    )\r\n\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-indigo-500/5 text-indigo-600 hover:text-indigo-700 dark:hover:text-indigo-500 border-indigo-500/20 hover:bg-indigo-500/10 hover:border-indigo-500/30 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast.promise(promise, {\r\n          loading: 'Synchronizing project data...',\r\n          success: (data) => {\r\n            return `${data}: Your workspace is up to date.`\r\n          },\r\n          error: (err) => {\r\n            return `${err}: Please check your internet connection.`\r\n          },\r\n          style: { borderRadius: '16px' },\r\n          className: 'shadow-2xl shadow-indigo-500/5',\r\n        })\r\n      }\r\n    >\r\n      Sync Remote Repository\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner7\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

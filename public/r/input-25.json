@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-25",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-25.tsx",
+      "content": "import { useId } from 'react';\n\nconst Input25 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"border-input bg-background focus-within:border-primary focus-within:ring-primary/20 relative w-full max-w-xs rounded-xl border transition-all outline-none focus-within:ring-3 has-disabled:opacity-50 has-aria-invalid:border-rose-500\">\n      <label\n        htmlFor={id}\n        className=\"text-muted-foreground group-focus-within:text-primary block px-3 pt-2 text-[10px] font-bold tracking-wider uppercase transition-colors\"\n      >\n        Account Reference\n      </label>\n      <input\n        id={id}\n        type=\"text\"\n        placeholder=\"e.g. ACC-2026-XP\"\n        className=\"text-foreground placeholder:text-muted-foreground flex h-9 w-full bg-transparent px-3 pb-2 text-sm focus-visible:outline-none\"\n      />\n    </div>\n  );\n};\n\nexport default Input25;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-25.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

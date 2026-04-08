@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-1",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-1.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner1 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-primary/5 text-primary hover:text-primary border-primary/20 hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast.success('Project deployed successfully!', {\r\n          description: 'Your changes are now live on the production server.',\r\n          style: {\r\n            borderRadius: '16px',\r\n            padding: '16px',\r\n          },\r\n          className: 'border-l-4 border-l-green-500 shadow-2xl',\r\n        })\r\n      }\r\n    >\r\n      Launch Success Toast\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner1\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

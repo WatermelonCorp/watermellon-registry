@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-13",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-13.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner13 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl border-sky-500/30 text-sky-600 hover:text-sky-700 dark:hover:text-sky-500 hover:bg-sky-50 transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast.info('System Maintenance Scheduled', {\r\n          description: 'Our servers will be down for maintenance tonight at 2 AM.',\r\n          style: {\r\n            '--normal-bg': 'var(--background)',\r\n            '--normal-text': 'light-dark(var(--color-sky-600), var(--color-sky-400))',\r\n            '--normal-border': 'light-dark(var(--color-sky-600), var(--color-sky-400))',\r\n            borderRadius: '16px',\r\n          } as React.CSSProperties,\r\n          className: 'shadow-lg',\r\n        })\r\n      }\r\n    >\r\n      Show Outline Info Toast\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner13\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

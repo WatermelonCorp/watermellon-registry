@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-5",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-5.tsx",
+      "content": "import {\r\n  IconAdjustmentsHorizontal,\r\n  IconShieldLock,\r\n  IconUserCircle,\r\n} from '@tabler/icons-react';\r\n\r\nimport {\r\n  Tabs,\r\n  TabsContent,\r\n  TabsList,\r\n  TabsTrigger,\r\n} from '@/components/ui/tabs';\r\n\r\nconst settings = [\r\n  {\r\n    name: 'Profile',\r\n    value: 'profile',\r\n    icon: IconUserCircle,\r\n    content: (\r\n      <>\r\n        Personalize your{' '}\r\n        <span className=\"text-foreground font-semibold\">digital identity</span>.\r\n        Update your avatar, bio, and social links to show the world who you are\r\n        and what you're building.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: 'Preferences',\r\n    value: 'preferences',\r\n    icon: IconAdjustmentsHorizontal,\r\n    content: (\r\n      <>\r\n        Fine-tune your{' '}\r\n        <span className=\"text-foreground font-semibold\">user experience</span>.\r\n        Adjust your theme, language, and notification settings to perfectly\r\n        match your daily workflow.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: 'Security',\r\n    value: 'security',\r\n    icon: IconShieldLock,\r\n    content: (\r\n      <>\r\n        Fortify your{' '}\r\n        <span className=\"text-foreground font-semibold\">account barriers</span>.\r\n        Manage your passwords, two-factor authentication, and connected devices\r\n        for maximum data privacy.\r\n      </>\r\n    ),\r\n  },\r\n];\r\n\r\nconst Tabs5 = () => {\r\n  return (\r\n    <Tabs\r\n      defaultValue=\"profile\"\r\n      className=\"flex gap-4\"\r\n    >\r\n      <TabsList className=\"bg-muted flex flex-row gap-2 rounded-2xl px-1 py-2 !h-10 sm:!h-14\">\r\n        {settings.map(({ icon: Icon, name, value }) => (\r\n          <TabsTrigger\r\n            key={value}\r\n            value={value}\r\n            className=\"data-[state=active]:bg-background data-[state=active]:text-primary dark:data-[state=active]:bg-muted/80 flex flex-1 flex-col items-center justify-center gap-1.5 rounded-xl px-2 py-3 text-[10px] font-bold tracking-wider uppercase transition-all data-[state=active]:shadow-lg h-8 sm:h-12\"\r\n          >\r\n            <Icon size={20} stroke={2} />\r\n            <span className=\"hidden sm:inline\">{name}</span>\r\n          </TabsTrigger>\r\n        ))}\r\n      </TabsList>\r\n\r\n        {settings.map((tab) => (\r\n          <TabsContent\r\n            key={tab.value}\r\n            value={tab.value}\r\n            className=\"animate-in fade-in duration-500\"\r\n          >\r\n            <h3 className=\"mb-2 text-lg font-bold tracking-tight\">\r\n              {tab.name}\r\n            </h3>\r\n            <p className=\"text-muted-foreground text-sm leading-relaxed\">\r\n              {tab.content}\r\n            </p>\r\n          </TabsContent>\r\n        ))}\r\n    </Tabs>\r\n  );\r\n};\r\n\r\nexport default Tabs5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-13",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-13.tsx",
+      "content": "import { IconBook2, IconCertificate, IconVideo } from '@tabler/icons-react'\r\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'\r\n\r\nconst learning = [\r\n  {\r\n    name: 'Curriculum',\r\n    value: 'curriculum',\r\n    icon: IconBook2,\r\n    content: (\r\n      <>\r\n        Explore your <span className='text-foreground font-semibold'>learning path</span>. Access structured modules,\r\n        downloadable resources, and interactive quizzes designed to master your chosen subject.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Live Lessons',\r\n    value: 'lessons',\r\n    icon: IconVideo,\r\n    content: (\r\n      <>\r\n        Join our <span className='text-foreground font-semibold'>expert-led sessions</span>. Engage in real-time Q&A,\r\n        participate in group discussions, and watch recorded sessions at your own convenience.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Certification',\r\n    value: 'certification',\r\n    icon: IconCertificate,\r\n    content: (\r\n      <>\r\n        Earn your <span className='text-foreground font-semibold'>professional validation</span>. Complete the final\r\n        assessment to receive a blockchain-verified certificate to showcase your skills to the world.\r\n      </>\r\n    )\r\n  }\r\n]\r\n\r\nconst Tabs13 = () => {\r\n  return (\r\n    <Tabs defaultValue='curriculum' className='w-full gap-4 px-1'>\r\n      <div className='w-fit max-w-full overflow-x-auto overflow-y-hidden scrollbar-hide py-0.5'>\r\n        <TabsList className='bg-transparent flex w-max justify-start gap-1'>\r\n          {learning.map(({ icon: Icon, name, value }) => (\r\n            <TabsTrigger\r\n              key={value}\r\n              value={value}\r\n              className='h-full px-6 flex items-center gap-2 rounded-b-none transition-all duration-300data-[state=active]:rounded-t data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md dark:data-[state=active]:bg-muted/80'\r\n            >\r\n              <Icon size={18} stroke={2} />\r\n              <span className='font-bold text-xs tracking-tight'>{name}</span>\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n      </div>\r\n\r\n      {learning.map(tab => (\r\n        <TabsContent\r\n          key={tab.value}\r\n          value={tab.value}\r\n          className='animate-in fade-in slide-in-from-left-2 duration-500'\r\n        >\r\n          <div className='bg-background p-6 rounded-3xl border border-muted-foreground/10'>\r\n            <div className='flex items-center gap-3 mb-4'>\r\n              <div className='p-2.5 rounded-xl bg-primary/10 text-primary'>\r\n                <tab.icon size={22} />\r\n              </div>\r\n              <h4 className='text-xl font-bold tracking-tight'>{tab.name}</h4>\r\n            </div>\r\n            <p className='text-muted-foreground text-sm leading-relaxed max-w-xl'>{tab.content}</p>\r\n          </div>\r\n        </TabsContent>\r\n      ))}\r\n    </Tabs>\r\n  )\r\n}\r\n\r\nexport default Tabs13\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

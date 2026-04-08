@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-39",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-39.tsx",
+      "content": "'use client';\n\nimport { useEffect, useId, useState } from 'react';\n\nimport { IconLoader2, IconSearch } from '@tabler/icons-react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input39 = () => {\n  const [value, setValue] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n\n  const id = useId();\n\n  useEffect(() => {\n    if (!value) return;\n\n    const timer = setTimeout(() => {\n      setIsLoading(false);\n    }, 500);\n\n    return () => clearTimeout(timer);\n  }, [value]);\n\n  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    const newValue = e.target.value;\n    setValue(newValue);\n    setIsLoading(newValue !== '');\n  };\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Deep Search Engine\n      </Label>\n      <div className=\"relative\">\n        <div className=\"text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3\">\n          <IconSearch className=\"size-4 stroke-[1.5]\" />\n        </div>\n        <Input\n          id={id}\n          type=\"search\"\n          placeholder=\"Query database...\"\n          value={value}\n          onChange={handleSearchChange}\n          className=\"peer focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl px-9 transition-all focus-visible:ring-3 [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none\"\n        />\n        {isLoading && (\n          <div className=\"text-muted-foreground absolute inset-y-0 right-0 flex items-center justify-center pr-3\">\n            <IconLoader2 className=\"size-4 animate-spin stroke-[1.5]\" />\n          </div>\n        )}\n      </div>\n    </div>\n  );\n};\n\nexport default Input39;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-39.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

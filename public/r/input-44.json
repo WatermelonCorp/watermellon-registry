@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-44",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-44.tsx",
+      "content": "'use client';\n\nimport { useId, useState } from 'react';\n\nimport { IconMinus, IconPlus } from '@tabler/icons-react';\n\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input44 = () => {\n  const id = useId();\n  const [value, setValue] = useState(1024);\n\n  const increment = () => setValue((prev) => prev + 1);\n  const decrement = () => setValue((prev) => Math.max(0, prev - 1));\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Retry Interval (ms)\n      </Label>\n      <div className=\"relative\">\n        <Input\n          id={id}\n          type=\"number\"\n          value={value}\n          onChange={(e) => setValue(Number(e.target.value))}\n          className=\"border-input focus-visible:border-primary focus-visible:ring-primary/20 h-10 w-full [appearance:textfield] rounded-xl border px-3 pr-20 tabular-nums transition-all focus-visible:ring-3 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none\"\n        />\n        <div className=\"absolute top-1 right-1 flex gap-1\">\n          <Button\n            variant=\"outline\"\n            size=\"icon\"\n            onClick={decrement}\n            className=\"hover:bg-muted h-8 w-8 rounded-lg border-none\"\n            aria-label=\"Decrement\"\n          >\n            <IconMinus className=\"size-4\" />\n          </Button>\n          <Button\n            variant=\"outline\"\n            size=\"icon\"\n            onClick={increment}\n            className=\"hover:bg-muted h-8 w-8 rounded-lg border-none\"\n            aria-label=\"Increment\"\n          >\n            <IconPlus className=\"size-4\" />\n          </Button>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Input44;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-44.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

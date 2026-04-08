@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-12",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tabs/tabs-12.tsx",
+      "content": "import { IconApps, IconBrush, IconCode } from '@tabler/icons-react'\r\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'\r\n\r\nconst services = [\r\n  {\r\n    name: 'Branding',\r\n    value: 'branding',\r\n    icon: IconBrush,\r\n    content: (\r\n      <>\r\n        Define your <span className='text-foreground font-semibold'>visual identity</span>. We craft memorable logos,\r\n        stunning color palettes, and comprehensive style guides that resonate with your target audience.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'Development',\r\n    value: 'dev',\r\n    icon: IconCode,\r\n    content: (\r\n      <>\r\n        Build your <span className='text-foreground font-semibold'>digital core</span>. Our engineering team delivers\r\n        highly-performant web applications, custom API integrations, and robust e-commerce solutions.\r\n      </>\r\n    )\r\n  },\r\n  {\r\n    name: 'UX Design',\r\n    value: 'ux',\r\n    icon: IconApps,\r\n    content: (\r\n      <>\r\n        Optimize <span className='text-foreground font-semibold'>user journeys</span>. We design intuitive interfaces and\r\n        seamless workflows that convert visitors into loyal customers through user-centric research.\r\n      </>\r\n    )\r\n  }\r\n]\r\n\r\nconst Tabs12 = () => {\r\n  return (\r\n    <Tabs defaultValue='branding' className='w-full gap-4 px-1'>\r\n      <div className='w-fit max-w-full overflow-x-auto overflow-y-hidden scrollbar-hide py-0.5'>\r\n        <TabsList className='h-auto bg-transparent border-b rounded-none p-0 gap-2 flex w-max justify-start'>\r\n          {services.map(({ icon: Icon, name, value }) => (\r\n            <TabsTrigger\r\n              key={value}\r\n              value={value}\r\n              className='relative rounded-none border-b-2 border-transparent bg-transparent px-2  text-xs font-semibold uppercase transition-all data-[state=active]:border-primary data-[state=active]:rounded-t-lg data-[state=active]:text-primary data-[state=active]:shadow-none! hover:text-foreground/80'\r\n            >\r\n              <div className='flex items-center gap-2'>\r\n                <Icon size={18} stroke={2} />\r\n                {name}\r\n              </div>\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n      </div>\r\n\r\n      {services.map(tab => (\r\n        <TabsContent\r\n          key={tab.value}\r\n          value={tab.value}\r\n          className='animate-in fade-in duration-700'\r\n        >\r\n          <div className='max-w-2xl'>\r\n            <h3 className='mb-2 text-xl font-semibold tracking-tighter'>\r\n              Elevate your {tab.name}\r\n            </h3>\r\n            <p className='text-muted-foreground text-sm leading-relaxed'>{tab.content}</p>\r\n          </div>\r\n        </TabsContent>\r\n      ))}\r\n    </Tabs>\r\n  )\r\n}\r\n\r\nexport default Tabs12\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tabs-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

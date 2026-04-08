@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-18",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [
+    "sonner",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sonner/sonner-18.tsx",
+      "content": "'use client'\r\n\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Sonner18 = () => {\r\n  return (\r\n    <Button\r\n      variant='outline'\r\n      className='rounded-2xl bg-emerald-500 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white hover:text-white border-emerald-500 hover:bg-emerald-600 shadow-lg shadow-emerald-600/20 dark:shadow-none transition-all duration-300 px-6'\r\n      onClick={() =>\r\n        toast.success('Backup Complete', {\r\n          description: 'All your files are safely stored in the secure vault.',\r\n          style: {\r\n            '--normal-bg': 'light-dark(var(--color-green-600), var(--color-green-700))',\r\n            '--normal-text': 'var(--color-white)',\r\n            '--normal-border': 'light-dark(var(--color-green-600), var(--color-green-700))',\r\n            '--description-color': 'light-dark(var(--color-green-100), var(--color-green-200))',\r\n            borderRadius: '16px',\r\n          } as React.CSSProperties,\r\n          className: 'shadow-2xl shadow-emerald-600/10',\r\n        })\r\n      }\r\n    >\r\n      Activate Solid Success\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport default Sonner18\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sonner-18.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

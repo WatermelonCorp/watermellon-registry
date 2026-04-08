@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-38",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-38.tsx",
+      "content": "import { useId } from 'react';\n\nimport { IconMicrophone, IconSearch } from '@tabler/icons-react';\n\nimport { Button } from '@/components/ui/button';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst Input38 = () => {\n  const id = useId();\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Advanced Search Interface\n      </Label>\n      <div className=\"relative\">\n        <div className=\"text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3\">\n          <IconSearch className=\"size-4 stroke-[1.5]\" />\n        </div>\n        <Input\n          id={id}\n          type=\"search\"\n          placeholder=\"Find resources...\"\n          className=\"peer focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl px-9 transition-all focus-visible:ring-3 [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none\"\n        />\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          className=\"text-muted-foreground absolute inset-y-0 right-0 h-full w-9 rounded-l-none hover:bg-transparent focus-visible:ring-0\"\n          aria-label=\"Activate voice search\"\n        >\n          <IconMicrophone className=\"size-4 stroke-[1.5]\" />\n        </Button>\n      </div>\n    </div>\n  );\n};\n\nexport default Input38;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-38.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

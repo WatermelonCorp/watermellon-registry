@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-35",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input/input-35.tsx",
+      "content": "'use client';\n\nimport { useId, useState, type ChangeEvent } from 'react';\n\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\n\nconst maxLength = 120;\nconst initialValue = '';\n\nconst Input35 = () => {\n  const [value, setValue] = useState(initialValue);\n  const [characterCount, setCharacterCount] = useState(initialValue.length);\n\n  const id = useId();\n\n  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {\n    if (e.target.value.length <= maxLength) {\n      setValue(e.target.value);\n      setCharacterCount(e.target.value.length);\n    }\n  };\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <Label htmlFor={id} className=\"text-sm font-medium\">\n        Professional Headline\n      </Label>\n      <Input\n        id={id}\n        type=\"text\"\n        placeholder=\"e.g. Senior Software Architect...\"\n        value={value}\n        maxLength={maxLength}\n        onChange={handleChange}\n        className=\"focus-visible:border-primary focus-visible:ring-primary/20 rounded-xl transition-all focus-visible:ring-3\"\n      />\n      <p className=\"text-muted-foreground text-[10px] font-medium tracking-wider uppercase\">\n        <span className=\"tabular-nums\">{maxLength - characterCount}</span>{' '}\n        characters remaining\n      </p>\n    </div>\n  );\n};\n\nexport default Input35;\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-35.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
