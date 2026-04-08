@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "motion/react";
-import { useRef, useState } from "react";
-import type { IconType } from "react-icons";
+import { cn } from '@/lib/utils';
+import { motion, AnimatePresence } from 'motion/react';
+import { useRef, useState } from 'react';
+import type { IconType } from 'react-icons';
 
 export type Step = {
   id: string;
@@ -23,7 +23,7 @@ export const StepIndicator = ({
   onStepChange,
 }: StepIndicatorProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [coords, setCoords] = useState({ clipPath: "", translateX: 0 });
+  const [coords, setCoords] = useState({ clipPath: '', translateX: 0 });
 
   const measureRefs = useRef<(HTMLDivElement | null)[]>([]);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -46,7 +46,7 @@ export const StepIndicator = ({
 
     const totalWidth = measureRefs.current.reduce(
       (acc, el) => acc + (el?.offsetWidth || 0),
-      0
+      0,
     );
 
     const cLeft = (labelLeft / totalWidth) * 100;
@@ -85,19 +85,19 @@ export const StepIndicator = ({
   const handleHide = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setActiveIndex(null);
-    setCoords({ clipPath: "", translateX: 0 });
+    setCoords({ clipPath: '', translateX: 0 });
     setIsEntering(true);
   };
 
   return (
-    <div className="flex w-full items-center justify-center bg-white py-20 dark:bg-zinc-950">
+    <div className="flex w-full items-center justify-center px-4 py-20">
       <div className="w-full max-w-[420px]">
         <div
           className="relative flex h-3 w-full items-center gap-3 px-1"
           onMouseLeave={handleHide}
         >
           <AnimatePresence>
-            {activeIndex !== null && coords.clipPath !== "" && (
+            {activeIndex !== null && coords.clipPath !== '' && (
               <motion.div
                 className="pointer-events-none absolute bottom-10 left-0"
                 initial={{ opacity: 0 }}
@@ -112,7 +112,7 @@ export const StepIndicator = ({
                     x: coords.translateX,
                   }}
                   transition={{
-                    type: "spring",
+                    type: 'spring',
                     bounce: 0,
                     duration: isEntering ? 0 : 0.4,
                   }}
@@ -127,7 +127,7 @@ export const StepIndicator = ({
                         animate={{
                           opacity: activeIndex === index ? 1 : 0,
                           filter:
-                            activeIndex === index ? "blur(0px)" : "blur(4px)",
+                            activeIndex === index ? 'blur(0px)' : 'blur(4px)',
                         }}
                         transition={{ duration: 0.4 }}
                         className="flex items-center justify-center gap-2 px-4 py-2 whitespace-nowrap text-white dark:text-black"
@@ -162,16 +162,15 @@ export const StepIndicator = ({
             >
               <div
                 className={cn(
-                  "absolute inset-0 rounded-full bg-zinc-200 transition-colors duration-300 dark:bg-zinc-800",
-                  "group-focus-visible:ring-2 group-focus-visible:ring-zinc-400 group-focus-visible:ring-offset-4 dark:group-focus-visible:ring-offset-zinc-950",
-                  activeIndex === index && "bg-zinc-800 dark:bg-zinc-100"
+                  'absolute inset-0 rounded-full bg-zinc-200 transition-colors duration-300 dark:bg-zinc-800',
+                  'group-focus-visible:ring-2 group-focus-visible:ring-zinc-400 group-focus-visible:ring-offset-4 dark:group-focus-visible:ring-offset-zinc-950',
+                  activeIndex === index && 'bg-zinc-800 dark:bg-zinc-100',
                 )}
               />
             </button>
           ))}
         </div>
       </div>
-
       <div
         className="pointer-events-none absolute bottom-0 left-0 flex h-0 overflow-hidden whitespace-nowrap opacity-0"
         aria-hidden="true"

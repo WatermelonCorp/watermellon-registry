@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-7",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/button-group/button-group-7.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport type { LucideIcon } from 'lucide-react'\r\nimport { MinusIcon, PlusIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\n\r\ntype ButtonGroupConfig = {\r\n  decrementIcon: LucideIcon\r\n  decrementLabel: string\r\n  incrementIcon: LucideIcon\r\n  incrementLabel: string\r\n  initialValue: number\r\n  maxValue: number\r\n  minValue: number\r\n  step: number\r\n  unit: string\r\n}\r\n\r\nconst config: ButtonGroupConfig = {\r\n  decrementIcon: MinusIcon,\r\n  decrementLabel: 'Decrease width',\r\n  incrementIcon: PlusIcon,\r\n  incrementLabel: 'Increase width',\r\n  initialValue: 240,\r\n  maxValue: 320,\r\n  minValue: 120,\r\n  step: 8,\r\n  unit: 'px'\r\n}\r\n\r\nconst ButtonGroup7 = () => {\r\n  const [value, setValue] = useState<number>(config.initialValue)\r\n  const DecrementIcon = config.decrementIcon\r\n  const IncrementIcon = config.incrementIcon\r\n\r\n  const handleDecrease = () => {\r\n    setValue((current) => Math.max(config.minValue, current - config.step))\r\n  }\r\n\r\n  const handleIncrease = () => {\r\n    setValue((current) => Math.min(config.maxValue, current + config.step))\r\n  }\r\n\r\n  return (\r\n    <div className='inline-flex w-fit divide-x divide-primary-foreground/20 overflow-hidden rounded-xl shadow-xs'>\r\n      <Button\r\n        size='default'\r\n        className='h-10 rounded-none rounded-l-xl px-3.5 shadow-none focus-visible:z-10'\r\n        onClick={handleDecrease}\r\n        disabled={value === config.minValue}\r\n      >\r\n        <DecrementIcon className='size-4' />\r\n        <span className='sr-only'>{config.decrementLabel}</span>\r\n      </Button>\r\n      <span className='inline-flex h-10 min-w-20 items-center justify-center bg-primary px-4 text-sm font-medium text-primary-foreground'>\r\n        {`${value}${config.unit}`}\r\n      </span>\r\n      <Button\r\n        size='default'\r\n        className='h-10 rounded-none rounded-r-xl px-3.5 shadow-none focus-visible:z-10'\r\n        onClick={handleIncrease}\r\n        disabled={value === config.maxValue}\r\n      >\r\n        <IncrementIcon className='size-4' />\r\n        <span className='sr-only'>{config.incrementLabel}</span>\r\n      </Button>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default ButtonGroup7\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/button-group-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

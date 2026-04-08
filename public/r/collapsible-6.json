@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-6",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/collapsible/collapsible-6.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'\r\n\r\ntype FaqItem = {\r\n  answer: string\r\n  question: string\r\n}\r\n\r\nconst faqItems: readonly FaqItem[] = [\r\n  {\r\n    question: 'How do I share the latest draft with my team?',\r\n    answer:\r\n      'Open the project, copy the review link, and send it to your team from the share panel. Everyone with access will see the latest saved version.'\r\n  },\r\n  {\r\n    question: 'Can I pause a review and come back later?',\r\n    answer:\r\n      'Yes. Your comments, selected screens, and review status stay saved so you can return later without starting over.'\r\n  }\r\n] as const\r\n\r\ntype FaqRowProps = {\r\n  defaultOpen?: boolean\r\n  item: FaqItem\r\n}\r\n\r\nconst FaqRow = ({ defaultOpen = false, item }: FaqRowProps) => {\r\n  const [open, setOpen] = useState<boolean>(defaultOpen)\r\n\r\n  return (\r\n    <div className='space-y-1 border-b border-border/60 py-4 last:border-b-0'>\r\n      <p className='text-base font-medium tracking-tight'>{item.question}</p>\r\n      <Collapsible open={open} onOpenChange={setOpen} className='space-y-2'>\r\n        <CollapsibleContent>\r\n          <p className='max-w-[52ch] text-sm leading-6 text-muted-foreground'>{item.answer}</p>\r\n        </CollapsibleContent>\r\n        <CollapsibleTrigger>\r\n          <span\r\n            className={`text-[10px] font-medium uppercase tracking-[0.12em] ${\r\n              open ? 'text-rose-600 dark:text-rose-400' : 'text-sky-600 dark:text-sky-400'\r\n            }`}\r\n          >\r\n            {open ? 'Hide answer' : 'Show answer'}\r\n          </span>\r\n        </CollapsibleTrigger>\r\n      </Collapsible>\r\n    </div>\r\n  )\r\n}\r\n\r\nconst Collapsible6 = () => {\r\n  return (\r\n    <div className='w-full max-w-[420px]'>\r\n      {faqItems.map((item, index) => (\r\n        <FaqRow key={item.question} item={item} defaultOpen={index === 0} />\r\n      ))}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Collapsible6\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/collapsible-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

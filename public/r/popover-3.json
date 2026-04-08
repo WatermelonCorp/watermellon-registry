@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-3",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "popover",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/popover/popover-3.tsx",
+      "content": "import { DollarSignIcon } from 'lucide-react';\r\n\r\nimport { Badge } from '@/components/ui/badge';\r\nimport { Button } from '@/components/ui/button';\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from '@/components/ui/popover';\r\n\r\nconst Popover3 = () => {\r\n  return (\r\n    <Popover>\r\n      <PopoverTrigger asChild backdrop-blur-sm>\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"icon\"\r\n          className=\"rounded-xl transition-all hover:bg-neutral-100 active:scale-95 dark:hover:bg-neutral-800\"\r\n        >\r\n          <DollarSignIcon className=\"size-4\" />\r\n          <span className=\"sr-only\">Pricing details</span>\r\n        </Button>\r\n      </PopoverTrigger>\r\n      <PopoverContent className=\"w-80 rounded-2xl border-neutral-200 bg-white p-4 shadow-2xl dark:border-neutral-800 dark:bg-neutral-950\">\r\n        <div className=\"grid gap-5\">\r\n          <div className=\"flex items-center justify-between\">\r\n            <span className=\"text-lg font-bold text-neutral-900 dark:text-neutral-100\">\r\n              Professional Plan\r\n            </span>\r\n            <div className=\"flex flex-col items-end\">\r\n              <span className=\"text-xl font-bold text-neutral-900 dark:text-neutral-50\">\r\n                $29.00\r\n              </span>\r\n              <span className=\"text-[10px] font-medium text-neutral-400\">\r\n                per month\r\n              </span>\r\n            </div>\r\n          </div>\r\n          <p className=\"text-[13px] leading-relaxed font-medium text-neutral-500 dark:text-neutral-400\">\r\n            Specialized tools for creators and small teams. Includes advanced\r\n            analytics, custom domain support, and priority status.\r\n          </p>\r\n          <div className=\"flex items-center gap-3 rounded-xl border border-neutral-100 bg-neutral-50 p-3 dark:border-neutral-800 dark:bg-neutral-900/50\">\r\n            <Badge\r\n              variant=\"secondary\"\r\n              className=\"rounded-md bg-neutral-900 px-2 py-0.5 text-[10px] font-bold tracking-tight text-white dark:bg-neutral-50 dark:text-neutral-900\"\r\n            >\r\n              Early Access\r\n            </Badge>\r\n            <span className=\"text-xs font-semibold text-neutral-600 dark:text-neutral-400\">\r\n              Save 15% on yearly billing\r\n            </span>\r\n          </div>\r\n        </div>\r\n      </PopoverContent>\r\n    </Popover>\r\n  );\r\n};\r\n\r\nexport default Popover3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/popover-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

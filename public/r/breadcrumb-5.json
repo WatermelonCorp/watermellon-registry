@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-5",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/breadcrumb/breadcrumb-5.tsx",
+      "content": "import { ArrowRightIcon } from 'lucide-react'\r\n\r\nimport { Badge } from '@/components/ui/badge'\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator\r\n} from '@/components/ui/breadcrumb'\r\n\r\ntype BreadcrumbSegment =\r\n  | {\r\n      label: string\r\n      href: string\r\n      current?: false\r\n    }\r\n  | {\r\n      label: string\r\n      current: true\r\n      href?: never\r\n    }\r\n\r\nconst segments: readonly BreadcrumbSegment[] = [\r\n  { label: 'Workspace', href: '#' },\r\n  { label: 'Campaigns', href: '#' },\r\n  { label: 'Launch Assets', current: true }\r\n] as const\r\n\r\nconst Breadcrumb5 = () => {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList className='gap-1.5'>\r\n        {segments.map((segment, index) => (\r\n          <BreadcrumbItem key={segment.label}>\r\n            {'href' in segment ? (\r\n              <BreadcrumbLink href={segment.href}>\r\n                <Badge variant='outline' className='border-border/70 px-2.5 text-muted-foreground hover:text-foreground'>\r\n                  {segment.label}\r\n                </Badge>\r\n              </BreadcrumbLink>\r\n            ) : (\r\n              <BreadcrumbPage>\r\n                <Badge variant='outline' className='border-foreground/20 bg-muted/30 px-2.5 font-medium text-foreground'>\r\n                  {segment.label}\r\n                </Badge>\r\n              </BreadcrumbPage>\r\n            )}\r\n            {index < segments.length - 1 ? (\r\n              <BreadcrumbSeparator className='text-muted-foreground/60'>\r\n                <ArrowRightIcon className='size-3.5' />\r\n              </BreadcrumbSeparator>\r\n            ) : null}\r\n          </BreadcrumbItem>\r\n        ))}\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n\r\nexport default Breadcrumb5\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

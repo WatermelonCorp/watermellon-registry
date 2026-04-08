@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-6",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/avatar/avatar-6.tsx",
+      "content": "import type { LucideIcon } from 'lucide-react'\r\nimport { BriefcaseIcon } from 'lucide-react'\r\n\r\nimport { Avatar, AvatarFallback } from '@/components/ui/avatar'\r\n\r\ntype Profile = {\r\n  label: string\r\n  icon: LucideIcon\r\n}\r\n\r\nconst profile: Profile = {\r\n  label: 'Operations',\r\n  icon: BriefcaseIcon\r\n}\r\n\r\nconst Avatar6 = () => {\r\n  const Icon = profile.icon\r\n\r\n  return (\r\n    <Avatar>\r\n      <AvatarFallback className='bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'>\r\n        <Icon className='size-4' />\r\n      </AvatarFallback>\r\n    </Avatar>\r\n  )\r\n}\r\n\r\nexport default Avatar6\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

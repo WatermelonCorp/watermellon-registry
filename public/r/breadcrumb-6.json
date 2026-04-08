@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-6",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/breadcrumb/breadcrumb-6.tsx",
+      "content": "import type { LucideIcon } from 'lucide-react'\r\nimport { ChevronDownIcon, ChevronRightIcon, HomeIcon } from 'lucide-react'\r\n\r\nimport { Badge } from '@/components/ui/badge'\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator\r\n} from '@/components/ui/breadcrumb'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuTrigger\r\n} from '@/components/ui/dropdown-menu'\r\n\r\ntype LinkSegment = {\r\n  label: string\r\n  href: string\r\n  icon?: LucideIcon\r\n}\r\n\r\nconst rootSegment: LinkSegment = {\r\n  label: 'Home',\r\n  href: '#',\r\n  icon: HomeIcon\r\n}\r\n\r\nconst sectionSegment: LinkSegment = {\r\n  label: 'Projects',\r\n  href: '#'\r\n}\r\n\r\nconst currentSegment = {\r\n  label: 'Design System',\r\n  options: ['Tokens', 'Components', 'Patterns']\r\n} as const\r\n\r\nconst Breadcrumb6 = () => {\r\n  const RootIcon = rootSegment.icon\r\n\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList className='gap-1.5'>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href={rootSegment.href}>\r\n            <Badge\r\n              variant='outline'\r\n              className='inline-flex items-center gap-1.5 border-border/70 px-2.5 text-muted-foreground hover:text-foreground'\r\n            >\r\n              {RootIcon ? <RootIcon className='size-3' /> : null}\r\n              {rootSegment.label}\r\n            </Badge>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator className='text-muted-foreground/60'>\r\n          <ChevronRightIcon className='size-3.5' />\r\n        </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href={sectionSegment.href}>\r\n            <Badge variant='outline' className='border-border/70 px-2.5 text-muted-foreground hover:text-foreground'>\r\n              {sectionSegment.label}\r\n            </Badge>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator className='text-muted-foreground/60'>\r\n          <ChevronRightIcon className='size-3.5' />\r\n        </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>\r\n            <DropdownMenu>\r\n              <DropdownMenuTrigger className='inline-flex items-center gap-1 rounded-sm px-1 py-0.5 font-medium text-foreground outline-none'>\r\n                {currentSegment.label}\r\n                <ChevronDownIcon className='size-3.5 text-muted-foreground' />\r\n              </DropdownMenuTrigger>\r\n              <DropdownMenuContent align='start'>\r\n                {currentSegment.options.map((option) => (\r\n                  <DropdownMenuItem key={option}>{option}</DropdownMenuItem>\r\n                ))}\r\n              </DropdownMenuContent>\r\n            </DropdownMenu>\r\n          </BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n\r\nexport default Breadcrumb6\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

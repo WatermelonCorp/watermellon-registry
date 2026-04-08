@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-5",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-5.tsx",
+      "content": "import {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from '@/components/ui/pagination';\r\nimport { cn } from '@/lib/utils';\r\n\r\nconst pages = [1, 2, 3];\r\n\r\nconst Pagination5 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"gap-0 divide-x divide-neutral-200 overflow-hidden rounded-xl border bg-white shadow-lg dark:divide-neutral-800 dark:bg-neutral-950\">\r\n        <PaginationItem>\r\n          <PaginationPrevious\r\n            href=\"#\"\r\n            className=\"h-10 rounded-none border-none px-4 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            Prev\r\n          </PaginationPrevious>\r\n        </PaginationItem>\r\n        {pages.map((page) => {\r\n          const isActive = page === 2;\r\n\r\n          return (\r\n            <PaginationItem key={page}>\r\n              <PaginationLink\r\n                href={`#${page}`}\r\n                className={cn(\r\n                  {\r\n                    'bg-neutral-900 text-white hover:bg-neutral-800 hover:text-white dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200':\r\n                      isActive,\r\n                    'hover:bg-neutral-100 dark:hover:bg-neutral-800': !isActive,\r\n                  },\r\n                  'flex h-10 w-10 items-center justify-center rounded-none border-none transition-all',\r\n                )}\r\n                isActive={isActive}\r\n              >\r\n                {page}\r\n              </PaginationLink>\r\n            </PaginationItem>\r\n          );\r\n        })}\r\n        <PaginationItem>\r\n          <PaginationNext\r\n            href=\"#\"\r\n            className=\"h-10 rounded-none border-none px-4 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800\"\r\n          >\r\n            Next\r\n          </PaginationNext>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-2",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/pagination/pagination-2.tsx",
+      "content": "import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n} from '@/components/ui/pagination';\r\n\r\nconst Pagination2 = () => {\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"gap-4\">\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            aria-label=\"Previous\"\r\n            size=\"icon\"\r\n            className=\"size-9 rounded-xl border-none bg-neutral-50 transition-all hover:bg-neutral-100 active:scale-95 dark:bg-neutral-900/50 dark:hover:bg-neutral-800\"\r\n          >\r\n            <IconChevronLeft className=\"size-5 text-neutral-600 dark:text-neutral-400\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"size-9 rounded-xl border-none transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900\"\r\n          >\r\n            1\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            isActive\r\n            className=\"size-9 rounded-xl border-none text-black shadow-sm shadow-neutral-400 dark:bg-neutral-900 dark:text-white dark:shadow-neutral-700\"\r\n          >\r\n            2\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            className=\"size-9 rounded-xl border-none transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900\"\r\n          >\r\n            3\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n        <PaginationItem>\r\n          <PaginationLink\r\n            href=\"#\"\r\n            aria-label=\"Next\"\r\n            size=\"icon\"\r\n            className=\"size-9 rounded-xl border-none bg-neutral-50 transition-all hover:bg-neutral-100 active:scale-95 dark:bg-neutral-900/50 dark:hover:bg-neutral-800\"\r\n          >\r\n            <IconChevronRight className=\"size-5 text-neutral-600 dark:text-neutral-400\" />\r\n          </PaginationLink>\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n};\r\n\r\nexport default Pagination2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

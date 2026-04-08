@@ -1723,7 +1723,6 @@
         }
       ]
     },
-
     {
       "name": "deployment-card",
       "type": "registry:ui",
@@ -1837,7 +1836,6 @@
         }
       ]
     },
-
     {
       "name": "draw-signature",
       "type": "registry:ui",
@@ -5577,7 +5575,6 @@
           "target": "components/watermelon/task-management-dashboard/components/nav-main.tsx",
           "type": "registry:component"
         },
-
         {
           "path": "src/components/dashboards/task-management-dashboard/components/nav-secondary.tsx",
           "target": "components/watermelon/task-management-dashboard/components/nav-secondary.tsx",
@@ -6205,7 +6202,7 @@
       "dependencies": ["lucide-react", "motion"],
       "files": [
         {
-          "path": "src/components/base-variants/accordian/accordian-1.tsx",
+          "path": "src/components/base-variants/accordion/accordion-1.tsx",
           "target": "components/ui/accordion-1.tsx",
           "type": "registry:ui"
         }
@@ -6213,9 +6210,1049 @@
       "registryDependencies": ["accordion"]
     },
     {
-      "name": "alert-1",
+      "name": "accordion-2",
       "type": "registry:ui",
       "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-2.tsx",
+          "target": "components/ui/accordion-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-3.tsx",
+          "target": "components/ui/accordion-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-4.tsx",
+          "target": "components/ui/accordion-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-5.tsx",
+          "target": "components/ui/accordion-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-6.tsx",
+          "target": "components/ui/accordion-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-7.tsx",
+          "target": "components/ui/accordion-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-8.tsx",
+          "target": "components/ui/accordion-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-9.tsx",
+          "target": "components/ui/accordion-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-10.tsx",
+          "target": "components/ui/accordion-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-11",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-11.tsx",
+          "target": "components/ui/accordion-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-12",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-12.tsx",
+          "target": "components/ui/accordion-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-13",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-13.tsx",
+          "target": "components/ui/accordion-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-14",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-14.tsx",
+          "target": "components/ui/accordion-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-15",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-15.tsx",
+          "target": "components/ui/accordion-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "accordion-16",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/accordion/accordion-16.tsx",
+          "target": "components/ui/accordion-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion"]
+    },
+    {
+      "name": "avatar-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-1.tsx",
+          "target": "components/ui/avatar-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-2.tsx",
+          "target": "components/ui/avatar-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-3.tsx",
+          "target": "components/ui/avatar-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-4.tsx",
+          "target": "components/ui/avatar-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-5.tsx",
+          "target": "components/ui/avatar-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-6.tsx",
+          "target": "components/ui/avatar-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-7.tsx",
+          "target": "components/ui/avatar-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-8.tsx",
+          "target": "components/ui/avatar-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-9.tsx",
+          "target": "components/ui/avatar-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-10.tsx",
+          "target": "components/ui/avatar-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-11",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-11.tsx",
+          "target": "components/ui/avatar-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-12",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-12.tsx",
+          "target": "components/ui/avatar-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-13",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-13.tsx",
+          "target": "components/ui/avatar-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-14",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-14.tsx",
+          "target": "components/ui/avatar-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-15",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-15.tsx",
+          "target": "components/ui/avatar-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-16",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-16.tsx",
+          "target": "components/ui/avatar-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-17",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-17.tsx",
+          "target": "components/ui/avatar-17.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-18",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-18.tsx",
+          "target": "components/ui/avatar-18.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-19",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-19.tsx",
+          "target": "components/ui/avatar-19.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-20",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-20.tsx",
+          "target": "components/ui/avatar-20.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "avatar-21",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/avatar/avatar-21.tsx",
+          "target": "components/ui/avatar-21.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "breadcrumb-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/breadcrumb/breadcrumb-1.tsx",
+          "target": "components/ui/breadcrumb-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb"]
+    },
+    {
+      "name": "breadcrumb-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/breadcrumb/breadcrumb-2.tsx",
+          "target": "components/ui/breadcrumb-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb"]
+    },
+    {
+      "name": "breadcrumb-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/breadcrumb/breadcrumb-3.tsx",
+          "target": "components/ui/breadcrumb-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb"]
+    },
+    {
+      "name": "breadcrumb-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/breadcrumb/breadcrumb-4.tsx",
+          "target": "components/ui/breadcrumb-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb"]
+    },
+    {
+      "name": "breadcrumb-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/breadcrumb/breadcrumb-5.tsx",
+          "target": "components/ui/breadcrumb-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb"]
+    },
+    {
+      "name": "breadcrumb-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/breadcrumb/breadcrumb-6.tsx",
+          "target": "components/ui/breadcrumb-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb"]
+    },
+    {
+      "name": "breadcrumb-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/breadcrumb/breadcrumb-7.tsx",
+          "target": "components/ui/breadcrumb-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb"]
+    },
+    {
+      "name": "breadcrumb-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/breadcrumb/breadcrumb-8.tsx",
+          "target": "components/ui/breadcrumb-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb"]
+    },
+    {
+      "name": "button-group-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-1.tsx",
+          "target": "components/ui/button-group-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-2.tsx",
+          "target": "components/ui/button-group-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-3.tsx",
+          "target": "components/ui/button-group-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-4.tsx",
+          "target": "components/ui/button-group-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-5.tsx",
+          "target": "components/ui/button-group-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-6.tsx",
+          "target": "components/ui/button-group-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-7.tsx",
+          "target": "components/ui/button-group-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-8.tsx",
+          "target": "components/ui/button-group-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-9.tsx",
+          "target": "components/ui/button-group-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-10.tsx",
+          "target": "components/ui/button-group-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-11.tsx",
+          "target": "components/ui/button-group-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "button-group-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/button-group/button-group-12.tsx",
+          "target": "components/ui/button-group-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-group"]
+    },
+    {
+      "name": "card-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-1.tsx",
+          "target": "components/ui/card-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-2.tsx",
+          "target": "components/ui/card-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-3.tsx",
+          "target": "components/ui/card-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-4.tsx",
+          "target": "components/ui/card-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-5.tsx",
+          "target": "components/ui/card-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-6.tsx",
+          "target": "components/ui/card-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-7.tsx",
+          "target": "components/ui/card-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-8.tsx",
+          "target": "components/ui/card-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-9.tsx",
+          "target": "components/ui/card-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-10.tsx",
+          "target": "components/ui/card-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-11.tsx",
+          "target": "components/ui/card-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-12.tsx",
+          "target": "components/ui/card-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-13.tsx",
+          "target": "components/ui/card-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-14",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-14.tsx",
+          "target": "components/ui/card-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "card-15",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/card/card-15.tsx",
+          "target": "components/ui/card-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card"]
+    },
+    {
+      "name": "collapsible-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-1.tsx",
+          "target": "components/ui/collapsible-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "collapsible-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-2.tsx",
+          "target": "components/ui/collapsible-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "collapsible-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-3.tsx",
+          "target": "components/ui/collapsible-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "collapsible-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-4.tsx",
+          "target": "components/ui/collapsible-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "collapsible-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-5.tsx",
+          "target": "components/ui/collapsible-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "collapsible-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-6.tsx",
+          "target": "components/ui/collapsible-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "collapsible-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-7.tsx",
+          "target": "components/ui/collapsible-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "collapsible-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-8.tsx",
+          "target": "components/ui/collapsible-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "collapsible-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "files": [
+        {
+          "path": "src/components/base-variants/collapsible/collapsible-9.tsx",
+          "target": "components/ui/collapsible-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible"]
+    },
+    {
+      "name": "alert-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-1.tsx",
@@ -6228,7 +7265,7 @@
     {
       "name": "alert-2",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-2.tsx",
@@ -6241,7 +7278,7 @@
     {
       "name": "alert-3",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-3.tsx",
@@ -6254,7 +7291,7 @@
     {
       "name": "alert-4",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-4.tsx",
@@ -6267,7 +7304,7 @@
     {
       "name": "alert-5",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-5.tsx",
@@ -6280,7 +7317,7 @@
     {
       "name": "alert-6",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-6.tsx",
@@ -6293,7 +7330,7 @@
     {
       "name": "alert-7",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-7.tsx",
@@ -6306,7 +7343,7 @@
     {
       "name": "alert-8",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-8.tsx",
@@ -6319,7 +7356,7 @@
     {
       "name": "alert-9",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-9.tsx",
@@ -6332,7 +7369,7 @@
     {
       "name": "alert-10",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-10.tsx",
@@ -6345,7 +7382,7 @@
     {
       "name": "alert-11",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-11.tsx",
@@ -6358,7 +7395,7 @@
     {
       "name": "alert-12",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-12.tsx",
@@ -6371,7 +7408,7 @@
     {
       "name": "alert-13",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-13.tsx",
@@ -6384,7 +7421,7 @@
     {
       "name": "alert-14",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-14.tsx",
@@ -6397,7 +7434,7 @@
     {
       "name": "alert-15",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-15.tsx",
@@ -6410,7 +7447,7 @@
     {
       "name": "alert-16",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-16.tsx",
@@ -6423,7 +7460,7 @@
     {
       "name": "alert-17",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-17.tsx",
@@ -6436,7 +7473,7 @@
     {
       "name": "alert-18",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-18.tsx",
@@ -6449,7 +7486,7 @@
     {
       "name": "alert-19",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-19.tsx",
@@ -6462,7 +7499,7 @@
     {
       "name": "alert-20",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-20.tsx",
@@ -6475,7 +7512,7 @@
     {
       "name": "alert-21",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-21.tsx",
@@ -6488,7 +7525,7 @@
     {
       "name": "alert-22",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-22.tsx",
@@ -6501,7 +7538,7 @@
     {
       "name": "alert-23",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-23.tsx",
@@ -6514,7 +7551,7 @@
     {
       "name": "alert-24",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-24.tsx",
@@ -6527,7 +7564,7 @@
     {
       "name": "alert-25",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-25.tsx",
@@ -6540,7 +7577,7 @@
     {
       "name": "alert-26",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-26.tsx",
@@ -6553,7 +7590,7 @@
     {
       "name": "alert-27",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-27.tsx",
@@ -6566,7 +7603,7 @@
     {
       "name": "alert-28",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-28.tsx",
@@ -6579,7 +7616,7 @@
     {
       "name": "alert-29",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-29.tsx",
@@ -6592,7 +7629,7 @@
     {
       "name": "alert-30",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-30.tsx",
@@ -6606,7 +7643,7 @@
     {
       "name": "badge-1",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-1.tsx",
@@ -6619,7 +7656,7 @@
     {
       "name": "badge-2",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-2.tsx",
@@ -6632,7 +7669,7 @@
     {
       "name": "badge-3",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-3.tsx",
@@ -6645,7 +7682,7 @@
     {
       "name": "badge-4",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-4.tsx",
@@ -6658,7 +7695,7 @@
     {
       "name": "badge-5",
       "type": "registry:ui",
-      "dependencies": ["react-icons"],
+      "dependencies": ["react-icons", "motion"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-5.tsx",

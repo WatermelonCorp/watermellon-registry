@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-6",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/card/card-6.tsx",
+      "content": "import { Button } from '@/components/ui/button';\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardTitle,\r\n} from '@/components/ui/card';\r\n\r\ntype MediaCard = {\r\n  ctaLabel: string;\r\n  description: string;\r\n  imageAlt: string;\r\n  imageSrc: string;\r\n  title: string;\r\n};\r\n\r\nconst mediaCard: MediaCard = {\r\n  ctaLabel: 'Open Collection',\r\n  description:\r\n    'A pastel gradient study with softer transitions and a cleaner editorial feel.',\r\n  imageAlt: 'Abstract pastel composition',\r\n  imageSrc: 'https://picsum.photos/seed/pastel-motion-field/1200/900',\r\n  title: 'Pastel Motion Field',\r\n};\r\n\r\nconst Card6 = () => {\r\n  return (\r\n    <Card className=\"border-border/70 max-w-lg overflow-hidden py-0 shadow-sm sm:flex-row sm:gap-0\">\r\n      <CardContent className=\"grow px-0\">\r\n        <img\r\n          src={mediaCard.imageSrc}\r\n          alt={mediaCard.imageAlt}\r\n          className=\"size-full object-cover sm:min-h-full sm:rounded-l-xl\"\r\n        />\r\n      </CardContent>\r\n      <div className=\"sm:min-w-60\">\r\n        <CardHeader className=\"space-y-1 py-6\">\r\n          <CardTitle>{mediaCard.title}</CardTitle>\r\n          <CardDescription className=\"leading-6\">\r\n            {mediaCard.description}\r\n          </CardDescription>\r\n        </CardHeader>\r\n        <CardFooter className=\"gap-3 py-4 rounded-none\">\r\n          <Button className=\"bg-sky-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-2px_4px_rgba(0,0,0,0.18),0_6px_14px_rgba(14,165,233,0.22)] hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-400\">\r\n            {mediaCard.ctaLabel}\r\n          </Button>\r\n        </CardFooter>\r\n      </div>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport default Card6;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/card-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-8",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/breadcrumb/breadcrumb-8.tsx",
+      "content": "import type { LucideIcon } from 'lucide-react'\r\nimport { HomeIcon } from 'lucide-react'\r\n\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator\r\n} from '@/components/ui/breadcrumb'\r\n\r\ntype BreadcrumbSegment =\r\n  | {\r\n      label: string\r\n      href: string\r\n      current?: false\r\n    }\r\n  | {\r\n      label: string\r\n      current: true\r\n      href?: never\r\n    }\r\n\r\nconst rootSegment: { href: string; icon: LucideIcon; label: string } = {\r\n  href: '#',\r\n  icon: HomeIcon,\r\n  label: 'Home'\r\n}\r\n\r\nconst segments: readonly BreadcrumbSegment[] = [\r\n  { label: 'Workspace', href: '#' },\r\n  { label: 'Team Library', current: true }\r\n] as const\r\n\r\nconst Breadcrumb8 = () => {\r\n  const RootIcon = rootSegment.icon\r\n\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList className='h-9 gap-2.5 rounded-full border border-border/70 px-4 text-sm shadow-xs'>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href={rootSegment.href} className='rounded-sm p-0.5 hover:text-foreground'>\r\n            <RootIcon className='size-3.5' />\r\n            <span className='sr-only'>{rootSegment.label}</span>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        {segments.map((segment) => (\r\n          <BreadcrumbItem key={segment.label}>\r\n            <BreadcrumbSeparator className='text-muted-foreground/60'>/</BreadcrumbSeparator>\r\n            {'href' in segment ? (\r\n              <BreadcrumbLink href={segment.href} className='hover:text-foreground'>\r\n                {segment.label}\r\n              </BreadcrumbLink>\r\n            ) : (\r\n              <BreadcrumbPage className='font-medium'>{segment.label}</BreadcrumbPage>\r\n            )}\r\n          </BreadcrumbItem>\r\n        ))}\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n\r\nexport default Breadcrumb8\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

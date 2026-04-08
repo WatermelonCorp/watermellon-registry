@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-8",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/avatar/avatar-8.tsx",
+      "content": "import { CheckIcon } from 'lucide-react'\r\n\r\nimport { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\n\r\ntype Profile = {\r\n  name: string\r\n  avatar: string\r\n}\r\n\r\nconst profile: Profile = {\r\n  name: 'Amara Lewis',\r\n  avatar: 'https://i.pravatar.cc/160?img=36'\r\n}\r\n\r\nconst getInitials = (name: string) =>\r\n  name\r\n    .split(/\\s+/)\r\n    .map((word) => word.slice(0, 1))\r\n    .join('')\r\n\r\nconst Avatar8 = () => {\r\n  return (\r\n    <Avatar className='ring-offset-background ring-2 ring-emerald-600 ring-offset-2 dark:ring-emerald-400'>\r\n      <AvatarImage src={profile.avatar} alt={profile.name} />\r\n      <AvatarFallback className='text-xs'>{getInitials(profile.name)}</AvatarFallback>\r\n      <AvatarBadge className='bg-emerald-600 text-white dark:bg-emerald-400'>\r\n        <CheckIcon className='size-2.5' />\r\n      </AvatarBadge>\r\n    </Avatar>\r\n  )\r\n}\r\n\r\nexport default Avatar8\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/avatar-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

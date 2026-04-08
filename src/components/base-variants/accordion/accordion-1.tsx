@@ -26,9 +26,9 @@ const items = [
   },
 ] as const
 
-const AccordionVariant1 = () => {
+const Accordion1 = () => {
   return (
-    <Accordion type="multiple" className="w-full" defaultValue={[items[0].value]}>
+    <Accordion className="w-full"  type="multiple" defaultValue={[items[0].value]}>
       {items.map((item) => (
         <AccordionItem key={item.value} value={item.value}>
           <AccordionTrigger className="flex-row-reverse justify-end gap-3 [&_[data-slot=accordion-trigger-icon]]:ml-0">
@@ -43,4 +43,4 @@ const AccordionVariant1 = () => {
   )
 }
 
-export default AccordionVariant1
+export default Accordion1

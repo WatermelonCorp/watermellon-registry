@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-14",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/card/card-14.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport type { LucideIcon } from 'lucide-react'\r\nimport { SparklesIcon, XIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'\r\n\r\ntype PromoCard = {\r\n  ctaLabel: string\r\n  icon: LucideIcon\r\n  message: string\r\n  title: string\r\n}\r\n\r\nconst promoCard: PromoCard = {\r\n  ctaLabel: 'Book a review',\r\n  icon: SparklesIcon,\r\n  message: 'Share your early direction, open questions, or rough ideas and we will help shape them into a clearer next step.',\r\n  title: 'Need feedback on a concept?'\r\n}\r\n\r\nconst Card14 = () => {\r\n  const [isActive, setIsActive] = useState<boolean>(true)\r\n  const Icon = promoCard.icon\r\n\r\n  if (!isActive) return null\r\n\r\n  return (\r\n    <Card className='relative max-w-lg border-border/70 shadow-sm'>\r\n      <Button\r\n        variant='ghost'\r\n        size='icon'\r\n        onClick={() => setIsActive(false)}\r\n        className='absolute top-2 right-2 rounded-full'\r\n      >\r\n        <XIcon className='size-4' />\r\n        <span className='sr-only'>Close</span>\r\n      </Button>\r\n      <CardHeader className='items-center pb-3 text-center'>\r\n        <div className='mb-2 flex size-10 items-center justify-center rounded-full bg-sky-100 text-sky-700 dark:bg-sky-950/40 dark:text-sky-300'>\r\n          <Icon className='size-5' />\r\n        </div>\r\n        <CardTitle>{promoCard.title}</CardTitle>\r\n      </CardHeader>\r\n      <CardContent className='flex flex-col gap-4 text-center'>\r\n        <p className='text-sm leading-6 text-muted-foreground'>{promoCard.message}</p>\r\n        <Button className='self-center bg-sky-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-2px_4px_rgba(0,0,0,0.18),0_8px_18px_rgba(14,165,233,0.24)] hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-400'>\r\n          {promoCard.ctaLabel}\r\n        </Button>\r\n      </CardContent>\r\n    </Card>\r\n  )\r\n}\r\n\r\nexport default Card14\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/card-14.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
