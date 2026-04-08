@@ -11,7 +11,7 @@ const Textarea13 = () => {
       <Label htmlFor={id}>Generated output</Label>
       <Textarea
         id={id}
-        className="read-only:bg-muted rounded-sm shadow-[inset_0_-1px_0_0px_rgba(0,0,0,0.04),inset_0_1px_0_0px_rgba(255,255,255,0.5)] dark:shadow-[inset_0_-1px_0_1px_rgba(0,0,0,0.04),inset_0_1px_0px_0px_rgba(255,255,255,0.2)]"
+        className="read-only:bg-muted focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-[inset_0_-1px_0_0px_rgba(0,0,0,0.04),inset_0_1px_0_0px_rgba(255,255,255,0.5)]  focus-visible:ring-2 dark:shadow-[inset_0_-1px_0_1px_rgba(0,0,0,0.04),inset_0_1px_0px_0px_rgba(255,255,255,0.2)]"
         defaultValue="This content is generated and cannot be edited."
         placeholder="Output will appear here..."
         readOnly

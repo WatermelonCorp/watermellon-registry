@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/textarea/textarea-10.tsx",
-      "content": "import { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea10 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Textarea\r\n        className=\"min-h-10 rounded-sm py-1.5 shadow-sm\"\r\n        placeholder=\"Compact input\"\r\n      />\r\n      <Textarea\r\n        placeholder=\"Standard input \"\r\n        className=\"rounded-sm shadow-sm\"\r\n      />\r\n      <Textarea\r\n        className=\"min-h-20 rounded-sm py-2.5 shadow-sm\"\r\n        placeholder=\"Expanded input\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea10;\r\n",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea10 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"relative w-full max-w-xs space-y-2\">\r\n      <Label\r\n        htmlFor={id}\r\n        className=\"bg-background text-foreground absolute top-0 left-2 z-10 block -translate-y-1/2 px-1 text-xs font-medium group-has-disabled:opacity-50\"\r\n      >\r\n        Your message\r\n      </Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"Type your message here...\"\r\n        className=\"!bg-background focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm focus-visible:ring-2\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea10;\r\n",
       "type": "registry:ui",
       "target": "components/ui/textarea-10.tsx"
     }

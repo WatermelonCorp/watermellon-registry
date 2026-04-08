@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/textarea/textarea-14.tsx",
-      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea14 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>Live input</Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"Start typing and it will expand...\"\r\n        className=\"focus-visible:ring-primary focus-visible:border-primary/50 field-sizing-content max-h-30 min-h-0 resize-none rounded-sm py-1.75 shadow-sm\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea14;\r\n",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea14 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>Live input</Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"Start typing and it will expand...\"\r\n        className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 field-sizing-content max-h-30 min-h-0 resize-none rounded-sm py-1.75 shadow-sm\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea14;\r\n",
       "type": "registry:ui",
       "target": "components/ui/textarea-14.tsx"
     }

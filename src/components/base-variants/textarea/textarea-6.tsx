@@ -19,7 +19,7 @@ const Textarea6 = () => {
         <Textarea
           id={id}
           placeholder="Jot down your thoughts..."
-          className="peer pl-9"
+          className="peer focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm pl-9 shadow-sm focus-visible:ring-2"
         />
       </div>
     </div>

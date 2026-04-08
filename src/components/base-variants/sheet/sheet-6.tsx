@@ -78,7 +78,7 @@ const Sheet6 = () => {
 
         <form onSubmit={handleSubmit} className="flex h-full w-full flex-col">
           <div className="flex-1 space-y-4 p-4 pt-0">
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-2">
               <label className="flex items-center gap-2 text-sm">
                 <FaUser className="text-muted-foreground size-3 shrink-0" />
                 First Name
@@ -91,7 +91,7 @@ const Sheet6 = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-2">
               <label className="flex items-center gap-2 text-sm">
                 <FaUser className="text-muted-foreground size-3 shrink-0" />
                 Last Name
@@ -104,7 +104,7 @@ const Sheet6 = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-2">
               <label className="flex items-center gap-2 text-sm">
                 <FaEnvelope className="text-muted-foreground size-3 shrink-0" />
                 Email
@@ -117,7 +117,7 @@ const Sheet6 = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-2">
               <label className="flex items-center gap-2 text-sm">
                 <FaPhone className="text-muted-foreground size-3 shrink-0" />
                 Phone
@@ -136,7 +136,7 @@ const Sheet6 = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-2">
               <label className="flex items-center gap-2 text-sm">
                 <FaLock className="text-muted-foreground size-3 shrink-0" />
                 Password

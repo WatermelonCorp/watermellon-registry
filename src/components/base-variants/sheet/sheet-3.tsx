@@ -26,9 +26,9 @@ const Sheet3 = () => {
         <Button variant="outline">Open Documentation</Button>
       </SheetTrigger>
 
-      <SheetContent className="theme-injected p-0 sm:max-w-[540px]">
+      <SheetContent className=" p-0 sm:max-w-[540px]">
         <ScrollArea className="h-full">
-          <div className="space-y-6 p-6">
+          <div className="space-y-6 px-6 pb-6">
             <SheetHeader>
               <SheetTitle className="text-lg">System Overview</SheetTitle>
               <SheetDescription>
@@ -55,7 +55,7 @@ const Sheet3 = () => {
               ))}
             </div>
 
-            <SheetFooter className="flex flex-col gap-2 pt-2 sm:flex-row">
+            <SheetFooter className="flex flex-col gap-2 p-0 ">
               <SheetClose asChild>
                 <Button className="w-full">Export</Button>
               </SheetClose>

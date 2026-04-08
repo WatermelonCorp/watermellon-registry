@@ -1,19 +1,23 @@
+import { useId } from "react";
+
+import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 const Textarea10 = () => {
+  const id = useId();
+
   return (
-    <div className="w-full max-w-sm space-y-2">
+    <div className="relative w-full max-w-xs space-y-2">
+      <Label
+        htmlFor={id}
+        className="bg-background text-foreground absolute top-0 left-2 z-10 block -translate-y-1/2 px-1 text-xs font-medium group-has-disabled:opacity-50"
+      >
+        Your message
+      </Label>
       <Textarea
-        className="min-h-10 rounded-sm py-1.5 shadow-sm"
-        placeholder="Compact input"
-      />
-      <Textarea
-        placeholder="Standard input "
-        className="rounded-sm shadow-sm"
-      />
-      <Textarea
-        className="min-h-20 rounded-sm py-2.5 shadow-sm"
-        placeholder="Expanded input"
+        id={id}
+        placeholder="Type your message here..."
+        className="!bg-background focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm focus-visible:ring-2"
       />
     </div>
   );

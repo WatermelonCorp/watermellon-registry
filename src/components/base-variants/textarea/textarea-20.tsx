@@ -12,7 +12,7 @@ const Textarea20 = () => {
       <Textarea
         id={id}
         placeholder="Describe your project requirements..."
-        className="focus-visible:ring-primary focus-visible:border-primary/50"
+        className="focus-visible:ring-primary/20 focus-visible:border-primary/50"
       />
       <p className="text-muted-foreground text-xs">
         Include key goals, constraints, or expectations.

@@ -16,7 +16,7 @@ const Textarea11 = () => {
       <Textarea
         id={id}
         placeholder=" "
-        className="!bg-background focus-visible:ring-primary focus-visible:border-primary/50 rounded-sm shadow-sm"
+        className="!bg-background focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm"
       />
     </div>
   );

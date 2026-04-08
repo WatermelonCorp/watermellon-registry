@@ -30,7 +30,7 @@ const Textarea18 = () => {
         value={value}
         maxLength={maxLength}
         onChange={handleChange}
-        className=""
+        className="focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm focus-visible:ring-2"
       />
       <p className="text-muted-foreground text-xs">
         <span className="tabular-nums">{maxLength - characterCount}</span>{" "}

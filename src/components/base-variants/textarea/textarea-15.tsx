@@ -12,7 +12,7 @@ const Textarea15 = () => {
       <Textarea
         id={id}
         placeholder="Enter your response..."
-        className="focus-visible:ring-primary focus-visible:border-primary/50 [resize:none]"
+        className="focus-visible:ring-primary/20 focus-visible:border-primary/50 [resize:none]"
       />
     </div>
   );

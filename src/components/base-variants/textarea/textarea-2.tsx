@@ -12,7 +12,7 @@ const Textarea2 = () => {
       <Textarea
         id={id}
         placeholder="Share your thoughts..."
-        className="rounded-sm shadow-sm"
+        className="focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm focus-visible:ring-2"
       />
     </div>
   );

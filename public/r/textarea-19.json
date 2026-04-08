@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/textarea/textarea-19.tsx",
-      "content": "import { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea19 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Textarea\r\n        className=\"min-h-10 rounded-none py-2.5 shadow-sm\"\r\n        placeholder=\"Quick note\"\r\n      />\r\n      <Textarea\r\n        placeholder=\"Write something...\"\r\n        className=\"rounded-lg shadow-sm\"\r\n      />\r\n      <Textarea\r\n        className=\"min-h-20 rounded-xl py-2 shadow-sm\"\r\n        placeholder=\"Detailed input\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea19;\r\n",
+      "content": "import { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea19 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Textarea\r\n        className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 min-h-10 rounded-sm py-1.5 shadow-sm focus-visible:ring-2\"\r\n        placeholder=\"Compact input\"\r\n      />\r\n      <Textarea\r\n        placeholder=\"Standard input \"\r\n        className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm focus-visible:ring-2\"\r\n      />\r\n      <Textarea\r\n        className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 min-h-20 rounded-sm py-2.5 shadow-sm focus-visible:ring-2\"\r\n        placeholder=\"Expanded input\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea19;\r\n",
       "type": "registry:ui",
       "target": "components/ui/textarea-19.tsx"
     }

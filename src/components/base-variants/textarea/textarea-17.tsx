@@ -13,7 +13,7 @@ const Textarea17 = () => {
       <Textarea
         id={id}
         placeholder="Write your reply..."
-        className="focus-visible:ring-primary focus-visible:border-primary/50 rounded-sm shadow-sm"
+        className="focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm"
       />
       <Button
         size="sm"

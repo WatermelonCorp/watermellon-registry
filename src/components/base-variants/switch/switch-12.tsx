@@ -1,12 +1,12 @@
-import { FiShield, FiBell, FiMoon } from "react-icons/fi";
-
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
+import { FaShieldAlt, FaBell, FaMoon } from "react-icons/fa";
+
 const settings = [
-  { label: "Privacy Mode", icon: FiShield },
-  { label: "Notifications", icon: FiBell },
-  { label: "Dark Theme", icon: FiMoon },
+  { label: "Privacy Mode", icon: FaShieldAlt },
+  { label: "Notifications", icon: FaBell },
+  { label: "Dark Theme", icon: FaMoon },
 ];
 
 const Switch12 = () => {

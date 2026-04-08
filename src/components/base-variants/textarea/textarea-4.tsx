@@ -15,7 +15,7 @@ const Textarea4 = () => {
         id={id}
         placeholder="Describe the issue you're facing..."
         required
-        className=""
+        className="focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm focus-visible:ring-2"
       />
     </div>
   );

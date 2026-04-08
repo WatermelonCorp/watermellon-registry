@@ -15,7 +15,7 @@ const Textarea9 = () => {
       <Textarea
         id={id}
         placeholder="Add any extra details..."
-        className="focus-visible:ring-primary focus-visible:border-primary/50"
+        className="focus-visible:ring-primary/20 focus-visible:border-primary/50"
       />
     </div>
   );

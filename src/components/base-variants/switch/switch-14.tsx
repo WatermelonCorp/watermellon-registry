@@ -5,7 +5,7 @@ import { Switch } from "@/components/ui/switch";
 
 const Switch14 = () => {
   return (
-    <div className="border-input relative flex w-full items-start gap-2 rounded-md border bg-neutral-100 p-4 transition-all duration-200 ease-out outline-none has-data-[state=checked]:shadow-[0_5px_1px_0_rgba(0,0,0,1),inset_0_2px_1px_0_rgba(0,0,0,0.1)] has-data-[state=checked]:ring-2 has-data-[state=checked]:ring-black dark:bg-neutral-900 dark:has-data-[state=checked]:shadow-[0_5px_1px_0_rgba(255,255,255,1),inset_0_2px_1px_0_rgba(255,255,255,0.2)] dark:has-data-[state=checked]:ring-white">
+    <div className="border-input relative flex w-full items-start gap-2 rounded-md border bg-neutral-100 p-4 transition-all duration-200 ease-out outline-none has-data-[state=checked]:shadow-[0_5px_1px_0_var(--color-neutral-700),inset_0_2px_1px_0_rgba(0,0,0,0.1)] has-data-[state=checked]:ring-2 has-data-[state=checked]:ring-neutral-700 dark:bg-neutral-900 dark:has-data-[state=checked]:shadow-[0_5px_1px_0_var(--color-neutral-400),inset_0_2px_1px_0_rgba(255,255,255,0.1)] dark:has-data-[state=checked]:ring-neutral-400">
       <Switch
         id="cloud-backup"
         className="order-1 bg-black after:absolute after:inset-0 data-[size=default]:h-4 data-[size=default]:w-6 [&_span]:group-data-[size=default]/switch:size-3 data-[state=checked]:[&_span]:translate-x-2.5 data-[state=checked]:[&_span]:rtl:-translate-x-2.5"

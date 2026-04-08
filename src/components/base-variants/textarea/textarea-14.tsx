@@ -12,7 +12,7 @@ const Textarea14 = () => {
       <Textarea
         id={id}
         placeholder="Start typing and it will expand..."
-        className="focus-visible:ring-primary focus-visible:border-primary/50 field-sizing-content max-h-30 min-h-0 resize-none rounded-sm py-1.75 shadow-sm"
+        className="focus-visible:ring-primary/20 focus-visible:border-primary/50 field-sizing-content max-h-30 min-h-0 resize-none rounded-sm py-1.75 shadow-sm"
       />
     </div>
   );

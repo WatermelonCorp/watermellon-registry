@@ -7632,6 +7632,19 @@
       "registryDependencies": ["sheet"]
     },
     {
+      "name": "sheet-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/sheet/sheet-7.tsx",
+          "target": "components/ui/sheet-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["sheet"]
+    },
+    {
       "name": "switch-1",
       "type": "registry:ui",
       "dependencies": ["react-icons"],
