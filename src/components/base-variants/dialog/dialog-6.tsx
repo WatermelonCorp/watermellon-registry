@@ -106,7 +106,7 @@ const Dialog6 = () => {
             </DialogDescription>
           </ScrollArea>
         </DialogHeader>
-        <DialogFooter className='flex-row items-center justify-end border-t px-6 pt-6 pb-10 bg-transparent mx-0.5'>
+        <DialogFooter className='flex-row items-center justify-end border-t px-6 pt-6 pb-6 bg-transparent mx-0.5'>
           <DialogClose>
             <Button variant='outline' className="rounded-full">
               <ChevronLeftIcon />
