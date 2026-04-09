@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 
-import { Button } from '@/components/ui//button'
-import { Checkbox } from '@/components/ui//checkbox'
-import { Input } from '@/components/ui//input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui//select'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui//table'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 type PersonStatus = 'active' | 'inactive' | 'pending'
 
@@ -151,7 +151,7 @@ const DataTable13 = () => {
                       <Input
                         value={person.firstName}
                         onChange={(event) => updateCell(person.id, 'firstName', event.target.value)}
-                        className='h-8 rounded-md border-0 bg-transparent px-1 focus-visible:bg-background focus-visible:ring-1'
+                        className='h-8 rounded-md border border-border/40 bg-muted/50 px-1.5 focus-visible:bg-background focus-visible:ring-1 dark:border-border/30 dark:bg-muted/20'
                         aria-label='Editable first name'
                       />
                     </TableCell>
@@ -159,7 +159,7 @@ const DataTable13 = () => {
                       <Input
                         value={person.lastName}
                         onChange={(event) => updateCell(person.id, 'lastName', event.target.value)}
-                        className='h-8 rounded-md border-0 bg-transparent px-1 focus-visible:bg-background focus-visible:ring-1'
+                        className='h-8 rounded-md border border-border/40 bg-muted/50 px-1.5 focus-visible:bg-background focus-visible:ring-1 dark:border-border/30 dark:bg-muted/20'
                         aria-label='Editable last name'
                       />
                     </TableCell>
@@ -167,7 +167,7 @@ const DataTable13 = () => {
                       <Input
                         value={person.email}
                         onChange={(event) => updateCell(person.id, 'email', event.target.value)}
-                        className='h-8 rounded-md border-0 bg-transparent px-1 focus-visible:bg-background focus-visible:ring-1'
+                        className='h-8 rounded-md border border-border/40 bg-muted/50 px-1.5 focus-visible:bg-background focus-visible:ring-1 dark:border-border/30 dark:bg-muted/20'
                         aria-label='Editable email'
                       />
                     </TableCell>
@@ -177,7 +177,7 @@ const DataTable13 = () => {
                         onValueChange={(value) => updateCell(person.id, 'status', value as PersonStatus)}
                       >
                         <SelectTrigger
-                          className='h-8 rounded-md border-0 bg-transparent px-1 focus:bg-background focus:ring-1'
+                          className='h-8 rounded-md border border-border/40 bg-muted/50 px-1.5 focus:bg-background focus:ring-1 dark:border-border/30 dark:bg-muted/20'
                           aria-label='Editable status'
                         >
                           <SelectValue />
@@ -201,7 +201,7 @@ const DataTable13 = () => {
                             const safeValue = Number.isNaN(nextValue) ? person.progress : Math.max(0, Math.min(100, nextValue))
                             updateCell(person.id, 'progress', safeValue)
                           }}
-                          className='h-8 w-20 rounded-md border-0 bg-transparent px-1 focus-visible:bg-background focus-visible:ring-1'
+                          className='h-8 w-20 rounded-md border border-border/40 bg-muted/50 px-1.5 focus-visible:bg-background focus-visible:ring-1 dark:border-border/30 dark:bg-muted/20'
                           aria-label='Editable progress'
                         />
                         <span className='text-sm text-muted-foreground'>%</span>
