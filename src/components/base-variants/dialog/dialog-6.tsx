@@ -19,7 +19,7 @@ const Dialog6 = () => {
       <DialogTrigger>
         <Button variant='outline' className="shadow-md">Sticky Footer Dialog</Button>
       </DialogTrigger>
-      <DialogContent className='flex max-h-[min(600px,80vh)] flex-col gap-0 p-4 sm:max-w-md'>
+      <DialogContent className='flex max-h-[min(600px,80vh)] flex-col gap-0 p-4 sm:max-w-md [&_[data-slot=dialog-close]]:right-8'>
         <DialogHeader className='contents space-y-0 text-left'>
           <ScrollArea className='flex max-h-full flex-col overflow-hidden'>
             <DialogTitle className='px-6 pt-6'>Product Information</DialogTitle>

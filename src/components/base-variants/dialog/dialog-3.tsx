@@ -35,16 +35,12 @@ const Dialog3 = () => {
           <AlertDialogDescription className='text-center text-sm text-neutral-600 dark:text-neutral-300'>
             This action cannot be undone. This will permanently delete your account and remove your data from our servers.
               <span className='mt-5 flex items-center justify-center gap-3'>
-                <Checkbox id='terms' className="data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600" />
+                <Checkbox
+                  id='terms'
+                  className='border-neutral-400 bg-white dark:border-neutral-500 dark:bg-neutral-800 data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white dark:data-[state=checked]:border-blue-500 dark:data-[state=checked]:bg-blue-500'
+                />
                 <Label htmlFor='terms' className='text-neutral-700 dark:text-neutral-200 text-sm'>Don&apos;t ask again next time</Label>
               </span>
-              {/* Custom style to make the checkmark blue */}
-              <style>{`
-                [data-state="checked"] svg {
-                  color: #2563eb !important; /* Tailwind blue-600 */
-                  stroke: #2563eb !important;
-                }
-              `}</style>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter className='bg-transparent p-4 pb-2'>

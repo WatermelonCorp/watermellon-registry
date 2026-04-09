@@ -36,7 +36,7 @@ const Dialog16 = () => {
           </div>
           <DialogFooter className='bg-transparent pb-0' >
             <DialogClose>
-              <Button variant="outline" className="rounded-lg">Discard</Button>
+              <Button variant="outline" className="w-full rounded-lg">Discard</Button>
             </DialogClose>
             <Button type="submit" className="bg-zinc-800 text-white hover:bg-zinc-700 focus-visible:ring-zinc-800 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:focus-visible:ring-zinc-600 rounded-lg">Update profile</Button>
           </DialogFooter>

@@ -52,11 +52,11 @@ const Dialog11 = () => {
         <DialogHeader className="text-center mb-2">
           <DialogTitle className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">We value your feedback</DialogTitle>
         </DialogHeader>
-        <form className="flex flex-col gap-4 pt-2" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           <fieldset className="space-y-3">
             <legend className="text-zinc-700 dark:text-zinc-300 text-sm font-medium mb-1">How was your experience today?</legend>
             <RadioGroup
-              className="flex gap-2 justify-center items-center"
+              className="flex gap-2 justify-center items-center mt-3"
               value={selectedRating}
               name="rating"
               onValueChange={setSelectedRating}
@@ -90,7 +90,7 @@ const Dialog11 = () => {
           </fieldset>
           <div className="grid gap-2">
             <Label htmlFor="feedback-message" className="text-zinc-700 dark:text-zinc-200">Additional comments</Label>
-            <Textarea placeholder="Type your feedback here..." id="feedback-message" name="message" required className="rounded-lg border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-zinc-400 text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900" />
+            <Textarea placeholder="Type your feedback here..." id="feedback-message" name="message" required className="rounded-lg placeholder:text-xs sm:placeholder:text-sm border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-zinc-400 text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900" />
             <p className="text-xs text-zinc-400 text-right">500/500 characters left</p>
           </div>
           <div className="flex items-center gap-2">
@@ -110,7 +110,7 @@ const Dialog11 = () => {
           </div>
           <DialogFooter className="sm:justify-end gap-2 bg-transparent p-0 border-none shadow-none">
             <DialogClose>
-              <Button variant="outline" className="rounded-lg px-6 py-2 font-medium">Cancel</Button>
+              <Button variant="outline" className="w-full rounded-lg px-6 py-2 font-medium">Cancel</Button>
             </DialogClose>
             <Button
               type="submit"

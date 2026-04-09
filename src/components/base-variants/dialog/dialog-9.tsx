@@ -38,7 +38,7 @@ const Dialog9: React.FC = () => {
         <form className="flex flex-col sm:flex-row gap-4 mt-4" onSubmit={handleSubmit}>
           <div className="flex-1 grid gap-2">
             <Label htmlFor="email" className="text-zinc-700 dark:text-zinc-200">Your Email Address</Label>
-            <Input type="email" id="email" name="email" placeholder="you@example.com" required className="rounded-lg border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-400" />
+            <Input type="email" id="email" name="email" placeholder="you@example.com" required className="rounded-lg border-zinc-300 text-left placeholder:text-left dark:border-zinc-700 focus:ring-2 focus:ring-blue-400" />
           </div>
           <Button type="submit" className="self-end rounded-lg px-6 py-2 font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow">
             Join Now

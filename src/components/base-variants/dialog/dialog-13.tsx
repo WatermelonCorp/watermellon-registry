@@ -64,7 +64,7 @@ const Dialog13 = () => {
               defaultChecked
               required
             />
-            <Label htmlFor={id} className="gap-1 text-xs text-zinc-600 dark:text-zinc-300">
+            <Label htmlFor={id} className="gap-1 whitespace-nowrap text-[11px] text-zinc-600 dark:text-zinc-300 sm:text-xs">
               I agree to the
               <a href="#" className="underline hover:no-underline text-teal-700 dark:text-cyan-300 ml-1">
                 Terms of Service

@@ -30,7 +30,7 @@ const Dialog5 = () => {
           <ScrollArea className='flex max-h-full flex-col overflow-hidden'>
             <DialogDescription>
               <div className='p-6'>
-                <div className='[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold [&_strong]:text-neutral-900 dark:[&_strong]:text-neutral-100'>
+                <div className='space-y-4 [&_strong]:font-semibold [&_strong]:text-neutral-900 dark:[&_strong]:text-neutral-100'>
                   <div className='space-y-1'>
                     <p>
                       <strong>Product Name:</strong> SuperTech 2000
@@ -110,11 +110,11 @@ const Dialog5 = () => {
               </div>
             </DialogDescription>
             <div className="border-t border-border/30 dark:border-border/60 mt-2" />
-            <DialogFooter className='px-6 pb-4 pt-4 sm:justify-end gap-2 bg-transparent'>
+            <DialogFooter className='flex-col-reverse items-stretch gap-2 px-6 pb-4 pt-4 bg-transparent sm:flex-row sm:items-center sm:justify-end'>
               <DialogClose>
                 <Button
                   variant='ghost'
-                  className='rounded-lg text-neutral-700 dark:text-neutral-200 font-medium px-5 py-2 flex items-center gap-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition border-none shadow-none'
+                  className='flex w-full items-center justify-center gap-2 rounded-lg px-5 py-2 font-medium text-neutral-700 shadow-none transition hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800 sm:w-auto'
                 >
                   <ChevronLeftIcon />
                   Back
@@ -122,7 +122,7 @@ const Dialog5 = () => {
               </DialogClose>
               <Button
                 type='button'
-                className='rounded-lg mr-3 bg-linear-to-r from-blue-600 to-blue-400 text-white hover:from-blue-700 hover:to-blue-500 transition font-semibold px-7 py-2.5 shadow-md dark:from-blue-500 dark:to-blue-400 dark:hover:from-blue-600 dark:hover:to-blue-500 dark:text-white border-none'
+                className='rounded-lg bg-linear-to-r from-blue-600 to-blue-400 px-7 py-2.5 font-semibold text-white shadow-md transition hover:from-blue-700 hover:to-blue-500 dark:from-blue-500 dark:to-blue-400 dark:text-white dark:hover:from-blue-600 dark:hover:to-blue-500 sm:w-auto'
               >
                 Read More
               </Button>

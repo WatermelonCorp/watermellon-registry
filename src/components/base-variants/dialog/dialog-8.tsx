@@ -18,14 +18,14 @@ const Dialog8: React.FC = () => {
           Terms & Conditions
         </Button>
       </DialogTrigger>
-      <DialogContent className="flex flex-col gap-0 overflow-hidden rounded-2xl p-0 shadow-2xl sm:max-h-[70vh] sm:max-w-md border sm:border-white/10 sm:bg-background/95 sm:backdrop-blur-xl">
-        <DialogHeader className="border-b bg-muted/20 px-6 py-4 text-left shrink-0">
+      <DialogContent className="flex max-h-[calc(100dvh-1.5rem)] w-[calc(100vw-1rem)] flex-col gap-0 overflow-hidden rounded-2xl border bg-background p-0 shadow-2xl sm:max-h-[70vh] sm:max-w-md sm:w-full sm:border-white/10 sm:bg-background/95 sm:backdrop-blur-xl">
+        <DialogHeader className="shrink-0 border-b bg-muted/20 px-4 py-4 text-left sm:px-6">
           <DialogTitle className="text-xl font-bold tracking-tight">
             Terms and Conditions
           </DialogTitle>
         </DialogHeader>
         
-        <div className="flex-1 overflow-y-auto px-6 py-5 text-sm text-muted-foreground">
+        <div className="flex-1 overflow-y-auto px-4 py-5 text-sm text-muted-foreground sm:px-6">
             <div className="space-y-5">
               <section className="space-y-2">
                 <h3 className="text-base font-semibold text-foreground">1. Introduction & Acceptance</h3>
@@ -76,14 +76,14 @@ const Dialog8: React.FC = () => {
             </p>
           </div>
 
-        <DialogFooter className="flex-row items-center justify-end gap-3 border-t bg-muted/40 px-8 py-4 pb-8 shrink-0">
+        <DialogFooter className="mx-0 mb-0 shrink-0 flex-col-reverse items-stretch gap-2 border-t bg-muted/40 px-4 py-3 sm:flex-row sm:items-center sm:justify-end sm:gap-3 sm:px-6 sm:py-4">
           <DialogClose asChild>
-            <Button variant="outline" className="h-9 px-5">
+            <Button variant="outline" className="h-9 w-full px-5 sm:w-auto">
               Cancel
             </Button>
           </DialogClose>
           <DialogClose asChild>
-            <Button type="button" className="h-9 bg-blue-600 px-6 text-white hover:bg-blue-700">
+            <Button type="button" className="h-9 w-full bg-blue-600 px-6 text-white hover:bg-blue-700 sm:w-auto">
               I Agree
             </Button>
           </DialogClose>

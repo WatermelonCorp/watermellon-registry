@@ -42,7 +42,7 @@ const Dialog2: FC = () => {
         </AlertDialogHeader>
         <AlertDialogFooter className='bg-transparent p-4 pb-2'>
           <AlertDialogCancel className='rounded-xl border border-border/30 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 transition dark:bg-neutral-800 dark:text-neutral-200 dark:border-border/50 dark:hover:bg-neutral-700'>Cancel</AlertDialogCancel>
-          <AlertDialogAction className='rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition font-semibold px-6 py-2 shadow dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white'>OK</AlertDialogAction>
+          <AlertDialogAction className='rounded-xl bg-blue-600! text-white! transition px-6 py-2 font-semibold shadow hover:bg-blue-700! dark:bg-blue-500! dark:hover:bg-blue-600!'>OK</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

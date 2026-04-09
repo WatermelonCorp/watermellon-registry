@@ -63,7 +63,7 @@ const Dialog10: React.FC = () => {
         <form className="flex flex-col gap-4 pt-4" onSubmit={handleSubmit}>
           <div className="flex-1 grid gap-3">
             <Label htmlFor="email" className="text-zinc-700 dark:text-zinc-200">Friend's Email(s)</Label>
-            <Input type="text" id="email" name="email" placeholder="Enter emails, separated by commas" required className="rounded-lg border-zinc-300 dark:border-zinc-700 focus:ring-2 focus:ring-blue-400" />
+            <Input type="text" id="email" name="email" placeholder="Enter emails, separated by commas" required className="rounded-lg border-zinc-300 placeholder:text-xs sm:placeholder:text-sm dark:border-zinc-700 focus:ring-2 focus:ring-blue-400" />
           </div>
           <div className="flex items-center gap-3">
             <Checkbox id="terms" />
@@ -80,9 +80,9 @@ const Dialog10: React.FC = () => {
               <AvatarFallback className="text-xs">+10</AvatarFallback>
             </Avatar>
           </div>
-          <DialogFooter className="sm:justify-end gap-2 bg-transparent p-0 border-none shadow-none">
-            <DialogClose>
-              <Button variant="outline" className="rounded-xl px-6 py-2 font-semibold">Cancel</Button>
+          <DialogFooter className="items-stretch gap-2 border-none bg-transparent p-0 shadow-none sm:items-center sm:justify-end">
+            <DialogClose asChild>
+              <Button variant="outline" className="w-full rounded-xl px-6 py-2 font-semibold sm:w-auto">Cancel</Button>
             </DialogClose>
             <Button
               type="submit"
