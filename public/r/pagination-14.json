@@ -6,8 +6,7 @@
     "@tabler/icons-react"
   ],
   "registryDependencies": [
-    "pagination",
-    "select"
+    "pagination"
   ],
   "files": [
     {

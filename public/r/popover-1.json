@@ -5,11 +5,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "popover",
-    "button",
-    "badge",
-    "progress",
-    "separator"
+    "popover"
   ],
   "files": [
     {

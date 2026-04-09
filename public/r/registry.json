@@ -6667,7 +6667,7 @@
     {
       "name": "avatar-21",
       "type": "registry:ui",
-      "dependencies": ["lucide-react", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/avatar/avatar-21.tsx",
@@ -7252,7 +7252,7 @@
     {
       "name": "alert-1",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-1.tsx",
@@ -7265,7 +7265,7 @@
     {
       "name": "alert-2",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-2.tsx",
@@ -7278,7 +7278,7 @@
     {
       "name": "alert-3",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-3.tsx",
@@ -7291,7 +7291,7 @@
     {
       "name": "alert-4",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-4.tsx",
@@ -7304,7 +7304,7 @@
     {
       "name": "alert-5",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-5.tsx",
@@ -7317,7 +7317,7 @@
     {
       "name": "alert-6",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-6.tsx",
@@ -7330,7 +7330,7 @@
     {
       "name": "alert-7",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-7.tsx",
@@ -7343,7 +7343,7 @@
     {
       "name": "alert-8",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-8.tsx",
@@ -7356,7 +7356,7 @@
     {
       "name": "alert-9",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-9.tsx",
@@ -7369,7 +7369,7 @@
     {
       "name": "alert-10",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-10.tsx",
@@ -7382,7 +7382,7 @@
     {
       "name": "alert-11",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-11.tsx",
@@ -7395,7 +7395,7 @@
     {
       "name": "alert-12",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-12.tsx",
@@ -7408,7 +7408,7 @@
     {
       "name": "alert-13",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-13.tsx",
@@ -7421,7 +7421,7 @@
     {
       "name": "alert-14",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-14.tsx",
@@ -7434,7 +7434,7 @@
     {
       "name": "alert-15",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-15.tsx",
@@ -7447,7 +7447,7 @@
     {
       "name": "alert-16",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-16.tsx",
@@ -7460,7 +7460,7 @@
     {
       "name": "alert-17",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-17.tsx",
@@ -7473,7 +7473,7 @@
     {
       "name": "alert-18",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-18.tsx",
@@ -7486,7 +7486,7 @@
     {
       "name": "alert-19",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-19.tsx",
@@ -7499,7 +7499,7 @@
     {
       "name": "alert-20",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-20.tsx",
@@ -7512,7 +7512,7 @@
     {
       "name": "alert-21",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-21.tsx",
@@ -7525,7 +7525,7 @@
     {
       "name": "alert-22",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-22.tsx",
@@ -7538,7 +7538,7 @@
     {
       "name": "alert-23",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-23.tsx",
@@ -7551,7 +7551,7 @@
     {
       "name": "alert-24",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-24.tsx",
@@ -7564,7 +7564,7 @@
     {
       "name": "alert-25",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-25.tsx",
@@ -7577,7 +7577,7 @@
     {
       "name": "alert-26",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-26.tsx",
@@ -7590,7 +7590,7 @@
     {
       "name": "alert-27",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-27.tsx",
@@ -7603,7 +7603,7 @@
     {
       "name": "alert-28",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-28.tsx",
@@ -7616,7 +7616,7 @@
     {
       "name": "alert-29",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-29.tsx",
@@ -7629,7 +7629,7 @@
     {
       "name": "alert-30",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/alerts/alert-30.tsx",
@@ -7643,7 +7643,7 @@
     {
       "name": "badge-1",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-1.tsx",
@@ -7656,7 +7656,7 @@
     {
       "name": "badge-2",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-2.tsx",
@@ -7669,7 +7669,7 @@
     {
       "name": "badge-3",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-3.tsx",
@@ -7682,7 +7682,7 @@
     {
       "name": "badge-4",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-4.tsx",
@@ -7695,7 +7695,7 @@
     {
       "name": "badge-5",
       "type": "registry:ui",
-      "dependencies": ["react-icons", "motion"],
+      "dependencies": ["react-icons"],
       "files": [
         {
           "path": "src/components/base-variants/badge/badge-5.tsx",
@@ -9382,6 +9382,362 @@
         }
       ],
       "registryDependencies": ["tooltip"]
+    },
+
+    {
+      "name": "popover-1",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-1.tsx",
+          "target": "components/ui/popover-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-2",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-2.tsx",
+          "target": "components/ui/popover-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-3",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-3.tsx",
+          "target": "components/ui/popover-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-4",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-4.tsx",
+          "target": "components/ui/popover-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-5",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-5.tsx",
+          "target": "components/ui/popover-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-6.tsx",
+          "target": "components/ui/popover-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-7",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-7.tsx",
+          "target": "components/ui/popover-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-8",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-8.tsx",
+          "target": "components/ui/popover-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-9",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-9.tsx",
+          "target": "components/ui/popover-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-10",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-10.tsx",
+          "target": "components/ui/popover-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-11.tsx",
+          "target": "components/ui/popover-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+    {
+      "name": "popover-12",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/base-variants/popover/popover-12.tsx",
+          "target": "components/ui/popover-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover"]
+    },
+
+    {
+      "name": "pagination-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-1.tsx",
+          "target": "components/ui/pagination-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "@tabler/icons-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-2.tsx",
+          "target": "components/ui/pagination-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-3.tsx",
+          "target": "components/ui/pagination-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-4",
+      "type": "registry:ui",
+
+      "dependencies": ["lucide-react", "@tabler/icons-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-4.tsx",
+          "target": "components/ui/pagination-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-5.tsx",
+          "target": "components/ui/pagination-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-6.tsx",
+          "target": "components/ui/pagination-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "@tabler/icons-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-7.tsx",
+          "target": "components/ui/pagination-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-8",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-8.tsx",
+          "target": "components/ui/pagination-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-9",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-9.tsx",
+          "target": "components/ui/pagination-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-10",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-10.tsx",
+          "target": "components/ui/pagination-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-11",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-11.tsx",
+          "target": "components/ui/pagination-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-12",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-12.tsx",
+          "target": "components/ui/pagination-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-13",
+      "type": "registry:ui",
+      
+      "dependencies": ["lucide-react", "@tabler/icons-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-13.tsx",
+          "target": "components/ui/pagination-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-14",
+      "type": "registry:ui",
+        
+      "dependencies": ["lucide-react", "@tabler/icons-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-14.tsx",
+          "target": "components/ui/pagination-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
+    },
+    {
+      "name": "pagination-15",
+      "type": "registry:ui",
+         "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/pagination/pagination-15.tsx",
+          "target": "components/ui/pagination-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pagination"]
     },
     {
       "name": "workflow-management-dashboard",
