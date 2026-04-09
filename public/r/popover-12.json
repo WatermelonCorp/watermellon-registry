@@ -1,8 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "popover-12",
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
-    "popover"
+    "popover",
+    "button",
+    "badge"
   ],
   "files": [
     {

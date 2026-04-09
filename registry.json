@@ -9387,7 +9387,7 @@
     {
       "name": "popover-1",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-1.tsx",
@@ -9395,12 +9395,18 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+      "registryDependencies": [
+        "popover",
+        "button",
+        "badge",
+        "progress",
+        "separator"
+      ]
     },
     {
       "name": "popover-2",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-2.tsx",
@@ -9408,12 +9414,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+          "registryDependencies": ["popover","button"]
     },
     {
       "name": "popover-3",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-3.tsx",
@@ -9421,12 +9427,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-4",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-4.tsx",
@@ -9434,12 +9440,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+         "registryDependencies": ["popover","button"]
     },
     {
       "name": "popover-5",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-5.tsx",
@@ -9447,7 +9453,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+        "registryDependencies": ["popover","button"]
     },
     {
       "name": "popover-6",
@@ -9460,12 +9466,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+       "registryDependencies": ["popover","button"]
     },
     {
       "name": "popover-7",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-7.tsx",
@@ -9473,12 +9479,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-8",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-8.tsx",
@@ -9486,12 +9492,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+          "registryDependencies": ["popover","button"]
     },
     {
       "name": "popover-9",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-9.tsx",
@@ -9499,12 +9505,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-10",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-10.tsx",
@@ -9512,7 +9518,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+      "registryDependencies": ["popover","button"]
     },
     {
       "name": "popover-11",
@@ -9525,11 +9531,12 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+      "registryDependencies": ["popover","button"]
     },
     {
       "name": "popover-12",
       "type": "registry:ui",
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/popover/popover-12.tsx",
@@ -9537,7 +9544,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover"]
+      "registryDependencies": ["popover","button","badge"]
     },
 
     {
@@ -9636,7 +9643,7 @@
     {
       "name": "pagination-8",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/pagination/pagination-8.tsx",
@@ -9649,7 +9656,7 @@
     {
       "name": "pagination-9",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/pagination/pagination-9.tsx",
@@ -9662,7 +9669,7 @@
     {
       "name": "pagination-10",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/pagination/pagination-10.tsx",
@@ -9675,7 +9682,7 @@
     {
       "name": "pagination-11",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/pagination/pagination-11.tsx",
@@ -9688,7 +9695,7 @@
     {
       "name": "pagination-12",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/pagination/pagination-12.tsx",
@@ -9701,7 +9708,7 @@
     {
       "name": "pagination-13",
       "type": "registry:ui",
-      
+
       "dependencies": ["lucide-react", "@tabler/icons-react"],
       "files": [
         {
@@ -9715,7 +9722,7 @@
     {
       "name": "pagination-14",
       "type": "registry:ui",
-        
+
       "dependencies": ["lucide-react", "@tabler/icons-react"],
       "files": [
         {
@@ -9729,7 +9736,7 @@
     {
       "name": "pagination-15",
       "type": "registry:ui",
-         "dependencies": ["lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/components/base-variants/pagination/pagination-15.tsx",
