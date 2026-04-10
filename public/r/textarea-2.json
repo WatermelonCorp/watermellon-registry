@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-2",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-2.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea2 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>Your input</Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"Share your thoughts...\"\r\n        className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-sm focus-visible:ring-2\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

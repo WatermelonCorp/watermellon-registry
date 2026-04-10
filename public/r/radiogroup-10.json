@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radiogroup-10",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/radiogroup/radiogroup-10.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\n\r\nconst RadioGroup10 = () => {\r\n  const id = useId();\r\n\r\n  const items = [\r\n    { value: \"1\", label: \"Starter\", price: \"Free\" },\r\n    { value: \"2\", label: \"Growth\", price: \"$19/mo\" },\r\n    { value: \"3\", label: \"Scale\", price: \"Custom\" },\r\n  ];\r\n\r\n  return (\r\n    <RadioGroup className=\"w-full max-w-96 gap-0 space-y-2\" defaultValue=\"2\">\r\n      {items.map((item) => (\r\n        <div\r\n          key={`${id}-${item.value}`}\r\n          className=\"border-input has-data-[state=checked]:bg-primary/10 dark:has-data-[state=checked]:bg-primary/20 has-data-[state=checked]:border-primary relative flex flex-col gap-3 rounded-full border p-4 shadow-[inset_0_-3px_4px_rgba(0,0,0,0.1),inset_0_2px_2px_rgba(255,255,255,1),0_2px_6px_rgba(0,0,0,0.05)] transition has-data-[state=checked]:z-10 dark:shadow-[inset_0_-3px_4px_rgba(0,0,0,0.6),inset_0_1px_2px_rgba(255,255,255,0.1),0_2px_6px_rgba(0,0,0,0.6)]\"\r\n        >\r\n          <div className=\"group flex items-center justify-between\">\r\n            <div className=\"flex items-center gap-2\">\r\n              <RadioGroupItem\r\n                id={`${id}-${item.value}`}\r\n                value={item.value}\r\n                aria-label={`plan-radio-${item.value}`}\r\n                className=\"text-primary bg-background data-[state=checked]:border-primary data-[state=checked]:[&_svg]:fill-primary after:absolute after:inset-0\"\r\n                aria-describedby={`${`${id}-${item.value}`}-price`}\r\n              />\r\n              <Label\r\n                className=\"inline-flex items-center gap-2 font-medium\"\r\n                htmlFor={`${id}-${item.value}`}\r\n              >\r\n                {item.label}\r\n                {item.value === \"2\" && (\r\n                  <Badge\r\n                    variant=\"outline\"\r\n                    className=\"border-primary/30 bg-primary/10 text-primary rounded-md px-2 py-0.5 text-[10px] shadow-[inset_0px_1px_2px_rgba(255,255,255,0.1)]\"\r\n                  >\r\n                    Popular\r\n                  </Badge>\r\n                )}\r\n              </Label>\r\n            </div>\r\n            <div\r\n              id={`${`${id}-${item.value}`}-price`}\r\n              className=\"text-muted-foreground group-has-checked:text-foreground text-sm\"\r\n            >\r\n              {item.price}\r\n            </div>\r\n          </div>\r\n        </div>\r\n      ))}\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroup10;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/radiogroup-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-17",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/switch/switch-17.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { HiMoon, HiSun } from \"react-icons/hi2\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch17 = () => {\r\n  const [checked, setChecked] = useState<boolean>(true);\r\n\r\n  return (\r\n    <div className=\"inline-flex items-center gap-2\">\r\n      <Switch\r\n        id=\"icon-label\"\r\n        checked={checked}\r\n        onCheckedChange={setChecked}\r\n        aria-label=\"Toggle switch\"\r\n      />\r\n      <Label htmlFor=\"icon-label\">\r\n        <span className=\"sr-only\">Toggle switch</span>\r\n        {checked ? (\r\n          <HiMoon className=\"size-4\" aria-hidden=\"true\" />\r\n        ) : (\r\n          <HiSun className=\"size-4\" aria-hidden=\"true\" />\r\n        )}\r\n      </Label>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Switch17;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/switch-17.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

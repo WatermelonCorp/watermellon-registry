@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-2",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sheet/sheet-2.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport {\r\n  Sheet,\r\n  SheetClose,\r\n  SheetContent,\r\n  SheetFooter,\r\n  SheetHeader,\r\n  SheetTitle,\r\n  SheetTrigger,\r\n} from \"@/components/ui/sheet\";\r\nimport {\r\n  FaChevronUp,\r\n  FaChevronRight,\r\n  FaChevronDown,\r\n  FaChevronLeft,\r\n  FaUserCircle,\r\n} from \"react-icons/fa\";\r\n\r\nconst SheetContentBody = () => (\r\n  <>\r\n    <SheetHeader>\r\n      <SheetTitle className=\"flex items-center gap-2\">\r\n        <FaUserCircle />\r\n        Profile Setup\r\n      </SheetTitle>\r\n    </SheetHeader>\r\n\r\n    <div className=\"grid gap-5 px-4 py-6\">\r\n      <div className=\"grid gap-2\">\r\n        <Label>Display Name</Label>\r\n        <Input placeholder=\"Enter your name\" />\r\n      </div>\r\n\r\n      <div className=\"grid gap-2\">\r\n        <Label>Email</Label>\r\n        <Input placeholder=\"Enter your email\" />\r\n      </div>\r\n\r\n      <div className=\"grid gap-2\">\r\n        <Label>Bio</Label>\r\n        <Input placeholder=\"Short description...\" />\r\n      </div>\r\n    </div>\r\n\r\n    <SheetFooter className=\"flex gap-2\">\r\n      <Button className=\"w-full\">Save</Button>\r\n      <SheetClose asChild>\r\n        <Button variant=\"outline\" className=\"w-full\">\r\n          Close\r\n        </Button>\r\n      </SheetClose>\r\n    </SheetFooter>\r\n  </>\r\n);\r\n\r\nconst Sheet2 = () => {\r\n  return (\r\n    <div className=\"theme-injected flex flex-wrap gap-3\">\r\n      <Sheet>\r\n        <SheetTrigger asChild>\r\n          <Button variant=\"outline\" size=\"icon\">\r\n            <FaChevronUp />\r\n          </Button>\r\n        </SheetTrigger>\r\n        <SheetContent side=\"top\" className=\"rounded-lg\">\r\n          <SheetContentBody />\r\n        </SheetContent>\r\n      </Sheet>\r\n\r\n      <Sheet>\r\n        <SheetTrigger asChild>\r\n          <Button variant=\"outline\" size=\"icon\">\r\n            <FaChevronRight />\r\n          </Button>\r\n        </SheetTrigger>\r\n        <SheetContent side=\"right\" className=\"rounded-lg\">\r\n          <SheetContentBody />\r\n        </SheetContent>\r\n      </Sheet>\r\n\r\n      <Sheet>\r\n        <SheetTrigger asChild>\r\n          <Button variant=\"outline\" size=\"icon\">\r\n            <FaChevronDown />\r\n          </Button>\r\n        </SheetTrigger>\r\n        <SheetContent side=\"bottom\" className=\"rounded-lg\">\r\n          <SheetContentBody />\r\n        </SheetContent>\r\n      </Sheet>\r\n\r\n      <Sheet>\r\n        <SheetTrigger asChild>\r\n          <Button variant=\"outline\" size=\"icon\">\r\n            <FaChevronLeft />\r\n          </Button>\r\n        </SheetTrigger>\r\n        <SheetContent side=\"left\" className=\"rounded-lg\">\r\n          <SheetContentBody />\r\n        </SheetContent>\r\n      </Sheet>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Sheet2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sheet-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-16",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/switch/switch-16.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { HiSun, HiMoon } from \"react-icons/hi\";\r\n\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch16 = () => {\r\n  const [checked, setChecked] = useState(true);\r\n\r\n  const toggleSwitch = () => setChecked((prev) => !prev);\r\n\r\n  return (\r\n    <div\r\n      className=\"group inline-flex items-center gap-2\"\r\n      data-state={checked ? \"checked\" : \"unchecked\"}\r\n    >\r\n      <span\r\n        id=\"theme-light\"\r\n        className=\"group-data-[state=checked]:text-muted-foreground/70 cursor-pointer text-left text-sm font-medium\"\r\n        aria-controls=\"theme-toggle\"\r\n        onClick={() => setChecked(false)}\r\n      >\r\n        <HiSun className=\"size-5\" />\r\n      </span>\r\n\r\n      <Switch\r\n        id=\"theme-toggle\"\r\n        checked={checked}\r\n        onCheckedChange={toggleSwitch}\r\n        aria-labelledby=\"theme-dark theme-light\"\r\n        aria-label=\"Toggle between dark and light mode\"\r\n      />\r\n\r\n      <span\r\n        id=\"theme-dark\"\r\n        className=\"group-data-[state=unchecked]:text-muted-foreground/70 cursor-pointer text-right text-sm font-medium\"\r\n        aria-controls=\"theme-toggle\"\r\n        onClick={() => setChecked(true)}\r\n      >\r\n        <HiMoon className=\"size-5\" />\r\n      </span>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Switch16;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/switch-16.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

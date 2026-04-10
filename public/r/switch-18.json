@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-18",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/switch/switch-18.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\n\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch18 = () => {\r\n  const id = useId();\r\n  const [checked, setChecked] = useState(false);\r\n\r\n  const toggleSwitch = () => setChecked((prev) => !prev);\r\n\r\n  return (\r\n    <div\r\n      className=\"group inline-flex items-center gap-2\"\r\n      data-state={checked ? \"checked\" : \"unchecked\"}\r\n    >\r\n      <span\r\n        id={`${id}-yes`}\r\n        className=\"group-data-[state=checked]:text-muted-foreground/70 cursor-pointer text-right text-sm font-medium\"\r\n        aria-controls={id}\r\n        onClick={() => setChecked(false)}\r\n      >\r\n        Yes\r\n      </span>\r\n      <Switch\r\n        id={id}\r\n        checked={checked}\r\n        onCheckedChange={toggleSwitch}\r\n        aria-labelledby={`${id}-yes ${id}-no`}\r\n      />\r\n      <span\r\n        id={`${id}-no`}\r\n        className=\"group-data-[state=unchecked]:text-muted-foreground/70 cursor-pointer text-left text-sm font-medium\"\r\n        aria-controls={id}\r\n        onClick={() => setChecked(true)}\r\n      >\r\n        No\r\n      </span>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Switch18;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/switch-18.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

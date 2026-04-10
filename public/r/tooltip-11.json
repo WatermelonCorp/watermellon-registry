@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-11",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/tooltip/tooltip-11.tsx",
+      "content": "import { MdLaunch } from \"react-icons/md\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  HoverCard,\r\n  HoverCardContent,\r\n  HoverCardTrigger,\r\n} from \"@/components/ui/hover-card\";\r\n\r\nconst Tooltip11 = () => {\r\n  return (\r\n    <HoverCard openDelay={0} closeDelay={0}>\r\n      <HoverCardTrigger asChild>\r\n        <Button variant=\"link\">Explore Feature</Button>\r\n      </HoverCardTrigger>\r\n\r\n      <HoverCardContent side=\"top\">\r\n        <div className=\"space-y-2\">\r\n          <img\r\n            src=\"https://images.unsplash.com/photo-1522199710521-72d69614c702\"\r\n            alt=\"Feature preview\"\r\n            className=\"w-full rounded\"\r\n          />\r\n\r\n          <div className=\"space-y-1\">\r\n            <p className=\"text-sm font-medium\">Smart Workspace</p>\r\n\r\n            <p className=\"text-muted-foreground text-xs\">\r\n              Organize your tasks, notes, and files in one unified place. Boost\r\n              productivity with a clean and intuitive interface.{\" \"}\r\n              <a\r\n                href=\"#\"\r\n                className=\"hover:text-foreground flex w-fit items-center gap-1 underline\"\r\n              >\r\n                Learn more\r\n                <MdLaunch className=\"size-4\" />\r\n              </a>\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </HoverCardContent>\r\n    </HoverCard>\r\n  );\r\n};\r\n\r\nexport default Tooltip11;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/tooltip-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

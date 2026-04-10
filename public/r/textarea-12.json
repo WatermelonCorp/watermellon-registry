@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-12",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-12.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea12 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>Auto-generated summary</Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"This content is generated automatically\"\r\n        disabled\r\n        className=\"cursor-not-allowed opacity-70\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea12;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

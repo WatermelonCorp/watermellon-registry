@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-20",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-20.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea20 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>Project details</Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder=\"Describe your project requirements...\"\r\n        className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50\"\r\n      />\r\n      <p className=\"text-muted-foreground text-xs\">\r\n        Include key goals, constraints, or expectations.\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea20;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-20.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

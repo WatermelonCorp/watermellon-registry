@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-1",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-1.tsx",
+      "content": "import { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea1 = () => {\r\n  return (\r\n    <Textarea\r\n      placeholder=\"Write something...\"\r\n      className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 w-full max-w-sm rounded-sm shadow-sm focus-visible:ring-2\"\r\n    />\r\n  );\r\n};\r\n\r\nexport default Textarea1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

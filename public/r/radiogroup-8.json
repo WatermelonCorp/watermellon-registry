@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radiogroup-8",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/radiogroup/radiogroup-8.tsx",
+      "content": "import { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\n\r\nconst RadioGroup8 = () => {\r\n  return (\r\n    <RadioGroup defaultValue=\"default\" className=\"flex items-center gap-4\">\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem value=\"default\" id=\"size-default\" />\r\n        <Label htmlFor=\"size-default\">Default</Label>\r\n      </div>\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem\r\n          value=\"medium\"\r\n          id=\"size-medium\"\r\n          className=\"size-5 [&_svg]:size-3\"\r\n        />\r\n        <Label htmlFor=\"size-medium\">Medium</Label>\r\n      </div>\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem\r\n          value=\"large\"\r\n          id=\"size-large\"\r\n          className=\"size-6 [&_svg]:size-3.5\"\r\n        />\r\n        <Label htmlFor=\"size-large\">Large</Label>\r\n      </div>\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroup8;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/radiogroup-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

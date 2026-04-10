@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-13",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/textarea/textarea-13.tsx",
+      "content": "import { useId } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst Textarea13 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor={id}>Generated output</Label>\r\n      <Textarea\r\n        id={id}\r\n        className=\"read-only:bg-muted focus-visible:ring-primary/20 focus-visible:border-primary/50 rounded-sm shadow-[inset_0_-1px_0_0px_rgba(0,0,0,0.04),inset_0_1px_0_0px_rgba(255,255,255,0.5)]  focus-visible:ring-2 dark:shadow-[inset_0_-1px_0_1px_rgba(0,0,0,0.04),inset_0_1px_0px_0px_rgba(255,255,255,0.2)]\"\r\n        defaultValue=\"This content is generated and cannot be edited.\"\r\n        placeholder=\"Output will appear here...\"\r\n        readOnly\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Textarea13;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/textarea-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

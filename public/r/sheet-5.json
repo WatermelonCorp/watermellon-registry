@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-5",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sheet/sheet-5.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport {\r\n  Sheet,\r\n  SheetClose,\r\n  SheetContent,\r\n  SheetDescription,\r\n  SheetFooter,\r\n  SheetHeader,\r\n  SheetTitle,\r\n  SheetTrigger,\r\n} from \"@/components/ui/sheet\";\r\n\r\nconst Sheet5 = () => {\r\n  return (\r\n    <Sheet modal={false}>\r\n      <SheetTrigger asChild>\r\n        <Button variant=\"outline\">Quick Setup</Button>\r\n      </SheetTrigger>\r\n      <SheetContent>\r\n        <SheetHeader>\r\n          <SheetTitle>Create Workspace</SheetTitle>\r\n          <SheetDescription>\r\n            Set up a new workspace to organize your projects and collaborate\r\n            with your team.\r\n          </SheetDescription>\r\n        </SheetHeader>\r\n\r\n        <div className=\"grid flex-1 auto-rows-min gap-6 px-4\">\r\n          <div className=\"grid gap-3\">\r\n            <Label htmlFor=\"workspace-name\">Workspace Name</Label>\r\n            <Input id=\"workspace-name\" placeholder=\"e.g. Growth Team\" />\r\n          </div>\r\n\r\n          <div className=\"grid gap-3\">\r\n            <Label htmlFor=\"workspace-slug\">Workspace URL</Label>\r\n            <Input id=\"workspace-slug\" placeholder=\"growth-team\" />\r\n          </div>\r\n\r\n          <div className=\"grid gap-3\">\r\n            <Label htmlFor=\"workspace-owner\">Owner Email</Label>\r\n            <Input id=\"workspace-owner\" placeholder=\"team@company.com\" />\r\n          </div>\r\n        </div>\r\n\r\n        <SheetFooter>\r\n          <Button type=\"submit\">Create Workspace</Button>\r\n          <SheetClose asChild>\r\n            <Button variant=\"outline\">Cancel</Button>\r\n          </SheetClose>\r\n        </SheetFooter>\r\n      </SheetContent>\r\n    </Sheet>\r\n  );\r\n};\r\n\r\nexport default Sheet5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sheet-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

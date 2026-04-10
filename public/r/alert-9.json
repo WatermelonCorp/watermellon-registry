@@ -2,8 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-9",
   "dependencies": [
-    "react-icons",
-    "motion"
+    "react-icons"
   ],
   "registryDependencies": [
     "alert"

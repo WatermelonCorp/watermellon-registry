@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-3",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/sheet/sheet-3.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ScrollArea } from \"@/components/ui/scroll-area\";\r\nimport {\r\n  Sheet,\r\n  SheetClose,\r\n  SheetContent,\r\n  SheetDescription,\r\n  SheetFooter,\r\n  SheetHeader,\r\n  SheetTitle,\r\n  SheetTrigger,\r\n} from \"@/components/ui/sheet\";\r\n\r\nconst Sheet3 = () => {\r\n  const sections = Array.from({ length: 6 }, (_, i) => ({\r\n    title: `Module ${i + 1}`,\r\n    content:\r\n      \"This section outlines key system behaviors including performance handling, scalability patterns, and secure data flow. It highlights how different layers interact and maintain efficiency under load.\",\r\n  }));\r\n\r\n  return (\r\n    <Sheet>\r\n      <SheetTrigger asChild>\r\n        <Button variant=\"outline\">Open Documentation</Button>\r\n      </SheetTrigger>\r\n\r\n      <SheetContent className=\" p-0 sm:max-w-[540px]\">\r\n        <ScrollArea className=\"h-full\">\r\n          <div className=\"space-y-6 px-6 pb-6\">\r\n            <SheetHeader>\r\n              <SheetTitle className=\"text-lg\">System Overview</SheetTitle>\r\n              <SheetDescription>\r\n                Key architectural insights and module breakdown.\r\n              </SheetDescription>\r\n            </SheetHeader>\r\n\r\n            <div className=\"space-y-5\">\r\n              {sections.map((section, index) => (\r\n                <div\r\n                  key={index}\r\n                  className=\"bg-muted/40 space-y-3 rounded-lg border p-4\"\r\n                >\r\n                  <h3 className=\"text-base font-semibold\">{section.title}</h3>\r\n\r\n                  <p className=\"text-muted-foreground text-sm leading-relaxed\">\r\n                    {section.content}\r\n                  </p>\r\n\r\n                  <div className=\"bg-muted rounded-md px-3 py-2 font-mono text-xs\">\r\n                    REF-{index + 1} • ACTIVE\r\n                  </div>\r\n                </div>\r\n              ))}\r\n            </div>\r\n\r\n            <SheetFooter className=\"flex flex-col gap-2 p-0 \">\r\n              <SheetClose asChild>\r\n                <Button className=\"w-full\">Export</Button>\r\n              </SheetClose>\r\n              <SheetClose asChild>\r\n                <Button variant=\"outline\" className=\"w-full\">\r\n                  Close\r\n                </Button>\r\n              </SheetClose>\r\n            </SheetFooter>\r\n          </div>\r\n        </ScrollArea>\r\n      </SheetContent>\r\n    </Sheet>\r\n  );\r\n};\r\n\r\nexport default Sheet3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/sheet-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
