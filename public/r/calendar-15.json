@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-15",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-15.tsx",
+      "content": "'use client'\n\nimport type { ComponentProps } from 'react'\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui//calendar'\n\ntype CalendarClassNames = NonNullable<ComponentProps<typeof Calendar>['classNames']>\n\nconst initialSelectedDate: Date = new Date()\n\nconst calendarClassNames = {\n  month_caption: 'flex h-8 items-center justify-start px-1',\n  nav: 'absolute inset-x-0 top-0 flex w-full items-center justify-end',\n  today: '!bg-transparent',\n  day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'\n} satisfies CalendarClassNames\n\nconst Calendar15 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialSelectedDate)\n\n  return (\n    <div>\n      <Calendar\n        mode='single'\n        selected={selectedDate}\n        defaultMonth={selectedDate}\n        onSelect={setSelectedDate}\n        className='!border-0 !bg-transparent transition-all !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent'\n        classNames={calendarClassNames}\n      />\n      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>\n        Right-aligned month navigation\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar15\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-15.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

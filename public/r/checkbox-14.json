@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-14",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-14.tsx",
+      "content": "'use client'\n\nimport { useState, type ComponentType, type SVGProps } from 'react'\n\nimport { BadgeCheckIcon, BriefcaseBusinessIcon, PenToolIcon } from 'lucide-react'\n\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { Label } from '@/components/ui/label'\n\ntype SkillOption = {\n  icon: ComponentType<SVGProps<SVGSVGElement>>\n  id: string\n  label: string\n}\n\nconst skills = [\n  { label: 'Frontend Engineering', icon: PenToolIcon },\n  { label: 'Business Insights', icon: BriefcaseBusinessIcon },\n  { label: 'Visual Branding', icon: BadgeCheckIcon }\n] as const satisfies readonly Omit<SkillOption, 'id'>[]\n\nconst skillOptions: readonly SkillOption[] = skills.map((skill) => ({\n  ...skill,\n  id: skill.label.toLowerCase().replace(/\\s+/g, '-')\n}))\n\nconst Checkbox14 = () => {\n  const [selectedSkills, setSelectedSkills] = useState<string[]>([])\n\n  const handleCheckedChange = (skillId: SkillOption['id'], checked: boolean) => {\n    setSelectedSkills((previousSelectedSkills) =>\n      checked\n        ? previousSelectedSkills.includes(skillId)\n          ? previousSelectedSkills\n          : [...previousSelectedSkills, skillId]\n        : previousSelectedSkills.filter(\n            (selectedSkillId) => selectedSkillId !== skillId\n          )\n    )\n  }\n\n  return (\n    <ul className='flex w-fit min-w-72 flex-col divide-y rounded-md border'>\n      {skillOptions.map(({ id, label, icon: Icon }) => (\n        <li key={id}>\n          <Label\n            htmlFor={id}\n            className='flex items-center justify-between gap-2 px-5 py-3'\n          >\n            <span className='flex items-center gap-2'>\n              <Icon className='size-4' /> {label}\n            </span>\n            <Checkbox\n              id={id}\n              checked={selectedSkills.includes(id)}\n              onCheckedChange={(checked) => handleCheckedChange(id, checked  === true)}\n              className='data-checked:border-sky-600 data-checked:bg-sky-600 dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500'\n            />\n          </Label>\n        </li>\n      ))}\n    </ul>\n  )\n}\n\nexport default Checkbox14\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-14.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

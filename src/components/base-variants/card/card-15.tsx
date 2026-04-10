@@ -12,7 +12,7 @@ type GalleryCard = {
 
 const cards: readonly GalleryCard[] = [
   {
-    description: 'A calm abstract study with soft light, layered curves, and a quieter palette for editorial layouts and better readability',
+    description: 'A calm abstract study with soft light, layered curves, and a quieter palette for editorial layouts and better readability.',
     imageAlt: 'Soft blue abstract composition',
     imageSrc: 'https://picsum.photos/seed/editorial-blue/1200/900',
     primaryAction: 'View Piece',
@@ -20,7 +20,7 @@ const cards: readonly GalleryCard[] = [
     title: 'Still Blue Field'
   },
   {
-    description: 'Warm transitions and glowing orange tones create a softer gradient scene with a cinematic surface and improved contrast..',
+    description: 'Warm transitions and glowing orange tones create a softer gradient scene with a cinematic surface and improved contrast.',
     imageAlt: 'Warm orange abstract composition',
     imageSrc: 'https://picsum.photos/seed/editorial-sunset/1200/900',
     primaryAction: 'View Piece',

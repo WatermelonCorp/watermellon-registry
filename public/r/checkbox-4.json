@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-4",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-4.tsx",
+      "content": "'use client'\n\nimport { useId, useState } from 'react'\n\nimport { Checkbox } from '@/components/ui/checkbox'\nimport { Label } from '@/components/ui/label'\n\ntype CheckboxCopy = {\n  label: string\n}\n\nconst checkboxCopy: CheckboxCopy = {\n  label: 'Review weekly tasks'\n}\n\nconst Checkbox4 = () => {\n  const id = useId()\n  const [isChecked, setIsChecked] = useState<boolean>(true)\n\n  return (\n    <div className='flex max-w-sm items-start gap-3'>\n      <Checkbox\n        id={id}\n        checked={isChecked}\n        onCheckedChange={(checked) => setIsChecked(checked === true)}\n        className='mt-0.5 data-checked:border-sky-600 data-checked:bg-sky-600 dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500'\n      />\n      <Label\n        htmlFor={id}\n        className={`text-sm font-medium transition-colors ${\n          isChecked ? 'text-muted-foreground line-through' : ''\n        }`}\n      >\n        {checkboxCopy.label}\n      </Label>\n    </div>\n  )\n}\n\nexport default Checkbox4\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

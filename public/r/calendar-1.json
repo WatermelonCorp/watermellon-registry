@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-1",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-1.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui//calendar'\n\n\nconst Calendar1: React.FC = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());\n\n  return (\n    <section className=\"flex flex-col items-center max-w-xs mx-auto\">\n      <Calendar\n        mode=\"single\"\n        defaultMonth={selectedDate}\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        classNames={{\n          today: \"!bg-transparent\",\n          day_button: \"!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0\"\n        }}\n        className=\"transition-all !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent\"\n      />\n      <p className=\"mt-4 text-center text-xs text-muted-foreground font-light tracking-wide\" role=\"region\">\n        Monthly date picker\n      </p>\n    </section>\n  );\n}\n\nexport default Calendar1\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-10",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-10.tsx",
+      "content": "'use client'\n\nimport { useState } from 'react'\n\nimport { Checkbox } from '@/components/ui/checkbox'\n\ntype CheckboxColorOption = {\n  ariaLabel: string\n  className: string\n  id: string\n}\n\nconst checkboxColorOptions: readonly CheckboxColorOption[] = [\n  {\n    id: 'destructive',\n    ariaLabel: 'Color destructive',\n    className:\n      'data-checked:border-destructive data-checked:bg-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:text-white'\n  },\n  {\n    id: 'info',\n    ariaLabel: 'Color info',\n    className:\n      'focus-visible:ring-sky-600/20 data-checked:border-sky-600 data-checked:bg-sky-600 dark:text-white dark:focus-visible:ring-sky-400/40 dark:data-checked:border-sky-400 dark:data-checked:bg-sky-400'\n  },\n  {\n    id: 'success',\n    ariaLabel: 'Color success',\n    className:\n      'focus-visible:ring-green-600/20 data-checked:border-green-600 data-checked:bg-green-600 dark:text-white dark:focus-visible:ring-green-400/40 dark:data-checked:border-green-400 dark:data-checked:bg-green-400'\n  }\n]\n\nconst Checkbox10 = () => {\n  const [checkedColors, setCheckedColors] = useState<Record<string, boolean>>({\n    destructive: true,\n    info: true,\n    success: true\n  })\n\n  const handleCheckedChange = (\n    id: CheckboxColorOption['id'],\n    checked: boolean\n  ) => {\n    setCheckedColors((previousCheckedColors) => ({\n      ...previousCheckedColors,\n      [id]: checked\n    }))\n  }\n\n  return (\n    <div className='flex items-center gap-3'>\n      {checkboxColorOptions.map((option) => (\n        <Checkbox\n          key={option.id}\n          checked={checkedColors[option.id]}\n          onCheckedChange={(checked) => \n            handleCheckedChange(option.id, checked === true)\n          }\n          aria-label={option.ariaLabel}\n          className={`size-5 rounded-[6px] shadow-xs ${option.className}`}\n        />\n      ))}\n    </div>\n  )\n}\n\nexport default Checkbox10\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -6405,6 +6405,1033 @@
       "registryDependencies": ["accordion"]
     },
     {
+      "name": "calendar-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-1.tsx",
+          "target": "components/ui/calendar-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-2.tsx",
+          "target": "components/ui/calendar-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "little-date"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-3.tsx",
+          "target": "components/ui/calendar-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-4.tsx",
+          "target": "components/ui/calendar-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-5.tsx",
+          "target": "components/ui/calendar-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-6.tsx",
+          "target": "components/ui/calendar-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-7.tsx",
+          "target": "components/ui/calendar-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-8.tsx",
+          "target": "components/ui/calendar-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-9.tsx",
+          "target": "components/ui/calendar-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-10.tsx",
+          "target": "components/ui/calendar-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-11.tsx",
+          "target": "components/ui/calendar-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-12.tsx",
+          "target": "components/ui/calendar-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-13.tsx",
+          "target": "components/ui/calendar-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-14",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-14.tsx",
+          "target": "components/ui/calendar-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-15",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-15.tsx",
+          "target": "components/ui/calendar-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-16",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-16.tsx",
+          "target": "components/ui/calendar-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-17",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-17.tsx",
+          "target": "components/ui/calendar-17.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-18",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-18.tsx",
+          "target": "components/ui/calendar-18.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-19",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-19.tsx",
+          "target": "components/ui/calendar-19.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-20",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-20.tsx",
+          "target": "components/ui/calendar-20.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-21",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-21.tsx",
+          "target": "components/ui/calendar-21.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-22",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-22.tsx",
+          "target": "components/ui/calendar-22.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-23",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-23.tsx",
+          "target": "components/ui/calendar-23.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-24",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-24.tsx",
+          "target": "components/ui/calendar-24.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "calendar-25",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/calendar/calendar-25.tsx",
+          "target": "components/ui/calendar-25.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["calendar"]
+    },
+    {
+      "name": "checkbox-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-1.tsx",
+          "target": "components/ui/checkbox-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-2.tsx",
+          "target": "components/ui/checkbox-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-3.tsx",
+          "target": "components/ui/checkbox-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-4.tsx",
+          "target": "components/ui/checkbox-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-5.tsx",
+          "target": "components/ui/checkbox-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-6.tsx",
+          "target": "components/ui/checkbox-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-7.tsx",
+          "target": "components/ui/checkbox-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-8.tsx",
+          "target": "components/ui/checkbox-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-9.tsx",
+          "target": "components/ui/checkbox-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-10.tsx",
+          "target": "components/ui/checkbox-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-11.tsx",
+          "target": "components/ui/checkbox-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-12.tsx",
+          "target": "components/ui/checkbox-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-13.tsx",
+          "target": "components/ui/checkbox-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-14",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-14.tsx",
+          "target": "components/ui/checkbox-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-15",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-15.tsx",
+          "target": "components/ui/checkbox-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "checkbox-16",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/checkbox/checkbox-16.tsx",
+          "target": "components/ui/checkbox-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox"]
+    },
+    {
+      "name": "combobox-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-1.tsx",
+          "target": "components/ui/combobox-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-2.tsx",
+          "target": "components/ui/combobox-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-3.tsx",
+          "target": "components/ui/combobox-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-4.tsx",
+          "target": "components/ui/combobox-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-5.tsx",
+          "target": "components/ui/combobox-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-6.tsx",
+          "target": "components/ui/combobox-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-7.tsx",
+          "target": "components/ui/combobox-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-8.tsx",
+          "target": "components/ui/combobox-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-9.tsx",
+          "target": "components/ui/combobox-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-10.tsx",
+          "target": "components/ui/combobox-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-11.tsx",
+          "target": "components/ui/combobox-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "combobox-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/combobox/combobox-12.tsx",
+          "target": "components/ui/combobox-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox"]
+    },
+    {
+      "name": "data-table-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-1.tsx",
+          "target": "components/ui/data-table-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-2.tsx",
+          "target": "components/ui/data-table-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-3.tsx",
+          "target": "components/ui/data-table-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-4.tsx",
+          "target": "components/ui/data-table-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-5.tsx",
+          "target": "components/ui/data-table-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-6.tsx",
+          "target": "components/ui/data-table-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-7.tsx",
+          "target": "components/ui/data-table-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-8.tsx",
+          "target": "components/ui/data-table-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-9.tsx",
+          "target": "components/ui/data-table-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-10.tsx",
+          "target": "components/ui/data-table-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-11.tsx",
+          "target": "components/ui/data-table-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "papaparse", "xlsx"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-12.tsx",
+          "target": "components/ui/data-table-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "data-table-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/data-table/data-table-13.tsx",
+          "target": "components/ui/data-table-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["data-table"]
+    },
+    {
+      "name": "date-picker-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-1.tsx",
+          "target": "components/ui/date-picker-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-2.tsx",
+          "target": "components/ui/date-picker-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-3.tsx",
+          "target": "components/ui/date-picker-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-4.tsx",
+          "target": "components/ui/date-picker-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "chrono-node"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-5.tsx",
+          "target": "components/ui/date-picker-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-6.tsx",
+          "target": "components/ui/date-picker-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-7.tsx",
+          "target": "components/ui/date-picker-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-8.tsx",
+          "target": "components/ui/date-picker-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-9",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-9.tsx",
+          "target": "components/ui/date-picker-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-10",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-10.tsx",
+          "target": "components/ui/date-picker-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-11",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-11.tsx",
+          "target": "components/ui/date-picker-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-12",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-12.tsx",
+          "target": "components/ui/date-picker-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
+      "name": "date-picker-13",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/base-variants/date-picker/date-picker-13.tsx",
+          "target": "components/ui/date-picker-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker"]
+    },
+    {
       "name": "avatar-1",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],

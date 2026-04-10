@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-13",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-13.tsx",
+      "content": "'use client'\n\nimport type { ComponentProps } from 'react'\nimport { useState } from 'react'\n\nimport { Calendar } from '@/components/ui//calendar'\n\ntype CalendarClassNames = NonNullable<ComponentProps<typeof Calendar>['classNames']>\n\nconst initialSelectedDate: Date = new Date()\n\nconst calendarClassNames = {\n  day_button:\n    'rounded-full! !ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0 data-[selected-single=true]:bg-orange-500! data-[selected-single=true]:text-white! data-[selected-single=true]:dark:bg-orange-400!',\n  today: 'rounded-full! bg-muted/60!'\n} satisfies CalendarClassNames\n\nconst Calendar13 = () => {\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialSelectedDate)\n\n  return (\n    <div>\n      <Calendar\n        mode='single'\n        selected={selectedDate}\n        onSelect={setSelectedDate}\n        className='rounded-[1.75rem] border border-border/60 p-3 shadow-sm'\n        classNames={calendarClassNames}\n      />\n      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>\n        Rounded selected-day calendar\n      </p>\n    </div>\n  )\n}\n\nexport default Calendar13\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
