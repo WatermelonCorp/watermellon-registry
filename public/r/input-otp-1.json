@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-1",
+  "dependencies": [
+    "react-icons",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "input-otp",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input-otp/input-otp-1.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId } from \"react\";\r\nimport { REGEXP_ONLY_DIGITS } from \"input-otp\";\r\n\r\nimport {\r\n  InputOTP,\r\n  InputOTPGroup,\r\n  InputOTPSlot,\r\n} from \"@/components/ui/input-otp\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputOtp1 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-2\">\r\n      <div className=\"text-center\">\r\n        <Label htmlFor={id} className=\"text-base font-semibold\">\r\n          Enter OTP\r\n        </Label>\r\n      </div>\r\n\r\n      <InputOTP\r\n        id={id}\r\n        maxLength={4}\r\n        pattern={REGEXP_ONLY_DIGITS}\r\n        className=\"w-full\"\r\n      >\r\n        <InputOTPGroup className=\"flex w-full justify-center gap-3\">\r\n          <InputOTPSlot\r\n            index={0}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-14 w-14 rounded-sm! border text-lg data-[active=true]:ring-2!\"\r\n          />\r\n          <InputOTPSlot\r\n            index={1}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-14 w-14 rounded-sm! border text-lg data-[active=true]:ring-2!\"\r\n          />\r\n          <InputOTPSlot\r\n            index={2}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-14 w-14 rounded-sm! border text-lg data-[active=true]:ring-2!\"\r\n          />\r\n          <InputOTPSlot\r\n            index={3}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-14 w-14 rounded-sm! border text-lg data-[active=true]:ring-2!\"\r\n          />\r\n        </InputOTPGroup>\r\n      </InputOTP>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputOtp1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-otp-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

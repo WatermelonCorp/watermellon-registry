@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-10",
+  "dependencies": [
+    "react-icons",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "input-otp",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input-otp/input-otp-10.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId } from \"react\";\r\n\r\nimport {\r\n  InputOTP,\r\n  InputOTPGroup,\r\n  InputOTPSlot,\r\n} from \"@/components/ui/input-otp\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputOtp10 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"space-y-3\">\r\n      <Label htmlFor={id}>Split verification code</Label>\r\n\r\n      <InputOTP id={id} maxLength={6}>\r\n        <InputOTPGroup>\r\n          <InputOTPSlot\r\n            index={0}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-8 w-8 border text-sm data-[active=true]:ring-2!\"\r\n          />\r\n          <InputOTPSlot\r\n            index={1}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-8 w-8 border text-sm data-[active=true]:ring-2!\"\r\n          />\r\n          <InputOTPSlot\r\n            index={2}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-8 w-8 border text-sm data-[active=true]:ring-2!\"\r\n          />\r\n        </InputOTPGroup>\r\n\r\n        <div\r\n          role=\"separator\"\r\n          className=\"flex flex-col items-center justify-center gap-[3px] px-2\"\r\n        >\r\n          <span className=\"bg-primary h-2 w-2 rounded-full\" />\r\n        </div>\r\n\r\n        <InputOTPGroup>\r\n          <InputOTPSlot\r\n            index={3}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-8 w-8 border text-sm data-[active=true]:ring-2!\"\r\n          />\r\n          <InputOTPSlot\r\n            index={4}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-8 w-8 border text-sm data-[active=true]:ring-2!\"\r\n          />\r\n          <InputOTPSlot\r\n            index={5}\r\n            className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 h-8 w-8 border text-sm data-[active=true]:ring-2!\"\r\n          />\r\n        </InputOTPGroup>\r\n      </InputOTP>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputOtp10;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-otp-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

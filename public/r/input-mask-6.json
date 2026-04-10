@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-mask-6",
+  "dependencies": [
+    "react-icons",
+    "react-payment-inputs"
+  ],
+  "registryDependencies": [
+    "input-mask",
+    "label",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input-mask/input-mask-6.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId } from \"react\";\r\n\r\nimport { withMask } from \"use-mask-input\";\r\nimport { HiClock } from \"react-icons/hi2\";\r\n\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputMask6 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-3\">\r\n      <Label htmlFor={id} className=\"flex items-center gap-2\">\r\n        Time\r\n      </Label>\r\n\r\n      <div className=\"group bg-muted/20 focus-within:ring-primary/20 focus-within:border-primary/50 flex items-center gap-2 rounded-md border px-3 focus-within:ring-2\">\r\n        <HiClock className=\"text-muted-foreground group-focus-within:text-foreground size-4 transition-all duration-200 group-focus-within:scale-110\" />\r\n\r\n        <Input\r\n          id={id}\r\n          type=\"text\"\r\n          placeholder=\"HH:MM:SS\"\r\n          ref={withMask(\"datetime\", {\r\n            placeholder: \"_\",\r\n            inputFormat: \"HH:MM:ss\",\r\n            outputFormat: \"HH:MM:ss\",\r\n            showMaskOnHover: false,\r\n          })}\r\n          className=\"border-0 bg-transparent p-0 shadow-none focus-visible:border-0 focus-visible:ring-0\"\r\n        />\r\n      </div>\r\n\r\n      <p className=\"text-muted-foreground text-xs\">\r\n        Enter time in 24-hour format (e.g. 14:30:00)\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputMask6;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-mask-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

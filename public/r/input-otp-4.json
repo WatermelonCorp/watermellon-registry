@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-4",
+  "dependencies": [
+    "react-icons",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "input-otp",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input-otp/input-otp-4.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId } from \"react\";\r\n\r\nimport {\r\n  InputOTP,\r\n  InputOTPGroup,\r\n  InputOTPSlot,\r\n} from \"@/components/ui/input-otp\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputOtp4 = () => {\r\n  const id = useId();\r\n\r\n  const handleResend = () => {\r\n    // trigger resend logic here\r\n  };\r\n\r\n  return (\r\n    <div className=\"space-y-2\">\r\n      <div className=\"leading-tight\">\r\n        <Label htmlFor={id} className=\"text-sm font-semibold\">\r\n          Enter verification code\r\n        </Label>\r\n        <p className=\"text-muted-foreground text-xs\">\r\n          We’ve sent a 4-digit code to your device\r\n        </p>\r\n      </div>\r\n\r\n      <InputOTP id={id} maxLength={4} className=\"w-full\">\r\n        <InputOTPGroup className=\"flex justify-center\">\r\n          {[0, 1, 2, 3].map((i) => (\r\n            <InputOTPSlot\r\n              key={i}\r\n              index={i}\r\n              className=\"data-[active=true]:ring-primary/30! data-[active=true]:border-primary/50 bg-muted/50 dark:bg-muted/50 h-14 w-14 border text-lg\"\r\n            />\r\n          ))}\r\n        </InputOTPGroup>\r\n      </InputOTP>\r\n\r\n      <div className=\"flex items-center text-sm\">\r\n        <button\r\n          onClick={handleResend}\r\n          className=\"text-primary font-medium transition hover:underline\"\r\n        >\r\n          Resend\r\n        </button>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputOtp4;\r\n\r\n// shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,1),inset_0px_-1px_0px_0px_rgba(0,0,0,0.05)] data-[active=true]:ring-2! dark:shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.1),inset_0px_-1px_0px_0px_rgba(0,0,0,0.2)]\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-otp-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

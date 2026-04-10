@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-mask-4",
+  "dependencies": [
+    "react-icons",
+    "react-payment-inputs"
+  ],
+  "registryDependencies": [
+    "input-mask",
+    "label",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input-mask/input-mask-4.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId } from \"react\";\r\n\r\nimport { HiCreditCard, HiCalendarDays, HiLockClosed } from \"react-icons/hi2\";\r\n\r\nimport { usePaymentInputs } from \"react-payment-inputs\";\r\nimport images, { type CardImages } from \"react-payment-inputs/images\";\r\n\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputMask4 = () => {\r\n  const id = useId();\r\n\r\n  const {\r\n    meta,\r\n    getCardNumberProps,\r\n    getExpiryDateProps,\r\n    getCVCProps,\r\n    getCardImageProps,\r\n  } = usePaymentInputs();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-3\">\r\n      <Label className=\"flex items-center gap-2\">Card Details</Label>\r\n\r\n      <div>\r\n        <div className=\"group relative focus-within:z-10\">\r\n          <Input\r\n            {...getCardNumberProps()}\r\n            id={`number-${id}`}\r\n            placeholder=\"1234 5678 9012 3456\"\r\n            className=\"peer focus-visible:ring-primary/20 focus-visible:border-primary/50 bg-muted/20 rounded-b-none pr-10 shadow-none focus-visible:ring-2\"\r\n          />\r\n\r\n          <div className=\"pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3\">\r\n            {meta.cardType ? (\r\n              <svg\r\n                className=\"w-6 overflow-hidden transition-transform duration-200 group-focus-within:scale-110\"\r\n                {...getCardImageProps({\r\n                  images: images as unknown as CardImages,\r\n                })}\r\n              />\r\n            ) : (\r\n              <HiCreditCard className=\"text-muted-foreground group-focus-within:text-foreground size-4 transition-all duration-200 group-focus-within:scale-110\" />\r\n            )}\r\n          </div>\r\n        </div>\r\n\r\n        <div className=\"-mt-px flex\">\r\n          <div className=\"group relative min-w-0 flex-1 focus-within:z-10\">\r\n            <Input\r\n              {...getExpiryDateProps()}\r\n              id={`expiry-${id}`}\r\n              placeholder=\"MM / YY\"\r\n              className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 bg-muted/50 rounded-t-none rounded-r-none pl-9 shadow-none focus-visible:ring-2\"\r\n            />\r\n            <HiCalendarDays className=\"text-muted-foreground group-focus-within:text-foreground absolute top-1/2 left-3 size-4 -translate-y-1/2 transition-all duration-200 group-focus-within:scale-110\" />\r\n          </div>\r\n\r\n          <div className=\"group relative -ms-px min-w-0 flex-1 focus-within:z-10\">\r\n            <Input\r\n              {...getCVCProps()}\r\n              id={`cvc-${id}`}\r\n              placeholder=\"CVC\"\r\n              className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 bg-muted/50 rounded-t-none rounded-l-none pl-9 shadow-none focus-visible:ring-2\"\r\n            />\r\n            <HiLockClosed className=\"text-muted-foreground group-focus-within:text-foreground absolute top-1/2 left-3 size-4 -translate-y-1/2 transition-all duration-200 group-focus-within:scale-110\" />\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <p className=\"text-muted-foreground text-xs\">\r\n        Enter your card details securely\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputMask4;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-mask-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -9414,7 +9414,7 @@
           "type": "registry:ui"
         }
       ],
-          "registryDependencies": ["popover","button"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-3",
@@ -9440,7 +9440,7 @@
           "type": "registry:ui"
         }
       ],
-         "registryDependencies": ["popover","button"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-5",
@@ -9453,7 +9453,7 @@
           "type": "registry:ui"
         }
       ],
-        "registryDependencies": ["popover","button"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-6",
@@ -9466,7 +9466,7 @@
           "type": "registry:ui"
         }
       ],
-       "registryDependencies": ["popover","button"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-7",
@@ -9492,7 +9492,7 @@
           "type": "registry:ui"
         }
       ],
-          "registryDependencies": ["popover","button"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-9",
@@ -9518,7 +9518,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover","button"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-11",
@@ -9531,7 +9531,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover","button"]
+      "registryDependencies": ["popover", "button"]
     },
     {
       "name": "popover-12",
@@ -9544,7 +9544,7 @@
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["popover","button","badge"]
+      "registryDependencies": ["popover", "button", "badge"]
     },
 
     {
@@ -9745,6 +9745,399 @@
         }
       ],
       "registryDependencies": ["pagination"]
+    },
+
+    {
+      "name": "dropdown-menu-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-1.tsx",
+          "target": "components/ui/dropdown-menu-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-2.tsx",
+          "target": "components/ui/dropdown-menu-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-3.tsx",
+          "target": "components/ui/dropdown-menu-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-4.tsx",
+          "target": "components/ui/dropdown-menu-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-5.tsx",
+          "target": "components/ui/dropdown-menu-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-6.tsx",
+          "target": "components/ui/dropdown-menu-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button", "badge", "avatar"]
+    },
+    {
+      "name": "dropdown-menu-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-7.tsx",
+          "target": "components/ui/dropdown-menu-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "avatar", "button"]
+    },
+    {
+      "name": "dropdown-menu-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-8.tsx",
+          "target": "components/ui/dropdown-menu-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-9.tsx",
+          "target": "components/ui/dropdown-menu-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-10.tsx",
+          "target": "components/ui/dropdown-menu-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-11",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-11.tsx",
+          "target": "components/ui/dropdown-menu-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button"]
+    },
+    {
+      "name": "dropdown-menu-12",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-12.tsx",
+          "target": "components/ui/dropdown-menu-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button", "avatar"]
+    },
+    {
+      "name": "dropdown-menu-13",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-13.tsx",
+          "target": "components/ui/dropdown-menu-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu", "button", "switch", "avatar"]
+    },
+    {
+      "name": "dropdown-menu-14",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/dropdown-menu/dropdown-menu-14.tsx",
+          "target": "components/ui/dropdown-menu-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dropdown-menu"]
+    },
+
+    {
+      "name": "input-otp-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-1.tsx",
+          "target": "components/ui/input-otp-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+    {
+      "name": "input-otp-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-2.tsx",
+          "target": "components/ui/input-otp-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label", "button"]
+    },
+    {
+      "name": "input-otp-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-3.tsx",
+          "target": "components/ui/input-otp-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+    {
+      "name": "input-otp-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-4.tsx",
+          "target": "components/ui/input-otp-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+    {
+      "name": "input-otp-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-5.tsx",
+          "target": "components/ui/input-otp-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+    {
+      "name": "input-otp-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-6.tsx",
+          "target": "components/ui/input-otp-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+    {
+      "name": "input-otp-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-7.tsx",
+          "target": "components/ui/input-otp-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+    {
+      "name": "input-otp-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-8.tsx",
+          "target": "components/ui/input-otp-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+    {
+      "name": "input-otp-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-9.tsx",
+          "target": "components/ui/input-otp-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+    {
+      "name": "input-otp-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "input-otp"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-otp/input-otp-10.tsx",
+          "target": "components/ui/input-otp-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-otp", "label"]
+    },
+
+    {
+      "name": "input-mask-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-payment-inputs"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-mask/input-mask-1.tsx",
+          "target": "components/ui/input-mask-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-mask", "label", "input"]
+    },
+    {
+      "name": "input-mask-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-payment-inputs"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-mask/input-mask-2.tsx",
+          "target": "components/ui/input-mask-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-mask", "label", "input"]
+    },
+    {
+      "name": "input-mask-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-payment-inputs"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-mask/input-mask-3.tsx",
+          "target": "components/ui/input-mask-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-mask", "label", "input"]
+    },
+    {
+      "name": "input-mask-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-payment-inputs"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-mask/input-mask-4.tsx",
+          "target": "components/ui/input-mask-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-mask", "label", "input"]
+    },
+    {
+      "name": "input-mask-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-payment-inputs"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-mask/input-mask-5.tsx",
+          "target": "components/ui/input-mask-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-mask", "label", "input"]
+    },
+    {
+      "name": "input-mask-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-payment-inputs"],
+      "files": [
+        {
+          "path": "src/components/base-variants/input-mask/input-mask-6.tsx",
+          "target": "components/ui/input-mask-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-mask", "label", "input"]
     },
     {
       "name": "workflow-management-dashboard",

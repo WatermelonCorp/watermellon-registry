@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-mask-2",
+  "dependencies": [
+    "react-icons",
+    "react-payment-inputs"
+  ],
+  "registryDependencies": [
+    "input-mask",
+    "label",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input-mask/input-mask-2.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId } from \"react\";\r\n\r\nimport { HiCreditCard } from \"react-icons/hi2\";\r\n\r\nimport { usePaymentInputs } from \"react-payment-inputs\";\r\nimport images, { type CardImages } from \"react-payment-inputs/images\";\r\n\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputMask2 = () => {\r\n  const id = useId();\r\n  const { meta, getCardNumberProps, getCardImageProps } = usePaymentInputs();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-3\">\r\n      <Label htmlFor={id}>Card Number</Label>\r\n\r\n      <div className=\"relative\">\r\n        <Input\r\n          {...getCardNumberProps()}\r\n          id={id}\r\n          placeholder=\"1234 5678 9012 3456\"\r\n          className=\"peer focus-visible:ring-primary/20 focus-visible:border-primary/50 bg-muted/50 pr-11 focus-visible:ring-2\"\r\n        />\r\n\r\n        <div className=\"text-muted-foreground pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center pr-3 peer-disabled:opacity-50\">\r\n          {meta.cardType ? (\r\n            <svg\r\n              className=\"bg-muted/50 w-6 overflow-hidden shadow-md\"\r\n              {...getCardImageProps({\r\n                images: images as unknown as CardImages,\r\n              })}\r\n            />\r\n          ) : (\r\n            <HiCreditCard className=\"size-4\" />\r\n          )}\r\n        </div>\r\n      </div>\r\n\r\n      <p className=\"text-muted-foreground text-xs\">\r\n        Enter your card number as shown on your card\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputMask2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-mask-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
