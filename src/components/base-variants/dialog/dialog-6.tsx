@@ -1,6 +1,6 @@
-import { ChevronLeftIcon } from 'lucide-react'
+import { ChevronLeftIcon } from 'lucide-react';
 
-import { Button } from '@/components/ui//button'
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogClose,
@@ -9,145 +9,129 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
-} from '@/components/ui//dialog'
-import { ScrollArea } from '@/components/ui//scroll-area'
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const Dialog6 = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button variant='outline' className="shadow-md">Sticky Footer Dialog</Button>
+        <Button variant="outline" className="shadow-sm">
+          Sticky Footer Dialog
+        </Button>
       </DialogTrigger>
-      <DialogContent className='flex max-h-[min(600px,80vh)] flex-col gap-0 p-4 sm:max-w-md [&_[data-slot=dialog-close]]:right-8'>
-        <DialogHeader className='contents space-y-0 text-left'>
-          <ScrollArea className='flex max-h-full flex-col overflow-hidden'>
-            <DialogTitle className='px-6 pt-6'>Product Information</DialogTitle>
-            <DialogDescription>
-              <div className='p-6'>
-                <div className='[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold'>
-                  <div className='space-y-1'>
-                    <p>
-                      <strong>Product Name:</strong> SuperTech 2000
-                    </p>
-                    <p>
-                      The SuperTech 2000 is a high-performance device designed for tech enthusiasts and professionals
-                      alike, offering superior functionality and innovative features.
-                    </p>
-                  </div>
-                  <div className='space-y-1'>
-                    <p>
-                      <strong>Specifications:</strong>
-                    </p>
-                    <ul>
-                      <li>Processor: 3.6GHz Octa-Core</li>
-                      <li>Memory: 16GB RAM</li>
-                      <li>Storage: 1TB SSD</li>
-                      <li>Display: 15.6&rdquo; 4K UHD</li>
-                      <li>Battery Life: 12 hours</li>
-                      <li>Weight: 2.1kg</li>
-                    </ul>
-                  </div>
-                  <div className='space-y-1'>
-                    <p>
-                      <strong>Key Features:</strong>
-                    </p>
-                    <ul>
-                      <li>Ultra-fast processing speed for intensive tasks</li>
-                      <li>Long battery life, perfect for on-the-go professionals</li>
-                      <li>Sleek and portable design</li>
-                      <li>Advanced cooling system</li>
-                      <li>Excellent build quality for durability</li>
-                    </ul>
-                  </div>
-                  <div className='space-y-1'>
-                    <p>
-                      <strong>Price:</strong>
-                    </p>
-                    <p>$2,499.99 (Includes 1-year warranty)</p>
-                  </div>
-                  <div className='space-y-1'>
-                    <p>
-                      <strong>Customer Reviews:</strong>
-                    </p>
-                    <p>
-                      &rdquo;Absolutely fantastic device! The performance is exceptional, and it handles all of my
-                      design software without any lag.&rdquo; - John D.
-                    </p>
-                    <p>
-                      &rdquo;Best purchase I&apos;ve made in years. The display quality is stunning, and the battery
-                      lasts all day.&rdquo; - Sarah L.
-                    </p>
-                    <p>
-                      &rdquo;The SuperTech 2000 is a game-changer in the tech industry. Worth every penny!&rdquo; - Emma
-                      W.
-                    </p>
-                  </div>
-                  <div className='space-y-1'>
-                    <p>
-                      <strong>Return Policy:</strong>
-                    </p>
-                    <p>
-                      If you&apos;re not satisfied with your purchase, we offer a 30-day return policy. Return the
-                      product within 30 days of purchase for a full refund.
-                    </p>
-                  </div>
-                  <div className='space-y-1'>
-                    <p>
-                      <strong>Warranty:</strong>
-                    </p>
-                    <p>
-                      Comes with a standard 1-year warranty covering defects in materials and workmanship. Extended
-                      warranty plans are available.
-                    </p>
-                  </div>
+      <DialogContent className="border-border/40 dark:border-border/60 flex max-h-[min(650px,90vh)] flex-col gap-0 overflow-hidden rounded-xl border bg-white p-0 shadow-xl sm:max-w-md dark:bg-neutral-900 [&_[data-slot=dialog-close]]:top-4 [&_[data-slot=dialog-close]]:right-6 [&_[data-slot=dialog-close]]:bg-white/50 [&_[data-slot=dialog-close]]:backdrop-blur-sm dark:[&_[data-slot=dialog-close]]:bg-neutral-900/50">
+        {/* Scrollable Content (Header + Body) */}
+        <ScrollArea className="flex-1 overflow-y-auto">
+          <DialogHeader className="border-border/30 dark:border-border/60 border-b px-6 py-4 pr-14 text-left">
+            <DialogTitle className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+              Security Audit Report
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className="p-6">
+            <DialogDescription className="text-neutral-600 dark:text-neutral-400">
+              <div className="space-y-4 [&_strong]:font-semibold [&_strong]:text-neutral-900 dark:[&_strong]:text-neutral-100">
+                <div className="space-y-1">
+                  <p>
+                    <strong>Assessment Summary:</strong>
+                  </p>
+                  <p>
+                    Our latest comprehensive security audit completed on October
+                    5, 2026, revealed zero critical vulnerabilities. However,
+                    several moderate network configuration warnings require your
+                    attention.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p>
+                    <strong>1. Authentication Mechanisms</strong>
+                  </p>
+                  <p>
+                    Multi-factor authentication (MFA) enforcement is active for
+                    92% of administrative accounts. We recommend strictly
+                    enforcing MFA policies for the remaining legacy accounts
+                    within 14 days.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p>
+                    <strong>2. Data Encryption</strong>
+                  </p>
+                  <p>
+                    All data at rest is now encrypted using AES-256 standards.
+                    Transit encryption utilizing TLS 1.3 is fully operational
+                    across all public-facing endpoints without any fallback to
+                    older protocols.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p>
+                    <strong>3. Access Controls</strong>
+                  </p>
+                  <p>
+                    Role-Based Access Control (RBAC) schemas are properly
+                    segregated. However, 3 development-tier service accounts
+                    have overly permissive access to production databases.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p>
+                    <strong>4. Third-Party Dependencies</strong>
+                  </p>
+                  <p>
+                    Automated scanning detected 4 outdated npm packages with
+                    known, medium-severity CVEs. The engineering team has been
+                    notified to bump these dependencies in the next sprint.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p>
+                    <strong>5. Incident Response Readiness</strong>
+                  </p>
+                  <p>
+                    Simulated penetration tests indicated a rapid identification
+                    and mitigation response time averaging 14 minutes, well
+                    below our 30-minute SLA threshold.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p>
+                    <strong>Recommendation:</strong>
+                  </p>
+                  <p>
+                    Please review the attached detailed artifacts and action the
+                    remediations for the service accounts and outdated packages
+                    by the end of Q4.
+                  </p>
                 </div>
               </div>
             </DialogDescription>
-          </ScrollArea>
-        </DialogHeader>
-        <DialogFooter className='flex-row items-center justify-end border-t px-6 pt-6 pb-6 bg-transparent mx-0.5'>
-          <DialogClose>
-            <Button variant='outline' className="rounded-full">
-              <ChevronLeftIcon />
-              Back
+          </div>
+        </ScrollArea>
+
+        {/* Sticky Footer */}
+        <DialogFooter className="border-border/30 dark:border-border/60 z-10 m-0 flex-col-reverse items-stretch gap-2 border-t bg-neutral-50/50 p-4 sm:flex-row sm:items-center sm:justify-end sm:px-6 sm:pb-6 dark:bg-neutral-900/50">
+          <DialogClose asChild>
+            <Button
+              variant="outline"
+              className="flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 font-medium shadow-none sm:w-auto"
+            >
+              <ChevronLeftIcon className="size-4" />
+              Close
             </Button>
           </DialogClose>
           <Button
-            type='button'
-            className='claymorphism-action font-semibold px-7 py-2.5 rounded-full border-none transition focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900'
+            type="button"
+            className="claymorphism-action w-full rounded-full border-none px-7 py-2.5 font-semibold focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:outline-none sm:w-auto dark:focus:ring-offset-neutral-900"
           >
-            Read More
+            Export PDF
           </Button>
-          <style>{`
-            .claymorphism-action {
-              border-radius: 9999px !important;
-              background: #2563eb !important;
-              color: #fff !important;
-              box-shadow: 6px 6px 18px #b6c6e6, -6px -6px 18px #ffffff;
-              border: none !important;
-              padding: 0.75rem 2.25rem !important;
-              font-weight: 600;
-              transition: box-shadow 0.2s, background 0.2s;
-            }
-            .claymorphism-action:hover {
-              background: #1d4ed8 !important;
-              box-shadow: 4px 4px 12px #a0aec0, -4px -4px 12px #e0e7ef;
-            }
-            .dark .claymorphism-action {
-              background: #2563eb !important;
-              color: #fff !important;
-              box-shadow: 4px 4px 16px #1e293b, -4px -4px 16px #334155;
-            }
-            .dark .claymorphism-action:hover {
-              background: #3b82f6 !important;
-              box-shadow: 2px 2px 8px #1e293b, -2px -2px 8px #334155;
-            }
-          `}</style>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
-export default Dialog6
+export default Dialog6;
