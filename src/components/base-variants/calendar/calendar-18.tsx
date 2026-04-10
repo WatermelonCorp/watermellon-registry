@@ -55,7 +55,7 @@ const Calendar18 = () => {
         </CardContent>
       </Card>
       <p className='text-muted-foreground mt-4 text-center text-xs' role='region'>
-        Calendar with qbase-uick today jump
+        Calendar with quick today jump
       </p>
     </div>
   )

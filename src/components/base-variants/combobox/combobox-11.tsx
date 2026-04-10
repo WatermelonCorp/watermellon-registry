@@ -124,11 +124,11 @@ const Combobox11 = () => {
                 )}
               </>
             ) : (
-              <span className='text-muted-foreground'>Select workflow tags</span>
+              <span className='text-muted-foreground mt-0.5'>Select workflow tags</span>
             )}
           </div>
           <ChevronsUpDownIcon
-            className='text-muted-foreground/80 mt-0.5 size-4 shrink-0'
+            className='text-muted-foreground/80 mt-1 size-4 shrink-0'
             aria-hidden='true'
           />
         </PopoverTrigger>

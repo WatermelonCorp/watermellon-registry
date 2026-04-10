@@ -186,7 +186,7 @@ const DataTable12 = () => {
             className='h-10 max-w-sm rounded-lg border-border/60 bg-muted/20 px-4'
           />
         </div>
-        <div className='flex items-center space-x-2'>
+        <div className='flex items-center sm:space-x-2'>
           <div className='text-muted-foreground text-sm'>
             {selectedRows.length > 0 ? (
               <span className='mr-2'>
