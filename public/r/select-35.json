@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-35",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-35.tsx",
+      "content": "import { ListBox, ListBoxItem } from 'react-aria-components';\r\n\r\nimport { Label } from '@/components/ui/label';\r\n\r\nconst envs = [\r\n  { id: 'prod', label: 'Production (Main)', description: 'Critical systems' },\r\n  { id: 'staging', label: 'Staging (Build)', description: 'UAT testing' },\r\n  { id: 'dev', label: 'Development (Local)', description: 'Sandbox play' },\r\n  { id: 'legacy', label: 'Legacy (v2)', description: 'Archived data', isDisabled: true },\r\n];\r\n\r\nconst Select35 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label className=\"text-zinc-600 dark:text-zinc-400\">Environment Context</Label>\r\n      <div className=\"overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-xs dark:border-zinc-800 dark:bg-zinc-950 transition-all\">\r\n        <ListBox\r\n          className=\"flex flex-col p-1 outline-none\"\r\n          aria-label=\"Select environment context\"\r\n          selectionMode=\"single\"\r\n          defaultSelectedKeys={['staging']}\r\n        >\r\n          {envs.map((env) => (\r\n            <ListBoxItem\r\n              key={env.id}\r\n              id={env.id}\r\n              className=\"flex flex-col rounded-lg px-2.5 py-2 text-sm outline-none cursor-default select-none transition-colors data-[selected=true]:bg-zinc-100 dark:data-[selected=true]:bg-zinc-900 data-[selected=true]:text-zinc-900 dark:data-[selected=true]:text-zinc-100 data-[disabled]:opacity-40 data-[disabled]:grayscale focus:bg-zinc-100 dark:focus:bg-zinc-900\"\r\n              isDisabled={env.isDisabled}\r\n              textValue={env.label}\r\n            >\r\n              <span className=\"font-medium text-zinc-900 dark:text-zinc-100\">{env.label}</span>\r\n              <span className=\"text-[11px] text-zinc-500\">{env.description}</span>\r\n            </ListBoxItem>\r\n          ))}\r\n        </ListBox>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select35;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-35.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

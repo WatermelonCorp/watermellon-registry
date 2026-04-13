@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-5",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-5.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport { NativeSelect } from '@/components/ui/native-select';\r\n\r\nconst Select5 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Primary Gateway Version\r\n      </Label>\r\n      <NativeSelect \r\n        id={id} \r\n        aria-invalid=\"true\"\r\n        className=\"w-full rounded-xl border-red-500/50 shadow-xs dark:border-red-900/50 dark:bg-zinc-950 focus:ring-2 focus:ring-red-500/20 dark:focus:ring-red-500/10 dark:[&_select]:[color-scheme:dark]\"\r\n      >\r\n        <option value=\"v1\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Legacy Gateway (v1.0)</option>\r\n        <option value=\"v2\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Standard API (v2.4)</option>\r\n        <option value=\"v3\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Modern Edge (v3.1-beta)</option>\r\n        <option value=\"v4\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Serverless v4 (Experimental)</option>\r\n      </NativeSelect>\r\n      <p className=\"text-[11px] text-red-500 px-1 dark:text-red-400\" role=\"alert\" aria-live=\"polite\">\r\n        The selected version is currently undergoing maintenance.\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select5;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

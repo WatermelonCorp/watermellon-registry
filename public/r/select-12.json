@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-12",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-12.tsx",
+      "content": "import { useId } from 'react';\r\nimport { IconDeviceDesktop } from '@tabler/icons-react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select12 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Deployment Target\r\n      </Label>\r\n      <Select defaultValue=\"web\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-200 bg-white px-3 shadow-xs transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900\"\r\n        >\r\n          <span className=\"flex items-center gap-2\">\r\n            <IconDeviceDesktop className=\"size-4 text-zinc-500\" stroke={1.5} />\r\n            <SelectValue placeholder=\"Identify platform\" />\r\n          </span>\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectItem value=\"web\" className=\"rounded-lg\">Web Application</SelectItem>\r\n          <SelectItem value=\"mobile\" className=\"rounded-lg\">Native Mobile</SelectItem>\r\n          <SelectItem value=\"desktop\" className=\"rounded-lg\">System Desktop</SelectItem>\r\n          <SelectItem value=\"cloud\" className=\"rounded-lg\">Cloud Infrastructure</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select12;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

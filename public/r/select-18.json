@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-18",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-18.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select18 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400 font-medium\">\r\n        UI Scaling Factor\r\n      </Label>\r\n      <Select defaultValue=\"100\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-none bg-transparent shadow-none hover:bg-zinc-100/80 focus-visible:ring-zinc-400/20 dark:bg-transparent dark:hover:bg-zinc-800/80 dark:focus-visible:ring-zinc-500/20 px-3\"\r\n        >\r\n          <SelectValue placeholder=\"Display scale\" />\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectItem value=\"80\" className=\"rounded-lg\">Compact View (80%)</SelectItem>\r\n          <SelectItem value=\"100\" className=\"rounded-lg\">Standard Scale (100%)</SelectItem>\r\n          <SelectItem value=\"125\" className=\"rounded-lg\">Cozy Desktop (125%)</SelectItem>\r\n          <SelectItem value=\"150\" className=\"rounded-lg\">Accessible (150%)</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select18;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-18.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
