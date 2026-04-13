@@ -13,7 +13,7 @@ import {
 
 const DropdownMenu4 = () => {
   return (
-    <div className="">
+    <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" className="rounded-lg">
@@ -57,7 +57,10 @@ const DropdownMenu4 = () => {
 
           <DropdownMenuSeparator className="my-1" />
 
-          <DropdownMenuItem className="text-destructive focus:text-destructive flex cursor-pointer items-center gap-3 rounded-lg p-2">
+          <DropdownMenuItem
+            className="text-destructive   flex cursor-pointer items-center gap-3 rounded-lg p-2"
+            variant="destructive"
+          >
             <FaTrashAlt />
             <div className="flex flex-col">
               <span className="text-sm font-medium">Delete</span>

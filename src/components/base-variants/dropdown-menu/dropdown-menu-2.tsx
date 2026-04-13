@@ -53,14 +53,14 @@ const DropdownMenu2 = () => {
           className="overflow-hidden rounded-sm shadow-sm p-0"
         >
           <img
-            src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png"
+            src="https://github.com/t3dotgg.png"
             alt="User Avatar"
             className="h-full w-full object-cover"
           />
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-72 p-0">
+      <DropdownMenuContent className="w-72 p-0" align='center'>
         <div className="bg-muted relative p-2">
           <p className="text-sm font-semibold">Welcome back</p>
           <p className="text-muted-foreground text-xs">
@@ -72,6 +72,7 @@ const DropdownMenu2 = () => {
           {listItems.map((item, index) => (
             <DropdownMenuItem
               key={index}
+              variant={item.danger ? 'destructive' : 'default'}
               className={`mt-1 flex items-start gap-3 rounded-md p-2 ${
                 item.danger ? 'text-destructive' : ''
               }`}

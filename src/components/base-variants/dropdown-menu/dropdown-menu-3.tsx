@@ -56,7 +56,7 @@ const DropdownMenu3 = () => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="grid w-64 gap-1 p-1">
+      <DropdownMenuContent className="grid w-64 gap-1 p-1" align="center">
         <div className="px-1 py-1">
           <p className="text-muted-foreground text-sm font-medium">
             Text Tools

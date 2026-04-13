@@ -82,7 +82,7 @@ const Sheet7 = () => {
   };
 
   return (
-    <div className="theme-injected w-full space-y-4">
+    <div className="  w-full space-y-4">
       <div className="flex items-center justify-between">
         <Input
           placeholder="Search users..."

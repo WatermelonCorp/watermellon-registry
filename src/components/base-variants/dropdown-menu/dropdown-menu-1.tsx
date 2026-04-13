@@ -15,7 +15,7 @@ const DropdownMenu1 = () => {
         <Button variant="outline">Open Panel</Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-64 space-y-1 ">
+      <DropdownMenuContent className="sm:w-64 w-60  space-y-1 " align='center' >
         <div className="px-2 ">
           <p className="text-sm font-medium">Dashboard</p>
           <p className="text-muted-foreground text-xs">
@@ -47,7 +47,7 @@ const DropdownMenu1 = () => {
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem className="text-destructive flex items-center gap-2 rounded-md">
+        <DropdownMenuItem className="text-destructive flex items-center gap-2 rounded-md" variant='destructive'>
           <FaSignOutAlt className="text-sm" />
           <span>Logout</span>
         </DropdownMenuItem>

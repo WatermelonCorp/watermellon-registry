@@ -10139,6 +10139,375 @@
       ],
       "registryDependencies": ["input-mask", "label", "input"]
     },
+
+    {
+      "name": "form-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-1.tsx",
+          "target": "components/ui/form-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "input",
+        "field",
+        "button",
+        "label",
+        "alert",
+        "input-otp",
+        "sonner"
+      ]
+    },
+    {
+      "name": "form-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-2.tsx",
+          "target": "components/ui/form-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["field", "button", "select", "avatar"]
+    },
+    {
+      "name": "form-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-3.tsx",
+          "target": "components/ui/form-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "field",
+        "button",
+        "calendar",
+        "alert",
+        "popover"
+      ]
+    },
+    {
+      "name": "form-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-4.tsx",
+          "target": "components/ui/form-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "field",
+        "button",
+        "radio-group",
+        "alert",
+        "sonner"
+      ]
+    },
+    {
+      "name": "form-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-5.tsx",
+          "target": "components/ui/form-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["field", "button", "alert", "checkbox"]
+    },
+    {
+      "name": "form-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-6.tsx",
+          "target": "components/ui/form-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["field", "button", "alert", "switch"]
+    },
+    {
+      "name": "form-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-7.tsx",
+          "target": "components/ui/form-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["field", "button", "textarea", "alert"]
+    },
+    {
+      "name": "form-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-8.tsx",
+          "target": "components/ui/form-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["field", "button", "command", "popover"]
+    },
+    {
+      "name": "form-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-9.tsx",
+          "target": "components/ui/form-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input", "field", "button", "alert"]
+    },
+    {
+      "name": "form-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons", "react-hook-form", "zod"],
+      "files": [
+        {
+          "path": "src/components/base-variants/form/form-10.tsx",
+          "target": "components/ui/form-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "input",
+        "field",
+        "button",
+        "alert",
+        "radio-group",
+        "select",
+        "textarea",
+        "card"
+      ]
+    },
+
+    {
+      "name": "table-1",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-1.tsx",
+          "target": "components/ui/table-1.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-2",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-2.tsx",
+          "target": "components/ui/table-2.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-3",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-3.tsx",
+          "target": "components/ui/table-3.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-4",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-4.tsx",
+          "target": "components/ui/table-4.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table", "badge"]
+    },
+    {
+      "name": "table-5",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-5.tsx",
+          "target": "components/ui/table-5.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-6",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-6.tsx",
+          "target": "components/ui/table-6.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-7",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-7.tsx",
+          "target": "components/ui/table-7.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-8",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-8.tsx",
+          "target": "components/ui/table-8.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-9",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-9.tsx",
+          "target": "components/ui/table-9.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-10",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-10.tsx",
+          "target": "components/ui/table-10.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-11",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-11.tsx",
+          "target": "components/ui/table-11.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-12",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-12.tsx",
+          "target": "components/ui/table-12.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table"]
+    },
+    {
+      "name": "table-13",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-13.tsx",
+          "target": "components/ui/table-13.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table", "checkbox", "badge"]
+    },
+    {
+      "name": "table-14",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-14.tsx",
+          "target": "components/ui/table-14.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table", "checkbox", "button"]
+    },
+    {
+      "name": "table-15",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-15.tsx",
+          "target": "components/ui/table-15.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table", "avatar"]
+    },
+    {
+      "name": "table-16",
+      "type": "registry:ui",
+      "dependencies": ["react-icons"],
+      "files": [
+        {
+          "path": "src/components/base-variants/table/table-16.tsx",
+          "target": "components/ui/table-16.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table", "pagination"]
+    },
     {
       "name": "workflow-management-dashboard",
       "type": "registry:block",

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-1",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/table/table-1.tsx",
+      "content": "import {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableFooter,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/components/ui/table\";\r\n\r\nimport {\r\n  FaCheckCircle,\r\n  FaClock,\r\n  FaTimesCircle,\r\n  FaShoppingCart,\r\n} from \"react-icons/fa\";\r\n\r\nconst orders = [\r\n  {\r\n    id: \"ORD-1001\",\r\n    customer: \"Aarav Sharma\",\r\n    status: \"Delivered\",\r\n    amount: \"₹1,200\",\r\n    icon: <FaCheckCircle className=\"text-green-500\" />,\r\n  },\r\n  {\r\n    id: \"ORD-1002\",\r\n    customer: \"Priya Verma\",\r\n    status: \"Processing\",\r\n    amount: \"₹850\",\r\n    icon: <FaClock className=\"text-yellow-500\" />,\r\n  },\r\n  {\r\n    id: \"ORD-1003\",\r\n    customer: \"Rohan Mehta\",\r\n    status: \"Cancelled\",\r\n    amount: \"₹640\",\r\n    icon: <FaTimesCircle className=\"text-red-500\" />,\r\n  },\r\n  {\r\n    id: \"ORD-1004\",\r\n    customer: \"Sneha Kapoor\",\r\n    status: \"Delivered\",\r\n    amount: \"₹2,300\",\r\n    icon: <FaCheckCircle className=\"text-green-500\" />,\r\n  },\r\n  {\r\n    id: \"ORD-1005\",\r\n    customer: \"Karan Malhotra\",\r\n    status: \"Processing\",\r\n    amount: \"₹1,120\",\r\n    icon: <FaClock className=\"text-yellow-500\" />,\r\n  },\r\n  {\r\n    id: \"ORD-1006\",\r\n    customer: \"Neha Gupta\",\r\n    status: \"Delivered\",\r\n    amount: \"₹980\",\r\n    icon: <FaCheckCircle className=\"text-green-500\" />,\r\n  },\r\n];\r\n\r\nconst Table1 = () => {\r\n  return (\r\n    <div className=\"w-full\">\r\n      <div className=\"overflow-hidden\">\r\n        <Table className=\"overflow-x-scroll\">\r\n          <TableHeader>\r\n            <TableRow>\r\n              <TableHead className=\"w-25\">Order</TableHead>\r\n              <TableHead>Customer</TableHead>\r\n              <TableHead>Status</TableHead>\r\n              <TableHead className=\"text-right\">Amount</TableHead>\r\n            </TableRow>\r\n          </TableHeader>\r\n\r\n          <TableBody>\r\n            {orders.map((order) => (\r\n              <TableRow key={order.id}>\r\n                <TableCell className=\"flex items-center gap-2 font-medium\">\r\n                  <FaShoppingCart className=\"text-primary\" />\r\n                  {order.id}\r\n                </TableCell>\r\n\r\n                <TableCell>{order.customer}</TableCell>\r\n\r\n                <TableCell>\r\n                  <div className=\"flex items-center gap-2\">\r\n                    {order.icon}\r\n                    <span>{order.status}</span>\r\n                  </div>\r\n                </TableCell>\r\n\r\n                <TableCell className=\"text-right font-medium\">\r\n                  {order.amount}\r\n                </TableCell>\r\n              </TableRow>\r\n            ))}\r\n          </TableBody>\r\n\r\n          <TableFooter>\r\n            <TableRow>\r\n              <TableCell colSpan={3}>Total Revenue</TableCell>\r\n              <TableCell className=\"text-right font-semibold\">₹7,090</TableCell>\r\n            </TableRow>\r\n          </TableFooter>\r\n        </Table>\r\n      </div>\r\n      <p className=\"text-muted-foreground mt-4 text-center text-sm\">\r\n        Recent orders table\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Table1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/table-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

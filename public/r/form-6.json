@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-6",
+  "dependencies": [
+    "react-icons",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "field",
+    "button",
+    "alert",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/form/form-6.tsx",
+      "content": "\"use client\";\r\n\r\nimport { FaCheckDouble } from \"react-icons/fa\";\r\n\r\nimport { zodResolver } from \"@hookform/resolvers/zod\";\r\nimport { Controller, useForm } from \"react-hook-form\";\r\nimport { toast } from \"sonner\";\r\nimport { z } from \"zod\";\r\n\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\nimport {\r\n  Field,\r\n  FieldContent,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldLabel,\r\n} from \"@/components/ui/field\";\r\n\r\nconst FormSchema = z.object({\r\n  securityMode: z.boolean().refine((val) => val === true, {\r\n    message: \"Please enable security mode to continue.\",\r\n  }),\r\n});\r\n\r\nconst Form5 = () => {\r\n  const form = useForm<z.infer<typeof FormSchema>>({\r\n    resolver: zodResolver(FormSchema),\r\n    defaultValues: { securityMode: false },\r\n  });\r\n\r\n  function onSubmit(data: z.infer<typeof FormSchema>) {\r\n    toast.custom(() => (\r\n      <Alert className=\"border-success text-success flex items-center gap-2\">\r\n        <FaCheckDouble className=\"animate-pulse\" />\r\n        <AlertTitle>\r\n          Security mode {data.securityMode ? \"enabled\" : \"disabled\"}{\" \"}\r\n          successfully.\r\n        </AlertTitle>\r\n      </Alert>\r\n    ));\r\n  }\r\n\r\n  return (\r\n    <form\r\n      onSubmit={form.handleSubmit(onSubmit)}\r\n      className=\"w-full max-w-xs space-y-6\"\r\n    >\r\n      <Field>\r\n        <FieldContent>\r\n          <Controller\r\n            control={form.control}\r\n            name=\"securityMode\"\r\n            render={({ field }) => (\r\n              <div className=\"hover:bg-muted/40 flex items-center justify-between rounded-sm border p-3 transition-all\">\r\n                <div className=\"flex items-center gap-2\">\r\n                  <div className=\"space-y-0.5\">\r\n                    <FieldLabel>Enable Secure Mode</FieldLabel>\r\n                    <FieldDescription>\r\n                      Adds an extra layer of protection to your account and\r\n                      activity.\r\n                    </FieldDescription>\r\n                  </div>\r\n                </div>\r\n\r\n                <Switch\r\n                  checked={field.value}\r\n                  onCheckedChange={field.onChange}\r\n                  className=\"bg-muted/50 self-start\"\r\n                />\r\n              </div>\r\n            )}\r\n          />\r\n        </FieldContent>\r\n\r\n        <FieldError>{form.formState.errors.securityMode?.message}</FieldError>\r\n      </Field>\r\n\r\n      <Button\r\n        type=\"submit\"\r\n        className=\"flex w-full items-center justify-center gap-2 rounded-sm transition-all active:scale-95\"\r\n      >\r\n        Continue\r\n      </Button>\r\n    </form>\r\n  );\r\n};\r\n\r\nexport default Form5;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/form-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

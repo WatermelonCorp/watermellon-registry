@@ -30,7 +30,7 @@ const levels = [
     value: "important",
     label: "Important Only",
     icon: FaVolumeHigh,
-    color: "text-amber-500",
+    color: "text-amber-500 ",
   },
   {
     value: "mentions",
@@ -56,7 +56,7 @@ const DropdownMenu11 = () => {
   const [selected, setSelected] = useState("all");
 
   return (
-    <div className="">
+    <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" className="rounded-lg">
@@ -64,7 +64,10 @@ const DropdownMenu11 = () => {
           </Button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent className="bg-popover w-64 rounded-lg border p-1 shadow-md">
+        <DropdownMenuContent
+          className="bg-popover sm:w-64 w-56 rounded-lg border p-1 shadow-md"
+          align="start"
+        >
           <DropdownMenuLabel className="px-1 pb-1 text-sm font-semibold">
             Notification Level
           </DropdownMenuLabel>
@@ -78,13 +81,13 @@ const DropdownMenu11 = () => {
                 <DropdownMenuItem
                   key={item.value}
                   onClick={() => setSelected(item.value)}
-                  className={`group flex cursor-pointer items-center gap-2 rounded-lg p-1 transition-all ${
+                  className={`group flex cursor-pointer items-center gap-2 rounded-sm p-1 transition-all  ${
                     active ? "bg-accent" : ""
                   }`}
                 >
                   <Icon
                     className={`${item.color} transition-transform duration-200 ${
-                      active ? "scale-105" : "group-hover:scale-103"
+                      active ? "scale-105" : "group-hover:scale-105"
                     }`}
                   />
 

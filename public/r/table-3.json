@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-3",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/table/table-3.tsx",
+      "content": "import {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableFooter,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/components/ui/table\";\r\n\r\nconst products = [\r\n  {\r\n    id: \"PRD-001\",\r\n    name: \"MacBook Pro\",\r\n    category: \"Laptop\",\r\n    status: \"In Stock\",\r\n    price: \"₹1,89,000\",\r\n  },\r\n  {\r\n    id: \"PRD-002\",\r\n    name: \"iPhone 15\",\r\n    category: \"Mobile\",\r\n    status: \"Limited\",\r\n    price: \"₹79,900\",\r\n  },\r\n  {\r\n    id: \"PRD-003\",\r\n    name: \"Sony WH-1000XM5\",\r\n    category: \"Audio\",\r\n    status: \"Out of Stock\",\r\n    price: \"₹29,990\",\r\n  },\r\n  {\r\n    id: \"PRD-004\",\r\n    name: \"Dell XPS 13\",\r\n    category: \"Laptop\",\r\n    status: \"In Stock\",\r\n    price: \"₹1,25,000\",\r\n  },\r\n  {\r\n    id: \"PRD-005\",\r\n    name: \"Samsung Galaxy S24\",\r\n    category: \"Mobile\",\r\n    status: \"In Stock\",\r\n    price: \"₹74,999\",\r\n  },\r\n];\r\n\r\nconst Table3 = () => {\r\n  return (\r\n    <div className=\"w-full\">\r\n      <div className=\"overflow-hidden\">\r\n        <Table>\r\n          <TableHeader>\r\n            <TableRow className=\"hover:bg-transparent\">\r\n              <TableHead className=\"w-40\">Product</TableHead>\r\n              <TableHead>Category</TableHead>\r\n              <TableHead>Status</TableHead>\r\n              <TableHead className=\"text-right\">Price</TableHead>\r\n            </TableRow>\r\n          </TableHeader>\r\n\r\n          <TableBody>\r\n            {products.map((product) => (\r\n              <TableRow\r\n                key={product.id}\r\n                className=\"odd:bg-muted/50 odd:hover:bg-muted/50 hover:bg-transparent\"\r\n              >\r\n                <TableCell className=\"font-medium\">{product.name}</TableCell>\r\n                <TableCell>{product.category}</TableCell>\r\n                <TableCell>{product.status}</TableCell>\r\n                <TableCell className=\"text-right font-medium\">\r\n                  {product.price}\r\n                </TableCell>\r\n              </TableRow>\r\n            ))}\r\n          </TableBody>\r\n\r\n          <TableFooter className=\"bg-transparent\">\r\n            <TableRow className=\"hover:bg-transparent\">\r\n              <TableCell colSpan={3}>Total Value</TableCell>\r\n              <TableCell className=\"text-right font-semibold\">\r\n                ₹4,98,889\r\n              </TableCell>\r\n            </TableRow>\r\n          </TableFooter>\r\n        </Table>\r\n      </div>\r\n      <p className=\"text-muted-foreground mt-4 text-center text-sm\">\r\n        Product inventory table\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Table3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/table-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

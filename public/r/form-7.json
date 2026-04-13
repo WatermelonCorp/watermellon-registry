@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-7",
+  "dependencies": [
+    "react-icons",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "field",
+    "button",
+    "textarea",
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/form/form-7.tsx",
+      "content": "\"use client\";\r\n\r\nimport { FaCheckDouble, FaCommentDots } from \"react-icons/fa\";\r\n\r\nimport { zodResolver } from \"@hookform/resolvers/zod\";\r\nimport { useForm } from \"react-hook-form\";\r\nimport { toast } from \"sonner\";\r\nimport { z } from \"zod\";\r\n\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Field,\r\n  FieldContent,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldLabel,\r\n} from \"@/components/ui/field\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst FormSchema = z.object({\r\n  feedback: z\r\n    .string()\r\n    .min(30, \"Please share a bit more detail (at least 30 characters).\")\r\n    .max(300, \"Keep it concise (max 300 characters).\"),\r\n});\r\n\r\nconst Form7 = () => {\r\n  const form = useForm<z.infer<typeof FormSchema>>({\r\n    resolver: zodResolver(FormSchema),\r\n    defaultValues: { feedback: \"\" },\r\n  });\r\n\r\n  function onSubmit() {\r\n    toast.custom(() => (\r\n      <Alert className=\"border-success text-success flex items-center gap-2 sm:w-110\">\r\n        <FaCheckDouble className=\"animate-pulse\" />\r\n        <AlertTitle>\r\n          Your input has been recorded. Thanks for helping us improve 🚀\r\n        </AlertTitle>\r\n      </Alert>\r\n    ));\r\n  }\r\n\r\n  return (\r\n    <form\r\n      onSubmit={form.handleSubmit(onSubmit)}\r\n      className=\"w-full max-w-xs space-y-6\"\r\n    >\r\n      <Field>\r\n        <FieldLabel className=\"flex items-center gap-2\">\r\n          <FaCommentDots className=\"text-muted-foreground\" />\r\n          Tell Us What You Think\r\n        </FieldLabel>\r\n\r\n        <FieldContent>\r\n          <Textarea\r\n            placeholder=\"Share your thoughts, ideas, or anything that could make your experience better...\"\r\n            {...form.register(\"feedback\")}\r\n            className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 bg-muted/50 rounded-sm shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,1),inset_0px_-1px_0px_0px_rgba(0,0,0,0.05)] transition-all focus:scale-[1.01] dark:shadow-[inset_0px_1px_1px_0px_rgba(255,255,255,0.25),inset_0px_-1px_0px_0px_rgba(0,0,0,0.7)]\"\r\n          />\r\n        </FieldContent>\r\n\r\n        <FieldDescription>\r\n          Your insights directly shape future improvements and features.\r\n        </FieldDescription>\r\n\r\n        <FieldError className=\"bg-destructive/10 border-destructive/50 rounded-sm border p-1 text-xs shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,1),inset_0px_-1px_0px_0px_rgba(0,0,0,0.05)] dark:shadow-[inset_0px_1px_1px_0px_rgba(255,255,255,0.25),inset_0px_-1px_0px_0px_rgba(0,0,0,0.7)]\">\r\n          {form.formState.errors.feedback?.message}\r\n        </FieldError>\r\n      </Field>\r\n\r\n      <Button\r\n        type=\"submit\"\r\n        className=\"flex w-full items-center justify-center gap-2 rounded-sm border border-black/5 shadow-xs transition-all text-shadow-xs active:scale-98\"\r\n      >\r\n        Submit Feedback\r\n      </Button>\r\n    </form>\r\n  );\r\n};\r\n\r\nexport default Form7;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/form-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

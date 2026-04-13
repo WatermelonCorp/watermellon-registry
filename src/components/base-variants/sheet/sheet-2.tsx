@@ -59,7 +59,7 @@ const SheetContentBody = () => (
 
 const Sheet2 = () => {
   return (
-    <div className="theme-injected flex flex-wrap gap-3">
+    <div className="  flex flex-wrap gap-3">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon">

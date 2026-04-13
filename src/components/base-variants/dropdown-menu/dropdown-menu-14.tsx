@@ -17,7 +17,7 @@ import { HiCheck } from "react-icons/hi";
 const workspaces = [
   {
     id: 1,
-    name: "Watermelon ui",
+    name: "Watermelonui",
     plan: "Pro Plan",
     members: 12,
     icon: "WU",
@@ -43,7 +43,7 @@ const DropdownMenu14 = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className=" bg-secondary flex w-[260px] items-center gap-3 rounded-lg px-2 py-2">
+      <DropdownMenuTrigger className="bg-secondary flex w-[260px] items-center gap-3 rounded-lg px-2 py-2">
         <div className="bg-primary text-primary-foreground flex h-9 w-9 items-center justify-center rounded-md text-sm font-semibold">
           {selected.icon}
         </div>
@@ -57,7 +57,7 @@ const DropdownMenu14 = () => {
         </div>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align="start" className="w-[320px] rounded-lg p-2">
+      <DropdownMenuContent align="center" className="w-[320px] rounded-lg p-2">
         <div className="px-2 py-2">
           <p className="text-sm font-semibold">Workspaces</p>
           <p className="text-muted-foreground text-xs">
@@ -72,11 +72,11 @@ const DropdownMenu14 = () => {
           Recent
         </DropdownMenuLabel>
 
-        {workspaces.slice(0, 1).map((ws) => (
+        {[selected].map((ws) => (
           <DropdownMenuItem
             key={ws.id}
             onClick={() => setSelected(ws)}
-            className="p-2hover:bg-accent/50! flex items-center gap-3 rounded-lg"
+            className="hover:bg-accent/50! flex items-center gap-3 rounded-lg p-2"
           >
             <div className="bg-primary/10 text-primary flex h-8 w-8 items-center justify-center rounded-md text-xs font-semibold">
               {ws.icon}

@@ -3,10 +3,7 @@ import { FaBolt, FaUsers, FaCrown } from "react-icons/fa6";
 
 const RadioGroup4 = () => {
   return (
-    <RadioGroup
-      defaultValue="starter"
-      className="theme-injected max-w-md space-y-3"
-    >
+    <RadioGroup defaultValue="starter" className="  max-w-md space-y-3">
       <label
         htmlFor="starter"
         className="group border-border has-[:checked]:border-primary has-[:checked]:bg-accent/50 flex cursor-pointer items-start gap-3 rounded-lg border p-4 transition hover:-translate-y-0.5 hover:shadow-md has-[:checked]:shadow-md"

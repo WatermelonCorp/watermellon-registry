@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-9",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/table/table-9.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableFooter,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/components/ui/table\";\r\n\r\nconst transactions = [\r\n  { id: \"TXN001\", status: \"Success\", amount: \"₹2,500\", method: \"UPI\" },\r\n  { id: \"TXN002\", status: \"Pending\", amount: \"₹1,200\", method: \"Card\" },\r\n  { id: \"TXN003\", status: \"Failed\", amount: \"₹3,800\", method: \"Net Banking\" },\r\n  { id: \"TXN004\", status: \"Success\", amount: \"₹900\", method: \"Wallet\" },\r\n  { id: \"TXN005\", status: \"Success\", amount: \"₹4,200\", method: \"UPI\" },\r\n  { id: \"TXN006\", status: \"Pending\", amount: \"₹700\", method: \"Debit Card\" },\r\n  { id: \"TXN007\", status: \"Failed\", amount: \"₹1,500\", method: \"Bank Transfer\" },\r\n  { id: \"TXN008\", status: \"Success\", amount: \"₹2,100\", method: \"UPI\" },\r\n  { id: \"TXN009\", status: \"Pending\", amount: \"₹950\", method: \"Google Pay\" },\r\n  { id: \"TXN010\", status: \"Failed\", amount: \"₹1,800\", method: \"Apple Pay\" },\r\n];\r\n\r\nconst Table9 = () => {\r\n  return (\r\n    <div className=\"w-full\">\r\n      <div className=\"overflow-y-auto [&>div]:max-h-70 [&>div]:rounded-sm [&>div]:border\">\r\n        <Table>\r\n          <TableHeader>\r\n            <TableRow className=\"from-muted/90 via-muted/70 to-muted/30 sticky top-0 z-20 bg-gradient-to-b backdrop-blur-sm rounded-t-sm\">\r\n              <TableHead className=\"w-25\">Transaction</TableHead>\r\n              <TableHead>Status</TableHead>\r\n              <TableHead>Method</TableHead>\r\n              <TableHead className=\"text-right\">Amount</TableHead>\r\n            </TableRow>\r\n          </TableHeader>\r\n\r\n          <TableBody>\r\n            {transactions.map((txn) => (\r\n              <TableRow key={txn.id}>\r\n                <TableCell className=\"font-medium\">{txn.id}</TableCell>\r\n                <TableCell>{txn.status}</TableCell>\r\n                <TableCell>{txn.method}</TableCell>\r\n                <TableCell className=\"text-right\">{txn.amount}</TableCell>\r\n              </TableRow>\r\n            ))}\r\n          </TableBody>\r\n\r\n          <TableFooter>\r\n            <TableRow>\r\n              <TableCell colSpan={3}>Total</TableCell>\r\n              <TableCell className=\"text-right\">₹19,650</TableCell>\r\n            </TableRow>\r\n          </TableFooter>\r\n        </Table>\r\n      </div>\r\n\r\n      <p className=\"text-muted-foreground mt-4 text-center text-sm\">\r\n        Sticky header with progressive blur\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Table9;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/table-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

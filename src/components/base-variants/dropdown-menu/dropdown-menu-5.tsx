@@ -22,7 +22,7 @@ import {
 
 const DropdownMenu5 = () => {
   return (
-    <div className="">
+    <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" className="rounded-lg">
@@ -31,8 +31,8 @@ const DropdownMenu5 = () => {
         </DropdownMenuTrigger>
 
         <DropdownMenuContent
-          align="end"
-          className="bg-popover w-64 rounded-lg border p-2 shadow-md"
+          align="center"
+          className="bg-popover w-64 rounded-lg border p-1 shadow-md"
         >
           <DropdownMenuGroup>
             <DropdownMenuItem className="group flex cursor-pointer items-center gap-3 rounded-lg p-2">
@@ -81,7 +81,10 @@ const DropdownMenu5 = () => {
               <DropdownMenuShortcut>⌘ ,</DropdownMenuShortcut>
             </DropdownMenuItem>
 
-            <DropdownMenuItem className="group text-destructive focus:text-destructive flex cursor-pointer items-center gap-3 rounded-lg p-2">
+            <DropdownMenuItem
+              className="group text-destructive focus:text-destructive flex cursor-pointer items-center gap-3 rounded-lg p-2"
+              variant="destructive"
+            >
               <FaRightFromBracket className="transition-all duration-200 group-hover:translate-x-1 group-hover:scale-110" />
               <span className="text-sm font-medium">Logout</span>
               <DropdownMenuShortcut>⌘ ⇧ Q</DropdownMenuShortcut>

@@ -30,7 +30,7 @@ const InputMask6 = () => {
             outputFormat: "HH:MM:ss",
             showMaskOnHover: false,
           })}
-          className="border-0 bg-transparent p-0 shadow-none focus-visible:border-0 focus-visible:ring-0"
+          className="border-0 bg-transparent dark:bg-transparent p-0 shadow-none focus-visible:border-0 focus-visible:ring-0"
         />
       </div>
 

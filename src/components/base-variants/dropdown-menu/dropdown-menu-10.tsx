@@ -35,7 +35,7 @@ const DropdownMenu10 = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" className="rounded-lg">
@@ -43,7 +43,10 @@ const DropdownMenu10 = () => {
           </Button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent className="bg-popover w-64 rounded-lg border p-1 shadow-md">
+        <DropdownMenuContent
+          className="bg-popover w-64 rounded-lg border p-1 shadow-md"
+          align="center"
+        >
           <DropdownMenuLabel className="px-1 pb-1 text-sm font-semibold">
             Dev Preferences
           </DropdownMenuLabel>

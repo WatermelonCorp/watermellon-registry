@@ -4,7 +4,7 @@ import { FaSun, FaMoon, FaDesktop } from "react-icons/fa";
 
 const RadioGroup3 = () => {
   return (
-    <RadioGroup defaultValue="light" className="theme-injected space-y-2">
+    <RadioGroup defaultValue="light" className="  space-y-2">
       <div className="flex items-center gap-2">
         <RadioGroupItem
           value="light"
