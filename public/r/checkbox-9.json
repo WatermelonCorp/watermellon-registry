@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-9",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-9.tsx",
+      "content": "'use client'\r\n\r\nimport { useState, type ComponentType, type SVGProps } from 'react'\r\n\r\nimport { BriefcaseIcon, FolderKanbanIcon, PenToolIcon } from 'lucide-react'\r\n\r\nimport { Checkbox } from '@/components/ui/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n\r\ntype FruitOption = {\r\n  icon: ComponentType<SVGProps<SVGSVGElement>>\r\n  label: string\r\n}\r\n\r\nconst fruits: readonly FruitOption[] = [\r\n  { label: 'Planning', icon: FolderKanbanIcon },\r\n  { label: 'Design', icon: PenToolIcon },\r\n  { label: 'Operations', icon: BriefcaseIcon }\r\n]\r\n\r\nconst Checkbox9 = () => {\r\n  const [selectedFruits, setSelectedFruits] = useState<string[]>([])\r\n\r\n  const handleCheckedChange = (fruitLabel: string, checked: boolean) => {\r\n    setSelectedFruits((previousSelectedFruits) =>\r\n      checked\r\n        ? previousSelectedFruits.includes(fruitLabel)\r\n          ? previousSelectedFruits\r\n          : [...previousSelectedFruits, fruitLabel]\r\n        : previousSelectedFruits.filter(\r\n            (selectedFruit) => selectedFruit !== fruitLabel\r\n          )\r\n    )\r\n  }\r\n\r\n  return (\r\n    <div className='space-y-4'>\r\n      <Label className='font-semibold'>Focus areas</Label>\r\n      <div className='flex flex-col gap-3.5'>\r\n        {fruits.map(({ label, icon: Icon }) => (\r\n          <div key={label} className='flex items-center gap-2.5'>\r\n            <Checkbox\r\n              id={label}\r\n              checked={selectedFruits.includes(label)}\r\n              onCheckedChange={(checked) => handleCheckedChange(label, checked === true)}\r\n              className='data-checked:border-sky-600 data-checked:bg-sky-600 dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500'\r\n            />\r\n            <Label htmlFor={label} className='flex items-center gap-2 text-sm'>\r\n              <Icon className='size-4 text-muted-foreground' aria-hidden='true' />\r\n              {label}\r\n            </Label>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Checkbox9\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker-9",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "date-picker"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/date-picker/date-picker-9.tsx",
+      "content": "import { Clock8Icon } from 'lucide-react';\r\nimport { Input } from '@/components/ui/input';\r\nimport { Label } from '@/components/ui/label';\r\nimport type { FC } from 'react';\r\n\r\nconst initialTimeValue = '10:10:00' as const;\r\n\r\nconst DatePicker9: FC = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-3\">\r\n      <Label htmlFor=\"time-picker\" className=\"px-1 text-sm font-semibold text-primary\">\r\n        Time input with start icon\r\n      </Label>\r\n      <div className=\"relative\">\r\n        <div className=\"text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 peer-disabled:opacity-50\">\r\n          <Clock8Icon className=\"size-5 text-primary/80\" />\r\n          <span className=\"sr-only\">User</span>\r\n        </div>\r\n        <Input\r\n          type=\"time\"\r\n          id=\"time-picker\"\r\n          step={1}\r\n          defaultValue={initialTimeValue}\r\n          className=\"peer h-11 rounded-2xl border-border/60 bg-background appearance-none pl-11 pr-3 shadow-xs focus:ring-2 focus:ring-primary/30 [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DatePicker9;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/date-picker-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

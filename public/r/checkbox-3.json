@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-3",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-3.tsx",
+      "content": "'use client'\r\n\r\nimport { useId, useState } from 'react'\r\n\r\nimport { Checkbox } from '@/components/ui/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n\r\ntype CheckboxCopy = {\r\n  label: string\r\n}\r\n\r\nconst checkboxCopy: CheckboxCopy = {\r\n  label: 'Subscribe to product updates',\r\n}\r\n\r\nconst Checkbox3 = () => {\r\n  const id = useId()\r\n  const [isChecked, setIsChecked] = useState<boolean>(false)\r\n\r\n  return (\r\n    <div className='flex max-w-sm items-start gap-3'>\r\n      <Checkbox\r\n        id={id}\r\n        checked={isChecked}\r\n        onCheckedChange={(checked) => setIsChecked(checked === true)}\r\n        className='mt-0.5 border-dashed border-input data-checked:border-sky-600 data-checked:bg-sky-600 dark:border-input dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500'\r\n      />\r\n      <div className='space-y-1'>\r\n        <Label htmlFor={id} className='text-sm font-medium'>\r\n          {checkboxCopy.label}\r\n        </Label>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Checkbox3\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

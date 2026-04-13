@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-7",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-7.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport { \r\n  NativeSelect, \r\n  NativeSelectOptGroup,\r\n  NativeSelectOption \r\n} from '@/components/ui/native-select';\r\n\r\nconst Select7 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Architecture Blueprint\r\n      </Label>\r\n      <NativeSelect \r\n        id={id} \r\n        className=\"w-full rounded-xl border-zinc-200 shadow-xs dark:border-zinc-800 dark:bg-zinc-950 transition-all focus:ring-2 focus:ring-zinc-400/20 dark:focus:ring-zinc-500/20 dark:[&_select]:[color-scheme:dark]\"\r\n      >\r\n        <NativeSelectOptGroup label=\"Virtualization Layer\" className=\"dark:bg-zinc-950 dark:text-zinc-500\">\r\n          <NativeSelectOption value=\"docker\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Container Engine (Docker)</NativeSelectOption>\r\n          <NativeSelectOption value=\"kvm\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Kernel Virtual Machine</NativeSelectOption>\r\n          <NativeSelectOption value=\"firecracker\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">MicroVM (Firecracker)</NativeSelectOption>\r\n        </NativeSelectOptGroup>\r\n        <NativeSelectOptGroup label=\"Orchestration Fabric\" className=\"dark:bg-zinc-950 dark:text-zinc-500\">\r\n          <NativeSelectOption value=\"k8s\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Managed Kubernetes</NativeSelectOption>\r\n          <NativeSelectOption value=\"nomad\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">HashiCorp Nomad</NativeSelectOption>\r\n          <NativeSelectOption value=\"swarm\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Docker Swarm Mode</NativeSelectOption>\r\n        </NativeSelectOptGroup>\r\n      </NativeSelect>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select7;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

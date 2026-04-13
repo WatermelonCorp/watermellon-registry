@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-6",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-6.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport { NativeSelect } from '@/components/ui/native-select';\r\n\r\nconst Select6 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"flex items-center gap-1 text-zinc-600 dark:text-zinc-400\">\r\n        Primary Deployment Region <span className=\"text-red-500 font-bold\" aria-hidden=\"true\">*</span>\r\n      </Label>\r\n      <NativeSelect \r\n        id={id} \r\n        required\r\n        className=\"w-full rounded-xl border-zinc-200 shadow-xs dark:border-zinc-800 dark:bg-zinc-950 transition-all focus:ring-2 focus:ring-zinc-400/20 dark:focus:ring-zinc-500/20 dark:[&_select]:[color-scheme:dark]\"\r\n      >\r\n        <option value=\"us-east\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">US East (N. Virginia)</option>\r\n        <option value=\"eu-west\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">EU West (Ireland)</option>\r\n        <option value=\"ap-south\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Asia Pacific (Mumbai)</option>\r\n        <option value=\"all\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Global Multi-AZ</option>\r\n      </NativeSelect>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select6;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

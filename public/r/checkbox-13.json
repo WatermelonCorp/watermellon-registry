@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-13",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-13.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { Checkbox } from '@/components/ui/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst settingOptions = [\r\n  {\r\n    id: 'auto-start',\r\n    label: 'Launch at startup',\r\n    description: 'Starting with your OS.'\r\n  },\r\n  {\r\n    id: 'auto-update',\r\n    label: 'Install updates automatically',\r\n    description: 'Download and install new version'\r\n  }\r\n] as const\r\n\r\ntype SettingOption = (typeof settingOptions)[number]\r\ntype SettingOptionId = SettingOption['id']\r\n\r\nconst initialCheckedSettings: Record<SettingOptionId, boolean> = {\r\n  'auto-start': true,\r\n  'auto-update': false\r\n}\r\n\r\nconst Checkbox13 = () => {\r\n  const [checkedSettings, setCheckedSettings] = useState<\r\n    Record<SettingOptionId, boolean>\r\n  >(\r\n    initialCheckedSettings\r\n  )\r\n\r\n  const handleCheckedChange = (id: SettingOptionId, checked: boolean) => {\r\n    setCheckedSettings((previousCheckedSettings) => ({\r\n      ...previousCheckedSettings,\r\n      [id]: checked\r\n    }))\r\n  }\r\n\r\n  return (\r\n    <div className='space-y-2.5'>\r\n      {settingOptions.map((option) => (\r\n        <Label\r\n          key={option.id}\r\n          htmlFor={option.id}\r\n          className={`hover:bg-accent/40 flex items-start gap-3 rounded-2xl border p-3.5 shadow-xs transition-colors ${\r\n            checkedSettings[option.id]\r\n              ? 'border-sky-600/70 bg-sky-50/80 dark:border-sky-900 dark:bg-sky-950'\r\n              : 'border-border/70 bg-background'\r\n          }`}\r\n        >\r\n          <Checkbox\r\n            id={option.id}\r\n            checked={checkedSettings[option.id]}\r\n            onCheckedChange={(checked) =>\r\n              handleCheckedChange(option.id, checked === true)\r\n            }\r\n            className='mt-0.5 data-checked:border-sky-600 data-checked:bg-sky-600 data-checked:text-white dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500'\r\n          />\r\n          <div className='grid gap-1 font-normal'>\r\n            <p className='text-sm leading-none font-medium'>{option.label}</p>\r\n            <p className='text-muted-foreground text-[13px] leading-5'>\r\n              {option.description}\r\n            </p>\r\n          </div>\r\n        </Label>\r\n      ))}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Checkbox13\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

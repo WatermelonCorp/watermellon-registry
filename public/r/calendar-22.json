@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-22",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-22.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { addDays } from 'date-fns'\r\n\r\nimport { Button } from '@/components/ui//button'\r\nimport { Calendar } from '@/components/ui//calendar'\r\nimport { Card, CardContent, CardFooter } from '@/components/ui//card'\r\n\r\ntype DatePreset = {\r\n  label: string\r\n  value: DatePresetOffset\r\n}\r\n\r\ntype DatePresetOffset = -1 | 0 | 1 | 3 | 7 | 14\r\n\r\nconst initialSelectedDate: Date = new Date()\r\n\r\nconst datePresets: readonly DatePreset[] = [\r\n  { label: 'Today', value: 0 },\r\n  { label: 'Yesterday', value: -1 },\r\n  { label: 'Tomorrow', value: 1 },\r\n  { label: 'In 3 days', value: 3 },\r\n  { label: 'In a week', value: 7 },\r\n  { label: 'In 2 weeks', value: 14 }\r\n]\r\n\r\nconst Calendar22 = () => {\r\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(\r\n    initialSelectedDate\r\n  )\r\n\r\n  const handlePresetSelect = (presetOffset: DatePresetOffset) => {\r\n    const nextDate = addDays(new Date(), presetOffset)\r\n\r\n    setSelectedDate(nextDate)\r\n  }\r\n\r\n  return (\r\n    <div>\r\n      <Card className='max-w-xs rounded-[1.75rem] border-border/60 bg-muted/10 py-4 shadow-sm'>\r\n        <CardContent className='px-4'>\r\n          <Calendar\r\n            mode='single'\r\n            selected={selectedDate}\r\n            onSelect={setSelectedDate}\r\n            defaultMonth={selectedDate}\r\n            classNames={{\r\n              today: '!bg-transparent',\r\n              day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'\r\n            }}\r\n            className='w-full !bg-transparent p-0 !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent'\r\n          />\r\n        </CardContent>\r\n        <CardFooter className='flex flex-wrap gap-2 border-t border-dashed border-border/60 px-4 !pt-4'>\r\n          {datePresets.map(preset => (\r\n            <Button\r\n              key={preset.value}\r\n              variant='outline'\r\n              size='sm'\r\n              className='h-8 flex-1 rounded-full border-border/60 bg-background'\r\n              onClick={() => handlePresetSelect(preset.value)}\r\n            >\r\n              {preset.label}\r\n            </Button>\r\n          ))}\r\n        </CardFooter>\r\n      </Card>\r\n      <p\r\n        className='text-muted-foreground mt-4 text-center text-[11px] uppercase tracking-wide'\r\n        role='region'\r\n      >\r\n        Calendar with presets\r\n      </p>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Calendar22\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-22.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

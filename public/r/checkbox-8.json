@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-8",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-8.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { Checkbox } from '@/components/ui/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst technologies = ['Design', 'Marketing', 'Product'] as const\r\n\r\ntype Technology = (typeof technologies)[number]\r\n\r\nconst Checkbox8 = () => {\r\n  const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>(\r\n    []\r\n  )\r\n\r\n  const handleCheckedChange = (technology: Technology, checked: boolean) => {\r\n    setSelectedTechnologies((previousSelectedTechnologies) =>\r\n      checked\r\n        ? previousSelectedTechnologies.includes(technology)\r\n          ? previousSelectedTechnologies\r\n          : [...previousSelectedTechnologies, technology]\r\n        : previousSelectedTechnologies.filter(\r\n            (selectedTechnology) => selectedTechnology !== technology\r\n          )\r\n    )\r\n  }\r\n\r\n  return (\r\n    <div className='space-y-4'>\r\n      <Label className='font-semibold'>Team roles</Label>\r\n      <div className='flex flex-wrap items-center gap-x-5 gap-y-2.5'>\r\n        {technologies.map((technology) => (\r\n          <div key={technology} className='flex items-center gap-2'>\r\n            <Checkbox\r\n              id={technology}\r\n              checked={selectedTechnologies.includes(technology)}\r\n              onCheckedChange={(checked) =>\r\n                handleCheckedChange(technology, checked === true)\r\n              }\r\n              className='data-checked:border-sky-600 data-checked:bg-sky-600 dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500'\r\n            />\r\n            <Label htmlFor={technology} className='text-sm'>\r\n              {technology}\r\n            </Label>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Checkbox8\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

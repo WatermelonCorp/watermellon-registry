@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-34",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-34.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport { NativeSelect } from '@/components/ui/native-select';\r\n\r\nconst Select34 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2 text-zinc-900 dark:text-zinc-100\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Dietary Preferences\r\n      </Label>\r\n      <NativeSelect \r\n        id={id} \r\n        multiple \r\n        className=\"w-full [&_svg]:hidden [&_select]:h-32 [&_select]:rounded-xl [&_select]:border-zinc-200 [&_select]:py-2 [&_select]:pr-2.5 [&_select]:shadow-xs dark:[&_select]:border-zinc-800 dark:[&_select]:bg-zinc-950 transition-all [&_select]:focus-visible:ring-zinc-400/20 dark:[&_select]:focus-visible:ring-zinc-500/20\"\r\n      >\r\n        <option value=\"vegetarian\" className=\"py-1 px-1.5 focus:bg-zinc-100 dark:focus:bg-zinc-900\">\r\n          Vegetarian Options\r\n        </option>\r\n        <option value=\"vegan\" className=\"py-1 px-1.5 focus:bg-zinc-100 dark:focus:bg-zinc-900\">\r\n          Strictly Vegan\r\n        </option>\r\n        <option value=\"gluten-free\" className=\"py-1 px-1.5 focus:bg-zinc-100 dark:focus:bg-zinc-900\">\r\n          Gluten-Free Diet\r\n        </option>\r\n        <option value=\"halal\" className=\"py-1 px-1.5 focus:bg-zinc-100 dark:focus:bg-zinc-900\">\r\n          Halal Certified\r\n        </option>\r\n        <option value=\"kosher\" className=\"py-1 px-1.5 focus:bg-zinc-100 dark:focus:bg-zinc-900\">\r\n          Kosher Selection\r\n        </option>\r\n        <option value=\"dairy-free\" className=\"py-1 px-1.5 focus:bg-zinc-100 dark:focus:bg-zinc-900\">\r\n          Dairy-Free Items\r\n        </option>\r\n      </NativeSelect>\r\n      <p className=\"text-[11px] text-zinc-500 px-1 dark:text-zinc-500\">\r\n        Hold Cmd/Ctrl to select multiple preferences.\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select34;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-34.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

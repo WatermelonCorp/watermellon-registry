@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-8",
+  "dependencies": [],
+  "registryDependencies": [
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-8.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { NativeSelect } from '@/components/ui/native-select';\r\n\r\nconst Select8 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"group relative w-full max-w-xs transition-all\">\r\n      <label\r\n        htmlFor={id}\r\n        className=\"absolute -top-2 left-3 z-10 bg-white px-1.5 text-[11px] font-semibold text-zinc-500 transition-colors group-focus-within:text-zinc-900 dark:bg-zinc-950 dark:text-zinc-500 dark:group-focus-within:text-zinc-100\"\r\n      >\r\n        Execution Priority\r\n      </label>\r\n      <NativeSelect \r\n        id={id} \r\n        className=\"w-full rounded-xl border-zinc-200 shadow-xs dark:border-zinc-800 dark:bg-zinc-950 transition-all focus:ring-2 focus:ring-zinc-400/20 dark:focus:ring-zinc-500/20 dark:[&_select]:[color-scheme:dark] dark:[&_select]:bg-zinc-950 dark:hover:[&_select]:bg-zinc-950\"\r\n      >\r\n        <option value=\"low\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Low (Background Task)</option>\r\n        <option value=\"med\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Medium (Standard Request)</option>\r\n        <option value=\"high\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">High (Real-time Critical)</option>\r\n        <option value=\"ultra\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Ultra (System Interrupt)</option>\r\n      </NativeSelect>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select8;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

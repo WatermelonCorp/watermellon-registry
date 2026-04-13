@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-1",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "combobox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/combobox/combobox-1.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { ChevronsUpDownIcon } from 'lucide-react'\r\n\r\nimport {\r\n  Command,\r\n  CommandEmpty,\r\n  CommandGroup,\r\n  CommandInput,\r\n  CommandItem,\r\n  CommandList\r\n} from '@/components/ui//command'\r\nimport { Popover, PopoverContent, PopoverTrigger } from '@/components/ui//popover'\r\n\r\nconst frameworks = [\r\n  {\r\n    value: 'design',\r\n    label: 'Design'\r\n  },\r\n  {\r\n    value: 'engineering',\r\n    label: 'Engineering'\r\n  },\r\n  {\r\n    value: 'marketing',\r\n    label: 'Marketing'\r\n  },\r\n  {\r\n    value: 'operations',\r\n    label: 'Operations'\r\n  },\r\n  {\r\n    value: 'support',\r\n    label: 'Support'\r\n  }\r\n] as const\r\n\r\ntype FrameworkOption = (typeof frameworks)[number]\r\ntype FrameworkValue = FrameworkOption['value']\r\n\r\nconst isFrameworkValue = (value: string): value is FrameworkValue =>\r\n  frameworks.some((framework) => framework.value === value)\r\n\r\nconst frameworkLabelByValue: Record<FrameworkValue, FrameworkOption['label']> = {\r\n  design: 'Design',\r\n  engineering: 'Engineering',\r\n  marketing: 'Marketing',\r\n  operations: 'Operations',\r\n  support: 'Support'\r\n}\r\n\r\nconst Combobox1 = () => {\r\n  const [open, setOpen] = useState<boolean>(false)\r\n  const [selectedFramework, setSelectedFramework] = useState<FrameworkValue | ''>(\r\n    ''\r\n  )\r\n\r\n  return (\r\n    <Popover open={open} onOpenChange={setOpen}>\r\n      <PopoverTrigger\r\n        role='combobox'\r\n        aria-expanded={open}\r\n        className='flex h-10 w-full max-w-xs items-center justify-between rounded-xl border border-border/60 bg-background px-3 text-sm shadow-xs outline-none transition-colors hover:bg-accent/30 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50'\r\n        aria-label='Framework combobox'\r\n      >\r\n        {selectedFramework\r\n          ? frameworkLabelByValue[selectedFramework]\r\n          : 'Select team...'}\r\n        <ChevronsUpDownIcon className='size-4 opacity-50' />\r\n      </PopoverTrigger>\r\n      <PopoverContent className='w-[var(--radix-popover-trigger-width)] rounded-xl border-border/60 p-0 shadow-sm'>\r\n        <Command>\r\n          <CommandInput placeholder='Search team...' className='h-9' />\r\n          <CommandList>\r\n            <CommandEmpty>No team found.</CommandEmpty>\r\n            <CommandGroup>\r\n              {frameworks.map(framework => (\r\n                <CommandItem\r\n                  key={framework.value}\r\n                  value={framework.value}\r\n                  className='pr-2'\r\n                  data-checked={selectedFramework === framework.value}\r\n                  onSelect={currentValue => {\r\n                    if (currentValue === selectedFramework) {\r\n                      setSelectedFramework('')\r\n                      setOpen(false)\r\n                      return\r\n                    }\r\n\r\n                    if (!isFrameworkValue(currentValue)) {\r\n                      return\r\n                    }\r\n\r\n                    setSelectedFramework(currentValue)\r\n                    setOpen(false)\r\n                  }}\r\n                >\r\n                  {framework.label}\r\n                </CommandItem>\r\n              ))}\r\n            </CommandGroup>\r\n          </CommandList>\r\n        </Command>\r\n      </PopoverContent>\r\n    </Popover>\r\n  )\r\n}\r\n\r\nexport default Combobox1\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/combobox-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-12",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-12.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { CircleCheckIcon } from 'lucide-react'\r\n\r\nimport { Checkbox as CheckboxPrimitive } from '@base-ui/react/checkbox'\r\n\r\ntype CheckboxColorId = 'destructive' | 'info' | 'success'\r\n\r\ntype CheckboxColorOption = {\r\n  ariaLabel: string\r\n  className: string\r\n  id: CheckboxColorId\r\n}\r\n\r\nconst checkboxColorOptions: readonly CheckboxColorOption[] = [\r\n  {\r\n    id: 'destructive',\r\n    ariaLabel: 'Color destructive',\r\n    className:\r\n      'bg-destructive focus-visible:ring-destructive/20 data-checked:text-destructive dark:focus-visible:ring-destructive/40'\r\n  },\r\n  {\r\n    id: 'info',\r\n    ariaLabel: 'Color info',\r\n    className:\r\n      'bg-sky-600 focus-visible:ring-sky-600/20 data-checked:text-sky-600 dark:bg-sky-400 dark:focus-visible:ring-sky-400/40 dark:data-checked:text-sky-400'\r\n  },\r\n  {\r\n    id: 'success',\r\n    ariaLabel: 'Color success',\r\n    className:\r\n      'bg-green-600 focus-visible:ring-green-600/20 data-checked:text-green-600 dark:bg-green-400 dark:focus-visible:ring-green-400/40 dark:data-checked:text-green-400'\r\n  }\r\n]\r\n\r\nconst Checkbox12 = () => {\r\n  const [checkedColors, setCheckedColors] = useState<\r\n    Record<CheckboxColorId, boolean>\r\n  >({\r\n    destructive: true,\r\n    info: true,\r\n    success: true\r\n  })\r\n\r\n  const handleCheckedChange = (\r\n    id: CheckboxColorOption['id'],\r\n    checked: boolean\r\n  ) => {\r\n    setCheckedColors((previousCheckedColors) => ({\r\n      ...previousCheckedColors,\r\n      [id]: checked\r\n    }))\r\n  }\r\n\r\n  return (\r\n    <div className='flex items-center gap-3'>\r\n      {checkboxColorOptions.map((option) => (\r\n        <CheckboxPrimitive.Root\r\n          key={option.id}\r\n          data-slot='checkbox'\r\n          checked={checkedColors[option.id]}\r\n          onCheckedChange={(checked) => handleCheckedChange(option.id, checked === true)}\r\n          className={`peer grid size-7 shrink-0 place-items-center rounded-full border border-transparent shadow-sm outline-none transition-all hover:scale-[1.02] focus-visible:ring-[3px] ${option.className}`}\r\n          aria-label={option.ariaLabel}\r\n        >\r\n          <CheckboxPrimitive.Indicator\r\n            data-slot='checkbox-indicator'\r\n            className='grid place-items-center text-current transition-none'\r\n          >\r\n            <CircleCheckIcon className='size-5 fill-white stroke-current' />\r\n          </CheckboxPrimitive.Indicator>\r\n        </CheckboxPrimitive.Root>\r\n      ))}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Checkbox12\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-12.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

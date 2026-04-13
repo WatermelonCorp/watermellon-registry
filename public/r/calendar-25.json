@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-25",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-25.tsx",
+      "content": "'use client'\r\n\r\nimport { type ComponentProps, useState } from 'react'\r\n\r\nimport { Calendar, CalendarDayButton } from '@/components/ui//calendar'\r\n\r\ntype CalendarComponents = NonNullable<ComponentProps<typeof Calendar>['components']>\r\ntype CalendarDayButtonProps = ComponentProps<typeof CalendarDayButton>\r\n\r\nconst initialSelectedDate: Date = new Date()\r\nconst minimumAvailableDate: Date = new Date()\r\n\r\nfunction getPriceForDate(date: Date): number {\r\n  const seed = date.getFullYear() * 10000 + (date.getMonth() + 1) * 100 + date.getDate()\r\n  const randomValue = (seed * 9301 + 49297) % 233280\r\n\r\n  return Math.floor(50 + (randomValue / 233280) * 200)\r\n}\r\n\r\nconst calendarComponents = {\r\n  DayButton: ({ children, modifiers, day, ...props }: CalendarDayButtonProps) => {\r\n    const price = getPriceForDate(day.date)\r\n    const isLowPrice = price < 100\r\n\r\n    return (\r\n      <CalendarDayButton\r\n        day={day}\r\n        modifiers={modifiers}\r\n        {...props}\r\n        className='flex-col gap-0.5 px-1 py-1 sm:gap-1 sm:px-2 sm:py-2'\r\n      >\r\n        {children}\r\n        {!modifiers.outside && (\r\n          <span\r\n            className={\r\n              modifiers.selected\r\n                ? 'text-[0.6rem] leading-none text-zinc-100 opacity-100 sm:text-xs'\r\n                : isLowPrice\r\n                  ? 'text-[0.6rem] leading-none font-medium text-emerald-600 dark:text-emerald-400 sm:text-xs'\r\n                  : 'text-[0.6rem] leading-none text-muted-foreground sm:text-xs'\r\n            }\r\n          >\r\n            ${price}\r\n          </span>\r\n        )}\r\n      </CalendarDayButton>\r\n    )\r\n  }\r\n} satisfies CalendarComponents\r\n\r\nconst Calendar25 = () => {\r\n  const [selectedDate, setSelectedDate] = useState<Date | undefined>(\r\n    initialSelectedDate\r\n  )\r\n\r\n  return (\r\n    <div className='mx-auto w-full max-w-[20rem] px-2 sm:max-w-[24rem] sm:px-0 md:max-w-[30rem] lg:max-w-[34rem] xl:max-w-[38rem]'>\r\n      <Calendar\r\n        mode='single'\r\n        selected={selectedDate}\r\n        onSelect={setSelectedDate}\r\n        showOutsideDays={false}\r\n        classNames={{\r\n          today: '!bg-transparent',\r\n          day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'\r\n        }}\r\n        className='w-full !border-0 !bg-transparent p-2 transition-all !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent [--cell-size:--spacing(7)] sm:p-3 sm:[--cell-size:--spacing(8)] md:p-3 md:[--cell-size:--spacing(9)] lg:[--cell-size:--spacing(10)] xl:[--cell-size:--spacing(12)]'\r\n        components={calendarComponents}\r\n        disabled={{ before: minimumAvailableDate }}\r\n      />\r\n      <p\r\n        className='text-muted-foreground mt-4 text-center text-[10px] uppercase tracking-wide sm:text-[11px]'\r\n        role='region'\r\n      >\r\n        Calendar with pricing\r\n      </p>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Calendar25\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-25.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

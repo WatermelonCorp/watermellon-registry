@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-11",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-11.tsx",
+      "content": "'use client'\r\n\r\nimport {\r\n  type ComponentType,\r\n  type SVGProps,\r\n  useState\r\n} from 'react'\r\n\r\nimport { DiamondIcon, HexagonIcon, TriangleIcon } from 'lucide-react'\r\n\r\nimport { Checkbox as CheckboxPrimitive } from '@base-ui/react/checkbox'\r\n\r\ntype IconCheckboxOption = {\r\n  activeClassName: string\r\n  ariaLabel: string\r\n  icon: ComponentType<SVGProps<SVGSVGElement>>\r\n  id: string\r\n}\r\n\r\nconst iconCheckboxOptions: readonly IconCheckboxOption[] = [\r\n  {\r\n    id: 'triangle',\r\n    ariaLabel: 'Triangle icon',\r\n    icon: TriangleIcon,\r\n    activeClassName: 'fill-rose-500 stroke-rose-500 dark:fill-rose-400 dark:stroke-rose-400'\r\n  },\r\n  {\r\n    id: 'diamond',\r\n    ariaLabel: 'Diamond icon',\r\n    icon: DiamondIcon,\r\n    activeClassName:\r\n      'fill-cyan-500 stroke-cyan-500 dark:fill-cyan-400 dark:stroke-cyan-400'\r\n  },\r\n  {\r\n    id: 'hexagon',\r\n    ariaLabel: 'Hexagon icon',\r\n    icon: HexagonIcon,\r\n    activeClassName:\r\n      'fill-violet-500 stroke-violet-500 dark:fill-violet-400 dark:stroke-violet-400'\r\n  }\r\n]\r\n\r\nconst Checkbox11 = () => {\r\n  const [checkedIcons, setCheckedIcons] = useState<Record<string, boolean>>({\r\n    triangle: true,\r\n    diamond: true,\r\n    hexagon: true\r\n  })\r\n\r\n  const handleCheckedChange = (\r\n    id: IconCheckboxOption['id'],\r\n    checked: boolean\r\n  ) => {\r\n    setCheckedIcons((previousCheckedIcons) => ({\r\n      ...previousCheckedIcons,\r\n      [id]: checked\r\n    }))\r\n  }\r\n\r\n  return (\r\n    <div className='flex items-center gap-3'>\r\n      {iconCheckboxOptions.map((option) => {\r\n        const Icon = option.icon\r\n        const isChecked = checkedIcons[option.id]\r\n\r\n        return (\r\n          <CheckboxPrimitive.Root\r\n            key={option.id}\r\n            data-slot='checkbox'\r\n            checked={isChecked}\r\n            onCheckedChange={(checked) =>\r\n              handleCheckedChange(option.id, checked === true)\r\n            }\r\n            className='group rounded-md outline-none transition-transform hover:scale-[1.03] focus-visible:ring-3 focus-visible:ring-ring/50'\r\n            aria-label={option.ariaLabel}\r\n          >\r\n            <Icon\r\n              className={`size-5 stroke-1 transition-colors ${\r\n                isChecked ? option.activeClassName : ''\r\n              }`}\r\n            />\r\n          </CheckboxPrimitive.Root>\r\n        )\r\n      })}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Checkbox11\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-11.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

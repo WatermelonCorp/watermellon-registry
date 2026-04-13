@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-16",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-16.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select16 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        System Criticality\r\n      </Label>\r\n      <Select defaultValue=\"p2\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-200 bg-white shadow-xs transition-all hover:bg-zinc-50 focus-visible:border-zinc-400 focus-visible:ring-zinc-400/20 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:focus-visible:border-zinc-600 dark:focus-visible:ring-zinc-500/20\"\r\n        >\r\n          <SelectValue placeholder=\"Set level\" />\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectItem value=\"p1\" className=\"rounded-lg\">P1 - Highest Attention</SelectItem>\r\n          <SelectItem value=\"p2\" className=\"rounded-lg\">P2 - Priority Ops</SelectItem>\r\n          <SelectItem value=\"p3\" className=\"rounded-lg\">P3 - Regular Flow</SelectItem>\r\n          <SelectItem value=\"p4\" className=\"rounded-lg\">P4 - Informational</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select16;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-16.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

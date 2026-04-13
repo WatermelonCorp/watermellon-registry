@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-4",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/calendar/calendar-4.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { type DateRange } from 'react-day-picker'\r\n\r\nimport { Calendar } from '@/components/ui//calendar'\r\n\r\nconst initialDateRange: DateRange = {\r\n  from: new Date(2025, 4, 22),\r\n  to: new Date(2025, 5, 17)\r\n}\r\n\r\nconst Calendar4 = () => {\r\n  const [selectedDateRange, setSelectedDateRange] = useState<DateRange | undefined>(initialDateRange)\r\n\r\n  return (\r\n    <div>\r\n      <Calendar\r\n        mode='range'\r\n        defaultMonth={selectedDateRange?.from}\r\n        selected={selectedDateRange}\r\n        onSelect={setSelectedDateRange}\r\n        numberOfMonths={2}\r\n        classNames={{\r\n          today: '!bg-transparent',\r\n          day_button: '!ring-0 !ring-offset-0 focus:!ring-0 focus-visible:!ring-0'\r\n        }}\r\n        className='!border-0 !bg-transparent transition-all !ring-0 !ring-offset-0 focus:!ring-0 focus:!ring-offset-0 focus-visible:!ring-0 focus-visible:!ring-offset-0 [&_*]:!ring-0 [&_*]:!ring-offset-0 [&_*]:focus:!ring-0 [&_*]:focus-visible:!ring-0 [&_.rdp-day_today]:!bg-transparent'\r\n      />\r\n      <p className='mt-3 text-center text-xs text-muted-foreground' role='region'>\r\n        Two-month range picker\r\n      </p>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Calendar4\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

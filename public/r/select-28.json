@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-28",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-28.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select28 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Primary Framework\r\n      </Label>\r\n      <Select defaultValue=\"react\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-200 bg-white shadow-xs transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900\"\r\n        >\r\n          <span className=\"flex items-center gap-1.5 text-zinc-500 font-medium\">\r\n            Project Stack: <SelectValue placeholder=\"Identify core tech\" />\r\n          </span>\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectItem value=\"react\" className=\"rounded-lg\">React.js Engine</SelectItem>\r\n          <SelectItem value=\"vue\" className=\"rounded-lg\">Vue.js Ecosystem</SelectItem>\r\n          <SelectItem value=\"next\" className=\"rounded-lg\">Next.js Framework</SelectItem>\r\n          <SelectItem value=\"astro\" className=\"rounded-lg\">Astro Static Gen</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select28;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-28.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

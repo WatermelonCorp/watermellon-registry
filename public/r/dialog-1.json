@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-1",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dialog/dialog-1.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from '@/components/ui/alert-dialog';\r\nimport { Button } from '@/components/ui/button';\r\n\r\nimport type { FC } from 'react';\r\n\r\nconst Dialog1: FC = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger>\r\n        <Button\r\n          variant=\"outline\"\r\n          className=\"rounded-xl border border-zinc-200 bg-zinc-50 px-6 py-2 font-medium text-zinc-800 shadow-sm transition-all hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:bg-zinc-800\"\r\n        >\r\n          Alert Dialog\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent className=\"rounded-3xl border border-zinc-200 bg-zinc-50/95 shadow-2xl backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/95 dark:backdrop-blur-md\">\r\n        <AlertDialogHeader>\r\n          <AlertDialogTitle className=\"text-zinc-900 dark:text-zinc-100\">\r\n            Are you absolutely sure?\r\n          </AlertDialogTitle>\r\n          <AlertDialogDescription className=\"text-zinc-600 dark:text-zinc-400\">\r\n            This action cannot be undone. This will permanently delete your\r\n            account and remove your data from our servers.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <AlertDialogFooter>\r\n          <AlertDialogCancel className=\"rounded-2xl border border-zinc-300 bg-zinc-100 text-zinc-800 shadow hover:bg-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700\">\r\n            Cancel\r\n          </AlertDialogCancel>\r\n          <AlertDialogAction className=\"rounded-full bg-zinc-900 px-7 py-2.5 font-semibold text-white shadow transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200\">\r\n            Continue\r\n          </AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport default Dialog1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/dialog-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

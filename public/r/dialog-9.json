@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-9",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dialog/dialog-9.tsx",
+      "content": "import { Button } from '@/components/ui/button';\r\nimport {\r\n  Dialog,\r\n  DialogContent,\r\n  DialogDescription,\r\n  DialogHeader,\r\n  DialogTitle,\r\n  DialogTrigger,\r\n} from '@/components/ui/dialog';\r\nimport { Input } from '@/components/ui/input';\r\nimport { Label } from '@/components/ui/label';\r\n\r\nimport React from 'react';\r\nimport type { FormEvent } from 'react';\r\n\r\nconst Dialog9: React.FC = () => {\r\n  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {\r\n    e.preventDefault();\r\n    // You can add your subscribe logic here\r\n    // Example: show a toast or send API request\r\n  };\r\n\r\n  return (\r\n    <Dialog>\r\n      <DialogTrigger>\r\n        <Button\r\n          variant=\"secondary\"\r\n          className=\"rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white shadow-md hover:bg-blue-700\"\r\n        >\r\n          Subscribe\r\n        </Button>\r\n      </DialogTrigger>\r\n      <DialogContent className=\"rounded-2xl border-0 bg-white p-6 shadow-2xl sm:max-w-lg dark:bg-zinc-900\">\r\n        <DialogHeader className=\"space-y-1.5 text-left\">\r\n          <DialogTitle className=\"text-2xl font-bold text-zinc-900 dark:text-white\">\r\n            Join Our Community\r\n          </DialogTitle>\r\n          <DialogDescription className=\"text-sm text-zinc-600 dark:text-zinc-400\">\r\n            Enter your email to receive exclusive updates and member-only\r\n            resources. We respect your privacy.\r\n          </DialogDescription>\r\n        </DialogHeader>\r\n        <form\r\n          className=\"mt-2 flex flex-col items-start gap-3 sm:flex-row sm:items-end\"\r\n          onSubmit={handleSubmit}\r\n        >\r\n          <div className=\"flex w-full flex-1 flex-col gap-2 text-left\">\r\n            <Label\r\n              htmlFor=\"email\"\r\n              className=\"text-sm font-medium text-zinc-700 dark:text-zinc-200\"\r\n            >\r\n              Email Address\r\n            </Label>\r\n            <Input\r\n              type=\"email\"\r\n              id=\"email\"\r\n              name=\"email\"\r\n              placeholder=\"you@example.com\"\r\n              required\r\n              className=\"w-full rounded-lg border-zinc-300 focus:ring-2 focus:ring-blue-500 dark:border-zinc-700\"\r\n            />\r\n          </div>\r\n          <Button\r\n            type=\"submit\"\r\n            className=\"w-full rounded-lg bg-blue-600 px-6 py-2.5 font-semibold text-white shadow-md transition-colors hover:bg-blue-700 sm:w-auto\"\r\n          >\r\n            Join Now\r\n          </Button>\r\n        </form>\r\n      </DialogContent>\r\n    </Dialog>\r\n  );\r\n};\r\n\r\nexport default Dialog9;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/dialog-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

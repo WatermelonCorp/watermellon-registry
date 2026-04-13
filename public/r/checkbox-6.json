@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-6",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/checkbox/checkbox-6.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\n\r\nimport { Badge } from '@/components/ui/badge'\r\nimport { Checkbox } from '@/components/ui/checkbox'\r\n\r\nconst snacks = ['Salad', 'Wrap', 'Juice'] as const\r\n\r\ntype Snack = (typeof snacks)[number]\r\n\r\nconst Checkbox6 = () => {\r\n  const [selectedSnacks, setSelectedSnacks] = useState<Snack[]>([\r\n    'Salad',\r\n    'Wrap'\r\n  ])\r\n\r\n  const handleCheckedChange = (snack: Snack, checked: boolean) => {\r\n    setSelectedSnacks((previousSelectedSnacks) =>\r\n      checked\r\n        ? previousSelectedSnacks.includes(snack)\r\n          ? previousSelectedSnacks\r\n          : [...previousSelectedSnacks, snack]\r\n        : previousSelectedSnacks.filter((selectedSnack) => selectedSnack !== snack)\r\n    )\r\n  }\r\n\r\n  return (\r\n    <div className='flex items-center gap-2.5'>\r\n      {snacks.map((snack) => (\r\n        <Badge\r\n          key={snack}\r\n          variant='secondary'\r\n          className='relative rounded-lg px-3 py-4'\r\n        >\r\n          <Checkbox\r\n            id={snack}\r\n            checked={selectedSnacks.includes(snack)}\r\n            onCheckedChange={(checked) => handleCheckedChange(snack, checked === true)}\r\n            className={`pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 data-checked:border-sky-600 data-checked:bg-sky-600 dark:data-checked:border-sky-500 dark:data-checked:bg-sky-500 ${\r\n              selectedSnacks.includes(snack)\r\n                ? 'opacity-100'\r\n                : 'opacity-0'\r\n            }`}\r\n          />\r\n          <label\r\n            htmlFor={snack}\r\n            className={`cursor-pointer select-none text-sm after:absolute after:inset-0 ${\r\n              selectedSnacks.includes(snack) ? 'pl-5' : ''\r\n            }`}\r\n          >\r\n            {snack}\r\n          </label>\r\n        </Badge>\r\n      ))}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Checkbox6\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/checkbox-6.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

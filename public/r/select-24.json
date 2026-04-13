@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-24",
+  "dependencies": [],
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-24.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select24 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"group relative w-full max-w-xs transition-all\">\r\n      <label\r\n        htmlFor={id}\r\n        className=\"absolute -top-2 left-3 z-10 bg-white px-1.5 text-[11px] font-semibold text-zinc-500 transition-colors group-focus-within:text-zinc-900 dark:bg-zinc-950 dark:text-zinc-500 dark:group-focus-within:text-zinc-100\"\r\n      >\r\n        System Identity\r\n      </label>\r\n      <Select defaultValue=\"default\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-200 bg-white shadow-xs transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900\"\r\n        >\r\n          <SelectValue placeholder=\"Identify namespace\" />\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectItem value=\"default\" className=\"rounded-lg\">Default Instance</SelectItem>\r\n          <SelectItem value=\"staging\" className=\"rounded-lg\">Staging Cluster</SelectItem>\r\n          <SelectItem value=\"prod\" className=\"rounded-lg\">Production Main</SelectItem>\r\n          <SelectItem value=\"sandbox\" className=\"rounded-lg\">Sandbox Environment</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select24;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-24.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-32",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "label",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-32.tsx",
+      "content": "import { useState } from 'react';\r\nimport { IconCheck, IconChevronDown } from '@tabler/icons-react';\r\n\r\nimport { Button } from '@/components/ui/button';\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from '@/components/ui/popover';\r\nimport { cn } from '@/lib/utils';\r\n\r\nconst ops = [\r\n  { id: 'monitoring', label: 'Real-time Monitoring' },\r\n  { id: 'logging', label: 'Log Aggregation' },\r\n  { id: 'analytics', label: 'Security Analytics' },\r\n  { id: 'backups', label: 'Automated Backups' },\r\n];\r\n\r\nconst Select32 = () => {\r\n  const [selected, setSelected] = useState<string[]>(['monitoring']);\r\n\r\n  const toggleOp = (id: string) => {\r\n    setSelected((prev) =>\r\n      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]\r\n    );\r\n  };\r\n\r\n  const getLabel = () => {\r\n    if (selected.length === 0) return 'Select operations';\r\n    if (selected.length === 1) return ops.find(o => o.id === selected[0])?.label;\r\n    return `${selected.length} operations active`;\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2 text-zinc-900 dark:text-zinc-100\">\r\n      <Label className=\"text-zinc-600 dark:text-zinc-400\">Active Pipeline Services</Label>\r\n      <Popover>\r\n        <PopoverTrigger asChild>\r\n          <Button\r\n            variant=\"outline\"\r\n            className=\"w-full justify-between rounded-xl border-zinc-200 bg-white px-3 font-normal shadow-xs transition-all hover:bg-zinc-50 focus:ring-2 focus:ring-zinc-400/20 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900 dark:focus:ring-zinc-500/20 outline-none\"\r\n          >\r\n            <span className={cn(\"truncate\", selected.length === 0 && \"text-zinc-500\")}>\r\n              {getLabel()}\r\n            </span>\r\n            <IconChevronDown className=\"size-4 shrink-0 opacity-50\" stroke={1.5} />\r\n          </Button>\r\n        </PopoverTrigger>\r\n        <PopoverContent \r\n          align=\"start\"\r\n          className=\"w-(--radix-popover-trigger-width) p-1 rounded-xl border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <div className=\"flex flex-col gap-0.5\">\r\n            {ops.map((op) => {\r\n              const isSelected = selected.includes(op.id);\r\n              return (\r\n                <button\r\n                  key={op.id}\r\n                  onClick={() => toggleOp(op.id)}\r\n                  className={cn(\r\n                    \"flex items-center justify-between w-full px-2.5 py-2 rounded-lg text-sm transition-colors outline-none\",\r\n                    \"hover:bg-zinc-100 dark:hover:bg-zinc-900\",\r\n                    isSelected ? \"text-zinc-900 dark:text-zinc-100\" : \"text-zinc-600 dark:text-zinc-400\"\r\n                  )}\r\n                >\r\n                  <span className=\"font-medium\">{op.label}</span>\r\n                  {isSelected && (\r\n                    <IconCheck className=\"size-4 text-zinc-900 dark:text-zinc-100\" stroke={2} />\r\n                  )}\r\n                </button>\r\n              );\r\n            })}\r\n          </div>\r\n        </PopoverContent>\r\n      </Popover>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select32;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-32.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
