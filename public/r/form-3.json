@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-3",
+  "dependencies": [
+    "react-icons",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "field",
+    "button",
+    "calendar",
+    "alert",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/form/form-3.tsx",
+      "content": "\"use client\";\r\n\r\nimport { FaCalendarAlt, FaCheckDouble } from \"react-icons/fa\";\r\n\r\nimport { format } from \"date-fns\";\r\nimport { zodResolver } from \"@hookform/resolvers/zod\";\r\nimport { Controller, useForm } from \"react-hook-form\";\r\nimport { toast } from \"sonner\";\r\nimport { z } from \"zod\";\r\n\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Calendar } from \"@/components/ui/calendar\";\r\nimport {\r\n  Field,\r\n  FieldContent,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldLabel,\r\n} from \"@/components/ui/field\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst FormSchema = z.object({\r\n  dob: z.date().refine((val) => val !== undefined, {\r\n    message: \"Please select your date of birth.\",\r\n  }),\r\n});\r\n\r\nconst Form3 = () => {\r\n  const form = useForm<z.infer<typeof FormSchema>>({\r\n    resolver: zodResolver(FormSchema),\r\n  });\r\n\r\n  function onSubmit() {\r\n    toast.custom(() => (\r\n      <Alert className=\"border-success text-success flex items-center gap-2 sm:w-100\">\r\n        <FaCheckDouble className=\"animate-pulse\" />\r\n        <AlertTitle>Your personalized recommendations are ready 🎉</AlertTitle>\r\n      </Alert>\r\n    ));\r\n  }\r\n\r\n  return (\r\n    <form\r\n      onSubmit={form.handleSubmit(onSubmit)}\r\n      className=\"w-full max-w-xs space-y-6\"\r\n    >\r\n      <Field>\r\n        <FieldLabel className=\"flex items-center gap-2\">\r\n          <FaCalendarAlt className=\"text-muted-foreground\" />\r\n          Select Your Birth Date\r\n        </FieldLabel>\r\n\r\n        <FieldContent>\r\n          <Controller\r\n            control={form.control}\r\n            name=\"dob\"\r\n            render={({ field }) => (\r\n              <Popover>\r\n                <PopoverTrigger asChild>\r\n                  <Button\r\n                    variant=\"outline\"\r\n                    className={cn(\r\n                      \"bg-muted/50 w-full rounded-sm pl-3 text-left font-normal\",\r\n                      !field.value && \"text-muted-foreground\"\r\n                    )}\r\n                  >\r\n                    {field.value ? (\r\n                      format(field.value, \"PPP\")\r\n                    ) : (\r\n                      <span>Choose your date</span>\r\n                    )}\r\n                    <FaCalendarAlt className=\"ml-auto opacity-50\" />\r\n                  </Button>\r\n                </PopoverTrigger>\r\n\r\n                <PopoverContent\r\n                  className=\"animate-in fade-in zoom-in-95 w-auto p-0\"\r\n                  align=\"start\"\r\n                >\r\n                  <Calendar\r\n                    mode=\"single\"\r\n                    selected={field.value}\r\n                    onSelect={field.onChange}\r\n                    disabled={(date) =>\r\n                      date > new Date() || date < new Date(\"1900-01-01\")\r\n                    }\r\n                  />\r\n                </PopoverContent>\r\n              </Popover>\r\n            )}\r\n          />\r\n        </FieldContent>\r\n\r\n        <FieldDescription>\r\n          Your date helps us personalize your experience and tailor content just\r\n          for you.\r\n        </FieldDescription>\r\n\r\n        <FieldError className=\"text-destructive text-xs\">\r\n          {form.formState.errors.dob?.message}\r\n        </FieldError>\r\n      </Field>\r\n\r\n      <Button\r\n        type=\"submit\"\r\n        className=\"from-primary to-primary/70 flex w-full items-center justify-center gap-2 rounded-sm border border-black/10 bg-gradient-to-b shadow-sm transition-all text-shadow-xs active:scale-98\"\r\n      >\r\n        Continue\r\n      </Button>\r\n    </form>\r\n  );\r\n};\r\n\r\nexport default Form3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/form-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

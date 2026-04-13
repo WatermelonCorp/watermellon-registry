@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-1",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dropdown-menu/dropdown-menu-1.tsx",
+      "content": "import { Button } from '@/components/ui/button';\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuTrigger,\r\n} from '@/components/ui/dropdown-menu';\r\nimport { FaUser, FaBell, FaLock, FaSignOutAlt, FaCog } from 'react-icons/fa';\r\n\r\nconst DropdownMenu1 = () => {\r\n  return (\r\n    <DropdownMenu>\r\n      <DropdownMenuTrigger asChild>\r\n        <Button variant=\"outline\">Open Panel</Button>\r\n      </DropdownMenuTrigger>\r\n\r\n      <DropdownMenuContent className=\"sm:w-64 w-60  space-y-1 \" align='center' >\r\n        <div className=\"px-2 \">\r\n          <p className=\"text-sm font-medium\">Dashboard</p>\r\n          <p className=\"text-muted-foreground text-xs\">\r\n            Manage your preferences\r\n          </p>\r\n        </div>\r\n\r\n        <DropdownMenuSeparator />\r\n\r\n        <DropdownMenuItem className=\"flex items-center gap-2 rounded-md\">\r\n          <FaUser className=\"text-sm\" />\r\n          <span>Account</span>\r\n        </DropdownMenuItem>\r\n\r\n        <DropdownMenuItem className=\"flex items-center gap-2 rounded-md\">\r\n          <FaBell className=\"text-sm\" />\r\n          <span>Notifications</span>\r\n        </DropdownMenuItem>\r\n\r\n        <DropdownMenuItem className=\"flex items-center gap-2 rounded-md\">\r\n          <FaLock className=\"text-sm\" />\r\n          <span>Privacy</span>\r\n        </DropdownMenuItem>\r\n\r\n        <DropdownMenuItem className=\"flex items-center gap-2 rounded-md\">\r\n          <FaCog className=\"text-sm\" />\r\n          <span>Preferences</span>\r\n        </DropdownMenuItem>\r\n\r\n        <DropdownMenuSeparator />\r\n\r\n        <DropdownMenuItem className=\"text-destructive flex items-center gap-2 rounded-md\" variant='destructive'>\r\n          <FaSignOutAlt className=\"text-sm\" />\r\n          <span>Logout</span>\r\n        </DropdownMenuItem>\r\n      </DropdownMenuContent>\r\n    </DropdownMenu>\r\n  );\r\n};\r\n\r\nexport default DropdownMenu1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/dropdown-menu-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

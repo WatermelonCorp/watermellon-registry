@@ -3,7 +3,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const RadioGroup1 = () => {
   return (
-    <RadioGroup defaultValue="email" className="theme-injected space-y-2">
+    <RadioGroup defaultValue="email" className="  space-y-2">
       <div className="flex items-center gap-2">
         <RadioGroupItem
           value="email"

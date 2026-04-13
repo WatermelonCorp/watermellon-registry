@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-mask-1",
+  "dependencies": [
+    "react-icons",
+    "react-payment-inputs"
+  ],
+  "registryDependencies": [
+    "input-mask",
+    "label",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input-mask/input-mask-1.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId } from \"react\";\r\n\r\nimport { withMask } from \"use-mask-input\";\r\nimport { HiIdentification } from \"react-icons/hi2\";\r\n\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputMask1 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-3\">\r\n      <Label htmlFor={id} className=\"flex items-center gap-2\">\r\n        License Code\r\n      </Label>\r\n\r\n      <div className=\"relative\">\r\n        <Input\r\n          id={id}\r\n          type=\"text\"\r\n          placeholder=\"AB12 CDE\"\r\n          className=\"focus-visible:ring-primary/20 focus-visible:border-primary/50 bg-muted/50 pl-10 focus-visible:ring-2\"\r\n          ref={withMask(\"AA99 AAA\", {\r\n            placeholder: \"_\",\r\n            showMaskOnHover: false,\r\n          })}\r\n        />\r\n        <HiIdentification className=\"text-muted-foreground absolute top-1/2 left-3 size-4 -translate-y-1/2\" />\r\n      </div>\r\n\r\n      <p className=\"text-muted-foreground text-xs\">\r\n        Enter your code in the required format\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputMask1;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-mask-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-4",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dropdown-menu/dropdown-menu-4.tsx",
+      "content": "\"use client\";\r\n\r\nimport { FaRegEdit, FaRegCopy, FaRegStar, FaTrashAlt } from \"react-icons/fa\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuTrigger,\r\n} from \"@/components/ui/dropdown-menu\";\r\n\r\nconst DropdownMenu4 = () => {\r\n  return (\r\n    <div>\r\n      <DropdownMenu>\r\n        <DropdownMenuTrigger asChild>\r\n          <Button variant=\"outline\" className=\"rounded-lg\">\r\n            Options\r\n          </Button>\r\n        </DropdownMenuTrigger>\r\n\r\n        <DropdownMenuContent\r\n          align=\"start\"\r\n          className=\"bg-popover w-56 rounded-lg border p-1 shadow-md\"\r\n        >\r\n          <DropdownMenuItem className=\"flex cursor-pointer items-center gap-3 rounded-lg p-2\">\r\n            <FaRegEdit className=\"text-muted-foreground\" />\r\n            <div className=\"flex flex-col\">\r\n              <span className=\"text-sm font-medium\">Edit</span>\r\n              <span className=\"text-muted-foreground text-xs\">\r\n                Modify details\r\n              </span>\r\n            </div>\r\n          </DropdownMenuItem>\r\n\r\n          <DropdownMenuItem className=\"flex cursor-pointer items-center gap-3 rounded-lg p-2\">\r\n            <FaRegCopy className=\"text-muted-foreground\" />\r\n            <div className=\"flex flex-col\">\r\n              <span className=\"text-sm font-medium\">Duplicate</span>\r\n              <span className=\"text-muted-foreground text-xs\">\r\n                Create a copy\r\n              </span>\r\n            </div>\r\n          </DropdownMenuItem>\r\n\r\n          <DropdownMenuItem className=\"flex cursor-pointer items-center gap-3 rounded-lg p-2\">\r\n            <FaRegStar className=\"text-muted-foreground\" />\r\n            <div className=\"flex flex-col\">\r\n              <span className=\"text-sm font-medium\">Favorite</span>\r\n              <span className=\"text-muted-foreground text-xs\">\r\n                Pin for quick access\r\n              </span>\r\n            </div>\r\n          </DropdownMenuItem>\r\n\r\n          <DropdownMenuSeparator className=\"my-1\" />\r\n\r\n          <DropdownMenuItem\r\n            className=\"text-destructive   flex cursor-pointer items-center gap-3 rounded-lg p-2\"\r\n            variant=\"destructive\"\r\n          >\r\n            <FaTrashAlt />\r\n            <div className=\"flex flex-col\">\r\n              <span className=\"text-sm font-medium\">Delete</span>\r\n              <span className=\"text-xs opacity-70\">Permanently remove</span>\r\n            </div>\r\n          </DropdownMenuItem>\r\n        </DropdownMenuContent>\r\n      </DropdownMenu>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DropdownMenu4;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/dropdown-menu-4.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-3",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dropdown-menu/dropdown-menu-3.tsx",
+      "content": "import {\r\n  FaFont,\r\n  FaBold,\r\n  FaItalic,\r\n  FaUnderline,\r\n  FaHighlighter,\r\n} from \"react-icons/fa\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuTrigger,\r\n} from \"@/components/ui/dropdown-menu\";\r\n\r\nconst listItems = [\r\n  {\r\n    icon: FaFont,\r\n    title: \"Font Style\",\r\n    desc: \"Change typography\",\r\n  },\r\n  {\r\n    icon: FaBold,\r\n    title: \"Bold Text\",\r\n    desc: \"Make text stand out\",\r\n  },\r\n  {\r\n    icon: FaItalic,\r\n    title: \"Italic Text\",\r\n    desc: \"Add emphasis\",\r\n  },\r\n  {\r\n    icon: FaUnderline,\r\n    title: \"Underline\",\r\n    desc: \"Highlight importance\",\r\n  },\r\n  {\r\n    icon: FaHighlighter,\r\n    title: \"Highlight\",\r\n    desc: \"Mark key content\",\r\n  },\r\n];\r\n\r\nconst DropdownMenu3 = () => {\r\n  return (\r\n    <DropdownMenu>\r\n      <DropdownMenuTrigger asChild>\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"icon\"\r\n          className=\"flex items-center justify-center rounded-sm shadow-xs\"\r\n        >\r\n          <FaFont className=\"text-sm\" />\r\n          <span className=\"sr-only\">Text tools</span>\r\n        </Button>\r\n      </DropdownMenuTrigger>\r\n\r\n      <DropdownMenuContent className=\"grid w-64 gap-1 p-1\" align=\"center\">\r\n        <div className=\"px-1 py-1\">\r\n          <p className=\"text-muted-foreground text-sm font-medium\">\r\n            Text Tools\r\n          </p>\r\n        </div>\r\n\r\n        {listItems.map((item, index) => (\r\n          <DropdownMenuItem\r\n            key={index}\r\n            className=\"hover:bg-accent/50! flex items-center gap-3 rounded-lg p-1\"\r\n          >\r\n            <div className=\"bg-muted flex h-8 w-8 items-center justify-center rounded-md\">\r\n              <item.icon className=\"text-sm\" />\r\n            </div>\r\n\r\n            <div className=\"flex flex-col\">\r\n              <span className=\"text-sm\">{item.title}</span>\r\n              <span className=\"text-muted-foreground text-xs\">{item.desc}</span>\r\n            </div>\r\n          </DropdownMenuItem>\r\n        ))}\r\n      </DropdownMenuContent>\r\n    </DropdownMenu>\r\n  );\r\n};\r\n\r\nexport default DropdownMenu3;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/dropdown-menu-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

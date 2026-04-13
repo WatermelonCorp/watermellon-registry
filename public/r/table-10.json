@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-10",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/table/table-10.tsx",
+      "content": "import {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableFooter,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/components/ui/table\";\r\n\r\nconst orders = [\r\n  { id: \"ORD001\", status: \"Delivered\", amount: \"₹2,500\", method: \"UPI\" },\r\n  { id: \"ORD002\", status: \"Processing\", amount: \"₹1,200\", method: \"Card\" },\r\n  {\r\n    id: \"ORD003\",\r\n    status: \"Cancelled\",\r\n    amount: \"₹3,800\",\r\n    method: \"Net Banking\",\r\n  },\r\n  { id: \"ORD004\", status: \"Delivered\", amount: \"₹900\", method: \"Wallet\" },\r\n  { id: \"ORD005\", status: \"Delivered\", amount: \"₹4,200\", method: \"UPI\" },\r\n  { id: \"ORD006\", status: \"Processing\", amount: \"₹700\", method: \"Debit Card\" },\r\n  {\r\n    id: \"ORD007\",\r\n    status: \"Cancelled\",\r\n    amount: \"₹1,500\",\r\n    method: \"Bank Transfer\",\r\n  },\r\n  { id: \"ORD008\", status: \"Delivered\", amount: \"₹2,100\", method: \"UPI\" },\r\n  { id: \"ORD009\", status: \"Processing\", amount: \"₹950\", method: \"Google Pay\" },\r\n  { id: \"ORD010\", status: \"Cancelled\", amount: \"₹1,800\", method: \"Apple Pay\" },\r\n];\r\n\r\nconst Table10 = () => {\r\n  return (\r\n    <div className=\"w-full\">\r\n      <div className=\"grid [&>div]:max-h-70 [&>div]:overflow-y-auto [&>div]:rounded-sm [&>div]:border\">\r\n        <Table>\r\n          <TableHeader>\r\n            <TableRow className=\"bg-muted hover:bg-muted sticky top-0 z-20 shadow-[inset_0px_0px_4px_0_rgba(0,0,0,0.05)]\">\r\n              <TableHead className=\"w-25\">Order ID</TableHead>\r\n              <TableHead>Status</TableHead>\r\n              <TableHead>Method</TableHead>\r\n              <TableHead className=\"text-right\">Amount</TableHead>\r\n            </TableRow>\r\n          </TableHeader>\r\n\r\n          <TableBody>\r\n            {orders.map((order) => (\r\n              <TableRow key={order.id}>\r\n                <TableCell className=\"font-medium\">{order.id}</TableCell>\r\n                <TableCell>{order.status}</TableCell>\r\n                <TableCell>{order.method}</TableCell>\r\n                <TableCell className=\"text-right\">{order.amount}</TableCell>\r\n              </TableRow>\r\n            ))}\r\n          </TableBody>\r\n\r\n          <TableFooter>\r\n            <TableRow className=\"bg-muted hover:bg-muted sticky bottom-0 z-20 shadow-[inset_0px_0px_4px_0_rgba(0,0,0,0.05)]\">\r\n              <TableCell colSpan={3}>Total Revenue</TableCell>\r\n              <TableCell className=\"text-right\">₹19,650</TableCell>\r\n            </TableRow>\r\n          </TableFooter>\r\n        </Table>\r\n      </div>\r\n\r\n      <p className=\"text-muted-foreground mt-4 text-center text-sm\">\r\n        Sticky header & footer table\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Table10;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/table-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

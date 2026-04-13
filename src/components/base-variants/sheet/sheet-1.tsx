@@ -27,7 +27,7 @@ const Sheet1 = () => {
         <Button variant="outline">Preferences</Button>
       </SheetTrigger>
 
-      <SheetContent className="theme-injected rounded-lg">
+      <SheetContent className="  rounded-lg">
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
             <FaBell />

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-7",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/table/table-7.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableFooter,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/components/ui/table\";\r\n\r\nconst transactions = [\r\n  {\r\n    id: \"TXN001\",\r\n    type: \"Credit\",\r\n    amount: \"₹2,500.00\",\r\n    method: \"UPI\",\r\n  },\r\n  {\r\n    id: \"TXN002\",\r\n    type: \"Debit\",\r\n    amount: \"₹1,200.00\",\r\n    method: \"Credit Card\",\r\n  },\r\n  {\r\n    id: \"TXN003\",\r\n    type: \"Credit\",\r\n    amount: \"₹3,800.00\",\r\n    method: \"Net Banking\",\r\n  },\r\n  {\r\n    id: \"TXN004\",\r\n    type: \"Debit\",\r\n    amount: \"₹900.00\",\r\n    method: \"Wallet\",\r\n  },\r\n  {\r\n    id: \"TXN005\",\r\n    type: \"Credit\",\r\n    amount: \"₹4,200.00\",\r\n    method: \"UPI\",\r\n  },\r\n  {\r\n    id: \"TXN006\",\r\n    type: \"Debit\",\r\n    amount: \"₹700.00\",\r\n    method: \"Debit Card\",\r\n  },\r\n  {\r\n    id: \"TXN007\",\r\n    type: \"Credit\",\r\n    amount: \"₹1,500.00\",\r\n    method: \"Bank Transfer\",\r\n  },\r\n];\r\n\r\nconst Table7 = () => {\r\n  const [selectedId, setSelectedId] = useState<string | null>(null);\r\n\r\n  return (\r\n    <div className=\"w-full\">\r\n      <div className=\"overflow-hidden rounded-xl border shadow-xs\">\r\n        <Table className=\"\">\r\n          <TableHeader>\r\n            <TableRow>\r\n              <TableHead className=\"w-30\">Transaction ID</TableHead>\r\n              <TableHead>Type</TableHead>\r\n              <TableHead>Method</TableHead>\r\n              <TableHead className=\"text-right\">Amount</TableHead>\r\n            </TableRow>\r\n          </TableHeader>\r\n\r\n          <TableBody>\r\n            {transactions.map((txn) => {\r\n              const isSelected = selectedId === txn.id;\r\n\r\n              return (\r\n                <TableRow\r\n                  key={txn.id}\r\n                  onClick={() => setSelectedId(isSelected ? null : txn.id)}\r\n                  className={`cursor-pointer transition-colors ${\r\n                    isSelected\r\n                      ? \"bg-primary/30 hover:bg-primary/25\"\r\n                      : \"hover:bg-muted/50\"\r\n                  }`}\r\n                >\r\n                  <TableCell className=\"font-medium\">{txn.id}</TableCell>\r\n                  <TableCell>{txn.type}</TableCell>\r\n                  <TableCell>{txn.method}</TableCell>\r\n                  <TableCell className=\"text-right\">{txn.amount}</TableCell>\r\n                </TableRow>\r\n              );\r\n            })}\r\n          </TableBody>\r\n\r\n          <TableFooter>\r\n            <TableRow>\r\n              <TableCell colSpan={3}>Net Balance</TableCell>\r\n              <TableCell className=\"text-right\">₹9,200.00</TableCell>\r\n            </TableRow>\r\n          </TableFooter>\r\n        </Table>\r\n      </div>\r\n      <p className=\"text-muted-foreground mt-4 text-center text-sm\">\r\n        Click a row to highlight it\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Table7;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/table-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

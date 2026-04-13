@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-9",
+  "dependencies": [
+    "react-icons",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "input-otp",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/input-otp/input-otp-9.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId } from \"react\";\r\n\r\nimport {\r\n  InputOTP,\r\n  InputOTPGroup,\r\n  InputOTPSeparator,\r\n  InputOTPSlot,\r\n} from \"@/components/ui/input-otp\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputOtp9 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"max-w-md space-y-1\">\r\n      <div className=\"text-center\">\r\n        <Label htmlFor={id} className=\"text-sm font-semibold\">\r\n          Enter 6 digit OTP\r\n        </Label>\r\n      </div>\r\n\r\n      <InputOTP id={id} maxLength={6}>\r\n        <div className=\"flex items-center justify-center gap-2\">\r\n          <InputOTPGroup className=\"flex gap-1.5\">\r\n            {[0, 1, 2].map((i) => (\r\n              <InputOTPSlot\r\n                key={i}\r\n                index={i}\r\n                className=\"bg-muted/70 data-[active=true]:ring-primary/20 data-[active=true]:border-primary/50 h-8 w-8 rounded-lg border text-sm font-medium shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,1),inset_0px_-1px_0px_0px_rgba(0,0,0,0.05),0px_2px_4px_0px_rgba(0,0,0,0.05)] transition-all data-[active=true]:ring-2 dark:shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.25),inset_0px_-1px_0px_0px_rgba(0,0,0,0.7),0px_2px_4px_0px_rgba(0,0,0,0.3)]\"\r\n              />\r\n            ))}\r\n          </InputOTPGroup>\r\n\r\n          <InputOTPSeparator className=\"text-muted-foreground text-lg\">\r\n            —\r\n          </InputOTPSeparator>\r\n\r\n          <InputOTPGroup className=\"flex gap-1.5\">\r\n            {[3, 4, 5].map((i) => (\r\n              <InputOTPSlot\r\n                key={i}\r\n                index={i}\r\n                className=\"bg-muted/70 data-[active=true]:ring-primary/20 data-[active=true]:border-primary/50 h-8 w-8 rounded-lg border text-sm font-medium shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,1),inset_0px_-1px_0px_0px_rgba(0,0,0,0.05),0px_2px_4px_0px_rgba(0,0,0,0.05)] transition-all data-[active=true]:ring-2 dark:shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.25),inset_0px_-1px_0px_0px_rgba(0,0,0,0.7),0px_2px_4px_0px_rgba(0,0,0,0.3)]\"\r\n              />\r\n            ))}\r\n          </InputOTPGroup>\r\n        </div>\r\n      </InputOTP>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputOtp9;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/input-otp-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-10",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/dropdown-menu/dropdown-menu-10.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { FaCode, FaBug, FaBell, FaBolt } from \"react-icons/fa6\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuCheckboxItem,\r\n  DropdownMenuContent,\r\n  DropdownMenuLabel,\r\n  DropdownMenuTrigger,\r\n} from \"@/components/ui/dropdown-menu\";\r\n\r\nconst options = [\r\n  { key: \"autoSave\", label: \"Auto Save\", icon: FaBolt },\r\n  { key: \"notifications\", label: \"Notifications\", icon: FaBell },\r\n  { key: \"debugMode\", label: \"Debug Mode\", icon: FaBug, disabled: true },\r\n  { key: \"codeHints\", label: \"Code Hints\", icon: FaCode },\r\n];\r\n\r\nconst DropdownMenu10 = () => {\r\n  const [state, setState] = useState({\r\n    autoSave: true,\r\n    notifications: false,\r\n    debugMode: false,\r\n    codeHints: true,\r\n  });\r\n\r\n  const toggle = (key: string) => {\r\n    setState((prev) => ({\r\n      ...prev,\r\n      [key]: !prev[key as keyof typeof prev],\r\n    }));\r\n  };\r\n\r\n  return (\r\n    <div>\r\n      <DropdownMenu>\r\n        <DropdownMenuTrigger asChild>\r\n          <Button variant=\"outline\" className=\"rounded-lg\">\r\n            Preferences\r\n          </Button>\r\n        </DropdownMenuTrigger>\r\n\r\n        <DropdownMenuContent\r\n          className=\"bg-popover w-64 rounded-lg border p-1 shadow-md\"\r\n          align=\"center\"\r\n        >\r\n          <DropdownMenuLabel className=\"px-1 pb-1 text-sm font-semibold\">\r\n            Dev Preferences\r\n          </DropdownMenuLabel>\r\n\r\n          {options.map((item) => {\r\n            const Icon = item.icon;\r\n            const checked = state[item.key as keyof typeof state];\r\n\r\n            return (\r\n              <DropdownMenuCheckboxItem\r\n                key={item.key}\r\n                checked={checked}\r\n                onCheckedChange={() => toggle(item.key)}\r\n                disabled={item.disabled}\r\n                className=\"group flex cursor-pointer items-center gap-3 rounded-lg p-1 data-[disabled]:opacity-40\"\r\n              >\r\n                <Icon className=\"text-muted-foreground group-hover:text-foreground transition-all duration-200 group-hover:scale-110\" />\r\n\r\n                <span className=\"flex-1 text-sm font-medium\">{item.label}</span>\r\n              </DropdownMenuCheckboxItem>\r\n            );\r\n          })}\r\n        </DropdownMenuContent>\r\n      </DropdownMenu>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DropdownMenu10;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/dropdown-menu-10.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

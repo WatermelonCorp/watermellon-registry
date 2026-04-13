@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-8",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/table/table-8.tsx",
+      "content": "import {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableFooter,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/components/ui/table\";\r\n\r\nconst products = [\r\n  {\r\n    id: \"PRD001\",\r\n    name: \"Wireless Mouse\",\r\n    category: \"Electronics\",\r\n    price: \"₹799\",\r\n    stock: 120,\r\n  },\r\n  {\r\n    id: \"PRD002\",\r\n    name: \"Bluetooth Headphones\",\r\n    category: \"Electronics\",\r\n    price: \"₹1,999\",\r\n    stock: 75,\r\n  },\r\n  {\r\n    id: \"PRD003\",\r\n    name: \"Office Chair\",\r\n    category: \"Furniture\",\r\n    price: \"₹5,500\",\r\n    stock: 30,\r\n  },\r\n  {\r\n    id: \"PRD004\",\r\n    name: \"Notebook Pack\",\r\n    category: \"Stationery\",\r\n    price: \"₹250\",\r\n    stock: 200,\r\n  },\r\n  {\r\n    id: \"PRD005\",\r\n    name: \"Desk Lamp\",\r\n    category: \"Furniture\",\r\n    price: \"₹1,200\",\r\n    stock: 60,\r\n  },\r\n];\r\n\r\nconst Table8 = () => {\r\n  return (\r\n    <div className=\"w-full\">\r\n      <div className=\"overflow-hidden rounded-xl border shadow-xs\">\r\n        <Table className=\"\">\r\n          <TableHeader>\r\n            <TableRow className=\"[&_th]:even:bg-muted/70 hover:bg-transparent\">\r\n              <TableHead className=\"w-25\">Product ID</TableHead>\r\n              <TableHead>Name</TableHead>\r\n              <TableHead>Category</TableHead>\r\n              <TableHead className=\"text-right\">Price</TableHead>\r\n              <TableHead className=\"text-right\">Stock</TableHead>\r\n            </TableRow>\r\n          </TableHeader>\r\n\r\n          <TableBody>\r\n            {products.map((product) => (\r\n              <TableRow\r\n                key={product.id}\r\n                className=\"[&_td]:even:bg-muted/70 hover:bg-transparent\"\r\n              >\r\n                <TableCell className=\"font-medium\">{product.id}</TableCell>\r\n                <TableCell>{product.name}</TableCell>\r\n                <TableCell>{product.category}</TableCell>\r\n                <TableCell className=\"text-right\">{product.price}</TableCell>\r\n                <TableCell className=\"text-right\">{product.stock}</TableCell>\r\n              </TableRow>\r\n            ))}\r\n          </TableBody>\r\n\r\n          <TableFooter className=\"bg-transparent\">\r\n            <TableRow className=\"hover:bg-transparent\">\r\n              <TableCell colSpan={4}>Total Products</TableCell>\r\n              <TableCell className=\"text-right\">485</TableCell>\r\n            </TableRow>\r\n          </TableFooter>\r\n        </Table>\r\n      </div>\r\n      <p className=\"text-muted-foreground mt-4 text-center text-sm\">\r\n        Striped columns table\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Table8;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/table-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

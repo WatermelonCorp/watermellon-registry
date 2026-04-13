@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-2",
+  "dependencies": [
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/table/table-2.tsx",
+      "content": "import {\r\n  Table,\r\n  TableBody,\r\n  TableCell,\r\n  TableFooter,\r\n  TableHead,\r\n  TableHeader,\r\n  TableRow,\r\n} from \"@/components/ui/table\";\r\n\r\nimport { FaCheckCircle, FaClock, FaTimesCircle, FaUser } from \"react-icons/fa\";\r\n\r\nconst users = [\r\n  {\r\n    id: \"USR-001\",\r\n    name: \"Ritik Gupta\",\r\n    status: \"Active\",\r\n    plan: \"Pro\",\r\n    spend: \"₹1,999\",\r\n    icon: <FaCheckCircle className=\"text-green-500\" />,\r\n  },\r\n  {\r\n    id: \"USR-002\",\r\n    name: \"Ananya Singh\",\r\n    status: \"Pending\",\r\n    plan: \"Basic\",\r\n    spend: \"₹499\",\r\n    icon: <FaClock className=\"text-yellow-500\" />,\r\n  },\r\n  {\r\n    id: \"USR-003\",\r\n    name: \"Kunal Shah\",\r\n    status: \"Blocked\",\r\n    plan: \"Pro\",\r\n    spend: \"₹2,499\",\r\n    icon: <FaTimesCircle className=\"text-red-500\" />,\r\n  },\r\n  {\r\n    id: \"USR-004\",\r\n    name: \"Meera Joshi\",\r\n    status: \"Active\",\r\n    plan: \"Enterprise\",\r\n    spend: \"₹5,999\",\r\n    icon: <FaCheckCircle className=\"text-green-500\" />,\r\n  },\r\n  {\r\n    id: \"USR-005\",\r\n    name: \"Aditya Verma\",\r\n    status: \"Active\",\r\n    plan: \"Basic\",\r\n    spend: \"₹799\",\r\n    icon: <FaCheckCircle className=\"text-green-500\" />,\r\n  },\r\n];\r\n\r\nconst Table2 = () => {\r\n  return (\r\n    <div className=\"w-full\">\r\n      <div className=\"overflow-hidden rounded-xl border shadow-xs\">\r\n        <Table>\r\n          <TableHeader>\r\n            <TableRow className=\"*:border-border bg-muted/50 [&>:not(:last-child)]:border-r\">\r\n              <TableHead className=\"w-32\">User</TableHead>\r\n              <TableHead>Status</TableHead>\r\n              <TableHead>Plan</TableHead>\r\n              <TableHead className=\"text-right\">Spend</TableHead>\r\n            </TableRow>\r\n          </TableHeader>\r\n\r\n          <TableBody>\r\n            {users.map((user) => (\r\n              <TableRow\r\n                key={user.id}\r\n                className=\"*:border-border [&>:not(:last-child)]:border-r\"\r\n              >\r\n                <TableCell className=\"flex items-center gap-2 font-medium\">\r\n                  <FaUser className=\"text-primary\" />\r\n                  {user.name}\r\n                </TableCell>\r\n\r\n                <TableCell>\r\n                  <div className=\"flex items-center gap-2\">\r\n                    {user.icon}\r\n                    <span>{user.status}</span>\r\n                  </div>\r\n                </TableCell>\r\n\r\n                <TableCell>{user.plan}</TableCell>\r\n\r\n                <TableCell className=\"text-right font-medium\">\r\n                  {user.spend}\r\n                </TableCell>\r\n              </TableRow>\r\n            ))}\r\n          </TableBody>\r\n\r\n          <TableFooter>\r\n            <TableRow>\r\n              <TableCell colSpan={3}>Total Revenue</TableCell>\r\n              <TableCell className=\"text-right font-semibold\">\r\n                ₹11,795\r\n              </TableCell>\r\n            </TableRow>\r\n          </TableFooter>\r\n        </Table>\r\n      </div>\r\n      <p className=\"text-muted-foreground mt-4 text-center text-sm\">\r\n        User subscription table\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Table2;\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/table-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

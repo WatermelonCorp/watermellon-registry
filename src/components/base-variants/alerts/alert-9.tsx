@@ -16,7 +16,7 @@ const Alert9 = () => {
   }, []);
 
   return (
-    <Alert className="theme-injected flex gap-3">
+    <Alert className="  flex gap-3">
       <Avatar className="rounded-full">
         <AvatarImage
           src="https://github.com/shadcn.png"

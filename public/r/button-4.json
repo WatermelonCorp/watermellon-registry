@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-4.tsx",
-      "content": "\"use client\";\r\n\r\nimport { FiArrowRight } from \"react-icons/fi\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button4 = () => {\r\n  return (\r\n    <Button className=\"theme-injected group inline-flex items-center gap-2 rounded-lg\">\r\n      Explore More\r\n      <FiArrowRight className=\"size-4 transition-transform duration-200 ease-out group-hover:translate-x-1 group-hover:scale-110\" />\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button4;\r\n",
+      "content": "\"use client\";\r\n\r\nimport { FiArrowRight } from \"react-icons/fi\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button4 = () => {\r\n  return (\r\n    <Button className=\"  group inline-flex items-center gap-2 rounded-lg\">\r\n      Explore More\r\n      <FiArrowRight className=\"size-4 transition-transform duration-200 ease-out group-hover:translate-x-1 group-hover:scale-110\" />\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button4;\r\n",
       "type": "registry:ui",
       "target": "components/ui/button-4.tsx"
     }
