@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-30",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-30.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst hubs = [\r\n  { value: 'us', label: 'Western United States', flag: 'us' },\r\n  { value: 'gb', label: 'United Kingdom Hub', flag: 'gb' },\r\n  { value: 'jp', label: 'Japan Core Region', flag: 'jp' },\r\n  { value: 'in', label: 'India South Cluster', flag: 'in' },\r\n  { value: 'de', label: 'Germany Mainframe', flag: 'de' },\r\n];\r\n\r\nconst Select30 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Global Resource Hub\r\n      </Label>\r\n      <Select defaultValue=\"us\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-200 bg-white shadow-xs transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900\"\r\n        >\r\n          <span className=\"flex items-center gap-2\">\r\n            <SelectValue placeholder=\"Identify region\" />\r\n          </span>\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          {hubs.map((hub) => (\r\n            <SelectItem key={hub.value} value={hub.value} className=\"rounded-lg\">\r\n              <span className=\"flex items-center gap-2\">\r\n                <img \r\n                  src={`https://flagcdn.com/w40/${hub.flag}.png`} \r\n                  alt={`${hub.label} flag`} \r\n                  className=\"h-3 w-4.5 object-cover rounded-xs border border-zinc-200 dark:border-zinc-800\"\r\n                />\r\n                <span className=\"truncate\">{hub.label}</span>\r\n              </span>\r\n            </SelectItem>\r\n          ))}\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select30;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-30.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

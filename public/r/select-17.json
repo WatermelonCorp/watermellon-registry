@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-17",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-17.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectGroup,\r\n  SelectItem,\r\n  SelectLabel,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select17 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Operation Type\r\n      </Label>\r\n      <Select defaultValue=\"internal\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-300/50 bg-zinc-100/50 shadow-none transition-all hover:bg-zinc-100 focus-visible:ring-zinc-400/20 dark:border-zinc-700/50 dark:bg-zinc-900/50 dark:hover:bg-zinc-900 dark:focus-visible:ring-zinc-500/20 px-3\"\r\n        >\r\n          <SelectValue placeholder=\"System category\" />\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectGroup>\r\n            <SelectLabel className=\"text-zinc-500\">Resource Categories</SelectLabel>\r\n            <SelectItem value=\"internal\" className=\"rounded-lg\">Internal Operations</SelectItem>\r\n            <SelectItem value=\"client\" className=\"rounded-lg\">Client Interaction</SelectItem>\r\n            <SelectItem value=\"rd\" className=\"rounded-lg\">Research & Develop</SelectItem>\r\n            <SelectItem value=\"maint\" className=\"rounded-lg\">System Maintenance</SelectItem>\r\n          </SelectGroup>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select17;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-17.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

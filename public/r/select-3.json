@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-3",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "label",
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-3.tsx",
+      "content": "import { useId } from 'react';\r\nimport { IconDatabase } from '@tabler/icons-react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport { NativeSelect } from '@/components/ui/native-select';\r\n\r\nconst Select3 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Metric Architecture\r\n      </Label>\r\n      <div className=\"group relative w-full\">\r\n        <NativeSelect \r\n          id={id} \r\n          className=\"w-full [&_select]:!pl-9 [&_select]:!rounded-xl [&_select]:!border-zinc-200 dark:[&_select]:!border-zinc-800 dark:[&_select]:!bg-zinc-950 transition-all [&_select]:focus-visible:ring-zinc-400/20 dark:[&_select]:focus-visible:ring-zinc-500/20 dark:[&_select]:[color-scheme:dark]\"\r\n          defaultValue=\"\"\r\n        >\r\n          <option value=\"\" disabled className=\"dark:bg-zinc-950 dark:text-zinc-500\">Identify stream type</option>\r\n          <option value=\"logs\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Unified System Logs</option>\r\n          <option value=\"events\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Transaction Events</option>\r\n          <option value=\"metrics\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Performance Metrics</option>\r\n          <option value=\"traces\" className=\"dark:bg-zinc-950 dark:text-zinc-100\">Distributed Traces</option>\r\n        </NativeSelect>\r\n        <div className=\"text-zinc-400 pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 group-has-[select:disabled]:opacity-50 dark:text-zinc-600\">\r\n          <IconDatabase size={16} stroke={1.5} aria-hidden=\"true\" />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select3;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

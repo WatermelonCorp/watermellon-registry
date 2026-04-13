@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-13",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-13.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select13 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Release Method\r\n      </Label>\r\n      <Select defaultValue=\"rolling\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-200 bg-white shadow-xs transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900\"\r\n        >\r\n          <SelectValue placeholder=\"Choose a strategy\" />\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectItem value=\"rolling\" className=\"rounded-lg\">Rolling Update</SelectItem>\r\n          <SelectItem value=\"canary\" className=\"rounded-lg\">Canary Deployment</SelectItem>\r\n          <SelectItem value=\"blue-green\" className=\"rounded-lg\">Blue-Green Switch</SelectItem>\r\n          <SelectItem value=\"recreate\" className=\"rounded-lg\">Full Recreate</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n      <p className=\"text-[12px] text-zinc-500 dark:text-zinc-500\" role=\"region\" aria-live=\"polite\">\r\n        Pods will be cycled according to this deployment pattern.\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select13;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-13.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

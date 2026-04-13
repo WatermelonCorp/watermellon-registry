@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-27",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-27.tsx",
+      "content": "import { useId } from 'react';\r\nimport {\r\n  IconCamera,\r\n  IconCode,\r\n  IconDatabase,\r\n  IconGlobe,\r\n} from '@tabler/icons-react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectGroup,\r\n  SelectItem,\r\n  SelectLabel,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select27 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Portfolio Category\r\n      </Label>\r\n      <Select defaultValue=\"dev\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-200 bg-white shadow-xs transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900\"\r\n        >\r\n          <SelectValue placeholder=\"Identify field\" />\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectGroup>\r\n            <SelectLabel className=\"text-zinc-500 text-xs\">Primary Disciplines</SelectLabel>\r\n            <SelectItem value=\"dev\" className=\"rounded-lg\">\r\n              <span className=\"flex items-center gap-2\">\r\n                <IconCode className=\"size-4 text-zinc-500\" stroke={1.5} />\r\n                Engineering\r\n              </span>\r\n            </SelectItem>\r\n            <SelectItem value=\"creative\" className=\"rounded-lg\">\r\n              <span className=\"flex items-center gap-2\">\r\n                <IconCamera className=\"size-4 text-zinc-500\" stroke={1.5} />\r\n                Creative Arts\r\n              </span>\r\n            </SelectItem>\r\n            <SelectItem value=\"data\" className=\"rounded-lg\">\r\n              <span className=\"flex items-center gap-2\">\r\n                <IconDatabase className=\"size-4 text-zinc-500\" stroke={1.5} />\r\n                Analytics\r\n              </span>\r\n            </SelectItem>\r\n            <SelectItem value=\"global\" className=\"rounded-lg\">\r\n              <span className=\"flex items-center gap-2\">\r\n                <IconGlobe className=\"size-4 text-zinc-500\" stroke={1.5} />\r\n                Network Ops\r\n              </span>\r\n            </SelectItem>\r\n          </SelectGroup>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select27;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-27.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

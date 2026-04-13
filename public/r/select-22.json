@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-22",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/base-variants/select/select-22.tsx",
+      "content": "import { useId } from 'react';\r\n\r\nimport { Label } from '@/components/ui/label';\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectGroup,\r\n  SelectItem,\r\n  SelectLabel,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from '@/components/ui/select';\r\n\r\nconst Select22 = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id} className=\"text-zinc-600 dark:text-zinc-400\">\r\n        Infrastructure Core\r\n      </Label>\r\n      <Select defaultValue=\"edge\">\r\n        <SelectTrigger \r\n          id={id} \r\n          className=\"w-full rounded-xl border-zinc-200 bg-white shadow-xs transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900\"\r\n        >\r\n          <SelectValue placeholder=\"Identify resource\" />\r\n        </SelectTrigger>\r\n        <SelectContent \r\n          position=\"popper\" \r\n          sideOffset={4} \r\n          className=\"rounded-xl border-zinc-200 bg-white p-1 shadow-lg dark:border-zinc-800 dark:bg-zinc-950\"\r\n        >\r\n          <SelectGroup>\r\n            <SelectLabel className=\"text-zinc-500\">Compute Layer</SelectLabel>\r\n            <SelectItem value=\"lambda\" className=\"rounded-lg\">Serverless Lambda</SelectItem>\r\n            <SelectItem value=\"ec2\" className=\"rounded-lg\">Virtual Instance</SelectItem>\r\n            <SelectItem value=\"containers\" className=\"rounded-lg\">Managed Cluster</SelectItem>\r\n          </SelectGroup>\r\n          <SelectGroup>\r\n            <SelectLabel className=\"text-zinc-500\">Delivery Layer</SelectLabel>\r\n            <SelectItem value=\"cdn\" className=\"rounded-lg\">Content Delivery</SelectItem>\r\n            <SelectItem value=\"edge\" className=\"rounded-lg\">Edge Computing</SelectItem>\r\n          </SelectGroup>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Select22;\r\n\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/select-22.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
