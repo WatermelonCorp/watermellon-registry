@@ -171,7 +171,7 @@
       ]
     },
     {
-      "name": "fitness-training-bento",
+      "name": "fitness-training",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -182,14 +182,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/fitness-training-bento.tsx",
-          "target": "components/ui/fitness-training-bento.tsx",
+          "path": "src/components/watermelon-ui/fitness-training.tsx",
+          "target": "components/ui/fitness-training.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "incident-monitoring-platform-bento",
+      "name": "incident-monitoring-platform",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -200,14 +200,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/incident-monitoring-platform-bento.tsx",
-          "target": "components/ui/incident-monitoring-platform-bento.tsx",
+          "path": "src/components/watermelon-ui/incident-monitoring-platform.tsx",
+          "target": "components/ui/incident-monitoring-platform.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "personal-ai-platform-bento",
+      "name": "personal-ai-platform",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -218,14 +218,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/personal-ai-platform-bento.tsx",
-          "target": "components/ui/personal-ai-platform-bento.tsx",
+          "path": "src/components/watermelon-ui/personal-ai-platform.tsx",
+          "target": "components/ui/personal-ai-platform.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "property-management-bento",
+      "name": "property-management",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -236,14 +236,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/property-management-bento.tsx",
-          "target": "components/ui/property-management-bento.tsx",
+          "path": "src/components/watermelon-ui/property-management.tsx",
+          "target": "components/ui/property-management.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "service-hub-bento",
+      "name": "service-hub",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -254,14 +254,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/service-hub-bento.tsx",
-          "target": "components/ui/service-hub-bento.tsx",
+          "path": "src/components/watermelon-ui/service-hub.tsx",
+          "target": "components/ui/service-hub.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "smart-funding-system-bento",
+      "name": "smart-funding-system",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -272,14 +272,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/smart-funding-system-bento.tsx",
-          "target": "components/ui/smart-funding-system-bento.tsx",
+          "path": "src/components/watermelon-ui/smart-funding-system.tsx",
+          "target": "components/ui/smart-funding-system.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "smart-music-studio-bento",
+      "name": "smart-music-studio",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -290,14 +290,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/smart-music-studio-bento.tsx",
-          "target": "components/ui/bento-15.tsx",
+          "path": "src/components/watermelon-ui/smart-music-studio.tsx",
+          "target": "components/ui/smart-music-studio.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "startup-investor-bento",
+      "name": "startup-investor",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -308,8 +308,8 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/startup-investor-bento.tsx",
-          "target": "components/ui/startup-investor-bento.tsx",
+          "path": "src/components/watermelon-ui/startup-investor.tsx",
+          "target": "components/ui/startup-investor.tsx",
           "type": "registry:ui"
         }
       ]
@@ -375,7 +375,7 @@
       ]
     },
     {
-      "name": "ai-orchestration-bento",
+      "name": "ai-orchestration",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -386,14 +386,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/ai-orchestration-bento.tsx",
-          "target": "components/ui/ai-orchestration-bento.tsx",
+          "path": "src/components/watermelon-ui/ai-orchestration.tsx",
+          "target": "components/ui/ai-orchestration.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "ai-prompt-studio-bento",
+      "name": "ai-prompt-studio",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -404,14 +404,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/ai-prompt-studio-bento.tsx",
-          "target": "components/ui/ai-prompt-studio-bento.tsx",
+          "path": "src/components/watermelon-ui/ai-prompt-studio.tsx",
+          "target": "components/ui/ai-prompt-studio.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "buisness-insights-platform-bento",
+      "name": "buisness-insights-platform",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -422,14 +422,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/buisness-insights-platform-bento.tsx",
-          "target": "components/ui/buisness-insights-platform-bento.tsx",
+          "path": "src/components/watermelon-ui/buisness-insights-platform.tsx",
+          "target": "components/ui/buisness-insights-platform.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "cybersecurity-platform-bento",
+      "name": "cybersecurity-platform",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -441,14 +441,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/cybersecurity-platform-bento.tsx",
-          "target": "components/ui/cybersecurity-platform-bento.tsx",
+          "path": "src/components/watermelon-ui/cybersecurity-platform.tsx",
+          "target": "components/ui/cybersecurity-platform.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "design-platform-bento",
+      "name": "design-platform",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -459,14 +459,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/design-platform-bento.tsx",
-          "target": "components/ui/design-platform-bento.tsx",
+          "path": "src/components/watermelon-ui/design-platform.tsx",
+          "target": "components/ui/design-platform.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "developer-starter-kit-bento",
+      "name": "developer-starter-kit",
       "type": "registry:ui",
       "registryDependencies": [
         "card"
@@ -477,14 +477,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/developer-starter-kit-bento.tsx",
-          "target": "components/ui/developer-starter-kit-bento.tsx",
+          "path": "src/components/watermelon-ui/developer-starter-kit.tsx",
+          "target": "components/ui/developer-starter-kit.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "finance-management-bento",
+      "name": "finance-management",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -495,14 +495,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/finance-management-bento.tsx",
-          "target": "components/ui/finance-management-bento.tsx",
+          "path": "src/components/watermelon-ui/finance-management.tsx",
+          "target": "components/ui/finance-management.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "task-automation-platform-bento",
+      "name": "task-automation-platform",
       "type": "registry:ui",
       "dependencies": [
         "lucide-react",
@@ -513,14 +513,14 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/task-automation-platform-bento.tsx",
-          "target": "components/ui/task-automation-platform-bento.tsx",
+          "path": "src/components/watermelon-ui/task-automation-platform.tsx",
+          "target": "components/ui/task-automation-platform.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "workflow-management-bento",
+      "name": "workflow-management",
       "type": "registry:ui",
       "registryDependencies": [
         "card"
@@ -531,8 +531,8 @@
       ],
       "files": [
         {
-          "path": "src/components/watermelon-ui/workflow-management-bento.tsx",
-          "target": "components/ui/workflow-management-bento.tsx",
+          "path": "src/components/watermelon-ui/workflow-management.tsx",
+          "target": "components/ui/workflow-management.tsx",
           "type": "registry:ui"
         }
       ]
