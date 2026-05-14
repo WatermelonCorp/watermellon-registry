@@ -14739,6 +14739,152 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "navigation-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "sheet",
+        "accordion",
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/navigation-1.tsx",
+          "target": "components/ui/navigation-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-2",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "sheet",
+        "accordion",
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/navigation-2.tsx",
+          "target": "components/ui/navigation-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-3",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/navigation-3.tsx",
+          "target": "components/ui/navigation-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-4",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "sheet",
+        "accordion",
+        "navigation-menu",
+        "input",
+        "avatar",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/navigation-4.tsx",
+          "target": "components/ui/navigation-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-5",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "sheet",
+        "accordion",
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/navigation-5.tsx",
+          "target": "components/ui/navigation-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-6",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/navigation-6.tsx",
+          "target": "components/ui/navigation-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-7",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "avatar",
+        "dropdown-menu",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/navigation-7.tsx",
+          "target": "components/ui/navigation-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
