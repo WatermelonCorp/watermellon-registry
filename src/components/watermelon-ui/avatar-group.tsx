@@ -72,8 +72,6 @@ export {
   type AvatarGroupTooltipProps,
 };
 
-
-
 type AvatarProps = Omit<HTMLMotionProps<'div'>, 'translate'> & {
   children: React.ReactNode;
   zIndex: number;
@@ -201,7 +199,6 @@ export {
   type AvatarGroupTooltipPropsPrimitive,
   type AvatarGroupTooltipArrowProps,
 };
-
 
 type Side = 'top' | 'bottom' | 'left' | 'right';
 type Align = 'start' | 'center' | 'end';
@@ -437,7 +434,7 @@ function TooltipOverlay() {
       }),
       flip(),
       shift({ padding: 8 }),
-      // eslint-disable-next-line react-hooks/refs
+
       floatingArrow({ element: arrowRef }),
     ],
   });
@@ -752,8 +749,6 @@ export {
   type TooltipContextType,
 };
 
-
-
 function getStrictContext<T>(
   name?: string,
 ): readonly [
@@ -788,7 +783,6 @@ function getStrictContext<T>(
 }
 
 export { getStrictContext };
-
 
 type AnyProps = Record<string, unknown>;
 

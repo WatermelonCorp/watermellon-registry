@@ -28,7 +28,7 @@ export const WeightWidget: React.FC<WeightWidgetProps> = ({
     const [displayValue, setDisplayValue] = useState(initialValue);
 
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
+
         setMounted(true);
     }, []);
 

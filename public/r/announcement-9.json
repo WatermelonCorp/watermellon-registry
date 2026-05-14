@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "announcement-9",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "announcement",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/announcement-9.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { FaCookie } from \"react-icons/fa\";\r\n\r\nexport default function Announcement9() {\r\n  return (\r\n    <div className=\"flex w-full items-center justify-center  px-4 py-6\">\r\n      <div className=\"bg-muted/50 text-foreground border-border w-full max-w-3xl rounded-lg border px-6 py-5 shadow-sm \">\r\n        <div className=\"flex flex-col gap-4\">\r\n          <div className=\"flex items-start gap-3\">\r\n            <FaCookie className=\"text-primary mt-1 size-5 shrink-0\" />\r\n\r\n            <p className=\"text-muted-foreground leading-relaxed tracking-wide\">\r\n              We use cookies to improve your browsing experience, personalize\r\n              content, and understand how our platform is used. You can choose\r\n              to accept or decline, but enabling them helps us serve you better.\r\n              Read more in our{\" \"}\r\n              <span className=\"text-primary cursor-pointer underline underline-offset-4\">\r\n                privacy policy\r\n              </span>\r\n              .\r\n            </p>\r\n          </div>\r\n\r\n          <div className=\"flex items-center gap-3 self-end\">\r\n            <Button\r\n              variant=\"default\"\r\n              className=\"cursor-pointer rounded-sm shadow-[inset_0_2px_4px_rgba(255,255,255,0.5),inset_0_-2px_5px_rgba(0,0,0,0.1),0_2px_20px_rgba(0,0,0,0.1)] text-shadow-2xs\"\r\n            >\r\n              Accept all\r\n            </Button>\r\n\r\n            <Button\r\n              variant=\"outline\"\r\n              className=\"text-muted-foreground cursor-pointer rounded-sm shadow-[inset_0_4px_2px_rgba(255,255,255,1),inset_0_-2px_5px_rgba(0,0,0,0.05),0_2px_20px_rgba(0,0,0,0.1)] text-shadow-2xs dark:shadow-[inset_0_4px_2px_rgba(255,255,255,0.05),inset_0_-2px_5px_rgba(0,0,0,0.2),0_2px_20px_rgba(0,0,0,0.1)]\"\r\n            >\r\n              Reject all\r\n            </Button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/announcement-9.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

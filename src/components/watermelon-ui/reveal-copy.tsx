@@ -32,7 +32,6 @@ export const RevealAndCopy = ({
   useEffect(() => {
     if (!revealed) return;
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTimerActive(true);
 
     const timer = setTimeout(() => {

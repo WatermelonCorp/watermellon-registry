@@ -110,7 +110,6 @@ const SPRING_OPTIONS: Transition = {
   damping: 30,
 };
 
-
 interface CarouselCardProps {
   item: CardItem;
   index: number;
@@ -182,7 +181,7 @@ export const CardSwipe: React.FC<CardCarouselProps> = ({
   const x = useMotionValue(0);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+
     setMounted(true);
   }, []);
 
@@ -253,4 +252,3 @@ export const CardSwipe: React.FC<CardCarouselProps> = ({
 };
 
 export default CardSwipe;
-  

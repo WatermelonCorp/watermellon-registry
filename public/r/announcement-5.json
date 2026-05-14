@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "announcement-5",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "announcement",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/announcement-5.tsx",
+      "content": "\"use client\";\r\n\r\nimport { X } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { HiArrowRight } from \"react-icons/hi2\";\r\n\r\nexport default function Announcement5() {\r\n  return (\r\n    <div className=\"flex h-full w-full items-center justify-center\">\r\n      <div className=\"relative isolate flex w-full items-center justify-center overflow-hidden border-b px-10 py-2 backdrop-blur\">\r\n        <div className=\"absolute inset-0 -z-10 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-300 dark:from-zinc-800 dark:via-zinc-700 dark:to-zinc-900\" />\r\n\r\n        <div className=\"absolute inset-0 -z-10 bg-gradient-to-r from-white/40 via-white/10 to-transparent opacity-40\" />\r\n\r\n        <div className=\"absolute inset-0 -z-10 bg-gradient-to-r from-white/20 via-transparent to-black/10 opacity-30 blur-2xl\" />\r\n\r\n        <div className=\"flex w-full max-w-4xl min-w-0 flex-row items-center gap-2 text-center\">\r\n          <p className=\"truncate text-sm leading-snug font-medium text-zinc-900 sm:text-base dark:text-zinc-100\">\r\n            A major update just landed — experience a faster, smoother, and more\r\n            refined interface.\r\n          </p>\r\n\r\n          <div className=\"group flex items-center\">\r\n            <Button className=\"rounded-full bg-black px-4 py-1.5 text-sm text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90\">\r\n              Explore update\r\n              <HiArrowRight className=\"ml-1 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1\" />\r\n            </Button>\r\n          </div>\r\n        </div>\r\n\r\n        <Button\r\n          variant=\"ghost\"\r\n          size=\"icon\"\r\n          className=\"absolute right-2 rounded-lg text-zinc-700 hover:bg-transparent hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-transparent dark:hover:text-white\"\r\n        >\r\n          <X className=\"h-4 w-4\" />\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/announcement-5.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import {type LucideIcon } from 'lucide-react';
-import { motion, AnimatePresence, type Transition } from 'motion/react';
-import { ContextMenu } from '@base-ui/react/context-menu';
-import { cn } from '@/lib/utils';
+import * as React from "react";
+import { type LucideIcon } from "lucide-react";
+import { motion, AnimatePresence, type Transition } from "motion/react";
+import { ContextMenu } from "@base-ui/react";
+import { cn } from "@/lib/utils";
 
 type RadialMenuProps = {
   children?: React.ReactNode;
@@ -27,7 +27,7 @@ type MenuItem = {
 type Point = { x: number; y: number };
 
 const menuTransition: Transition = {
-  type: 'spring',
+  type: "spring",
   stiffness: 420,
   damping: 32,
   mass: 1,
@@ -35,7 +35,7 @@ const menuTransition: Transition = {
 
 const wedgeTransition: Transition = {
   duration: 0.05,
-  ease: 'easeOut',
+  ease: "easeOut",
 };
 
 const FULL_CIRCLE = 360;
@@ -58,8 +58,8 @@ function slicePath(
   total: number,
   wedgeRadius: number,
   innerRadius: number,
-) {
-  if (total <= 0) return '';
+): string {
+  if (total <= 0) return "";
 
   // single item → full donut ring
   if (total === 1) {
@@ -139,7 +139,7 @@ function RadialMenu({
           return (
             <div
               {...triggerProps}
-              className={cn('select-none outline-none', triggerProps.className)}
+              className={cn("select-none outline-none", triggerProps.className)}
             >
               {children ? (
                 children
@@ -206,8 +206,8 @@ function RadialMenu({
                             outerRingInnerRadius,
                           )}
                           className={cn({
-                            'fill-neutral-200 dark:fill-neutral-700': isActive,
-                            'fill-neutral-100 dark:fill-neutral-800': !isActive,
+                            "fill-neutral-200 dark:fill-neutral-700": isActive,
+                            "fill-neutral-100 dark:fill-neutral-800": !isActive,
                           })}
                           initial={false}
                           transition={wedgeTransition}
@@ -220,11 +220,11 @@ function RadialMenu({
                             wedgeInnerRadius,
                           )}
                           className={cn(
-                            'stroke-neutral-300 dark:stroke-neutral-600 stroke-1',
+                            "stroke-neutral-300 dark:stroke-neutral-600 stroke-1",
                             {
-                              'fill-neutral-200 dark:fill-neutral-700':
+                              "fill-neutral-200 dark:fill-neutral-700":
                                 isActive,
-                              'fill-neutral-100 dark:fill-neutral-800':
+                              "fill-neutral-100 dark:fill-neutral-800":
                                 !isActive,
                             },
                           )}
@@ -249,15 +249,15 @@ function RadialMenu({
                             }}
                             aria-label={item.label}
                             className={cn(
-                              'size-full flex items-center justify-center rounded-full outline-none text-neutral-600 dark:text-neutral-400',
+                              "size-full flex items-center justify-center rounded-full outline-none text-neutral-600 dark:text-neutral-400",
                               {
-                                'text-neutral-900 dark:text-neutral-50':
+                                "text-neutral-900 dark:text-neutral-50":
                                   isActive,
                               },
                             )}
                           >
                             <Icon
-                              style={{ height: iconSize, width: iconSize }}
+                              size={iconSize}
                             />
                           </ContextMenu.Item>
                         </foreignObject>

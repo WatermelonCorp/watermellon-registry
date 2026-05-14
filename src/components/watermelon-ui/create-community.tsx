@@ -29,7 +29,7 @@ export const CreateCommunity: React.FC<CreateCommunityProps> = ({
 
   useEffect(() => {
     if (initialData) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+
       if (initialData.communityName) setCommunityName(initialData.communityName);
       if (initialData.pricing) setPricing(initialData.pricing);
       if (initialData.isApplicationRequired !== undefined) setIsApplicationRequired(initialData.isApplicationRequired);
@@ -42,7 +42,7 @@ export const CreateCommunity: React.FC<CreateCommunityProps> = ({
     <AnimatePresence mode="wait">
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto overflow-x-hidden">
-          
+
           {/* BG Overlay Animation */}
           <motion.div 
             initial={{ opacity: 0 }}

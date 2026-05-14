@@ -261,7 +261,7 @@ export function OptionList({
   );
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+
     setUncontrolledSelected((prev) => {
       const normalized = parseSelectionToIdSet(
         Array.from(prev),
@@ -314,7 +314,7 @@ export function OptionList({
 
   useEffect(() => {
     if (optionStates.length === 0) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+
     setActiveIndex((prev) => {
       if (
         prev < 0 ||
@@ -621,9 +621,7 @@ export function OptionList({
   );
 }
 
-
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
-
 
 function Separator({
   className,
@@ -649,7 +647,6 @@ export { Separator }
 
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -708,7 +705,6 @@ function Button({
 }
 
 export { Button, buttonVariants };
-
 
 /**
  * Tool UI conventions:
@@ -830,8 +826,6 @@ export type SerializableActionsConfig = z.infer<
 
 export type SerializableAction = z.infer<typeof SerializableActionSchema>;
 
-
-
 export type ActionsProp = ActionsConfig | Action[];
 
 const NEGATORY_ACTION_IDS = new Set([
@@ -878,7 +872,6 @@ export function normalizeActionsConfig(
         confirmTimeout: actions.confirmTimeout,
       };
 }
-
 
 export interface ActionButtonsProps {
   actions: Action[];
@@ -974,8 +967,6 @@ export function ActionButtons({
     </div>
   );
 }
-
-
 
 export type UseActionButtonsOptions = {
   actions: Action[];
@@ -1101,7 +1092,6 @@ export function useActionButtons(
   };
 }
 
-
 export const OptionListOptionSchema = z.object({
   id: z.string().min(1),
   label: z.string().min(1),
@@ -1206,7 +1196,6 @@ export function parseSerializableOptionList(
 ): SerializableOptionList {
   return parseWithSchema(SerializableOptionListSchema, input, "OptionList");
 }
-
 
 import { z } from "zod";
 import { cn } from "@/lib/utils";

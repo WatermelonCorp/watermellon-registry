@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "announcement-1",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "announcement",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/announcement-1.tsx",
+      "content": "\"use client\";\r\n\r\nimport { X } from \"lucide-react\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { HiRocketLaunch } from \"react-icons/hi2\";\r\n\r\nexport default function Announcement1() {\r\n  return (\r\n    <div className=\"flex h-full w-full items-center justify-center\">\r\n      <div className=\"border-primary flex w-full items-center justify-between border-b px-4 py-1.5\">\r\n        <div className=\"flex min-w-0 items-center gap-2 text-sm\">\r\n          <Badge variant=\"default\" className=\"text-xs\">\r\n            NEW\r\n          </Badge>\r\n\r\n          <p className=\"text-muted-foreground flex items-center gap-2 truncate\">\r\n            New dashboard experience is live with faster load times and smoother\r\n            navigation.\r\n          </p>\r\n          <div className=\"group flex items-center gap-1\">\r\n            <span className=\"text-primary before:bg-primary relative flex cursor-pointer items-center gap-1 truncate font-medium before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:transition-transform before:duration-300 before:ease-out group-hover:before:scale-x-100\">\r\n              Explore now\r\n            </span>\r\n            <HiRocketLaunch className=\"text-primary h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5\" />\r\n          </div>\r\n        </div>\r\n\r\n        <Button\r\n          variant=\"ghost\"\r\n          size=\"icon\"\r\n          className=\"text-primary hover:text-primary/50 cursor-pointer rounded-lg hover:bg-transparent hover:dark:bg-transparent\"\r\n        >\r\n          <X className=\"h-4 w-4\" />\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/announcement-1.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
