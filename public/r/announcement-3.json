@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "announcement-3",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "announcement",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/announcement-3.tsx",
+      "content": "\"use client\";\r\n\r\nimport { X } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { HiArrowRight } from \"react-icons/hi2\";\r\n\r\nexport default function Announcement3() {\r\n  return (\r\n    <div className=\"flex h-full w-full items-center justify-center\">\r\n      <div className=\"border-primary bg-primary/90 relative flex w-full items-center justify-center border-t border-b px-4 py-1.5 font-mono tracking-tight\">\r\n        <div className=\"flex-col items-center space-y-1 text-sm sm:flex sm:flex-row sm:gap-3 sm:space-y-0\">\r\n          <div className=\"text-primary-foreground text-md flex items-center gap-3\">\r\n            Hackathon registrations are now open — build fast, ship faster, and\r\n            win big\r\n          </div>\r\n          <div className=\"group flex items-center gap-3\">\r\n            <div className=\"hidden size-1 rounded-full bg-white sm:block\" />\r\n\r\n            <Button className=\"rounded-none bg-white text-black hover:bg-white/95 dark:bg-white dark:hover:bg-white/95\">\r\n              Join now\r\n              <HiArrowRight className=\"h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5\" />\r\n            </Button>\r\n          </div>\r\n        </div>\r\n\r\n        <Button\r\n          variant=\"ghost\"\r\n          size=\"icon\"\r\n          className=\"text-primary-foreground hover:text-primary-foreground/70 absolute right-2 rounded-lg hover:bg-transparent dark:hover:bg-transparent\"\r\n        >\r\n          <X className=\"h-4 w-4\" />\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/announcement-3.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

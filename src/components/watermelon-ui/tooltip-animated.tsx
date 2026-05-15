@@ -81,8 +81,6 @@ export {
   type TooltipContentProps,
 };
 
-
-
 type Side = 'top' | 'bottom' | 'left' | 'right';
 type Align = 'start' | 'center' | 'end';
 
@@ -126,7 +124,6 @@ type TooltipContextType = {
 const [LocalTooltipProvider, useTooltip] = getStrictContext<TooltipContextType>(
   'LocalTooltipProvider',
 );
-
 
 function getResolvedSide(placement: Side | `${Side}-${Align}`) {
   if (placement.includes('-')) {
@@ -316,7 +313,7 @@ function TooltipOverlay() {
       }),
       flip(),
       shift({ padding: 8 }),
-      // eslint-disable-next-line react-hooks/refs
+
       floatingArrow({ element: arrowRef }),
     ],
   });
@@ -613,7 +610,6 @@ function TooltipTriggerPrimitive({
   );
 }
 
-
 function getStrictContext<T>(
   name?: string,
 ): readonly [
@@ -648,7 +644,6 @@ function getStrictContext<T>(
 }
 
 export { getStrictContext };
-
 
 type AnyProps = Record<string, unknown>;
 

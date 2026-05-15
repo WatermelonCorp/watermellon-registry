@@ -5,11 +5,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "button",
-    "badge",
-    "avatar",
-    "dropdown-menu",
-    "popover"
+    "navigation",
+    "button"
   ],
   "files": [
     {

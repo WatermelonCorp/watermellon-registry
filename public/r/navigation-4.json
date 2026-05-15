@@ -5,14 +5,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "button",
-    "badge",
-    "sheet",
-    "accordion",
-    "navigation-menu",
-    "input",
-    "avatar",
-    "dropdown-menu"
+    "navigation",
+    "button"
   ],
   "files": [
     {

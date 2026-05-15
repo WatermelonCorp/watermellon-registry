@@ -23,6 +23,9 @@ export default tseslint.config(
         'off',
         { allowConstantExport: true },
       ],
+      'react-hooks/purity': 'off',
+      'react-hooks/refs': 'off',
+      'react-hooks/set-state-in-effect': 'off',
     },
   }
 )

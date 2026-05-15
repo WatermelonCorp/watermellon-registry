@@ -160,7 +160,7 @@ export const ComposeEmailCard: FC<ComposeEmailCardProps> = ({
 
   useLayoutEffect(() => {
     if (showToolbar) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+
       setSafeX(getSafeToolbarX(toolbarPos.x));
     }
   }, [toolbarPos, showToolbar]);

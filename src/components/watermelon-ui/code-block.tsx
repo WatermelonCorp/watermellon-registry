@@ -133,7 +133,7 @@ export function CodeBlock({
   useEffect(() => {
     const cached = htmlCache.get(cacheKey);
     if (cached) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+
       setHighlightedHtml(cached);
       return;
     }
@@ -336,8 +336,6 @@ export function CodeBlock({
   );
 }
 
-
-
 export function CodeBlockProgress({ className }: { className?: string }) {
   return (
     <div
@@ -360,7 +358,6 @@ export function CodeBlockProgress({ className }: { className?: string }) {
     </div>
   );
 }
-
 
 import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"
 
@@ -399,11 +396,9 @@ function CollapsibleContent({
 
 export { Collapsible, CollapsibleTrigger, CollapsibleContent }
 
-
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -462,9 +457,6 @@ function Button({
 }
 
 export { Button, buttonVariants };
-
-
-
 
 export interface ActionButtonsProps {
   actions: Action[];
@@ -560,8 +552,6 @@ export function ActionButtons({
     </div>
   );
 }
-
-
 
 import { z } from "zod";
 import type { ReactNode } from "react";
@@ -687,7 +677,6 @@ export type SerializableActionsConfig = z.infer<
 
 export type SerializableAction = z.infer<typeof SerializableActionSchema>;
 
-
 export type UseActionButtonsOptions = {
   actions: Action[];
   onAction: (actionId: string) => void | Promise<void>;
@@ -812,7 +801,6 @@ export function useActionButtons(
   };
 }
 
-
 export type ActionsProp = ActionsConfig | Action[];
 
 const NEGATORY_ACTION_IDS = new Set([
@@ -859,7 +847,6 @@ export function normalizeActionsConfig(
       confirmTimeout: actions.confirmTimeout,
     };
 }
-
 
 function fallbackCopyToClipboard(text: string): boolean {
   try {
@@ -920,7 +907,6 @@ export function useCopyToClipboard(options?: {
   return { copiedId, copy };
 }
 
-
 export const CodeBlockPropsSchema = z.object({
   id: ToolUIIdSchema,
   role: ToolUIRoleSchema.optional(),
@@ -959,7 +945,6 @@ export const SerializableCodeBlockSchema = z.object({
 });
 
 export type SerializableCodeBlock = z.infer<typeof SerializableCodeBlockSchema>;
-
 
 function formatZodPath(path: Array<string | number | symbol>): string {
   if (path.length === 0) return "root";

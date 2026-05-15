@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "newsletter-2",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "newsletter",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/newsletter-2.tsx",
+      "content": "import React from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Input } from \"@/components/ui/input\";\n\nexport interface Newsletter2Props {\n  heading?: string;\n  description?: string;\n  label?: string;\n  placeholder?: string;\n  buttonText?: string;\n  disclaimer?: React.ReactNode;\n}\n\nconst Newsletter2: React.FC<Newsletter2Props> = ({\n  heading = \"Subscribe to our newsletter\",\n  description = \"Join our newsletter to get exclusive insights, timely updates, and expert tips that help you take control of your finances.\",\n  label = \"Stay Informed\",\n  placeholder = \"Enter your email\",\n  buttonText = \"Subscribe\",\n  disclaimer = (\n    <>\n      By subscribing you agree to our{\" \"}\n      <a href=\"#\" className=\"underline transition-colors hover:text-white\">\n        Privacy Policy\n      </a>\n    </>\n  ),\n}) => {\n  return (\n    <section className=\"flex h-full w-full items-center justify-center py-12 md:py-16 lg:py-24\">\n      <div className=\"container mx-auto px-4 md:px-6\">\n        <div className=\"from-primary to-primary/50 dark:to-primary/70 flex flex-col items-center justify-between gap-10 rounded-3xl bg-gradient-to-b p-8 text-white md:p-12 lg:flex-row lg:gap-16 lg:p-16\">\n          <div className=\"flex w-full max-w-xl flex-col space-y-5\">\n            <h2 className=\"text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl\">\n              {heading}\n            </h2>\n            <p className=\"max-w-md text-base leading-relaxed text-orange-50 md:text-lg\">\n              {description}\n            </p>\n          </div>\n\n          <div className=\"w-full max-w-md flex-1 lg:w-auto\">\n            <div className=\"flex flex-col space-y-3\">\n              {label && (\n                <label className=\"mb-1 block text-sm font-semibold text-white md:text-base\">\n                  {label}\n                </label>\n              )}\n\n              <form className=\"flex flex-col gap-3 sm:flex-row\">\n                <div className=\"relative flex-1\">\n                  <Input\n                    type=\"email\"\n                    placeholder={placeholder}\n                    className=\"bg-background/50 dark:bg-background/70 focus-visible:ring-primary/30 focus-visible:border-primary/50 h-12 rounded-xl pl-3 text-base backdrop-blur-2xl sm:h-14 sm:w-full \"\n                    required\n                  />\n                </div>\n                <Button\n                  type=\"submit\"\n                  className=\"bg-primary/20 h-12 rounded-xl px-6 font-semibold text-white shadow-[0px_0px_4px_1px_rgba(0,0,0,0.05),inset_0_0px_4px_1px_rgba(255,255,255,0.45),inset_0_1px_0px_0px_rgba(255,255,255,0.35)] transition-all active:scale-[0.96] sm:h-14 sm:px-8\"\n                >\n                  {buttonText}\n                </Button>\n              </form>\n\n              {disclaimer && (\n                <p className=\"text-foreground/60 mt-3 text-xs md:text-sm\">\n                  {disclaimer}\n                </p>\n              )}\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n};\n\nexport default Newsletter2;\n",
+      "type": "registry:ui",
+      "target": "components/ui/newsletter-2.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

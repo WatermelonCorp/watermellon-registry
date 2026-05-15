@@ -20,7 +20,6 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { StarIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[box-shadow,_color,_background-color,_border-color,_outline-color,_text-decoration-color,_fill,_stroke] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
@@ -312,7 +311,6 @@ function GithubStarsLogo(props: GithubStarsLogoProps) {
   );
 }
 
-
 type ButtonPrimitiveProps = WithAsChild<
   HTMLMotionProps<'button'> & {
     hoverScale?: number;
@@ -336,8 +334,6 @@ function ButtonPrimitive({
     />
   );
 }
-
-
 
 type AnyProps = Record<string, unknown>;
 
@@ -429,7 +425,6 @@ export {
   type DOMMotionProps,
   type AnyProps,
 };
-
 
 type SlidingNumberRollerProps = {
   prevValue: number;
@@ -666,7 +661,6 @@ function SlidingNumber({
     ? newIntStrRaw.padStart(finalIntLength, '0')
     : newIntStrRaw;
 
-  // eslint-disable-next-line react-hooks/refs
   const prevFormatted = formatNumber(prevNumberRef.current);
   const [prevIntStrRaw = '', prevDecStrRaw = ''] = prevFormatted.split('.');
   const prevIntStr = padStart
@@ -766,7 +760,6 @@ function SlidingNumber({
 }
 
 export { SlidingNumber, type SlidingNumberProps };
-
 
 interface UseIsInViewOptions {
   inView?: boolean;

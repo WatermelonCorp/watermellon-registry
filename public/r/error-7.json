@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-7",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "error",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/error-7.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { ArrowLeft } from \"lucide-react\";\n\nexport default function Error7() {\n  return (\n    <div className=\"bg-background flex min-h-screen  w-full flex-col overflow-hidden border font-sans lg:flex-row\">\n      <div className=\"bg-muted relative h-screen w-full p-2 lg:w-1/2\">\n        <img\n          src=\"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop\"\n          alt=\"Error illustration\"\n          className=\"h-full w-full rounded-lg object-cover shadow-sm\"\n        />\n      </div>\n      <div className=\"relative flex w-full flex-col justify-center px-8 py-16 lg:w-1/2 lg:p-20 xl:p-32\">\n        <div\n          className=\"pointer-events-none absolute inset-0 z-0 opacity-10\"\n          style={{\n            backgroundImage: `\n          repeating-linear-gradient(45deg, var(--primary) 0, var(--primary) 1px, transparent 1px, transparent 20px),\n        repeating-linear-gradient(-45deg, var(--primary) 0, var(--primary) 1px, transparent 1px, transparent 20px)\n        `,\n            backgroundSize: \"40px 40px\",\n          }}\n        />\n        <h1 className=\"text-foreground mb-2 flex items-center text-5xl font-semibold tracking-tight lg:text-6xl xl:text-7xl\">\n          Page not Found\n        </h1>\n        <div className=\"text-md text-muted-foreground mb-4 space-y-1 font-medium md:text-lg\">\n          <p>Oops... this page seems to have wandered off.</p>\n        </div>\n\n        <div className=\"flex flex-wrap items-center gap-3\">\n          <Button\n            asChild\n            className=\"rounded shadow-[inset_0_2px_4px_0_rgba(255,255,255,0.7),inset_0_-2px_4px_0_rgba(0,0,0,0.2)] sm:w-auto dark:shadow-[inset_0_-2px_4px_0_rgba(0,0,0,0.2),inset_0_2px_4px_0_rgba(255,255,255,0.5)]\"\n          >\n            <a href=\"/\">Back home</a>\n          </Button>\n          <Button\n            variant=\"secondary\"\n            className=\"rounded shadow-[inset_0_2px_4px_0_rgba(255,255,255,0.7),inset_0_-2px_4px_0_rgba(0,0,0,0.2)] sm:w-auto dark:shadow-[inset_0_-2px_4px_0_rgba(0,0,0,0.2),inset_0_2px_4px_0_rgba(255,255,255,0.2)]\"\n          >\n            <ArrowLeft className=\"h-4 w-4\" />\n            Go back\n          </Button>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/error-7.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

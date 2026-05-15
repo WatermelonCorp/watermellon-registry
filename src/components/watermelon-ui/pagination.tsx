@@ -55,10 +55,9 @@ export function Pagination({
 
   const len = digits.length;
   const prevLen = prevDigits.length;
-  // eslint-disable-next-line react-hooks/refs
+
   const lenDiff = len - prevLen;
 
-  // eslint-disable-next-line react-hooks/refs
   const nextTicks = digits.map((digit, i) => {
     const prevI = i - lenDiff;
     const prevDigit = prevI >= 0 ? prevDigits[prevI] : undefined;

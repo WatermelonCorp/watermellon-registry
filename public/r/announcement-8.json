@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "announcement-8",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "announcement",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/watermelon-ui/announcement-8.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { HiXMark } from \"react-icons/hi2\";\r\nimport { MdArrowOutward } from \"react-icons/md\";\r\n\r\nexport default function Announcement8() {\r\n  return (\r\n    <div className=\"flex h-full w-full items-center justify-center text-sm  \">\r\n      <div className=\"bg-muted flex w-full items-center justify-between gap-3 px-4 py-2 \">\r\n        <p className=\"text-muted-foreground flex flex-1 items-center justify-center gap-1 text-center text-sm\">\r\n          Smart Workspaces are live.{\" \"}\r\n          <span className=\"text-primary group flex cursor-pointer items-center justify-center underline underline-offset-4\">\r\n            See what’s new\r\n            <MdArrowOutward className=\"mt-0.5 ml-0.5 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5\" />\r\n          </span>\r\n        </p>\r\n\r\n        <Button\r\n          variant=\"link\"\r\n          className=\"text-muted-foreground hover:text-foreground transition\"\r\n        >\r\n          <HiXMark className=\"size-4\" />\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": "components/ui/announcement-8.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
