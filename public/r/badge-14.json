@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/badge/badge-14.tsx",
-      "content": "\"use client\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nimport { FiArrowRight } from \"react-icons/fi\";\r\n\r\nconst Badge14 = () => {\r\n  return (\r\n    <Badge asChild>\r\n      <a\r\n        href=\"#\"\r\n        className=\"group inline-flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-0\"\r\n      >\r\n        Link\r\n        <FiArrowRight className=\"size-3 transition-transform duration-200 group-hover:translate-x-1\" />\r\n      </a>\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge14;\r\n",
+      "content": "\"use client\";\n\nimport { Badge } from \"@/components/ui/badge\";\n\nimport { FiArrowRight } from \"react-icons/fi\";\n\nconst Badge14 = () => {\n  return (\n    <Badge asChild>\n      <a\n        href=\"#\"\n        className=\"group inline-flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-0\"\n      >\n        Link\n        <FiArrowRight className=\"size-3 transition-transform duration-200 group-hover:translate-x-1\" />\n      </a>\n    </Badge>\n  );\n};\n\nexport default Badge14;\n",
       "type": "registry:ui",
       "target": "components/ui/badge-14.tsx"
     }

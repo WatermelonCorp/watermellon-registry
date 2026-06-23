@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/switch/switch-15.tsx",
-      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch15 = () => {\r\n  const [checked, setChecked] = useState<boolean>(true);\r\n\r\n  return (\r\n    <div className=\"inline-flex items-center gap-2\">\r\n      <Switch\r\n        id=\"notifications-toggle\"\r\n        checked={checked}\r\n        onCheckedChange={setChecked}\r\n        aria-label=\"Toggle notifications\"\r\n      />\r\n      <Label htmlFor=\"notifications-toggle\" className=\"text-sm font-medium\">\r\n        {checked ? \"Notifications On\" : \"Notifications Off\"}\r\n      </Label>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Switch15;\r\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { Switch } from \"@/components/ui/switch\";\n\nconst Switch15 = () => {\n  const [checked, setChecked] = useState<boolean>(true);\n\n  return (\n    <div className=\"inline-flex items-center gap-2\">\n      <Switch\n        id=\"notifications-toggle\"\n        checked={checked}\n        onCheckedChange={setChecked}\n        aria-label=\"Toggle notifications\"\n      />\n      <Label htmlFor=\"notifications-toggle\" className=\"text-sm font-medium\">\n        {checked ? \"Notifications On\" : \"Notifications Off\"}\n      </Label>\n    </div>\n  );\n};\n\nexport default Switch15;\n",
       "type": "registry:ui",
       "target": "components/ui/switch-15.tsx"
     }

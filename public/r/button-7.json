@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-7.tsx",
-      "content": "\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button7 = () => {\r\n  return <Button size=\"lg\">Size Large</Button>;\r\n};\r\n\r\nexport default Button7;\r\n",
+      "content": "\nimport { Button } from \"@/components/ui/button\";\n\nconst Button7 = () => {\n  return <Button size=\"lg\">Size Large</Button>;\n};\n\nexport default Button7;\n",
       "type": "registry:ui",
       "target": "components/ui/button-7.tsx"
     }

@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-6.tsx",
-      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst Button6 = () => {\r\n  return <Button size=\"sm\">Small Size</Button>;\r\n};\r\n\r\nexport default Button6;\r\n",
+      "content": "import { Button } from \"@/components/ui/button\";\n\nconst Button6 = () => {\n  return <Button size=\"sm\">Small Size</Button>;\n};\n\nexport default Button6;\n",
       "type": "registry:ui",
       "target": "components/ui/button-6.tsx"
     }

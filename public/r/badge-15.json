@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/badge/badge-15.tsx",
-      "content": "\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge15 = () => {\r\n  return (\r\n    <Badge className=\"border-none bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 focus-visible:outline-none dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 \">\r\n      <span\r\n        className=\"size-2 rounded-full bg-green-600 dark:bg-green-400\"\r\n        aria-hidden=\"true\"\r\n      />\r\n      Done\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge15;\r\n",
+      "content": "\nimport { Badge } from \"@/components/ui/badge\";\n\nconst Badge15 = () => {\n  return (\n    <Badge className=\"border-none bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 focus-visible:outline-none dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 \">\n      <span\n        className=\"size-2 rounded-full bg-green-600 dark:bg-green-400\"\n        aria-hidden=\"true\"\n      />\n      Done\n    </Badge>\n  );\n};\n\nexport default Badge15;\n",
       "type": "registry:ui",
       "target": "components/ui/badge-15.tsx"
     }

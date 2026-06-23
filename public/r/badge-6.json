@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/badge/badge-6.tsx",
-      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge6 = () => {\r\n  return <Badge className=\"px-2 py-1\">Sm</Badge>;\r\n};\r\n\r\nexport default Badge6",
+      "content": "import { Badge } from \"@/components/ui/badge\";\n\nconst Badge6 = () => {\n  return <Badge className=\"px-2 py-1\">Sm</Badge>;\n};\n\nexport default Badge6",
       "type": "registry:ui",
       "target": "components/ui/badge-6.tsx"
     }

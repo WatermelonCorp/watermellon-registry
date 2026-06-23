@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-14.tsx",
-      "content": "import { FaDownload } from \"react-icons/fa6\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button14 = () => {\r\n  return (\r\n    <Button className=\"border-primary border-dashed shadow-none bg-primary/10 text-foreground\">\r\n      <FaDownload />\r\n      Download\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button14;\r\n",
+      "content": "import { FaDownload } from \"react-icons/fa6\";\n\nimport { Button } from \"@/components/ui/button\";\n\nconst Button14 = () => {\n  return (\n    <Button className=\"border-primary border-dashed shadow-none bg-primary/10 text-foreground\">\n      <FaDownload />\n      Download\n    </Button>\n  );\n};\n\nexport default Button14;\n",
       "type": "registry:ui",
       "target": "components/ui/button-14.tsx"
     }

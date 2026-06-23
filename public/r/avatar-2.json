@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/avatar/avatar-2.tsx",
-      "content": "import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\n\r\ntype Profile = {\r\n  name: string\r\n  avatar: string\r\n}\r\n\r\nconst profile: Profile = {\r\n  name: 'Owen Brooks',\r\n  avatar: 'https://i.pravatar.cc/160?img=32'\r\n}\r\n\r\nconst getInitials = (name: string) =>\r\n  name\r\n    .split(/\\s+/)\r\n    .map((word) => word.slice(0, 1))\r\n    .join('')\r\n\r\nconst Avatar2 = () => {\r\n  return (\r\n    <Avatar className='ring-ring ring-2'>\r\n      <AvatarImage src={profile.avatar} alt={profile.name} />\r\n      <AvatarFallback className='text-xs'>{getInitials(profile.name)}</AvatarFallback>\r\n    </Avatar>\r\n  )\r\n}\r\n\r\nexport default Avatar2\r\n\r\n",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\n\ntype Profile = {\n  name: string\n  avatar: string\n}\n\nconst profile: Profile = {\n  name: 'Owen Brooks',\n  avatar: 'https://i.pravatar.cc/160?img=32'\n}\n\nconst getInitials = (name: string) =>\n  name\n    .split(/\\s+/)\n    .map((word) => word.slice(0, 1))\n    .join('')\n\nconst Avatar2 = () => {\n  return (\n    <Avatar className='ring-ring ring-2'>\n      <AvatarImage src={profile.avatar} alt={profile.name} />\n      <AvatarFallback className='text-xs'>{getInitials(profile.name)}</AvatarFallback>\n    </Avatar>\n  )\n}\n\nexport default Avatar2\n\n",
       "type": "registry:ui",
       "target": "components/ui/avatar-2.tsx"
     }

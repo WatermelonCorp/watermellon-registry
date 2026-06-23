@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/alerts/alert-11.tsx",
-      "content": "import { FaUserCheck } from \"react-icons/fa\";\r\n\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nconst Alert11 = () => {\r\n  return (\r\n    <Alert className=\"rounded-md border-l-10 border-green-600 bg-green-600/10 text-green-600 dark:border-green-400 dark:bg-green-400/10 dark:text-green-400\">\r\n      <FaUserCheck className=\"size-4\" />\r\n      <AlertTitle>Welcome aboard! Your request is approved.</AlertTitle>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert11;\r\n",
+      "content": "import { FaUserCheck } from \"react-icons/fa\";\n\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\n\nconst Alert11 = () => {\n  return (\n    <Alert className=\"rounded-md border-l-10 border-green-600 bg-green-600/10 text-green-600 dark:border-green-400 dark:bg-green-400/10 dark:text-green-400\">\n      <FaUserCheck className=\"size-4\" />\n      <AlertTitle>Welcome aboard! Your request is approved.</AlertTitle>\n    </Alert>\n  );\n};\n\nexport default Alert11;\n",
       "type": "registry:ui",
       "target": "components/ui/alert-11.tsx"
     }

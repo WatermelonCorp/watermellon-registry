@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-3.tsx",
-      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst Button3 = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <Button variant=\"secondary\">Discard</Button>\r\n      <Button>Save</Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Button3;\r\n",
+      "content": "import { Button } from \"@/components/ui/button\";\n\nconst Button3 = () => {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"secondary\">Discard</Button>\n      <Button>Save</Button>\n    </div>\n  );\n};\n\nexport default Button3;\n",
       "type": "registry:ui",
       "target": "components/ui/button-3.tsx"
     }

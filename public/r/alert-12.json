@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/alerts/alert-12.tsx",
-      "content": "import { FaUserXmark } from \"react-icons/fa6\";\r\n\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nconst Alert12 = () => {\r\n  return (\r\n    <Alert className=\"border-destructive bg-destructive/10 text-destructive rounded-none border-0 border-l-10\">\r\n      <FaUserXmark className=\"size-4\" />\r\n      <AlertTitle>Your request to join the team was declined.</AlertTitle>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert12;\r\n",
+      "content": "import { FaUserXmark } from \"react-icons/fa6\";\n\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\n\nconst Alert12 = () => {\n  return (\n    <Alert className=\"border-destructive bg-destructive/10 text-destructive rounded-none border-0 border-l-10\">\n      <FaUserXmark className=\"size-4\" />\n      <AlertTitle>Your request to join the team was declined.</AlertTitle>\n    </Alert>\n  );\n};\n\nexport default Alert12;\n",
       "type": "registry:ui",
       "target": "components/ui/alert-12.tsx"
     }

@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-23.tsx",
-      "content": "import { FaBell } from \"react-icons/fa\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button23 = () => {\r\n  return (\r\n    <Button variant=\"outline\" className=\"relative\">\r\n      <FaBell />\r\n      Inbox\r\n      <Badge\r\n        variant=\"destructive\"\r\n        className=\"absolute -top-2.5 -right-2.5 h-5 min-w-5 px-1 tabular-nums bg-red-600 text-white dark:bg-red-400\"\r\n      >\r\n        8\r\n      </Badge>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button23;\r\n",
+      "content": "import { FaBell } from \"react-icons/fa\";\n\nimport { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\n\nconst Button23 = () => {\n  return (\n    <Button variant=\"outline\" className=\"relative\">\n      <FaBell />\n      Inbox\n      <Badge\n        variant=\"destructive\"\n        className=\"absolute -top-2.5 -right-2.5 h-5 min-w-5 px-1 tabular-nums bg-red-600 text-white dark:bg-red-400\"\n      >\n        8\n      </Badge>\n    </Button>\n  );\n};\n\nexport default Button23;\n",
       "type": "registry:ui",
       "target": "components/ui/button-23.tsx"
     }

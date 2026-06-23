@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/alerts/alert-19.tsx",
-      "content": ";\r\n\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { FaCheckCircle } from \"react-icons/fa\";\r\nconst Alert19 = () => {\r\n  return (\r\n    <Alert className=\"border-green-600 text-green-600 dark:border-green-400 dark:text-green-400 bg-green-600/10 dark:bg-green-400/10\">\r\n      <FaCheckCircle />\r\n      <AlertTitle>Order placed successfully</AlertTitle>\r\n      <AlertDescription className=\"text-green-600/80 dark:text-green-400/80\">\r\n        Your order has been confirmed and is being processed.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert19;\r\n",
+      "content": ";\n\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\nimport { FaCheckCircle } from \"react-icons/fa\";\nconst Alert19 = () => {\n  return (\n    <Alert className=\"border-green-600 text-green-600 dark:border-green-400 dark:text-green-400 bg-green-600/10 dark:bg-green-400/10\">\n      <FaCheckCircle />\n      <AlertTitle>Order placed successfully</AlertTitle>\n      <AlertDescription className=\"text-green-600/80 dark:text-green-400/80\">\n        Your order has been confirmed and is being processed.\n      </AlertDescription>\n    </Alert>\n  );\n};\n\nexport default Alert19;\n",
       "type": "registry:ui",
       "target": "components/ui/alert-19.tsx"
     }

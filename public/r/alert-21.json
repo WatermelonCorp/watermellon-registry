@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/alerts/alert-21.tsx",
-      "content": "import { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { MdError } from \"react-icons/md\";\r\n\r\nconst Alert21 = () => {\r\n  return (\r\n    <Alert className=\"bg-primary/5 border-none\">\r\n      <MdError className=\"size-4\" />\r\n      <AlertTitle>Supported file formats</AlertTitle>\r\n      <AlertDescription>\r\n        You can upload files in PDF, DOCX, JPG, or PNG format for a smooth\r\n        experience.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert21;\r\n",
+      "content": "import { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\nimport { MdError } from \"react-icons/md\";\n\nconst Alert21 = () => {\n  return (\n    <Alert className=\"bg-primary/5 border-none\">\n      <MdError className=\"size-4\" />\n      <AlertTitle>Supported file formats</AlertTitle>\n      <AlertDescription>\n        You can upload files in PDF, DOCX, JPG, or PNG format for a smooth\n        experience.\n      </AlertDescription>\n    </Alert>\n  );\n};\n\nexport default Alert21;\n",
       "type": "registry:ui",
       "target": "components/ui/alert-21.tsx"
     }

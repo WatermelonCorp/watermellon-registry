@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-27.tsx",
-      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { FiMenu, FiX } from \"react-icons/fi\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button27 = () => {\r\n  const [isOpen, setIsOpen] = useState(false);\r\n\r\n  return (\r\n    <Button\r\n      variant=\"ghost\"\r\n      size=\"icon\"\r\n      onClick={() => setIsOpen(!isOpen)}\r\n      aria-label=\"Toggle menu\"\r\n    >\r\n      {isOpen ? <FiX className=\"size-5\" /> : <FiMenu className=\"size-5\" />}\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button27;\r\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\n\nimport { FiMenu, FiX } from \"react-icons/fi\";\n\nimport { Button } from \"@/components/ui/button\";\n\nconst Button27 = () => {\n  const [isOpen, setIsOpen] = useState(false);\n\n  return (\n    <Button\n      variant=\"ghost\"\n      size=\"icon\"\n      onClick={() => setIsOpen(!isOpen)}\n      aria-label=\"Toggle menu\"\n    >\n      {isOpen ? <FiX className=\"size-5\" /> : <FiMenu className=\"size-5\" />}\n    </Button>\n  );\n};\n\nexport default Button27;\n",
       "type": "registry:ui",
       "target": "components/ui/button-27.tsx"
     }

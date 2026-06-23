@@ -13063,7 +13063,7 @@
     {
       "name": "cta-5",
       "type": "registry:ui",
-      "dependencies": ["motion","@hugeicons/react"],
+      "dependencies": ["motion", "@hugeicons/react"],
       "registryDependencies": ["button"],
       "files": [
         {
@@ -13715,6 +13715,32 @@
       ]
     },
     {
+      "name": "footer-27",
+      "type": "registry:ui",
+      "dependencies": ["@hugeicons/react", "framer-motion"],
+      "registryDependencies": ["footer"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/footer-27.tsx",
+          "target": "components/ui/footer-27.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "footer-28",
+      "type": "registry:ui",
+      "dependencies": ["@hugeicons/react", "framer-motion"],
+      "registryDependencies": ["footer"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/footer-28.tsx",
+          "target": "components/ui/footer-28.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hero-1",
       "type": "registry:ui",
       "dependencies": ["lucide-react", "motion"],
@@ -14112,6 +14138,123 @@
         {
           "path": "src/components/watermelon-ui/hero-30.tsx",
           "target": "components/ui/hero-30.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-31",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-31.tsx",
+          "target": "components/ui/hero-31.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-32",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-32.tsx",
+          "target": "components/ui/hero-32.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-33",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-33.tsx",
+          "target": "components/ui/hero-33.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-34",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-34.tsx",
+          "target": "components/ui/hero-34.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-35",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-35.tsx",
+          "target": "components/ui/hero-35.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-36",
+      "type": "registry:ui",
+      "dependencies": ["motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-36.tsx",
+          "target": "components/ui/hero-36.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-37",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-37.tsx",
+          "target": "components/ui/hero-37.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-38",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-38.tsx",
+          "target": "components/ui/hero-38.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-39",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react", "motion"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/hero-39.tsx",
+          "target": "components/ui/hero-39.tsx",
           "type": "registry:ui"
         }
       ]

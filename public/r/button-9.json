@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/button/button-9.tsx",
-      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst Button9 = () => {\r\n  return (\r\n    <Button disabled className=\"inline-flex items-center gap-0.5 \">\r\n      <span >Loading</span>\r\n\r\n      <span className=\"flex gap-[2px] translate-y-[4px]\">\r\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:-0.2s]\" />\r\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:-0.1s]\" />\r\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:0s]\" />\r\n      </span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default Button9;\r\n",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\n\nconst Button9 = () => {\n  return (\n    <Button disabled className=\"inline-flex items-center gap-0.5 \">\n      <span >Loading</span>\n\n      <span className=\"flex gap-[2px] translate-y-[4px]\">\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:-0.2s]\" />\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:-0.1s]\" />\n        <span className=\"size-1 rounded-full bg-current animate-bounce [animation-delay:0s]\" />\n      </span>\n    </Button>\n  );\n};\n\nexport default Button9;\n",
       "type": "registry:ui",
       "target": "components/ui/button-9.tsx"
     }

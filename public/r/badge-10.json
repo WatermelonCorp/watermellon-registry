@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/badge/badge-10.tsx",
-      "content": "import { FaRegStar } from \"react-icons/fa\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge10 = () => {\r\n  return (\r\n    <Badge>\r\n      <FaRegStar className=\"size-4\" />\r\n      Github\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge10;\r\n",
+      "content": "import { FaRegStar } from \"react-icons/fa\";\n\nimport { Badge } from \"@/components/ui/badge\";\n\nconst Badge10 = () => {\n  return (\n    <Badge>\n      <FaRegStar className=\"size-4\" />\n      Github\n    </Badge>\n  );\n};\n\nexport default Badge10;\n",
       "type": "registry:ui",
       "target": "components/ui/badge-10.tsx"
     }

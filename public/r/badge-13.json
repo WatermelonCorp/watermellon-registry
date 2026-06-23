@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/badge/badge-13.tsx",
-      "content": "\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge13= () => {\r\n  return (\r\n    <Badge className=\"bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive border-none focus-visible:outline-none\">\r\n      <span\r\n        className=\"bg-destructive size-2 rounded-full\"\r\n        aria-hidden=\"true\"\r\n      />\r\n      Cancelled\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge13\r\n",
+      "content": "\nimport { Badge } from \"@/components/ui/badge\";\n\nconst Badge13= () => {\n  return (\n    <Badge className=\"bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive border-none focus-visible:outline-none\">\n      <span\n        className=\"bg-destructive size-2 rounded-full\"\n        aria-hidden=\"true\"\n      />\n      Cancelled\n    </Badge>\n  );\n};\n\nexport default Badge13\n",
       "type": "registry:ui",
       "target": "components/ui/badge-13.tsx"
     }

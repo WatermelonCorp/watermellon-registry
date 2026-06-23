@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/badge/badge-21.tsx",
-      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge21 = () => {\r\n  return (\r\n    <Badge className=\"rounded-sm border-transparent bg-gradient-to-r from-orange-400 via-rose-500 to-fuchsia-600  [background-size:105%] bg-center text-white\">\r\n      Linear Gradient\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge21;\r\n",
+      "content": "import { Badge } from \"@/components/ui/badge\";\n\nconst Badge21 = () => {\n  return (\n    <Badge className=\"rounded-sm border-transparent bg-gradient-to-r from-orange-400 via-rose-500 to-fuchsia-600  [background-size:105%] bg-center text-white\">\n      Linear Gradient\n    </Badge>\n  );\n};\n\nexport default Badge21;\n",
       "type": "registry:ui",
       "target": "components/ui/badge-21.tsx"
     }

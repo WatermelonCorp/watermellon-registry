@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/switch/switch-1.tsx",
-      "content": "import { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch1 = () => {\r\n  return (\r\n    <div className=\"flex items-center space-x-2\">\r\n      <Switch id=\"notifications\" />\r\n      <Label htmlFor=\"notifications\">Enable Notifications</Label>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Switch1;\r\n",
+      "content": "import { Label } from \"@/components/ui/label\";\nimport { Switch } from \"@/components/ui/switch\";\n\nconst Switch1 = () => {\n  return (\n    <div className=\"flex items-center space-x-2\">\n      <Switch id=\"notifications\" />\n      <Label htmlFor=\"notifications\">Enable Notifications</Label>\n    </div>\n  );\n};\n\nexport default Switch1;\n",
       "type": "registry:ui",
       "target": "components/ui/switch-1.tsx"
     }

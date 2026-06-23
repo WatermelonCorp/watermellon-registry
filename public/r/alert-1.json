@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/alerts/alert-1.tsx",
-      "content": "import { MdError } from \"react-icons/md\";\r\n\r\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nconst Alert1 = () => {\r\n  return (\r\n    <Alert>\r\n      <MdError />\r\n      <AlertTitle className=\"flex-1\">You have a new message!</AlertTitle>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert1;\r\n",
+      "content": "import { MdError } from \"react-icons/md\";\n\nimport { Alert, AlertTitle } from \"@/components/ui/alert\";\n\nconst Alert1 = () => {\n  return (\n    <Alert>\n      <MdError />\n      <AlertTitle className=\"flex-1\">You have a new message!</AlertTitle>\n    </Alert>\n  );\n};\n\nexport default Alert1;\n",
       "type": "registry:ui",
       "target": "components/ui/alert-1.tsx"
     }

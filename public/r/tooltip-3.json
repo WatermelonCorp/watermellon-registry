@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/tooltip/tooltip-3.tsx",
-      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst Tooltip3 = () => {\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger asChild>\r\n        <Button variant=\"outline\" size=\"lg\">\r\n          w/o arrow\r\n        </Button>\r\n      </TooltipTrigger>\r\n      <TooltipContent className=\"[&_svg]:invisible\">\r\n        <p>This tooltip don&apos;t have arrow</p>\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n};\r\n\r\nexport default Tooltip3;\r\n",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\n\nconst Tooltip3 = () => {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant=\"outline\" size=\"lg\">\n          w/o arrow\n        </Button>\n      </TooltipTrigger>\n      <TooltipContent className=\"[&_svg]:invisible\">\n        <p>This tooltip don&apos;t have arrow</p>\n      </TooltipContent>\n    </Tooltip>\n  );\n};\n\nexport default Tooltip3;\n",
       "type": "registry:ui",
       "target": "components/ui/tooltip-3.tsx"
     }

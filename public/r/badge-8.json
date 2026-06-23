@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/badge/badge-8.tsx",
-      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst Badge8 = () => {\r\n  return <Badge variant=\"destructive\">Destructive</Badge>;\r\n};\r\n\r\nexport default Badge8\r\n",
+      "content": "import { Badge } from \"@/components/ui/badge\";\n\nconst Badge8 = () => {\n  return <Badge variant=\"destructive\">Destructive</Badge>;\n};\n\nexport default Badge8\n",
       "type": "registry:ui",
       "target": "components/ui/badge-8.tsx"
     }

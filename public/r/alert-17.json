@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/alerts/alert-17.tsx",
-      "content": "\r\n\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\nimport { MdError } from \"react-icons/md\";\r\n\r\nconst Alert17 = () => {\r\n  return (\r\n    <Alert>\r\n      <MdError className=\"size-4\" />\r\n      <AlertTitle>Complete your profile</AlertTitle>\r\n      <AlertDescription>\r\n        Add your information to personalize your experience.\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default Alert17;\r\n",
+      "content": "\n\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\nimport { MdError } from \"react-icons/md\";\n\nconst Alert17 = () => {\n  return (\n    <Alert>\n      <MdError className=\"size-4\" />\n      <AlertTitle>Complete your profile</AlertTitle>\n      <AlertDescription>\n        Add your information to personalize your experience.\n      </AlertDescription>\n    </Alert>\n  );\n};\n\nexport default Alert17;\n",
       "type": "registry:ui",
       "target": "components/ui/alert-17.tsx"
     }

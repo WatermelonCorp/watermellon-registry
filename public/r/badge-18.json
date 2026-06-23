@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/badge/badge-18.tsx",
-      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { GoCheckCircleFill } from \"react-icons/go\";\r\n\r\nconst Badge18 = () => {\r\n  return (\r\n    <Badge\r\n      variant=\"outline\"\r\n      className=\"rounded-sm border-green-600 text-green-600 dark:border-green-400 dark:text-green-400 bg-green-600/10 dark:bg-green-400/10\"\r\n    >\r\n      <GoCheckCircleFill className=\"size-3\" />\r\n      Done\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default Badge18;\r\n",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { GoCheckCircleFill } from \"react-icons/go\";\n\nconst Badge18 = () => {\n  return (\n    <Badge\n      variant=\"outline\"\n      className=\"rounded-sm border-green-600 text-green-600 dark:border-green-400 dark:text-green-400 bg-green-600/10 dark:bg-green-400/10\"\n    >\n      <GoCheckCircleFill className=\"size-3\" />\n      Done\n    </Badge>\n  );\n};\n\nexport default Badge18;\n",
       "type": "registry:ui",
       "target": "components/ui/badge-18.tsx"
     }

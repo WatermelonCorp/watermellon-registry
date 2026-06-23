@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/switch/switch-2.tsx",
-      "content": "import { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch2 = () => {\r\n  return (\r\n    <Switch\r\n      aria-label=\"Square switch\"\r\n      className=\"rounded-xs [&_span]:rounded-xs\"\r\n    />\r\n  );\r\n};\r\n\r\nexport default Switch2;\r\n",
+      "content": "import { Switch } from \"@/components/ui/switch\";\n\nconst Switch2 = () => {\n  return (\n    <Switch\n      aria-label=\"Square switch\"\n      className=\"rounded-xs [&_span]:rounded-xs\"\n    />\n  );\n};\n\nexport default Switch2;\n",
       "type": "registry:ui",
       "target": "components/ui/switch-2.tsx"
     }

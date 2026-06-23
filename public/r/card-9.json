@@ -11,7 +11,7 @@
   "files": [
     {
       "path": "src/components/base-variants/card/card-9.tsx",
-      "content": "import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'\r\n\r\ntype TextCard = {\r\n  body: string\r\n  title: string\r\n}\r\n\r\nconst textCard: TextCard = {\r\n  body: 'Map early concepts, align the team around one clear direction, and turn rough ideas into a sharper narrative.',\r\n  title: 'Concept Review'\r\n}\r\n\r\nconst Card9 = () => {\r\n  return (\r\n    <Card className='max-w-md gap-0 rounded-none border-sky-500/60 bg-transparent shadow-2xl'>\r\n      <CardHeader className='pb-3'>\r\n        <CardTitle className='text-sky-700 dark:text-sky-400'>{textCard.title}</CardTitle>\r\n      </CardHeader>\r\n      <CardContent className='text-sm leading-6 text-muted-foreground'>{textCard.body}</CardContent>\r\n    </Card>\r\n  )\r\n}\r\n\r\nexport default Card9\r\n",
+      "content": "import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'\n\ntype TextCard = {\n  body: string\n  title: string\n}\n\nconst textCard: TextCard = {\n  body: 'Map early concepts, align the team around one clear direction, and turn rough ideas into a sharper narrative.',\n  title: 'Concept Review'\n}\n\nconst Card9 = () => {\n  return (\n    <Card className='max-w-md gap-0 rounded-none border-sky-500/60 bg-transparent shadow-2xl'>\n      <CardHeader className='pb-3'>\n        <CardTitle className='text-sky-700 dark:text-sky-400'>{textCard.title}</CardTitle>\n      </CardHeader>\n      <CardContent className='text-sm leading-6 text-muted-foreground'>{textCard.body}</CardContent>\n    </Card>\n  )\n}\n\nexport default Card9\n",
       "type": "registry:ui",
       "target": "components/ui/card-9.tsx"
     }

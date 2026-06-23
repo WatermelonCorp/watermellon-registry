@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/switch/switch-6.tsx",
-      "content": "import { Switch } from \"@/components/ui/switch\";\r\n\r\nconst Switch6 = () => {\r\n  return (\r\n    <Switch\r\n      aria-label=\"mini switch\"\r\n      className=\"[&_span]:border-input border-none data-[size=default]:h-3 [&_span]:border [&_span]:group-data-[size=default]/switch:size-4.5\"\r\n    />\r\n  );\r\n};\r\n\r\nexport default Switch6;\r\n",
+      "content": "import { Switch } from \"@/components/ui/switch\";\n\nconst Switch6 = () => {\n  return (\n    <Switch\n      aria-label=\"mini switch\"\n      className=\"[&_span]:border-input border-none data-[size=default]:h-3 [&_span]:border [&_span]:group-data-[size=default]/switch:size-4.5\"\n    />\n  );\n};\n\nexport default Switch6;\n",
       "type": "registry:ui",
       "target": "components/ui/switch-6.tsx"
     }

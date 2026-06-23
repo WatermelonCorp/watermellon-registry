@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/base-variants/tooltip/tooltip-8.tsx",
-      "content": "import { MdLightbulb } from \"react-icons/md\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst Tooltip8 = () => {\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger asChild>\r\n        <Button variant=\"outline\" size=\"sm\">\r\n          Tip\r\n        </Button>\r\n      </TooltipTrigger>\r\n      <TooltipContent className=\"max-w-80\">\r\n        <div className=\"flex items-center gap-1.5\">\r\n          <MdLightbulb className=\"size-4 text-yellow-400\" />\r\n          <p>Use keyboard shortcuts to speed up your workflow.</p>\r\n        </div>\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n};\r\n\r\nexport default Tooltip8;\r\n",
+      "content": "import { MdLightbulb } from \"react-icons/md\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\n\nconst Tooltip8 = () => {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Tip\n        </Button>\n      </TooltipTrigger>\n      <TooltipContent className=\"max-w-80\">\n        <div className=\"flex items-center gap-1.5\">\n          <MdLightbulb className=\"size-4 text-yellow-400\" />\n          <p>Use keyboard shortcuts to speed up your workflow.</p>\n        </div>\n      </TooltipContent>\n    </Tooltip>\n  );\n};\n\nexport default Tooltip8;\n",
       "type": "registry:ui",
       "target": "components/ui/tooltip-8.tsx"
     }
