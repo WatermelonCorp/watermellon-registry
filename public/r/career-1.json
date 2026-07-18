@@ -5,7 +5,6 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "career",
     "button"
   ],
   "files": [
