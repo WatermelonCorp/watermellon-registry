@@ -12522,6 +12522,314 @@
       ]
     },
     {
+      "name": "librar",
+      "type": "registry:block",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "recharts",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/ai-idea-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/ai-idea-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/alert-02-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/alert-02-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/arrow-down-01-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/arrow-down-01-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/arrow-down-02-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/arrow-down-02-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/arrow-down-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/arrow-down-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/backward-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/backward-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/book-minus-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/book-minus-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/book-open-02-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/book-open-02-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/book-plus-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/book-plus-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/building-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/building-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/cancel-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/cancel-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/catalog-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/catalog-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/checkout-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/checkout-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/chevron-down-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/chevron-down-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/circulation-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/circulation-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/collapse-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/collapse-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/dashboard-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/dashboard-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/download-01-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/download-01-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/help-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/help-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/intelligence-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/intelligence-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/logo-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/logo-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/members-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/members-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/opac-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/opac-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/reports-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/reports-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/return-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/return-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/settings-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/settings-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/sparkles-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/sparkles-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/theme-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/theme-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/assets/svgs/user-add-02-icon.tsx",
+          "target": "components/watermelon/dashboards/librar/assets/svgs/user-add-02-icon.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/dashboard/circulation-chart.tsx",
+          "target": "components/watermelon/dashboards/librar/components/dashboard/circulation-chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/dashboard/collection-donut-chart.tsx",
+          "target": "components/watermelon/dashboards/librar/components/dashboard/collection-donut-chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/dashboard/dashboard-content.tsx",
+          "target": "components/watermelon/dashboards/librar/components/dashboard/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/layout/app-sidebar.tsx",
+          "target": "components/watermelon/dashboards/librar/components/layout/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/layout/dashboard-shell.tsx",
+          "target": "components/watermelon/dashboards/librar/components/layout/dashboard-shell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/layout/organization-provider.tsx",
+          "target": "components/watermelon/dashboards/librar/components/layout/organization-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/layout/sidebar-navigation-item.tsx",
+          "target": "components/watermelon/dashboards/librar/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/layout/top-nav.tsx",
+          "target": "components/watermelon/dashboards/librar/components/layout/top-nav.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/link.tsx",
+          "target": "components/watermelon/dashboards/librar/components/link.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/avatar.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/badge.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/button.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/card.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/chart.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/dropdown-menu.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/dropdown-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/input.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/separator.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/sheet.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/sidebar.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/skeleton.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/table.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/components/ui/tooltip.tsx",
+          "target": "components/watermelon/dashboards/librar/components/ui/tooltip.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/dashboard.css",
+          "target": "components/watermelon/dashboards/librar/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/dashboardView.tsx",
+          "target": "components/watermelon/dashboards/librar/dashboardView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/data.ts",
+          "target": "components/watermelon/dashboards/librar/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/demo.tsx",
+          "target": "components/watermelon/dashboards/librar/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/hooks/use-mobile.ts",
+          "target": "components/watermelon/dashboards/librar/hooks/use-mobile.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/librar/lib/utils.ts",
+          "target": "components/watermelon/dashboards/librar/lib/utils.ts",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "dropdown-menu",
+        "input",
+        "sheet",
+        "sidebar"
+      ]
+    },
+    {
       "name": "mail-dashboard",
       "type": "registry:block",
       "dependencies": [

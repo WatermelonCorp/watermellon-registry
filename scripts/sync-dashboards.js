@@ -86,7 +86,7 @@ const KNOWN_REGISTRY_DEPS = [
 // ── Helpers ──────────────────────────────────────────────────────────────
 
 /**
- * Recursively collect all .tsx and .ts files under a directory,
+ * Recursively collect all .tsx, .ts, and .css files under a directory,
  * returning paths relative to `baseDir`.
  */
 function collectFiles(dir, baseDir) {
@@ -97,8 +97,8 @@ function collectFiles(dir, baseDir) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...collectFiles(fullPath, baseDir));
-    } else if (entry.isFile() && /\.(tsx?|ts)$/.test(entry.name)) {
-      results.push(path.relative(baseDir, fullPath));
+    } else if (entry.isFile() && /\.(tsx?|ts|css)$/.test(entry.name)) {
+      results.push(path.relative(baseDir, fullPath).split(path.sep).join("/"));
     }
   }
 
@@ -132,7 +132,7 @@ function detectDependencies(content) {
   }
 
   // Base UI imports
-  const baseUiRegex = /from\s+["'](@base-ui\/[^"'/]+)["']/g;
+  const baseUiRegex = /from\s+["'](@base-ui\/[^"'/]+)(?:\/[^"']*)?["']/g;
   while ((match = baseUiRegex.exec(content)) !== null) {
     deps.add(match[1]);
   }
@@ -270,7 +270,7 @@ function main() {
     const entry = buildDashboardEntry(dirName);
 
     if (!entry) {
-      console.log(`⏭️  Skipping "${dirName}" — no .tsx/.ts files found`);
+      console.log(`⏭️  Skipping "${dirName}" — no .tsx/.ts/.css files found`);
       continue;
     }
 
