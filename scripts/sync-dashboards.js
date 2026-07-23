@@ -10,6 +10,10 @@ const DASHBOARDS_DIR = path.resolve(__dirname, "../src/components/dashboards");
 
 const DRY_RUN = process.argv.includes("--dry-run");
 
+function toPosixPath(filePath) {
+  return filePath.replaceAll("\\", "/");
+}
+
 // ── Known npm dependencies to detect ────────────────────────────────────
 const KNOWN_DEPENDENCIES = [
   "lucide-react",
@@ -86,7 +90,7 @@ const KNOWN_REGISTRY_DEPS = [
 // ── Helpers ──────────────────────────────────────────────────────────────
 
 /**
- * Recursively collect all .tsx and .ts files under a directory,
+ * Recursively collect all .tsx, .ts, and .css files under a directory,
  * returning paths relative to `baseDir`.
  */
 function collectFiles(dir, baseDir) {
@@ -97,8 +101,8 @@ function collectFiles(dir, baseDir) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...collectFiles(fullPath, baseDir));
-    } else if (entry.isFile() && /\.(tsx?|ts)$/.test(entry.name)) {
-      results.push(path.relative(baseDir, fullPath));
+    } else if (entry.isFile() && /\.(tsx?|ts|css)$/.test(entry.name)) {
+      results.push(toPosixPath(path.relative(baseDir, fullPath)));
     }
   }
 
@@ -132,7 +136,7 @@ function detectDependencies(content) {
   }
 
   // Base UI imports
-  const baseUiRegex = /from\s+["'](@base-ui\/[^"'/]+)["']/g;
+  const baseUiRegex = /from\s+["'](@base-ui\/[^"'/]+)(?:\/[^"']*)?["']/g;
   while ((match = baseUiRegex.exec(content)) !== null) {
     deps.add(match[1]);
   }
@@ -188,8 +192,10 @@ function buildDashboardEntry(dirName) {
 
   // Build file entries with correct paths from actual filesystem
   const fileEntries = relFiles.map((relFile) => ({
-    path: `src/components/dashboards/${dirName}/${relFile}`,
-    target: `components/watermelon/dashboards/${dirName}/${relFile}`,
+    path: toPosixPath(`src/components/dashboards/${dirName}/${relFile}`),
+    target: toPosixPath(
+      `components/watermelon/dashboards/${dirName}/${relFile}`,
+    ),
     type: "registry:component",
   }));
 

@@ -1,0 +1,86 @@
+.supademo-dashboard,
+[data-mobile="true"][data-sidebar="sidebar"] {
+  --background: oklch(0.985 0.002 250);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #4338cb;
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.985 0.002 250);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #4338cb;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --shadow-border:
+    0 0 0 0.5px oklch(0 0 0 / 6%), 0 1px 2px -1px oklch(0 0 0 / 6%),
+    0 2px 4px oklch(0 0 0 / 4%);
+  --shadow-border-hover:
+    0 0 0 0.5px oklch(0 0 0 / 8%), 0 1px 2px -1px oklch(0 0 0 / 8%),
+    0 2px 4px oklch(0 0 0 / 6%);
+  --shadow-primary: inset 0 1px 0 rgb(255 255 255 / 30%);
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.supademo-dashboard.dark,
+.dark .supademo-dashboard,
+.dark [data-mobile="true"][data-sidebar="sidebar"] {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #4338cb;
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #4338cb;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+  --shadow-border: 0 0 0 1px oklch(1 0 0 / 8%);
+  --shadow-border-hover: 0 0 0 1px oklch(1 0 0 / 13%);
+  --shadow-primary: inset 0 2px 0 rgb(255 255 255 / 20%);
+}
+
+.supademo-dashboard .shadow-border,
+[data-mobile="true"][data-sidebar="sidebar"] .shadow-border {
+  box-shadow: var(--shadow-border);
+}
+
+.supademo-dashboard .shadow-border-hover,
+[data-mobile="true"][data-sidebar="sidebar"] .shadow-border-hover {
+  box-shadow: var(--shadow-border-hover);
+}
+
+.supademo-dashboard .shadow-primary,
+[data-mobile="true"][data-sidebar="sidebar"] .shadow-primary {
+  box-shadow: var(--shadow-primary);
+}

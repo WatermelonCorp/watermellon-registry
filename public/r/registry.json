@@ -19421,6 +19421,174 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "supademo-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "next-themes",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/supademo-dashboard/assets/icons.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/assets/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/assets/images.ts",
+          "target": "components/watermelon/dashboards/supademo-dashboard/assets/images.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/dashboard/dashboard-content.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/dashboard/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/dashboard/supademos-content.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/dashboard/supademos-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/layout/app-sidebar.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/layout/dashboard-shell.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/layout/top-nav.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/layout/top-nav.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/navigation.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/avatar.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/button.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/card.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/dropdown-menu.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/dropdown-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/input-group.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/input-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/input.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/kbd.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/kbd.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/separator.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/sheet.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/sidebar.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/skeleton.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/tabs.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/tabs.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/components/ui/tooltip.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/dashboard.css",
+          "target": "components/watermelon/dashboards/supademo-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/dashboardView.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/dashboardView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/data.ts",
+          "target": "components/watermelon/dashboards/supademo-dashboard/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/demo.tsx",
+          "target": "components/watermelon/dashboards/supademo-dashboard/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/hooks/use-mobile.ts",
+          "target": "components/watermelon/dashboards/supademo-dashboard/hooks/use-mobile.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/lib/utils.ts",
+          "target": "components/watermelon/dashboards/supademo-dashboard/lib/utils.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/supademo-dashboard/navigation-data.ts",
+          "target": "components/watermelon/dashboards/supademo-dashboard/navigation-data.ts",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "dropdown-menu",
+        "sidebar",
+        "tabs",
+        "tooltip"
+      ]
     }
   ]
 }
