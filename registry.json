@@ -3375,16 +3375,6 @@
       "name": "business-management",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-switch",
-        "@radix-ui/react-tooltip",
-        "class-variance-authority",
         "lucide-react",
         "react-router-dom",
         "recharts"
@@ -3418,25 +3408,18 @@
       ],
       "registryDependencies": [
         "avatar",
-        "badge",
-        "breadcrumb",
         "button",
         "card",
         "chart",
-        "collapsible",
         "dialog",
         "dropdown-menu",
         "input",
-        "popover",
         "select",
         "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
         "switch",
         "table",
-        "tabs",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -3444,7 +3427,6 @@
       "type": "registry:block",
       "dependencies": [
         "@tabler/icons-react",
-        "class-variance-authority",
         "lucide-react"
       ],
       "files": [
@@ -3501,23 +3483,16 @@
       ],
       "registryDependencies": [
         "avatar",
-        "badge",
-        "breadcrumb",
         "button",
         "card",
-        "collapsible",
         "dialog",
         "dropdown-menu",
         "input",
         "label",
         "popover",
         "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
-        "tabs",
-        "textarea",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -7236,6 +7211,90 @@
       ]
     },
     {
+      "name": "demostack-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/demostack-dashboard/assets/icons.tsx",
+          "target": "components/watermelon/demostack-dashboard/assets/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/assets/logo.tsx",
+          "target": "components/watermelon/demostack-dashboard/assets/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/dashboard/dashboard-content.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/dashboard/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/dashboard/demostacks-content.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/dashboard/demostacks-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/app-sidebar.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/dashboard-shell.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/top-nav.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/layout/top-nav.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/navigation.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/dashboardView.tsx",
+          "target": "components/watermelon/demostack-dashboard/dashboardView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/data.ts",
+          "target": "components/watermelon/demostack-dashboard/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/demo.tsx",
+          "target": "components/watermelon/demostack-dashboard/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/navigation-data.ts",
+          "target": "components/watermelon/demostack-dashboard/navigation-data.ts",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "dropdown-menu",
+        "sidebar",
+        "tabs",
+        "tooltip"
+      ]
+    },
+    {
       "name": "deployment-card",
       "type": "registry:ui",
       "dependencies": [
@@ -8097,25 +8156,10 @@
       "name": "e-commerce-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-checkbox",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-toggle",
-        "@radix-ui/react-toggle-group",
-        "@radix-ui/react-tooltip",
         "@tabler/icons-react",
-        "class-variance-authority",
         "lucide-react",
-        "next-themes",
         "recharts",
-        "sonner",
-        "vaul"
+        "sonner"
       ],
       "files": [
         {
@@ -8167,26 +8211,12 @@
       "registryDependencies": [
         "avatar",
         "badge",
-        "breadcrumb",
-        "button",
         "card",
-        "chart",
-        "checkbox",
-        "drawer",
         "dropdown-menu",
-        "input",
-        "label",
         "select",
         "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
-        "sonner",
-        "table",
-        "tabs",
-        "toggle-group",
-        "toggle",
-        "tooltip"
+        "table"
       ]
     },
     {
@@ -8266,26 +8296,11 @@
       "name": "erp-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-checkbox",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-label",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
-        "class-variance-authority",
         "lucide-react",
         "next-themes",
         "recharts"
       ],
       "files": [
-        {
-          "path": "src/components/dashboards/erp-dashboard/DashboardPageView.tsx",
-          "target": "components/watermelon/erp-dashboard/DashboardPageView.tsx",
-          "type": "registry:component"
-        },
         {
           "path": "src/components/dashboards/erp-dashboard/components/app-sidebar.tsx",
           "target": "components/watermelon/erp-dashboard/components/app-sidebar.tsx",
@@ -8317,6 +8332,11 @@
           "type": "registry:component"
         },
         {
+          "path": "src/components/dashboards/erp-dashboard/DashboardPageView.tsx",
+          "target": "components/watermelon/erp-dashboard/DashboardPageView.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "src/components/dashboards/erp-dashboard/data.ts",
           "target": "components/watermelon/erp-dashboard/data.ts",
           "type": "registry:component"
@@ -8341,12 +8361,9 @@
         "label",
         "select",
         "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
         "table",
-        "tabs",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -10981,17 +10998,6 @@
       "name": "hrm",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-scroll-area",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
-        "class-variance-authority",
         "lucide-react",
         "next-themes",
         "recharts"
@@ -11032,19 +11038,14 @@
         "avatar",
         "badge",
         "button",
-        "card",
         "chart",
         "collapsible",
         "dropdown-menu",
         "input",
         "label",
         "popover",
-        "scroll-area",
         "select",
-        "separator",
         "sheet",
-        "sidebar",
-        "skeleton",
         "table",
         "tabs",
         "tooltip"
@@ -11069,22 +11070,9 @@
       "name": "incident-management",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-checkbox",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
         "@tabler/icons-react",
-        "class-variance-authority",
         "lucide-react",
-        "react-router-dom",
-        "recharts"
+        "react-router-dom"
       ],
       "files": [
         {
@@ -11136,24 +11124,16 @@
       "registryDependencies": [
         "avatar",
         "badge",
-        "breadcrumb",
         "button",
         "card",
-        "chart",
-        "checkbox",
         "collapsible",
         "dialog",
         "dropdown-menu",
         "input",
         "label",
         "select",
-        "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
-        "table",
-        "tabs",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -11790,14 +11770,6 @@
       "name": "invoice-generator-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tooltip",
-        "class-variance-authority",
         "lucide-react",
         "next-themes"
       ],
@@ -11858,39 +11830,19 @@
         "popover",
         "select",
         "separator",
-        "sheet",
-        "sidebar",
-        "skeleton",
-        "textarea",
-        "tooltip"
+        "sidebar"
       ]
     },
     {
       "name": "invoice-manager-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-checkbox",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tooltip",
-        "class-variance-authority",
         "lucide-react"
       ],
       "files": [
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/app-sidebar.tsx",
           "target": "components/watermelon/invoice-manager-dashboard/components/app-sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/invoice-manager-dashboard/components/nav-Tertiary.tsx",
-          "target": "components/watermelon/invoice-manager-dashboard/components/nav-Tertiary.tsx",
           "type": "registry:component"
         },
         {
@@ -11906,6 +11858,11 @@
         {
           "path": "src/components/dashboards/invoice-manager-dashboard/components/nav-secondary.tsx",
           "target": "components/watermelon/invoice-manager-dashboard/components/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/invoice-manager-dashboard/components/nav-Tertiary.tsx",
+          "target": "components/watermelon/invoice-manager-dashboard/components/nav-Tertiary.tsx",
           "type": "registry:component"
         },
         {
@@ -11929,6 +11886,11 @@
           "type": "registry:component"
         },
         {
+          "path": "src/components/dashboards/invoice-manager-dashboard/data.ts",
+          "target": "components/watermelon/invoice-manager-dashboard/data.ts",
+          "type": "registry:component"
+        },
+        {
           "path": "src/components/dashboards/invoice-manager-dashboard/demo.tsx",
           "target": "components/watermelon/invoice-manager-dashboard/demo.tsx",
           "type": "registry:component"
@@ -11941,7 +11903,6 @@
       ],
       "registryDependencies": [
         "avatar",
-        "badge",
         "breadcrumb",
         "button",
         "checkbox",
@@ -11950,36 +11911,19 @@
         "dropdown-menu",
         "input",
         "label",
-        "pagination",
         "popover",
         "select",
-        "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
-        "table",
-        "tooltip"
+        "table"
       ]
     },
     {
       "name": "issue-tracking",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-scroll-area",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
         "@tabler/icons-react",
-        "class-variance-authority",
-        "lucide-react"
+        "lucide-react",
+        "next-themes"
       ],
       "files": [
         {
@@ -12006,23 +11950,16 @@
       "registryDependencies": [
         "avatar",
         "badge",
-        "breadcrumb",
         "button",
         "card",
         "collapsible",
         "dialog",
-        "dropdown-menu",
         "input",
         "label",
         "popover",
-        "scroll-area",
         "select",
         "separator",
-        "sheet",
-        "sidebar",
-        "skeleton",
-        "tabs",
-        "tooltip"
+        "sidebar"
       ]
     },
     {
@@ -12256,22 +12193,7 @@
       "type": "registry:block",
       "dependencies": [
         "@dnd-kit/core",
-        "@dnd-kit/sortable",
-        "@dnd-kit/utilities",
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
-        "@tabler/icons-react",
-        "class-variance-authority",
-        "lucide-react"
+        "@tabler/icons-react"
       ],
       "files": [
         {
@@ -12322,17 +12244,13 @@
         "card",
         "collapsible",
         "dialog",
-        "dropdown-menu",
         "input",
         "label",
         "popover",
         "select",
         "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
-        "tabs",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -12525,99 +12443,80 @@
       "name": "mail-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-switch",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
         "@tabler/icons-react",
-        "class-variance-authority",
         "lucide-react"
       ],
       "files": [
         {
           "path": "src/components/dashboards/mail-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/mail-dashboard/components/app-sidebar.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/components/empty-state.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/components/empty-state.tsx",
+          "target": "components/watermelon/mail-dashboard/components/empty-state.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/components/mail/mail-list.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/components/mail/mail-list.tsx",
+          "target": "components/watermelon/mail-dashboard/components/mail/mail-list.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/components/mail/mail-viewer.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/components/mail/mail-viewer.tsx",
+          "target": "components/watermelon/mail-dashboard/components/mail/mail-viewer.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/components/mail/workspace-layout.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/components/mail/workspace-layout.tsx",
+          "target": "components/watermelon/mail-dashboard/components/mail/workspace-layout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/components/nav-user.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/components/nav-user.tsx",
+          "target": "components/watermelon/mail-dashboard/components/nav-user.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/dashboardLayout.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/dashboardLayout.tsx",
+          "target": "components/watermelon/mail-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/data.ts",
-          "target": "components/watermelon/dashboards/mail-dashboard/data.ts",
+          "target": "components/watermelon/mail-dashboard/data.ts",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/demo.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/demo.tsx",
+          "target": "components/watermelon/mail-dashboard/demo.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/inboxLayout.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/inboxLayout.tsx",
+          "target": "components/watermelon/mail-dashboard/inboxLayout.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/inboxView.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/inboxView.tsx",
+          "target": "components/watermelon/mail-dashboard/inboxView.tsx",
           "type": "registry:component"
         },
         {
           "path": "src/components/dashboards/mail-dashboard/mailView.tsx",
-          "target": "components/watermelon/dashboards/mail-dashboard/mailView.tsx",
+          "target": "components/watermelon/mail-dashboard/mailView.tsx",
           "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "avatar",
-        "breadcrumb",
         "button",
-        "collapsible",
         "dialog",
         "dropdown-menu",
-        "field",
         "input",
         "label",
-        "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
-        "switch",
         "tabs",
-        "textarea",
         "tooltip"
       ]
     },
@@ -12683,23 +12582,15 @@
       "name": "meetings-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-radio-group",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
         "@tabler/icons-react",
-        "class-variance-authority",
         "lucide-react"
       ],
       "files": [
+        {
+          "path": "src/components/dashboards/meetings-dashboard/components/app-sidebar.tsx",
+          "target": "components/watermelon/meetings-dashboard/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
         {
           "path": "src/components/dashboards/meetings-dashboard/components/FilterSection.tsx",
           "target": "components/watermelon/meetings-dashboard/components/FilterSection.tsx",
@@ -12716,16 +12607,6 @@
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/meetings-dashboard/components/app-sidebar.tsx",
-          "target": "components/watermelon/meetings-dashboard/components/app-sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/meetings-dashboard/MeetingsView.tsx",
-          "target": "components/watermelon/meetings-dashboard/MeetingsView.tsx",
-          "type": "registry:component"
-        },
-        {
           "path": "src/components/dashboards/meetings-dashboard/dashboardLayout.tsx",
           "target": "components/watermelon/meetings-dashboard/dashboardLayout.tsx",
           "type": "registry:component"
@@ -12739,6 +12620,11 @@
           "path": "src/components/dashboards/meetings-dashboard/demo.tsx",
           "target": "components/watermelon/meetings-dashboard/demo.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/meetings-dashboard/MeetingsView.tsx",
+          "target": "components/watermelon/meetings-dashboard/MeetingsView.tsx",
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -12746,21 +12632,15 @@
         "badge",
         "button",
         "card",
-        "checkbox",
         "collapsible",
         "dialog",
         "dropdown-menu",
         "input",
         "label",
-        "popover",
-        "radio-group",
         "select",
-        "separator",
         "sheet",
         "sidebar",
-        "skeleton",
-        "tabs",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -13641,17 +13521,7 @@
       "name": "payment-operations-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-popover",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-switch",
-        "@radix-ui/react-tooltip",
         "@tabler/icons-react",
-        "class-variance-authority",
         "lucide-react",
         "next-themes",
         "recharts"
@@ -13739,13 +13609,9 @@
         "input",
         "popover",
         "select",
-        "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
         "switch",
-        "table",
-        "tooltip"
+        "table"
       ]
     },
     {
@@ -14082,12 +13948,30 @@
     },
     {
       "name": "portfolio-dashboard",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "motion",
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "src/components/watermelon-ui/portfolio-dashboard.tsx",
+          "target": "components/ui/portfolio-dashboard.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "portfolio-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@tabler/icons-react",
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
         "class-variance-authority",
         "lucide-react",
-        "recharts"
+        "next-themes",
+        "react-router-dom"
       ],
       "files": [
         {
@@ -14126,13 +14010,73 @@
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/portfolio-dashboard/dashboard-layout.tsx",
-          "target": "components/watermelon/portfolio-dashboard/dashboard-layout.tsx",
+          "path": "src/components/dashboards/portfolio-dashboard/components/theme-provider.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/theme-provider.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/portfolio-dashboard/dashboard.css",
-          "target": "components/watermelon/portfolio-dashboard/dashboard.css",
+          "path": "src/components/dashboards/portfolio-dashboard/components/theme-toggle.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/theme-toggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/avatar.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/badge.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/button.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/card.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/dropdown-menu.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/dropdown-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/input.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/separator.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/sheet.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/sidebar.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/skeleton.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/portfolio-dashboard/components/ui/tooltip.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/portfolio-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/portfolio-dashboard/dashboard-layout.tsx",
           "type": "registry:component"
         },
         {
@@ -14151,8 +14095,8 @@
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/portfolio-dashboard/portfolio-dashboard.mdx",
-          "target": "components/watermelon/portfolio-dashboard/portfolio-dashboard.mdx",
+          "path": "src/components/dashboards/portfolio-dashboard/hooks/use-mobile.ts",
+          "target": "components/watermelon/portfolio-dashboard/hooks/use-mobile.ts",
           "type": "registry:component"
         }
       ],
@@ -14168,22 +14112,6 @@
         "sidebar",
         "skeleton",
         "tooltip"
-      ]
-    },
-    {
-      "name": "portfolio-dashboard",
-      "type": "registry:ui",
-      "dependencies": [
-        "lucide-react",
-        "motion",
-        "recharts"
-      ],
-      "files": [
-        {
-          "path": "src/components/watermelon-ui/portfolio-dashboard.tsx",
-          "target": "components/ui/portfolio-dashboard.tsx",
-          "type": "registry:ui"
-        }
       ]
     },
     {
@@ -14442,18 +14370,6 @@
       "name": "project-management-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-checkbox",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-label",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
-        "class-variance-authority",
         "lucide-react"
       ],
       "files": [
@@ -14515,9 +14431,7 @@
       ],
       "registryDependencies": [
         "avatar",
-        "breadcrumb",
         "button",
-        "card",
         "checkbox",
         "collapsible",
         "dialog",
@@ -14525,13 +14439,8 @@
         "input",
         "label",
         "select",
-        "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
-        "tabs",
-        "textarea",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -15145,17 +15054,6 @@
       "name": "sales-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@radix-ui/react-avatar",
-        "@radix-ui/react-checkbox",
-        "@radix-ui/react-collapsible",
-        "@radix-ui/react-dialog",
-        "@radix-ui/react-dropdown-menu",
-        "@radix-ui/react-select",
-        "@radix-ui/react-separator",
-        "@radix-ui/react-slot",
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-tooltip",
-        "class-variance-authority",
         "lucide-react",
         "react-router-dom"
       ],
@@ -15257,18 +15155,14 @@
         "breadcrumb",
         "button",
         "checkbox",
-        "collapsible",
         "dialog",
         "dropdown-menu",
         "input",
         "select",
         "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
         "table",
-        "tabs",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -17488,8 +17382,6 @@
       "type": "registry:block",
       "dependencies": [
         "@tabler/icons-react",
-        "class-variance-authority",
-        "lucide-react",
         "next-themes"
       ],
       "files": [
@@ -17537,22 +17429,16 @@
       "registryDependencies": [
         "avatar",
         "badge",
-        "breadcrumb",
         "button",
         "card",
-        "collapsible",
         "dialog",
         "dropdown-menu",
         "input",
         "label",
         "popover",
         "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
-        "tabs",
-        "textarea",
-        "tooltip"
+        "tabs"
       ]
     },
     {
@@ -18957,12 +18843,78 @@
       "name": "web3-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@tabler/icons-react",
         "class-variance-authority",
         "lucide-react",
+        "next-themes",
+        "react-icons",
         "recharts"
       ],
       "files": [
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/avatar.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/badge.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/button.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/card.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/dropdown-menu.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/dropdown-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/input.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/separator.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/sheet.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/sidebar.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/skeleton.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/table.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/theme-toggle.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/theme-toggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/web3-dashboard/components/ui/tooltip.tsx",
+          "target": "components/watermelon/web3-dashboard/components/ui/tooltip.tsx",
+          "type": "registry:component"
+        },
         {
           "path": "src/components/dashboards/web3-dashboard/components/web3/asset-badge.tsx",
           "target": "components/watermelon/web3-dashboard/components/web3/asset-badge.tsx",
@@ -19014,11 +18966,6 @@
           "type": "registry:component"
         },
         {
-          "path": "src/components/dashboards/web3-dashboard/dashboard.css",
-          "target": "components/watermelon/web3-dashboard/dashboard.css",
-          "type": "registry:component"
-        },
-        {
           "path": "src/components/dashboards/web3-dashboard/dashboardView.tsx",
           "target": "components/watermelon/web3-dashboard/dashboardView.tsx",
           "type": "registry:component"
@@ -19032,11 +18979,6 @@
           "path": "src/components/dashboards/web3-dashboard/demo.tsx",
           "target": "components/watermelon/web3-dashboard/demo.tsx",
           "type": "registry:component"
-        },
-        {
-          "path": "src/components/dashboards/web3-dashboard/web3-dashboard.mdx",
-          "target": "components/watermelon/web3-dashboard/web3-dashboard.mdx",
-          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -19044,7 +18986,6 @@
         "badge",
         "button",
         "card",
-        "dropdown-menu",
         "input",
         "separator",
         "sheet",
@@ -19285,8 +19226,6 @@
       "type": "registry:block",
       "dependencies": [
         "@tabler/icons-react",
-        "class-variance-authority",
-        "cmdk",
         "lucide-react",
         "next-themes"
       ],
@@ -19378,29 +19317,20 @@
         }
       ],
       "registryDependencies": [
-        "alert-dialog",
         "avatar",
         "badge",
         "button",
-        "card",
         "checkbox",
-        "combobox",
         "dialog",
         "drawer",
         "dropdown-menu",
-        "field",
-        "input-group",
-        "input",
         "label",
         "popover",
-        "scroll-area",
         "select",
         "separator",
-        "sheet",
         "sidebar",
-        "skeleton",
+        "switch",
         "tabs",
-        "textarea",
         "tooltip"
       ]
     },

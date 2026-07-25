@@ -187,11 +187,14 @@ function buildDashboardEntry(dirName) {
   }
 
   // Build file entries with correct paths from actual filesystem
-  const fileEntries = relFiles.map((relFile) => ({
-    path: `src/components/dashboards/${dirName}/${relFile}`,
-    target: `components/watermelon/dashboards/${dirName}/${relFile}`,
-    type: "registry:component",
-  }));
+  const fileEntries = relFiles.map((relFile) => {
+    const normalizedRelFile = relFile.replace(/\\/g, "/");
+    return {
+      path: `src/components/dashboards/${dirName}/${normalizedRelFile}`,
+      target: `components/watermelon/${dirName}/${normalizedRelFile}`,
+      type: "registry:component",
+    };
+  });
 
   const entry = {
     name: dirName,
