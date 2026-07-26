@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-boundary",
+  "type": "registry:component",
+  "title": "Error Boundary",
+  "files": [
+    {
+      "path": "src/components/ui/error-boundary.tsx",
+      "content": "import type { ErrorInfo, ReactNode } from \"react\";\nimport React, { Component } from \"react\";\n\nimport { Button } from \"../button\";\n\ninterface Props {\n  children?: ReactNode;\n  fallback?: ReactNode;\n}\n\ninterface State {\n  hasError: boolean;\n  error?: Error;\n}\n\nexport class ErrorBoundary extends Component<Props, State> {\n  public state: State = {\n    hasError: false,\n  };\n\n  public static getDerivedStateFromError(error: Error): State {\n    return { hasError: true, error };\n  }\n\n  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {\n    console.error(\"Uncaught error:\", error, errorInfo);\n  }\n\n  public resetErrorBoundary = () => {\n    this.setState({ hasError: false, error: undefined });\n  };\n\n  public render() {\n    if (this.state.hasError) {\n      if (this.props.fallback) {\n        return this.props.fallback;\n      }\n      return (\n        <div className=\"flex min-h-[200px] flex-col items-center justify-center rounded-lg border border-destructive/20 bg-destructive/5 p-6 text-center\">\n          <h2 className=\"text-lg font-semibold text-destructive\">Something went wrong</h2>\n          <p className=\"mt-2 text-sm text-muted-foreground\">\n            {this.state.error?.message || \"An unexpected error occurred.\"}\n          </p>\n          <div className=\"mt-4 flex items-center gap-2\">\n            <Button size=\"sm\" onClick={() => this.resetErrorBoundary()}>\n              Try again\n            </Button>\n            <Button size=\"sm\" variant=\"outline\" onClick={() => window.location.reload()}>\n              Reload page\n            </Button>\n          </div>\n        </div>\n      );\n    }\n\n    return this.props.children;\n  }\n}\n",
+      "type": "registry:component",
+      "target": "src/components/ui/error-boundary.tsx"
+    }
+  ]
+}

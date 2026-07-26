@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-icon",
+  "type": "registry:component",
+  "title": "Logo Icon",
+  "files": [
+    {
+      "path": "src/components/ui/widgets/logo-icon.tsx",
+      "content": "import * as React from \"react\";\n\nexport default function LogoIcon(props: React.SVGProps<SVGSVGElement>) {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke=\"currentColor\"\n      strokeWidth=\"2\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      {...props}\n    >\n      <circle cx=\"12\" cy=\"12\" r=\"10\" />\n      <path d=\"M8 12h8\" />\n      <path d=\"M12 8v8\" />\n    </svg>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/ui/widgets/logo-icon.tsx"
+    }
+  ]
+}
