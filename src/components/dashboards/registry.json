@@ -1331,6 +1331,11 @@
       ],
       "files": [
         {
+          "path": "web3-dashboard/components/shared/theme-toggle.tsx",
+          "target": "components/watermelon/web3-dashboard/components/shared/theme-toggle.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "web3-dashboard/components/ui/avatar.tsx",
           "target": "components/watermelon/web3-dashboard/components/ui/avatar.tsx",
           "type": "registry:component"
@@ -1383,11 +1388,6 @@
         {
           "path": "web3-dashboard/components/ui/table.tsx",
           "target": "components/watermelon/web3-dashboard/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/theme-toggle.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/theme-toggle.tsx",
           "type": "registry:component"
         },
         {
@@ -1472,7 +1472,6 @@
         "sidebar",
         "skeleton",
         "table",
-        "theme-toggle",
         "tooltip"
       ]
     },

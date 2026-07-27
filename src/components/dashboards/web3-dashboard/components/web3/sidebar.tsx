@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ThemeToggle } from "../ui/theme-toggle";
+import { ThemeToggle } from "../shared/theme-toggle";
 import {
   Sidebar,
   SidebarContent,

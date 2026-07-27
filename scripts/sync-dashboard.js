@@ -27,13 +27,7 @@ const REACT_EXTENSIONS = new Set([
 
 const IGNORED_PACKAGES = new Set([
   "react",
-  "react-dom",
-  "next"
-])
-
-const PACKAGE_ALIASES = new Map([
-  ["motion/react", "motion"],
-  ["framer-motion", "motion"]
+  "react-dom"
 ])
 
 function normalizePath(value) {
@@ -85,10 +79,6 @@ function collectReactFiles(directory, baseDirectory) {
 }
 
 function getPackageName(specifier) {
-  if (PACKAGE_ALIASES.has(specifier)) {
-    return PACKAGE_ALIASES.get(specifier)
-  }
-
   if (specifier.startsWith("@")) {
     const parts = specifier.split("/")
 
@@ -114,11 +104,19 @@ function isLocalSpecifier(specifier) {
   )
 }
 
+function isFileBackedSpecifier(specifier) {
+  const normalized = specifier.replaceAll("\\", "/")
+
+  return /^(?:@\/|~\/|src\/)(?:hooks|lib)\//.test(
+    normalized
+  )
+}
+
 function getRegistryDependency(specifier) {
   const normalized = specifier.replaceAll("\\", "/")
 
   const match = normalized.match(
-    /(?:^|\/)(?:components\/)?ui\/([^/]+)$/
+    /^(?:@\/|~\/|src\/)?components\/ui\/([^/]+)$/
   )
 
   if (!match) {
@@ -221,6 +219,7 @@ function extractModuleSpecifiers(content, filename) {
 function detectDependencies(content, filename) {
   const dependencies = new Set()
   const registryDependencies = new Set()
+  const unresolvedAliases = new Set()
 
   const specifiers = extractModuleSpecifiers(
     content,
@@ -228,6 +227,10 @@ function detectDependencies(content, filename) {
   )
 
   for (const specifier of specifiers) {
+    if (isFileBackedSpecifier(specifier)) {
+      continue
+    }
+
     const registryDependency =
       getRegistryDependency(specifier)
 
@@ -239,6 +242,15 @@ function detectDependencies(content, filename) {
     }
 
     if (isLocalSpecifier(specifier)) {
+      if (
+        specifier.startsWith("@/") ||
+        specifier.startsWith("~/") ||
+        specifier.startsWith("src/") ||
+        specifier.startsWith("#")
+      ) {
+        unresolvedAliases.add(specifier)
+      }
+
       continue
     }
 
@@ -256,7 +268,8 @@ function detectDependencies(content, filename) {
 
   return {
     dependencies,
-    registryDependencies
+    registryDependencies,
+    unresolvedAliases
   }
 }
 
@@ -311,8 +324,17 @@ function buildDashboardEntry(directoryName) {
 
   const dependencies = new Set()
   const registryDependencies = new Set()
+  const unresolvedAliases = new Map()
 
   for (const relativeFile of relativeFiles) {
+    if (
+      !REACT_EXTENSIONS.has(
+        path.extname(relativeFile).toLowerCase()
+      )
+    ) {
+      continue
+    }
+
     const fullPath = path.join(
       dashboardDirectory,
       relativeFile
@@ -340,6 +362,34 @@ function buildDashboardEntry(directoryName) {
     ) {
       registryDependencies.add(dependency)
     }
+
+    for (
+      const specifier of
+      detected.unresolvedAliases
+    ) {
+      if (!unresolvedAliases.has(specifier)) {
+        unresolvedAliases.set(specifier, [])
+      }
+
+      unresolvedAliases
+        .get(specifier)
+        .push(relativeFile)
+    }
+  }
+
+  if (unresolvedAliases.size > 0) {
+    const details = [
+      ...unresolvedAliases.entries()
+    ]
+      .map(
+        ([specifier, files]) =>
+          `  ${specifier}\n    ${files.join("\n    ")}`
+      )
+      .join("\n")
+
+    throw new Error(
+      `${directoryName} has unresolved project aliases:\n${details}`
+    )
   }
 
   const files = relativeFiles.map(
