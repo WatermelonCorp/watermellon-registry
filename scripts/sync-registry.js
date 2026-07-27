@@ -1,3 +1,6 @@
+console.log("This script is brokenn and needs a fix first")
+process.exit(0)
+
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

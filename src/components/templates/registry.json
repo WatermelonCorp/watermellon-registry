@@ -1,0 +1,98 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "landing-01",
+      "type": "registry:block",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "hugeicons-react",
+        "motion",
+        "react-router-dom"
+      ],
+      "files": [
+        {
+          "path": "landing-01/demo.tsx",
+          "target": "components/watermelon/templates/landing-01/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/animated-bento.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/animated-bento.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/bg-frame.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/bg-frame.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/card.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/component-bento.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/component-bento.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/container.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/container.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/feature-visuals.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/feature-visuals.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/features.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/features.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/footer.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/heading.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/heading.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/hero.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/hero.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/navbar.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/navbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/stats.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/stats.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/subheading.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/subheading.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/template-bento.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/template-bento.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "landing-01/landing/testimonial.tsx",
+          "target": "components/watermelon/templates/landing-01/landing/testimonial.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
