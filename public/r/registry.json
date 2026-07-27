@@ -8783,25 +8783,17 @@
     {
       "name": "library-dashboard",
       "dependencies": [
-        "clsx",
         "lucide-react",
-        "recharts",
-        "tailwind-merge"
+        "recharts"
       ],
       "registryDependencies": [
-        "avatar",
-        "badge",
         "button",
         "card",
         "chart",
         "dropdown-menu",
         "input",
-        "separator",
         "sheet",
-        "sidebar",
-        "skeleton",
-        "table",
-        "tooltip"
+        "sidebar"
       ],
       "files": [
         {
@@ -8845,6 +8837,11 @@
           "target": "components/watermelon/library-dashboard/components/layout/organization-provider.tsx"
         },
         {
+          "path": "src/components/dashboards/library-dashboard/components/layout/sidebar-menu-styles.ts",
+          "type": "registry:lib",
+          "target": "components/watermelon/library-dashboard/components/layout/sidebar-menu-styles.ts"
+        },
+        {
           "path": "src/components/dashboards/library-dashboard/components/layout/sidebar-navigation-item.tsx",
           "type": "registry:component",
           "target": "components/watermelon/library-dashboard/components/layout/sidebar-navigation-item.tsx"
@@ -8868,16 +8865,6 @@
           "path": "src/components/dashboards/library-dashboard/demo.tsx",
           "type": "registry:component",
           "target": "components/watermelon/library-dashboard/demo.tsx"
-        },
-        {
-          "path": "src/components/dashboards/library-dashboard/hooks/use-mobile.ts",
-          "type": "registry:hook",
-          "target": "components/watermelon/library-dashboard/hooks/use-mobile.ts"
-        },
-        {
-          "path": "src/components/dashboards/library-dashboard/lib/utils.ts",
-          "type": "registry:lib",
-          "target": "components/watermelon/library-dashboard/lib/utils.ts"
         }
       ],
       "type": "registry:block"

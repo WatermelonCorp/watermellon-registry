@@ -8,75 +8,75 @@ import {
   CheckoutIcon,
   MembersIcon,
   ReturnIcon,
-} from './assets/icons';
+} from "./assets/icons";
 
 export const organizations = [
-  'Springfield Public Library',
-  'Shelbyville Library',
-  'Capitol City Library',
-  'Ogdenville Archives',
+  "Springfield Public Library",
+  "Shelbyville Library",
+  "Capitol City Library",
+  "Ogdenville Archives",
 ] as const;
 
 export const topNavNotifications = [
   {
     id: 1,
     text: 'New book added: "The Art of Computer Programming"',
-    time: '2 min ago',
+    time: "2 min ago",
     unread: true,
   },
   {
     id: 2,
     text: 'Sarah P. checked out "The Cartographer\'s Secret"',
-    time: '12 min ago',
+    time: "12 min ago",
     unread: true,
   },
   {
     id: 3,
-    text: 'System generated 47 purchase recommendations',
-    time: '1 hr ago',
+    text: "System generated 47 purchase recommendations",
+    time: "1 hr ago",
     unread: false,
   },
   {
     id: 4,
     text: 'Yuki K. returned "Silk Road Chronicles"',
-    time: '2 hr ago',
+    time: "2 hr ago",
     unread: false,
   },
 ] as const;
 
 export const metrics = [
   {
-    label: 'Total Items',
-    value: '12,847',
-    note: '+34 vs last month',
+    label: "Total Items",
+    value: "12,847",
+    note: "+34 vs last month",
     icon: BookOpen02Icon,
-    iconClassName: 'text-[#3B82F6]',
+    iconClassName: "text-[#3B82F6]",
   },
   {
-    label: 'Active Members',
-    value: '140',
-    note: '+12 today',
+    label: "Active Members",
+    value: "140",
+    note: "+12 today",
     icon: MembersIcon,
-    iconClassName: 'text-[#3B82F6]',
+    iconClassName: "text-[#3B82F6]",
   },
   {
-    label: 'items Borrowed',
-    value: '16',
-    note: '9.3% of collection',
+    label: "items Borrowed",
+    value: "16",
+    note: "9.3% of collection",
     icon: BookMinusIcon,
-    iconClassName: 'text-[#22C55E]',
+    iconClassName: "text-[#22C55E]",
   },
   {
-    label: 'Overdue Items',
-    value: '47',
-    note: '8 from last week',
+    label: "Overdue Items",
+    value: "47",
+    note: "8 from last week",
     icon: Alert02Icon,
-    iconClassName: 'text-[#F59E0B]',
+    iconClassName: "text-[#F59E0B]",
     noteIcon: ArrowDown02Icon,
   },
 ];
 
-type CirculationTimeframe = 'weekly' | 'monthly' | 'yearly';
+type CirculationTimeframe = "weekly" | "monthly" | "yearly";
 
 type CirculationDataPoint = {
   timestamp: number;
@@ -138,86 +138,86 @@ export const circulationData: Record<
 };
 
 export const collectionOverview = {
-  label: 'Items',
+  label: "Items",
   segments: [
-    { label: 'Print', count: 5245, color: 'print' },
-    { label: 'Digital', count: 4745, color: 'digital' },
-    { label: 'Media', count: 2497, color: 'media' },
+    { label: "Print", count: 5245, opacity: 1 },
+    { label: "Digital", count: 4745, opacity: 0.72 },
+    { label: "Media", count: 2497, opacity: 0.4 },
   ],
 } as const;
 
 export const recentActivity = [
   {
-    id: 'book-added',
+    id: "book-added",
     icon: BookPlusIcon,
     parts: [
-      { text: 'New book added: ', muted: true },
+      { text: "New book added: ", muted: true },
       { text: '"The Art of Computer Programming"' },
     ],
-    time: '2 min ago',
-    dateTime: '2026-02-19T08:58:00',
+    time: "2 min ago",
+    dateTime: "2026-02-19T08:58:00",
   },
   {
-    id: 'checkout',
+    id: "checkout",
     icon: CheckoutIcon,
     parts: [
-      { text: 'Sarah P. ' },
-      { text: 'checked out ', muted: true },
+      { text: "Sarah P. " },
+      { text: "checked out ", muted: true },
       { text: '"The Cartographer\u2019s Secret"' },
     ],
-    time: '2 minutes ago',
-    dateTime: '2026-02-19T08:58:00',
+    time: "2 minutes ago",
+    dateTime: "2026-02-19T08:58:00",
   },
   {
-    id: 'titles-flagged',
+    id: "titles-flagged",
     icon: AiIdeaIcon,
     parts: [
-      { text: 'Intelligence ' },
-      { text: 'flagged ', muted: true },
-      { text: '3,280 dormant titles ' },
-      { text: 'for collection review', muted: true },
+      { text: "Intelligence " },
+      { text: "flagged ", muted: true },
+      { text: "3,280 dormant titles " },
+      { text: "for collection review", muted: true },
     ],
-    time: '1 hr ago',
-    dateTime: '2026-02-19T08:00:00',
+    time: "1 hr ago",
+    dateTime: "2026-02-19T08:00:00",
   },
   {
-    id: 'return',
+    id: "return",
     icon: ReturnIcon,
     parts: [
-      { text: 'Yuki K. ' },
-      { text: 'returned ', muted: true },
-      { text: '\u201cSilk Road Chronicles\u201d' },
+      { text: "Yuki K. " },
+      { text: "returned ", muted: true },
+      { text: "\u201cSilk Road Chronicles\u201d" },
     ],
-    time: '2 hr ago',
-    dateTime: '2026-02-19T07:00:00',
+    time: "2 hr ago",
+    dateTime: "2026-02-19T07:00:00",
   },
   {
-    id: 'recommendations',
+    id: "recommendations",
     icon: AiIdeaIcon,
     parts: [
-      { text: 'Intelligence ' },
-      { text: 'generated ', muted: true },
-      { text: '47 purchase recommendations' },
+      { text: "Intelligence " },
+      { text: "generated ", muted: true },
+      { text: "47 purchase recommendations" },
     ],
-    time: '3 hr ago',
-    dateTime: '2026-02-19T06:00:00',
+    time: "3 hr ago",
+    dateTime: "2026-02-19T06:00:00",
   },
 ] as const;
 
 export const intelligenceCards = [
   {
-    tone: 'insight',
-    title: 'High Demand Alert',
+    tone: "insight",
+    title: "High Demand Alert",
     bodyParts: [
       { text: '"Project Hail Mary"', emphasis: true },
       {
-        text: ' has a 6-member waitlist. 2 additional copies would clear the backlog within 3 weeks.',
+        text: " has a 6-member waitlist. 2 additional copies would clear the backlog within 3 weeks.",
       },
     ],
   },
   {
-    tone: 'warning',
-    title: 'Collection Gap',
+    tone: "warning",
+    title: "Collection Gap",
     bodyParts: [
       {
         text: "Member searches for 'climate fiction' are up 340% this month, only 2 titles in collection. Consider acquiring more.",
@@ -225,11 +225,11 @@ export const intelligenceCards = [
     ],
   },
   {
-    tone: 'success',
-    title: 'Auto-Sort',
+    tone: "success",
+    title: "Auto-Sort",
     bodyParts: [
       {
-        text: '47 returned items have been categorised and shelf locations assigned. 3 items flagged for condition review.',
+        text: "47 returned items have been categorised and shelf locations assigned. 3 items flagged for condition review.",
       },
     ],
   },

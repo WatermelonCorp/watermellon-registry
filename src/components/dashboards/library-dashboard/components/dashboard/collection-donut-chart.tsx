@@ -1,25 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import {
-  Cell,
-  Pie,
-  PieChart,
-  Tooltip,
-} from "recharts"
+import { useState } from "react";
+import { Cell, Pie, PieChart, Tooltip } from "recharts";
 
 export type CollectionDonutDatum = {
-  name: string
-  value: number
-  fill: string
-}
+  name: string;
+  value: number;
+  fill: string;
+  fillOpacity: number;
+};
 
 type CollectionDonutChartProps = {
-  data: CollectionDonutDatum[]
-  total: number
-  label: string
-  size?: number
-}
+  data: CollectionDonutDatum[];
+  total: number;
+  label: string;
+  size?: number;
+};
 
 export function CollectionDonutChart({
   data,
@@ -27,15 +23,15 @@ export function CollectionDonutChart({
   label,
   size = 200,
 }: CollectionDonutChartProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const activeDatum = activeIndex !== null ? data[activeIndex] : null
-  const displayValue = activeDatum ? activeDatum.value : total
-  const displayLabel = activeDatum ? activeDatum.name : label
+  const activeDatum = activeIndex !== null ? data[activeIndex] : null;
+  const displayValue = activeDatum ? activeDatum.value : total;
+  const displayLabel = activeDatum ? activeDatum.name : label;
 
-  const center = size / 2
-  const outerRadius = size / 2 - 2
-  const innerRadius = outerRadius * 0.7
+  const center = size / 2;
+  const outerRadius = size / 2 - 2;
+  const innerRadius = outerRadius * 0.7;
 
   return (
     <div
@@ -66,6 +62,7 @@ export function CollectionDonutChart({
             <Cell
               key={`cell-${index}`}
               fill={entry.fill}
+              fillOpacity={entry.fillOpacity}
               opacity={activeIndex === null || activeIndex === index ? 1 : 0.35}
               style={{ transition: "opacity 300ms ease-in-out" }}
             />
@@ -97,5 +94,5 @@ export function CollectionDonutChart({
         </div>
       </div>
     </div>
-  )
+  );
 }

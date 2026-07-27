@@ -1,7 +1,13 @@
 "use client";
 
 import { Check, Ellipsis } from "lucide-react";
-import { type ComponentType, type SVGProps, useEffect, useState } from "react";
+import {
+  type ComponentType,
+  type CSSProperties,
+  type SVGProps,
+  useEffect,
+  useState,
+} from "react";
 
 import { Logo } from "../../assets/logo";
 
@@ -22,7 +28,7 @@ import {
 } from "../../assets/icons";
 import { SidebarNavigationItem } from "./sidebar-navigation-item";
 import { useOrganization } from "./organization-provider";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -49,8 +55,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 import { organizations } from "../../data";
-import { cn } from "../../lib/utils";
+import { librarySidebarMenuButtonClassName } from "./sidebar-menu-styles";
 
 export type NavigationIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
@@ -163,7 +170,16 @@ export function AppSidebar({
 
   return (
     <>
-      <Sidebar collapsible="icon" className="bg-sidebar border-r">
+      <Sidebar
+        collapsible="icon"
+        className="bg-sidebar border-r"
+        style={
+          {
+            "--sidebar-width": "18.125rem",
+            "--sidebar-width-icon": "5rem",
+          } as CSSProperties
+        }
+      >
         <SidebarHeader
           className={cn(
             "group relative flex h-21 flex-row items-center border-b p-0 transition-[padding] duration-200",
@@ -231,24 +247,29 @@ export function AppSidebar({
             <SidebarMenuItem>
               <SidebarMenuButton
                 isActive={activeSection === "help-support"}
-                asChild
+                className={cn(
+                  librarySidebarMenuButtonClassName,
+                  activeSection === "help-support" && "text-primary",
+                )}
+                onClick={(event) => event.preventDefault()}
               >
-                <a href="#" onClick={(e) => e.preventDefault()}>
-                  <HelpIcon />
-                  {!collapsed && <span>Help & Support</span>}
-                </a>
+                <HelpIcon />
+                {!collapsed && <span>Help & Support</span>}
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem className="flex items-center gap-1">
               <SidebarMenuButton
                 isActive={activeSection === "settings"}
-                className={cn("min-w-0", !collapsed && "flex-1")}
-                asChild
+                className={cn(
+                  librarySidebarMenuButtonClassName,
+                  "min-w-0",
+                  !collapsed && "flex-1",
+                  activeSection === "settings" && "text-primary",
+                )}
+                onClick={(event) => event.preventDefault()}
               >
-                <a href="#" onClick={(e) => e.preventDefault()}>
-                  <SettingsIcon />
-                  {!collapsed && <span>Settings</span>}
-                </a>
+                <SettingsIcon />
+                {!collapsed && <span>Settings</span>}
               </SidebarMenuButton>
               {!collapsed && (
                 <Button
@@ -306,17 +327,15 @@ function MobileBottomNavigation({
         if (item.section === "catalog") {
           return (
             <DropdownMenu key={item.section}>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  aria-label={label}
-                  variant="ghost"
-                  className={cn(
-                    "text-muted-foreground hover:text-primary h-full flex-1 items-center justify-center px-0 py-0 hover:bg-transparent",
-                    active && "text-primary font-semibold",
-                  )}
-                >
-                  <Icon className="size-5 shrink-0" />
-                </Button>
+              <DropdownMenuTrigger
+                aria-label={label}
+                className={cn(
+                  buttonVariants({ variant: "ghost" }),
+                  "text-muted-foreground hover:text-primary h-full flex-1 items-center justify-center px-0 py-0 hover:bg-transparent",
+                  active && "text-primary font-semibold",
+                )}
+              >
+                <Icon className="size-5 shrink-0" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 side="top"
@@ -342,16 +361,10 @@ function MobileBottomNavigation({
                           subItemActive &&
                             "bg-secondary text-primary font-semibold",
                         )}
-                        asChild
+                        onClick={(event) => event.preventDefault()}
                       >
-                        <a
-                          href={subItem.href}
-                          onClick={(e) => e.preventDefault()}
-                          className="flex items-center gap-2"
-                        >
-                          <SubIcon className="size-4.5 shrink-0" />
-                          <span>{subItem.label}</span>
-                        </a>
+                        <SubIcon className="size-4.5 shrink-0" />
+                        <span>{subItem.label}</span>
                       </DropdownMenuItem>
                     );
                   })}
@@ -378,17 +391,15 @@ function MobileBottomNavigation({
       })}
 
       <Sheet open={moreOpen} onOpenChange={setMoreOpen}>
-        <SheetTrigger asChild>
-          <Button
-            aria-label="More navigation"
-            variant="ghost"
-            className={cn(
-              "text-muted-foreground hover:text-primary h-full flex-1 items-center justify-center px-0 py-0 hover:bg-transparent",
-              moreActive && "text-primary font-semibold",
-            )}
-          >
-            <Ellipsis className="size-5 shrink-0" />
-          </Button>
+        <SheetTrigger
+          aria-label="More navigation"
+          className={cn(
+            buttonVariants({ variant: "ghost" }),
+            "text-muted-foreground hover:text-primary h-full flex-1 items-center justify-center px-0 py-0 hover:bg-transparent",
+            moreActive && "text-primary font-semibold",
+          )}
+        >
+          <Ellipsis className="size-5 shrink-0" />
         </SheetTrigger>
         <SheetContent
           side="bottom"
@@ -400,26 +411,26 @@ function MobileBottomNavigation({
           </SheetHeader>
 
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className="h-auto w-full justify-between py-2"
-              >
-                <span className="flex min-w-0 items-center gap-3">
-                  <span className="bg-foreground text-background dark:bg-muted flex size-10 shrink-0 items-center justify-center rounded-lg">
-                    <BuildingIcon className="size-5" />
+            <DropdownMenuTrigger
+              className={cn(
+                buttonVariants({ variant: "ghost" }),
+                "h-auto w-full justify-between py-2",
+              )}
+            >
+              <span className="flex min-w-0 items-center gap-3">
+                <span className="bg-foreground text-background dark:bg-muted flex size-10 shrink-0 items-center justify-center rounded-lg">
+                  <BuildingIcon className="size-5" />
+                </span>
+                <span className="min-w-0 text-left">
+                  <span className="text-muted-foreground block text-xs font-normal">
+                    Library branch
                   </span>
-                  <span className="min-w-0 text-left">
-                    <span className="text-muted-foreground block text-xs font-normal">
-                      Library branch
-                    </span>
-                    <span className="block truncate text-sm font-semibold">
-                      {selectedOrg}
-                    </span>
+                  <span className="block truncate text-sm font-semibold">
+                    {selectedOrg}
                   </span>
                 </span>
-                <ArrowDown01Icon className="text-muted-foreground size-5 shrink-0" />
-              </Button>
+              </span>
+              <ArrowDown01Icon className="text-muted-foreground size-5 shrink-0" />
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="center"

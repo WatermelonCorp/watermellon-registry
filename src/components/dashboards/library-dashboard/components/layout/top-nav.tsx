@@ -10,7 +10,7 @@ import {
   DashboardIcon,
 } from "../../assets/icons";
 import { useOrganization } from "./organization-provider";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { organizations, topNavNotifications } from "../../data";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 export function TopNav() {
   const { selectedOrg, setSelectedOrg } = useOrganization();
@@ -126,22 +126,21 @@ export function TopNav() {
 
         <div className={cn("order-2", mobileSearchOpen && "hidden md:block")}>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                aria-label="Notifications"
-                variant="secondary"
-                size="icon-lg"
-                className="relative"
-              >
-                <Bell className="size-5" />
-                {topNavNotifications.some(
-                  (notification) => notification.unread,
-                ) && (
-                  <span className="absolute top-1/2 left-1/2 size-5 -translate-x-1/2 -translate-y-1/2">
-                    <span className="absolute top-0 right-0 size-2 rounded-full bg-red-500" />
-                  </span>
-                )}
-              </Button>
+            <DropdownMenuTrigger
+              aria-label="Notifications"
+              className={cn(
+                buttonVariants({ variant: "secondary", size: "icon-lg" }),
+                "relative size-10 md:size-11",
+              )}
+            >
+              <Bell className="size-5" />
+              {topNavNotifications.some(
+                (notification) => notification.unread,
+              ) && (
+                <span className="absolute top-1/2 left-1/2 size-5 -translate-x-1/2 -translate-y-1/2">
+                  <span className="absolute top-0 right-0 size-2 rounded-full bg-red-500" />
+                </span>
+              )}
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
@@ -183,11 +182,9 @@ export function TopNav() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                   className="text-primary justify-center"
-                  asChild
+                  onClick={(event) => event.preventDefault()}
                 >
-                  <a href="#" onClick={(e) => e.preventDefault()}>
-                    View all notifications
-                  </a>
+                  View all notifications
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>

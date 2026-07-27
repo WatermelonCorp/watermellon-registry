@@ -19,7 +19,15 @@ export function DashboardShell({
   children,
 }: DashboardShellProps) {
   return (
-    <SidebarProvider defaultOpen={true}>
+    <SidebarProvider
+      defaultOpen={true}
+      style={
+        {
+          "--sidebar-width": "18.125rem",
+          "--sidebar-width-icon": "5rem",
+        } as React.CSSProperties
+      }
+    >
       <OrganizationProvider>
         <main className="bg-background flex h-screen w-full min-w-0 overflow-hidden">
           <AppSidebar

@@ -1,9 +1,9 @@
-import { DashboardContent } from './components/dashboard/dashboard-content';
-import { DashboardShell } from './components/layout/dashboard-shell';
+import { DashboardContent } from "./components/dashboard/dashboard-content";
+import { DashboardShell } from "./components/layout/dashboard-shell";
 
 export default function DashboardView() {
   return (
-    <div className="library-dashboard w-full min-h-screen">
+    <div className="min-h-screen w-full">
       <DashboardShell>
         <DashboardContent />
       </DashboardShell>

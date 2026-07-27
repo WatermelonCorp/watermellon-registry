@@ -11,7 +11,7 @@ import {
   XAxis,
 } from "recharts";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { ArrowDown01Icon } from "../../assets/icons";
 import {
   type ChartConfig,
@@ -26,7 +26,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { circulationData } from "../../data";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 type CirculationTimeframe = "weekly" | "monthly" | "yearly";
 
@@ -140,11 +140,14 @@ export function CirculationChart() {
       <div className="flex w-full items-center justify-between">
         <h2 className="text-lg font-semibold">Collection Circulation</h2>
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="sm" className="capitalize">
-              {timeframe}
-              <ArrowDown01Icon className="text-muted-foreground size-4" />
-            </Button>
+          <DropdownMenuTrigger
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "sm" }),
+              "capitalize",
+            )}
+          >
+            {timeframe}
+            <ArrowDown01Icon className="text-muted-foreground size-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-32">
             <DropdownMenuGroup>
