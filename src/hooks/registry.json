@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "use-auto-height",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "use-auto-height.tsx",
+          "target": "hooks/use-auto-height.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-controlled-state",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "use-controlled-state.tsx",
+          "target": "hooks/use-controlled-state.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-data-state",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "use-data-state.tsx",
+          "target": "hooks/use-data-state.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-is-in-view",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "use-is-in-view.tsx",
+          "target": "hooks/use-is-in-view.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "use-mobile.ts",
+          "target": "hooks/use-mobile.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

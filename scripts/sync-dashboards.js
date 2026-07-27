@@ -1,306 +1,514 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import fs from "node:fs"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+import ts from "typescript"
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-const REGISTRY_PATH = path.resolve(__dirname, "../registry.json");
-const DASHBOARDS_DIR = path.resolve(__dirname, "../src/components/dashboards");
+const DASHBOARDS_DIR = path.resolve(
+  __dirname,
+  "../src/components/dashboards"
+)
 
-const DRY_RUN = process.argv.includes("--dry-run");
+const REGISTRY_PATH = path.resolve(
+  DASHBOARDS_DIR,
+  "registry.json"
+)
 
-// ── Known npm dependencies to detect ────────────────────────────────────
-const KNOWN_DEPENDENCIES = [
-  "lucide-react",
-  "motion",
-  "motion/react",
-  "framer-motion",
-  "clsx",
-  "tailwind-merge",
-  "recharts",
-  "sonner",
-  "zod",
-  "date-fns",
-  "react-day-picker",
-  "embla-carousel-react",
-  "next-themes",
-  "shiki",
-  "ansi-to-react",
-  "react-slick",
-  "react-router-dom",
-  "vaul",
-  "react-icons",
-  "react-use-measure",
-  "@number-flow/react",
-  "@tabler/icons-react",
-  "@aliimam/icons",
-  "@aliimam/logos",
-  "@hugeicons/react",
-  "@hugeicons/core-free-icons",
-  "@dnd-kit/core",
-  "@floating-ui/react",
-  "@headlessui/react",
-  "qrcode.react",
-  "iconsax-react",
-  "media-chrome",
-  "wavesurfer.js",
-  "tunnel-rat",
-];
+const DRY_RUN = process.argv.includes("--dry-run")
 
-const RADIX_PREFIX = "@radix-ui/";
-const BASE_UI_PREFIX = "@base-ui/";
+const REACT_EXTENSIONS = new Set([
+  ".ts",
+  ".tsx",
+  ".js",
+  ".jsx"
+])
 
-// shadcn registry dependencies to detect from internal imports
-const KNOWN_REGISTRY_DEPS = [
-  "sidebar",
-  "button",
-  "card",
-  "badge",
-  "input",
-  "label",
-  "select",
-  "separator",
-  "avatar",
-  "tooltip",
-  "breadcrumb",
-  "dropdown-menu",
-  "popover",
-  "sheet",
-  "skeleton",
-  "switch",
-  "table",
-  "tabs",
-  "toggle",
-  "toggle-group",
-  "checkbox",
-  "collapsible",
-  "chart",
-  "calendar",
-  "dialog",
-  "drawer",
-  "sonner",
-  "accordion",
-];
+const IGNORED_PACKAGES = new Set([
+  "react",
+  "react-dom"
+])
 
-// ── Helpers ──────────────────────────────────────────────────────────────
+function normalizePath(value) {
+  return value.split(path.sep).join("/")
+}
 
-/**
- * Recursively collect all .tsx and .ts files under a directory,
- * returning paths relative to `baseDir`.
- */
-function collectFiles(dir, baseDir) {
-  const results = [];
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
+function collectReactFiles(directory, baseDirectory) {
+  const files = []
+
+  const entries = fs
+    .readdirSync(directory, { withFileTypes: true })
+    .sort((a, b) => a.name.localeCompare(b.name))
 
   for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
+    if (
+      entry.name === "registry.json" ||
+      entry.name === "node_modules" ||
+      entry.name.startsWith(".")
+    ) {
+      continue
+    }
+
+    const fullPath = path.join(directory, entry.name)
+
     if (entry.isDirectory()) {
-      results.push(...collectFiles(fullPath, baseDir));
-    } else if (entry.isFile() && /\.(tsx?|ts)$/.test(entry.name)) {
-      results.push(path.relative(baseDir, fullPath));
+      files.push(
+        ...collectReactFiles(fullPath, baseDirectory)
+      )
+      continue
+    }
+
+    const extension = path
+      .extname(entry.name)
+      .toLowerCase()
+
+    if (
+      entry.isFile() &&
+      REACT_EXTENSIONS.has(extension)
+    ) {
+      files.push(
+        normalizePath(
+          path.relative(baseDirectory, fullPath)
+        )
+      )
     }
   }
 
-  return results;
+  return files
 }
 
-/**
- * Parse file content and return a set of npm dependency names.
- */
-function detectDependencies(content) {
-  const deps = new Set();
+function getPackageName(specifier) {
+  if (specifier.startsWith("@")) {
+    const parts = specifier.split("/")
 
-  for (const dep of KNOWN_DEPENDENCIES) {
-    const escaped = dep.replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&");
-    const regex = new RegExp(`from\\s+["']${escaped}(?:/[^"']*)?["']`);
-    if (regex.test(content)) {
-      // Normalise motion/react → motion
-      if (dep === "motion/react" || dep === "framer-motion") {
-        deps.add("motion");
-      } else {
-        deps.add(dep);
+    if (parts.length < 2) {
+      return null
+    }
+
+    return `${parts[0]}/${parts[1]}`
+  }
+
+  return specifier.split("/")[0]
+}
+
+function isLocalSpecifier(specifier) {
+  return (
+    specifier.startsWith(".") ||
+    specifier.startsWith("/") ||
+    specifier.startsWith("@/") ||
+    specifier.startsWith("~/") ||
+    specifier.startsWith("src/") ||
+    specifier.startsWith("#") ||
+    specifier.startsWith("node:")
+  )
+}
+
+function isFileBackedSpecifier(specifier) {
+  const normalized = specifier.replaceAll("\\", "/")
+
+  return /^(?:@\/|~\/|src\/)(?:hooks|lib)\//.test(
+    normalized
+  )
+}
+
+function getRegistryDependency(specifier) {
+  const normalized = specifier.replaceAll("\\", "/")
+
+  const match = normalized.match(
+    /^(?:@\/|~\/|src\/)?components\/ui\/([^/]+)$/
+  )
+
+  if (!match) {
+    return null
+  }
+
+  return match[1].replace(/\.(tsx?|jsx?)$/, "")
+}
+
+function getScriptKind(filename) {
+  const extension = path
+    .extname(filename)
+    .toLowerCase()
+
+  if (extension === ".tsx") {
+    return ts.ScriptKind.TSX
+  }
+
+  if (extension === ".jsx") {
+    return ts.ScriptKind.JSX
+  }
+
+  if (extension === ".js") {
+    return ts.ScriptKind.JS
+  }
+
+  return ts.ScriptKind.TS
+}
+
+function extractModuleSpecifiers(content, filename) {
+  const sourceFile = ts.createSourceFile(
+    filename,
+    content,
+    ts.ScriptTarget.Latest,
+    true,
+    getScriptKind(filename)
+  )
+
+  const specifiers = new Set()
+
+  function addSpecifier(node) {
+    if (
+      node &&
+      ts.isStringLiteralLike(node) &&
+      typeof node.text === "string"
+    ) {
+      specifiers.add(node.text)
+    }
+  }
+
+  function visit(node) {
+    if (ts.isImportDeclaration(node)) {
+      addSpecifier(node.moduleSpecifier)
+    }
+
+    if (
+      ts.isExportDeclaration(node) &&
+      node.moduleSpecifier
+    ) {
+      addSpecifier(node.moduleSpecifier)
+    }
+
+    if (
+      ts.isImportEqualsDeclaration(node) &&
+      ts.isExternalModuleReference(
+        node.moduleReference
+      )
+    ) {
+      addSpecifier(
+        node.moduleReference.expression
+      )
+    }
+
+    if (ts.isCallExpression(node)) {
+      const firstArgument = node.arguments[0]
+
+      if (
+        node.expression.kind ===
+        ts.SyntaxKind.ImportKeyword
+      ) {
+        addSpecifier(firstArgument)
+      }
+
+      if (
+        ts.isIdentifier(node.expression) &&
+        node.expression.text === "require"
+      ) {
+        addSpecifier(firstArgument)
       }
     }
+
+    ts.forEachChild(node, visit)
   }
 
-  // Radix UI imports
-  const radixRegex = /from\s+["'](@radix-ui\/[^"'/]+)["']/g;
-  let match;
-  while ((match = radixRegex.exec(content)) !== null) {
-    deps.add(match[1]);
-  }
+  visit(sourceFile)
 
-  // Base UI imports
-  const baseUiRegex = /from\s+["'](@base-ui\/[^"'/]+)["']/g;
-  while ((match = baseUiRegex.exec(content)) !== null) {
-    deps.add(match[1]);
-  }
-
-  // class-variance-authority
-  if (
-    content.includes("cva(") ||
-    /from\s+["']class-variance-authority["']/.test(content)
-  ) {
-    deps.add("class-variance-authority");
-  }
-
-  return deps;
+  return specifiers
 }
 
-/**
- * Detect shadcn registry dependencies by checking for internal ui/ imports.
- */
-function detectRegistryDeps(content) {
-  const regDeps = new Set();
+function detectDependencies(content, filename) {
+  const dependencies = new Set()
+  const registryDependencies = new Set()
+  const unresolvedAliases = new Set()
 
-  const uiImportRegex = /from\s+["'][^"']*\/ui\/([^"'/]+)["']/g;
-  let match;
-  while ((match = uiImportRegex.exec(content)) !== null) {
-    const componentName = match[1].replace(/\.(tsx?|ts)$/, "");
-    if (KNOWN_REGISTRY_DEPS.includes(componentName)) {
-      regDeps.add(componentName);
+  const specifiers = extractModuleSpecifiers(
+    content,
+    filename
+  )
+
+  for (const specifier of specifiers) {
+    if (isFileBackedSpecifier(specifier)) {
+      continue
+    }
+
+    const registryDependency =
+      getRegistryDependency(specifier)
+
+    if (registryDependency) {
+      registryDependencies.add(
+        registryDependency
+      )
+      continue
+    }
+
+    if (isLocalSpecifier(specifier)) {
+      if (
+        specifier.startsWith("@/") ||
+        specifier.startsWith("~/") ||
+        specifier.startsWith("src/") ||
+        specifier.startsWith("#")
+      ) {
+        unresolvedAliases.add(specifier)
+      }
+
+      continue
+    }
+
+    const packageName = getPackageName(
+      specifier
+    )
+
+    if (
+      packageName &&
+      !IGNORED_PACKAGES.has(packageName)
+    ) {
+      dependencies.add(packageName)
     }
   }
 
-  return regDeps;
+  return {
+    dependencies,
+    registryDependencies,
+    unresolvedAliases
+  }
 }
 
-/**
- * Build a registry entry for a dashboard directory.
- */
-function buildDashboardEntry(dirName) {
-  const dashboardDir = path.join(DASHBOARDS_DIR, dirName);
-  const relFiles = collectFiles(dashboardDir, dashboardDir);
+function getRegistryFileType(relativePath) {
+  const normalized = normalizePath(
+    relativePath
+  )
 
-  if (relFiles.length === 0) return null;
+  const basename = path.basename(
+    normalized
+  )
 
-  // Aggregate dependencies across all files
-  const allDeps = new Set();
-  const allRegDeps = new Set();
-
-  for (const relFile of relFiles) {
-    const fullPath = path.join(dashboardDir, relFile);
-    const content = fs.readFileSync(fullPath, "utf8");
-    for (const dep of detectDependencies(content)) allDeps.add(dep);
-    for (const dep of detectRegistryDeps(content)) allRegDeps.add(dep);
+  if (
+    normalized.includes("/hooks/") ||
+    basename.startsWith("use-")
+  ) {
+    return "registry:hook"
   }
 
-  // Build file entries with correct paths from actual filesystem
-  const fileEntries = relFiles.map((relFile) => ({
-    path: `src/components/dashboards/${dirName}/${relFile}`,
-    target: `components/watermelon/dashboards/${dirName}/${relFile}`,
-    type: "registry:component",
-  }));
+  if (
+    normalized.includes("/lib/") ||
+    normalized.endsWith("/data.ts") ||
+    normalized.endsWith("/data.js")
+  ) {
+    return "registry:lib"
+  }
+
+  if (
+    normalized.endsWith(".tsx") ||
+    normalized.endsWith(".jsx")
+  ) {
+    return "registry:component"
+  }
+
+  return "registry:lib"
+}
+
+function buildDashboardEntry(directoryName) {
+  const dashboardDirectory = path.join(
+    DASHBOARDS_DIR,
+    directoryName
+  )
+
+  const relativeFiles = collectReactFiles(
+    dashboardDirectory,
+    dashboardDirectory
+  )
+
+  if (relativeFiles.length === 0) {
+    return null
+  }
+
+  const dependencies = new Set()
+  const registryDependencies = new Set()
+  const unresolvedAliases = new Map()
+
+  for (const relativeFile of relativeFiles) {
+    if (
+      !REACT_EXTENSIONS.has(
+        path.extname(relativeFile).toLowerCase()
+      )
+    ) {
+      continue
+    }
+
+    const fullPath = path.join(
+      dashboardDirectory,
+      relativeFile
+    )
+
+    const content = fs.readFileSync(
+      fullPath,
+      "utf8"
+    )
+
+    const detected = detectDependencies(
+      content,
+      fullPath
+    )
+
+    for (
+      const dependency of detected.dependencies
+    ) {
+      dependencies.add(dependency)
+    }
+
+    for (
+      const dependency of
+      detected.registryDependencies
+    ) {
+      registryDependencies.add(dependency)
+    }
+
+    for (
+      const specifier of
+      detected.unresolvedAliases
+    ) {
+      if (!unresolvedAliases.has(specifier)) {
+        unresolvedAliases.set(specifier, [])
+      }
+
+      unresolvedAliases
+        .get(specifier)
+        .push(relativeFile)
+    }
+  }
+
+  if (unresolvedAliases.size > 0) {
+    const details = [
+      ...unresolvedAliases.entries()
+    ]
+      .map(
+        ([specifier, files]) =>
+          `  ${specifier}\n    ${files.join("\n    ")}`
+      )
+      .join("\n")
+
+    throw new Error(
+      `${directoryName} has unresolved project aliases:\n${details}`
+    )
+  }
+
+  const files = relativeFiles.map(
+    (relativeFile) => ({
+      path: normalizePath(
+        path.join(
+          directoryName,
+          relativeFile
+        )
+      ),
+      target: normalizePath(
+        path.join(
+          "components/watermelon",
+          directoryName,
+          relativeFile
+        )
+      ),
+      type: getRegistryFileType(
+        relativeFile
+      )
+    })
+  )
 
   const entry = {
-    name: dirName,
+    name: directoryName,
     type: "registry:block",
-    dependencies: Array.from(allDeps).sort(),
-    files: fileEntries,
-  };
-
-  if (allRegDeps.size > 0) {
-    entry.registryDependencies = Array.from(allRegDeps).sort();
+    dependencies: [
+      ...dependencies
+    ].sort(),
+    files
   }
 
-  return entry;
+  if (registryDependencies.size > 0) {
+    entry.registryDependencies = [
+      ...registryDependencies
+    ].sort()
+  }
+
+  return entry
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────
-
 function main() {
-  console.log("📂 Reading registry.json...");
-  let registry;
+  let dashboardDirectories
+
   try {
-    registry = JSON.parse(fs.readFileSync(REGISTRY_PATH, "utf8"));
+    dashboardDirectories = fs
+      .readdirSync(DASHBOARDS_DIR, {
+        withFileTypes: true
+      })
+      .filter(
+        (entry) => entry.isDirectory()
+      )
+      .map((entry) => entry.name)
+      .sort((a, b) =>
+        a.localeCompare(b)
+      )
   } catch (error) {
-    console.error("❌ Error reading registry.json:", error.message);
-    process.exit(1);
+    console.error(
+      `Unable to read dashboards directory: ${error.message}`
+    )
+    process.exit(1)
   }
 
-  console.log("📂 Scanning dashboards directory...");
-  let dashboardDirs;
-  try {
-    dashboardDirs = fs
-      .readdirSync(DASHBOARDS_DIR, { withFileTypes: true })
-      .filter((d) => d.isDirectory())
-      .map((d) => d.name);
-  } catch (error) {
-    console.error("❌ Error reading dashboards directory:", error.message);
-    process.exit(1);
+  const items = dashboardDirectories
+    .map(buildDashboardEntry)
+    .filter(Boolean)
+
+  const registry = {
+    $schema:
+      "https://ui.shadcn.com/schema/registry.json",
+    name: "watermelon-dashboards",
+    items
   }
-
-  console.log(
-    `   Found ${dashboardDirs.length} dashboard directories: ${dashboardDirs.join(", ")}\n`,
-  );
-
-  // ── Step 1: Remove ALL existing dashboard block entries ──
-  // Any entry whose files reference src/components/dashboards/ is a dashboard entry.
-  // We regenerate them all from the filesystem to ensure correct paths.
-  const dashboardPathPrefix = "src/components/dashboards/";
-
-  const removedNames = [];
-  const keptItems = registry.items.filter((item) => {
-    const isDashboardBlock =
-      item.type === "registry:block" &&
-      item.files &&
-      item.files.some((f) => f.path.startsWith(dashboardPathPrefix));
-
-    if (isDashboardBlock) {
-      removedNames.push(item.name);
-      return false; // remove it
-    }
-    return true; // keep it
-  });
-
-  if (removedNames.length > 0) {
-    console.log(
-      `🗑️  Removing ${removedNames.length} stale dashboard entries: ${removedNames.join(", ")}\n`,
-    );
-  }
-
-  registry.items = keptItems;
-
-  // ── Step 2: Regenerate all dashboard entries from filesystem ──
-  let addedCount = 0;
-  const newEntries = [];
-
-  for (const dirName of dashboardDirs) {
-    const entry = buildDashboardEntry(dirName);
-
-    if (!entry) {
-      console.log(`⏭️  Skipping "${dirName}" — no .tsx/.ts files found`);
-      continue;
-    }
-
-    newEntries.push(entry);
-    addedCount++;
-    console.log(
-      `✅ Adding "${dirName}" (${entry.files.length} files, ${entry.dependencies.length} deps)`,
-    );
-    for (const f of entry.files) {
-      console.log(`     📄 ${f.path}`);
-    }
-    console.log("");
-  }
-
-  // ── Step 3: Insert and sort ──
-  registry.items.push(...newEntries);
-  registry.items.sort((a, b) => a.name.localeCompare(b.name));
 
   if (DRY_RUN) {
     console.log(
-      `\n🔍 DRY RUN — would replace ${removedNames.length} stale + add ${addedCount} dashboard(s). No changes written.`,
-    );
-    console.log("\nPreview of new entries:");
-    console.log(JSON.stringify(newEntries, null, 2));
-  } else {
-    fs.writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 2) + "\n");
-    console.log(
-      `\n🎉 Done! Regenerated ${addedCount} dashboard(s) in registry.json.`,
-    );
+      JSON.stringify(registry, null, 2)
+    )
+    return
   }
+
+  fs.writeFileSync(
+    REGISTRY_PATH,
+    `${JSON.stringify(registry, null, 2)}\n`,
+    "utf8"
+  )
+
+  const rows = items.map((item) => ({
+    Dashboard: item.name,
+    Files: item.files.length,
+    "NPM deps": item.dependencies.length,
+    "Registry deps":
+      item.registryDependencies?.length ?? 0
+  }))
+
+  rows.push({
+    Dashboard: "TOTAL",
+    Files: rows.reduce(
+      (total, row) => total + row.Files,
+      0
+    ),
+    "NPM deps": rows.reduce(
+      (total, row) => total + row["NPM deps"],
+      0
+    ),
+    "Registry deps": rows.reduce(
+      (total, row) =>
+        total + row["Registry deps"],
+      0
+    )
+  })
+
+  console.log(
+    `\nGenerated ${items.length} dashboard registry entries\n`
+  )
+  console.table(rows)
+  console.log(
+    `Registry: ${normalizePath(REGISTRY_PATH)}\n`
+  )
 }
 
-main();
+main()

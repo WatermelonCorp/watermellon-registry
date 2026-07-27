@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/watermelon-ui/alert-06.tsx",
-      "content": "import { Lightbulb } from \"@aliimam/icons\";\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\n\nexport default function Alert06() {\n  return (\n    <Alert className=\"border-indigo-400/40 bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200\">\n      <Lightbulb size={18}/>\n      <AlertTitle>Tips for better results</AlertTitle>\n      <AlertDescription>\n        <ul className=\"list-disc list-inside\">\n          <li>Use short, descriptive names for files.</li>\n          <li>Regularly back up your data.</li>\n          <li>Keep your app dependencies updated.</li>\n        </ul>\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
+      "content": "import { Lightbulb } from \"@aliimam/icons\";\r\nimport { Alert, AlertTitle, AlertDescription } from \"@/components/ui/alert\";\r\n\r\nexport default function Alert06() {\r\n  return (\r\n    <Alert className=\"border-indigo-400/40 bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200\">\r\n      <Lightbulb size={18}/>\r\n      <AlertTitle>Tips for better results</AlertTitle>\r\n      <AlertDescription>\r\n        <ul className=\"list-disc list-inside\">\r\n          <li>Use short, descriptive names for files.</li>\r\n          <li>Regularly back up your data.</li>\r\n          <li>Keep your app dependencies updated.</li>\r\n        </ul>\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/alert-06.tsx"
     }

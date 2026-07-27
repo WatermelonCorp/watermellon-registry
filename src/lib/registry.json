@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "get-strict-context",
+      "type": "registry:lib",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "get-strict-context.tsx",
+          "target": "lib/get-strict-context.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "utils.ts",
+          "target": "lib/utils.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
