@@ -34,6 +34,15 @@ function normalizePath(value) {
   return value.split(path.sep).join("/")
 }
 
+function getUiFileRegistryDependency(relativePath) {
+  const normalized = normalizePath(relativePath)
+  const match = normalized.match(
+    /^components\/ui\/([^/]+)\.(?:tsx?|jsx?)$/
+  )
+
+  return match ? match[1] : null
+}
+
 function collectReactFiles(directory, baseDirectory) {
   const files = []
 
@@ -313,9 +322,24 @@ function buildDashboardEntry(directoryName) {
     directoryName
   )
 
-  const relativeFiles = collectReactFiles(
+  const collectedFiles = collectReactFiles(
     dashboardDirectory,
     dashboardDirectory
+  )
+
+  const registryDependencies = new Set()
+  const relativeFiles = collectedFiles.filter(
+    (relativeFile) => {
+      const registryDependency =
+        getUiFileRegistryDependency(relativeFile)
+
+      if (!registryDependency) {
+        return true
+      }
+
+      registryDependencies.add(registryDependency)
+      return false
+    }
   )
 
   if (relativeFiles.length === 0) {
@@ -323,7 +347,6 @@ function buildDashboardEntry(directoryName) {
   }
 
   const dependencies = new Set()
-  const registryDependencies = new Set()
   const unresolvedAliases = new Map()
 
   for (const relativeFile of relativeFiles) {
