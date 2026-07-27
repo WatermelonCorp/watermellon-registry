@@ -1,5 +1,5 @@
-import { CirculationChart } from "./circulation-chart"
-import { CollectionDonutChart } from "./collection-donut-chart"
+import { CirculationChart } from "./circulation-chart";
+import { CollectionDonutChart } from "./collection-donut-chart";
 import {
   ArrowDown01Icon,
   BookPlusIcon,
@@ -9,23 +9,23 @@ import {
   ReturnIcon,
   SparklesIcon,
   UserAdd02Icon,
-} from "../../assets/icons"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+} from "../../assets/icons";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   collectionOverview,
   intelligenceCards,
   metrics,
   recentActivity,
-} from "../../data"
-import { cn } from "../../lib/utils"
+} from "../../data";
+import { cn } from "../../lib/utils";
 
 const quickActions = [
   { label: "Checkout Items", icon: CheckoutIcon },
   { label: "Process Return", icon: ReturnIcon },
   { label: "Add New Item", icon: BookPlusIcon },
   { label: "Add New Member", icon: UserAdd02Icon },
-]
+];
 
 export function DashboardContent() {
   return (
@@ -47,8 +47,7 @@ export function DashboardContent() {
             {quickActions.map((action) => (
               <Card
                 key={action.label}
-                variant="dashboard"
-                className="transition-transform duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transform-none"
+                className="bg-secondary text-secondary-foreground rounded-lg border-0 py-0 shadow-none transition-transform duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transform-none"
               >
                 <CardContent className="flex h-full items-center justify-between p-3">
                   <div className="flex items-center gap-2">
@@ -81,11 +80,11 @@ export function DashboardContent() {
         </section>
       </div>
     </>
-  )
+  );
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-lg font-semibold">{children}</h2>
+  return <h2 className="text-lg font-semibold">{children}</h2>;
 }
 
 function DashboardHeader() {
@@ -110,7 +109,7 @@ function DashboardHeader() {
         <Download01Icon className="size-5 -scale-y-100" />
       </Button>
     </div>
-  )
+  );
 }
 
 function MetricCard({
@@ -121,17 +120,17 @@ function MetricCard({
   noteIcon: NoteIcon,
   value,
 }: {
-  label: string
-  value: string
-  note: string
-  icon: React.ComponentType<{ className?: string }>
-  iconClassName: string
-  noteIcon?: React.ComponentType<{ className?: string }>
+  label: string;
+  value: string;
+  note: string;
+  icon: React.ComponentType<{ className?: string }>;
+  iconClassName: string;
+  noteIcon?: React.ComponentType<{ className?: string }>;
 }) {
-  const noteParts = note.match(/^([+-]?\d+(?:\.\d+)?%?|↓\s*\d+)\s+(.*)$/)
+  const noteParts = note.match(/^([+-]?\d+(?:\.\d+)?%?|↓\s*\d+)\s+(.*)$/);
 
   return (
-    <Card variant="dashboard" className="gap-6 p-5">
+    <Card className="bg-secondary text-secondary-foreground gap-6 rounded-lg border-0 p-5 shadow-none">
       <div className="flex items-center gap-2">
         <Icon className={cn("size-5 shrink-0", iconClassName)} />
         <span className="text-secondary-foreground text-sm font-medium">
@@ -157,31 +156,28 @@ function MetricCard({
         </p>
       </div>
     </Card>
-  )
+  );
 }
 
 function CollectionOverview() {
   const total = collectionOverview.segments.reduce(
     (sum, segment) => sum + segment.count,
-    0
-  )
+    0,
+  );
   const segments = collectionOverview.segments.map((segment) => ({
     ...segment,
     percentage: total > 0 ? (segment.count / total) * 100 : 0,
-  }))
+  }));
   const chartData = segments.map((segment) => ({
     name: segment.label,
     value: segment.count,
     fill: `var(--chart-${segment.color})`,
-  }))
+  }));
 
   return (
     <div>
       <SectionTitle>Collection Overview</SectionTitle>
-      <Card
-        variant="dashboard-outline"
-        className="mt-5 min-h-84 @xl/dashboard:h-64 @xl/dashboard:min-h-0 @4xl/dashboard:h-84"
-      >
+      <Card className="mt-5 min-h-84 rounded-lg py-0 shadow-none @xl/dashboard:h-64 @xl/dashboard:min-h-0 @4xl/dashboard:h-84">
         <CardContent className="flex h-full flex-col items-center justify-between gap-5 p-4 @xl/dashboard:flex-row @xl/dashboard:px-8 @4xl/dashboard:flex-col @4xl/dashboard:gap-4 @4xl/dashboard:px-4">
           <div className="order-1 @xl/dashboard:order-2 @4xl/dashboard:order-1">
             <CollectionDonutChart
@@ -217,7 +213,7 @@ function CollectionOverview() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
 
 function RecentActivity() {
@@ -226,13 +222,13 @@ function RecentActivity() {
       <SectionTitle>Recent Activity</SectionTitle>
       <div className="mt-5 space-y-6">
         {recentActivity.map((activity) => {
-          const ActivityIcon = activity.icon
+          const ActivityIcon = activity.icon;
           return (
             <div
               key={activity.id}
               className={cn(
                 "flex gap-3",
-                activity.id === "return" ? "items-center" : "items-start"
+                activity.id === "return" ? "items-center" : "items-start",
               )}
             >
               <div className="bg-secondary text-secondary-foreground flex size-11 shrink-0 items-center justify-center rounded-lg">
@@ -247,7 +243,7 @@ function RecentActivity() {
                         "font-medium",
                         "muted" in part &&
                           part.muted &&
-                          "text-muted-foreground font-normal"
+                          "text-muted-foreground font-normal",
                       )}
                     >
                       {part.text}
@@ -262,11 +258,11 @@ function RecentActivity() {
                 </time>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
 
 function LibraryIntelligence() {
@@ -285,7 +281,10 @@ function LibraryIntelligence() {
       </div>
       <div className="mt-5 flex flex-1 flex-col justify-between gap-2">
         {intelligenceCards.map((card) => (
-          <Card key={card.title} variant="dashboard">
+          <Card
+            key={card.title}
+            className="bg-secondary text-secondary-foreground rounded-lg border-0 py-0 shadow-none"
+          >
             <CardContent className="p-3">
               <div className="flex items-center justify-between">
                 <div
@@ -293,7 +292,7 @@ function LibraryIntelligence() {
                     "flex items-center gap-1 text-sm font-semibold",
                     card.tone === "insight" && "text-[#c803c8]",
                     card.tone === "warning" && "text-[#d47c01]",
-                    card.tone === "success" && "text-[#15823e]"
+                    card.tone === "success" && "text-[#15823e]",
                   )}
                 >
                   <SparklesIcon className="size-5" />
@@ -315,7 +314,7 @@ function LibraryIntelligence() {
                       className={cn(
                         "emphasis" in part &&
                           part.emphasis &&
-                          "text-secondary-foreground font-medium"
+                          "text-secondary-foreground font-medium",
                       )}
                     >
                       {part.text}
@@ -332,5 +331,5 @@ function LibraryIntelligence() {
         ))}
       </div>
     </div>
-  )
+  );
 }

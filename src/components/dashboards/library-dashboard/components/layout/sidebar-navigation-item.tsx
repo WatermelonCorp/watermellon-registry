@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
-import { ArrowDown01Icon } from "../../assets/icons"
+import { ArrowDown01Icon } from "../../assets/icons";
 import {
   SidebarMenuButton,
   SidebarMenuItem,
@@ -10,40 +10,40 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   useSidebar,
-} from "@/components/ui/sidebar"
-import type { NavigationItem } from "./app-sidebar"
-import { cn } from "../../lib/utils"
+} from "@/components/ui/sidebar";
+import type { NavigationItem } from "./app-sidebar";
+import { cn } from "../../lib/utils";
 
 type SidebarNavigationItemProps = {
-  active: boolean
-  activeSubsection?: string
-  item: NavigationItem
-}
+  active: boolean;
+  activeSubsection?: string;
+  item: NavigationItem;
+};
 
 export function SidebarNavigationItem({
   active,
   activeSubsection,
   item,
 }: SidebarNavigationItemProps) {
-  const { state } = useSidebar()
-  const collapsed = state === "collapsed"
-  const [open, setOpen] = useState(false)
-  const subItems = item.subItems
-  const hasSubItems = Boolean(subItems?.length)
-  const showSubItems = !collapsed && open && hasSubItems
-  const showFlyout = collapsed && hasSubItems
+  const { state } = useSidebar();
+  const collapsed = state === "collapsed";
+  const [open, setOpen] = useState(false);
+  const subItems = item.subItems;
+  const hasSubItems = Boolean(subItems?.length);
+  const showSubItems = !collapsed && open && hasSubItems;
+  const showFlyout = collapsed && hasSubItems;
 
   const activeChild = activeSubsection
     ? subItems?.find((subItem) => subItem.href.endsWith(`/${activeSubsection}`))
-    : undefined
-  const DisplayedIcon = active && activeChild ? activeChild.icon : item.icon
-  const displayedLabel = active && activeChild ? activeChild.label : item.label
-  const activeChildHref = activeChild?.href
-  const isActiveSubItem = (href: string) => active && href === activeChildHref
+    : undefined;
+  const DisplayedIcon = active && activeChild ? activeChild.icon : item.icon;
+  const displayedLabel = active && activeChild ? activeChild.label : item.label;
+  const activeChildHref = activeChild?.href;
+  const isActiveSubItem = (href: string) => active && href === activeChildHref;
 
   function toggleOpen() {
     if (hasSubItems) {
-      setOpen((currentOpen) => !currentOpen)
+      setOpen((currentOpen) => !currentOpen);
     }
   }
 
@@ -52,19 +52,8 @@ export function SidebarNavigationItem({
       className={cn(showFlyout && "group/sidebar-item relative")}
     >
       <div className="relative">
-        <SidebarMenuButton
-          isActive={active}
-          onClick={hasSubItems ? toggleOpen : undefined}
-          render={
-            !hasSubItems ? (
-              <a href={item.href} onClick={(e) => e.preventDefault()}>
-                <DisplayedIcon />
-                {!collapsed && <span>{displayedLabel}</span>}
-              </a>
-            ) : undefined
-          }
-        >
-          {hasSubItems && (
+        {hasSubItems ? (
+          <SidebarMenuButton isActive={active} onClick={toggleOpen}>
             <>
               <DisplayedIcon />
               {!collapsed && (
@@ -73,33 +62,40 @@ export function SidebarNavigationItem({
                   <ArrowDown01Icon
                     className={cn(
                       "pointer-events-none ml-auto size-4.5 transition-transform",
-                      open && "rotate-180"
+                      open && "rotate-180",
                     )}
                   />
                 </>
               )}
             </>
-          )}
-        </SidebarMenuButton>
+          </SidebarMenuButton>
+        ) : (
+          <SidebarMenuButton isActive={active} asChild>
+            <a href={item.href} onClick={(e) => e.preventDefault()}>
+              <DisplayedIcon />
+              {!collapsed && <span>{displayedLabel}</span>}
+            </a>
+          </SidebarMenuButton>
+        )}
       </div>
 
       {showSubItems ? (
         <SidebarMenuSub>
           {subItems?.map((subItem) => {
-            const SubIcon = subItem.icon
+            const SubIcon = subItem.icon;
             return (
               <SidebarMenuSubItem key={subItem.href}>
                 <SidebarMenuSubButton
                   isActive={isActiveSubItem(subItem.href)}
-                  render={
-                    <a href={subItem.href} onClick={(e) => e.preventDefault()}>
-                      <SubIcon />
-                      <span>{subItem.label}</span>
-                    </a>
-                  }
-                />
+                  asChild
+                >
+                  <a href={subItem.href} onClick={(e) => e.preventDefault()}>
+                    <SubIcon />
+                    <span>{subItem.label}</span>
+                  </a>
+                </SidebarMenuSubButton>
               </SidebarMenuSubItem>
-            )
+            );
           })}
         </SidebarMenuSub>
       ) : null}
@@ -109,8 +105,8 @@ export function SidebarNavigationItem({
           <p className="px-2 pb-2 font-medium">{item.label}</p>
           <div className="space-y-1">
             {subItems?.map((subItem) => {
-              const SubIcon = subItem.icon
-              const subActive = isActiveSubItem(subItem.href)
+              const SubIcon = subItem.icon;
+              const subActive = isActiveSubItem(subItem.href);
               return (
                 <a
                   key={subItem.href}
@@ -119,17 +115,17 @@ export function SidebarNavigationItem({
                   className={cn(
                     "text-muted-foreground hover:bg-muted hover:text-foreground flex h-11 w-full items-center gap-3 rounded-lg px-3.5 font-medium outline-hidden transition-colors [&_svg]:size-5 [&_svg]:shrink-0",
                     subActive &&
-                      "bg-card text-primary font-semibold hover:bg-card hover:text-primary border shadow-xs"
+                      "bg-card text-primary font-semibold hover:bg-card hover:text-primary border shadow-xs",
                   )}
                 >
                   <SubIcon className="size-5 shrink-0" />
                   <span>{subItem.label}</span>
                 </a>
-              )
+              );
             })}
           </div>
         </div>
       ) : null}
     </SidebarMenuItem>
-  )
+  );
 }
