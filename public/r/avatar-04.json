@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/components/watermelon-ui/avatar-04.tsx",
-      "content": "import { Avatar, AvatarImage, AvatarFallback } from \"@/components/ui/avatar\";\n\nexport default function Avatar04() {\n  const sizes = [\"size-6\", \"size-8\", \"size-10\", \"size-12\"];\n\n  return (\n    <div className=\"flex items-center gap-4\">\n      {sizes.map((size, i) => (\n        <Avatar key={i} className={size}>\n          <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\n          <AvatarFallback>AI</AvatarFallback>\n        </Avatar>\n      ))}\n    </div>\n  );\n}\n",
+      "content": "import { Avatar, AvatarImage, AvatarFallback } from \"@/components/ui/avatar\";\r\n\r\nexport default function Avatar04() {\r\n  const sizes = [\"size-6\", \"size-8\", \"size-10\", \"size-12\"];\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-4\">\r\n      {sizes.map((size, i) => (\r\n        <Avatar key={i} className={size}>\r\n          <AvatarImage src=\"/ali.jpg\" alt=\"Ali Imam\" />\r\n          <AvatarFallback>AI</AvatarFallback>\r\n        </Avatar>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/avatar-04.tsx"
     }

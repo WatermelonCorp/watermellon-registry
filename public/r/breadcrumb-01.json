@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/components/watermelon-ui/breadcrumb-01.tsx",
-      "content": "import {\n  Breadcrumb,\n  BreadcrumbList,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbSeparator,\n  BreadcrumbPage,\n} from \"@/components/ui/breadcrumb\";\n\nexport default function Breadcrumb01() {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/projects\">Projects</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Brand Design</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n}\n",
+      "content": "import {\r\n  Breadcrumb,\r\n  BreadcrumbList,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbSeparator,\r\n  BreadcrumbPage,\r\n} from \"@/components/ui/breadcrumb\";\r\n\r\nexport default function Breadcrumb01() {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href=\"/projects\">Projects</BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>Brand Design</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/breadcrumb-01.tsx"
     }

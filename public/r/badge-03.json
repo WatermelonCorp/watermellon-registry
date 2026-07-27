@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/components/watermelon-ui/badge-03.tsx",
-      "content": "import { Link } from \"react-router-dom\";\nimport { Badge } from \"@/components/ui/badge\";\n\nexport default function Badge03() {\n  return (\n    <Badge asChild variant=\"outline\">\n      <Link to=\"https://aliimam.in\" target=\"_blank\">\n        aliimam.in\n      </Link>\n    </Badge>\n  );\n}\n",
+      "content": "import { Link } from \"react-router-dom\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nexport default function Badge03() {\r\n  return (\r\n    <Badge asChild variant=\"outline\">\r\n      <Link to=\"https://aliimam.in\" target=\"_blank\">\r\n        aliimam.in\r\n      </Link>\r\n    </Badge>\r\n  );\r\n}\r\n",
       "type": "registry:ui",
       "target": "components/ui/badge-03.tsx"
     }
