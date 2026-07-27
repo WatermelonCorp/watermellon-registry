@@ -662,6 +662,108 @@
       ]
     },
     {
+      "name": "library-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "clsx",
+        "lucide-react",
+        "recharts",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "library-dashboard/assets/icons.tsx",
+          "target": "components/watermelon/library-dashboard/assets/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/assets/logo.tsx",
+          "target": "components/watermelon/library-dashboard/assets/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/dashboard/circulation-chart.tsx",
+          "target": "components/watermelon/library-dashboard/components/dashboard/circulation-chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/dashboard/collection-donut-chart.tsx",
+          "target": "components/watermelon/library-dashboard/components/dashboard/collection-donut-chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/dashboard/dashboard-content.tsx",
+          "target": "components/watermelon/library-dashboard/components/dashboard/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/layout/app-sidebar.tsx",
+          "target": "components/watermelon/library-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/layout/dashboard-shell.tsx",
+          "target": "components/watermelon/library-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/layout/organization-provider.tsx",
+          "target": "components/watermelon/library-dashboard/components/layout/organization-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "target": "components/watermelon/library-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/layout/top-nav.tsx",
+          "target": "components/watermelon/library-dashboard/components/layout/top-nav.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/dashboardView.tsx",
+          "target": "components/watermelon/library-dashboard/dashboardView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/data.ts",
+          "target": "components/watermelon/library-dashboard/data.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "library-dashboard/demo.tsx",
+          "target": "components/watermelon/library-dashboard/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/hooks/use-mobile.ts",
+          "target": "components/watermelon/library-dashboard/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "library-dashboard/lib/utils.ts",
+          "target": "components/watermelon/library-dashboard/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "chart",
+        "dropdown-menu",
+        "input",
+        "separator",
+        "sheet",
+        "sidebar",
+        "skeleton",
+        "table",
+        "tooltip"
+      ]
+    },
+    {
       "name": "mail-dashboard",
       "type": "registry:block",
       "dependencies": [
@@ -911,12 +1013,8 @@
       "name": "portfolio-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "@hugeicons/core-free-icons",
-        "@hugeicons/react",
-        "class-variance-authority",
         "lucide-react",
         "next-themes",
-        "radix-ui",
         "react-router-dom"
       ],
       "files": [
@@ -963,61 +1061,6 @@
         {
           "path": "portfolio-dashboard/components/theme-toggle.tsx",
           "target": "components/watermelon/portfolio-dashboard/components/theme-toggle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/avatar.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/badge.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/card.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "portfolio-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/portfolio-dashboard/components/ui/tooltip.tsx",
           "type": "registry:component"
         },
         {
@@ -1322,10 +1365,8 @@
       "name": "web3-dashboard",
       "type": "registry:block",
       "dependencies": [
-        "class-variance-authority",
         "lucide-react",
         "next-themes",
-        "radix-ui",
         "react-icons",
         "recharts"
       ],
@@ -1333,66 +1374,6 @@
         {
           "path": "web3-dashboard/components/shared/theme-toggle.tsx",
           "target": "components/watermelon/web3-dashboard/components/shared/theme-toggle.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/avatar.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/avatar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/badge.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/badge.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/button.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/button.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/card.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/dropdown-menu.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/dropdown-menu.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/input.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/input.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/separator.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/separator.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/sheet.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/sheet.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/sidebar.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/sidebar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/skeleton.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/skeleton.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/table.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/table.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "web3-dashboard/components/ui/tooltip.tsx",
-          "target": "components/watermelon/web3-dashboard/components/ui/tooltip.tsx",
           "type": "registry:component"
         },
         {
@@ -1466,6 +1447,7 @@
         "badge",
         "button",
         "card",
+        "dropdown-menu",
         "input",
         "separator",
         "sheet",
