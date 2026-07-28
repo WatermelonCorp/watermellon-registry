@@ -18,7 +18,7 @@ export type NavigationItem = {
 };
 
 export const sidebarNavigationButtonClassName =
-  "h-10 gap-3 rounded-xl px-3 text-base font-medium tracking-tight data-active:bg-background data-active:text-primary data-active:hover:bg-background data-active:hover:text-primary [&_svg]:size-5";
+  "h-10 gap-3 rounded-xl px-3 text-base font-medium tracking-tight text-muted-foreground data-active:bg-background data-active:text-primary data-active:hover:bg-background data-active:hover:text-primary [&_svg]:size-5";
 
 export const sidebarNavigationLabelClassName =
   "max-w-40 whitespace-nowrap opacity-100 transition-[max-width,opacity] duration-200 group-data-[collapsible=icon]:max-w-0 group-data-[collapsible=icon]:opacity-0";
@@ -57,7 +57,7 @@ export function SidebarNavigationItem({
             sidebarNavigationButtonClassName,
             !isActive &&
               item.variant !== "destructive" &&
-              "hover:!bg-primary/10 hover:!text-foreground",
+              "hover:!bg-background hover:!text-foreground",
             item.variant === "destructive" &&
               "text-destructive hover:bg-destructive/10 hover:text-destructive active:bg-destructive/10 active:text-destructive",
             trailing && "min-w-0 flex-1",
@@ -85,7 +85,7 @@ export function SidebarNavigationItem({
           sidebarNavigationButtonClassName,
           !isActive &&
             item.variant !== "destructive" &&
-            "hover:!bg-primary/10 hover:!text-foreground",
+            "hover:!bg-background hover:!text-foreground",
           item.variant === "destructive" &&
             "text-destructive hover:bg-destructive/10 hover:text-destructive active:bg-destructive/10 active:text-destructive",
           trailing && "min-w-0 flex-1",
