@@ -272,7 +272,7 @@ function FilterPanel({
           </Button>
         )}
       </div>
-      <div className="min-h-0 flex-1 space-y-4 overflow-y-auto">
+      <div className="min-h-0 flex-1 space-y-4 overflow-x-hidden overflow-y-auto">
         <div className="space-y-1 border-b pb-3">
           {voltageLevelFilters.map((level) => (
             <div
