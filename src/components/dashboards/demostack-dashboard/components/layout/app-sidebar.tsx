@@ -277,9 +277,9 @@ export function AppSidebar() {
         {isMobile && (
           <Button
             type="button"
-            variant="outline"
+            variant="ghost"
             size="lg"
-            className="bg-card shadow-border mx-3 justify-start rounded-xl border-0"
+            className="mx-3 justify-start rounded-xl"
           >
             <Blocks />
             Add Extension
