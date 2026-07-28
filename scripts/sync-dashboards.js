@@ -30,8 +30,119 @@ const IGNORED_PACKAGES = new Set([
   "react-dom"
 ])
 
+const CUSTOM_CSS_FILENAME = "custom.css"
+
 function normalizePath(value) {
   return value.split(path.sep).join("/")
+}
+
+function extractCssBlock(content, selector) {
+  const selectorIndex = content.indexOf(selector)
+
+  if (selectorIndex === -1) {
+    return null
+  }
+
+  const openingBraceIndex = content.indexOf(
+    "{",
+    selectorIndex + selector.length
+  )
+
+  if (openingBraceIndex === -1) {
+    return null
+  }
+
+  let depth = 1
+
+  for (
+    let index = openingBraceIndex + 1;
+    index < content.length;
+    index += 1
+  ) {
+    if (content[index] === "{") {
+      depth += 1
+    }
+
+    if (content[index] === "}") {
+      depth -= 1
+
+      if (depth === 0) {
+        return content.slice(
+          openingBraceIndex + 1,
+          index
+        )
+      }
+    }
+  }
+
+  return null
+}
+
+function parseCssVariables(content) {
+  const variables = {}
+  const pattern =
+    /--([a-zA-Z0-9_-]+)\s*:\s*([^;]+);/g
+
+  for (
+    const match of content.matchAll(pattern)
+  ) {
+    variables[match[1]] = match[2]
+      .replace(/\s+/g, " ")
+      .trim()
+  }
+
+  return variables
+}
+
+function readDashboardCssVars(
+  dashboardDirectory
+) {
+  const customCssPath = path.join(
+    dashboardDirectory,
+    CUSTOM_CSS_FILENAME
+  )
+
+  if (!fs.existsSync(customCssPath)) {
+    return null
+  }
+
+  const content = fs.readFileSync(
+    customCssPath,
+    "utf8"
+  )
+
+  const sections = {
+    theme: "@theme inline",
+    light: ":root",
+    dark: ".dark"
+  }
+
+  const cssVars = {}
+
+  for (
+    const [section, selector] of Object.entries(
+      sections
+    )
+  ) {
+    const block = extractCssBlock(
+      content,
+      selector
+    )
+
+    if (!block) {
+      continue
+    }
+
+    const variables = parseCssVariables(block)
+
+    if (Object.keys(variables).length > 0) {
+      cssVars[section] = variables
+    }
+  }
+
+  return Object.keys(cssVars).length > 0
+    ? cssVars
+    : null
 }
 
 function getUiFileRegistryDependency(relativePath) {
@@ -449,6 +560,14 @@ function buildDashboardEntry(directoryName) {
     entry.registryDependencies = [
       ...registryDependencies
     ].sort()
+  }
+
+  const cssVars = readDashboardCssVars(
+    dashboardDirectory
+  )
+
+  if (cssVars) {
+    entry.cssVars = cssVars
   }
 
   return entry

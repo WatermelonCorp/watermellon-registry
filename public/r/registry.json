@@ -8247,6 +8247,102 @@
       "type": "registry:block"
     },
     {
+      "name": "demostack-dashboard",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "dropdown-menu",
+        "input-group",
+        "sidebar",
+        "tabs",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/demostack-dashboard/assets/icons.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/assets/icons.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/assets/logo.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/assets/logo.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/dashboard/dashboard-content.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/dashboard/dashboard-content.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/dashboard/demostacks-content.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/dashboard/demostacks-content.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/layout/app-sidebar.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/layout/dashboard-shell.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/layout/sidebar-navigation-item.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/top-nav.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/layout/top-nav.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/navigation.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/navigation.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/dashboardView.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/dashboardView.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/data.ts",
+          "type": "registry:lib",
+          "target": "components/watermelon/demostack-dashboard/data.ts"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/demo.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/demo.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/navigation-data.ts",
+          "type": "registry:lib",
+          "target": "components/watermelon/demostack-dashboard/navigation-data.ts"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "shadow-border": "0 0 0 1px oklch(0 0 0 / 6%), 0 2px 5px -1px oklch(0 0 0 / 12%), 0 10px 24px -10px oklch(0 0 0 / 18%)",
+          "shadow-border-hover": "0 0 0 1px oklch(0 0 0 / 8%), 0 4px 10px -2px oklch(0 0 0 / 15%), 0 16px 32px -12px oklch(0 0 0 / 24%)",
+          "shadow-primary": "inset 0 1px 0 rgb(255 255 255 / 30%), 0 2px 5px -1px oklch(0 0 0 / 16%)"
+        },
+        "dark": {
+          "shadow-border": "0 0 0 1px oklch(1 0 0 / 10%), 0 4px 12px -2px oklch(0 0 0 / 40%), 0 16px 32px -12px oklch(0 0 0 / 60%)",
+          "shadow-border-hover": "0 0 0 1px oklch(1 0 0 / 14%), 0 6px 16px -2px oklch(0 0 0 / 48%), 0 20px 40px -12px oklch(0 0 0 / 70%)",
+          "shadow-primary": "inset 0 2px 0 rgb(255 255 255 / 20%), 0 3px 8px -2px oklch(0 0 0 / 50%)"
+        }
+      },
+      "type": "registry:block"
+    },
+    {
       "name": "e-commerce-dashboard",
       "dependencies": [
         "@tabler/icons-react",
