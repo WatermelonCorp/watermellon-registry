@@ -74,7 +74,7 @@ export function AppSidebar() {
     <Sidebar
       collapsible="icon"
       className={cn(
-        'overflow-hidden!',
+        isMobile ? 'overflow-hidden!' : 'overflow-visible!',
         !isMobile &&
           'm-1.5 h-[calc(100svh-0.75rem)]! w-[calc(var(--sidebar-width)-0.75rem)]! border-none! group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)-0.75rem)]! [&>[data-sidebar=sidebar]]:bg-transparent',
       )}
@@ -273,7 +273,7 @@ export function AppSidebar() {
         />
       </SidebarContent>
 
-      <SidebarFooter className="bg-sidebar relative z-10 shrink-0 border-t px-0 py-2">
+      <SidebarFooter className="bg-background relative z-10 shrink-0 border-t px-0 py-2">
         {isMobile && (
           <Button
             type="button"

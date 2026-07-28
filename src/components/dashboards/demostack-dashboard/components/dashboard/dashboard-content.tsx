@@ -104,7 +104,7 @@ function DashboardActionCard({
   const Icon = action.icon;
 
   return (
-    <Card className="shadow-border gap-8 rounded-2xl py-4 ring-0 transition-transform duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transform-none">
+    <Card className="shadow-border hover:shadow-border-hover gap-8 rounded-2xl py-4 ring-0 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transform-none">
       <CardContent className="flex flex-col items-start gap-8">
         <div className="relative flex size-11 items-center justify-center overflow-hidden rounded-lg">
           <img
@@ -221,7 +221,7 @@ function ResourcesSection() {
               key={resource.label}
               className="group flex flex-col items-start gap-3"
             >
-              <div className="bg-muted shadow-border flex h-32 w-full items-center justify-center overflow-hidden rounded-xl transition-transform duration-200 ease-out group-hover:-translate-y-0.5 motion-reduce:transform-none">
+              <div className="bg-muted shadow-border group-hover:shadow-border-hover flex h-32 w-full items-center justify-center overflow-hidden rounded-xl transition-[transform,box-shadow] duration-200 ease-out group-hover:-translate-y-0.5 motion-reduce:transform-none">
                 <div className="relative flex size-20 items-center justify-center transition-transform duration-200 ease-out group-hover:-translate-y-1 group-hover:rotate-1 motion-reduce:transform-none">
                   <BgFolderVector className="absolute inset-0 size-full" />
                   <Icon className="relative z-10 mt-4 size-6 transition-transform duration-200 ease-out group-hover:scale-110 motion-reduce:transform-none" />
@@ -249,7 +249,7 @@ function InspirationList() {
           return (
             <article
               key={item.title}
-              className="bg-muted shadow-border group flex h-18 w-full items-center justify-between rounded-2xl py-4 pr-8 pl-6 transition-transform duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transform-none"
+              className="bg-muted shadow-border hover:shadow-border-hover group flex h-18 w-full items-center justify-between rounded-2xl py-4 pr-8 pl-6 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transform-none"
             >
               <div className="flex items-center gap-4">
                 <div className="flex size-8 shrink-0 items-center justify-center">
