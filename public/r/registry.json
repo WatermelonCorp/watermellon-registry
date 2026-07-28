@@ -8247,6 +8247,90 @@
       "type": "registry:block"
     },
     {
+      "name": "demostack-dashboard",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "dropdown-menu",
+        "input-group",
+        "sidebar",
+        "tabs",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/demostack-dashboard/assets/icons.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/assets/icons.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/assets/logo.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/assets/logo.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/dashboard/dashboard-content.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/dashboard/dashboard-content.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/dashboard/demostacks-content.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/dashboard/demostacks-content.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/layout/app-sidebar.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/layout/dashboard-shell.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/layout/sidebar-navigation-item.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/layout/top-nav.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/layout/top-nav.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/navigation.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/components/navigation.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/dashboardView.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/dashboardView.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/data.ts",
+          "type": "registry:lib",
+          "target": "components/watermelon/demostack-dashboard/data.ts"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/demo.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/demostack-dashboard/demo.tsx"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/navigation-data.ts",
+          "type": "registry:lib",
+          "target": "components/watermelon/demostack-dashboard/navigation-data.ts"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
       "name": "e-commerce-dashboard",
       "dependencies": [
         "@tabler/icons-react",
