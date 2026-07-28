@@ -70,7 +70,7 @@ function ThemeToggle() {
     <Button
       variant="ghost"
       size="icon-lg"
-      className="size-10 shrink-0 rounded-xl hover:bg-secondary/80 group-data-[collapsible=icon]:hidden"
+      className="size-10 shrink-0 rounded-xl text-muted-foreground hover:!bg-background hover:!text-foreground group-data-[collapsible=icon]:hidden"
       onClick={() => setTheme(dark ? "light" : "dark")}
       aria-label={`Switch to ${dark ? "light" : "dark"} theme`}
     >
