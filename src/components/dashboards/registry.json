@@ -365,6 +365,95 @@
       ]
     },
     {
+      "name": "gridline-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "gridline-dashboard/assets/icons.tsx",
+          "target": "components/watermelon/gridline-dashboard/assets/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/assets/logo.tsx",
+          "target": "components/watermelon/gridline-dashboard/assets/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/dashboard/dashboard-content.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/dashboard/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/dashboard/flexibility-dashboard.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/dashboard/flexibility-dashboard.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/dashboard/modelling-dashboard.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/dashboard/modelling-dashboard.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/layout/app-sidebar.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/layout/dashboard-shell.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/layout/top-navbar.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/layout/top-navbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/navigation.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/components/shared/profile-menu.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/shared/profile-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/dashboardView.tsx",
+          "target": "components/watermelon/gridline-dashboard/dashboardView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "gridline-dashboard/data.ts",
+          "target": "components/watermelon/gridline-dashboard/data.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "gridline-dashboard/demo.tsx",
+          "target": "components/watermelon/gridline-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "drawer",
+        "dropdown-menu",
+        "input",
+        "sheet",
+        "switch",
+        "tooltip"
+      ]
+    },
+    {
       "name": "hrm",
       "type": "registry:block",
       "dependencies": [
