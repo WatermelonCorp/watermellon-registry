@@ -8810,6 +8810,104 @@
       "type": "registry:block"
     },
     {
+      "name": "jobtracker-dashboard",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "lucide-react",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "dropdown-menu",
+        "input",
+        "select",
+        "separator",
+        "sidebar",
+        "table",
+        "tabs",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/assets/icons.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/assets/icons.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/assets/logo.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/assets/logo.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/dashboard/customers-content.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/dashboard/customers-content.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/dashboard/job-details/estimates-content.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/dashboard/job-details/estimates-content.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/dashboard/job-details/job-details-content.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/dashboard/job-details/job-details-content.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/dashboard/jobs-content.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/dashboard/jobs-content.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/layout/app-sidebar.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/layout/dashboard-shell.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/layout/sidebar-navigation-item.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/layout/top-navbar.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/layout/top-navbar.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/navigation.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/components/navigation.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/dashboardView.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/dashboardView.tsx"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/data/index.ts",
+          "type": "registry:lib",
+          "target": "components/watermelon/jobtracker-dashboard/data/index.ts"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/demo.tsx",
+          "type": "registry:component",
+          "target": "components/watermelon/jobtracker-dashboard/demo.tsx"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
       "name": "lead-dashboard",
       "dependencies": [
         "@dnd-kit/core",
