@@ -127,7 +127,7 @@ export function DashboardContent() {
 
   return (
     <div className="mx-auto w-full max-w-screen-2xl px-4 py-6 sm:px-6 lg:px-8 lg:pt-12">
-      <div className="flex flex-col gap-6 border-b pb-5 lg:flex-row lg:items-end lg:justify-between">
+      <div className="flex flex-col gap-6 border-b pb-5 sm:flex-row sm:items-end sm:justify-between">
         <div className="space-y-4">
           <h1 className="text-2xl font-medium tracking-tight sm:text-3xl">
             {dashboardOverview.company}
@@ -138,7 +138,7 @@ export function DashboardContent() {
           </p>
         </div>
 
-        <div className="relative w-full lg:max-w-md">
+        <div className="relative w-full sm:max-w-md">
           <label htmlFor="network-search" className="sr-only">
             Search the network model
           </label>
@@ -181,7 +181,7 @@ export function DashboardContent() {
         <SectionTitle>Workspaces</SectionTitle>
 
         {visibleWorkspaces.length > 0 ? (
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-6">
             {visibleWorkspaces.map((workspace) => (
               <WorkspaceCardItem key={workspace.title} workspace={workspace} />
             ))}
