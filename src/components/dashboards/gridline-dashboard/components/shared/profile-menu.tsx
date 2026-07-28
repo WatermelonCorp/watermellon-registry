@@ -1,9 +1,8 @@
-import { LogOut, MoonStar, Settings, UserRound } from "lucide-react"
+import { LogOut, Settings, UserRound } from "lucide-react"
 
 import { buttonVariants } from "@/components/ui/button"
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
@@ -15,13 +14,9 @@ import { cn } from "@/lib/utils"
 
 export function ProfileMenu({
   placement,
-  isDark,
-  onThemeChange,
   className,
 }: {
   placement: "sidebar" | "topbar"
-  isDark: boolean
-  onThemeChange: (isDark: boolean) => void
   className?: string
 }) {
   return (
@@ -58,13 +53,6 @@ export function ProfileMenu({
             <Settings />
             Settings
           </DropdownMenuItem>
-          <DropdownMenuCheckboxItem
-            checked={isDark}
-            onCheckedChange={onThemeChange}
-          >
-            <MoonStar />
-            Dark mode
-          </DropdownMenuCheckboxItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive">

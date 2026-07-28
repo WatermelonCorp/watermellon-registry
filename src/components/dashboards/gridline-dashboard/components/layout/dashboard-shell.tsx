@@ -37,10 +37,7 @@ export function DashboardShell({ children }: { children: ReactNode }) {
       <div
         className="relative h-svh min-h-0 overflow-hidden transition-colors"
       >
-        <AppSidebar
-          isDark={isDark}
-          onThemeChange={handleThemeChange}
-        />
+        <AppSidebar />
         <TopNavbar
           isDark={isDark}
           onThemeChange={handleThemeChange}

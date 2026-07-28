@@ -1,4 +1,6 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, MoonStar, SunDim } from "lucide-react"
+
+import { Switch } from "@/components/ui/switch"
 
 import { modellingDashboard, modelWorkflowStatuses } from "../../data"
 import { useDashboardNavigation } from "../navigation"
@@ -23,6 +25,35 @@ function StatusStrip() {
       <span className="flex h-full items-center px-2.5 text-muted-foreground">
         {modelWorkflowStatuses.review}
       </span>
+    </div>
+  )
+}
+
+function DesktopThemeToggle({
+  isDark,
+  onThemeChange,
+}: {
+  isDark: boolean
+  onThemeChange: (isDark: boolean) => void
+}) {
+  const ThemeIcon = isDark ? MoonStar : SunDim
+
+  return (
+    <div className="hidden items-center gap-3 md:flex">
+      <div className="flex items-center gap-1">
+        <ThemeIcon
+          aria-hidden="true"
+          className={isDark ? "size-4" : "size-4.5"}
+          strokeWidth={1.5}
+        />
+        <span>{isDark ? "Dark Mode" : "Light Mode"}</span>
+      </div>
+      <Switch
+        checked={isDark}
+        onCheckedChange={onThemeChange}
+        aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+        className="data-unchecked:bg-muted"
+      />
     </div>
   )
 }
@@ -65,15 +96,14 @@ export function TopNavbar({
           </span>
         </div>
 
+        <DesktopThemeToggle
+          isDark={isDark}
+          onThemeChange={onThemeChange}
+        />
         <span className="text-primary md:hidden">
           {modellingDashboard.latestVersion}
         </span>
-        <ProfileMenu
-          placement="topbar"
-          isDark={isDark}
-          onThemeChange={onThemeChange}
-          className="md:hidden"
-        />
+        <ProfileMenu placement="topbar" className="md:hidden" />
       </div>
     </header>
   )
