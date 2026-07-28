@@ -279,7 +279,7 @@ export function AppSidebar() {
             type="button"
             variant="ghost"
             size="lg"
-            className="mx-3 justify-start rounded-xl"
+            className="mx-3 h-11 justify-start gap-3 rounded-xl px-3.5 text-base font-normal"
           >
             <Blocks />
             Add Extension
