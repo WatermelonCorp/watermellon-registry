@@ -1,0 +1,15 @@
+@theme inline {
+  --shadow-border:
+    0 0 0 0.5px oklch(0 0 0 / 6%), 0 1px 2px -1px oklch(0 0 0 / 6%),
+    0 2px 4px oklch(0 0 0 / 4%);
+  --shadow-border-hover:
+    0 0 0 0.5px oklch(0 0 0 / 8%), 0 1px 2px -1px oklch(0 0 0 / 8%),
+    0 2px 4px oklch(0 0 0 / 6%);
+  --shadow-primary: inset 0 1px 0 rgb(255 255 255 / 30%);
+}
+
+.dark {
+  --shadow-border: 0 0 0 1px oklch(1 0 0 / 8%);
+  --shadow-border-hover: 0 0 0 1px oklch(1 0 0 / 13%);
+  --shadow-primary: inset 0 2px 0 rgb(255 255 255 / 20%);
+}
