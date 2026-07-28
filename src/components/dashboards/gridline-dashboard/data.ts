@@ -129,7 +129,7 @@ export const networkRegions: NetworkRegion[] = [
     position: "north-east",
   },
   {
-    name: "East Midlands",
+    name: "West Midlands",
     legendName: "West Midlands",
     color: "purple",
     position: "central",
@@ -153,6 +153,10 @@ export type GridAsset = {
   name: string
   voltage: string
   equipmentCount: number
+  mapPosition: {
+    x: number
+    y: number
+  }
 }
 
 export const flexibilityDashboard = {
@@ -168,22 +172,118 @@ export const flexibilityDashboard = {
 }
 
 export const gridAssets: GridAsset[] = [
-  { id: "tavistock", name: "Tavistock", voltage: "33/11kV", equipmentCount: 30 },
-  { id: "st-tudy", name: "St Tudy", voltage: "33/11kV", equipmentCount: 24 },
-  { id: "st-tudy-bsp", name: "St Tudy BSP", voltage: "132/33kV", equipmentCount: 24 },
-  { id: "stancombe", name: "Stancombe Quarry", voltage: "33kV", equipmentCount: 24 },
-  { id: "staplegrove", name: "Staplegrove", voltage: "33/11kV", equipmentCount: 24 },
-  { id: "stentaway", name: "Stentaway", voltage: "33/11kV", equipmentCount: 24 },
-  { id: "stoke-bishop", name: "Stoke Bishop", voltage: "33/11kV", equipmentCount: 24 },
-  { id: "stokenham", name: "Stokenham", voltage: "33/11kV", equipmentCount: 24 },
-  { id: "street-bsp", name: "Street BSP", voltage: "132/33kV", equipmentCount: 24 },
-  { id: "stratton", name: "Stratton", voltage: "33/11kV", equipmentCount: 24 },
-  { id: "tale-lane", name: "Tale Lane PV", voltage: "132/33kV", equipmentCount: 24 },
-  { id: "st-tudy-333", name: "St Tudy", voltage: "333/11kV", equipmentCount: 24 },
-  { id: "st-catherines", name: "St Catherines", voltage: "33/11kV", equipmentCount: 12 },
-  { id: "south-molton", name: "South Molton", voltage: "33/11kV", equipmentCount: 18 },
-  { id: "plymouth", name: "Plymouth North", voltage: "132/33kV", equipmentCount: 30 },
-  { id: "exeter", name: "Exeter East", voltage: "33/11kV", equipmentCount: 24 },
+  {
+    id: "tavistock",
+    name: "Tavistock",
+    voltage: "33/11kV",
+    equipmentCount: 30,
+    mapPosition: { x: 40, y: 64 },
+  },
+  {
+    id: "st-tudy",
+    name: "St Tudy",
+    voltage: "33/11kV",
+    equipmentCount: 24,
+    mapPosition: { x: 35, y: 52 },
+  },
+  {
+    id: "st-tudy-bsp",
+    name: "St Tudy BSP",
+    voltage: "132/33kV",
+    equipmentCount: 24,
+    mapPosition: { x: 32, y: 46 },
+  },
+  {
+    id: "stancombe",
+    name: "Stancombe Quarry",
+    voltage: "33kV",
+    equipmentCount: 24,
+    mapPosition: { x: 65, y: 72 },
+  },
+  {
+    id: "staplegrove",
+    name: "Staplegrove",
+    voltage: "33/11kV",
+    equipmentCount: 24,
+    mapPosition: { x: 55, y: 35 },
+  },
+  {
+    id: "stentaway",
+    name: "Stentaway",
+    voltage: "33/11kV",
+    equipmentCount: 24,
+    mapPosition: { x: 72, y: 58 },
+  },
+  {
+    id: "stoke-bishop",
+    name: "Stoke Bishop",
+    voltage: "33/11kV",
+    equipmentCount: 24,
+    mapPosition: { x: 61, y: 42 },
+  },
+  {
+    id: "stokenham",
+    name: "Stokenham",
+    voltage: "33/11kV",
+    equipmentCount: 24,
+    mapPosition: { x: 48, y: 75 },
+  },
+  {
+    id: "street-bsp",
+    name: "Street BSP",
+    voltage: "132/33kV",
+    equipmentCount: 24,
+    mapPosition: { x: 53, y: 23 },
+  },
+  {
+    id: "stratton",
+    name: "Stratton",
+    voltage: "33/11kV",
+    equipmentCount: 24,
+    mapPosition: { x: 24, y: 30 },
+  },
+  {
+    id: "tale-lane",
+    name: "Tale Lane PV",
+    voltage: "132/33kV",
+    equipmentCount: 24,
+    mapPosition: { x: 76, y: 26 },
+  },
+  {
+    id: "st-tudy-333",
+    name: "St Tudy",
+    voltage: "333/11kV",
+    equipmentCount: 24,
+    mapPosition: { x: 30, y: 57 },
+  },
+  {
+    id: "st-catherines",
+    name: "St Catherines",
+    voltage: "33/11kV",
+    equipmentCount: 12,
+    mapPosition: { x: 43, y: 39 },
+  },
+  {
+    id: "south-molton",
+    name: "South Molton",
+    voltage: "33/11kV",
+    equipmentCount: 18,
+    mapPosition: { x: 58, y: 55 },
+  },
+  {
+    id: "plymouth",
+    name: "Plymouth North",
+    voltage: "132/33kV",
+    equipmentCount: 30,
+    mapPosition: { x: 37, y: 80 },
+  },
+  {
+    id: "exeter",
+    name: "Exeter East",
+    voltage: "33/11kV",
+    equipmentCount: 24,
+    mapPosition: { x: 68, y: 47 },
+  },
 ]
 
 export const voltageLevelFilters = [

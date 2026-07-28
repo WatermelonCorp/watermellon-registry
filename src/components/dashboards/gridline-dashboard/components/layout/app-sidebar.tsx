@@ -85,7 +85,10 @@ type ThemeProps = {
   onThemeChange: (isDark: boolean) => void
 }
 
-export function AppSidebar() {
+export function AppSidebar({
+  isDark,
+  onThemeChange,
+}: ThemeProps) {
   return (
     <aside
       aria-label="Primary navigation"
@@ -117,7 +120,11 @@ export function AppSidebar() {
           </TooltipTrigger>
           <TooltipContent side="right">Documents</TooltipContent>
         </Tooltip>
-        <ProfileMenu placement="sidebar" />
+        <ProfileMenu
+          placement="sidebar"
+          isDark={isDark}
+          onThemeChange={onThemeChange}
+        />
       </div>
     </aside>
   )

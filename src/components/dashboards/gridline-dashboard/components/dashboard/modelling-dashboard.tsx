@@ -1,24 +1,22 @@
 import { useEffect, useState } from "react"
 import {
-  ArrowLeft,
   ArrowUpRight,
+  ChevronDown,
   ChevronLeft,
   Database,
   GitBranch,
-  Info,
+  MapPin,
   Shield,
   type LucideIcon,
 } from "lucide-react"
 
-import { DashboardLink } from "../navigation"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Drawer,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger,
 } from "@/components/ui/drawer"
 import {
   modellingActions,
@@ -160,6 +158,13 @@ function RegionMarker({
         Click to load
         <ArrowUpRight aria-hidden="true" className="size-4" />
       </span>
+      <span
+        aria-hidden="true"
+        className={cn(
+          "pointer-events-none absolute left-1/2 top-full size-3 -translate-x-1/2 -translate-y-1/2 rotate-45 border-b-2 border-r-2",
+          markerStyles[region.color],
+        )}
+      />
     </button>
   )
 }
@@ -185,9 +190,13 @@ function MapLegend() {
   )
 }
 
-function Map() {
-  const [selectedRegion, setSelectedRegion] = useState<string>()
-
+function Map({
+  selectedRegion,
+  onSelectRegion,
+}: {
+  selectedRegion: NetworkRegion | null
+  onSelectRegion: (region: NetworkRegion) => void
+}) {
   return (
     <div className="absolute inset-0 overflow-hidden bg-black">
       <img
@@ -202,8 +211,8 @@ function Map() {
           <RegionMarker
             key={key}
             region={region}
-            selected={selectedRegion === key}
-            onSelect={() => setSelectedRegion(key)}
+            selected={selectedRegion?.position === region.position}
+            onSelect={() => onSelectRegion(region)}
           />
         )
       })}
@@ -212,44 +221,68 @@ function Map() {
   )
 }
 
-function InformationPanelHeader() {
+function InformationPanelHeader({
+  region,
+  mobile = false,
+  onCollapse,
+}: {
+  region: NetworkRegion
+  mobile?: boolean
+  onCollapse: () => void
+}) {
+  const CollapseIcon = mobile ? ChevronDown : ChevronLeft
+
   return (
-    <DashboardLink
-      href="/"
-      className="inline-flex items-center gap-2 rounded-md py-1 text-sm text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
-    >
-      <ArrowLeft aria-hidden="true" className="size-4" />
-      Go back to home
-    </DashboardLink>
+    <header className="flex items-center justify-between gap-4">
+      <div className="flex min-w-0 items-center gap-3">
+        <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-secondary">
+          <Database aria-hidden="true" className="size-5" strokeWidth={1.5} />
+        </span>
+        <div className="min-w-0">
+          <h1 className="truncate text-base font-medium">
+            {modellingDashboard.title}
+          </h1>
+          <p className="truncate font-mono text-xs text-muted-foreground">
+            {region.name}
+          </p>
+        </div>
+      </div>
+      <Button
+        type="button"
+        variant="ghost"
+        size="icon-lg"
+        aria-label="Collapse model information"
+        onClick={onCollapse}
+        className="shrink-0 text-muted-foreground"
+      >
+        <CollapseIcon aria-hidden="true" className="size-5" />
+      </Button>
+    </header>
   )
 }
 
-function InformationPanelBody() {
+function InformationPanelBody({ region }: { region: NetworkRegion }) {
   return (
     <div className="space-y-8">
-      <section className="space-y-6">
-        <span className="grid size-10 place-items-center rounded-lg bg-secondary">
-          <Database aria-hidden="true" className="size-5" strokeWidth={1.5} />
-        </span>
-        <div className="space-y-3">
-          <h1 className="text-xl font-medium tracking-tight">
-            {modellingDashboard.title}
-          </h1>
-          <p className="max-w-sm font-mono text-xs leading-relaxed text-muted-foreground">
-            {modellingDashboard.description}
-          </p>
-          <div className="flex flex-wrap items-center gap-1 font-mono text-xs">
-            <span className="rounded-md bg-secondary px-2 py-1 text-muted-foreground">
-              {modellingDashboard.version}
-            </span>
-            <span className="flex items-center gap-2 rounded-md bg-secondary px-2 py-1 text-primary">
-              <span className="size-1.5 rounded-full bg-primary" />
-              {modelWorkflowStatuses.publication}
-            </span>
-            <span className="rounded-md bg-secondary px-2 py-1 text-emerald-500">
-              {modelWorkflowStatuses.validation}
-            </span>
-          </div>
+      <section className="space-y-3">
+        <p className="max-w-sm font-mono text-xs leading-relaxed text-muted-foreground">
+          {modellingDashboard.description}
+        </p>
+        <div className="flex flex-wrap items-center gap-1 font-mono text-xs">
+          <span className="flex items-center gap-1.5 rounded-md bg-secondary px-2 py-1">
+            <MapPin aria-hidden="true" className="size-3.5 text-primary" />
+            {region.name}
+          </span>
+          <span className="rounded-md bg-secondary px-2 py-1 text-muted-foreground">
+            {modellingDashboard.version}
+          </span>
+          <span className="flex items-center gap-2 rounded-md bg-secondary px-2 py-1 text-primary">
+            <span className="size-1.5 rounded-full bg-primary" />
+            {modelWorkflowStatuses.publication}
+          </span>
+          <span className="rounded-md bg-secondary px-2 py-1 text-emerald-500">
+            {modelWorkflowStatuses.validation}
+          </span>
         </div>
       </section>
 
@@ -270,71 +303,41 @@ function InformationPanelBody() {
   )
 }
 
-function DesktopInformationPanel() {
-  const [isOpen, setIsOpen] = useState(true)
-
-  if (!isOpen) {
-    return (
-      <Button
-        type="button"
-        variant="secondary"
-        size="sm"
-        aria-label="Open model information"
-        onClick={() => setIsOpen(true)}
-        className="absolute left-4 top-4 z-20 hidden shadow-lg md:inline-flex"
-      >
-        <Info aria-hidden="true" />
-        Model details
-      </Button>
-    )
-  }
-
+function DesktopInformationPanel({
+  region,
+  onCollapse,
+}: {
+  region: NetworkRegion
+  onCollapse: () => void
+}) {
   return (
     <article className="absolute inset-y-4 left-4 z-10 hidden w-96 flex-col overflow-hidden rounded-xl bg-background/95 p-6 shadow-2xl backdrop-blur-xl md:flex">
-      <Button
-        type="button"
-        variant="ghost"
-        size="icon-lg"
-        aria-label="Collapse model information"
-        onClick={() => setIsOpen(false)}
-        className="absolute right-3 top-3 text-muted-foreground"
-      >
-        <ChevronLeft aria-hidden="true" className="size-6" />
-      </Button>
       <div className="shrink-0">
-        <InformationPanelHeader />
+        <InformationPanelHeader region={region} onCollapse={onCollapse} />
       </div>
-      <div className="mt-8 min-h-0 flex-1 overflow-y-auto">
-        <InformationPanelBody />
+      <div className="mt-6 min-h-0 flex-1 overflow-y-auto">
+        <InformationPanelBody region={region} />
       </div>
     </article>
   )
 }
 
-function MobileInformationDrawer() {
-  const [isOpen, setIsOpen] = useState(false)
-
-  useEffect(() => {
-    const desktopQuery = window.matchMedia("(min-width: 48rem)")
-    const closeOnDesktop = (event: MediaQueryListEvent) => {
-      if (event.matches) setIsOpen(false)
-    }
-
-    desktopQuery.addEventListener("change", closeOnDesktop)
-    return () => desktopQuery.removeEventListener("change", closeOnDesktop)
-  }, [])
-
+function MobileInformationDrawer({
+  region,
+  open,
+  onCollapse,
+}: {
+  region: NetworkRegion
+  open: boolean
+  onCollapse: () => void
+}) {
   return (
-    <Drawer open={isOpen} onOpenChange={setIsOpen}>
-      <DrawerTrigger
-        className={cn(
-          buttonVariants({ variant: "secondary", size: "sm" }),
-          "absolute left-4 top-4 z-20 shadow-lg md:hidden",
-        )}
-      >
-        <Info aria-hidden="true" />
-        Model details
-      </DrawerTrigger>
+    <Drawer
+      open={open}
+      onOpenChange={(nextOpen) => {
+        if (!nextOpen) onCollapse()
+      }}
+    >
       <DrawerContent className="md:hidden">
         <DrawerHeader className="sr-only">
           <DrawerTitle>{modellingDashboard.title}</DrawerTitle>
@@ -344,10 +347,14 @@ function MobileInformationDrawer() {
         </DrawerHeader>
         <article className="flex min-h-0 flex-1 flex-col px-5 pb-8 pt-3">
           <div className="shrink-0">
-            <InformationPanelHeader />
+            <InformationPanelHeader
+              region={region}
+              mobile
+              onCollapse={onCollapse}
+            />
           </div>
-          <div className="mt-8 min-h-0 flex-1 overflow-y-auto">
-            <InformationPanelBody />
+          <div className="mt-6 min-h-0 flex-1 overflow-y-auto">
+            <InformationPanelBody region={region} />
           </div>
         </article>
       </DrawerContent>
@@ -356,11 +363,45 @@ function MobileInformationDrawer() {
 }
 
 export function ModellingDashboard() {
+  const [selectedRegion, setSelectedRegion] = useState<NetworkRegion | null>(
+    null,
+  )
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window === "undefined"
+      ? false
+      : !window.matchMedia("(min-width: 48rem)").matches,
+  )
+
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 48rem)")
+    const syncViewport = () => setIsMobile(!desktopQuery.matches)
+
+    syncViewport()
+    desktopQuery.addEventListener("change", syncViewport)
+    return () => desktopQuery.removeEventListener("change", syncViewport)
+  }, [])
+
+  const clearSelection = () => setSelectedRegion(null)
+
   return (
     <div className="absolute inset-x-0 bottom-0 top-18 overflow-hidden bg-background md:left-17">
-      <Map />
-      <DesktopInformationPanel />
-      <MobileInformationDrawer />
+      <Map
+        selectedRegion={selectedRegion}
+        onSelectRegion={setSelectedRegion}
+      />
+      {selectedRegion && (
+        <>
+          <DesktopInformationPanel
+            region={selectedRegion}
+            onCollapse={clearSelection}
+          />
+          <MobileInformationDrawer
+            region={selectedRegion}
+            open={isMobile}
+            onCollapse={clearSelection}
+          />
+        </>
+      )}
     </div>
   )
 }

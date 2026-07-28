@@ -1,4 +1,4 @@
-import { useMemo, useState, type ComponentType } from "react"
+import { useEffect, useMemo, useState, type ComponentType } from "react"
 import {
   Building2,
   ChevronDown,
@@ -15,7 +15,6 @@ import {
   Minus,
   Network,
   PanelLeft,
-  PanelRight,
   Plus,
   Search,
   SlidersHorizontal,
@@ -121,13 +120,13 @@ function AssetList({
   onSelectAsset,
   showHeader = true,
 }: {
-  selectedAsset: GridAsset
+  selectedAsset: GridAsset | null
   onSelectAsset: (asset: GridAsset) => void
   showHeader?: boolean
 }) {
   const [query, setQuery] = useState("")
   const [expandedAssets, setExpandedAssets] = useState<Set<string>>(
-    () => new Set([selectedAsset.id])
+    () => new Set(selectedAsset ? [selectedAsset.id] : [])
   )
   const visibleAssets = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase()
@@ -185,7 +184,7 @@ function AssetList({
                 onClick={() => toggleAsset(asset)}
                 className={cn(
                   "flex w-full items-center gap-2 rounded-md px-2 py-2 text-left outline-none transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring",
-                  selectedAsset.id === asset.id && "bg-primary/10"
+                  selectedAsset?.id === asset.id && "bg-primary/10"
                 )}
               >
                 {isExpanded ? (
@@ -203,7 +202,7 @@ function AssetList({
                   aria-hidden="true"
                   className={cn(
                     "size-3.5 shrink-0 text-muted-foreground",
-                    selectedAsset.id === asset.id && "text-primary"
+                    selectedAsset?.id === asset.id && "text-primary"
                   )}
                 />
                 <span className="min-w-0 flex-1 truncate font-mono text-xs text-muted-foreground">
@@ -468,89 +467,16 @@ function DetailsPanel({
   )
 }
 
-function SubstationCard({
-  asset,
-  onClose,
-  onViewCircuit,
-}: {
-  asset: GridAsset
-  onClose: () => void
-  onViewCircuit: () => void
-}) {
-  return (
-    <section
-      role="dialog"
-      aria-label="Selected substation details"
-      className="pointer-events-auto relative z-10 max-h-80 w-full overflow-y-auto rounded-xl bg-background p-4 shadow-2xl sm:w-96"
-    >
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-medium">
-          {flexibilityDashboard.assetType}
-        </p>
-        <Button
-          type="button"
-          variant="ghost"
-          size="icon-sm"
-          aria-label="Close substation details"
-          onClick={onClose}
-        >
-          <X aria-hidden="true" />
-        </Button>
-      </div>
-
-      <div className="mt-3 flex items-center gap-3">
-        <span className="grid size-9 place-items-center rounded-lg bg-secondary">
-          <Building2 aria-hidden="true" className="size-4" />
-        </span>
-        <p className="text-sm font-medium">
-          {asset.name} {asset.voltage}
-        </p>
-      </div>
-
-      <dl className="mt-4 space-y-2 font-mono text-xs">
-        {flexibilityDashboard.voltageLevels.map((level, index) => (
-          <div
-            key={level}
-            className="grid grid-cols-[auto_1fr] gap-4"
-          >
-            <dt className="text-muted-foreground">
-              {index === 0 ? "Voltage:" : "Levels:"}
-            </dt>
-            <dd className="truncate text-right">
-              {level} {asset.name}_Land_GeoRegion,
-            </dd>
-          </div>
-        ))}
-        <div className="flex justify-between gap-4">
-          <dt className="text-muted-foreground">Equipment:</dt>
-          <dd>{asset.equipmentCount} items</dd>
-        </div>
-        <div className="flex justify-between gap-4">
-          <dt className="text-muted-foreground">Coordinates:</dt>
-          <dd>{flexibilityDashboard.coordinates}</dd>
-        </div>
-      </dl>
-
-      <Button
-        type="button"
-        variant="ghost"
-        onClick={onViewCircuit}
-        className="mx-auto mt-4"
-      >
-        <CircuitBoard aria-hidden="true" />
-        View in Circuit
-        <ChevronRight aria-hidden="true" />
-      </Button>
-    </section>
-  )
-}
-
 function MobileUtilities({
   selectedAsset,
   onSelectAsset,
+  detailsOpen,
+  onDetailsOpenChange,
 }: {
-  selectedAsset: GridAsset
+  selectedAsset: GridAsset | null
   onSelectAsset: (asset: GridAsset) => void
+  detailsOpen: boolean
+  onDetailsOpenChange: (open: boolean) => void
 }) {
   return (
     <div className="pointer-events-none absolute inset-x-3 top-3 z-20 flex items-start justify-between lg:hidden">
@@ -559,7 +485,7 @@ function MobileUtilities({
           <DrawerTrigger
             className={buttonVariants({ variant: "secondary", size: "sm" })}
           >
-            <PanelLeft aria-hidden="true" />
+            <PanelLeft aria-hidden="true" className="size-4" />
             Assets
           </DrawerTrigger>
           <DrawerContent className="h-4/5">
@@ -616,14 +542,15 @@ function MobileUtilities({
         </Drawer>
       </div>
 
-      <Drawer>
+      {selectedAsset && (
+      <Drawer open={detailsOpen} onOpenChange={onDetailsOpenChange}>
         <DrawerTrigger
           className={cn(
             buttonVariants({ variant: "secondary", size: "sm" }),
             "pointer-events-auto",
           )}
         >
-          <Building2 aria-hidden="true" />
+          <Building2 aria-hidden="true" className="size-4" />
           Details
         </DrawerTrigger>
         <DrawerContent className="h-4/5">
@@ -645,22 +572,81 @@ function MobileUtilities({
           <DetailsPanel asset={selectedAsset} />
         </DrawerContent>
       </Drawer>
+      )}
     </div>
+  )
+}
+
+function AssetMapPoint({
+  asset,
+  selected,
+  onSelect,
+}: {
+  asset: GridAsset
+  selected: boolean
+  onSelect: () => void
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={`Load ${asset.name} ${asset.voltage}`}
+      aria-pressed={selected}
+      onClick={onSelect}
+      className={cn(
+        "group absolute z-10 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-background bg-primary shadow-lg outline-none transition-transform hover:scale-125 focus-visible:ring-2 focus-visible:ring-ring",
+        selected && "scale-125 ring-4 ring-primary/25",
+      )}
+      style={{
+        left: `${asset.mapPosition.x}%`,
+        top: `${asset.mapPosition.y}%`,
+      }}
+    >
+      <span className="pointer-events-none absolute bottom-full left-1/2 mb-2 w-max max-w-40 -translate-x-1/2 rounded-md bg-foreground px-2 py-1 font-mono text-xs text-background opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+        {asset.name} {asset.voltage}
+      </span>
+    </button>
   )
 }
 
 export function FlexibilityDashboard() {
   const [activeTool, setActiveTool] = useState("Browse")
-  const [selectedAsset, setSelectedAsset] = useState(gridAssets[0])
-  const [showSubstationCard, setShowSubstationCard] = useState(true)
+  const [selectedAsset, setSelectedAsset] = useState<GridAsset | null>(null)
   const [showAssetsPanel, setShowAssetsPanel] = useState(true)
-  const [showFilterPanel, setShowFilterPanel] = useState(true)
-  const [showDetailsPanel, setShowDetailsPanel] = useState(true)
+  const [showFilterPanel, setShowFilterPanel] = useState(false)
+  const [mobileDetailsOpen, setMobileDetailsOpen] = useState(false)
+  const [isCompact, setIsCompact] = useState(() =>
+    typeof window === "undefined"
+      ? false
+      : !window.matchMedia("(min-width: 64rem)").matches,
+  )
   const [zoom, setZoom] = useState(1)
 
-  function selectAsset(asset: GridAsset) {
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 64rem)")
+    const syncViewport = () => setIsCompact(!desktopQuery.matches)
+
+    syncViewport()
+    desktopQuery.addEventListener("change", syncViewport)
+    return () => desktopQuery.removeEventListener("change", syncViewport)
+  }, [])
+
+  function selectAsset(asset: GridAsset, openMobileDetails = false) {
     setSelectedAsset(asset)
-    setShowSubstationCard(true)
+    if (openMobileDetails && isCompact) setMobileDetailsOpen(true)
+  }
+
+  function clearSelection() {
+    setMobileDetailsOpen(false)
+    setSelectedAsset(null)
+  }
+
+  function handleMobileDetailsChange(open: boolean) {
+    if (open) {
+      setMobileDetailsOpen(true)
+      return
+    }
+
+    clearSelection()
   }
 
   return (
@@ -703,12 +689,12 @@ export function FlexibilityDashboard() {
           activeTool={activeTool}
           onToolChange={setActiveTool}
         />
-        {showDetailsPanel ? (
+        {selectedAsset && (
           <div className="hidden w-64 shrink-0 items-center justify-between border-l px-4 lg:flex">
             <div>
               <p className="text-sm font-medium">Details</p>
               <p className="font-mono text-xs text-muted-foreground">
-                {flexibilityDashboard.assetType}
+                {selectedAsset.name}
               </p>
             </div>
             <Button
@@ -716,21 +702,9 @@ export function FlexibilityDashboard() {
               variant="ghost"
               size="icon-sm"
               aria-label="Collapse details panel"
-              onClick={() => setShowDetailsPanel(false)}
+              onClick={clearSelection}
             >
               <ChevronRight aria-hidden="true" />
-            </Button>
-          </div>
-        ) : (
-          <div className="hidden shrink-0 border-l px-2 lg:flex">
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              onClick={() => setShowDetailsPanel(true)}
-            >
-              <PanelRight aria-hidden="true" />
-              Details
             </Button>
           </div>
         )}
@@ -762,6 +736,8 @@ export function FlexibilityDashboard() {
           <MobileUtilities
             selectedAsset={selectedAsset}
             onSelectAsset={selectAsset}
+            detailsOpen={mobileDetailsOpen && isCompact}
+            onDetailsOpenChange={handleMobileDetailsChange}
           />
 
           {showFilterPanel ? (
@@ -802,20 +778,14 @@ export function FlexibilityDashboard() {
             </Button>
           </div>
 
-          {showSubstationCard && (
-            <div className="pointer-events-none absolute inset-x-3 top-2/3 z-10 flex -translate-y-full justify-center pb-3">
-              <SubstationCard
-                asset={selectedAsset}
-                onClose={() => setShowSubstationCard(false)}
-                onViewCircuit={() => setActiveTool("Circuit")}
-              />
-              <span
-                aria-hidden="true"
-                className="absolute bottom-1.5 left-1/2 size-3 -translate-x-1/2 rotate-45 bg-background"
-              />
-            </div>
-          )}
-          <span className="absolute left-1/2 top-2/3 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-background bg-primary shadow-lg" />
+          {gridAssets.map((asset) => (
+            <AssetMapPoint
+              key={asset.id}
+              asset={asset}
+              selected={selectedAsset?.id === asset.id}
+              onSelect={() => selectAsset(asset, true)}
+            />
+          ))}
 
           <div className="absolute bottom-3 left-1/2 hidden -translate-x-1/2 items-center gap-2 sm:flex">
             <Button
@@ -827,7 +797,12 @@ export function FlexibilityDashboard() {
               <MessageSquare aria-hidden="true" />
               Feedback
             </Button>
-            <div className="rounded-md bg-background/95 px-3 py-2 font-mono text-xs shadow-lg backdrop-blur">
+            <div
+              className={cn(
+                buttonVariants({ variant: "secondary", size: "sm" }),
+                "bg-background/95 font-mono text-xs shadow-lg backdrop-blur",
+              )}
+            >
               <span className="text-muted-foreground">Attribution: </span>
               <span>{flexibilityDashboard.attributionCompany} </span>
               <Network aria-hidden="true" className="inline size-4 text-primary" />
@@ -839,7 +814,7 @@ export function FlexibilityDashboard() {
           </div>
         </section>
 
-        {showDetailsPanel && (
+        {selectedAsset && (
           <aside className="hidden w-64 shrink-0 border-l lg:block">
             <DetailsPanel asset={selectedAsset} showHeader={false} />
           </aside>

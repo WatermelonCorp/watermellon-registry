@@ -67,10 +67,9 @@ function WorkspaceCardItem({ workspace }: { workspace: WorkspaceCard }) {
       className="rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       <Card
-        size="sm"
-        className="h-full gap-11 bg-secondary shadow-none ring-0 transition-colors hover:bg-secondary/80 dark:bg-card/60 dark:hover:bg-card"
+        className="h-full gap-11 bg-secondary py-3 text-sm shadow-none ring-0 transition-colors hover:bg-secondary/80 dark:bg-card/60 dark:hover:bg-card"
       >
-        <CardHeader className="flex flex-row items-start justify-between">
+        <CardHeader className="flex flex-row items-start justify-between px-3">
           <span className="grid size-10 place-items-center rounded-lg bg-background">
             <Icon aria-hidden="true" className="size-5" strokeWidth={1.6} />
           </span>
@@ -80,8 +79,10 @@ function WorkspaceCardItem({ workspace }: { workspace: WorkspaceCard }) {
             strokeWidth={1.5}
           />
         </CardHeader>
-        <CardContent className="space-y-3">
-          <CardTitle>{workspace.title}</CardTitle>
+        <CardContent className="space-y-3 px-3">
+          <CardTitle className="text-sm leading-snug font-medium">
+            {workspace.title}
+          </CardTitle>
           <CardDescription className="font-mono text-xs">
             <ul className="space-y-2">
               {workspace.details.map((detail) => (
