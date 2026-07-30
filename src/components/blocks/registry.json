@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "hero1",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "sfHerodemo/Hero1.tsx",
+          "target": "components/watermelon/blocks/hero1/hero1.tsx",
+          "type": "registry:block"
+        },
+        {
+          "path": "sfHerodemo/ui/Header.tsx",
+          "target": "components/watermelon/blocks/hero1/ui/Header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "sfHerodemo/ui/Hero.tsx",
+          "target": "components/watermelon/blocks/hero1/ui/Hero.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
