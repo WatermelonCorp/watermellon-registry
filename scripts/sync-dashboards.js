@@ -1,306 +1,266 @@
+/**
+ * Sync a single dashboard into src/components/dashboards/registry.json.
+ *
+ * Usage:
+ *   node scripts/sync-dashboards.js <dashboard-name> [--dry-run]
+ *
+ * Example:
+ *   node scripts/sync-dashboards.js library-dashboard
+ *
+ * Behaviour:
+ *   - Requires <dashboard-name>.mdx to exist in ../library-new/src (its
+ *     frontmatter `dependencies` list is the source of truth for npm deps).
+ *   - Collects every react file under src/components/dashboards/<name>.
+ *   - Files living at components/ui/<shadcn-component> are NOT shipped as
+ *     files; they are added to registryDependencies instead.
+ *   - Upserts only the entry for <dashboard-name> in the dashboards
+ *     sub-registry. All other entries are left untouched.
+ */
+
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import matter from "gray-matter";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const REGISTRY_PATH = path.resolve(__dirname, "../registry.json");
 const DASHBOARDS_DIR = path.resolve(__dirname, "../src/components/dashboards");
+const MDX_DIR = path.resolve(__dirname, "../../library-new/src");
 
-const DRY_RUN = process.argv.includes("--dry-run");
+// Prefer the split dashboards sub-registry when present; otherwise the
+// monolithic root registry.json (pre-split main).
+const SPLIT_REGISTRY_PATH = path.resolve(
+  __dirname,
+  "../src/components/dashboards/registry.json",
+);
+const ROOT_REGISTRY_PATH = path.resolve(__dirname, "../registry.json");
+const USE_SPLIT_REGISTRY = fs.existsSync(SPLIT_REGISTRY_PATH);
+const REGISTRY_PATH = USE_SPLIT_REGISTRY
+  ? SPLIT_REGISTRY_PATH
+  : ROOT_REGISTRY_PATH;
 
-// ── Known npm dependencies to detect ────────────────────────────────────
-const KNOWN_DEPENDENCIES = [
-  "lucide-react",
-  "motion",
-  "motion/react",
-  "framer-motion",
-  "clsx",
-  "tailwind-merge",
-  "recharts",
-  "sonner",
-  "zod",
-  "date-fns",
-  "react-day-picker",
-  "embla-carousel-react",
-  "next-themes",
-  "shiki",
-  "ansi-to-react",
-  "react-slick",
-  "react-router-dom",
-  "vaul",
-  "react-icons",
-  "react-use-measure",
-  "@number-flow/react",
-  "@tabler/icons-react",
-  "@aliimam/icons",
-  "@aliimam/logos",
-  "@hugeicons/react",
-  "@hugeicons/core-free-icons",
-  "@dnd-kit/core",
-  "@floating-ui/react",
-  "@headlessui/react",
-  "qrcode.react",
-  "iconsax-react",
-  "media-chrome",
-  "wavesurfer.js",
-  "tunnel-rat",
-];
+const REACT_FILE_REGEX = /\.(tsx|ts|jsx|js)$/;
+// Everything in the dashboard folder ships, except docs and junk files.
+const IGNORED_FILE_REGEX = /(\.(md|mdx)$|^\.DS_Store$|^Thumbs\.db$)/i;
 
-const RADIX_PREFIX = "@radix-ui/";
-const BASE_UI_PREFIX = "@base-ui/";
-
-// shadcn registry dependencies to detect from internal imports
-const KNOWN_REGISTRY_DEPS = [
-  "sidebar",
-  "button",
-  "card",
+// ── shadcn/ui components ─────────────────────────────────────────────────
+// Files at components/ui/<name>.* matching this list are excluded from the
+// registry files and added to registryDependencies instead.
+const SHADCN_COMPONENTS = [
+  "accordion",
+  "alert",
+  "alert-dialog",
+  "aspect-ratio",
+  "avatar",
   "badge",
+  "breadcrumb",
+  "button",
+  "button-group",
+  "calendar",
+  "card",
+  "carousel",
+  "chart",
+  "checkbox",
+  "collapsible",
+  "command",
+  "context-menu",
+  "dialog",
+  "drawer",
+  "dropdown-menu",
+  "empty",
+  "field",
+  "form",
+  "hover-card",
   "input",
+  "input-group",
+  "input-otp",
+  "item",
+  "kbd",
   "label",
+  "menubar",
+  "navigation-menu",
+  "pagination",
+  "popover",
+  "progress",
+  "radio-group",
+  "resizable",
+  "scroll-area",
   "select",
   "separator",
-  "avatar",
-  "tooltip",
-  "breadcrumb",
-  "dropdown-menu",
-  "popover",
   "sheet",
+  "sidebar",
   "skeleton",
+  "slider",
+  "sonner",
+  "spinner",
   "switch",
   "table",
   "tabs",
+  "textarea",
   "toggle",
   "toggle-group",
-  "checkbox",
-  "collapsible",
-  "chart",
-  "calendar",
-  "dialog",
-  "drawer",
-  "sonner",
-  "accordion",
+  "tooltip",
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────────
 
-/**
- * Recursively collect all .tsx and .ts files under a directory,
- * returning paths relative to `baseDir`.
- */
+function fail(message) {
+  console.error(`❌ ${message}`);
+  process.exit(1);
+}
+
+/** Recursively collect shippable files under `dir`, as posix paths relative to `baseDir`. */
 function collectFiles(dir, baseDir) {
   const results = [];
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-
-  for (const entry of entries) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...collectFiles(fullPath, baseDir));
-    } else if (entry.isFile() && /\.(tsx?|ts)$/.test(entry.name)) {
-      results.push(path.relative(baseDir, fullPath));
+    } else if (entry.isFile() && !IGNORED_FILE_REGEX.test(entry.name)) {
+      results.push(path.relative(baseDir, fullPath).split(path.sep).join("/"));
     }
   }
-
-  return results;
+  return results.sort();
 }
 
-/**
- * Parse file content and return a set of npm dependency names.
- */
-function detectDependencies(content) {
-  const deps = new Set();
+/** If relFile is a shadcn component vendored at components/ui/, return its name. */
+function shadcnComponentFromPath(relFile) {
+  const match = relFile.match(/(?:^|\/)components\/ui\/([^/]+)$/);
+  if (!match) return null;
+  const name = match[1].replace(REACT_FILE_REGEX, "");
+  return SHADCN_COMPONENTS.includes(name) ? name : null;
+}
 
-  for (const dep of KNOWN_DEPENDENCIES) {
-    const escaped = dep.replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&");
-    const regex = new RegExp(`from\\s+["']${escaped}(?:/[^"']*)?["']`);
-    if (regex.test(content)) {
-      // Normalise motion/react → motion
-      if (dep === "motion/react" || dep === "framer-motion") {
-        deps.add("motion");
-      } else {
-        deps.add(dep);
-      }
-    }
-  }
-
-  // Radix UI imports
-  const radixRegex = /from\s+["'](@radix-ui\/[^"'/]+)["']/g;
+/** Detect shadcn components imported via .../components/ui/<name>. */
+function shadcnComponentsFromImports(content) {
+  const found = new Set();
+  const importRegex = /from\s+["'][^"']*\/components\/ui\/([^"'/]+)["']/g;
   let match;
-  while ((match = radixRegex.exec(content)) !== null) {
-    deps.add(match[1]);
+  while ((match = importRegex.exec(content)) !== null) {
+    const name = match[1].replace(REACT_FILE_REGEX, "");
+    if (SHADCN_COMPONENTS.includes(name)) found.add(name);
   }
-
-  // Base UI imports
-  const baseUiRegex = /from\s+["'](@base-ui\/[^"'/]+)["']/g;
-  while ((match = baseUiRegex.exec(content)) !== null) {
-    deps.add(match[1]);
-  }
-
-  // class-variance-authority
-  if (
-    content.includes("cva(") ||
-    /from\s+["']class-variance-authority["']/.test(content)
-  ) {
-    deps.add("class-variance-authority");
-  }
-
-  return deps;
+  return found;
 }
 
-/**
- * Detect shadcn registry dependencies by checking for internal ui/ imports.
- */
-function detectRegistryDeps(content) {
-  const regDeps = new Set();
-
-  const uiImportRegex = /from\s+["'][^"']*\/ui\/([^"'/]+)["']/g;
-  let match;
-  while ((match = uiImportRegex.exec(content)) !== null) {
-    const componentName = match[1].replace(/\.(tsx?|ts)$/, "");
-    if (KNOWN_REGISTRY_DEPS.includes(componentName)) {
-      regDeps.add(componentName);
-    }
-  }
-
-  return regDeps;
-}
-
-/**
- * Build a registry entry for a dashboard directory.
- */
-function buildDashboardEntry(dirName) {
-  const dashboardDir = path.join(DASHBOARDS_DIR, dirName);
-  const relFiles = collectFiles(dashboardDir, dashboardDir);
-
-  if (relFiles.length === 0) return null;
-
-  // Aggregate dependencies across all files
-  const allDeps = new Set();
-  const allRegDeps = new Set();
-
-  for (const relFile of relFiles) {
-    const fullPath = path.join(dashboardDir, relFile);
-    const content = fs.readFileSync(fullPath, "utf8");
-    for (const dep of detectDependencies(content)) allDeps.add(dep);
-    for (const dep of detectRegistryDeps(content)) allRegDeps.add(dep);
-  }
-
-  // Build file entries with correct paths from actual filesystem
-  const fileEntries = relFiles.map((relFile) => ({
-    path: `src/components/dashboards/${dirName}/${relFile}`,
-    target: `components/watermelon/dashboards/${dirName}/${relFile}`,
-    type: "registry:component",
-  }));
-
-  const entry = {
-    name: dirName,
-    type: "registry:block",
-    dependencies: Array.from(allDeps).sort(),
-    files: fileEntries,
-  };
-
-  if (allRegDeps.size > 0) {
-    entry.registryDependencies = Array.from(allRegDeps).sort();
-  }
-
-  return entry;
+/** Read npm dependencies from the dashboard's mdx frontmatter. */
+function readMdxDependencies(mdxPath) {
+  const { data } = matter(fs.readFileSync(mdxPath, "utf8"));
+  const deps = data.dependencies;
+  if (!Array.isArray(deps)) return [];
+  return deps.map(String).sort();
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────
 
 function main() {
-  console.log("📂 Reading registry.json...");
+  const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+  const dryRun = process.argv.includes("--dry-run");
+  const name = args[0];
+
+  if (!name) {
+    fail("Usage: node scripts/sync-dashboards.js <dashboard-name> [--dry-run]");
+  }
+
+  // 1. The dashboard must have an mdx definition in library-new.
+  const mdxPath = path.join(MDX_DIR, `${name}.mdx`);
+  if (!fs.existsSync(mdxPath)) {
+    fail(`No mdx definition found at ${mdxPath} — refusing to sync "${name}".`);
+  }
+
+  // 2. The dashboard source folder must exist in this repo.
+  const dashboardDir = path.join(DASHBOARDS_DIR, name);
+  if (!fs.existsSync(dashboardDir) || !fs.statSync(dashboardDir).isDirectory()) {
+    fail(`Dashboard folder not found: ${dashboardDir}`);
+  }
+
+  const relFiles = collectFiles(dashboardDir, dashboardDir);
+  if (relFiles.length === 0) {
+    fail(`No files found in ${dashboardDir}`);
+  }
+
+  // 3. Split vendored shadcn ui components out of the file list.
+  const registryDeps = new Set();
+  const includedFiles = [];
+
+  for (const relFile of relFiles) {
+    const shadcnName = shadcnComponentFromPath(relFile);
+    if (shadcnName) {
+      registryDeps.add(shadcnName);
+      console.log(`↪️  ${relFile} → registryDependencies: ${shadcnName}`);
+    } else {
+      includedFiles.push(relFile);
+    }
+  }
+
+  // Also pick up shadcn components referenced only via imports.
+  for (const relFile of includedFiles) {
+    if (!REACT_FILE_REGEX.test(relFile)) continue;
+    const content = fs.readFileSync(path.join(dashboardDir, relFile), "utf8");
+    for (const dep of shadcnComponentsFromImports(content)) {
+      registryDeps.add(dep);
+    }
+  }
+
+  if (includedFiles.length === 0) {
+    fail(`"${name}" has no files left after excluding shadcn ui components.`);
+  }
+
+  // 4. Build the registry entry.
+  const dependencies = readMdxDependencies(mdxPath);
+
+  const entry = {
+    name,
+    type: "registry:block",
+    dependencies,
+    files: includedFiles.map((relFile) => ({
+      path: USE_SPLIT_REGISTRY
+        ? `${name}/${relFile}`
+        : `src/components/dashboards/${name}/${relFile}`,
+      target: `components/watermelon/${name}/${relFile}`,
+      type: "registry:component",
+    })),
+  };
+
+  if (registryDeps.size > 0) {
+    entry.registryDependencies = Array.from(registryDeps).sort();
+  }
+
+  // 5. Upsert into the dashboards sub-registry, touching nothing else.
   let registry;
   try {
     registry = JSON.parse(fs.readFileSync(REGISTRY_PATH, "utf8"));
   } catch (error) {
-    console.error("❌ Error reading registry.json:", error.message);
-    process.exit(1);
+    fail(`Error reading ${REGISTRY_PATH}: ${error.message}`);
   }
 
-  console.log("📂 Scanning dashboards directory...");
-  let dashboardDirs;
-  try {
-    dashboardDirs = fs
-      .readdirSync(DASHBOARDS_DIR, { withFileTypes: true })
-      .filter((d) => d.isDirectory())
-      .map((d) => d.name);
-  } catch (error) {
-    console.error("❌ Error reading dashboards directory:", error.message);
-    process.exit(1);
+  const existingIndex = registry.items.findIndex((item) => item.name === name);
+  if (existingIndex !== -1) {
+    registry.items[existingIndex] = entry;
+    console.log(`♻️  Replaced existing entry "${name}"`);
+  } else {
+    // Keep the items alphabetically sorted without reordering anything else.
+    let insertAt = registry.items.findIndex(
+      (item) => item.name.localeCompare(name) > 0,
+    );
+    if (insertAt === -1) insertAt = registry.items.length;
+    registry.items.splice(insertAt, 0, entry);
+    console.log(`✅ Added new entry "${name}"`);
   }
 
   console.log(
-    `   Found ${dashboardDirs.length} dashboard directories: ${dashboardDirs.join(", ")}\n`,
+    `   ${entry.files.length} files, ${dependencies.length} dependencies, ${registryDeps.size} registryDependencies`,
   );
 
-  // ── Step 1: Remove ALL existing dashboard block entries ──
-  // Any entry whose files reference src/components/dashboards/ is a dashboard entry.
-  // We regenerate them all from the filesystem to ensure correct paths.
-  const dashboardPathPrefix = "src/components/dashboards/";
-
-  const removedNames = [];
-  const keptItems = registry.items.filter((item) => {
-    const isDashboardBlock =
-      item.type === "registry:block" &&
-      item.files &&
-      item.files.some((f) => f.path.startsWith(dashboardPathPrefix));
-
-    if (isDashboardBlock) {
-      removedNames.push(item.name);
-      return false; // remove it
-    }
-    return true; // keep it
-  });
-
-  if (removedNames.length > 0) {
-    console.log(
-      `🗑️  Removing ${removedNames.length} stale dashboard entries: ${removedNames.join(", ")}\n`,
-    );
+  if (dryRun) {
+    console.log("\n🔍 DRY RUN — no changes written. Entry preview:");
+    console.log(JSON.stringify(entry, null, 2));
+    return;
   }
 
-  registry.items = keptItems;
-
-  // ── Step 2: Regenerate all dashboard entries from filesystem ──
-  let addedCount = 0;
-  const newEntries = [];
-
-  for (const dirName of dashboardDirs) {
-    const entry = buildDashboardEntry(dirName);
-
-    if (!entry) {
-      console.log(`⏭️  Skipping "${dirName}" — no .tsx/.ts files found`);
-      continue;
-    }
-
-    newEntries.push(entry);
-    addedCount++;
-    console.log(
-      `✅ Adding "${dirName}" (${entry.files.length} files, ${entry.dependencies.length} deps)`,
-    );
-    for (const f of entry.files) {
-      console.log(`     📄 ${f.path}`);
-    }
-    console.log("");
-  }
-
-  // ── Step 3: Insert and sort ──
-  registry.items.push(...newEntries);
-  registry.items.sort((a, b) => a.name.localeCompare(b.name));
-
-  if (DRY_RUN) {
-    console.log(
-      `\n🔍 DRY RUN — would replace ${removedNames.length} stale + add ${addedCount} dashboard(s). No changes written.`,
-    );
-    console.log("\nPreview of new entries:");
-    console.log(JSON.stringify(newEntries, null, 2));
-  } else {
-    fs.writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 2) + "\n");
-    console.log(
-      `\n🎉 Done! Regenerated ${addedCount} dashboard(s) in registry.json.`,
-    );
-  }
+  fs.writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 2) + "\n");
+  console.log(`\n🎉 Done! Synced "${name}" into ${path.relative(process.cwd(), REGISTRY_PATH)}`);
 }
 
 main();
