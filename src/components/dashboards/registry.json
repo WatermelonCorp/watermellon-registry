@@ -822,6 +822,86 @@
       ]
     },
     {
+      "name": "library-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "library-dashboard/components/library/circulation-chart.tsx",
+          "target": "components/watermelon/library-dashboard/components/library/circulation-chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/library/collection-donut-chart.tsx",
+          "target": "components/watermelon/library-dashboard/components/library/collection-donut-chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/library/dashboard-content.tsx",
+          "target": "components/watermelon/library-dashboard/components/library/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/library/icons.tsx",
+          "target": "components/watermelon/library-dashboard/components/library/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/library/logo.tsx",
+          "target": "components/watermelon/library-dashboard/components/library/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/library/sidebar.tsx",
+          "target": "components/watermelon/library-dashboard/components/library/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/library/theme-provider.tsx",
+          "target": "components/watermelon/library-dashboard/components/library/theme-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/components/library/topbar.tsx",
+          "target": "components/watermelon/library-dashboard/components/library/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/library-dashboard/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/dashboard.css",
+          "target": "components/watermelon/library-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/data.ts",
+          "target": "components/watermelon/library-dashboard/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "library-dashboard/demo.tsx",
+          "target": "components/watermelon/library-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "dropdown-menu",
+        "input-group",
+        "sheet",
+        "sidebar",
+        "tooltip"
+      ]
+    },
+    {
       "name": "mail-dashboard",
       "type": "registry:block",
       "dependencies": [
