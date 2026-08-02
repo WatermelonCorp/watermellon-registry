@@ -1,20 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "breadcrumb-3",
-  "dependencies": [
-    "lucide-react",
-    "motion"
-  ],
-  "registryDependencies": [
-    "breadcrumb"
-  ],
+  "type": "registry:component",
+  "title": "Breadcrumb 3",
   "files": [
     {
-      "path": "src/components/base-variants/breadcrumb/breadcrumb-3.tsx",
-      "content": "import type { LucideIcon } from 'lucide-react'\nimport { ChevronRightIcon, FileTextIcon, FolderIcon, HomeIcon } from 'lucide-react'\n\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator\n} from '@/components/ui/breadcrumb'\n\ntype BreadcrumbSegment =\n  | {\n      label: string\n      href: string\n      icon: LucideIcon\n      current?: false\n    }\n  | {\n      label: string\n      icon: LucideIcon\n      current: true\n      href?: never\n    }\n\nconst segments: readonly BreadcrumbSegment[] = [\n  { label: 'Home', href: '#', icon: HomeIcon },\n  { label: 'Reports', href: '#', icon: FolderIcon },\n  { label: 'Revenue Summary', icon: FileTextIcon, current: true }\n] as const\n\nconst Breadcrumb3 = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList className='gap-1.5 text-sm'>\n        {segments.map((segment, index) => {\n          const Icon = segment.icon\n\n          return (\n            <BreadcrumbItem key={segment.label}>\n              {'href' in segment ? (\n                <BreadcrumbLink href={segment.href} className='flex items-center gap-1.5 rounded-sm px-1 py-0.5 hover:text-foreground'>\n                  <Icon className='size-3.5 text-muted-foreground' />\n                  {index === 0 ? <span className='text-sm'>Home</span> : segment.label}\n                </BreadcrumbLink>\n              ) : (\n                <BreadcrumbPage className='flex items-center gap-1.5 rounded-sm px-1 py-0.5 font-medium'>\n                  <Icon className='size-3.5 text-foreground/80' />\n                  {segment.label}\n                </BreadcrumbPage>\n              )}\n              {index < segments.length - 1 ? (\n                <BreadcrumbSeparator className='text-muted-foreground/70'>\n                  <ChevronRightIcon />\n                </BreadcrumbSeparator>\n              ) : null}\n            </BreadcrumbItem>\n          )\n        })}\n      </BreadcrumbList>\n    </Breadcrumb>\n  )\n}\n\nexport default Breadcrumb3\n",
-      "type": "registry:ui",
-      "target": "components/ui/breadcrumb-3.tsx"
+      "path": "src/components/ui/misc/breadcrumb-3.tsx",
+      "content": "import { CaretRight, FileText, Folder, House } from \"@phosphor-icons/react\";\nimport type { Icon } from \"@phosphor-icons/react\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@workspace/ui/components/breadcrumb\";\n\ntype BreadcrumbSegment =\n  | {\n      label: string;\n      href: string;\n      icon: Icon;\n      current?: false;\n    }\n  | {\n      label: string;\n      icon: Icon;\n      current: true;\n      href?: never;\n    };\n\nconst segments: readonly BreadcrumbSegment[] = [\n  { label: \"Home\", href: \"#\", icon: House },\n  { label: \"Reports\", href: \"#\", icon: Folder },\n  { label: \"Revenue Summary\", icon: FileText, current: true },\n] as const;\n\nconst Breadcrumb3 = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList className=\"gap-1.5 text-sm\">\n        {segments.map((segment, index) => {\n          const Icon = segment.icon;\n\n          return (\n            <BreadcrumbItem key={segment.label}>\n              {\"href\" in segment ? (\n                <BreadcrumbLink\n                  href={segment.href}\n                  className=\"flex items-center gap-1.5 rounded-sm px-1 py-0.5 hover:text-foreground\"\n                >\n                  <Icon className=\"size-3.5 text-muted-foreground\" />\n                  {index === 0 ? <span className=\"text-sm\">Home</span> : segment.label}\n                </BreadcrumbLink>\n              ) : (\n                <BreadcrumbPage className=\"flex items-center gap-1.5 rounded-sm px-1 py-0.5 font-medium\">\n                  <Icon className=\"size-3.5 text-foreground/80\" />\n                  {segment.label}\n                </BreadcrumbPage>\n              )}\n              {index < segments.length - 1 ? (\n                <BreadcrumbSeparator className=\"text-muted-foreground/70\">\n                  <CaretRight />\n                </BreadcrumbSeparator>\n              ) : null}\n            </BreadcrumbItem>\n          );\n        })}\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport default Breadcrumb3;\n",
+      "type": "registry:component",
+      "target": "src/components/ui/misc/breadcrumb-3.tsx"
     }
-  ],
-  "type": "registry:ui"
+  ]
 }
