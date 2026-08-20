@@ -1537,6 +1537,98 @@
       ]
     },
     {
+      "name": "astrix-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/classification-content.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/classification-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/dashboard-content.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/icons.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/logo.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/navigation.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/pipeline-sample.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/pipeline-sample.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/reports-content.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/reports-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/shared.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/shared.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/sidebar.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/theme-provider.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/theme-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/components/astrix/topbar.tsx",
+          "target": "components/watermelon/astrix-dashboard/components/astrix/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/astrix-dashboard/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/dashboard.css",
+          "target": "components/watermelon/astrix-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/data.tsx",
+          "target": "components/watermelon/astrix-dashboard/data.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/astrix-dashboard/demo.tsx",
+          "target": "components/watermelon/astrix-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown-menu",
+        "input-group",
+        "sidebar",
+        "table"
+      ]
+    },
+    {
       "name": "audio-player",
       "type": "registry:ui",
       "dependencies": [
@@ -7322,6 +7414,84 @@
       ]
     },
     {
+      "name": "demostack-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/demostack/dashboard-content.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/demostack/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/demostack/demostacks-content.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/demostack/demostacks-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/demostack/icons.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/demostack/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/demostack/logo.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/demostack/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/demostack/navigation.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/demostack/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/demostack/sidebar.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/demostack/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/demostack/theme-provider.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/demostack/theme-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/components/demostack/topbar.tsx",
+          "target": "components/watermelon/demostack-dashboard/components/demostack/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/demostack-dashboard/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/dashboard.css",
+          "target": "components/watermelon/demostack-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/data.ts",
+          "target": "components/watermelon/demostack-dashboard/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/demostack-dashboard/demo.tsx",
+          "target": "components/watermelon/demostack-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown-menu",
+        "input-group",
+        "sidebar",
+        "tabs",
+        "tooltip"
+      ]
+    },
+    {
       "name": "deployment-card",
       "type": "registry:ui",
       "dependencies": [
@@ -10241,6 +10411,100 @@
       ]
     },
     {
+      "name": "gridline-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/gridline-dashboard/assets/icons.tsx",
+          "target": "components/watermelon/gridline-dashboard/assets/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/assets/logo.tsx",
+          "target": "components/watermelon/gridline-dashboard/assets/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/dashboard/dashboard-content.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/dashboard/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/dashboard/flexibility-dashboard.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/dashboard/flexibility-dashboard.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/dashboard/modelling-dashboard.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/dashboard/modelling-dashboard.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/layout/app-sidebar.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/layout/dashboard-shell.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/layout/top-navbar.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/layout/top-navbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/navigation.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/components/shared/profile-menu.tsx",
+          "target": "components/watermelon/gridline-dashboard/components/shared/profile-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/dashboard.css",
+          "target": "components/watermelon/gridline-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/dashboardView.tsx",
+          "target": "components/watermelon/gridline-dashboard/dashboardView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/data.ts",
+          "target": "components/watermelon/gridline-dashboard/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/gridline-dashboard/demo.tsx",
+          "target": "components/watermelon/gridline-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "drawer",
+        "dropdown-menu",
+        "input",
+        "sheet",
+        "switch",
+        "tooltip"
+      ]
+    },
+    {
       "name": "hero-1",
       "type": "registry:ui",
       "dependencies": [
@@ -12112,6 +12376,109 @@
       ]
     },
     {
+      "name": "jobtracker-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/modifiers",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities",
+        "lucide-react",
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/assets/icons.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/assets/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/assets/logo.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/assets/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/dashboard/customers-content.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/dashboard/customers-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/dashboard/job-details/estimates-content.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/dashboard/job-details/estimates-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/dashboard/job-details/job-details-content.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/dashboard/job-details/job-details-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/dashboard/jobs-content.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/dashboard/jobs-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/layout/app-sidebar.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/layout/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/layout/dashboard-shell.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/layout/dashboard-shell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/layout/sidebar-navigation-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/layout/top-navbar.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/layout/top-navbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/components/navigation.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/components/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/dashboard.css",
+          "target": "components/watermelon/jobtracker-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/dashboardView.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/dashboardView.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/data/index.ts",
+          "target": "components/watermelon/jobtracker-dashboard/data/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/jobtracker-dashboard/demo.tsx",
+          "target": "components/watermelon/jobtracker-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "card",
+        "dropdown-menu",
+        "input",
+        "select",
+        "separator",
+        "sidebar",
+        "table",
+        "tabs",
+        "tooltip"
+      ]
+    },
+    {
       "name": "journal-navigation",
       "type": "registry:ui",
       "dependencies": [
@@ -12813,6 +13180,83 @@
           "target": "components/ui/marquee.tsx",
           "type": "registry:ui"
         }
+      ]
+    },
+    {
+      "name": "medesk-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "@fontsource/geist",
+        "@fontsource/geist-mono",
+        "@fontsource/instrument-serif",
+        "lucide-react",
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/medesk-dashboard/components/medesk/dashboard-content.tsx",
+          "target": "components/watermelon/medesk-dashboard/components/medesk/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/components/medesk/icons.tsx",
+          "target": "components/watermelon/medesk-dashboard/components/medesk/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/components/medesk/logo.tsx",
+          "target": "components/watermelon/medesk-dashboard/components/medesk/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/components/medesk/navigation.tsx",
+          "target": "components/watermelon/medesk-dashboard/components/medesk/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/components/medesk/sidebar.tsx",
+          "target": "components/watermelon/medesk-dashboard/components/medesk/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/components/medesk/theme-provider.tsx",
+          "target": "components/watermelon/medesk-dashboard/components/medesk/theme-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/components/medesk/topbar.tsx",
+          "target": "components/watermelon/medesk-dashboard/components/medesk/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/medesk-dashboard/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/dashboard.css",
+          "target": "components/watermelon/medesk-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/data.tsx",
+          "target": "components/watermelon/medesk-dashboard/data.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/medesk-dashboard/demo.tsx",
+          "target": "components/watermelon/medesk-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "collapsible",
+        "dropdown-menu",
+        "input-group",
+        "sheet",
+        "sidebar"
       ]
     },
     {
@@ -17647,6 +18091,86 @@
           "target": "components/ui/tags.tsx",
           "type": "registry:ui"
         }
+      ]
+    },
+    {
+      "name": "tallie-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "@fontsource/geist",
+        "@fontsource/geist-mono",
+        "@fontsource/instrument-serif",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/tallie-dashboard/components/tallie/dashboard-page.tsx",
+          "target": "components/watermelon/tallie-dashboard/components/tallie/dashboard-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/components/tallie/icons.tsx",
+          "target": "components/watermelon/tallie-dashboard/components/tallie/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/components/tallie/logo.tsx",
+          "target": "components/watermelon/tallie-dashboard/components/tallie/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/components/tallie/navigation.tsx",
+          "target": "components/watermelon/tallie-dashboard/components/tallie/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/components/tallie/sidebar.tsx",
+          "target": "components/watermelon/tallie-dashboard/components/tallie/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/components/tallie/theme-provider.tsx",
+          "target": "components/watermelon/tallie-dashboard/components/tallie/theme-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/components/tallie/topbar.tsx",
+          "target": "components/watermelon/tallie-dashboard/components/tallie/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/components/tallie/transaction-details-sheet.tsx",
+          "target": "components/watermelon/tallie-dashboard/components/tallie/transaction-details-sheet.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/tallie-dashboard/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/dashboard.css",
+          "target": "components/watermelon/tallie-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/data.tsx",
+          "target": "components/watermelon/tallie-dashboard/data.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/tallie-dashboard/demo.tsx",
+          "target": "components/watermelon/tallie-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "input-group",
+        "sheet",
+        "sidebar",
+        "table"
       ]
     },
     {

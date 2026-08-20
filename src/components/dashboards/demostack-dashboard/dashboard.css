@@ -1,0 +1,135 @@
+.demostack-dashboard,
+body:has(.demostack-dashboard) [data-mobile="true"][data-sidebar="sidebar"],
+body:has(.demostack-dashboard) [data-slot="dropdown-menu-content"],
+body:has(.demostack-dashboard) [data-slot="sheet-content"],
+body:has(.demostack-dashboard) [data-slot="tooltip-content"] {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.458 0.216 276.933);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.976 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.442 0.032 273.476);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgb(230 230 230 / 50%);
+  --input: oklch(0.922 0 0);
+  --input-addon-foreground: oklch(0.777 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: var(--background);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.967 0.003 264.542);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.demostack-dashboard.dark,
+.dark .demostack-dashboard,
+.dark
+  body:has(.demostack-dashboard)
+  [data-mobile="true"][data-sidebar="sidebar"],
+.dark body:has(.demostack-dashboard) [data-slot="dropdown-menu-content"],
+.dark body:has(.demostack-dashboard) [data-slot="sheet-content"],
+.dark body:has(.demostack-dashboard) [data-slot="tooltip-content"] {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.68 0.158 276.935);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.694 0.032 273.476);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgb(230 230 230 / 15%);
+  --input: oklch(1 0 0 / 15%);
+  --input-addon-foreground: oklch(0.777 0 0);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: var(--background);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.278 0.03 256.848);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+body:has(.demostack-dashboard) [data-slot="tooltip-content"] {
+  background-color: var(--foreground) !important;
+  color: var(--background) !important;
+}
+
+body:has(.demostack-dashboard) [data-slot="tooltip-content"] > svg {
+  background-color: var(--foreground) !important;
+  fill: var(--foreground) !important;
+}
+
+/* custom classes */
+.no-scrollbar,
+.no-scrollbar * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar,
+.no-scrollbar *::-webkit-scrollbar {
+  display: none;
+}
+
+.text-input-addon-foreground {
+  color: var(--input-addon-foreground);
+}
+
+.text-xxs {
+  font-size: 0.625rem;
+}
+
+body:has(.demostack-dashboard)
+  [data-slot="dropdown-menu-content"]
+  [data-slot="dropdown-menu-item"],
+body:has(.demostack-dashboard)
+  [data-slot="dropdown-menu-content"]
+  [data-slot="dropdown-menu-sub-trigger"] {
+  padding-inline: 0.625rem;
+  padding-block: 0.625rem;
+}
+
+body:has(.demostack-dashboard)
+  [data-slot="dropdown-menu-content"]
+  [data-slot="dropdown-menu-checkbox-item"],
+body:has(.demostack-dashboard)
+  [data-slot="dropdown-menu-content"]
+  [data-slot="dropdown-menu-radio-item"] {
+  padding-block: 0.625rem;
+  padding-left: 0.625rem;
+  padding-right: 2rem;
+}
