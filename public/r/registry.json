@@ -13190,7 +13190,7 @@
         "@fontsource/geist-mono",
         "@fontsource/instrument-serif",
         "lucide-react",
-        "recharts"
+        "recharts@2.15.4"
       ],
       "files": [
         {
