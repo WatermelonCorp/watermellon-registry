@@ -429,6 +429,92 @@
       ]
     },
     {
+      "name": "agndex-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/api-keys-page.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/api-keys-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/billing-page.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/billing-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/dashboard-page.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/dashboard-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/icons.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/logo.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/navigation.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/sidebar.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/theme-provider.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/theme-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/theme-toggle.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/theme-toggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/components/agndex/topbar.tsx",
+          "target": "components/watermelon/agndex-dashboard/components/agndex/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/agndex-dashboard/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/dashboard.css",
+          "target": "components/watermelon/agndex-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/data.tsx",
+          "target": "components/watermelon/agndex-dashboard/data.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/agndex-dashboard/demo.tsx",
+          "target": "components/watermelon/agndex-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "dropdown-menu",
+        "sidebar"
+      ]
+    },
+    {
       "name": "ai-input-001",
       "type": "registry:ui",
       "dependencies": [
