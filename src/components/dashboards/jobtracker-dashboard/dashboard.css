@@ -1,0 +1,71 @@
+.jobtracker-dashboard,
+body:has(.jobtracker-dashboard) [data-mobile="true"][data-sidebar="sidebar"],
+body:has(.jobtracker-dashboard) [data-slot="dropdown-menu-content"],
+body:has(.jobtracker-dashboard) [data-slot="select-content"],
+body:has(.jobtracker-dashboard) [data-slot="sheet-content"],
+body:has(.jobtracker-dashboard) [data-slot="tooltip-content"] {
+  --background: #ffffff;
+  --foreground: #0a1b39;
+  --card: #ffffff;
+  --card-foreground: #0a1b39;
+  --popover: #ffffff;
+  --popover-foreground: #0a1b39;
+  --primary: #ea580b;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f9fc;
+  --secondary-foreground: #0a1b39;
+  --muted: #f7f7f7;
+  --muted-foreground: #485066;
+  --accent: #f7f7f7;
+  --accent-foreground: #0a1b39;
+  --destructive: #ff0000;
+  --border: #e4e7ec;
+  --input: #f7f7f7;
+  --ring: #ea580b;
+  --sidebar: #f8f9fb;
+  --sidebar-foreground: #485066;
+  --sidebar-primary: #ea580b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffffff;
+  --sidebar-accent-foreground: #ea580b;
+  --sidebar-border: #f8f9fb;
+  --sidebar-ring: #ea580b;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.dark .jobtracker-dashboard,
+.dark
+  body:has(.jobtracker-dashboard)
+  [data-mobile="true"][data-sidebar="sidebar"],
+.dark body:has(.jobtracker-dashboard) [data-slot="dropdown-menu-content"],
+.dark body:has(.jobtracker-dashboard) [data-slot="select-content"],
+.dark body:has(.jobtracker-dashboard) [data-slot="sheet-content"],
+.dark body:has(.jobtracker-dashboard) [data-slot="tooltip-content"] {
+  --background: #121212;
+  --foreground: oklch(0.985 0 0);
+  --card: #1d1d1d;
+  --card-foreground: oklch(0.985 0 0);
+  --popover: #1d1d1d;
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #ea580b;
+  --primary-foreground: #ffffff;
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: #ea580b;
+  --sidebar: #202124;
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #ea580b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: #ea580b;
+  --sidebar-border: #303136;
+  --sidebar-ring: #ea580b;
+}
