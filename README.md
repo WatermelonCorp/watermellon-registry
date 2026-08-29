@@ -1,225 +1,85 @@
-<p align="center">
-  <a href="https://ui.watermelon.sh">
-    <img src="https://img.shields.io/badge/Watermelon_UI-🍉-green?style=for-the-badge" alt="Watermelon UI" />
-  </a>
-</p>
+# Watermelon UI Registry
 
-<h1 align="center">Watermelon UI Registry</h1>
+Installable UI assets for the Watermelon ecosystem.
 
-<p align="center">
-  A growing collection of <strong>260+ beautifully crafted, copy-pasteable React UI components</strong> built with Tailwind CSS, Radix UI, and Framer Motion.
-</p>
+This repo contains the registry output and source material that power copy-pasteable Watermelon components, blocks, dashboards, templates, and base variants. If `watermelon-platform` is the storefront, this repo is the installable catalog.
 
-<p align="center">
-  <a href="https://ui.watermelon.sh">Website</a> ·
-  <a href="#components">Components</a> ·
-  <a href="#installation">Installation</a> ·
-  <a href="CONTRIBUTING.md">Contributing</a> ·
-  <a href="https://github.com/WatermelonCorp/watermellon-registry/issues">Issues</a>
-</p>
+## What You Get
 
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" /></a>
-  <a href="https://github.com/WatermelonCorp/watermellon-registry/actions/workflows/ci.yml"><img src="https://github.com/WatermelonCorp/watermellon-registry/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
-  <a href="https://github.com/WatermelonCorp/watermellon-registry/stargazers"><img src="https://img.shields.io/github/stars/WatermelonCorp/watermellon-registry?style=social" alt="Stars" /></a>
-  <a href="https://github.com/WatermelonCorp/watermellon-registry/issues"><img src="https://img.shields.io/github/issues/WatermelonCorp/watermellon-registry" alt="Issues" /></a>
-  <a href="https://github.com/WatermelonCorp/watermellon-registry/pulls"><img src="https://img.shields.io/github/issues-pr/WatermelonCorp/watermellon-registry" alt="Pull Requests" /></a>
-  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" /></a>
-  <a href="https://github.com/sponsors/WatermelonCorp"><img src="https://img.shields.io/badge/Sponsor-WatermelonCorp-pink?logo=github-sponsors" alt="Sponsor" /></a>
-</p>
+- installable component artifacts for the Watermelon registry
+- UI primitives, blocks, dashboards, templates, and base variants
+- scripts that keep registry output in sync with source files
+- a contributor-friendly place to add new installable assets
 
----
+## Stack
 
-## Table of Contents
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS 4
+- shadcn registry tooling
+- Bun for the preferred local workflow
 
-- [About](#about)
-- [Components](#components)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Local Development](#local-development)
-- [Contributing](#contributing)
-- [Community](#community)
-- [License](#license)
-
-## About
-
-Watermelon UI is an open-source component registry that provides **production-ready, copy-pasteable React components**. Instead of installing a monolithic component library, you pick exactly the components you need — each one is self-contained with its own dependencies.
-
-### Key Features
-
-- **260+ Components** — Buttons, inputs, cards, accordions, modals, charts, dashboards, and much more
-- **Copy-Paste Architecture** — Components are added directly to your project, giving you full ownership and control
-- **shadcn/ui Compatible** — Works seamlessly with the `shadcn` CLI and registry protocol
-- **Modern Stack** — Built with React 19, Tailwind CSS v4, Radix UI, and Framer Motion
-- **TypeScript First** — Every component is fully typed out of the box
-- **Customizable** — Components live in your codebase — modify them however you want
-
-## Components
-
-Browse all components at **[ui.watermelon.sh](https://ui.watermelon.sh)**.
-
-Components are organized into categories:
-
-| Category | Examples |
-|----------|----------|
-| **Inputs** | Button, Input, Checkbox, Select, Switch, Slider, AI Input |
-| **Data Display** | Card, Avatar, Badge, Alert, Accordion, Table |
-| **Feedback** | Dialog, Alert Dialog, Toast (Sonner), Progress |
-| **Navigation** | Breadcrumb, Tabs, Sidebar, Carousel |
-| **Layout** | Separator, Collapsible, Split Panels |
-| **Charts** | Area, Bar, Line, Pie, Radar (via Recharts) |
-| **Blocks** | Full page sections, dashboards, login forms |
-
-## Installation
-
-### Via shadcn CLI (Recommended)
-
-Add any component to your project using the `shadcn` CLI:
+## Quick Start
 
 ```bash
-npx shadcn@latest add "https://registry.watermelon.sh/<component-name>.json"
-```
-
-**Examples:**
-
-```bash
-# Add a button component
-npx shadcn@latest add "https://registry.watermelon.sh/button.json"
-
-# Add an animated accordion
-npx shadcn@latest add "https://registry.watermelon.sh/animated-accordion.json"
-
-# Add a chart component
-npx shadcn@latest add "https://registry.watermelon.sh/chart.json"
-```
-
-### Manual Installation
-
-You can also copy component files directly from `src/components/ui/` into your project's component directory.
-
-### Prerequisites
-
-- **React** 18+ (React 19 recommended)
-- **Tailwind CSS** v4
-- A path alias `@/` pointing to your `src/` directory (standard in Next.js, Vite, etc.)
-
-## Usage
-
-```tsx
-import { Button } from "@/components/ui/button";
-
-export default function App() {
-  return (
-    <div className="p-8">
-      <Button variant="default">Click me</Button>
-    </div>
-  );
-}
-```
-
-## Local Development
-
-### Prerequisites
-
-- [Bun](https://bun.sh) (preferred) or Node.js 20+
-
-### Getting Started
-
-```bash
-# Clone the repository
 git clone https://github.com/WatermelonCorp/watermellon-registry.git
 cd watermellon-registry
-
-# Install dependencies
 bun install
-# or
-npm install
-
-# Start the dev server
-bun dev
-# or
-npm run dev
+bun run dev
 ```
 
-### Available Scripts
+Useful commands:
 
-| Script | Description |
-|--------|-------------|
-| `bun dev` | Start Vite development server |
-| `bun run build` | Type-check and build for production |
-| `bun run lint` | Run ESLint |
-| `bun run preview` | Preview production build locally |
-| `bun run registry:build` | Build the shadcn registry |
-| `bun run deploy` | Deploy to Cloudflare Workers (Vercel) |
+- `bun run dev`: start the local app
+- `bun run build`: typecheck and build the site
+- `bun run lint`: run ESLint
+- `bun run registry:build`: build the registry artifacts
+- `bun run sitemap`: generate the sitemap
+- `bun run deploy`: build, generate the sitemap, and deploy
 
-### Project Structure
+## Project Structure
 
-```
-watermellon-registry/
-├── public/r/              # Built registry JSON files (one per component)
-├── src/
-│   ├── components/
-│   │   ├── ui/            # 260+ UI component source files
-│   │   ├── blocks/        # Full page block components
-│   │   ├── dashboards/    # Dashboard components
-│   │   └── pages/         # Full page components
-│   ├── hooks/             # Custom React hooks
-│   ├── lib/               # Utility functions (cn, etc.)
-│   └── static-assets/     # Static assets
-├── scripts/
-│   ├── sync-registry.js   # Syncs components → registry.json
-│   └── sync-dashboards.js # Syncs dashboard components
-├── registry.json          # Master registry configuration
-├── components.json        # shadcn configuration
-└── wrangler.jsonc         # Cloudflare Workers config
-```
+- `src/components/ui/`: installable UI primitives
+- `src/components/blocks/`: installable blocks
+- `src/components/dashboards/`: installable dashboards
+- `src/components/templates/`: installable templates
+- `src/components/base-variants/`: reusable variant systems
+- `src/components/watermelon-ui/`: broader Watermelon catalog components
+- `public/r/`: generated registry JSON output
+- `scripts/`: sync and build helpers for the registry
 
 ## Contributing
 
-We love contributions! Whether it's fixing a bug, adding a new component, improving documentation, or suggesting features — every contribution helps make Watermelon UI better.
+Want to add something useful quickly?
 
-Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
+1. Read [CONTRIBUTING.md](CONTRIBUTING.md).
+2. Add or improve one asset family at a time.
+3. Run the sync scripts if your change affects registry output.
+4. Run lint and build before opening a PR.
+5. Include screenshots or examples when the UI changes.
 
-### Quick Start for Contributors
+This repo is a great place to contribute:
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feat/my-component`
-3. Add your component in `src/components/ui/`
-4. Run `node scripts/sync-registry.js` to update the registry
-5. Commit and push: `git push origin feat/my-component`
-6. Open a Pull Request
+- new components
+- better component APIs
+- missing registry metadata
+- docs improvements
+- accessibility fixes
+- better install examples
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
+## Support The Work
 
-## Community
+If Watermelon helps your team, you can support the project through the funding links GitHub surfaces for this repo.
 
-- [GitHub Discussions](https://github.com/WatermelonCorp/watermellon-registry/discussions) — Ask questions and share ideas
-- [GitHub Issues](https://github.com/WatermelonCorp/watermellon-registry/issues) — Report bugs or request features
+- use the GitHub `Sponsor` button when available
+- use the custom funding link configured for the org: [watermelon.sh](https://watermelon.sh)
+- star the repo and share it with other builders
 
-## Governance & Policies
+## Repository Health
 
-- [Code of Conduct](CODE_OF_CONDUCT.md) — Our community standards
-- [Security Policy](SECURITY.md) — How to report vulnerabilities
-- [AI Policy](AI_POLICY.md) — Guidelines on AI-generated contributions
-- [License](LICENSE) — MIT License
-
-## Acknowledgements
-
-Watermelon UI is built on the shoulders of amazing open-source projects:
-
-- [shadcn/ui](https://ui.shadcn.com) — Registry protocol and CLI
-- [Radix UI](https://www.radix-ui.com) — Accessible component primitives
-- [Tailwind CSS](https://tailwindcss.com) — Utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion) — Animation library
-- [Recharts](https://recharts.org) — Chart library
-- [Vite](https://vitejs.dev) — Build tool
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-<p align="center">
-  Made with 🍉 by the <a href="https://github.com/WatermelonCorp">Watermelon</a> community
-</p>
+- [Contributing Guide](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
+- [AI Policy](AI_POLICY.md)
+- [License](LICENSE)
