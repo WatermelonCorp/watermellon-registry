@@ -1,6 +1,2 @@
-# These are supported funding model platforms
-
 github: [WatermelonCorp]
-# open_collective: watermelon
-# patreon: watermelon
-# buy_me_a_coffee: watermelon
+custom: ["https://watermelon.sh"]
