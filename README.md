@@ -2,6 +2,8 @@
 
 Installable UI assets for the Watermelon ecosystem.
 
+> Free community UI assets, kept sustainable by supporters who want better open-source building blocks.
+
 This repo contains the registry output and source material that power copy-pasteable Watermelon components, blocks, dashboards, templates, and base variants. If `watermelon-platform` is the storefront, this repo is the installable catalog.
 
 ## What You Get
@@ -70,11 +72,22 @@ This repo is a great place to contribute:
 
 ## Support The Work
 
-If Watermelon helps your team, you can support the project through the funding links GitHub surfaces for this repo.
+This registry exists to make high-quality UI assets easier to use and easier to share. If it helps your team ship faster, sponsorship helps us keep more of it free for the community.
 
 - use the GitHub `Sponsor` button when available
 - use the custom funding link configured for the org: [watermelon.sh](https://watermelon.sh)
 - star the repo and share it with other builders
+
+## Where Sponsor Support Goes
+
+Support for the registry helps fund:
+
+- new installable components, blocks, dashboards, templates, and variants
+- better registry metadata, install flows, and documentation
+- maintenance, compatibility updates, and quality improvements
+- infra and release work needed to keep the catalog reliable
+
+As of August 29, 2026, GitHub Sponsors for the `WatermelonCorp` org is still being finalized, so the funding links are the clearest current route.
 
 ## Repository Health
 
