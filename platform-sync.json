@@ -257,7 +257,7 @@
     "files": {
       "src/components/watermelon-ui/blog-4.tsx": "index.tsx"
     },
-    "platformCommit": "603d0f20dbbe9c868b8bef327af28c5b761ceec7"
+    "platformCommit": "0375a56005c6b5cf4eda9f01ca44fb31422f69bd"
   },
   "capitalio-dashboard": {
     "platformDir": "src/data/contents/dashboards/capitalio-dashboard",
@@ -289,7 +289,7 @@
     "files": {
       "src/components/watermelon-ui/career-2.tsx": "index.tsx"
     },
-    "platformCommit": "603d0f20dbbe9c868b8bef327af28c5b761ceec7"
+    "platformCommit": "0375a56005c6b5cf4eda9f01ca44fb31422f69bd"
   },
   "career-3": {
     "platformDir": "src/data/contents/blocks/career/career-3",
@@ -1182,7 +1182,7 @@
     "files": {
       "src/components/watermelon-ui/notification-2.tsx": "index.tsx"
     },
-    "platformCommit": "603d0f20dbbe9c868b8bef327af28c5b761ceec7"
+    "platformCommit": "0375a56005c6b5cf4eda9f01ca44fb31422f69bd"
   },
   "notification-3": {
     "platformDir": "src/data/contents/blocks/notification/notification-3",
