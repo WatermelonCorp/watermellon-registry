@@ -97,7 +97,7 @@ const defaultBlog4Data: Blog4Data = {
     {
       category: "Design Systems",
       readTime: "7 min read",
-      title: "How semantic color tokens make large ui systems easier to scale",
+      title: "How semantic color tokens make large UI systems easier to scale",
       href: "#",
       accent: "violet",
       imageSrc:
@@ -114,7 +114,7 @@ const defaultBlog4Data: Blog4Data = {
       imageSrc:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
       icon: Heart,
-      imageAlt: "Modern ui dashboard on laptop screen",
+      imageAlt: "Modern UI dashboard on laptop screen",
     },
     {
       category: "Performance",
