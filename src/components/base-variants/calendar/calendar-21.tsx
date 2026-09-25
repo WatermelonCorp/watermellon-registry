@@ -107,7 +107,7 @@ const Calendar21 = () => {
       />
       <p className='text-muted-foreground mt-4 text-center text-xs' role='region'>
         Calendar with advance selection{' '}
-        <a href='https://originbase-ui.com/calendar-date-picker' className='hover:text-primary underline' target='_blank'>
+        <a href='https://originui.com/calendar-date-picker' className='hover:text-primary underline' target='_blank'>
           Origin UI
         </a>
       </p>
