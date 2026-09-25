@@ -1,0 +1,254 @@
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/geist@5/400.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/geist@5/500.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/geist@5/600.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/instrument-serif@5/400.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/geist-mono@5/500.css");
+
+.bionis-dashboard,
+body:has(.bionis-dashboard) [data-slot="sidebar"][data-mobile="true"],
+body:has(.bionis-dashboard) [data-slot="dropdown-menu-content"],
+body:has(.bionis-dashboard) [data-slot="sheet-content"],
+body:has(.bionis-dashboard) [data-slot="tooltip-content"] {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.2271 0.0625 260.828);
+  --card: oklch(0.97 0 0);
+  --card-foreground: oklch(0.2271 0.0625 260.828);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2271 0.0625 260.828);
+  --primary: oklch(0 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.9761 0 0);
+  --secondary-foreground: oklch(0.2271 0.0625 260.828);
+  --muted: oklch(0.9761 0 0);
+  --muted-foreground: oklch(0.5138 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.2271 0.0625 260.828);
+  --destructive: oklch(0.574 0.232 29.36);
+  --border: oklch(0.9401 0 0);
+  --input: oklch(0.9401 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: #fafafa;
+  --sidebar-foreground: oklch(0.2271 0.0625 260.828);
+  --sidebar-primary: oklch(0.2271 0.0625 260.828);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: var(--background);
+  --sidebar-accent-foreground: oklch(0.2271 0.0625 260.828);
+  --sidebar-border: #eeefe9;
+  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-muted: oklch(0.6993 0 0);
+  --sidebar-muted-foreground: oklch(0.5138 0 0);
+  --promo-gradient-from: #f7f9fc;
+  --promo-gradient-to: #4d8dff;
+  --bionis-blue: #1975f2;
+  --live: #00b153;
+  --score: var(--bionis-blue);
+  --chart-sleep: var(--bionis-blue);
+  --chart-sleep-fill: color-mix(in srgb, var(--bionis-blue) 10%, transparent);
+  --chart-steps: #19c035;
+  --chart-recovery: var(--bionis-blue);
+  --chart-axis: #485066;
+  --chart-grid: #e5e7eb;
+  --chart-warn: #c57d00;
+  --chart-warn-bg: #fef6e7;
+  --chart-period: color-mix(in srgb, var(--bionis-blue) 85%, white);
+  --chart-period-bg: color-mix(in srgb, var(--bionis-blue) 8%, transparent);
+  --chart-tooltip-bg: #fafafa;
+  --insight-prediction: #6366f1;
+  --insight-vitals: #f72e2e;
+  --insight-actions: #14b8a6;
+  --vital-good: #269b6a;
+  --prediction-warn: #9e6400;
+  --prediction-danger: #dd524d;
+  --status-processing: #2762ea;
+  --status-completed: #16a34a;
+  --status-exception: #dc2627;
+  --source-oracle: #5946f9;
+  --source-sharepoint: #09aff7;
+  --source-concur: #ff4fa3;
+  --trend: #2c9c5d;
+  --metric-heart: #f72e2e;
+  --metric-steps: #19c035;
+  --metric-sleep: #6366f1;
+  --metric-recovery: #22d3ee;
+  --metric-vital: #269b6a;
+  --metric-warn: #f59e0b;
+  --heatmap-base: #22d3ee;
+  --heatmap-med: var(--heatmap-base);
+  --heatmap-low: color-mix(in srgb, var(--heatmap-base) 20%, white);
+  --heatmap-high: color-mix(in srgb, var(--heatmap-base) 75%, black);
+  --font-serif: "Instrument Serif", serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+.bionis-dashboard,
+body:has(.bionis-dashboard),
+body:has(.bionis-dashboard) [data-mobile="true"][data-sidebar="sidebar"] {
+  --font-sans: "Geist", sans-serif;
+  font-family: "Geist", sans-serif;
+  font-weight: 400;
+}
+
+.bionis-dashboard {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.bionis-dashboard.dark,
+.dark .bionis-dashboard,
+.dark body:has(.bionis-dashboard) [data-slot="sidebar"][data-mobile="true"],
+.dark body:has(.bionis-dashboard) [data-slot="dropdown-menu-content"],
+.dark body:has(.bionis-dashboard) [data-slot="sheet-content"],
+.dark body:has(.bionis-dashboard) [data-slot="tooltip-content"] {
+  --background: #000000;
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.281 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.574 0.232 29.36);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: #111111;
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.922 0 0);
+  --sidebar-primary-foreground: oklch(0.205 0 0);
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-muted: oklch(0.535 0 0);
+  --sidebar-muted-foreground: oklch(0.725 0 0);
+  --promo-gradient-from: #090d16;
+  --promo-gradient-to: #1d4ed8;
+  --bionis-blue: #4d8dff;
+  --score: var(--bionis-blue);
+  --chart-sleep: var(--bionis-blue);
+  --chart-sleep-fill: color-mix(in srgb, var(--bionis-blue) 18%, transparent);
+  --chart-steps: #19c035;
+  --chart-recovery: var(--bionis-blue);
+  --chart-axis: oklch(0.708 0 0);
+  --chart-grid: oklch(1 0 0 / 12%);
+  --chart-warn: #f0b429;
+  --chart-warn-bg: rgb(240 180 41 / 12%);
+  --chart-period: color-mix(in srgb, var(--bionis-blue) 90%, white);
+  --chart-period-bg: color-mix(in srgb, var(--bionis-blue) 15%, transparent);
+  --chart-tooltip-bg: #171717;
+  --insight-prediction: #818cf8;
+  --insight-vitals: #f87171;
+  --insight-actions: #2dd4bf;
+  --vital-good: #34d399;
+  --prediction-warn: #f0b429;
+  --prediction-danger: #f87171;
+  --metric-heart: #f87171;
+  --metric-steps: #34d399;
+  --metric-sleep: #818cf8;
+  --metric-recovery: #38bdf8;
+  --metric-vital: #34d399;
+  --metric-warn: #f0b429;
+}
+
+.bionis-dashboard .font-serif {
+  font-family: var(--font-serif);
+}
+
+.bionis-dashboard .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* custom classes */
+.text-2\.5xl {
+  font-size: 1.75rem;
+}
+
+.text-xxs {
+  font-size: 0.6875rem;
+}
+
+.sidebar-badge-shadow {
+  filter: drop-shadow(0 0.0125rem 0.125rem rgba(0, 0, 0, 0.05));
+}
+
+@keyframes live-dot-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.75);
+    opacity: 0;
+  }
+}
+
+.live-dot-pulse {
+  position: relative;
+}
+
+.live-dot-pulse::before,
+.live-dot-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  pointer-events: none;
+  transform-origin: center;
+  animation: live-dot-pulse 1.5s ease-out infinite;
+}
+
+.live-dot-pulse::after {
+  animation-delay: 0.75s;
+}
+
+.no-scrollbar,
+.no-scrollbar * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar,
+.no-scrollbar *::-webkit-scrollbar {
+  display: none;
+}
+
+body:has(.bionis-dashboard) [data-slot='tooltip-content'] {
+  background-color: var(--foreground) !important;
+  color: var(--background) !important;
+}
+
+body:has(.bionis-dashboard) [data-slot='tooltip-content'] > svg {
+  background-color: var(--foreground) !important;
+  fill: var(--foreground) !important;
+}
+
+[data-slot="dropdown-menu-content"] [data-slot="dropdown-menu-item"],
+[data-slot="dropdown-menu-content"] [data-slot="dropdown-menu-sub-trigger"] {
+  padding-inline: 0.625rem;
+  padding-block: 0.625rem;
+}
+
+[data-slot="dropdown-menu-content"] [data-slot="dropdown-menu-checkbox-item"],
+[data-slot="dropdown-menu-content"] [data-slot="dropdown-menu-radio-item"] {
+  padding-block: 0.625rem;
+  padding-left: 0.625rem;
+  padding-right: 2rem;
+}
