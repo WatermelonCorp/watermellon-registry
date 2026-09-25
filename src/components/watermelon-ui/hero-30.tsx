@@ -7,12 +7,12 @@ import {
   GlobeIcon,
   ArrowDown01Icon,
   Menu01Icon,
-  Sun03Icon,
   InstagramIcon,
   YoutubeIcon,
   NewTwitterIcon,
 } from "@hugeicons/core-free-icons";
 import { Button } from "@/components/ui/button";
+import LogoIcon from "@/assets/logo-icon";
 
 interface Hero30Props {
   title?: string;
@@ -29,10 +29,10 @@ export default function Hero30({
   subtitle = "Designed to bring calm, clarity, and effortless\nelegance into your everyday digital experience.",
   customersText = "+20K Happy Customers",
   avatars = [
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64&q=80",
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64&q=80",
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64&q=80",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64&q=80",
+    "https://assets.watermelon.sh/wm_ben.png",
+    "https://assets.watermelon.sh/wm_alex.png",
+    "https://assets.watermelon.sh/wm_olivia.png",
+    "https://assets.watermelon.sh/wm_mia.png",
   ],
   primaryActionText = "Discover More",
   secondaryActionText = "Watch Demo",
@@ -48,7 +48,6 @@ export default function Hero30({
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
-      {/* Optional Overlay to ensure text readability on mobile if needed */}
       <div className="absolute inset-0 z-0 bg-white/20 sm:bg-transparent" />
 
       {/* Navbar */}
@@ -60,7 +59,7 @@ export default function Hero30({
       >
         {/* Logo */}
         <div className="flex items-center gap-2 text-[#1C201A]">
-          <HugeiconsIcon icon={Sun03Icon} className="size-8" strokeWidth={2} />
+          <LogoIcon className="size-8 text-white" />
           <span className="text-2xl font-bold tracking-tight">Watermelon</span>
         </div>
 
@@ -84,11 +83,10 @@ export default function Hero30({
             <span>EN</span>
             <HugeiconsIcon icon={ArrowDown01Icon} className="size-4" />
           </button>
-          
-          <Button
-            className="h-11 rounded-none bg-[#2B3024] px-6 text-[15px] font-medium text-white transition-all hover:bg-black"
-          >
-            Log In <HugeiconsIcon icon={ArrowRight01Icon} className="ml-1.5 size-4" />
+
+          <Button className="h-11 rounded-none bg-[#2B3024] px-6 text-[15px] font-medium text-white transition-all hover:bg-black">
+            Log In{" "}
+            <HugeiconsIcon icon={ArrowRight01Icon} className="ml-1.5 size-4" />
           </Button>
         </div>
 
@@ -102,7 +100,7 @@ export default function Hero30({
       </motion.header>
 
       {/* Main Content */}
-      <div className="container mx-auto relative z-10 flex flex-1 flex-col justify-center px-6 pt-12 md:pt-0 lg:px-12">
+      <div className="relative z-10 container mx-auto flex flex-1 flex-col justify-center px-6 pt-12 md:pt-0 lg:px-12">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -127,12 +125,12 @@ export default function Hero30({
           </div>
 
           {/* Headline */}
-          <h1 className="mb-6 whitespace-pre-line text-5xl font-medium leading-[1.05] tracking-tighter text-[#1C201A] sm:text-6xl md:text-7xl lg:text-[84px]">
+          <h1 className="mb-6 text-5xl leading-[1.05] font-medium tracking-tighter whitespace-pre-line text-[#1C201A] sm:text-6xl md:text-7xl lg:text-[84px]">
             {title}
           </h1>
 
           {/* Subtitle */}
-          <p className="mb-10 max-w-xl whitespace-pre-line text-lg leading-relaxed text-[#1C201A]/80 sm:text-xl">
+          <p className="mb-10 max-w-xl text-lg leading-relaxed whitespace-pre-line text-[#1C201A]/80 sm:text-xl">
             {subtitle}
           </p>
 
@@ -142,13 +140,17 @@ export default function Hero30({
               size="lg"
               className="h-14 rounded-none bg-[#2B3024] px-8 text-base font-medium text-white transition-all hover:bg-black"
             >
-              {primaryActionText} <HugeiconsIcon icon={ArrowRight01Icon} className="ml-2 size-5" />
+              {primaryActionText}{" "}
+              <HugeiconsIcon icon={ArrowRight01Icon} className="ml-2 size-5" />
             </Button>
-            
+
             <button className="group flex items-center gap-3 text-base font-medium text-[#1C201A] transition-colors hover:text-black">
               {secondaryActionText}
               <div className="flex size-10 items-center justify-center rounded-full bg-[#2B3024] text-white transition-transform group-hover:scale-110">
-                <HugeiconsIcon icon={PlayIcon} className="size-4 fill-current" />
+                <HugeiconsIcon
+                  icon={PlayIcon}
+                  className="size-4 fill-current"
+                />
               </div>
             </button>
           </div>
@@ -181,7 +183,10 @@ export default function Hero30({
           className="group flex items-center gap-2 text-[15px] font-medium text-[#1C201A] transition-colors hover:text-black"
         >
           Talk to our team
-          <HugeiconsIcon icon={ArrowRight01Icon} className="size-4 transition-transform group-hover:translate-x-1" />
+          <HugeiconsIcon
+            icon={ArrowRight01Icon}
+            className="size-4 transition-transform group-hover:translate-x-1"
+          />
         </a>
       </motion.div>
     </section>

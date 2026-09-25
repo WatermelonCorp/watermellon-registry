@@ -1,22 +1,13 @@
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { useState } from 'react';
-import {
-  Cpu,
-  Layers,
-  GitBranch,
-  Terminal,
-  ArrowUpRight,
-  Menu,
-  Moon,
-  Github,
-  X,
-} from 'lucide-react';
+} from "@/components/ui/popover";
+import { useState } from "react";
+import { Cpu, Layers, GitBranch, Terminal, ArrowUpRight, Menu, Moon, X } from "lucide-react";
+import { FaGithub as Github } from "react-icons/fa6";
 
 export function Navigation3() {
   const [isOpen, setIsOpen] = useState(false);
@@ -154,15 +145,15 @@ export function Navigation3() {
                     </h4>
                     <a
                       href="#"
-                      className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl p-6 ring ring-orange-500/50 transition-all"
+                      className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl p-6 ring ring-primary/50 transition-all"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent group-hover:opacity-100 dark:from-orange-500/10" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent group-hover:opacity-100 dark:from-primary/10" />
                       <div className="absolute inset-0 -z-10 bg-neutral-100 dark:bg-neutral-900" />
 
                       <div>
                         <Badge
                           variant="outline"
-                          className="mb-3 border-orange-200 bg-white text-orange-600 dark:border-orange-900 dark:bg-neutral-950 dark:text-orange-400"
+                          className="mb-3 border-primary bg-white text-primary dark:border-primary dark:bg-neutral-950 dark:text-primary"
                         >
                           Upcoming Webinar
                           <ArrowUpRight className="ml-1 size-3" />
@@ -176,7 +167,7 @@ export function Navigation3() {
                         </p>
                       </div>
 
-                      <div className="mt-4 flex items-center text-sm font-medium text-orange-600 dark:text-orange-400">
+                      <div className="mt-4 flex items-center text-sm font-medium text-primary dark:text-primary">
                         Register now
                         <ArrowUpRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                       </div>
@@ -186,7 +177,7 @@ export function Navigation3() {
 
                 {/* Mobile Button Collection */}
                 <div className="px-6 pb-8 lg:hidden">
-                  <Button className="w-full rounded-xl bg-orange-600 py-6 text-white shadow-lg shadow-orange-600/20 hover:bg-orange-700 dark:bg-orange-600 dark:hover:bg-orange-700">
+                  <Button className="w-full rounded-xl bg-primary py-6 text-white shadow-lg shadow-primary/20 hover:bg-primary dark:bg-primary dark:hover:bg-primary">
                     Get started
                   </Button>
                 </div>
@@ -195,7 +186,7 @@ export function Navigation3() {
           </Popover>
 
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center text-orange-600 dark:text-orange-500">
+            <div className="flex h-8 w-8 items-center justify-center text-primary dark:text-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -235,7 +226,7 @@ export function Navigation3() {
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </div>
-            <Button className="rounded-xl bg-orange-600 px-4 py-2 text-white hover:bg-orange-700 dark:bg-orange-600 dark:text-white dark:hover:bg-orange-700">
+            <Button className="rounded-xl bg-primary px-4 py-2 text-white hover:bg-primary dark:bg-primary dark:text-white dark:hover:bg-primary">
               Get started
             </Button>
           </div>

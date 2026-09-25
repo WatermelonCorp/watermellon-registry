@@ -5,6 +5,9 @@
     "motion",
     "radix-ui"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/popover.tsx",

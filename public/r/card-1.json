@@ -6,7 +6,10 @@
     "motion"
   ],
   "registryDependencies": [
-    "card"
+    "button",
+    "card",
+    "input",
+    "label"
   ],
   "files": [
     {

@@ -192,7 +192,7 @@ export function FileUploader({
   }
 
   return (
-    <Card className="mx-auto mt-40 w-full max-w-md shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_2px_-1px_rgba(0,0,0,0.06),0px_2px_4px_0px_rgba(0,0,0,0.04)] ring-0">
+    <Card className="mx-auto w-full mt-14 max-w-md shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_2px_-1px_rgba(0,0,0,0.06),0px_2px_4px_0px_rgba(0,0,0,0.04)] ring-0">
       <CardHeader>
         <div className="flex items-start justify-between gap-3">
           <div className="flex flex-col gap-1">

@@ -2,10 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-12",
   "dependencies": [
+    "input-otp",
     "lucide-react"
   ],
   "registryDependencies": [
-    "dialog"
+    "button",
+    "dialog",
+    "utils"
   ],
   "files": [
     {

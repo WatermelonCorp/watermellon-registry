@@ -76,7 +76,7 @@ export function Footer4({
           <div className="flex flex-col justify-between gap-6 lg:col-span-5 lg:pr-16">
             <div className="flex items-center gap-2">
               {logo && (
-                <div className="text-foreground flex size-6 items-center justify-center">
+                <div className="text-primary flex size-6 items-center justify-center">
                   {logo}
                 </div>
               )}

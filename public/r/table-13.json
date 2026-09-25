@@ -5,9 +5,10 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "table",
+    "badge",
     "checkbox",
-    "badge"
+    "table",
+    "utils"
   ],
   "files": [
     {

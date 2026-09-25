@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { FaPlus, FaMinus } from 'react-icons/fa';
-import { cn } from '@/lib/utils';
+} from "@/components/ui/accordion";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import { cn } from "@/lib/utils";
 
 export interface FaqItem {
   id: string;
@@ -33,9 +33,7 @@ export function Faq1({
   className,
 }: Faq1Props) {
   return (
-    <section
-      className={cn('mx-auto w-full max-w-4xl px-4 py-16 md:py-24', className)}
-    >
+    <section className={cn("mx-auto w-full max-w-4xl px-4 py-16", className)}>
       <div className="mb-12 flex flex-col items-center text-center">
         {badge && (
           <span className="bg-muted text-foreground mb-6 inline-flex items-center rounded-full px-3 py-1 text-sm font-medium">

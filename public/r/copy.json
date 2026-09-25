@@ -6,6 +6,9 @@
     "lucide-react",
     "motion"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/copy.tsx",

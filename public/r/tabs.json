@@ -4,6 +4,9 @@
   "dependencies": [
     "motion"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/tabs.tsx",

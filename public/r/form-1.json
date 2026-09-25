@@ -2,17 +2,19 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "form-1",
   "dependencies": [
-    "react-icons",
+    "@hookform/resolvers",
     "react-hook-form",
+    "react-icons",
+    "sonner",
     "zod"
   ],
   "registryDependencies": [
-    "input",
-    "field",
-    "button",
-    "label",
     "alert",
+    "button",
+    "field",
+    "input",
     "input-otp",
+    "label",
     "sonner"
   ],
   "files": [

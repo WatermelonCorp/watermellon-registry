@@ -28,7 +28,7 @@ export default function FAQ3({
   items,
 }: FAQSectionProps) {
   return (
-    <section className="bg-background flex min-h-screen w-full flex-col items-center justify-center px-4 py-20 sm:py-28">
+    <section className="bg-background flex w-full flex-col items-center justify-center px-4 py-16">
       {/* ── Header ── */}
       <div className="mb-12 flex w-full max-w-xl flex-col items-center text-center sm:mb-16">
         {badge && (

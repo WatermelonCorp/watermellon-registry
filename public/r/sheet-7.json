@@ -5,6 +5,10 @@
     "react-icons"
   ],
   "registryDependencies": [
+    "button",
+    "input",
+    "label",
+    "select",
     "sheet"
   ],
   "files": [

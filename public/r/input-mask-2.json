@@ -6,9 +6,8 @@
     "react-payment-inputs"
   ],
   "registryDependencies": [
-    "input-mask",
-    "label",
-    "input"
+    "input",
+    "label"
   ],
   "files": [
     {

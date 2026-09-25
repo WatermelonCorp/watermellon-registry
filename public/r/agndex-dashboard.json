@@ -9,7 +9,8 @@
     "badge",
     "button",
     "dropdown-menu",
-    "sidebar"
+    "sidebar",
+    "utils"
   ],
   "files": [
     {

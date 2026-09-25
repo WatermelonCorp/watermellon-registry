@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import LogoIcon from '@/assets/logo-icon';
-import { ArrowDown, ArrowRight, ChevronDown } from 'lucide-react';
-import { motion, type Variants } from 'motion/react';
+import LogoIcon from "@/assets/logo-icon";
+import { ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
+import { motion, type Variants } from "motion/react";
 
 interface NavLink {
   label: string;
@@ -28,11 +28,11 @@ interface Hero19Props {
 }
 
 const navLinksDefault: NavLink[] = [
-  { label: 'Features', href: '#', hasMenu: true },
-  { label: 'Pricing', href: '#', hasMenu: true },
-  { label: 'About', href: '#' },
-  { label: 'Resources', href: '#' },
-  { label: 'FAQs', href: '#' },
+  { label: "Features", href: "#", hasMenu: true },
+  { label: "Pricing", href: "#", hasMenu: true },
+  { label: "About", href: "#" },
+  { label: "Resources", href: "#" },
+  { label: "FAQs", href: "#" },
 ];
 
 const sectionVariants: Variants = {
@@ -46,34 +46,34 @@ const sectionVariants: Variants = {
 };
 
 const navVariants: Variants = {
-  hidden: { opacity: 0, y: -12, filter: 'blur(7px)' },
+  hidden: { opacity: 0, y: -12, filter: "blur(7px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.62, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.62, bounce: 0 },
   },
 };
 
 const copyVariants: Variants = {
-  hidden: { opacity: 0, x: -22, filter: 'blur(8px)' },
+  hidden: { opacity: 0, x: -22, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     x: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.78, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.78, bounce: 0 },
   },
 };
 
 const buildingVariants: Variants = {
-  hidden: { opacity: 0, x: 30, y: 18, scale: 1.04, filter: 'blur(12px)' },
+  hidden: { opacity: 0, x: 30, y: 18, scale: 1.04, filter: "blur(12px)" },
   visible: {
     opacity: 1,
     x: 0,
     y: 0,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 1.08, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 1.08, bounce: 0 },
   },
 };
 
@@ -88,31 +88,31 @@ const buttonRowVariants: Variants = {
 };
 
 const buttonVariants: Variants = {
-  hidden: { opacity: 0, y: 12, scale: 0.98, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 12, scale: 0.98, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.58, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.58, bounce: 0 },
   },
 };
 
 export default function Hero19({
-  brandName = 'Watermelon',
+  brandName = "Watermelon",
   navLinks = navLinksDefault,
   eyebrow = "We've completed over 100+ landmark projects",
-  headingLine1 = 'Build The Future With',
-  headingLine2 = 'AI-Native Products',
-  description = 'Build powerful digital systems and AI-driven platforms that shape how modern cities, businesses, and people move forward.',
-  primaryCtaLabel = 'See Our Work',
-  primaryCtaHref = '#',
-  secondaryCtaLabel = 'Talk to our team',
-  secondaryCtaHref = '#',
-  bookingLabel = 'Book Demo',
-  bookingHref = '#',
-  scrollLabel = 'Scroll to Explore',
-  backgroundImage = 'https://assets.watermelon.sh/hero-19-bg.avif',
+  headingLine1 = "Build The Future With",
+  headingLine2 = "AI-Native Products",
+  description = "Build powerful digital systems and AI-driven platforms that shape how modern cities, businesses, and people move forward.",
+  primaryCtaLabel = "See Our Work",
+  primaryCtaHref = "#",
+  secondaryCtaLabel = "Talk to our team",
+  secondaryCtaHref = "#",
+  bookingLabel = "Book Demo",
+  bookingHref = "#",
+  scrollLabel = "Scroll to Explore",
+  backgroundImage = "https://assets.watermelon.sh/hero-19-bg.avif",
 }: Hero19Props) {
   return (
     <section className="relative isolate min-h-screen overflow-hidden font-sans text-white antialiased">
@@ -167,17 +167,17 @@ export default function Hero19({
         </motion.nav>
 
         <div className="relative z-10 flex flex-1 items-center pt-10 pb-12 sm:pt-14 lg:pt-4">
-          <div className="max-w-[39rem]">
+          <div className="max-w-2xl 2xl:max-w-7xl">
             <motion.p
               variants={copyVariants}
-              className="text-[0.72rem] leading-none font-medium text-white/95"
+              className="text-xs leading-none font-medium text-white/95 2xl:text-sm"
             >
               {eyebrow} <span aria-hidden="true">-&gt;</span>
             </motion.p>
 
             <motion.h1
               variants={copyVariants}
-              className="mt-5 max-w-[38rem] text-[clamp(3rem,5.25vw,4.4rem)] leading-[1.04] font-normal tracking-[-0.055em] text-balance text-white"
+              className="mt-5 max-w-2xl text-[clamp(3rem,5.25vw,6rem)] leading-[1.04] font-normal tracking-[-0.055em] text-balance text-white 2xl:max-w-7xl"
             >
               <span className="block">{headingLine1}</span>
               <span className="block">{headingLine2}</span>
@@ -185,7 +185,7 @@ export default function Hero19({
 
             <motion.p
               variants={copyVariants}
-              className="mt-5 max-w-[31rem] text-[0.78rem] leading-[1.55] font-medium text-pretty text-white/85"
+              className="mt-5 max-w-[31rem] text-[0.78rem] leading-[1.55] font-medium text-pretty text-white/85 2xl:text-lg"
             >
               {description}
             </motion.p>

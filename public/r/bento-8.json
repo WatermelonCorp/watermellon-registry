@@ -2,8 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "bento-8",
   "dependencies": [
+    "clsx",
+    "framer-motion",
     "lucide-react",
-    "motion"
+    "motion",
+    "tailwind-merge"
   ],
   "registryDependencies": [
     "card"

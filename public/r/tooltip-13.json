@@ -5,6 +5,9 @@
     "react-icons"
   ],
   "registryDependencies": [
+    "avatar",
+    "button",
+    "hover-card",
     "tooltip"
   ],
   "files": [

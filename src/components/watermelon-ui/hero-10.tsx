@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { AnimatePresence, motion, type Variants } from 'motion/react';
-import { FaArrowRight, FaChevronDown, FaXmark } from 'react-icons/fa6';
+import { useState } from "react";
+import { AnimatePresence, motion, type Variants } from "motion/react";
+import { FaArrowRight, FaChevronDown, FaXmark } from "react-icons/fa6";
 
 export interface Hero10NavItem {
   label: string;
@@ -24,21 +24,21 @@ export interface Hero10Props {
 }
 
 const defaultNavItems: Hero10NavItem[] = [
-  { label: 'Features', href: '#', hasMenu: true },
-  { label: 'Pricing', href: '#', hasMenu: true },
-  { label: 'Resources', href: '#' },
-  { label: 'FAQs', href: '#' },
+  { label: "Features", href: "#", hasMenu: true },
+  { label: "Pricing", href: "#", hasMenu: true },
+  { label: "Resources", href: "#" },
+  { label: "FAQs", href: "#" },
 ];
 
-const defaultBackground = 'https://assets.watermelon.sh/hero-10-bg.avif';
+const defaultBackground = "https://assets.watermelon.sh/hero-10-bg.avif";
 
 const headerVariants: Variants = {
-  hidden: { opacity: 0, y: -16, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: -16, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.68, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.68, bounce: 0 },
   },
 };
 
@@ -54,22 +54,22 @@ const contentContainer: Variants = {
 };
 
 const contentItem: Variants = {
-  hidden: { opacity: 0, y: 18, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 18, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.72, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.72, bounce: 0 },
   },
 };
 
 const backgroundVariants: Variants = {
-  hidden: { opacity: 0, scale: 1.035, filter: 'blur(10px)' },
+  hidden: { opacity: 0, scale: 1.035, filter: "blur(10px)" },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 1.15, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 1.15, bounce: 0 },
   },
 };
 
@@ -83,16 +83,16 @@ function MobileMenuIcon() {
 }
 
 export function Hero10({
-  brandName = 'Watermelon',
+  brandName = "Watermelon",
   navItems = defaultNavItems,
-  ctaText = 'Sign up',
-  ctaHref = '#',
-  eyebrowText = 'Join over 100k+ happy customers',
-  title = 'Rediscover Your Strength\nReclaim Your Peace',
-  description = 'Confidential, professional help tailored to your unique needs,\navailable on your schedule. Your privacy is our first priority.',
-  primaryText = 'Get Started',
-  primaryHref = '#',
-  usersText = 'Over 20k active users',
+  ctaText = "Sign up",
+  ctaHref = "#",
+  eyebrowText = "Join over 100k+ happy customers",
+  title = "Rediscover Your Strength\nReclaim Your Peace",
+  description = "Confidential, professional help tailored to your unique needs,\navailable on your schedule. Your privacy is our first priority.",
+  primaryText = "Get Started",
+  primaryHref = "#",
+  usersText = "Over 20k active users",
   backgroundImage = defaultBackground,
 }: Hero10Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -152,7 +152,7 @@ export function Hero10({
               </a>
             ))}
           </nav>
-          <div className='flex gap-2'>
+          <div className="flex gap-2">
             <motion.a
               href={ctaHref}
               whileTap={{ scale: 0.96 }}
@@ -176,10 +176,10 @@ export function Hero10({
         <AnimatePresence initial={false}>
           {mobileOpen ? (
             <motion.div
-              initial={{ opacity: 0, y: -10, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, y: -6, filter: 'blur(5px)' }}
-              transition={{ type: 'spring', duration: 0.3, bounce: 0 }}
+              initial={{ opacity: 0, y: -10, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -6, filter: "blur(5px)" }}
+              transition={{ type: "spring", duration: 0.3, bounce: 0 }}
               className="fixed inset-x-4 top-4 z-50 rounded-[28px] bg-white/86 p-4 text-slate-950 shadow-[0_24px_80px_rgba(15,23,42,0.22)] outline outline-1 outline-white/70 backdrop-blur-xl lg:hidden"
             >
               <div className="flex items-center justify-between pl-3">
@@ -230,11 +230,11 @@ export function Hero10({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.42 }}
-          className="mx-auto flex w-full max-w-[760px] flex-1 flex-col items-center pt-[76px] text-center sm:pt-[94px] lg:pt-[68px]"
+          className="mx-auto flex w-full max-w-[760px] flex-1 flex-col items-center pt-[76px] text-center sm:pt-[94px] lg:pt-[68px] 2xl:max-w-7xl"
         >
           <motion.div
             variants={contentItem}
-            className="inline-flex min-h-7 items-center gap-2 rounded-full border border-slate-700/13 bg-white/18 px-3.5 text-[11px] leading-none font-medium text-slate-600 shadow-[0_1px_1px_rgba(255,255,255,0.45)_inset] backdrop-blur-md"
+            className="inline-flex min-h-7 items-center gap-2 rounded-full border border-slate-700/13 bg-white/18 px-3.5 text-sm leading-none font-medium text-slate-600 shadow-[0_1px_1px_rgba(255,255,255,0.45)_inset] backdrop-blur-md"
           >
             <span className="grid size-4 place-items-center rounded-full border border-slate-500/30 bg-slate-100/70">
               <span className="size-2 rounded-full bg-slate-700 shadow-[0_0_0_2px_rgba(51,65,85,0.1)]" />
@@ -244,7 +244,7 @@ export function Hero10({
 
           <motion.h1
             variants={contentItem}
-            className="mt-5 max-w-5xl font-serif text-[clamp(3.25rem,4.8vw,5.35rem)] leading-[0.92] font-medium tracking-[-0.07em] text-balance whitespace-pre-line text-slate-700"
+            className="mt-5 max-w-5xl font-serif text-[clamp(3.25rem,4.8vw,6.35rem)] leading-[0.92] font-medium tracking-[-0.07em] text-balance whitespace-pre-line text-slate-700 2xl:max-w-7xl"
           >
             {title}
           </motion.h1>

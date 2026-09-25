@@ -215,12 +215,7 @@ export default function Career4({
   }, [jobs, locationFilter, typeFilter, search, sortBy]);
 
   return (
-    <section
-      className={cn(
-        "mx-auto w-full max-w-5xl px-4 py-16 sm:px-8 md:px-12 md:py-24",
-        className,
-      )}
-    >
+    <section className={cn("mx-auto w-full max-w-5xl px-4 py-8", className)}>
       <div className="mb-12 space-y-5 text-center">
         <span
           className={cn(

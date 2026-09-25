@@ -5,6 +5,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
+    "button",
     "dialog"
   ],
   "files": [

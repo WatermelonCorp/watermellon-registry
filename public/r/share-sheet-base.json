@@ -2,7 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "share-sheet-base",
   "dependencies": [
-    "motion"
+    "motion",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

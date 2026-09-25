@@ -5,6 +5,7 @@
     "react-icons"
   ],
   "registryDependencies": [
+    "label",
     "switch"
   ],
   "files": [

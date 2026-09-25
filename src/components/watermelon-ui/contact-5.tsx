@@ -26,7 +26,7 @@ export function Contact5({
   footerText,
 }: Contact5Props) {
   return (
-    <section className="bg-background w-full py-16 md:py-24">
+    <section className="bg-background w-full py-12">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         <div className="mb-12 flex flex-col items-center space-y-4 text-center">
           {badge && (

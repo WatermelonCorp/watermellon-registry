@@ -5,8 +5,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "testimonials",
-    "button"
+    "avatar",
+    "button",
+    "card"
   ],
   "files": [
     {

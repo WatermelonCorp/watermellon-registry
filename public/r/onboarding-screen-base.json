@@ -3,7 +3,8 @@
   "name": "onboarding-screen-base",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

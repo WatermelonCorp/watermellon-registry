@@ -110,7 +110,7 @@ export default function Notification1({
   className,
 }: Notification1Props) {
   return (
-    <section className={cn("bg-background py-24 md:py-32", className)}>
+    <section className={cn("bg-background py-16", className)}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="w-full">
           <Card className="border-border bg-card mx-auto max-w-sm gap-0 overflow-hidden rounded-[28px] p-0">

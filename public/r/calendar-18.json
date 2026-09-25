@@ -5,7 +5,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "calendar"
+    "button",
+    "calendar",
+    "card"
   ],
   "files": [
     {

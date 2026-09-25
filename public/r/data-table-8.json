@@ -2,10 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "data-table-8",
   "dependencies": [
+    "@dnd-kit/core",
+    "@dnd-kit/modifiers",
+    "@dnd-kit/sortable",
+    "@dnd-kit/utilities",
     "lucide-react"
   ],
   "registryDependencies": [
-    "data-table"
+    "button",
+    "table"
   ],
   "files": [
     {

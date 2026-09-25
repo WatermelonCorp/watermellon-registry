@@ -1,8 +1,15 @@
-import React from 'react';
-import { Twitter, Linkedin, Github, Dribbble, Globe, Mail } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { Globe, Mail } from "lucide-react";
+import { FaXTwitter as Twitter, FaLinkedin as Linkedin, FaGithub as Github, FaDribbble as Dribbble } from "react-icons/fa6";
+import { cn } from "@/lib/utils";
 
-export type SocialIconType = 'twitter' | 'linkedin' | 'github' | 'dribbble' | 'website' | 'email';
+export type SocialIconType =
+  | "twitter"
+  | "linkedin"
+  | "github"
+  | "dribbble"
+  | "website"
+  | "email";
 
 export interface SocialLink {
   icon: SocialIconType;
@@ -37,50 +44,54 @@ const IconMap: Record<SocialIconType, React.ElementType> = {
 
 const defaultMembers: TeamMember[] = [
   {
-    id: '1',
-    name: 'Eleanor Pena',
-    role: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop',
-    bio: 'Eleanor is a visionary leader with over a decade of experience designing intuitive and engaging user experiences for global brands.',
+    id: "1",
+    name: "Eleanor Pena",
+    role: "Founder & CEO",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
+    bio: "Eleanor is a visionary leader with over a decade of experience designing intuitive and engaging user experiences for global brands.",
     socials: [
-      { icon: 'twitter', url: '#' },
-      { icon: 'linkedin', url: '#' }
-    ]
+      { icon: "twitter", url: "#" },
+      { icon: "linkedin", url: "#" },
+    ],
   },
   {
-    id: '2',
-    name: 'Cody Fisher',
-    role: 'Head of Engineering',
-    image: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=800&auto=format&fit=crop',
-    bio: 'A technical mastermind, Cody specializes in building robust, scalable architectures and leading high-performing engineering teams.',
+    id: "2",
+    name: "Cody Fisher",
+    role: "Head of Engineering",
+    image:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=800&auto=format&fit=crop",
+    bio: "A technical mastermind, Cody specializes in building robust, scalable architectures and leading high-performing engineering teams.",
     socials: [
-      { icon: 'github', url: '#' },
-      { icon: 'linkedin', url: '#' },
-      { icon: 'twitter', url: '#' }
-    ]
+      { icon: "github", url: "#" },
+      { icon: "linkedin", url: "#" },
+      { icon: "twitter", url: "#" },
+    ],
   },
   {
-    id: '3',
-    name: 'Courtney Henry',
-    role: 'Lead Designer',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop',
-    bio: 'Courtney crafts pixel-perfect designs with a relentless focus on user-centric principles and modern aesthetic trends.',
+    id: "3",
+    name: "Courtney Henry",
+    role: "Lead Designer",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop",
+    bio: "Courtney crafts pixel-perfect designs with a relentless focus on user-centric principles and modern aesthetic trends.",
     socials: [
-      { icon: 'dribbble', url: '#' },
-      { icon: 'website', url: '#' }
-    ]
+      { icon: "dribbble", url: "#" },
+      { icon: "website", url: "#" },
+    ],
   },
   {
-    id: '4',
-    name: 'Albert Flores',
-    role: 'Product Manager',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop',
-    bio: 'Albert excels at connecting complex user needs with technical execution, driving product strategy from concept to launch.',
+    id: "4",
+    name: "Albert Flores",
+    role: "Product Manager",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop",
+    bio: "Albert excels at connecting complex user needs with technical execution, driving product strategy from concept to launch.",
     socials: [
-      { icon: 'linkedin', url: '#' },
-      { icon: 'email', url: 'mailto:#' }
-    ]
-  }
+      { icon: "linkedin", url: "#" },
+      { icon: "email", url: "mailto:#" },
+    ],
+  },
 ];
 
 export default function Team1({
@@ -91,9 +102,8 @@ export default function Team1({
   className,
 }: Team1Props) {
   return (
-    <section className={cn('bg-background py-24 md:py-32', className)}>
+    <section className={cn("bg-background py-16", className)}>
       <div className="container mx-auto px-4 md:px-6">
-
         <div className="mx-auto mb-16 flex max-w-3xl flex-col items-center text-center md:mb-24">
           {badge && (
             <div className="border-border bg-muted text-muted-foreground mb-6 inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium">
@@ -111,7 +121,6 @@ export default function Team1({
             </p>
           )}
         </div>
-
 
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {members.map((member) => (
@@ -131,14 +140,13 @@ export default function Team1({
                 className="absolute inset-0 rounded-4xl opacity-0 backdrop-blur-md transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100"
                 style={{
                   WebkitMaskImage:
-                    'linear-gradient(to top, black 10%, transparent 70%)',
+                    "linear-gradient(to top, black 10%, transparent 70%)",
                   maskImage:
-                    'linear-gradient(to top, black 10%, transparent 70%)',
+                    "linear-gradient(to top, black 10%, transparent 70%)",
                 }}
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-80 transition-opacity duration-500 group-focus-within:opacity-90 group-hover:opacity-90" />
-
 
               <div className="absolute inset-0 flex flex-col justify-end p-2 md:p-4">
                 <div className="z-10">

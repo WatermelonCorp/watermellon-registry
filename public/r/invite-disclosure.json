@@ -2,7 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "invite-disclosure",
   "dependencies": [
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

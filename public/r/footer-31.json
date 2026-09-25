@@ -2,11 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "footer-31",
   "dependencies": [
-    "lucide-react",
-    "framer-motion"
-  ],
-  "registryDependencies": [
-    "footer"
+    "framer-motion",
+    "lucide-react"
   ],
   "files": [
     {

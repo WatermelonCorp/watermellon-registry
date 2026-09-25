@@ -343,7 +343,7 @@ export default function Career2({
   const filteredJobs = jobs.filter((j) => j.category === activeCategory);
 
   return (
-    <section className={cn("bg-background w-full py-16 sm:py-24", className)}>
+    <section className={cn("bg-background w-full py-8 lg:py-12", className)}>
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col items-center text-center sm:mb-12">
           {badge && (

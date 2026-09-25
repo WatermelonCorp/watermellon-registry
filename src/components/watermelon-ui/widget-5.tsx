@@ -8,7 +8,6 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  type TooltipProps,
 } from "recharts";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -157,7 +156,12 @@ function RevenueTooltip({
   active,
   payload,
   label,
-}: TooltipProps<number, string>) {
+}: {
+  // Typed locally: Recharts 3 no longer declares these on TooltipProps.
+  active?: boolean;
+  payload?: Array<{ value?: number }>;
+  label?: string | number;
+}) {
   if (!active || !payload?.length) return null;
 
   return (

@@ -5,9 +5,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "footer",
     "button",
-    "button"
+    "input"
   ],
   "files": [
     {

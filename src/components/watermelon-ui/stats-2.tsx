@@ -118,7 +118,7 @@ export default function Stats2() {
         }
       `}</style>
 
-      <section className="theme-injected w-full px-4 py-20 md:px-8">
+      <section className="theme-injected w-full px-4 py-16 md:px-8">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="text-foreground mt-8 text-4xl leading-[1.1] font-bold tracking-tight md:text-5xl lg:text-[3.5rem]">
             Built for teams that

@@ -6,7 +6,13 @@
     "motion"
   ],
   "registryDependencies": [
-    "collapsible"
+    "button",
+    "collapsible",
+    "input",
+    "label",
+    "radio-group",
+    "separator",
+    "textarea"
   ],
   "files": [
     {

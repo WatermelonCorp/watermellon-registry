@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-cue",
   "dependencies": [
-    "motion",
+    "framer-motion",
     "lucide-react",
+    "motion",
     "react"
   ],
   "files": [

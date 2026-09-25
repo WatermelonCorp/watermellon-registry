@@ -4,6 +4,9 @@
   "dependencies": [
     "@radix-ui/react-avatar"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/avatar.tsx",

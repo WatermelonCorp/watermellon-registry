@@ -159,7 +159,7 @@ export default function Pricing4({
   const activeTab = tabs.find((t) => t.id === activeTabId) || tabs[0];
 
   return (
-    <section className="bg-background w-full py-16 md:py-24 lg:py-32">
+    <section className="bg-background w-full py-8 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-10 flex flex-col items-center justify-center space-y-4 text-center">
           {badge && (

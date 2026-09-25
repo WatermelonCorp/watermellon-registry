@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import LogoIcon from '@/assets/logo-icon';
-import { ArrowRight, Users } from 'lucide-react';
-import { motion, type Variants } from 'motion/react';
+import LogoIcon from "@/assets/logo-icon";
+import { ArrowRight, Users } from "lucide-react";
+import { motion, type Variants } from "motion/react";
 
 interface NavLink {
   label: string;
@@ -24,12 +24,11 @@ interface Hero25Props {
 }
 
 const navLinksDefault: NavLink[] = [
-  { label: 'Products', href: '#' },
-  { label: 'About', href: '#' },
-  { label: 'Features', href: '#' },
-  { label: 'Support', href: '#' },
+  { label: "Products", href: "#" },
+  { label: "About", href: "#" },
+  { label: "Features", href: "#" },
+  { label: "Support", href: "#" },
 ];
-
 
 const sectionVariants: Variants = {
   hidden: {},
@@ -41,7 +40,6 @@ const sectionVariants: Variants = {
   },
 };
 
-
 const bgVariants: Variants = {
   hidden: { opacity: 0, scale: 1.07 },
   visible: {
@@ -51,33 +49,31 @@ const bgVariants: Variants = {
   },
 };
 
-
 const navVariants: Variants = {
   hidden: { opacity: 0, y: -18 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 340, damping: 26, mass: 0.75 },
+    transition: { type: "spring", stiffness: 340, damping: 26, mass: 0.75 },
   },
 };
 
 const headingVariants: Variants = {
-  hidden: { opacity: 0, y: 28, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 28, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', stiffness: 180, damping: 28, mass: 1.1 },
+    filter: "blur(0px)",
+    transition: { type: "spring", stiffness: 180, damping: 28, mass: 1.1 },
   },
 };
-
 
 const subtitleVariants: Variants = {
   hidden: { opacity: 0, y: 14 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 200, damping: 30, mass: 0.9 },
+    transition: { type: "spring", stiffness: 200, damping: 30, mass: 0.9 },
   },
 };
 
@@ -87,32 +83,31 @@ const ctaVariants: Variants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 420, damping: 24, mass: 0.65 },
+    transition: { type: "spring", stiffness: 420, damping: 24, mass: 0.65 },
   },
 };
-
 
 const socialProofVariants: Variants = {
   hidden: { opacity: 0, x: -20 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { type: 'spring', stiffness: 260, damping: 28, mass: 0.8 },
+    transition: { type: "spring", stiffness: 260, damping: 28, mass: 0.8 },
   },
 };
 
 export default function Hero25({
-  brandName = 'Watermelon',
+  brandName = "Watermelon",
   navLinks = navLinksDefault,
-  headingLine1 = 'Build focus and move',
-  headingLine2 = 'a with purpose',
-  description = 'Discover a simpler way to move forward — where focus, balance, and purpose guide every step you take.',
-  ctaLabel = 'Learn more',
-  ctaHref = '#',
-  signupLabel = 'Sign up',
-  signupHref = '#',
-  socialProofText = 'Trusted by over 20k users',
-  backgroundImage = 'https://assets.watermelon.sh/hero-25-bg.avif',
+  headingLine1 = "Build focus and move",
+  headingLine2 = "a with purpose",
+  description = "Discover a simpler way to move forward — where focus, balance, and purpose guide every step you take.",
+  ctaLabel = "Learn more",
+  ctaHref = "#",
+  signupLabel = "Sign up",
+  signupHref = "#",
+  socialProofText = "Trusted by over 20k users",
+  backgroundImage = "https://assets.watermelon.sh/hero-25-bg.avif",
 }: Hero25Props) {
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-zinc-100 font-sans antialiased">
@@ -147,7 +142,7 @@ export default function Hero25({
           {/* Brand */}
           <a
             href="#"
-            className="inline-flex min-h-10 items-center gap-2 text-lg font-medium  text-zinc-100 transition-opacity duration-200 hover:opacity-75"
+            className="inline-flex min-h-10 items-center gap-2 text-lg font-medium text-zinc-100 transition-opacity duration-200 hover:opacity-75"
           >
             <LogoIcon className="size-8 text-zinc-100" />
             {brandName}
@@ -169,7 +164,7 @@ export default function Hero25({
           {/* Sign up CTA */}
           <a
             href={signupHref}
-            className="inline-flex min-h-10 items-center justify-center rounded-full  bg-zinc-50  px-5 text-sm font-medium text-zinc-900 shadow-[0_1px_3px_rgba(0,0,0,0.06),inset_0_0_0_1px_rgba(255,255,255,1)] backdrop-blur-sm transition-[background-color,box-shadow,transform] duration-200 hover:bg-white hover:shadow-[0_2px_8px_rgba(0,0,0,0.10)] active:scale-[0.96]"
+            className="inline-flex min-h-10 items-center justify-center rounded-full bg-zinc-50 px-5 text-sm font-medium text-zinc-900 shadow-[0_1px_3px_rgba(0,0,0,0.06),inset_0_0_0_1px_rgba(255,255,255,1)] backdrop-blur-sm transition-[background-color,box-shadow,transform] duration-200 hover:bg-white hover:shadow-[0_2px_8px_rgba(0,0,0,0.10)] active:scale-[0.96]"
           >
             {signupLabel}
           </a>
@@ -180,7 +175,7 @@ export default function Hero25({
           {/* Heading */}
           <motion.h1
             variants={headingVariants}
-            className="max-w-sm text-center text-[clamp(2.5rem,5.5vw,3.625rem)] leading-[1.12] font-medium tracking-[-0.032em] text-balance text-zinc-900 sm:max-w-xl md:max-w-2xl"
+            className="max-w-md text-center text-[clamp(2.5rem,5.5vw,5.5rem)] leading-[1.03] font-medium tracking-[-0.032em] text-balance text-zinc-900 sm:max-w-xl md:max-w-4xl 2xl:max-w-7xl"
           >
             <span className="block">{headingLine1}</span>
             <span className="block">{headingLine2}</span>
@@ -189,7 +184,7 @@ export default function Hero25({
           {/* Description */}
           <motion.p
             variants={subtitleVariants}
-            className="mt-5 max-w-xs text-center text-[0.9375rem] leading-[1.5] font-medium text-pretty text-zinc-700 sm:max-w-sm"
+            className="mt-5 max-w-xs text-center text-sm leading-[1.5] font-medium text-pretty text-zinc-700 sm:max-w-sm 2xl:text-lg"
           >
             {description}
           </motion.p>

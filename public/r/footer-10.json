@@ -5,7 +5,6 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "footer",
     "input"
   ],
   "files": [

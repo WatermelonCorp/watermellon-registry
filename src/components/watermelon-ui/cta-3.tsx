@@ -65,7 +65,7 @@ export default function Cta3({
   products = DEFAULT_PRODUCTS,
 }: HeroProductSectionProps) {
   return (
-    <section className="bg-background flex min-h-screen items-center px-6 py-16 md:py-20">
+    <section className="bg-background flex h-full justify-center items-center px-6 py-16 md:py-20">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="flex flex-col items-start gap-6">
           <div className="flex flex-col gap-4">

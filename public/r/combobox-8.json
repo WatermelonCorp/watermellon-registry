@@ -5,7 +5,11 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "combobox"
+    "avatar",
+    "combobox",
+    "command",
+    "label",
+    "popover"
   ],
   "files": [
     {

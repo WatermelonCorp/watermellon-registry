@@ -113,7 +113,7 @@ const TESTIMONIALS = [
 
 export default function Testimonials3() {
   return (
-    <section className="theme-injected bg-background py-16 md:py-24">
+    <section className="theme-injected bg-background py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12 flex flex-col items-center text-center md:mb-16">
           <h2 className="text-foreground mb-3 text-4xl font-semibold tracking-tight md:text-5xl">

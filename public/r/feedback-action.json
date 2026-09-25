@@ -3,7 +3,11 @@
   "name": "feedback-action",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

@@ -9,7 +9,8 @@
     "button",
     "card",
     "input",
-    "separator"
+    "separator",
+    "utils"
   ],
   "files": [
     {

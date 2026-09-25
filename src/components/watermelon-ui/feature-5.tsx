@@ -11,7 +11,7 @@ import {
 
 export default function Features5() {
   return (
-    <section className="theme-injected bg-background w-full py-20">
+    <section className="theme-injected bg-background w-full py-16">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 lg:grid-cols-2">
         <div className="space-y-6">
           <div className="text-muted-foreground bg-muted/50 inline-flex w-fit items-center gap-2 rounded-lg px-3 py-1 text-sm">

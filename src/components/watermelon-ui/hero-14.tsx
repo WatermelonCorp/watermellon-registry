@@ -1,8 +1,10 @@
-'use client';
+"use client";
 
-import LogoIcon from '@/assets/logo-icon';
-import { ArrowRight, ChevronDown, Github, Figma, Framer, Slack, Twitch } from 'lucide-react';
-import { motion, type Variants } from 'motion/react';
+import LogoIcon from "@/assets/logo-icon";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { FaGithub as Github, FaFigma as Figma, FaSlack as Slack, FaTwitch as Twitch } from "react-icons/fa6";
+import { SiFramer as Framer } from "react-icons/si";
+import { motion, type Variants } from "motion/react";
 
 interface NavLink {
   label: string;
@@ -12,7 +14,7 @@ interface NavLink {
 
 interface PartnerLogo {
   name: string;
-  mark: 'github' | 'figma' | 'framer' | 'slack' | 'twitch';
+  mark: "github" | "figma" | "framer" | "slack" | "twitch";
 }
 
 interface Hero14Props {
@@ -32,19 +34,19 @@ interface Hero14Props {
 }
 
 const navLinksDefault: NavLink[] = [
-  { label: 'Features', href: '#', hasDropdown: true },
-  { label: 'Pricing', href: '#', hasDropdown: true },
-  { label: 'About', href: '#' },
-  { label: 'Resources', href: '#' },
-  { label: 'FAQs', href: '#' },
+  { label: "Features", href: "#", hasDropdown: true },
+  { label: "Pricing", href: "#", hasDropdown: true },
+  { label: "About", href: "#" },
+  { label: "Resources", href: "#" },
+  { label: "FAQs", href: "#" },
 ];
 
 const partnerLogosDefault: PartnerLogo[] = [
-  { name: 'GitHub', mark: 'github' },
-  { name: 'Figma', mark: 'figma' },
-  { name: 'Framer', mark: 'framer' },
-  { name: 'Slack', mark: 'slack' },
-  { name: 'Twitch', mark: 'twitch' },
+  { name: "GitHub", mark: "github" },
+  { name: "Figma", mark: "figma" },
+  { name: "Framer", mark: "framer" },
+  { name: "Slack", mark: "slack" },
+  { name: "Twitch", mark: "twitch" },
 ];
 
 const containerVariants: Variants = {
@@ -58,63 +60,63 @@ const containerVariants: Variants = {
 };
 
 const riseVariants: Variants = {
-  hidden: { opacity: 0, y: 24, filter: 'blur(10px)' },
+  hidden: { opacity: 0, y: 24, filter: "blur(10px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', bounce: 0.25, duration: 1.2 },
+    filter: "blur(0px)",
+    transition: { type: "spring", bounce: 0.25, duration: 1.2 },
   },
 };
 
 const logoVariants: Variants = {
-  hidden: { opacity: 0, y: 14, scale: 0.96, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 14, scale: 0.96, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', bounce: 0.25, duration: 1.2 },
+    filter: "blur(0px)",
+    transition: { type: "spring", bounce: 0.25, duration: 1.2 },
   },
 };
 
 const imageVariants: Variants = {
-  hidden: { opacity: 0, scale: 1.1, filter: 'blur(10px)' },
+  hidden: { opacity: 0, scale: 1.1, filter: "blur(10px)" },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', bounce: 0.1, duration: 1.6 },
+    filter: "blur(0px)",
+    transition: { type: "spring", bounce: 0.1, duration: 1.6 },
   },
 };
 
-function PartnerMark({ mark }: { mark: PartnerLogo['mark'] }) {
-  if (mark === 'github') return <Github className="size-5" />;
-  if (mark === 'figma') return <Figma className="size-5" />;
-  if (mark === 'framer') return <Framer className="size-5" />;
-  if (mark === 'slack') return <Slack className="size-5" />;
-  if (mark === 'twitch') return <Twitch className="size-5" />;
+function PartnerMark({ mark }: { mark: PartnerLogo["mark"] }) {
+  if (mark === "github") return <Github className="size-5" />;
+  if (mark === "figma") return <Figma className="size-5" />;
+  if (mark === "framer") return <Framer className="size-5" />;
+  if (mark === "slack") return <Slack className="size-5" />;
+  if (mark === "twitch") return <Twitch className="size-5" />;
 
   return null;
 }
 
 export default function Hero14({
-  brandName = 'Watermelon',
+  brandName = "Watermelon",
   navLinks = navLinksDefault,
-  badgeText = 'AI-Powered Creativity',
-  headingLine1 = 'Unlock the Power',
-  headingLine2 = 'Beyond the Horizon',
-  description = 'Where innovation meets imagination to shape the future.',
-  primaryCtaLabel = 'Get Started',
-  primaryCtaHref = '#',
-  demoLabel = 'Book Demo',
-  demoHref = '#',
-  partnerEyebrow = 'Powering leading companies',
+  badgeText = "AI-Powered Creativity",
+  headingLine1 = "Unlock the Power",
+  headingLine2 = "Beyond the Horizon",
+  description = "Where innovation meets imagination to shape the future.",
+  primaryCtaLabel = "Get Started",
+  primaryCtaHref = "#",
+  demoLabel = "Book Demo",
+  demoHref = "#",
+  partnerEyebrow = "Powering leading companies",
   partners = partnerLogosDefault,
-  backgroundImage = 'https://assets.watermelon.sh/hero-14-bg.avif',
+  backgroundImage = "https://assets.watermelon.sh/hero-14-bg.avif",
 }: Hero14Props) {
   return (
-    <section className="relative isolate flex min-h-screen w-full overflow-hidden bg-slate-950  text-white antialiased ">
+    <section className="relative isolate flex min-h-screen w-full overflow-hidden bg-slate-950 text-white antialiased">
       <motion.div
         className="relative flex min-h-[680px] w-full flex-col overflow-hidden bg-slate-950 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)] md:min-h-[720px]"
         initial="hidden"
@@ -129,14 +131,13 @@ export default function Hero14({
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-
         <motion.nav
           variants={riseVariants}
           className="relative z-10 mx-auto flex min-h-14 w-full max-w-[76rem] items-center justify-between border-b border-white/[0.06] px-5 py-3 sm:px-8 lg:px-12"
         >
           <a
             href="#"
-            className="group/brand inline-flex min-h-10 items-center gap-2 text-md font-normal text-white transition-[opacity,transform] duration-200 ease-out hover:opacity-85 active:scale-[0.96]"
+            className="group/brand text-md inline-flex min-h-10 items-center gap-2 font-normal text-white transition-[opacity,transform] duration-200 ease-out hover:opacity-85 active:scale-[0.96]"
           >
             <LogoIcon className="size-8" />
             <span>{brandName}</span>
@@ -166,7 +167,7 @@ export default function Hero14({
           </a>
         </motion.nav>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[76rem] flex-1 flex-col items-center px-5 pt-14 pb-10 text-center sm:px-8 sm:pt-20 lg:px-12">
+        <div className="relative z-10 mx-auto flex w-full max-w-[76rem] flex-1 flex-col items-center px-5 pt-14 pb-10 text-center sm:px-8 sm:pt-20 lg:px-12 2xl:max-w-7xl">
           <motion.div
             variants={riseVariants}
             className="inline-flex min-h-8 items-center gap-2 rounded-full bg-white/10 px-4 text-[11px] font-semibold text-white/74 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1),0_10px_28px_rgba(15,23,42,0.16)] backdrop-blur-md"
@@ -177,7 +178,7 @@ export default function Hero14({
 
           <motion.h1
             variants={riseVariants}
-            className="mt-6 max-w-4xl text-[clamp(2.7rem,4.5vw,4.6rem)] leading-[0.98] font-light tracking-normal text-balance text-white"
+            className="mt-6 max-w-4xl text-[clamp(2.7rem,4.5vw,6.6rem)] leading-[0.98] font-light tracking-normal text-balance text-white 2xl:max-w-7xl"
           >
             <span className="block">{headingLine1}</span>
             <span className="mt-1 block font-serif text-[1.12em] leading-[0.92] font-normal text-white italic">

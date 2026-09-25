@@ -115,7 +115,7 @@ export function FileUpload({
 
   return (
     <div
-      className={cn("mx-auto mt-40 w-full max-w-sm space-y-6", className)}
+      className={cn("mx-auto w-full max-w-sm space-y-6", className)}
       {...props}
     >
       <Card

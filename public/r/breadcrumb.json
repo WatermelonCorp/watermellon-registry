@@ -5,6 +5,9 @@
     "@radix-ui/react-slot",
     "lucide-react"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/breadcrumb.tsx",

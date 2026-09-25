@@ -3,10 +3,12 @@
   "name": "bento-13",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "registryDependencies": [
-    "card"
+    "card",
+    "utils"
   ],
   "files": [
     {

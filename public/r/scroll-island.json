@@ -3,7 +3,11 @@
   "name": "scroll-island",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-use-measure"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

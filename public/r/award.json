@@ -4,6 +4,9 @@
   "dependencies": [
     "lucide-react"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/award.tsx",

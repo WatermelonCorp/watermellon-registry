@@ -1,7 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-is-in-view",
-  "dependencies": [],
+  "dependencies": [
+    "motion"
+  ],
   "files": [
     {
       "path": "src/hooks/use-is-in-view.tsx",

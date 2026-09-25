@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "quick-option-picker",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "motion",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

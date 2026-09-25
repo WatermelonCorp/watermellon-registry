@@ -5,6 +5,8 @@
     "react-icons"
   ],
   "registryDependencies": [
+    "button",
+    "label",
     "textarea"
   ],
   "files": [

@@ -5,7 +5,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "pagination"
+    "button",
+    "pagination",
+    "utils"
   ],
   "files": [
     {

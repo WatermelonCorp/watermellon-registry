@@ -5,6 +5,8 @@
     "react-icons"
   ],
   "registryDependencies": [
+    "button",
+    "scroll-area",
     "sheet"
   ],
   "files": [

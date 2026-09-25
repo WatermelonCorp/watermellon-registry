@@ -6,7 +6,8 @@
     "react-aria-components"
   ],
   "registryDependencies": [
-    "label"
+    "label",
+    "utils"
   ],
   "files": [
     {

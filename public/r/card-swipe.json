@@ -5,7 +5,11 @@
     "@hugeicons/core-free-icons",
     "@hugeicons/react",
     "lucide-react",
-    "motion"
+    "motion",
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

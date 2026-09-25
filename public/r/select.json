@@ -5,6 +5,9 @@
     "@radix-ui/react-select",
     "lucide-react"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/select.tsx",

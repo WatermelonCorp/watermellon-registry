@@ -8,6 +8,9 @@
     "lucide-react",
     "zod"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/x-post.tsx",

@@ -2,7 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "transcribe-voice-message",
   "dependencies": [
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

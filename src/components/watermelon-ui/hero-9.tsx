@@ -1,7 +1,7 @@
-import { useState, type ReactNode } from 'react';
-import { AnimatePresence, motion, type Variants } from 'motion/react';
-import { FaArrowRight, FaChevronDown, FaXmark } from 'react-icons/fa6';
-import LogoIcon from '@/assets/logo-icon';
+import { useState, type ReactNode } from "react";
+import { AnimatePresence, motion, type Variants } from "motion/react";
+import { FaArrowRight, FaChevronDown, FaXmark } from "react-icons/fa6";
+import LogoIcon from "@/assets/logo-icon";
 
 export interface Hero9NavItem {
   label: string;
@@ -31,37 +31,37 @@ export interface Hero9Props {
 }
 
 const defaultNavItems: Hero9NavItem[] = [
-  { label: 'Features', href: '#', hasMenu: true },
-  { label: 'Pricing', href: '#', hasMenu: true },
-  { label: 'About', href: '#' },
-  { label: 'Resources', href: '#' },
-  { label: 'FAQs', href: '#' },
+  { label: "Features", href: "#", hasMenu: true },
+  { label: "Pricing", href: "#", hasMenu: true },
+  { label: "About", href: "#" },
+  { label: "Resources", href: "#" },
+  { label: "FAQs", href: "#" },
 ];
 
 const defaultAvatars: Hero9Avatar[] = [
   {
-    src: 'https://assets.watermelon.sh/wm_ben.png',
-    alt: 'MistPeak user',
+    src: "https://assets.watermelon.sh/wm_ben.png",
+    alt: "MistPeak user",
   },
   {
-    src: 'https://assets.watermelon.sh/wm_alex.png',
-    alt: 'MistPeak user',
+    src: "https://assets.watermelon.sh/wm_alex.png",
+    alt: "MistPeak user",
   },
   {
-    src: 'https://assets.watermelon.sh/wm_olivia.png',
-    alt: 'MistPeak user',
+    src: "https://assets.watermelon.sh/wm_olivia.png",
+    alt: "MistPeak user",
   },
 ];
 
-const defaultBackground = 'https://assets.watermelon.sh/hero-9-bg.avif';
+const defaultBackground = "https://assets.watermelon.sh/hero-9-bg.avif";
 
 const headerVariants: Variants = {
-  hidden: { opacity: 0, y: -18, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: -18, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.68, bounce: 0, delay: 0.4 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.68, bounce: 0, delay: 0.4 },
   },
 };
 
@@ -78,39 +78,38 @@ const contentContainer: Variants = {
 };
 
 const contentItem: Variants = {
-  hidden: { opacity: 0, y: 18, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 18, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.72, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.72, bounce: 0 },
   },
 };
 
 const backgroundVariants: Variants = {
-  hidden: { opacity: 0, scale: 1.035, filter: 'blur(10px)' },
+  hidden: { opacity: 0, scale: 1.035, filter: "blur(10px)" },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 1.15, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 1.15, bounce: 0 },
   },
 };
 
-
 export function Hero9({
   logo,
-  logoText = 'Watermelon',
+  logoText = "Watermelon",
   navItems = defaultNavItems,
-  ctaText = 'Book Demo',
-  ctaHref = '#',
-  eyebrowText = 'Over 1k happy users',
+  ctaText = "Book Demo",
+  ctaHref = "#",
+  eyebrowText = "Over 1k happy users",
   avatars = defaultAvatars,
-  title = 'Breathe In Peace\nBreathe Out The world',
-  description = 'Confidential, professional help tailored to your unique\nneeds, available on your schedule.',
-  emailPlaceholder = 'Enter your Email',
-  formAction = '#',
-  submitText = 'Start for Free',
+  title = "Breathe In Peace\nBreathe Out The world",
+  description = "Confidential, professional help tailored to your unique\nneeds, available on your schedule.",
+  emailPlaceholder = "Enter your Email",
+  formAction = "#",
+  submitText = "Start for Free",
   backgroundImage = defaultBackground,
 }: Hero9Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -132,7 +131,6 @@ export function Hero9({
         />
       </motion.div>
 
-
       <div className="relative z-10 mx-auto flex min-h-[760px] w-full max-w-[1440px] flex-col px-5 py-4 sm:min-h-screen sm:px-9 lg:px-[58px]">
         <motion.header
           variants={headerVariants}
@@ -145,7 +143,7 @@ export function Hero9({
             href="#"
             className="inline-flex min-h-10 items-center gap-2.5 text-slate-950 transition-[opacity,transform] duration-200 ease-out hover:opacity-75 active:scale-[0.96]"
           >
-            {logo ?? <LogoIcon className='size-8 text-white' />}
+            {logo ?? <LogoIcon className="size-8 text-white" />}
             <span className="text-lg leading-none font-normal tracking-[-0.02em]">
               {logoText}
             </span>
@@ -169,7 +167,7 @@ export function Hero9({
           <motion.a
             href={ctaHref}
             whileTap={{ scale: 0.96 }}
-            className="group hidden min-h-10 items-center gap-2 rounded-full bg-white/92 px-5 text-[13px] leading-none font-medium text-slate-950 shadow-[0_1px_2px_rgba(15,23,42,0.08),0_12px_30px_rgba(255,255,255,0.18)] backdrop-blur-md transition-[background-color,box-shadow,transform] duration-200 ease-out hover:bg-white hover:shadow-[0_2px_4px_rgba(15,23,42,0.1),0_16px_36px_rgba(255,255,255,0.26)] sm:inline-flex"
+            className="group hidden min-h-10 items-center gap-2 rounded-full bg-white/92 px-5 text-sm leading-none font-medium text-slate-950 shadow-[0_1px_2px_rgba(15,23,42,0.08),0_12px_30px_rgba(255,255,255,0.18)] backdrop-blur-md transition-[background-color,box-shadow,transform] duration-200 ease-out hover:bg-white hover:shadow-[0_2px_4px_rgba(15,23,42,0.1),0_16px_36px_rgba(255,255,255,0.26)] sm:inline-flex"
           >
             <span>{ctaText}</span>
             <FaArrowRight className="size-3 transition-transform duration-200 group-hover:translate-x-1" />
@@ -188,15 +186,15 @@ export function Hero9({
         <AnimatePresence initial={false}>
           {mobileOpen ? (
             <motion.div
-              initial={{ opacity: 0, y: -10, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, y: -6, filter: 'blur(5px)' }}
-              transition={{ type: 'spring', duration: 0.3, bounce: 0 }}
+              initial={{ opacity: 0, y: -10, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -6, filter: "blur(5px)" }}
+              transition={{ type: "spring", duration: 0.3, bounce: 0 }}
               className="fixed inset-x-4 top-4 z-50 rounded-[28px] bg-white/90 p-4 text-slate-950 shadow-[0_24px_80px_rgba(15,23,42,0.22)] outline outline-1 outline-white/70 backdrop-blur-xl lg:hidden"
             >
               <div className="flex items-center justify-between pl-3">
                 <a href="#" className="inline-flex items-center gap-2.5">
-                  {logo ?? <LogoIcon className='size-8 text-zinc-200' />}
+                  {logo ?? <LogoIcon className="size-8 text-zinc-200" />}
                   <span className="text-base font-semibold tracking-[-0.02em]">
                     {logoText}
                   </span>

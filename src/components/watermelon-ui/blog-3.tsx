@@ -1,5 +1,5 @@
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface Blog3Post {
   image: string;
@@ -58,12 +58,7 @@ export default function Blog3({
   );
 
   return (
-    <section
-      className={cn(
-        'bg-background  w-full px-4 py-16 sm:px-6 md:py-24',
-        className,
-      )}
-    >
+    <section className={cn("bg-background  w-full px-4 py-8", className)}>
       <div className="mx-auto  flex max-w-2xl flex-col items-center gap-10 md:gap-14">
         <div className="flex flex-col items-center gap-3 text-center">
           <h2 className="text-foreground max-w-xl text-[1.75rem] leading-tight font-semibold tracking-tight sm:text-3xl md:text-4xl">
@@ -81,7 +76,7 @@ export default function Blog3({
               <article
                 key={index}
                 className={cn(
-                  'group flex flex-col gap-2 overflow-hidden  transition-colors duration-300 sm:flex-row',
+                  "group flex flex-col gap-2 overflow-hidden  transition-colors duration-300 sm:flex-row",
                   cardClassName,
                 )}
               >

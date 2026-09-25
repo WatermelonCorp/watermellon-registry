@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Play } from 'lucide-react';
-import { motion, type Variants } from 'motion/react';
+import { Play } from "lucide-react";
+import { motion, type Variants } from "motion/react";
 
 interface NavLink {
   label: string;
@@ -24,10 +24,10 @@ interface Hero24Props {
 }
 
 const navLinksDefault: NavLink[] = [
-  { label: 'Home', href: '#' },
-  { label: 'Usecases', href: '#' },
-  { label: 'Pricing', href: '#' },
-  { label: 'Contact', href: '#' },
+  { label: "Home", href: "#" },
+  { label: "Usecases", href: "#" },
+  { label: "Pricing", href: "#" },
+  { label: "Contact", href: "#" },
 ];
 
 const sectionVariants: Variants = {
@@ -40,7 +40,6 @@ const sectionVariants: Variants = {
   },
 };
 
-
 const backgroundVariants: Variants = {
   hidden: { opacity: 0, scale: 1.1, x: 20, y: 20 },
   visible: {
@@ -48,10 +47,9 @@ const backgroundVariants: Variants = {
     scale: 1,
     x: 0,
     y: 0,
-    transition: { type: 'spring', stiffness: 50, damping: 16, mass: 1.5 },
+    transition: { type: "spring", stiffness: 50, damping: 16, mass: 1.5 },
   },
 };
-
 
 const navVariants: Variants = {
   hidden: { opacity: 0, y: -32, scale: 0.94 },
@@ -59,10 +57,9 @@ const navVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 320, damping: 20, mass: 0.8 },
+    transition: { type: "spring", stiffness: 320, damping: 20, mass: 0.8 },
   },
 };
-
 
 const copyVariants: Variants = {
   hidden: { opacity: 0, rotateY: -10, x: -16, scale: 0.97 },
@@ -71,7 +68,7 @@ const copyVariants: Variants = {
     rotateY: 0,
     x: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 220, damping: 28, mass: 0.9 },
+    transition: { type: "spring", stiffness: 220, damping: 28, mass: 0.9 },
   },
 };
 
@@ -85,30 +82,29 @@ const ctaGroupVariants: Variants = {
   },
 };
 
-
 const ctaVariants: Variants = {
   hidden: { opacity: 0, scale: 0.78, y: 8 },
   visible: {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 380, damping: 22, mass: 0.7 },
+    transition: { type: "spring", stiffness: 380, damping: 22, mass: 0.7 },
   },
 };
 
 export default function Hero24({
-  brandName = 'Watermelon',
+  brandName = "Watermelon",
   navLinks = navLinksDefault,
-  headingLine1 = 'Where Vision Begins',
-  headingLine2Prefix = 'and Ideas',
-  headingHighlight = 'Bloom',
-  description = 'From quiet inspiration to meaningful innovation, we create smart tools that shape tomorrow.',
-  primaryCtaLabel = 'Book a demo',
-  primaryCtaHref = '#',
-  videoHref = '#',
-  loginLabel = 'Login',
-  loginHref = '#',
-  backgroundImage = 'https://assets.watermelon.sh/hero-24-bg.avif',
+  headingLine1 = "Where Vision Begins",
+  headingLine2Prefix = "and Ideas",
+  headingHighlight = "Bloom",
+  description = "From quiet inspiration to meaningful innovation, we create smart tools that shape tomorrow.",
+  primaryCtaLabel = "Book a demo",
+  primaryCtaHref = "#",
+  videoHref = "#",
+  loginLabel = "Login",
+  loginHref = "#",
+  backgroundImage = "https://assets.watermelon.sh/hero-24-bg.avif",
 }: Hero24Props) {
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-sky-200 font-sans text-slate-900 antialiased">
@@ -157,7 +153,7 @@ export default function Hero24({
           </a>
         </motion.nav>
 
-        <div className="relative z-10 flex flex-1 flex-col justify-start pt-20 sm:pt-32 md:pt-24">
+        <div className="relative z-10 flex flex-1 flex-col justify-start pt-20 sm:pt-32 md:pt-24 2xl:pt-50">
           <div className="max-w-4xl">
             <motion.h1
               variants={copyVariants}
@@ -165,7 +161,7 @@ export default function Hero24({
             >
               <span className="block">{headingLine1}</span>
               <span className="block">
-                {headingLine2Prefix}{' '}
+                {headingLine2Prefix}{" "}
                 <span className="italic">{headingHighlight}</span>
               </span>
             </motion.h1>

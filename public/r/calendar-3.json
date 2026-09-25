@@ -2,8 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar-3",
   "dependencies": [
+    "little-date",
     "lucide-react",
-    "little-date"
+    "react-day-picker"
   ],
   "registryDependencies": [
     "calendar"

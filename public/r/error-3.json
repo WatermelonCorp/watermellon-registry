@@ -2,10 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "error-3",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "motion"
   ],
   "registryDependencies": [
-    "error",
     "button"
   ],
   "files": [

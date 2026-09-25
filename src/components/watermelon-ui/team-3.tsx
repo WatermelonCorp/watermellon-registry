@@ -1,20 +1,17 @@
-'use client';
+"use client";
 
-import type { ReactNode } from 'react';
-import {
-  ChevronLeft,
-  ChevronRight,
-} from 'lucide-react';
+import type { ReactNode } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { cn } from '@/lib/utils';
-import { FiArrowUpRight } from 'react-icons/fi';
+import { cn } from "@/lib/utils";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export type Team3SocialType =
-  | 'email'
-  | 'phone'
-  | 'linkedin'
-  | 'twitter'
-  | 'website';
+  | "email"
+  | "phone"
+  | "linkedin"
+  | "twitter"
+  | "website";
 
 export interface Team3SocialLink {
   type: Team3SocialType;
@@ -45,56 +42,55 @@ export interface Team3Props {
   }) => ReactNode;
 }
 
-
 const defaultTeam3Data: Team3Data = {
-  heading: 'Our team',
+  heading: "Our team",
   members: [
     {
-      id: 'christopher-hall',
-      name: 'Christopher Hall',
-      role: 'Chairman',
+      id: "christopher-hall",
+      name: "Christopher Hall",
+      role: "Chairman",
       image:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop',
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
       socials: [
-        { type: 'email', href: 'mailto:christopher@example.com' },
-        { type: 'phone', href: 'tel:+1234567890' },
-        { type: 'linkedin', href: '#' },
+        { type: "email", href: "mailto:christopher@example.com" },
+        { type: "phone", href: "tel:+1234567890" },
+        { type: "linkedin", href: "#" },
       ],
     },
     {
-      id: 'gurjit-s-bedi',
-      name: 'Gurjit S. Bedi',
-      role: 'Managing Partner',
+      id: "gurjit-s-bedi",
+      name: "Gurjit S. Bedi",
+      role: "Managing Partner",
       image:
-        'https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=800&auto=format&fit=crop',
+        "https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=800&auto=format&fit=crop",
       socials: [
-        { type: 'email', href: 'mailto:gurjit@example.com' },
-        { type: 'phone', href: 'tel:+1234567890' },
-        { type: 'linkedin', href: '#' },
+        { type: "email", href: "mailto:gurjit@example.com" },
+        { type: "phone", href: "tel:+1234567890" },
+        { type: "linkedin", href: "#" },
       ],
     },
     {
-      id: 'david-parker',
-      name: 'David Parker',
-      role: 'Managing Partner',
+      id: "david-parker",
+      name: "David Parker",
+      role: "Managing Partner",
       image:
-        'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop',
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
       socials: [
-        { type: 'email', href: 'mailto:david@example.com' },
-        { type: 'phone', href: 'tel:+1234567890' },
-        { type: 'linkedin', href: '#' },
+        { type: "email", href: "mailto:david@example.com" },
+        { type: "phone", href: "tel:+1234567890" },
+        { type: "linkedin", href: "#" },
       ],
     },
     {
-      id: 'holly-bott',
-      name: 'Holly Bott',
-      role: 'Partner',
+      id: "holly-bott",
+      name: "Holly Bott",
+      role: "Partner",
       image:
-        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop',
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop",
       socials: [
-        { type: 'email', href: 'mailto:holly@example.com' },
-        { type: 'phone', href: 'tel:+1234567890' },
-        { type: 'linkedin', href: '#' },
+        { type: "email", href: "mailto:holly@example.com" },
+        { type: "phone", href: "tel:+1234567890" },
+        { type: "linkedin", href: "#" },
       ],
     },
   ],
@@ -105,7 +101,7 @@ export default function Team3({
   className,
 }: Team3Props) {
   return (
-    <section className={cn('bg-background w-full py-16 sm:py-24', className)}>
+    <section className={cn("bg-background w-full py-16", className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
@@ -129,10 +125,7 @@ export default function Team3({
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
           {data.members.map((member) => (
-            <MemberCard
-              key={member.id}
-              member={member}
-            />
+            <MemberCard key={member.id} member={member} />
           ))}
         </div>
       </div>
@@ -140,11 +133,7 @@ export default function Team3({
   );
 }
 
-function MemberCard({
-  member,
-}: {
-  member: Team3Member;
-}) {
+function MemberCard({ member }: { member: Team3Member }) {
   return (
     <div className="group flex flex-col gap-y-2">
       <div className="bg-muted  w-full overflow-hidden sm:aspect-[4/5] aspect-square">
@@ -166,7 +155,10 @@ function MemberCard({
           aria-label={`More info about ${member.name}`}
           className="text-foreground/70 hover:text-foreground mt-0.5 transition-colors"
         >
-          <FiArrowUpRight className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" strokeWidth={1.5} />
+          <FiArrowUpRight
+            className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+            strokeWidth={1.5}
+          />
         </button>
       </div>
     </div>

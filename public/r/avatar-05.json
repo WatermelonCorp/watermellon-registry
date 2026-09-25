@@ -1,7 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-05",
-  "dependencies": [],
+  "dependencies": [
+    "@aliimam/logos"
+  ],
   "registryDependencies": [
     "avatar",
     "badge"

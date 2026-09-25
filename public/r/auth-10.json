@@ -2,10 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "auth-10",
   "dependencies": [
-    "framer-motion"
+    "framer-motion",
+    "motion"
   ],
   "registryDependencies": [
-    "auth",
     "button"
   ],
   "files": [

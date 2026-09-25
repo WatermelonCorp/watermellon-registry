@@ -6,7 +6,10 @@
     "motion"
   ],
   "registryDependencies": [
-    "card"
+    "badge",
+    "button",
+    "card",
+    "utils"
   ],
   "files": [
     {

@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -6,26 +6,18 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import {
-  Cpu,
-  Layers,
-  GitBranch,
-  Terminal,
-  ArrowUpRight,
-  Menu,
-  Moon,
-  Github,
-} from 'lucide-react';
+} from "@/components/ui/accordion";
+import { Cpu, Layers, GitBranch, Terminal, ArrowUpRight, Menu, Moon } from "lucide-react";
+import { FaGithub as Github } from "react-icons/fa6";
 
 export function Navigation2() {
   return (
@@ -33,7 +25,7 @@ export function Navigation2() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center text-orange-600 dark:text-orange-500">
+            <div className="text-primary dark:text-primary flex h-8 w-8 items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -55,20 +47,20 @@ export function Navigation2() {
           <div className="hidden lg:block">
             <NavigationMenu
               className={cn(
-                'static',
+                "static",
                 // Outer absolute wrapper positioning
-                '[&>.absolute]:inset-x-0 [&>.absolute]:top-full [&>.absolute]:w-full',
+                "[&>.absolute]:inset-x-0 [&>.absolute]:top-full [&>.absolute]:w-full",
                 // Viewport sizing and geometry
-                '[&_[data-slot=navigation-menu-viewport]]:mt-1 [&_[data-slot=navigation-menu-viewport]]:!w-full',
-                '[&_[data-slot=navigation-menu-viewport]]:rounded-none [&_[data-slot=navigation-menu-viewport]]:shadow-none [&_[data-slot=navigation-menu-viewport]]:ring-0',
+                "[&_[data-slot=navigation-menu-viewport]]:mt-1 [&_[data-slot=navigation-menu-viewport]]:!w-full",
+                "[&_[data-slot=navigation-menu-viewport]]:rounded-none [&_[data-slot=navigation-menu-viewport]]:shadow-none [&_[data-slot=navigation-menu-viewport]]:ring-0",
                 // Viewport borders and backgrounds
-                '[&_[data-slot=navigation-menu-viewport]]:border-0 [&_[data-slot=navigation-menu-viewport]]:border-b',
-                '[&_[data-slot=navigation-menu-viewport]]:border-neutral-200 dark:[&_[data-slot=navigation-menu-viewport]]:border-neutral-800',
-                '[&_[data-slot=navigation-menu-viewport]]:bg-white dark:[&_[data-slot=navigation-menu-viewport]]:bg-neutral-950',
+                "[&_[data-slot=navigation-menu-viewport]]:border-0 [&_[data-slot=navigation-menu-viewport]]:border-b",
+                "[&_[data-slot=navigation-menu-viewport]]:border-neutral-200 dark:[&_[data-slot=navigation-menu-viewport]]:border-neutral-800",
+                "[&_[data-slot=navigation-menu-viewport]]:bg-white dark:[&_[data-slot=navigation-menu-viewport]]:bg-neutral-950",
                 // Viewport smooth animations
-                '[&_[data-slot=navigation-menu-viewport]]:transition-all [&_[data-slot=navigation-menu-viewport]]:duration-300 [&_[data-slot=navigation-menu-viewport]]:ease-in-out',
-                '[&_[data-slot=navigation-menu-viewport]]:data-open:fade-in-0 [&_[data-slot=navigation-menu-viewport]]:data-closed:fade-out-0',
-                '[&_[data-slot=navigation-menu-viewport]]:data-open:zoom-in-100 [&_[data-slot=navigation-menu-viewport]]:data-closed:zoom-out-100',
+                "[&_[data-slot=navigation-menu-viewport]]:transition-all [&_[data-slot=navigation-menu-viewport]]:duration-300 [&_[data-slot=navigation-menu-viewport]]:ease-in-out",
+                "[&_[data-slot=navigation-menu-viewport]]:data-open:fade-in-0 [&_[data-slot=navigation-menu-viewport]]:data-closed:fade-out-0",
+                "[&_[data-slot=navigation-menu-viewport]]:data-open:zoom-in-100 [&_[data-slot=navigation-menu-viewport]]:data-closed:zoom-out-100",
               )}
             >
               <NavigationMenuList className="gap-6">
@@ -89,7 +81,7 @@ export function Navigation2() {
                     Developers
                     <Badge
                       variant="secondary"
-                      className="h-5 rounded-full bg-orange-100 px-2 text-[10px] text-orange-600 hover:bg-orange-100 dark:bg-orange-500/20 dark:text-orange-400 dark:hover:bg-orange-500/20"
+                      className="bg-primary text-primary-foreground hover:bg-primary dark:bg-primary/20 dark:text-primary dark:hover:bg-primary/20 h-5 rounded-full px-2 text-[10px]"
                     >
                       API
                     </Badge>
@@ -202,15 +194,15 @@ export function Navigation2() {
                         </h4>
                         <a
                           href="#"
-                          className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl p-6 ring ring-orange-500/50 transition-all"
+                          className="group ring-primary/50 relative flex h-full flex-col justify-between overflow-hidden rounded-2xl p-6 ring transition-all"
                         >
-                          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent group-hover:opacity-100 dark:from-orange-500/10" />
+                          <div className="from-primary/5 dark:from-primary/10 absolute inset-0 bg-gradient-to-br via-transparent to-transparent group-hover:opacity-100" />
                           <div className="absolute inset-0 -z-10 bg-neutral-100 dark:bg-neutral-900" />
 
                           <div>
                             <Badge
                               variant="outline"
-                              className="mb-3 border-orange-200 bg-white text-orange-600 dark:border-orange-900 dark:bg-neutral-950 dark:text-orange-400"
+                              className="border-primary text-primary dark:border-primary dark:text-primary mb-3 bg-white dark:bg-neutral-950"
                             >
                               Upcoming Webinar
                             </Badge>
@@ -223,8 +215,8 @@ export function Navigation2() {
                             </p>
                           </div>
 
-                          <div className="mt-4 flex items-center text-sm font-medium text-orange-600 dark:text-orange-400">
-                            Register now{' '}
+                          <div className="text-primary dark:text-primary mt-4 flex items-center text-sm font-medium">
+                            Register now{" "}
                             <ArrowUpRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                           </div>
                         </a>
@@ -274,7 +266,7 @@ export function Navigation2() {
               <span className="sr-only">Toggle theme</span>
             </Button>
           </div>
-          <Button className="rounded-xl bg-orange-600 px-4 py-2 text-white hover:bg-orange-700 dark:bg-orange-600 dark:text-white dark:hover:bg-orange-700">
+          <Button className="bg-primary hover:bg-primary dark:bg-primary dark:hover:bg-primary rounded-xl px-4 py-2 text-white dark:text-white">
             Get started
           </Button>
         </div>
@@ -312,7 +304,7 @@ export function Navigation2() {
               className="flex w-[300px] flex-col gap-6 border-l border-neutral-200 bg-white p-6 text-neutral-900 sm:w-[400px] dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50"
             >
               <div className="mb-4 flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center text-orange-600 dark:text-orange-500">
+                <div className="text-primary dark:text-primary flex h-8 w-8 items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -334,18 +326,18 @@ export function Navigation2() {
               <div className="flex flex-col gap-1">
                 <a
                   href="#"
-                  className="block py-2 text-base font-medium text-neutral-900 transition-colors hover:text-orange-600 dark:text-neutral-50 dark:hover:text-orange-400"
+                  className="hover:text-primary dark:hover:text-primary block py-2 text-base font-medium text-neutral-900 transition-colors dark:text-neutral-50"
                 >
                   Features
                 </a>
                 <a
                   href="#"
-                  className="flex items-center justify-between py-2 text-base font-medium text-neutral-900 transition-colors hover:text-orange-600 dark:text-neutral-50 dark:hover:text-orange-400"
+                  className="hover:text-primary dark:hover:text-primary flex items-center justify-between py-2 text-base font-medium text-neutral-900 transition-colors dark:text-neutral-50"
                 >
                   Developers
                   <Badge
                     variant="secondary"
-                    className="bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400"
+                    className="bg-primary text-primary dark:bg-primary/20 dark:text-primary"
                   >
                     API
                   </Badge>
@@ -353,7 +345,7 @@ export function Navigation2() {
 
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="solutions" className="border-none">
-                    <AccordionTrigger className="justify-between py-2 text-base font-medium text-neutral-900 no-underline transition-colors hover:text-orange-600 hover:no-underline dark:text-neutral-50 dark:hover:text-orange-400">
+                    <AccordionTrigger className="hover:text-primary dark:hover:text-primary justify-between py-2 text-base font-medium text-neutral-900 no-underline transition-colors hover:no-underline dark:text-neutral-50">
                       Solutions
                     </AccordionTrigger>
                     <AccordionContent className="mt-1 ml-2 flex !h-auto flex-col gap-3 border-l border-neutral-200 pb-0 pl-4 dark:border-neutral-800 [&_a]:no-underline">
@@ -363,13 +355,13 @@ export function Navigation2() {
                         </span>
                         <a
                           href="#"
-                          className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                          className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                         >
                           Compute Engine
                         </a>
                         <a
                           href="#"
-                          className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                          className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                         >
                           System Status
                         </a>
@@ -380,19 +372,19 @@ export function Navigation2() {
                         </span>
                         <a
                           href="#"
-                          className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                          className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                         >
                           Fraud Detection
                         </a>
                         <a
                           href="#"
-                          className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                          className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                         >
                           Predictive Analytics
                         </a>
                         <a
                           href="#"
-                          className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                          className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                         >
                           LLM Gateways
                         </a>
@@ -403,20 +395,20 @@ export function Navigation2() {
 
                 <a
                   href="#"
-                  className="block py-2 text-base font-medium tracking-tight text-neutral-900 transition-colors hover:text-orange-600 dark:text-neutral-50 dark:hover:text-orange-400"
+                  className="hover:text-primary dark:hover:text-primary block py-2 text-base font-medium tracking-tight text-neutral-900 transition-colors dark:text-neutral-50"
                 >
                   Customers
                 </a>
                 <a
                   href="#"
-                  className="block py-2 text-base font-medium tracking-tight text-neutral-900 transition-colors hover:text-orange-600 dark:text-neutral-50 dark:hover:text-orange-400"
+                  className="hover:text-primary dark:hover:text-primary block py-2 text-base font-medium tracking-tight text-neutral-900 transition-colors dark:text-neutral-50"
                 >
                   Enterprise
                 </a>
               </div>
 
               <div className="mt-auto flex flex-col gap-3 border-t border-neutral-200 pt-6 dark:border-neutral-800">
-                <Button className="w-full justify-center rounded-xl bg-orange-600 text-white hover:bg-orange-700 dark:bg-orange-600 dark:text-white dark:hover:bg-orange-700">
+                <Button className="bg-primary hover:bg-primary dark:bg-primary dark:hover:bg-primary w-full justify-center rounded-xl text-white dark:text-white">
                   Get started
                 </Button>
               </div>

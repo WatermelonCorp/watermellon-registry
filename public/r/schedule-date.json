@@ -2,7 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "schedule-date",
   "dependencies": [
+    "framer-motion",
     "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

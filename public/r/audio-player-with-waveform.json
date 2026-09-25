@@ -2,10 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "audio-player-with-waveform",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "wavesurfer.js"
   ],
   "registryDependencies": [
-    "select"
+    "select",
+    "utils"
   ],
   "files": [
     {

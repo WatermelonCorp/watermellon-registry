@@ -101,7 +101,7 @@ const testimonials = [
 
 export default function Testimonials1() {
   return (
-    <section className=" bg-background w-full py-16 h-full items-center justify-center">
+    <section className="bg-background w-full py-16 h-full items-center justify-center">
       <div className="container mx-auto px-4 md:px-6 my-auto">
         <div className="mb-16 flex flex-col items-center text-center">
           <h2 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">

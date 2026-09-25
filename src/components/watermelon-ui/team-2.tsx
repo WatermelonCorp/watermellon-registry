@@ -215,10 +215,7 @@ export const Team2: React.FC<Team2Props> = ({
 }) => {
   return (
     <section
-      className={cn(
-        "bg-background w-full overflow-hidden py-16 md:py-24",
-        className,
-      )}
+      className={cn("bg-background w-full overflow-hidden py-16", className)}
     >
       <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mb-14 flex flex-col items-center gap-4 text-center sm:mb-16">

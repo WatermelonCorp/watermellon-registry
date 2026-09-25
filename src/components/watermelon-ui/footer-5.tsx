@@ -53,7 +53,7 @@ export function Footer5({
       <div className="mx-auto max-w-7xl px-6 pt-10 pb-6 md:px-12">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div className="flex items-center gap-2.5">
-            {logo && <div className="text-foreground">{logo}</div>}
+            {logo && <div className="text-primary">{logo}</div>}
             <span className="text-foreground text-lg font-semibold tracking-tight">
               {brandName}
             </span>

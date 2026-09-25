@@ -2,15 +2,20 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "form-8",
   "dependencies": [
-    "react-icons",
+    "@hookform/resolvers",
+    "lucide-react",
     "react-hook-form",
+    "react-icons",
+    "sonner",
     "zod"
   ],
   "registryDependencies": [
-    "field",
+    "alert",
     "button",
     "command",
-    "popover"
+    "field",
+    "popover",
+    "utils"
   ],
   "files": [
     {

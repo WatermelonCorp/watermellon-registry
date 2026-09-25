@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "run-widget-base",
   "dependencies": [
-    "motion"
+    "@number-flow/react",
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

@@ -5,7 +5,8 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "alert"
+    "alert",
+    "avatar"
   ],
   "files": [
     {

@@ -5,7 +5,9 @@
     "recharts",
     "zod"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/chart-2.tsx",

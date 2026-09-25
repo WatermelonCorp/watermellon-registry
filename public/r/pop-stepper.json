@@ -2,10 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pop-stepper",
   "dependencies": [
+    "lucide-react",
     "motion",
-    "react",
-    "useTheme",
-    "lucide-react"
+    "next-themes",
+    "react"
   ],
   "files": [
     {

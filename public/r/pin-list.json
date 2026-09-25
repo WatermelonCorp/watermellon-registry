@@ -5,6 +5,9 @@
     "lucide-react",
     "motion"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/pin-list.tsx",

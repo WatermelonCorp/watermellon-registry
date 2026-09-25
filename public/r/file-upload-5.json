@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "file-upload-5",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "react-icons"
   ],
   "registryDependencies": [
-    "file-upload",
-    "button"
+    "button",
+    "card"
   ],
   "files": [
     {

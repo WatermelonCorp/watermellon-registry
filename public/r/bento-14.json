@@ -2,11 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "bento-14",
   "dependencies": [
+    "framer-motion",
     "lucide-react",
     "motion"
   ],
   "registryDependencies": [
-    "card"
+    "card",
+    "utils"
   ],
   "files": [
     {

@@ -7,6 +7,9 @@
     "motion",
     "react-use-measure"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/github-stars.tsx",

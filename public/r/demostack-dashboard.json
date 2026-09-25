@@ -11,7 +11,8 @@
     "input-group",
     "sidebar",
     "tabs",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

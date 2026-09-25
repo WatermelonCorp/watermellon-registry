@@ -5,6 +5,8 @@
     "react-icons"
   ],
   "registryDependencies": [
+    "badge",
+    "button",
     "tooltip"
   ],
   "files": [

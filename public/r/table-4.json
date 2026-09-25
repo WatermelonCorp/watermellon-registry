@@ -5,8 +5,9 @@
     "react-icons"
   ],
   "registryDependencies": [
+    "badge",
     "table",
-    "badge"
+    "utils"
   ],
   "files": [
     {

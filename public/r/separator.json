@@ -4,6 +4,9 @@
   "dependencies": [
     "@radix-ui/react-separator"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/separator.tsx",

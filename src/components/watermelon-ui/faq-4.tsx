@@ -37,9 +37,7 @@ export function Faq4({
   const rightFaqs = faqs.filter((_, i) => i % 2 !== 0);
 
   return (
-    <section
-      className={cn("mx-auto w-full max-w-5xl px-4 py-16 md:py-24", className)}
-    >
+    <section className={cn("mx-auto w-full max-w-5xl px-4 py-16", className)}>
       <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div className="max-w-2xl">
           {badge && (

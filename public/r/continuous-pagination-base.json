@@ -3,7 +3,8 @@
   "name": "continuous-pagination-base",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "next-themes"
   ],
   "files": [
     {

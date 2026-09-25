@@ -6,7 +6,8 @@
     "motion"
   ],
   "registryDependencies": [
-    "button"
+    "button",
+    "utils"
   ],
   "files": [
     {

@@ -6,6 +6,9 @@
     "motion",
     "radix-ui"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/dialog.tsx",

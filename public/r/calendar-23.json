@@ -2,10 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar-23",
   "dependencies": [
-    "lucide-react"
+    "date-fns",
+    "lucide-react",
+    "react-day-picker"
   ],
   "registryDependencies": [
-    "calendar"
+    "button",
+    "calendar",
+    "card"
   ],
   "files": [
     {

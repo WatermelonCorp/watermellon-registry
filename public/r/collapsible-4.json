@@ -6,6 +6,8 @@
     "motion"
   ],
   "registryDependencies": [
+    "avatar",
+    "button",
     "collapsible"
   ],
   "files": [

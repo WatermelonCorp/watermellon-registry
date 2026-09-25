@@ -1,5 +1,5 @@
 import type { FormEvent } from "react";
-import {  RiMailFill } from "react-icons/ri";
+import { RiMailFill } from "react-icons/ri";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -63,7 +63,7 @@ export default function Newsletter4({
   return (
     <section
       className={cn(
-        "bg-background flex min-h-screen items-center justify-center p-4 sm:p-6 md:p-8",
+        "bg-background flex items-center justify-center p-4 sm:p-6",
         className,
       )}
     >

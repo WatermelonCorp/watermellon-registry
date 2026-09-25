@@ -1,12 +1,12 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import {
   Popover,
   PopoverAnchor,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Cpu,
   Layers,
@@ -17,8 +17,8 @@ import {
   Menu,
   X,
   ArrowUpRight,
-} from 'lucide-react';
-import { useState } from 'react';
+} from "lucide-react";
+import { useState } from "react";
 
 export function Navigation6() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +50,7 @@ export function Navigation6() {
 
                 {/* Logo Section */}
                 <div className="flex items-center gap-1.5">
-                  <div className="flex h-8 w-8 items-center justify-center text-orange-600 dark:text-orange-500">
+                  <div className="flex h-8 w-8 items-center justify-center text-primary dark:text-primary">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -88,7 +88,7 @@ export function Navigation6() {
                     <User className="size-4.5" />
                   </Button>
                 </div>
-                <Button className="hidden rounded-full bg-orange-600 px-6 font-semibold text-white hover:bg-orange-700 lg:block dark:bg-orange-600 dark:hover:bg-orange-700">
+                <Button className="hidden rounded-full bg-primary px-6 font-semibold text-white hover:bg-primary lg:block dark:bg-primary dark:hover:bg-primary">
                   Get started
                 </Button>
               </div>
@@ -99,8 +99,8 @@ export function Navigation6() {
             align="center"
             sideOffset={20}
             className={cn(
-              'max-h-[82dvh] w-xs max-w-none overflow-y-auto overscroll-contain rounded-2xl border  border-neutral-200 bg-white p-0 shadow-none ring-0 sm:w-2xl dark:border-neutral-800 dark:bg-neutral-950',
-              'lg:w-[calc(100vw-3rem)] lg:max-w-5xl lg:rounded-[2.5rem] lg:shadow-lg',
+              "max-h-[82dvh] w-xs max-w-none overflow-y-auto overscroll-contain rounded-2xl border  border-neutral-200 bg-white p-0 shadow-none ring-0 sm:w-2xl dark:border-neutral-800 dark:bg-neutral-950",
+              "lg:w-[calc(100vw-3rem)] lg:max-w-5xl lg:rounded-[2.5rem] lg:shadow-lg",
             )}
           >
             <div className="mx-auto grid w-full max-w-none grid-cols-1 gap-0 px-8 py-6 lg:max-w-5xl lg:grid-cols-4 lg:px-10 lg:py-10 dark:divide-neutral-900">
@@ -203,15 +203,15 @@ export function Navigation6() {
                 </h4>
                 <a
                   href="#"
-                  className="group relative flex h-full min-h-[160px] flex-col justify-between overflow-hidden rounded-2xl p-6 ring ring-orange-500/50 transition-all"
+                  className="group relative flex h-full min-h-[160px] flex-col justify-between overflow-hidden rounded-2xl p-6 ring ring-primary/50 transition-all"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent group-hover:opacity-100 dark:from-orange-500/10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent group-hover:opacity-100 dark:from-primary/10" />
                   <div className="absolute inset-0 -z-10 bg-neutral-100 dark:bg-neutral-900" />
 
                   <div>
                     <Badge
                       variant="outline"
-                      className="mb-3 border-orange-200 bg-white text-orange-600 dark:border-orange-900 dark:bg-neutral-950 dark:text-orange-400"
+                      className="mb-3 border-primary bg-white text-primary dark:border-primary dark:bg-neutral-950 dark:text-primary"
                     >
                       Upcoming Webinar
                     </Badge>
@@ -224,8 +224,8 @@ export function Navigation6() {
                     </p>
                   </div>
 
-                  <div className="mt-4 flex items-center text-sm font-medium text-orange-600 dark:text-orange-400">
-                    Register now{' '}
+                  <div className="mt-4 flex items-center text-sm font-medium text-primary dark:text-primary">
+                    Register now{" "}
                     <ArrowUpRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </a>
@@ -234,7 +234,7 @@ export function Navigation6() {
 
             {/* Mobile Button Collection */}
             <div className="px-6 pb-8 lg:hidden">
-              <Button className="w-full rounded-xl bg-orange-600 py-6 text-white shadow-lg shadow-orange-600/20 hover:bg-orange-700 dark:bg-orange-600 dark:hover:bg-orange-700">
+              <Button className="w-full rounded-xl bg-primary py-6 text-white shadow-lg shadow-primary/20 hover:bg-primary dark:bg-primary dark:hover:bg-primary">
                 Get started
               </Button>
             </div>

@@ -2,11 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "auth-06",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "react-icons"
   ],
   "registryDependencies": [
-    "auth",
-    "button"
+    "button",
+    "input",
+    "separator"
   ],
   "files": [
     {

@@ -6,7 +6,8 @@
     "motion"
   ],
   "registryDependencies": [
-    "breadcrumb"
+    "breadcrumb",
+    "dropdown-menu"
   ],
   "files": [
     {

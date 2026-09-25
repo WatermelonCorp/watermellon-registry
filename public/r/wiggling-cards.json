@@ -3,7 +3,8 @@
   "name": "wiggling-cards",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

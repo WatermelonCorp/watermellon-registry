@@ -36,7 +36,8 @@
     "skeleton",
     "table",
     "tabs",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

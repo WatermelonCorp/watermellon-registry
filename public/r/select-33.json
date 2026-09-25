@@ -7,7 +7,8 @@
   "registryDependencies": [
     "button",
     "label",
-    "popover"
+    "popover",
+    "utils"
   ],
   "files": [
     {

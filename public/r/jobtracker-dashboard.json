@@ -21,7 +21,9 @@
     "sidebar",
     "table",
     "tabs",
-    "tooltip"
+    "tooltip",
+    "use-mobile",
+    "utils"
   ],
   "files": [
     {

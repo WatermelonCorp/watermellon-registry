@@ -15,7 +15,8 @@
     "dropdown-menu",
     "input-group",
     "sheet",
-    "sidebar"
+    "sidebar",
+    "utils"
   ],
   "files": [
     {

@@ -6,6 +6,7 @@
     "motion"
   ],
   "registryDependencies": [
+    "button",
     "button-group"
   ],
   "files": [

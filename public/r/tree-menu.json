@@ -3,7 +3,8 @@
   "name": "tree-menu",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

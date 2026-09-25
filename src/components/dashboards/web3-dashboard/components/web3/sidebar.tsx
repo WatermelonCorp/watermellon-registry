@@ -2,6 +2,14 @@ import { ChevronDown } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ThemeToggle } from "../ui/theme-toggle";
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
@@ -21,17 +29,17 @@ import LogoIcon from "./logo-icons";
 
 export function DashboardSidebar() {
   return (
-    <Sidebar collapsible="icon" className="border-r overflow-hidden">
+    <Sidebar collapsible="icon" className="overflow-hidden border-r">
       <SidebarHeader className="p-3">
         <SidebarMenu>
           <SidebarMenuItem className="flex items-center gap-2">
             <SidebarMenuButton
               asChild
               size="lg"
-              className="h-11 px-2 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:hidden"
+              className="h-11 px-2 group-data-[collapsible=icon]:hidden group-data-[collapsible=icon]:p-0"
             >
               <a href="#">
-                <LogoIcon className="size-8 text-primary" />
+                <LogoIcon className="text-primary size-8" />
                 <span className="text-lg font-medium">Watermelon</span>
               </a>
             </SidebarMenuButton>
@@ -47,7 +55,7 @@ export function DashboardSidebar() {
               {section.title}
             </SidebarGroupLabel>
             <SidebarGroupContent>
-              <SidebarMenu className="gap-1 ">
+              <SidebarMenu className="gap-1">
                 {section.items.map((item) => (
                   <SidebarMenuItem key={item.label}>
                     <SidebarMenuButton
@@ -87,7 +95,7 @@ export function DashboardSidebar() {
               <SidebarMenuButton
                 asChild
                 tooltip={item.label}
-                className="h-9 gap-3 rounded-lg px-3 text-sm text-muted-foreground"
+                className="text-muted-foreground h-9 gap-3 rounded-lg px-3 text-sm"
               >
                 <a href="#">
                   <item.icon className="size-4" />
@@ -97,28 +105,44 @@ export function DashboardSidebar() {
             </SidebarMenuItem>
           ))}
           <SidebarMenuItem className="flex items-center gap-0 group-data-[collapsible=icon]:p-0">
-            <SidebarMenuButton
-              asChild
-              tooltip="Connected account"
-              className="h-11 gap-3 rounded-md flex items-center group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:justify-center"
-            >
-              <a href="#">
-                <Avatar className="size-6 shrink-0">
-                  <AvatarImage
-                    src={"https://assets.watermelon.sh/wm_ben.png"}
-                    className=""
-                  />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <SidebarMenuButton
+                  tooltip="Connected account"
+                  className="flex h-11 items-center gap-3 rounded-md group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-0"
+                >
+                  <Avatar className="size-6 shrink-0">
+                    <AvatarImage
+                      src={"https://assets.watermelon.sh/wm_ben.png"}
+                      className=""
+                    />
 
-                  <AvatarFallback className="bg-primary text-xs font-semibold text-primary-foreground">
-                    VP
-                  </AvatarFallback>
-                </Avatar>
-                <span className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-left text-sm font-medium group-data-[collapsible=icon]:hidden">
-                  Vansh Patel
-                </span>
-                <ChevronDown className="size-4 shrink-0 text-muted-foreground group-data-[collapsible=icon]:hidden" />
-              </a>
-            </SidebarMenuButton>
+                    <AvatarFallback className="bg-primary text-primary-foreground text-xs font-semibold">
+                      VP
+                    </AvatarFallback>
+                  </Avatar>
+                  <span className="flex-1 overflow-hidden text-left text-sm font-medium text-ellipsis whitespace-nowrap group-data-[collapsible=icon]:hidden">
+                    Vansh Patel
+                  </span>
+                  <ChevronDown className="text-muted-foreground size-4 shrink-0 group-data-[collapsible=icon]:hidden" />
+                </SidebarMenuButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                className="w-56"
+                align="end"
+                side="right"
+                sideOffset={16}
+              >
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem variant="destructive">
+                  Logout
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <div className="group-data-[collapsible=icon]:hidden">
               <ThemeToggle />
             </div>

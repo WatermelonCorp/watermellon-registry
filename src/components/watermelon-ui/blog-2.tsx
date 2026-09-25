@@ -1,7 +1,7 @@
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-import { FaBookmark } from 'react-icons/fa6';
+import { FaBookmark } from "react-icons/fa6";
 
 interface BlogAuthor {
   name: string;
@@ -61,12 +61,7 @@ export default function Blog2({
   );
 
   return (
-    <section
-      className={cn(
-        'bg-background w-full  px-4 py-16 sm:px-6 md:py-24',
-        className,
-      )}
-    >
+    <section className={cn("bg-background w-full  px-4 py-8", className)}>
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 flex flex-col items-center gap-4 text-center md:mb-16">
           <h2 className="text-foreground max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl md:text-[2.75rem]">
@@ -90,7 +85,7 @@ export default function Blog2({
               <article
                 key={index}
                 className={cn(
-                  'group relative flex min-h-[360px] flex-col justify-between rounded-4xl p-6 transition-colors duration-300 sm:p-7',
+                  "group relative flex min-h-[360px] flex-col justify-between rounded-4xl p-6 transition-colors duration-300 sm:p-7",
                   colorVariants[index % colorVariants.length],
                 )}
               >
@@ -118,8 +113,8 @@ export default function Blog2({
                   <div className="flex items-center justify-between gap-2">
                     <div className="mt-auto flex items-center gap-3">
                       <div className="bg-background flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-lg">
-                        {post.author.avatar.startsWith('<svg') ||
-                        post.author.avatar.startsWith('http') ? (
+                        {post.author.avatar.startsWith("<svg") ||
+                        post.author.avatar.startsWith("http") ? (
                           <img
                             src={post.author.avatar}
                             alt={post.author.name}

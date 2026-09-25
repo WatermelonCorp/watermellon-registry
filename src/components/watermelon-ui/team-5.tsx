@@ -212,7 +212,7 @@ export default function Team5({
   renderLink,
 }: Team5Props) {
   return (
-    <section className={cn("bg-background w-full py-16 sm:py-24", className)}>
+    <section className={cn("bg-background w-full py-16", className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col items-center text-center sm:mb-14">
           {heading && (

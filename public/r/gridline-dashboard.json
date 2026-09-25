@@ -12,7 +12,8 @@
     "input",
     "sheet",
     "switch",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

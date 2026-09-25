@@ -5,7 +5,8 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "button"
+    "button",
+    "tooltip"
   ],
   "files": [
     {

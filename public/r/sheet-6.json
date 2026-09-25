@@ -2,9 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sheet-6",
   "dependencies": [
-    "react-icons"
+    "react-icons",
+    "sonner"
   ],
   "registryDependencies": [
+    "alert",
+    "button",
+    "input",
     "sheet"
   ],
   "files": [

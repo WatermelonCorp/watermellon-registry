@@ -5,8 +5,9 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "table",
-    "pagination"
+    "badge",
+    "pagination",
+    "table"
   ],
   "files": [
     {

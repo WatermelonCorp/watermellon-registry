@@ -3,7 +3,8 @@
   "name": "profile-card",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

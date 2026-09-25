@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  RiBellFill,
-  RiCheckDoubleFill,
-  RiCircleFill,
-} from "react-icons/ri";
+import { RiBellFill, RiCheckDoubleFill, RiCircleFill } from "react-icons/ri";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -40,8 +36,6 @@ export interface Notification2Props {
   updates?: TeamUpdate[];
   className?: string;
 }
-
-
 
 const TypeLabelMap: Record<UpdateType, string> = {
   pull_request: "Pull Request",
@@ -162,7 +156,7 @@ export default function Notification2({
   return (
     <section
       className={cn(
-        "bg-background flex min-h-screen items-center justify-center p-4 md:p-8",
+        "bg-background flex items-center justify-center p-4 md:p-8",
         className,
       )}
     >

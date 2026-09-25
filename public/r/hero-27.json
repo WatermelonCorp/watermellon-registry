@@ -2,9 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hero-27",
   "dependencies": [
+    "@hugeicons/core-free-icons",
+    "@hugeicons/react",
     "lucide-react",
-    "motion",
-    "@hugeicons/react"
+    "motion"
   ],
   "registryDependencies": [
     "button"

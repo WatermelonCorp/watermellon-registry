@@ -16,7 +16,8 @@
     "@radix-ui/react-tooltip",
     "@tabler/icons-react",
     "class-variance-authority",
-    "lucide-react"
+    "lucide-react",
+    "next-themes"
   ],
   "registryDependencies": [
     "avatar",
