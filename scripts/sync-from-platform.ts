@@ -305,7 +305,9 @@ async function main() {
     if (changed.length) {
       updated.push({ name, files: changed });
     }
-    manifest[name] = { ...entry, platformCommit: platformHead };
+    // Only advance the base when something was applied: an unchanged item's
+    // base is still correct, and bumping it would make every run a diff.
+    manifest[name] = changed.length ? { ...entry, platformCommit: platformHead } : entry;
   }
 
   writeFileSync(path.join(ROOT, "registry.json"), `${JSON.stringify(registry, null, 2)}\n`);
