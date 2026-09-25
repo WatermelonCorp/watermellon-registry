@@ -27,7 +27,7 @@ const Newsletter2: React.FC<Newsletter2Props> = ({
   ),
 }) => {
   return (
-    <section className="flex h-full w-full items-center justify-center py-12 md:py-16 lg:py-24">
+    <section className="flex h-full w-full items-center justify-center py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="from-primary to-primary/50 dark:to-primary/70 flex flex-col items-center justify-between gap-10 rounded-3xl bg-gradient-to-b p-8 text-white md:p-12 lg:flex-row lg:gap-16 lg:p-16">
           <div className="flex w-full max-w-xl flex-col space-y-5">

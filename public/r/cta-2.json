@@ -2,10 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "cta-2",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "react-icons"
   ],
   "registryDependencies": [
-    "cta",
+    "badge",
     "button"
   ],
   "files": [

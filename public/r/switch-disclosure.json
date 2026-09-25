@@ -3,7 +3,8 @@
   "name": "switch-disclosure",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

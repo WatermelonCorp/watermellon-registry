@@ -3,7 +3,8 @@
   "name": "morphing-button-base",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

@@ -2,8 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "family-wallet",
   "dependencies": [
+    "framer-motion",
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons",
+    "react-use-measure"
+  ],
+  "registryDependencies": [
+    "drawer"
   ],
   "files": [
     {

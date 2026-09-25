@@ -21,8 +21,13 @@ bun run build
 If your changes affect registry output, also run:
 
 ```bash
+bun run registry:check -- --fix   # fix dependencies and ship any imported files
 bun run registry:build
 ```
+
+Commit the updated `public/r` files. CI fails if they are out of date or if an item cannot be installed.
+
+Blocks and dashboards are synced from watermelon-platform by a daily workflow that opens a PR (`bun run registry:sync -- --platform <path>` runs it locally).
 
 ## Good First Contributions
 

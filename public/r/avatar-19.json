@@ -2,10 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-19",
   "dependencies": [
+    "lucide-react",
     "react-icons"
   ],
   "registryDependencies": [
-    "avatar"
+    "avatar",
+    "dropdown-menu",
+    "tooltip"
   ],
   "files": [
     {

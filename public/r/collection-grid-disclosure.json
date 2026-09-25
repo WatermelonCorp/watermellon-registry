@@ -2,8 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collection-grid-disclosure",
   "dependencies": [
+    "framer-motion",
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons",
+    "react-use-measure"
   ],
   "files": [
     {

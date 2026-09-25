@@ -4,6 +4,9 @@
   "dependencies": [
     "@radix-ui/react-tooltip"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/tooltip.tsx",

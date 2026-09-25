@@ -4,8 +4,12 @@
   "dependencies": [
     "@hugeicons/core-free-icons",
     "@hugeicons/react",
+    "framer-motion",
     "lucide-react",
     "motion"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

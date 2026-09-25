@@ -4,6 +4,9 @@
   "dependencies": [
     "@radix-ui/react-switch"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/switch.tsx",

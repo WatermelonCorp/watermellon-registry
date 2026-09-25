@@ -54,7 +54,7 @@ export function Pricing3({
   footerText,
 }: Pricing3Props) {
   return (
-    <section className="bg-background w-full py-16 md:py-24">
+    <section className="bg-background w-full py-8 md:py-16">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         <div className="mb-16 flex flex-col items-start justify-between gap-12 lg:flex-row lg:gap-8">
           <div className="flex max-w-2xl flex-col items-start gap-5">

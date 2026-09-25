@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "returns-calculator-snippet-base",
   "dependencies": [
+    "@number-flow/react",
     "lucide-react",
     "motion"
   ],

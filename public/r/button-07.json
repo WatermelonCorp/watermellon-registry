@@ -5,7 +5,8 @@
     "@aliimam/icons"
   ],
   "registryDependencies": [
-    "button"
+    "button",
+    "utils"
   ],
   "files": [
     {

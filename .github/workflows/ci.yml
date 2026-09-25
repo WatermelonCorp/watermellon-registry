@@ -29,3 +29,14 @@ jobs:
 
       - name: Build Registry
         run: npx shadcn@latest build
+
+      - name: Check registry output is committed
+        run: |
+          if ! git diff --quiet -- public/r; then
+            echo "::error::public/r is out of date with registry.json. Run 'bun run registry:build' and commit the result."
+            git diff --stat -- public/r
+            exit 1
+          fi
+
+      - name: Check every registry item is installable
+        run: bun scripts/check-registry.ts

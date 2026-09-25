@@ -5,7 +5,11 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "dialog"
+    "button",
+    "checkbox",
+    "dialog",
+    "input",
+    "label"
   ],
   "files": [
     {

@@ -2,9 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "extended-toolbar",
   "dependencies": [
+    "framer-motion",
     "lucide-react",
     "motion",
-    "react-icons"
+    "react-icons",
+    "react-use-measure"
   ],
   "files": [
     {

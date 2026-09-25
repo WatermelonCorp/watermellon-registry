@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import LogoIcon from '@/assets/logo-icon';
-import { Search } from 'lucide-react';
-import { motion, type Variants } from 'motion/react';
+import LogoIcon from "@/assets/logo-icon";
+import { Search } from "lucide-react";
+import { motion, type Variants } from "motion/react";
 
 interface NavLink {
   label: string;
@@ -25,10 +25,10 @@ interface Hero18Props {
 }
 
 const navLinksDefault: NavLink[] = [
-  { label: 'Products', href: '#' },
-  { label: 'About', href: '#' },
-  { label: 'Features', href: '#' },
-  { label: 'Support', href: '#' },
+  { label: "Products", href: "#" },
+  { label: "About", href: "#" },
+  { label: "Features", href: "#" },
+  { label: "Support", href: "#" },
 ];
 
 const sectionVariants: Variants = {
@@ -42,60 +42,60 @@ const sectionVariants: Variants = {
 };
 
 const navVariants: Variants = {
-  hidden: { opacity: 0, y: -14, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: -14, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.7, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.7, bounce: 0 },
   },
 };
 
 const skylightVariants: Variants = {
-  hidden: { opacity: 0, y: -18, scale: 0.96, filter: 'blur(12px)' },
+  hidden: { opacity: 0, y: -18, scale: 0.96, filter: "blur(12px)" },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 1.05, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 1.05, bounce: 0 },
   },
 };
 
 const riseVariants: Variants = {
-  hidden: { opacity: 0, y: 18, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 18, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.75, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.75, bounce: 0 },
   },
 };
 
 const formVariants: Variants = {
-  hidden: { opacity: 0, y: 16, scale: 0.98, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 16, scale: 0.98, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', duration: 0.85, bounce: 0 },
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.85, bounce: 0 },
   },
 };
 
 export default function Hero18({
-  brandName = 'Watermelon',
+  brandName = "Watermelon",
   navLinks = navLinksDefault,
-  headingPrefix = 'The best place to find',
-  headingMiddle = 'your',
-  headingHighlight = 'Inner Stillness',
-  description = 'Find an escape to reconnect with nature and your inner self. Your moment of clarity is waiting.',
-  searchPlaceholder = 'Search your quiet escape...',
-  searchButtonLabel = 'Find Peace',
-  searchAction = '#',
-  ctaLabel = 'Book a call',
-  ctaHref = '#',
-  backgroundImage = 'https://assets.watermelon.sh/hero-18-bg.avif',
+  headingPrefix = "The best place to find",
+  headingMiddle = "your",
+  headingHighlight = "Inner Stillness",
+  description = "Find an escape to reconnect with nature and your inner self. Your moment of clarity is waiting.",
+  searchPlaceholder = "Search your quiet escape...",
+  searchButtonLabel = "Find Peace",
+  searchAction = "#",
+  ctaLabel = "Book a call",
+  ctaHref = "#",
+  backgroundImage = "https://assets.watermelon.sh/hero-18-bg.avif",
 }: Hero18Props) {
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-black font-sans text-white antialiased">
@@ -112,7 +112,6 @@ export default function Hero18({
           alt=""
           className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top"
         />
-
 
         <motion.nav
           variants={navVariants}
@@ -146,15 +145,15 @@ export default function Hero18({
           </a>
         </motion.nav>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center pt-[18.3rem] pb-14 text-center sm:pt-[20.6rem] md:pt-[18.8rem] lg:pt-[18.2rem]">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center pt-[18.3rem] pb-14 text-center sm:pt-[20.6rem] md:pt-[18.8rem] lg:pt-[18.2rem] 2xl:max-w-7xl">
           <motion.h1
             variants={riseVariants}
-            className="max-w-5xl text-[clamp(2.55rem,6.5vw,4.25rem)] leading-[0.97] font-light tracking-[-0.045em] text-balance text-white"
+            className="max-w-5xl text-[clamp(2.55rem,5vw,6.25rem)] leading-[0.97] font-light tracking-[-0.045em] text-balance text-white 2xl:max-w-7xl"
           >
             <span className="block">{headingPrefix}</span>
             <span className="block">
-              {headingMiddle}{' '}
-              <span className="font-[Georgia,serif]  font-normal tracking-[-0.055em] text-[#a06355] italic">
+              {headingMiddle}{" "}
+              <span className="font-[Georgia,serif] font-normal tracking-[-0.055em] text-[#a06355] italic">
                 {headingHighlight}
               </span>
             </span>
@@ -162,7 +161,7 @@ export default function Hero18({
 
           <motion.p
             variants={riseVariants}
-            className="mt-4 max-w-lg text-md leading-wide font-normal text-pretty text-neutral-100/80"
+            className="text-md leading-wide mt-4 max-w-lg font-normal text-pretty text-neutral-100/80"
           >
             {description}
           </motion.p>

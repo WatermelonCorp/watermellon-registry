@@ -3,7 +3,10 @@
   "name": "inline-action",
   "dependencies": [
     "lucide-react",
-    "motion/react"
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

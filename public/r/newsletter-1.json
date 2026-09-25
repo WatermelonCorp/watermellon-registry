@@ -5,8 +5,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "newsletter",
-    "button"
+    "button",
+    "input"
   ],
   "files": [
     {

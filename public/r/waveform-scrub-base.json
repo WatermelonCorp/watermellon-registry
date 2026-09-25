@@ -2,8 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "waveform-scrub-base",
   "dependencies": [
+    "framer-motion",
     "lucide-react",
-    "motion"
+    "motion",
+    "next-themes",
+    "react-icons"
   ],
   "files": [
     {

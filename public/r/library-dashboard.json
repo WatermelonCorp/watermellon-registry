@@ -13,7 +13,8 @@
     "input-group",
     "sheet",
     "sidebar",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

@@ -4,6 +4,9 @@
   "dependencies": [
     "@radix-ui/react-label"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/label.tsx",

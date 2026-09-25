@@ -2,11 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "footer-22",
   "dependencies": [
+    "@hugeicons/core-free-icons",
     "@hugeicons/react",
-    "framer-motion"
-  ],
-  "registryDependencies": [
-    "footer"
+    "framer-motion",
+    "motion"
   ],
   "files": [
     {

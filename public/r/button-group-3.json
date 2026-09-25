@@ -6,7 +6,9 @@
     "motion"
   ],
   "registryDependencies": [
-    "button-group"
+    "button",
+    "button-group",
+    "tooltip"
   ],
   "files": [
     {

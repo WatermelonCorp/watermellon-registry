@@ -5,7 +5,13 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "data-table"
+    "avatar",
+    "badge",
+    "checkbox",
+    "input",
+    "label",
+    "select",
+    "table"
   ],
   "files": [
     {

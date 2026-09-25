@@ -67,7 +67,7 @@ export default function ContactBlock({
   contactMethods = defaultMethods,
 }: ContactBlockProps) {
   return (
-    <section className="bg-background text-foreground w-full py-16 md:py-24">
+    <section className="bg-background text-foreground w-full py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-2xl space-y-4">
           {badgeText && <Badge>{badgeText}</Badge>}

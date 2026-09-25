@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { ArrowDown01Icon, Menu01Icon, Cancel01Icon, StarIcon } from "@hugeicons/core-free-icons";
+import {
+  ArrowDown01Icon,
+  Menu01Icon,
+  Cancel01Icon,
+  StarIcon,
+} from "@hugeicons/core-free-icons";
 import { Button } from "@/components/ui/button";
+import LogoIcon from "@/assets/logo-icon";
 
 interface Hero29Props {
   title?: string;
@@ -21,8 +27,7 @@ export default function Hero29({
   consultationText = "CALL US TODAY FOR FREE CONSULTATION",
   descriptionText = "Gain clarity, reduce risk, and make confident decisions with expert guidance in finance, law, tax and strategy. Our team helps you turn complexity into opportunity.",
   backgroundImage = "https://assets.watermelon.sh/hero-29.avif",
-  // Placeholder avatar using Unsplash
-  avatarUrl = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64&q=80",
+  avatarUrl = "https://assets.watermelon.sh/wm_alex.png",
 }: Hero29Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navItems = [
@@ -39,7 +44,7 @@ export default function Hero29({
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
-      
+
       {/* Subtle overlay to ensure text legibility */}
       <div className="absolute inset-0 z-0 bg-black/10" />
 
@@ -52,8 +57,10 @@ export default function Hero29({
       >
         {/* Left: Logo */}
         <div className="flex items-center gap-3 text-white">
-          <div className="flex size-6 items-center justify-center rounded-full border-[3.5px] border-white" />
-          <span className="font-serif text-3xl italic tracking-wide">Melon</span>
+          <LogoIcon className="size-8" />
+          <span className="font-serif text-3xl tracking-wide italic">
+            Watermelon
+          </span>
         </div>
 
         {/* Right: Nav & Actions */}
@@ -66,7 +73,12 @@ export default function Hero29({
                 className="flex items-center gap-1 text-[15px] font-normal text-white/90 transition-colors hover:text-white"
               >
                 {item.label}
-                {item.hasDropdown && <HugeiconsIcon icon={ArrowDown01Icon} className="size-3.5 opacity-70" />}
+                {item.hasDropdown && (
+                  <HugeiconsIcon
+                    icon={ArrowDown01Icon}
+                    className="size-3.5 opacity-70"
+                  />
+                )}
               </button>
             ))}
           </nav>
@@ -82,7 +94,10 @@ export default function Hero29({
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="flex size-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 lg:hidden"
             >
-              <HugeiconsIcon icon={isMobileMenuOpen ? Cancel01Icon : Menu01Icon} className="size-6" />
+              <HugeiconsIcon
+                icon={isMobileMenuOpen ? Cancel01Icon : Menu01Icon}
+                className="size-6"
+              />
             </button>
           </div>
         </div>
@@ -92,7 +107,7 @@ export default function Hero29({
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute left-0 top-full mt-2 w-full px-4 lg:hidden"
+            className="absolute top-full left-0 mt-2 w-full px-4 lg:hidden"
           >
             <div className="overflow-hidden rounded-2xl bg-black/90 shadow-xl backdrop-blur-md">
               <nav className="flex flex-col p-4">
@@ -103,7 +118,12 @@ export default function Hero29({
                     className="flex items-center justify-between rounded-xl px-4 py-3 text-left text-base font-medium text-white transition-colors hover:bg-white/10"
                   >
                     {item.label}
-                    {item.hasDropdown && <HugeiconsIcon icon={ArrowDown01Icon} className="size-4 text-white/50" />}
+                    {item.hasDropdown && (
+                      <HugeiconsIcon
+                        icon={ArrowDown01Icon}
+                        className="size-4 text-white/50"
+                      />
+                    )}
                   </button>
                 ))}
                 <div className="mt-4 border-t border-white/10 pt-4">
@@ -118,7 +138,7 @@ export default function Hero29({
       </motion.header>
 
       {/* Main Hero Content */}
-      <div className="container mx-auto relative z-10 flex flex-1 flex-col items-center justify-center px-4 pb-20 pt-10 text-center sm:pb-32 md:pt-0">
+      <div className="relative z-10 container mx-auto flex flex-1 flex-col items-center justify-center px-4 pt-10 pb-20 text-center sm:pb-32 md:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,7 +149,11 @@ export default function Hero29({
           <div className="mb-5 flex flex-col items-center gap-1.5">
             <div className="flex items-center gap-[2px] text-white">
               {[...Array(5)].map((_, i) => (
-                <HugeiconsIcon key={i} icon={StarIcon} className="size-6 fill-current" />
+                <HugeiconsIcon
+                  key={i}
+                  icon={StarIcon}
+                  className="size-6 fill-current"
+                />
               ))}
             </div>
             <span className="font-normal tracking-wide text-white/90">
@@ -138,7 +162,7 @@ export default function Hero29({
           </div>
 
           {/* Headline */}
-          <h1 className="mb-10 whitespace-pre-line text-4xl font-medium leading-[1.05] tracking-tighter text-white sm:text-[42px] md:text-[52px] lg:text-[60px] xl:text-[76px]">
+          <h1 className="mb-10 text-4xl leading-[1.05] font-medium tracking-tighter whitespace-pre-line text-white sm:text-[42px] md:text-[52px] lg:text-[60px] xl:text-[76px]">
             {title}
           </h1>
 
@@ -160,13 +184,17 @@ export default function Hero29({
         className="relative z-10 flex w-full flex-col items-center justify-between gap-6 px-6 pb-8 md:flex-row md:items-end lg:px-12"
       >
         {/* Left Consultation Pill */}
-        <div className="flex w-fit shrink-0 cursor-pointer items-center gap-4 rounded-full border border-white/10 bg-black/40 py-2 pl-2 pr-6 shadow-xl backdrop-blur-md transition-colors hover:bg-black/50">
+        <div className="flex w-fit shrink-0 cursor-pointer items-center gap-4 rounded-full border border-white/10 bg-black/40 py-2 pr-6 pl-2 shadow-xl backdrop-blur-md transition-colors hover:bg-black/50">
           <div className="relative shrink-0">
-            <img src={avatarUrl} alt="Consultant" className="size-10 rounded-full object-cover" />
+            <img
+              src={avatarUrl}
+              alt="Consultant"
+              className="size-10 rounded-full object-cover"
+            />
           </div>
           <div className="flex items-center gap-3">
             <div className="size-2 shrink-0 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-            <span className="whitespace-nowrap text-[11px] font-medium tracking-wide text-white sm:text-xs md:text-sm">
+            <span className="text-[11px] font-medium tracking-wide whitespace-nowrap text-white sm:text-xs md:text-sm">
               {consultationText}
             </span>
           </div>

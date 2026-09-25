@@ -5,8 +5,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "error",
-    "button"
+    "button",
+    "card"
   ],
   "files": [
     {

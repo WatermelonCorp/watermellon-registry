@@ -115,7 +115,7 @@ export default function Contact6({
   ],
 }: Contact6Props) {
   return (
-    <section className="w-full px-4 py-16 md:px-6 md:py-24 lg:px-8">
+    <section className="w-full px-4 py-16 md:px-6">
       <div className="mx-auto max-w-6xl space-y-8 md:space-y-12">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-12">
           <div className="lg:col-span-3">

@@ -5,6 +5,9 @@
     "@radix-ui/react-slot",
     "class-variance-authority"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/button.tsx",

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import LogoIcon from '@/assets/logo-icon';
-import { ArrowRight, AudioLines, Globe2, ShieldCheck } from 'lucide-react';
-import { motion, type Variants } from 'motion/react';
+import LogoIcon from "@/assets/logo-icon";
+import { ArrowRight, AudioLines, Globe2, ShieldCheck } from "lucide-react";
+import { motion, type Variants } from "motion/react";
 
 interface NavLink {
   label: string;
@@ -12,7 +12,7 @@ interface NavLink {
 interface FeatureItem {
   title: string;
   description: string;
-  icon: 'audio' | 'shield' | 'globe';
+  icon: "audio" | "shield" | "globe";
 }
 
 interface Hero22Props {
@@ -35,17 +35,16 @@ interface Hero22Props {
 }
 
 const navLinksDefault: NavLink[] = [
-  { label: 'Home', href: '#' },
-  { label: 'Products', href: '#' },
-  { label: 'Pricing', href: '#' },
-  { label: 'Features', href: '#' },
-  { label: 'Resources', href: '#' },
+  { label: "Home", href: "#" },
+  { label: "Products", href: "#" },
+  { label: "Pricing", href: "#" },
+  { label: "Features", href: "#" },
+  { label: "Resources", href: "#" },
 ];
 
 const featuresDefault: FeatureItem[] = [
-  { title: 'Lifelike Speech', description: 'in Seconds', icon: 'audio' },
-  { title: 'Voice Cloning', description: 'with Control', icon: 'shield' },
-
+  { title: "Lifelike Speech", description: "in Seconds", icon: "audio" },
+  { title: "Voice Cloning", description: "with Control", icon: "shield" },
 ];
 
 const iconMap = {
@@ -64,35 +63,32 @@ const sectionVariants: Variants = {
   },
 };
 
-
 const navVariants: Variants = {
   hidden: { opacity: 0, y: -20, scale: 0.97 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 260, damping: 22, mass: 0.9 },
+    transition: { type: "spring", stiffness: 260, damping: 22, mass: 0.9 },
   },
 };
 
-
 const copyVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.94, filter: 'blur(6px)' },
+  hidden: { opacity: 0, scale: 0.94, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: 'blur(0px)',
-    transition: { type: 'spring', stiffness: 200, damping: 26, mass: 1 },
+    filter: "blur(0px)",
+    transition: { type: "spring", stiffness: 200, damping: 26, mass: 1 },
   },
 };
-
 
 const imageVariants: Variants = {
   hidden: { opacity: 0, scale: 1.08 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { type: 'spring', stiffness: 60, damping: 20, mass: 1.2 },
+    transition: { type: "spring", stiffness: 60, damping: 20, mass: 1.2 },
   },
 };
 
@@ -106,7 +102,6 @@ const featureRowVariants: Variants = {
   },
 };
 
-
 const featureVariants: Variants = {
   hidden: { opacity: 0, y: 22, rotateX: 18, scale: 0.96 },
   visible: {
@@ -114,27 +109,27 @@ const featureVariants: Variants = {
     y: 0,
     rotateX: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 240, damping: 28, mass: 0.8 },
+    transition: { type: "spring", stiffness: 240, damping: 28, mass: 0.8 },
   },
 };
 
 export default function Hero22({
-  brandName = 'Watermelon',
+  brandName = "Watermelon",
   navLinks = navLinksDefault,
-  headingLine1 = 'The Best Ideas Begin',
-  headingLine2Prefix = 'When',
-  headingHighlight = 'You Pause',
-  description = 'From quiet moments to meaningful direction, we discover ideas that truly matter most.',
-  primaryCtaLabel = 'Start for Free',
-  primaryCtaHref = '#',
-  secondaryCtaLabel = 'Get Started',
-  secondaryCtaHref = '#',
-  loginLabel = 'Log in',
-  loginHref = '#',
-  signupLabel = 'Get Started',
-  signupHref = '#',
+  headingLine1 = "The Best Ideas Begin",
+  headingLine2Prefix = "When",
+  headingHighlight = "You Pause",
+  description = "From quiet moments to meaningful direction, we discover ideas that truly matter most.",
+  primaryCtaLabel = "Start for Free",
+  primaryCtaHref = "#",
+  secondaryCtaLabel = "Get Started",
+  secondaryCtaHref = "#",
+  loginLabel = "Log in",
+  loginHref = "#",
+  signupLabel = "Get Started",
+  signupHref = "#",
   features = featuresDefault,
-  backgroundImage = 'https://assets.watermelon.sh/hero-22-bg.avif',
+  backgroundImage = "https://assets.watermelon.sh/hero-22-bg.avif",
 }: Hero22Props) {
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-stone-50 font-sans text-emerald-950 antialiased">
@@ -191,7 +186,7 @@ export default function Hero22({
           </div>
         </motion.nav>
 
-        <div className="relative z-10 grid flex-1 grid-cols-1 items-start gap-10 pt-14 lg:grid-cols-[minmax(0,0.88fr)_minmax(28rem,1fr)] lg:pt-20">
+        <div className="relative z-10 grid flex-1 grid-cols-1 items-start gap-10 pt-14 lg:grid-cols-[minmax(0,0.88fr)_minmax(28rem,1fr)] lg:pt-20 2xl:mt-30">
           <div className="max-w-4xl">
             <motion.h1
               variants={copyVariants}
@@ -199,7 +194,7 @@ export default function Hero22({
             >
               <span className="block">{headingLine1}</span>
               <span className="block">
-                {headingLine2Prefix}{' '}
+                {headingLine2Prefix}{" "}
                 <span className="font-[Georgia,serif] text-[0.95em] font-normal tracking-[-0.075em] italic">
                   {headingHighlight}
                 </span>
@@ -236,7 +231,7 @@ export default function Hero22({
 
         <motion.div
           variants={featureRowVariants}
-          className="absolute bottom-20 left-7 z-20  flex-wrap items-center gap-8 sm:left-2 lg:left-[5.25rem] sm:flex lg:gap-12"
+          className="absolute bottom-20 left-7 z-20 flex-wrap items-center gap-8 sm:left-2 sm:flex lg:left-[5.25rem] lg:gap-12"
         >
           {features.map((feature) => {
             const Icon = iconMap[feature.icon];

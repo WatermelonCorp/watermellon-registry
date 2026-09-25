@@ -5,7 +5,8 @@
     "@hugeicons/core-free-icons",
     "@hugeicons/react",
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

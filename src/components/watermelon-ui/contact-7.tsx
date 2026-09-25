@@ -38,7 +38,7 @@ export function Contact7({
   buttonText,
 }: Contact7Props) {
   return (
-    <section className="bg-background relative isolate w-full overflow-hidden py-24 sm:py-32">
+    <section className="bg-background relative isolate w-full overflow-hidden py-16">
       <div
         aria-hidden="true"
         className="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"

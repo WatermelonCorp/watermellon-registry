@@ -5,6 +5,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
+    "alert-dialog",
+    "button",
     "dialog"
   ],
   "files": [

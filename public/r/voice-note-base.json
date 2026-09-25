@@ -3,7 +3,8 @@
   "name": "voice-note-base",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

@@ -5,6 +5,8 @@
     "react-icons"
   ],
   "registryDependencies": [
+    "button",
+    "collapsible",
     "sheet"
   ],
   "files": [

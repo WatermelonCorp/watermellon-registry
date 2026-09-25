@@ -6,7 +6,8 @@
   ],
   "registryDependencies": [
     "avatar",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

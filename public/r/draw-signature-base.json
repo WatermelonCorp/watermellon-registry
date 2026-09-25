@@ -3,7 +3,13 @@
   "name": "draw-signature-base",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "next-themes",
+    "react-icons",
+    "react-use-measure"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

@@ -5,6 +5,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
+    "badge",
     "checkbox"
   ],
   "files": [

@@ -25,7 +25,8 @@
     "skeleton",
     "tabs",
     "textarea",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

@@ -2,8 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "continuous-pagination",
   "dependencies": [
+    "framer-motion",
     "lucide-react",
-    "motion"
+    "motion",
+    "next-themes"
   ],
   "files": [
     {

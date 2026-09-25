@@ -101,7 +101,7 @@ export default function ContactSolutionForm(
   };
 
   return (
-    <section className="bg-background flex min-h-screen items-center justify-center px-4 py-16">
+    <section className="bg-background flex h-full items-center justify-center px-4 py-16">
       <div className="grid w-full max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-2">
         <div className="flex flex-col gap-6">
           {badge && (

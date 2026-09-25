@@ -1,0 +1,80 @@
+name: Sync from platform
+
+# Brings block and dashboard changes from watermelon-platform into the
+# registry and opens a PR for review. See scripts/sync-from-platform.ts.
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: platform-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: github.repository == 'WatermelonCorp/watermellon-registry'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout platform
+        uses: actions/checkout@v4
+        with:
+          repository: WatermelonCorp/watermelon-platform
+          path: .platform
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      - name: Sync blocks and dashboards
+        run: |
+          bun scripts/sync-from-platform.ts --platform .platform --report "$RUNNER_TEMP/sync.md"
+          rm -rf .platform
+
+      - name: Fix registry dependencies
+        run: bun scripts/check-registry.ts --fix > "$RUNNER_TEMP/check.txt" || true
+
+      - name: Build registry
+        run: bunx shadcn build
+
+      # PRs opened with GITHUB_TOKEN do not trigger CI, so verify here and
+      # put the results in the PR description.
+      - name: Verify
+        run: |
+          status() { if "$@" > "$RUNNER_TEMP/out.txt" 2>&1; then echo "✅ \`$*\`"; else echo "❌ \`$*\`"; echo '```'; tail -40 "$RUNNER_TEMP/out.txt"; echo '```'; fi; }
+          {
+            cat "$RUNNER_TEMP/sync.md"
+            echo
+            echo "### Checks"
+            echo
+            status bun run lint
+            status bunx tsc -b
+            status bun scripts/check-registry.ts
+            if grep -q "need a code change" "$RUNNER_TEMP/check.txt"; then
+              echo; echo '```'; cat "$RUNNER_TEMP/check.txt"; echo '```'
+            fi
+          } > "$RUNNER_TEMP/body.md"
+          cat "$RUNNER_TEMP/body.md"
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bot/platform-sync
+          delete-branch: true
+          title: "Sync blocks and dashboards from platform"
+          commit-message: "Sync blocks and dashboards from platform"
+          body-path: ${{ runner.temp }}/body.md
+          add-paths: |
+            registry.json
+            platform-sync.json
+            public/r
+            src/components

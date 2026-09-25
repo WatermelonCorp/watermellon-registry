@@ -2,10 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-2",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "react-day-picker"
   ],
   "registryDependencies": [
-    "date-picker"
+    "calendar",
+    "label",
+    "popover"
   ],
   "files": [
     {

@@ -6,7 +6,12 @@
     "motion"
   ],
   "registryDependencies": [
-    "collapsible"
+    "button",
+    "checkbox",
+    "collapsible",
+    "input",
+    "label",
+    "separator"
   ],
   "files": [
     {

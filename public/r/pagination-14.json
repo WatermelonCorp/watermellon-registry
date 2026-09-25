@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pagination-14",
   "dependencies": [
-    "lucide-react",
-    "@tabler/icons-react"
+    "@tabler/icons-react",
+    "lucide-react"
   ],
   "registryDependencies": [
-    "pagination"
+    "pagination",
+    "select"
   ],
   "files": [
     {

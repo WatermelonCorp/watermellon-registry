@@ -1,8 +1,5 @@
 import { useId, useState, type FormEvent } from "react";
-import {
-  RiCheckboxCircleFill,
-  RiMailSendFill,
-} from "react-icons/ri";
+import { RiCheckboxCircleFill, RiMailSendFill } from "react-icons/ri";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -26,7 +23,6 @@ export interface Newsletter5Props {
   onSubscribe?: (email: string) => void;
   className?: string;
 }
-
 
 function BackgroundGrid() {
   return (
@@ -69,7 +65,7 @@ export default function Newsletter5({
   return (
     <section
       className={cn(
-        "bg-background flex min-h-screen items-center justify-center p-4 sm:p-6 md:p-8",
+        "bg-background flex items-center justify-center p-4 sm:p-6 md:p-8",
         className,
       )}
     >

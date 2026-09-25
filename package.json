@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
     "registry:build": "shadcn build",
+    "registry:check": "bun scripts/check-registry.ts",
+    "registry:sync": "bun scripts/sync-from-platform.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "sitemap": "bun run scripts/generate-sitemap.ts",

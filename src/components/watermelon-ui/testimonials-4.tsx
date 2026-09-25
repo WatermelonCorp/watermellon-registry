@@ -69,7 +69,7 @@ export default function Testimonials2() {
   );
 
   return (
-    <section className="theme-injected bg-background w-full py-16 md:py-24">
+    <section className="theme-injected bg-background w-full py-16 h-full flex items-center">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col items-start space-y-4 text-left">

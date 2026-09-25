@@ -3,7 +3,8 @@
   "name": "pagination-animated",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {

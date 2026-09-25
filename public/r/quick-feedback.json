@@ -3,7 +3,12 @@
   "name": "quick-feedback",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons",
+    "react-use-measure"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

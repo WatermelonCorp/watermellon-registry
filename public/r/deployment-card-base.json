@@ -2,8 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "deployment-card-base",
   "dependencies": [
+    "framer-motion",
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

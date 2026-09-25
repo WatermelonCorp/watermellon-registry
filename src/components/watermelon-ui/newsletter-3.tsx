@@ -33,7 +33,7 @@ const Newsletter3: React.FC<Newsletter3Props> = ({
   };
 
   return (
-    <section className="bg-background relative flex h-full w-full items-center justify-center overflow-hidden py-16 md:py-24 lg:py-32">
+    <section className="bg-background relative flex h-full w-full items-center justify-center overflow-hidden py-16 md:py-24">
       <div className="absolute inset-0 z-0 h-full w-full bg-white bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3rem_3rem] dark:bg-black dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_0%,var(--primary),transparent)] opacity-10 dark:opacity-30"></div>
       </div>

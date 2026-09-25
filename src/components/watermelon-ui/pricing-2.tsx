@@ -100,7 +100,7 @@ export default function Pricing2({
   const [isMonthly, setIsMonthly] = useState(true);
 
   return (
-    <section className="bg-background w-full py-16 md:py-24 lg:py-32">
+    <section className="bg-background w-full py-8 md:py-16">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="mb-16 flex flex-col items-center justify-center space-y-4 text-center">
           {title && (

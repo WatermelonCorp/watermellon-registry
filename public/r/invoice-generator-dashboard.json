@@ -27,7 +27,8 @@
     "sidebar",
     "skeleton",
     "textarea",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

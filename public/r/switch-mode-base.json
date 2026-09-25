@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "switch-mode-base",
   "dependencies": [
-    "motion"
+    "motion",
+    "next-themes",
+    "react-icons"
   ],
   "files": [
     {

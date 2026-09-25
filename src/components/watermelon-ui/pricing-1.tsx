@@ -25,7 +25,12 @@ export interface Pricing1Props {
 
 export function Pricing1({ plans, className }: Pricing1Props) {
   return (
-    <div className={cn("mx-auto w-full max-w-6xl px-4 md:px-6", className)}>
+    <div
+      className={cn(
+        "mx-auto w-full max-w-6xl px-4 md:px-6 py-4 md:py-8",
+        className,
+      )}
+    >
       <div className="bg-muted/40 rounded-none border p-2 shadow-sm md:p-3">
         <div className="grid grid-cols-1 gap-2 lg:grid-cols-3">
           {plans.map((plan) => (

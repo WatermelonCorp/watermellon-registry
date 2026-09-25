@@ -1,5 +1,5 @@
-import { ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface BlogPostAuthor {
   name: string;
@@ -26,9 +26,15 @@ interface Blog1Props {
   posts: BlogPost[];
   className?: string;
   /** Optional render override for the CTA link */
-  renderCtaLink?: (props: { href: string; children: React.ReactNode }) => React.ReactNode;
+  renderCtaLink?: (props: {
+    href: string;
+    children: React.ReactNode;
+  }) => React.ReactNode;
   /** Optional render override for individual card links */
-  renderCardLink?: (props: { href: string; children: React.ReactNode }) => React.ReactNode;
+  renderCardLink?: (props: {
+    href: string;
+    children: React.ReactNode;
+  }) => React.ReactNode;
 }
 
 export default function Blog1({
@@ -48,14 +54,13 @@ export default function Blog1({
   return (
     <section
       className={cn(
-        'w-full bg-background px-4 py-16 sm:px-6 md:py-24',
+        "w-full h-full bg-background px-4 py-8 flex justify-center items-center",
         className,
       )}
     >
       <div className=" max-w-6xl">
         <div className="mb-10 flex flex-col gap-6 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl space-y-3">
-
             <h2 className="text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl md:text-[2.75rem]">
               {header.heading}
             </h2>
@@ -80,8 +85,8 @@ export default function Blog1({
               <div
                 key={index}
                 className={cn(
-                  'group bg-muted/50 relative flex flex-col justify-between rounded-none p-6 shadow-[inset_0_0_2px_2px_rgba(255,255,255,1),inset_0_0_0_1px_rgba(0,0,0,0.2),0px_0px_0px_1px_rgba(0,0,0,0.08),0px_1px_2px_-1px_rgba(0,0,0,0.08),0px_2px_4px_0px_rgba(0,0,0,0.06)] duration-300 dark:shadow-[inset_0_0_2px_2px_rgba(255,255,255,0.04),inset_0_0_0_1px_rgba(255,255,255,0.08),0px_0px_0px_1px_rgba(255,255,255,0.06),0px_1px_2px_-1px_rgba(0,0,0,0.5),0px_2px_4px_0px_rgba(0,0,0,0.4)]',
-                  'min-h-[220px] sm:min-h-[240px]',
+                  "group bg-muted/50 relative flex flex-col justify-between rounded-none p-6 shadow-[inset_0_0_2px_2px_rgba(255,255,255,1),inset_0_0_0_1px_rgba(0,0,0,0.2),0px_0px_0px_1px_rgba(0,0,0,0.08),0px_1px_2px_-1px_rgba(0,0,0,0.08),0px_2px_4px_0px_rgba(0,0,0,0.06)] duration-300 dark:shadow-[inset_0_0_2px_2px_rgba(255,255,255,0.04),inset_0_0_0_1px_rgba(255,255,255,0.08),0px_0px_0px_1px_rgba(255,255,255,0.06),0px_1px_2px_-1px_rgba(0,0,0,0.5),0px_2px_4px_0px_rgba(0,0,0,0.4)]",
+                  "min-h-[220px] sm:min-h-[240px]",
                 )}
               >
                 <span className="text-muted-foreground/70 text-sm font-medium">
@@ -118,7 +123,11 @@ export default function Blog1({
 
             if (post.href) {
               return (
-                <a key={index} href={post.href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl">
+                <a
+                  key={index}
+                  href={post.href}
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl"
+                >
                   {card}
                 </a>
               );

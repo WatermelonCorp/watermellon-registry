@@ -4,7 +4,9 @@
   "dependencies": [
     "lucide-react",
     "motion",
-    "qrcode.react"
+    "qrcode.react",
+    "react-icons",
+    "react-use-measure"
   ],
   "files": [
     {

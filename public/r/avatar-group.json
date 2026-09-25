@@ -5,6 +5,9 @@
     "@floating-ui/react",
     "motion"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/avatar-group.tsx",

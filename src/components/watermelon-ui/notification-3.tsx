@@ -62,7 +62,6 @@ export interface Notification3Props {
   className?: string;
 }
 
-
 const KindColorMap: Record<ActivityKind, string> = {
   merge: "bg-primary/10 text-primary",
   deploy: "bg-primary/10 text-primary",
@@ -343,7 +342,7 @@ export default function Notification3({
   return (
     <section
       className={cn(
-        "bg-background flex min-h-screen items-center justify-center",
+        "bg-background flex items-center justify-center",
         className,
       )}
     >

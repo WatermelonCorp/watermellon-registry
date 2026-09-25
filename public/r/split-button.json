@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "split-button",
   "dependencies": [
-    "motion/react"
+    "@hugeicons/core-free-icons",
+    "@hugeicons/react",
+    "motion"
   ],
   "files": [
     {

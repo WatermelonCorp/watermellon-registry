@@ -72,7 +72,7 @@ export default function FAQ2({
   };
 
   return (
-    <section className="bg-background flex min-h-screen w-full flex-col items-center px-4 py-16 md:py-24">
+    <section className="bg-background flex w-full flex-col items-center px-4 py-16">
       <div className="mx-auto mb-10 max-w-xl text-center md:mb-12">
         <p className="text-muted-foreground mb-4 inline-flex items-center gap-1.5 text-xs font-medium tracking-widest uppercase">
           <span className="bg-muted-foreground inline-block h-1 w-1 rounded-full" />

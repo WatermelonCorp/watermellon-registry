@@ -1,7 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "badge-03",
-  "dependencies": [],
+  "dependencies": [
+    "react-router-dom"
+  ],
   "registryDependencies": [
     "badge"
   ],

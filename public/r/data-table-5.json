@@ -5,7 +5,10 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "data-table"
+    "checkbox",
+    "dropdown-menu",
+    "input",
+    "table"
   ],
   "files": [
     {

@@ -6,6 +6,9 @@
     "@radix-ui/react-checkbox",
     "lucide-react"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/accordion-multiselect.tsx",

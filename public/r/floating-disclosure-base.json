@@ -3,7 +3,12 @@
   "name": "floating-disclosure-base",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons",
+    "react-use-measure"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

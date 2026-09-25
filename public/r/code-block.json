@@ -9,6 +9,9 @@
     "shiki",
     "zod"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/code-block.tsx",

@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "widget-4",
   "dependencies": [
-    "lucide-react"
+    "lucide-react",
+    "recharts"
   ],
   "registryDependencies": [
-    "widget",
-    "button"
+    "button",
+    "card"
   ],
   "files": [
     {

@@ -2,9 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "split-actions",
   "dependencies": [
-    "motion",
+    "framer-motion",
     "lucide-react",
+    "motion",
     "react"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

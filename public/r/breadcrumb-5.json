@@ -6,6 +6,7 @@
     "motion"
   ],
   "registryDependencies": [
+    "badge",
     "breadcrumb"
   ],
   "files": [

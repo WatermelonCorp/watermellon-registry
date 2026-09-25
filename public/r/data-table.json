@@ -9,6 +9,9 @@
     "lucide-react",
     "zod"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/data-table.tsx",

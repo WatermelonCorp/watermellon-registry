@@ -5,6 +5,9 @@
     "class-variance-authority",
     "motion"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/flip.tsx",

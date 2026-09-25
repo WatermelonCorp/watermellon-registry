@@ -5,6 +5,9 @@
     "@radix-ui/react-radio-group",
     "class-variance-authority"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/label-selector.tsx",

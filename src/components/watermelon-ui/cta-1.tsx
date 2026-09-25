@@ -41,7 +41,7 @@ export function Cta1({
   onButtonClick,
 }: CTAProps) {
   return (
-    <section className="w-full max-w-5xl  py-12 md:py-16">
+    <section className="w-full max-w-5xl py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-card-foreground bg-primary/10 border-primary/20 relative isolate flex flex-col items-center justify-between gap-8 overflow-hidden rounded-xl border p-8 shadow-sm md:flex-row md:gap-12 md:px-10 md:py-20">
           <div

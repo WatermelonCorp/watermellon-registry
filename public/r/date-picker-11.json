@@ -5,7 +5,11 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "date-picker"
+    "button",
+    "calendar",
+    "input",
+    "label",
+    "popover"
   ],
   "files": [
     {

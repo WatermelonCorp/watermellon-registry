@@ -2,10 +2,13 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "accordion-15",
   "dependencies": [
+    "@radix-ui/react-accordion",
+    "lucide-react",
     "react-icons"
   ],
   "registryDependencies": [
-    "accordion"
+    "accordion",
+    "collapsible"
   ],
   "files": [
     {

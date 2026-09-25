@@ -72,7 +72,7 @@ export const PerformanceOverview: React.FC<PerformanceOverviewProps> = ({
   const activeData = periods.find((p) => p.id === activeDefault) || periods[0];
 
   return (
-    <section className="bg-background w-full py-16 md:py-24">
+    <section className="bg-background w-full py-16">
       <div className="group border-border bg-primary/5 relative isolate mx-auto flex h-auto min-h-[400px] max-w-[370px] items-center justify-center overflow-hidden rounded-3xl border px-4 pt-12 sm:max-w-2xl sm:px-6 md:max-w-5xl lg:h-[450px] lg:px-8 lg:pt-0">
         <div
           aria-hidden="true"
@@ -83,7 +83,7 @@ export const PerformanceOverview: React.FC<PerformanceOverviewProps> = ({
               clipPath:
                 "polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)",
             }}
-            className="from-primary to-primary/60 aspect-[577/310] w-[36rem] bg-gradient-to-r opacity-30"
+            className="from-primary to-primary/60 aspect-577/310 w-xl bg-linear-to-r opacity-30"
           />
         </div>
 

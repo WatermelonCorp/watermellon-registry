@@ -3,7 +3,8 @@
   "name": "hero-11",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "registryDependencies": [
     "button"

@@ -1,8 +1,6 @@
 'use client';
 
-import {
-  SiSlack,
-} from 'react-icons/si';
+import { FaSlack as SiSlack } from 'react-icons/fa6';
 import type { SVGProps } from 'react';
 const Cloudflare = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} viewBox="0 0 256 116" preserveAspectRatio="xMidYMid">

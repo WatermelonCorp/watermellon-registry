@@ -5,7 +5,11 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "dialog"
+    "alert-dialog",
+    "button",
+    "checkbox",
+    "dialog",
+    "label"
   ],
   "files": [
     {

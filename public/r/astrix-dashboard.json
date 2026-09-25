@@ -10,7 +10,8 @@
     "dropdown-menu",
     "input-group",
     "sidebar",
-    "table"
+    "table",
+    "utils"
   ],
   "files": [
     {

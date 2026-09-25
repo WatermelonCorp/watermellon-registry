@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -6,16 +6,16 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
 import {
   Cpu,
   Layers,
@@ -25,7 +25,7 @@ import {
   User,
   Menu,
   ArrowUpRight,
-} from 'lucide-react';
+} from "lucide-react";
 
 export function Navigation5() {
   return (
@@ -35,7 +35,7 @@ export function Navigation5() {
         <div className="flex h-16 w-4xl items-center justify-between gap-2 rounded-full border border-neutral-200 bg-white pr-3 shadow-sm md:w-5xl dark:border-neutral-800 dark:bg-neutral-950">
           {/* Logo Section */}
           <div className="flex items-center gap-2 pr-6 pl-4">
-            <div className="flex h-8 w-8 items-center justify-center text-orange-600 dark:text-orange-500">
+            <div className="text-primary dark:text-primary flex h-8 w-8 items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -58,17 +58,17 @@ export function Navigation5() {
           <div className="hidden lg:block">
             <NavigationMenu
               className={cn(
-                'static',
+                "static",
                 // Position the viewport wrapper to be full-width relative to the navbar container
-                '[&>div:last-child]:inset-x-0 [&>div:last-child]:top-full [&>div:last-child]:w-full',
+                "[&>div:last-child]:inset-x-0 [&>div:last-child]:top-full [&>div:last-child]:w-full",
                 // Custom viewport styling for the "island" look
-                '[&_[data-slot=navigation-menu-viewport]]:mx-auto [&_[data-slot=navigation-menu-viewport]]:-mt-6 [&_[data-slot=navigation-menu-viewport]]:max-w-7xl [&_[data-slot=navigation-menu-viewport]]:ring-0',
-                '[&_[data-slot=navigation-menu-viewport]]:rounded-[2.5rem] [&_[data-slot=navigation-menu-viewport]]:border [&_[data-slot=navigation-menu-viewport]]:border-neutral-200 dark:[&_[data-slot=navigation-menu-viewport]]:border-neutral-800',
-                '[&_[data-slot=navigation-menu-viewport]]:bg-white [&_[data-slot=navigation-menu-viewport]]:shadow-2xl dark:[&_[data-slot=navigation-menu-viewport]]:bg-neutral-950',
+                "[&_[data-slot=navigation-menu-viewport]]:mx-auto [&_[data-slot=navigation-menu-viewport]]:-mt-6 [&_[data-slot=navigation-menu-viewport]]:max-w-7xl [&_[data-slot=navigation-menu-viewport]]:ring-0",
+                "[&_[data-slot=navigation-menu-viewport]]:rounded-[2.5rem] [&_[data-slot=navigation-menu-viewport]]:border [&_[data-slot=navigation-menu-viewport]]:border-neutral-200 dark:[&_[data-slot=navigation-menu-viewport]]:border-neutral-800",
+                "[&_[data-slot=navigation-menu-viewport]]:bg-white [&_[data-slot=navigation-menu-viewport]]:shadow-2xl dark:[&_[data-slot=navigation-menu-viewport]]:bg-neutral-950",
                 // Viewport smooth animations
-                '[&_[data-slot=navigation-menu-viewport]]:transition-all [&_[data-slot=navigation-menu-viewport]]:duration-300 [&_[data-slot=navigation-menu-viewport]]:ease-in-out',
-                '[&_[data-slot=navigation-menu-viewport]]:data-open:fade-in-0 [&_[data-slot=navigation-menu-viewport]]:data-closed:fade-out-0',
-                '[&_[data-slot=navigation-menu-viewport]]:data-open:zoom-in-100 [&_[data-slot=navigation-menu-viewport]]:data-closed:zoom-out-100',
+                "[&_[data-slot=navigation-menu-viewport]]:transition-all [&_[data-slot=navigation-menu-viewport]]:duration-300 [&_[data-slot=navigation-menu-viewport]]:ease-in-out",
+                "[&_[data-slot=navigation-menu-viewport]]:data-open:fade-in-0 [&_[data-slot=navigation-menu-viewport]]:data-closed:fade-out-0",
+                "[&_[data-slot=navigation-menu-viewport]]:data-open:zoom-in-100 [&_[data-slot=navigation-menu-viewport]]:data-closed:zoom-out-100",
               )}
             >
               <NavigationMenuList className="gap-1">
@@ -89,7 +89,7 @@ export function Navigation5() {
                     Developers
                     <Badge
                       variant="secondary"
-                      className="h-4 rounded-full bg-orange-100 px-1.5 text-[10px] text-orange-600 hover:bg-orange-100 dark:bg-orange-500/20 dark:text-orange-400 dark:hover:bg-orange-500/20"
+                      className="bg-primary text-primary-foreground hover:bg-primary dark:bg-primary/20 dark:text-primary dark:hover:bg-primary/20 h-4 rounded-full px-1.5 text-[10px]"
                     >
                       API
                     </Badge>
@@ -202,15 +202,15 @@ export function Navigation5() {
                         </h4>
                         <a
                           href="#"
-                          className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl p-6 ring ring-orange-500/50 transition-all"
+                          className="group ring-primary/50 relative flex h-full flex-col justify-between overflow-hidden rounded-2xl p-6 ring transition-all"
                         >
-                          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent group-hover:opacity-100 dark:from-orange-500/10" />
+                          <div className="from-primary/5 dark:from-primary/10 absolute inset-0 bg-gradient-to-br via-transparent to-transparent group-hover:opacity-100" />
                           <div className="absolute inset-0 -z-10 bg-neutral-100 dark:bg-neutral-900" />
 
                           <div>
                             <Badge
                               variant="outline"
-                              className="mb-3 border-orange-200 bg-white text-orange-600 dark:border-orange-900 dark:bg-neutral-950 dark:text-orange-400"
+                              className="border-primary text-primary dark:border-primary dark:text-primary mb-3 bg-white dark:bg-neutral-950"
                             >
                               Upcoming Webinar
                             </Badge>
@@ -223,8 +223,8 @@ export function Navigation5() {
                             </p>
                           </div>
 
-                          <div className="mt-4 flex items-center text-sm font-medium text-orange-600 dark:text-orange-400">
-                            Register now{' '}
+                          <div className="text-primary dark:text-primary mt-4 flex items-center text-sm font-medium">
+                            Register now{" "}
                             <ArrowUpRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                           </div>
                         </a>
@@ -272,7 +272,7 @@ export function Navigation5() {
                 <User className="size-4.5" />
               </Button>
             </div>
-            <Button className="hidden rounded-full bg-orange-600 px-6 font-semibold text-white hover:bg-orange-700 md:block dark:bg-orange-600 dark:hover:bg-orange-700">
+            <Button className="bg-primary hover:bg-primary dark:bg-primary dark:hover:bg-primary hidden rounded-full px-6 font-semibold text-white md:block">
               Get started
             </Button>
 
@@ -293,7 +293,7 @@ export function Navigation5() {
                   className="flex w-[300px] flex-col gap-6 p-6 dark:bg-neutral-950"
                 >
                   <div className="flex items-center gap-2">
-                    <div className="flex h-8 w-8 items-center justify-center text-orange-600 dark:text-orange-500">
+                    <div className="text-primary dark:text-primary flex h-8 w-8 items-center justify-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -328,7 +328,7 @@ export function Navigation5() {
                       </a>
                       <Badge
                         variant="secondary"
-                        className="bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400"
+                        className="bg-primary text-primary dark:bg-primary/20 dark:text-primary"
                       >
                         API
                       </Badge>
@@ -346,13 +346,13 @@ export function Navigation5() {
                             </span>
                             <a
                               href="#"
-                              className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                              className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                             >
                               Compute Engine
                             </a>
                             <a
                               href="#"
-                              className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                              className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                             >
                               System Status
                             </a>
@@ -363,19 +363,19 @@ export function Navigation5() {
                             </span>
                             <a
                               href="#"
-                              className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                              className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                             >
                               Fraud Detection
                             </a>
                             <a
                               href="#"
-                              className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                              className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                             >
                               Predictive Analytics
                             </a>
                             <a
                               href="#"
-                              className="text-sm font-medium tracking-tight text-neutral-600 hover:text-orange-600 dark:text-neutral-300 dark:hover:text-orange-400"
+                              className="hover:text-primary dark:hover:text-primary text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-300"
                             >
                               LLM Gateways
                             </a>
@@ -399,7 +399,7 @@ export function Navigation5() {
                   </div>
 
                   <div className="mt-auto flex flex-col gap-3">
-                    <Button className="w-full rounded-full bg-orange-600 text-white hover:bg-orange-700">
+                    <Button className="bg-primary hover:bg-primary w-full rounded-full text-white">
                       Get started
                     </Button>
                   </div>

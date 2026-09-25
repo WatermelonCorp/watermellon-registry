@@ -4,6 +4,9 @@
   "dependencies": [
     "@radix-ui/react-radio-group"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/color-watch-selector.tsx",

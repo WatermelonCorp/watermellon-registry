@@ -8,12 +8,12 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { apyData, portfolioData } from "../../data";
+import { apyData } from "../../data";
 
-export function PortfolioChart() {
+export function PortfolioChart({ data }: { data: object[] }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <AreaChart data={portfolioData} >
+      <AreaChart data={data}>
         <defs>
           <linearGradient id="portfolioFill" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="var(--chart-1)" stopOpacity={0.55} />
@@ -22,17 +22,17 @@ export function PortfolioChart() {
         </defs>
         <CartesianGrid stroke="var(--border)" strokeOpacity={0.25} vertical />
         <XAxis
-          dataKey="month"
+          dataKey="time"
           axisLine={false}
           tickLine={false}
-          interval={2}
+          interval="preserveStartEnd"
           tick={{ fill: "var(--muted-foreground)", fontSize: 13 }}
         />
         <YAxis
           axisLine={false}
           tickLine={false}
           width={54}
-          ticks={[0, 50000, 100000, 150000, 200000, 250000]}
+          ticks={[0, 50000, 100000, 150000, 200000, 250000, 300000]}
           tickFormatter={(value) => `${Number(value) / 1000}K`}
           tick={{ fill: "var(--muted-foreground)", fontSize: 13 }}
         />
@@ -53,11 +53,22 @@ export function PortfolioChart() {
 export function ApySparkline() {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <AreaChart data={apyData} margin={{ top: 8, right: 0, left: 0, bottom: 0 }}>
+      <AreaChart
+        data={apyData}
+        margin={{ top: 8, right: 0, left: 0, bottom: 0 }}
+      >
         <defs>
           <linearGradient id="apyFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--color-emerald-400)" stopOpacity={0.45} />
-            <stop offset="100%" stopColor="var(--color-emerald-400)" stopOpacity={0} />
+            <stop
+              offset="0%"
+              stopColor="var(--color-emerald-400)"
+              stopOpacity={0.45}
+            />
+            <stop
+              offset="100%"
+              stopColor="var(--color-emerald-400)"
+              stopOpacity={0}
+            />
           </linearGradient>
         </defs>
         <XAxis dataKey="month" hide />

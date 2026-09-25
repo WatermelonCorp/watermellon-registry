@@ -6,6 +6,9 @@
     "@radix-ui/react-slot",
     "tunnel-rat"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/timeline.tsx",

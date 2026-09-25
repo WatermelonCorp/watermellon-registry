@@ -3,12 +3,12 @@
   "name": "input-mask-6",
   "dependencies": [
     "react-icons",
-    "react-payment-inputs"
+    "react-payment-inputs",
+    "use-mask-input"
   ],
   "registryDependencies": [
-    "input-mask",
-    "label",
-    "input"
+    "input",
+    "label"
   ],
   "files": [
     {

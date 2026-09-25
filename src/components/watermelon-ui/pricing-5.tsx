@@ -48,7 +48,7 @@ export function Pricing5({
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section className="bg-background w-full py-16 md:py-24 lg:py-32">
+    <section className="bg-background w-full py-8 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

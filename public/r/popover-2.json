@@ -5,8 +5,10 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "popover",
-    "button"
+    "button",
+    "input",
+    "label",
+    "popover"
   ],
   "files": [
     {

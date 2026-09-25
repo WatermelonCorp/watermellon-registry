@@ -4,6 +4,9 @@
   "dependencies": [
     "class-variance-authority"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "src/components/watermelon-ui/flip-clock.tsx",

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { FaFacebook as Facebook, FaInstagram as Instagram, FaXTwitter as Twitter } from "react-icons/fa6";
 import { Badge } from "@/components/ui/badge";
 
 export interface SocialLink {
@@ -103,7 +103,7 @@ export function Team4({
   members = defaultMembers,
 }: Team4Props) {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-background py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12 flex flex-col items-center text-center md:mb-20">
           {badge && (

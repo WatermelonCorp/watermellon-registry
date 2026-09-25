@@ -2,7 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "timed-undo-action-base",
   "dependencies": [
-    "motion"
+    "lucide-react",
+    "motion",
+    "react-use-measure"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

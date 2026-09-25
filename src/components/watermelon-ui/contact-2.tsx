@@ -57,7 +57,7 @@ function GridBackground() {
   }, []);
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden [mask-image:radial-gradient(circle_at_center,white_0%,transparent_70%)]">
+    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden mask-[radial-gradient(circle_at_center,white_0%,transparent_70%)]">
       <div className="absolute inset-0 grid grid-cols-[repeat(auto-fill,minmax(4rem,1fr))]">
         {Array.from({ length: CELL_COUNT }).map((_, i) => {
           const isActive = activeCells.includes(i);
@@ -65,7 +65,7 @@ function GridBackground() {
             <div
               key={i}
               style={{ transitionDelay: `${cellDelays[i]}ms` }}
-              className={`border-border/10 aspect-square border-[0.5px] opacity-20 transition-all duration-[200ms] ease-in-out ${
+              className={`border-border/10 aspect-square border-[0.5px] opacity-20 transition-all duration-200 ease-in-out ${
                 isActive
                   ? "bg-primary [box-shadow:0_0_20px_5px_var(--primary)] brightness-150"
                   : "bg-transparent"
@@ -80,7 +80,7 @@ function GridBackground() {
 
 export function Contact2({ badge, heading, description, form }: Contact2Props) {
   return (
-    <section className="bg-background relative flex w-full flex-col items-center justify-center overflow-hidden py-16 md:py-24 lg:py-32">
+    <section className="bg-background relative flex w-full flex-col items-center justify-center overflow-hidden py-16">
       <div className="relative z-10 container px-4 md:px-6">
         <div className="mx-auto mb-12 flex max-w-3xl flex-col items-center text-center">
           {badge && (

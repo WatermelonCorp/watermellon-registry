@@ -2,11 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "auth-13",
   "dependencies": [
+    "@hugeicons/core-free-icons",
+    "@hugeicons/react",
     "framer-motion",
-    "@hugeicons/react"
+    "motion"
   ],
   "registryDependencies": [
-    "auth",
     "button"
   ],
   "files": [

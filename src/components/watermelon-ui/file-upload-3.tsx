@@ -160,10 +160,7 @@ export function FileUploadArea({
 
   return (
     <Card
-      className={cn(
-        "mx-auto mt-40 w-full max-w-lg rounded-none pt-0",
-        className,
-      )}
+      className={cn("mx-auto my-auto w-full max-w-lg rounded-none", className)}
       {...props}
     >
       <CardHeader className="border-border bg-muted rounded-none border-b pt-2">

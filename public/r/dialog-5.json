@@ -5,7 +5,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "dialog"
+    "button",
+    "dialog",
+    "scroll-area"
   ],
   "files": [
     {

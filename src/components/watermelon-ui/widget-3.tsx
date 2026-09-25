@@ -8,7 +8,6 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-  type TooltipProps,
 } from "recharts";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -79,7 +78,12 @@ function CustomTooltip({
   active,
   payload,
   label,
-}: TooltipProps<number, string> & { payload?: CustomTooltipPayload[] }) {
+}: {
+  // Typed locally: Recharts 3 no longer declares these on TooltipProps.
+  active?: boolean;
+  payload?: CustomTooltipPayload[];
+  label?: string | number;
+}) {
   if (!active || !payload?.length) return null;
 
   const total = payload.reduce((sum, item) => sum + (item.value ?? 0), 0);

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { ArrowDown } from 'lucide-react';
-import { motion, type Variants } from 'motion/react';
+import { ArrowDown } from "lucide-react";
+import { motion, type Variants } from "motion/react";
 
 interface NavLink {
   label: string;
@@ -28,11 +28,11 @@ interface Hero23Props {
 }
 
 const navLinksDefault: NavLink[] = [
-  { label: 'Product', href: '#' },
-  { label: 'Features', href: '#' },
-  { label: 'Pages', href: '#' },
-  { label: 'Use Cases', href: '#' },
-  { label: 'Contact', href: '#' },
+  { label: "Product", href: "#" },
+  { label: "Features", href: "#" },
+  { label: "Pages", href: "#" },
+  { label: "Use Cases", href: "#" },
+  { label: "Contact", href: "#" },
 ];
 
 const sectionVariants: Variants = {
@@ -52,7 +52,7 @@ const navVariants: Variants = {
     opacity: 1,
     x: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 280, damping: 24, mass: 0.85 },
+    transition: { type: "spring", stiffness: 280, damping: 24, mass: 0.85 },
   },
 };
 
@@ -63,7 +63,7 @@ const imageVariants: Variants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 55, damping: 18, mass: 1.4 },
+    transition: { type: "spring", stiffness: 55, damping: 18, mass: 1.4 },
   },
 };
 
@@ -75,7 +75,7 @@ const copyVariants: Variants = {
     y: 0,
     rotateX: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 210, damping: 30, mass: 0.9 },
+    transition: { type: "spring", stiffness: 210, damping: 30, mass: 0.9 },
   },
 };
 
@@ -96,7 +96,7 @@ const buttonVariants: Variants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 350, damping: 22, mass: 0.75 },
+    transition: { type: "spring", stiffness: 350, damping: 22, mass: 0.75 },
   },
 };
 
@@ -107,27 +107,27 @@ const footerVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 180, damping: 24, mass: 1 },
+    transition: { type: "spring", stiffness: 180, damping: 24, mass: 1 },
   },
 };
 
 export default function Hero23({
-  brandName = 'Watermelon.',
+  brandName = "Watermelon.",
   navLinks = navLinksDefault,
-  headingLine1 = 'Where focus',
-  headingLine2Prefix = 'meets',
-  headingHighlight = 'serenity.',
+  headingLine1 = "Where focus",
+  headingLine2Prefix = "meets",
+  headingHighlight = "serenity.",
   description = "Tucked away in nature, this is more than a tennis court it's a private escape designed for uninterrupted play.",
-  primaryCtaLabel = 'Book a Session',
-  primaryCtaHref = '#',
-  secondaryCtaLabel = 'Learn More',
-  secondaryCtaHref = '#',
-  topCtaLabel = 'Learn More',
-  topCtaHref = '#',
+  primaryCtaLabel = "Book a Session",
+  primaryCtaHref = "#",
+  secondaryCtaLabel = "Learn More",
+  secondaryCtaHref = "#",
+  topCtaLabel = "Learn More",
+  topCtaHref = "#",
   quote = '"The peaceful setting, the pristine court, the clear mind it gives me- Serenity Court is my escape and my edge."',
-  quoteAuthor = '-ALEX R, MEMBERSHIP PLAYER',
-  scrollLabel = 'Scroll to Discover',
-  backgroundImage = 'https://assets.watermelon.sh/hero-23-bg.avif',
+  quoteAuthor = "-ALEX R, MEMBERSHIP PLAYER",
+  scrollLabel = "Scroll to Discover",
+  backgroundImage = "https://assets.watermelon.sh/hero-23-bg.avif",
 }: Hero23Props) {
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-emerald-950 font-sans text-white antialiased">
@@ -142,7 +142,7 @@ export default function Hero23({
           variants={imageVariants}
           src={backgroundImage}
           alt=""
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center "
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
         />
 
         <motion.nav
@@ -151,7 +151,7 @@ export default function Hero23({
         >
           <a
             href="#"
-            className="inline-flex min-h-10 items-center text-lg font-medium tracking-[-0.035em] text-white transition-[transform] duration-200 ease-out  active:scale-[0.96]"
+            className="inline-flex min-h-10 items-center text-lg font-medium tracking-[-0.035em] text-white transition-[transform] duration-200 ease-out active:scale-[0.96]"
           >
             {brandName}
           </a>
@@ -176,15 +176,15 @@ export default function Hero23({
           </a>
         </motion.nav>
 
-        <div className="relative z-10 flex flex-1 flex-col justify-start pt-16  sm:pt-20 ">
+        <div className="relative z-10 flex flex-1 flex-col justify-start pt-16 sm:pt-20 2xl:mt-30">
           <div className="max-w-4xl">
             <motion.h1
               variants={copyVariants}
-              className="max-w-4xl text-[clamp(3.25rem,5.5vw,5.4rem)] leading-[1.02] font-normal tracking-tighter text-balance text-white"
+              className="max-w-4xl text-[clamp(3.25rem,5.5vw,6.4rem)] leading-[1.02] font-normal tracking-tighter text-balance text-white"
             >
               <span className="block">{headingLine1}</span>
               <span className="block">
-                {headingLine2Prefix}{' '}
+                {headingLine2Prefix}{" "}
                 <span className="font-[Georgia,serif] text-[0.94em] font-normal tracking-[-0.075em] text-yellow-300 italic">
                   {headingHighlight}
                 </span>
@@ -222,10 +222,10 @@ export default function Hero23({
 
         <motion.blockquote
           variants={footerVariants}
-          className="absolute bottom-16  z-20 max-w-2xl text-sm leading-[1.45] font-normal text-yellow-300/70 italic sm:left-12 lg:left-16 px-2"
+          className="absolute bottom-16 z-20 max-w-2xl px-2 text-sm leading-[1.45] font-normal text-yellow-300/70 italic sm:left-12 lg:left-16"
         >
           <p>{quote}</p>
-          <footer className="mt-4 text-sm font-medium  text-yellow-300/70 uppercase">
+          <footer className="mt-4 text-sm font-medium text-yellow-300/70 uppercase">
             {quoteAuthor}
           </footer>
         </motion.blockquote>

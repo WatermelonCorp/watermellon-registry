@@ -151,7 +151,7 @@ export default function DocumentUploader({
   };
 
   return (
-    <Card className="bg-card text-card-foreground mx-auto mt-40 w-full max-w-3xl rounded shadow-none">
+    <Card className="bg-card text-card-foreground mx-auto w-full max-w-3xl rounded shadow-none">
       <CardHeader>
         <CardTitle className="text-xl font-normal tracking-tight">
           {title}

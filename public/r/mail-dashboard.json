@@ -33,7 +33,8 @@
     "switch",
     "tabs",
     "textarea",
-    "tooltip"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

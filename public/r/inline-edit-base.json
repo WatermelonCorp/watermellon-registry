@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "inline-edit-base",
   "dependencies": [
-    "@hugeicons/core-free-icons/index",
+    "@hugeicons/core-free-icons",
     "@hugeicons/react",
     "lucide-react",
     "motion"

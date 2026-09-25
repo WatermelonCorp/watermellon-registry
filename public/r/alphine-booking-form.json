@@ -11,7 +11,8 @@
     "calendar",
     "input",
     "label",
-    "popover"
+    "popover",
+    "utils"
   ],
   "files": [
     {

@@ -72,20 +72,45 @@ export const stats = [
   },
 ];
 
-export const portfolioData = [
-  { month: "Jan", value: 22000 },
-  { month: "Feb", value: 52000 },
-  { month: "Mar", value: 76000 },
-  { month: "Apr", value: 76000 },
-  { month: "May", value: 76000 },
-  { month: "Jun", value: 66000 },
-  { month: "Jul", value: 59000 },
-  { month: "Aug", value: 91000 },
-  { month: "Sep", value: 127000 },
-  { month: "Oct", value: 196000 },
-  { month: "Nov", value: 217000 },
-  { month: "Now", value: 260000 },
-];
+export const portfolioDataRanges = {
+  "1D": [
+    { time: "10:00", value: 250000 },
+    { time: "11:00", value: 252000 },
+    { time: "12:00", value: 248000 },
+    { time: "13:00", value: 255000 },
+    { time: "14:00", value: 258000 },
+    { time: "15:00", value: 260000 },
+  ],
+  "7D": [
+    { time: "Mon", value: 240000 },
+    { time: "Tue", value: 245000 },
+    { time: "Wed", value: 235000 },
+    { time: "Thu", value: 250000 },
+    { time: "Fri", value: 255000 },
+    { time: "Sat", value: 258000 },
+    { time: "Sun", value: 260000 },
+  ],
+  "1M": [
+    { time: "Week 1", value: 210000 },
+    { time: "Week 2", value: 230000 },
+    { time: "Week 3", value: 245000 },
+    { time: "Week 4", value: 260000 },
+  ],
+  All: [
+    { time: "Jan", value: 22000 },
+    { time: "Feb", value: 52000 },
+    { time: "Mar", value: 76000 },
+    { time: "Apr", value: 76000 },
+    { time: "May", value: 76000 },
+    { time: "Jun", value: 66000 },
+    { time: "Jul", value: 59000 },
+    { time: "Aug", value: 91000 },
+    { time: "Sep", value: 127000 },
+    { time: "Oct", value: 196000 },
+    { time: "Nov", value: 217000 },
+    { time: "Now", value: 260000 },
+  ],
+};
 
 export const apyData = [
   { month: "Oct", value: 5.8 },

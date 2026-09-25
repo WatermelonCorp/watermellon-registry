@@ -6,7 +6,8 @@
     "class-variance-authority",
     "cmdk",
     "lucide-react",
-    "next-themes"
+    "next-themes",
+    "zustand"
   ],
   "registryDependencies": [
     "alert-dialog",
@@ -20,8 +21,8 @@
     "drawer",
     "dropdown-menu",
     "field",
-    "input-group",
     "input",
+    "input-group",
     "label",
     "popover",
     "scroll-area",
@@ -30,9 +31,12 @@
     "sheet",
     "sidebar",
     "skeleton",
+    "switch",
     "tabs",
     "textarea",
-    "tooltip"
+    "tooltip",
+    "use-mobile",
+    "utils"
   ],
   "files": [
     {

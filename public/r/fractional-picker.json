@@ -2,8 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "fractional-picker",
   "dependencies": [
+    "framer-motion",
     "lucide-react",
     "motion"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

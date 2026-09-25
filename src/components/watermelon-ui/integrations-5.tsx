@@ -1,6 +1,5 @@
-
-import type { SVGProps } from 'react';
-import { SiSlack } from 'react-icons/si';
+import type { SVGProps } from "react";
+import { FaSlack as SiSlack } from "react-icons/fa6";
 const Cloudflare = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} viewBox="0 0 256 116" preserveAspectRatio="xMidYMid">
     <path
@@ -123,44 +122,44 @@ const Figma = (props: SVGProps<SVGSVGElement>) => (
 export { Figma };
 const integrations = [
   {
-    title: 'Dropbox',
-    description: 'Sync all files and updates in seconds, always up to date.',
+    title: "Dropbox",
+    description: "Sync all files and updates in seconds, always up to date.",
     icon: Dropbox,
   },
   {
-    title: 'Cloudflare',
+    title: "Cloudflare",
     description:
-      'Secure and accelerate your apps with global edge infrastructure.',
+      "Secure and accelerate your apps with global edge infrastructure.",
     icon: Cloudflare,
   },
   {
-    title: 'Notion',
+    title: "Notion",
     description:
-      'Organize ideas, tasks, and knowledge in one collaborative workspace.',
+      "Organize ideas, tasks, and knowledge in one collaborative workspace.",
     icon: Notion,
   },
   {
-    title: 'Slack',
+    title: "Slack",
     description:
-      'Communicate instantly and keep everyone aligned in real time.',
+      "Communicate instantly and keep everyone aligned in real time.",
     icon: SiSlack,
   },
   {
-    title: 'Stripe',
-    description: 'Accept payments and manage billing with powerful APIs.',
+    title: "Stripe",
+    description: "Accept payments and manage billing with powerful APIs.",
     icon: Stripe,
   },
   {
-    title: 'Figma',
+    title: "Figma",
     description:
-      'Design, prototype, and collaborate on interfaces in real time.',
+      "Design, prototype, and collaborate on interfaces in real time.",
     icon: Figma,
   },
 ];
 
 export default function Integrations5() {
   return (
-    <section className="bg-background w-full px-4 py-20">
+    <section className="bg-background w-full px-4 py-16">
       <div className=" mx-auto max-w-6xl space-y-px ">
         <div className="animate-in fade-in slide-in-from-bottom-4 mx-auto mb-16 flex max-w-2xl flex-col items-center text-center duration-700 md:mb-10">
           <h2 className="text-foreground mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
@@ -184,12 +183,12 @@ export default function Integrations5() {
                 className="bg-background flex h-24 items-center justify-center md:h-28"
               >
                 <div
-                  className={`items-center gap-3 ${isDesktopFilled ? 'md:flex' : 'md:hidden'} ${isMobileFilled ? 'flex' : 'hidden'}`}
+                  className={`items-center gap-3 ${isDesktopFilled ? "md:flex" : "md:hidden"} ${isMobileFilled ? "flex" : "hidden"}`}
                 >
                   <Icon className="text-foreground size-10" />
                 </div>
                 <div
-                  className={`bg-muted bg-[repeating-linear-gradient(180deg,theme(colors.border)_0px,theme(colors.border)_1px,transparent_1px,transparent_20px)] size-full ${!isDesktopFilled ? 'md:block' : 'md:hidden'} ${!isMobileFilled ? 'block' : 'hidden'}`}
+                  className={`bg-muted bg-[repeating-linear-gradient(180deg,theme(colors.border)_0px,theme(colors.border)_1px,transparent_1px,transparent_20px)] size-full ${!isDesktopFilled ? "md:block" : "md:hidden"} ${!isMobileFilled ? "block" : "hidden"}`}
                 ></div>
               </div>
             );

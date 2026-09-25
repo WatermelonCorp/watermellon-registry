@@ -3,7 +3,8 @@
   "name": "knob-slider",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-use-measure"
   ],
   "files": [
     {

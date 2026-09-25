@@ -27,7 +27,7 @@ export function Faq5({ categories, className }: Faq5Props) {
   return (
     <section
       className={cn(
-        "bg-background text-foreground w-full py-16 sm:px-10 md:py-24",
+        "bg-background text-foreground w-full py-16 sm:px-10",
         className,
       )}
     >

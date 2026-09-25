@@ -3,7 +3,11 @@
   "name": "editable-chip",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "utils"
   ],
   "files": [
     {

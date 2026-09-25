@@ -6,7 +6,9 @@
     "motion"
   ],
   "registryDependencies": [
-    "card"
+    "avatar",
+    "card",
+    "tooltip"
   ],
   "files": [
     {

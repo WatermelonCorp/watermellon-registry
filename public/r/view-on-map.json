@@ -3,7 +3,8 @@
   "name": "view-on-map",
   "dependencies": [
     "lucide-react",
-    "motion"
+    "motion",
+    "react-icons"
   ],
   "files": [
     {
