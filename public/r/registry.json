@@ -20111,6 +20111,222 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "bionis-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "recharts@2.15.4"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/dashboard-content.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/dashboard-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/icons.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/logo.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/navigation.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/shared.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/shared.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/sidebar.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/theme-provider.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/theme-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/topbar.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/components/bionis/trends-content.tsx",
+          "target": "components/watermelon/bionis-dashboard/components/bionis/trends-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/bionis-dashboard/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/dashboard.css",
+          "target": "components/watermelon/bionis-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/data.ts",
+          "target": "components/watermelon/bionis-dashboard/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/bionis-dashboard/demo.tsx",
+          "target": "components/watermelon/bionis-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "input-group",
+        "sidebar",
+        "utils"
+      ]
+    },
+    {
+      "name": "capitalio-dashboard",
+      "type": "registry:block",
+      "dependencies": [
+        "@base-ui/react",
+        "recharts@2.15.4"
+      ],
+      "files": [
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/components/capitalio/analytics-page.tsx",
+          "target": "components/watermelon/capitalio-dashboard/components/capitalio/analytics-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/components/capitalio/dashboard-page.tsx",
+          "target": "components/watermelon/capitalio-dashboard/components/capitalio/dashboard-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/components/capitalio/icons.tsx",
+          "target": "components/watermelon/capitalio-dashboard/components/capitalio/icons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/components/capitalio/logo.tsx",
+          "target": "components/watermelon/capitalio-dashboard/components/capitalio/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/components/capitalio/navigation.tsx",
+          "target": "components/watermelon/capitalio-dashboard/components/capitalio/navigation.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/components/capitalio/shared.tsx",
+          "target": "components/watermelon/capitalio-dashboard/components/capitalio/shared.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/components/capitalio/sidebar.tsx",
+          "target": "components/watermelon/capitalio-dashboard/components/capitalio/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/components/capitalio/topbar.tsx",
+          "target": "components/watermelon/capitalio-dashboard/components/capitalio/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/dashboard-layout.tsx",
+          "target": "components/watermelon/capitalio-dashboard/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/dashboard.css",
+          "target": "components/watermelon/capitalio-dashboard/dashboard.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/data.ts",
+          "target": "components/watermelon/capitalio-dashboard/data.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/dashboards/capitalio-dashboard/demo.tsx",
+          "target": "components/watermelon/capitalio-dashboard/demo.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "dropdown-menu",
+        "sidebar",
+        "utils"
+      ]
+    },
+    {
+      "name": "bento-01",
+      "type": "registry:block",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/blocks/bento-01/demo.tsx",
+          "target": "components/watermelon/bento-01/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/blocks/bento-01/index.tsx",
+          "target": "components/watermelon/bento-01/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/blocks/bento-01/security-icon.tsx",
+          "target": "components/watermelon/bento-01/security-icon.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "bento-02",
+      "type": "registry:block",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/components/blocks/bento-02/demo.tsx",
+          "target": "components/watermelon/bento-02/demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/blocks/bento-02/index.tsx",
+          "target": "components/watermelon/bento-02/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/blocks/bento-02/map.tsx",
+          "target": "components/watermelon/bento-02/map.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
     }
   ]
 }
